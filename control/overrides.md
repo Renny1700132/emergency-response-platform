@@ -36,4 +36,28 @@
 - 实际执行规则：保留结构化实时日志、Git 修改证据和 Prompt 摘要，明确标注原始日志不可用；绝不从 commit 反推伪造会话。
 - 风险：原始证据完整度降低，课程审计可能要求人工出示平台会话。
 - 是否已在 Preflight 提示：是
+- 状态：SUPERSEDED_BY_OVR-004
+
+## OVR-004
+
+- 时间：2026-09-09 16:51 +08:00
+- Prompt 要求：每项任务在实质执行前完整、逐字写入用户 Prompt 原文；任务完成后、正式回复前完整、逐字写入最终用户可见输出原文。摘要不能替代原文。
+- 被覆盖规则：现有 Workspace 在无法导出完整会话时允许仅保留 Prompt 摘要、修改文件和 Git 证据。
+- 来源文档：修订前的 `governance/ai_logging.md` 第 3、6 节；`AGENTS.md` 修订前 BEFORE_TASK/AFTER_TASK。
+- 冲突说明：现有最低证据不足以还原本次用户输入和实际对外输出。
+- 实际执行规则：完整对话不可导出时仍至少保存 `USER_PROMPT_RAW` 与 `AGENT_FINAL_OUTPUT_RAW`；不记录或伪造隐藏/不可见内容。
+- 风险：日志体积显著增长，包含敏感内容的 Prompt 必须遵循项目数据安全边界；但审计可追溯性提高。
+- 是否已在 Preflight 提示：是
+- 状态：ACTIVE
+
+## OVR-005
+
+- 时间：2026-09-09 16:51 +08:00
+- Prompt 要求：每项正式任务必须 commit，安全同步远程 `master` 并普通 push 到 `master`。
+- 被覆盖规则：现有 Workspace 默认只要求本地 commit，未经用户明确授权不 push；G1-00 初始化 Prompt 明确禁止当次 push。
+- 来源文档：修订前的 `governance/git_workflow.md`、`AGENTS.md`；G1-00 初始化 Prompt。
+- 冲突说明：当前 Prompt 已对本次及后续正式任务明确授予安全 push 权限，并改变默认完成条件。
+- 实际执行规则：fetch 并比较远程；自动无冲突时合并；语义不确定冲突时停止等待用户；仅执行非 force 的 `git push origin master`。
+- 风险：网络/认证失败会使任务进入 `BLOCKED`；远程并行提交增加合并风险，但禁止覆盖他人历史。
+- 是否已在 Preflight 提示：是
 - 状态：ACTIVE

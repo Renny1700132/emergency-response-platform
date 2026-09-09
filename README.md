@@ -2,6 +2,8 @@
 
 本仓库用于《AI 辅助软件项目全生命周期开发·综合实习》课程项目。当前处于第一关“立项竞标”，本阶段只开展需求与招标解析、方案与投标文档、计划风险、合规检查、述标准备和过程证据管理，不开展正式业务代码研发。
 
+当前治理状态：G1-01 至 G1-13 已暂停，只有收到用户明确恢复指令后才能启动。
+
 ## 项目组
 
 | 成员 | 角色 | 唯一主责范围 |
@@ -33,28 +35,30 @@
 
 ## 自动 Prompt 日志
 
-所有有实际产出的 AI 任务必须读取并遵守 `governance/ai_logging.md`，在执行当日向 `logs/prompts/YYYY-MM-DD.md` 追加真实记录。初始处置为 `PENDING_REVIEW`，之后由人工更新为 `ACCEPTED`、`MODIFIED_ACCEPTED` 或 `REJECTED` 并写明理由。无法导出原始会话时必须记录 `raw_log_unavailable: true`，不得倒推或伪造。
+所有有实际产出的 AI 任务必须读取并遵守 `governance/ai_logging.md`。任务实质执行前必须先把用户 Prompt 完整原文追加到 `logs/prompts/YYYY-MM-DD.md`；任务完成后、正式回复前必须把最终用户可见回答完整原文写入同一条日志。Prompt 摘要继续保留，但不能替代原文证据。无法导出完整对话时记录 `raw_dialogue_available: false`，仍须保留这两段最低证据，且不得倒推或伪造隐藏内容。
 
 ## 日常工作流
 
 ```text
 Task
   ↓
-读取 AGENTS 与治理规则
+确定 Task ID 并写入 USER_PROMPT_RAW
   ↓
-Preflight Conflict Check
+读取 AGENTS 与治理规则，进入 RUNNING
   ↓
-读取 facts / key_numbers / issues
+Preflight 与事实基线检查
   ↓
 在任务边界内执行
   ↓
-自动追加 Prompt 日志
+写入 AGENT_FINAL_OUTPUT_RAW
   ↓
 人工 Review
   ↓
-本地 Git commit
+Git commit
   ↓
-日志回填 commit / PR
+安全同步并 push 远程 master
+  ↓
+日志回填 commit / push
 ```
 
-当前计划见 `tasks.md`。开始 G1-01 前，先确认操作者成员身份并领取任务。
+当前计划见 `tasks.md`。G1-01 及后续业务任务处于显式暂停状态。

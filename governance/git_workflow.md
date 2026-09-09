@@ -2,22 +2,45 @@
 
 ## 分支
 
-- 初始化任务按用户要求在当前本地分支提交。
-- 后续并行工作优先使用 `codex/<task-id>-<short-name>` 形式的短生命周期分支；团队另有明确分支约定时，以经记录的约定为准。
+- 每项正式任务必须产生 commit，并最终安全同步到远程 `master`。
+- 开始与结束时必须确认当前分支。直接在 `master` 工作时按下述同步门禁执行；使用 `codex/<task-id>-<short-name>` 短生命周期分支时，任务结束前必须安全合并回本地 `master`，再推送 `origin/master`。
 - 一项正式产物只有主责分支/版本；复核通过 Review/Issue 提交意见，不维护影子分支作为第二正式版本。
+- 未经用户明确授权不得修改 remote、改写默认分支或把任务推送到其他远程。
+
+## 任务开始前检查
+
+执行：`git status --short --branch`、`git remote -v`、`git log --oneline --decorate -8`，确认仓库、当前分支、`origin`、工作区状态和所需历史。
+
+发现已有未提交修改时，禁止使用 `git reset --hard`、`git clean -fd`、`git checkout .`、`git restore .` 或 `git stash` 擅自处理。只有在修改内容、来源和保留方式都明确时才能原样保留并继续；来源或归属不确定时将任务记为 `BLOCKED`，列出文件和差异并等待用户决定。
 
 ## Commit
 
 - 一个 commit 对应一个可说明的任务单元，消息包含类型、范围和结果，例如 `docs(G1-03): draft project proposal`。
 - 提交前检查 `git status`、`git diff --check` 和 staged diff；确认没有原始资料改动、敏感信息或案例事实污染。
+- 只暂存当前任务文件和已经明确判定需要保留的既有修改；不得顺手提交来源不明或无关变更。
 - Prompt、日志、评审、control、governance 与 docs 都是课程过程证据，不得加入 `.gitignore`。
-- 本地提交后，将 hash 回填到对应 Prompt 日志；回填本身另做小提交，避免工作区残留。
+- 正式任务结束不得只留下未提交修改。内容 commit 完成后按“安全同步与 Push”执行。
+
+## 安全同步与 Push
+
+1. 在任务 commit 前后均执行 `git fetch origin master`，获取远程最新状态。
+2. 比较本地 `master` 与 `origin/master`。远程仅领先时优先 fast-forward；双方分叉时使用普通 merge，禁止通过 force 或历史重写消除分叉。
+3. Git 能自动无冲突合并时，保留自动合并结果并继续；提交/推送前仍须检查合并后的 diff、日志和任务文件。
+4. 出现内容冲突时，仅当处理方式唯一明确且能完整保留双方意图时才允许自动处理。任何语义不确定的冲突必须停止，记录 `BLOCKED`，向用户列出冲突文件、双方内容、影响和可选方案，等待用户裁决。不得猜测哪一方应被覆盖。
+5. 合并完成后执行非 force 的 `git push origin master`。严禁 `--force`、`--force-with-lease` 或等效操作。
+6. 若 push 因远程在 fetch 后再次前进而被拒绝，重新 fetch、合并、检查后再尝试普通 push；不得覆盖其他成员提交。
+7. 推送成功后验证本地 `master`、`origin/master` 与远程引用一致，并把 commit、远程、分支、时间和结果回填 Prompt 日志。
+8. 网络、认证、权限或语义冲突导致无法安全推送时，记录真实失败并进入 `BLOCKED`，不得报告 `PUSHED`。
+
+## 日志回填提交
+
+内容 commit 与首次 push 完成后，将任务 commit hash 和 push 结果写回日志，创建独立的小型回填 commit，再重复 fetch/必要合并/普通 push。回填 commit 不记录自身 hash，避免无限自引用；禁止 amend、rebase 或重写既有提交。
 
 ## 禁止事项
 
-- 禁止 force push、强制覆盖远端、修改 remote、删除或重写历史。
-- 未经用户明确授权不执行 push。
-- 禁止用 `git reset --hard`、清理未跟踪文件等方式处理未知变更。
+- 禁止 force push、强制覆盖远端、删除或重写历史。
+- 禁止用 rebase、amend 或 reset 隐藏已经共享的历史。
+- 禁止用清理、还原或 stash 命令擅自处理未知变更。
 - 禁止覆盖或修改原始《用户需求书》及其他原始材料。
 
 ## 文档版本与冻结

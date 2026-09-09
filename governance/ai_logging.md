@@ -6,7 +6,7 @@
 
 自动化不代表可以代造证据：日志必须在任务实际执行过程中实时产生，禁止事后根据 Git 历史猜测会话，禁止美化、伪造操作者/时间、把失败写成成功、遗漏弃用结果或修改历史让证据更漂亮。
 
-本规范的强制链路为：`PRE-TASK RAW LOG → TASK EXECUTION → POST-TASK RAW LOG → REVIEW → COMMIT BACKFILL`。Prompt 摘要继续作为原七字段之一保留，但完整原文证据是强制项，摘要不能替代原文。
+正式任务先按 `governance/git_workflow.md` 执行只涉及仓库状态的启动同步；随后本规范的强制链路为：`PRE-TASK RAW LOG → TASK EXECUTION → POST-TASK RAW LOG → REVIEW → COMMIT BACKFILL`。Prompt 摘要继续作为原七字段之一保留，但完整原文证据是强制项，摘要不能替代原文。
 
 ## 2. 日志生命周期状态机
 
@@ -36,8 +36,8 @@ PUSHED
 
 ### BEFORE_TASK
 
-1. 收到任务后先确定 Task ID。仅为确定 Task ID 而只读查看 `AGENTS.md` 与 `tasks.md` 属于日志引导动作，不得同时开展实质性分析。
-2. 创建或追加 `logs/prompts/YYYY-MM-DD.md`，建立 `LOG-<TASK-ID>-<SEQ>`，记录 `CREATED`。
+1. 收到正式任务后先确定 Task ID，并按 `governance/git_workflow.md` 完成 `REPOSITORY_BOOTSTRAP → REMOTE_SYNC`。此阶段只允许检查/同步仓库，不得读取业务材料、开展实质性分析或修改 Task 产物。
+2. 同步成功后创建或追加 `logs/prompts/YYYY-MM-DD.md`，建立 `LOG-<TASK-ID>-<SEQ>`，记录 `CREATED`。
 3. 把用户本次输入的 Prompt 完整原文逐字写入 `USER_PROMPT_RAW`。不能只留摘要，不能改写、润色、压缩或补全用户没有提供的内容。
 4. 确认日志落盘成功并记录 `PROMPT_LOGGED` 后，才可读取完整任务材料、进行 Preflight、分析或修改文件，并记录 `RUNNING`。
 5. 在 `tasks.md` 确认主责、复核、输入、输出和状态；检查 `control/facts.md`、`control/key_numbers.md`、`control/issues.md`。

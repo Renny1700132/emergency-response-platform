@@ -4,40 +4,41 @@
 
 本项目为“博物馆智能运营中心——应急管理子系统”，当前处于《AI 辅助软件项目全生命周期开发·综合实习》第一关“立项竞标”。本阶段只产出需求/招标解析、项目建议书、技术投标书、澄清记录、项目计划 v1、风险登记册 v1、合规材料、述标准备和过程证据，不创建正式业务代码或 `backend/frontend/src` 目录。
 
-当前暂停 G1-01 及之后的全部业务任务。未收到用户明确恢复指令前，只允许执行治理、配置管理和用户明确指定的非业务任务。
+当前除用户已明确授权的 `G1-01-A` 外，G1-01 及之后的其他业务任务仍暂停。该授权不自动恢复任何其他任务。
 
 ## 2. 每项 AI 任务的强制入口
 
-除“确定 Task ID 并先写入用户 Prompt 原文”的日志引导动作外，所有 AI 任务在实质执行前必须读取并遵守 `governance/ai_logging.md`。
+所有 AI 任务必须读取并遵守 `governance/ai_logging.md`。正式任务开始时，先按 `governance/git_workflow.md` 完成仓库启动同步，再写入用户 Prompt 原文；仓库同步不得夹带项目分析或产物修改。
 
 ### BEFORE_TASK
 
 1. 先确定 Task ID；允许为此只读查看本文件和 `tasks.md`，但不得先做实质性分析或修改任务产物。
-2. 立即创建或追加 `logs/prompts/YYYY-MM-DD.md`，逐字写入本次用户 Prompt 的完整原文并记录 `CREATED → PROMPT_LOGGED`。摘要不能替代原文。
-3. 确认原文日志写入成功后，读取本文件和 `governance/ai_logging.md`，再进入 `RUNNING`。
-4. 在 `tasks.md` 确认主责、复核、输入、输出和状态。
-5. 检查 `control/facts.md`、`control/key_numbers.md`、`control/issues.md`。
-6. 按 `governance/source_priority.md` 做 Preflight Conflict Check。
-7. 如有冲突，修改前先输出冲突编号、双方规则、采用规则和评分/审计影响；普通方法冲突提示后继续。
-8. 完整对话不能真实导出时写 `raw_dialogue_available: false`；仍必须保留用户 Prompt 原文和最终用户可见输出原文，严禁伪造其他内容。
+2. Before every formal task：确认工作树干净或已有修改归属明确，确认位于 `master`，执行 `git fetch origin master` 与 `git pull --ff-only origin master`；无法 fast-forward 时先诊断分叉，不得在明知 `master` 过期时开始工作，也不得覆盖其他成员工作。
+3. 启动同步成功后，立即创建或追加 `logs/prompts/YYYY-MM-DD.md`，逐字写入本次用户 Prompt 的完整原文并记录 `CREATED → PROMPT_LOGGED`。摘要不能替代原文。
+4. 确认原文日志写入成功后，读取本文件和 `governance/ai_logging.md`，再进入 `RUNNING`。
+5. 在 `tasks.md` 确认主责、复核、输入、输出和状态。
+6. 检查 `control/facts.md`、`control/key_numbers.md`、`control/issues.md`。
+7. 按 `governance/source_priority.md` 做 Preflight Conflict Check。
+8. 如有冲突，修改前先输出冲突编号、双方规则、采用规则和评分/审计影响；普通方法冲突提示后继续。
+9. 完整对话不能真实导出时写 `raw_dialogue_available: false`；仍必须保留用户 Prompt 原文和最终用户可见输出原文，严禁伪造其他内容。
 
 ### DURING_TASK
 
-9. 不得超出 Task 范围，不得未经确认扩大项目承诺。
-10. 不确定事实统一写 `【待人工确认】`，不得编造来源、人物、时间、数据、结论或执行结果。
-11. 非主责成员不得静默修改或维护另一套正式产物；问题进入 `control/issues.md`。
-12. 不得读取明确标注为课件的 PPT/PDF；发现时只在资料索引记录“检测到课程课件，根据 Workspace 规则未读取”。
-13. 教学案例只允许参考结构、表格、表达方法、工作流和产物粒度，禁止复制案例项目事实、技术栈、算法、性能、预算、工期、人员、需求或 SLA。
-14. 不记录隐藏思维链、内部推理、不可见系统消息、私有工具内部状态或无法真实取得的内容。
+10. 不得超出 Task 范围，不得未经确认扩大项目承诺。
+11. 不确定事实统一写 `【待人工确认】`，不得编造来源、人物、时间、数据、结论或执行结果。
+12. 非主责成员不得静默修改或维护另一套正式产物；问题进入 `control/issues.md`。
+13. 不得读取明确标注为课件的 PPT/PDF；发现时只在资料索引记录“检测到课程课件，根据 Workspace 规则未读取”。
+14. 教学案例只允许参考结构、表格、表达方法、工作流和产物粒度，禁止复制案例项目事实、技术栈、算法、性能、预算、工期、人员、需求或 SLA。
+15. 不记录隐藏思维链、内部推理、不可见系统消息、私有工具内部状态或无法真实取得的内容。
 
 ### AFTER_TASK
 
-15. 运行与风险相称的检查；失败不得写成成功，弃用结果不得省略。
-16. 在正式回复前，先把准备发送给用户的最终可见回答逐字写入同一日志的 `AGENT_FINAL_OUTPUT_RAW`，记录 `OUTPUT_LOGGED`，再进入 `PENDING_REVIEW`。
-17. 按 `governance/git_workflow.md` 检查 staged diff、commit、安全获取并合并远程 `master`、非 force push 到 `master`。
-18. 回填任务 commit、同步/推送结果和时间；回填使用独立小提交并再次安全推送，不形成自引用循环。
-19. 更新 `tasks.md` 状态并确认工作区干净、远程已同步。
-20. 日志成功写入后，正式回复原则上只给出简短结果和该日志的本地超链接，不重复长篇内容；发送文本必须与日志中的最终输出原文完全一致。
+16. 运行与风险相称的检查；失败不得写成成功，弃用结果不得省略。
+17. 在正式回复前，先把准备发送给用户的最终可见回答逐字写入同一日志的 `AGENT_FINAL_OUTPUT_RAW`，记录 `OUTPUT_LOGGED`，再进入 `PENDING_REVIEW`。
+18. 按 `governance/git_workflow.md` 检查 staged diff、commit、安全获取并合并远程 `master`、非 force push 到 `master`。
+19. 回填任务 commit、同步/推送结果和时间；回填使用独立小提交并再次安全推送，不形成自引用循环。
+20. 更新 `tasks.md` 状态并确认工作区干净、远程已同步。
+21. 日志成功写入后，正式回复原则上只给出简短结果和该日志的本地超链接，不重复长篇内容；发送文本必须与日志中的最终输出原文完全一致。
 
 ## 3. 指令与信息源优先级
 

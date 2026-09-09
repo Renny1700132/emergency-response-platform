@@ -42,6 +42,8 @@
 ```text
 Task
   ↓
+仓库启动检查并以 --ff-only 同步远程 master
+  ↓
 确定 Task ID 并写入 USER_PROMPT_RAW
   ↓
 读取 AGENTS 与治理规则，进入 RUNNING

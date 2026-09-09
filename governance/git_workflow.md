@@ -7,9 +7,39 @@
 - 一项正式产物只有主责分支/版本；复核通过 Review/Issue 提交意见，不维护影子分支作为第二正式版本。
 - 未经用户明确授权不得修改 remote、改写默认分支或把任务推送到其他远程。
 
-## 任务开始前检查
+# Task Start Repository Sync
 
-执行：`git status --short --branch`、`git remote -v`、`git log --oneline --decorate -8`，确认仓库、当前分支、`origin`、工作区状态和所需历史。
+每项正式任务开始时，在产生本 Task 的项目文件修改之前，必须：
+
+1. 执行 `git status --short --branch` 与 `git remote -v`，确认工作树状态、当前位于 `master` 且 `origin` 可用。
+2. 执行 `git fetch origin master`。
+3. 执行 `git pull --ff-only origin master`。
+4. 确认本地 `master` 已包含最新远程提交。
+5. 然后才进入 Prompt 原文留痕和任务执行。
+
+固定顺序：
+
+```text
+REPOSITORY_BOOTSTRAP
+  ↓
+REMOTE_SYNC
+  ↓
+PROMPT_LOGGED
+  ↓
+TASK_EXECUTION
+  ↓
+VALIDATION
+  ↓
+OUTPUT_LOGGED
+  ↓
+COMMIT
+  ↓
+FINAL_REMOTE_CHECK
+  ↓
+PUSH
+```
+
+默认使用 `--ff-only`，因为任务开始同步的目标是尽可能在工作前吸收其他成员修改，而不是在基于旧版本完成工作后再例行制造 merge。若无法 fast-forward，说明历史已经分叉：停止正式任务，列明 local/remote HEAD 与双方独有提交并识别原因；只有能明确确认既有本地提交应推送且不存在语义冲突时，才按安全流程处理，否则进入 `BLOCKED` 等待用户裁决。
 
 发现已有未提交修改时，禁止使用 `git reset --hard`、`git clean -fd`、`git checkout .`、`git restore .` 或 `git stash` 擅自处理。只有在修改内容、来源和保留方式都明确时才能原样保留并继续；来源或归属不确定时将任务记为 `BLOCKED`，列出文件和差异并等待用户决定。
 
@@ -23,7 +53,7 @@
 
 ## 安全同步与 Push
 
-1. 在任务 commit 前后均执行 `git fetch origin master`，获取远程最新状态。
+1. 在任务 commit 后再次执行 `git fetch origin master`，获取执行期间产生的远程更新。
 2. 比较本地 `master` 与 `origin/master`。远程仅领先时优先 fast-forward；双方分叉时使用普通 merge，禁止通过 force 或历史重写消除分叉。
 3. Git 能自动无冲突合并时，保留自动合并结果并继续；提交/推送前仍须检查合并后的 diff、日志和任务文件。
 4. 出现内容冲突时，仅当处理方式唯一明确且能完整保留双方意图时才允许自动处理。任何语义不确定的冲突必须停止，记录 `BLOCKED`，向用户列出冲突文件、双方内容、影响和可选方案，等待用户裁决。不得猜测哪一方应被覆盖。
@@ -40,6 +70,7 @@
 
 - 禁止 force push、强制覆盖远端、删除或重写历史。
 - 禁止用 rebase、amend 或 reset 隐藏已经共享的历史。
+- 禁止 `git reset --hard origin/master`，不得以丢弃本地工作的方式处理分叉。
 - 禁止用清理、还原或 stash 命令擅自处理未知变更。
 - 禁止覆盖或修改原始《用户需求书》及其他原始材料。
 

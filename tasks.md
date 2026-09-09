@@ -10,7 +10,7 @@
 | META-C-PROMPT-2026-09-09 | 成员 C 第一关提示词包 | C 提示词生成者 | 用户 | G1-00 | 用户分享链接、仓库分工与治理规则 | `prompts/C_FIRST_GATE_PROMPT_PACK_v1.md` | BLOCKED |
 | G1-01-A | 项目价值与范围分析 | A | C（技术边界由 B 提供意见） | G1-00 | 真实用户需求书；临时 fallback | `docs/work/A_PM/project_positioning.md` | REVIEW |
 | G1-00 | Workspace 初始化 | C | B | 无 | 当前 Prompt、允许资料、现有仓库 | Workspace 目录、治理规则、初始化日志、Git 证据 | DONE |
-| G1-01 | 需求与招标事实解析 | C | B | G1-00 | 用户需求书、任务书 | facts、key_numbers、条款清单、来源定位 | TODO |
+| G1-01 | 需求与招标事实解析 | C | B | G1-00 | 用户需求书、任务书 | facts、key_numbers、条款清单、来源定位 | BLOCKED |
 | G1-02 | Baseline V0.1 | C | B | G1-01 | facts、key_numbers、条款清单 | BASELINE-V0.1、变更记录 | TODO |
 | G1-03 | 项目建议书 | A | C | G1-02 | 需求基线、任务书、建议书案例结构 | 项目建议书工作稿 | TODO |
 | G1-04 | 技术方案 | B | A | G1-02 | 需求基线、接口与非功能条款 | 架构、功能、数据接口、非功能与验证方案 | TODO |

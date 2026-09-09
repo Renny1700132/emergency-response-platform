@@ -11,7 +11,7 @@
 | G1-01-A | 项目价值与范围分析 | A | C（技术边界由 B 提供意见） | G1-00 | 真实用户需求书；临时 fallback | `docs/work/A_PM/project_positioning.md` | REVIEW |
 | G1-00 | Workspace 初始化 | C | B | 无 | 当前 Prompt、允许资料、现有仓库 | Workspace 目录、治理规则、初始化日志、Git 证据 | DONE |
 | G1-01 | 需求与招标事实解析 | C | B | G1-00 | 用户需求书、任务书 | facts、key_numbers、条款清单、来源定位 | BLOCKED |
-| G1-02 | Baseline V0.1 | C | B | G1-01 | facts、key_numbers、条款清单 | BASELINE-V0.1、变更记录 | TODO |
+| G1-02 | Baseline V0.1 | C | B | G1-01 | facts、key_numbers、条款清单 | BASELINE-V0.1、变更记录 | BLOCKED |
 | G1-03 | 项目建议书 | A | C | G1-02 | 需求基线、任务书、建议书案例结构 | 项目建议书工作稿 | TODO |
 | G1-04 | 技术方案 | B | A | G1-02 | 需求基线、接口与非功能条款 | 架构、功能、数据接口、非功能与验证方案 | TODO |
 | G1-05 | 合规矩阵与澄清 | C | B | G1-02、G1-04 | 条款清单、技术方案 | 合规矩阵、★检查、澄清与质询记录 | TODO |

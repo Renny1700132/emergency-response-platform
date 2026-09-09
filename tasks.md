@@ -2,11 +2,12 @@
 
 状态只允许：`TODO`、`DOING`、`REVIEW`、`DONE`、`BLOCKED`。
 
-业务暂停令：G1-01 至 G1-13 保持 `TODO`，在用户明确恢复前不得启动。治理任务不解除此暂停。
+业务暂停令：除用户已明确授权的 `G1-01-A` 外，G1-01 至 G1-13 其他任务保持 `TODO`，在用户明确恢复前不得启动。该子任务不解除其他暂停。
 
 | Task ID | 任务 | 主责 | 复核 | 前置任务 | 输入 | 输出 | 状态 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | GOV-001 | AI 留痕与 Git 工作流修订 | C | B | G1-00 | 当前 Prompt、现有治理规范、Git 状态 | 原文日志状态机、安全同步与 push 规范 | DONE |
+| G1-01-A | 项目价值与范围分析 | A | C（技术边界由 B 提供意见） | G1-00 | 真实用户需求书；临时 fallback | `docs/work/A_PM/project_positioning.md` | REVIEW |
 | G1-00 | Workspace 初始化 | C | B | 无 | 当前 Prompt、允许资料、现有仓库 | Workspace 目录、治理规则、初始化日志、Git 证据 | DONE |
 | G1-01 | 需求与招标事实解析 | C | B | G1-00 | 用户需求书、任务书 | facts、key_numbers、条款清单、来源定位 | TODO |
 | G1-02 | Baseline V0.1 | C | B | G1-01 | facts、key_numbers、条款清单 | BASELINE-V0.1、变更记录 | TODO |

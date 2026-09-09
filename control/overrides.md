@@ -14,6 +14,56 @@
 - 是否已在 Preflight 提示：是
 - 状态：ACTIVE
 
+## OVR-006
+
+- 时间：2026-09-09 17:37 +08:00
+- Prompt 要求：明确启动 `G1-01-A` 项目价值与范围分析。
+- 被覆盖规则：`AGENTS.md` 与 `tasks.md` 暂停 G1-01 及后续全部业务任务。
+- 来源文档：修订前的 `AGENTS.md`、`tasks.md`。
+- 冲突说明：当前 Prompt 是对单个子任务的明确授权，不构成全部业务任务恢复。
+- 实际执行规则：仅执行 `G1-01-A`，其他任务继续暂停。
+- 风险：若被误读为全面解禁，会造成并行任务越界；已在任务表和 AGENTS 中限定例外范围。
+- 是否已在 Preflight 提示：是
+- 状态：ACTIVE
+
+## OVR-007
+
+- 时间：2026-09-09 17:37 +08:00
+- Prompt 要求：正式任务先同步远程 `master`，再写 Prompt 原文并执行任务。
+- 被覆盖规则：修订前 `governance/ai_logging.md` 要求在仓库同步之前先写 Prompt 原文。
+- 来源文档：修订前的 `governance/ai_logging.md`、`AGENTS.md`。
+- 冲突说明：两者都要求在实质分析前完成，但日志和仓库同步的先后顺序不同。
+- 实际执行规则：`REPOSITORY_BOOTSTRAP → REMOTE_SYNC → PROMPT_LOGGED → TASK_EXECUTION`；同步阶段不得读取业务材料或修改任务产物。
+- 风险：若同步失败，本次 Prompt 尚未进入项目仓库日志；平台会话仍保留原始输入，失败必须如实报告。
+- 是否已在 Preflight 提示：是
+- 状态：ACTIVE
+
+## OVR-008
+
+- 时间：2026-09-09 17:37 +08:00
+- Prompt 要求：在 C 尚未完成正式事实基线时，允许 A 直接读取真实《用户需求书》形成价值与范围工作稿，但不得填写或冻结 C 的控制文件。
+- 被覆盖规则：正式文档事实原则上先进入 `control/facts.md` 与 `control/key_numbers.md`。
+- 来源文档：`AGENTS.md` 第 4 节；`control/facts.md`、`control/key_numbers.md` 当前状态说明。
+- 冲突说明：当前控制文件只有初始化级条目，无法支撑 A 的前置分析；Prompt 提供一次性 fallback。
+- 实际执行规则：只在 `project_positioning.md` 内使用工作级来源注释，状态保持 `DRAFT_PENDING_BASELINE_RECONCILIATION`，不接管或修改 C 的控制文件。
+- 风险：C 后续基线可能与工作稿表述不一致，必须执行 Baseline Reconciliation 后才能成为稳定输入。
+- 是否已在 Preflight 提示：是
+- 状态：ACTIVE
+
+## OVR-009
+
+- 时间：2026-09-09【待人工确认具体时分】
+- Prompt 要求：明确且仅授权启动 `G1-01`“需求与招标事实解析”。
+- 被覆盖规则：`AGENTS.md` 与 `tasks.md` 的既有业务暂停令仅放行 `G1-01-A`，其余 G1-01 至 G1-13 保持 `TODO`。
+- 来源文档：`AGENTS.md` 第 1 节；`tasks.md` 业务暂停令。
+- 冲突说明：当前 P0 Prompt 是对单个任务 `G1-01` 的明确恢复授权，不构成后续业务任务全面恢复。
+- 实际执行规则：仅将前置已满足的 `G1-01` 置为 `DOING` 并执行；`G1-02` 及其他 TODO/暂停任务保持不变。
+- 风险：若误读为全面解禁将造成任务越界；通过任务表状态、变更文件清单和自检限制范围。
+- 是否已在 Preflight 提示：是；冲突编号 `PFC-G1-01-01`。
+- 是否涉及真实项目事实：否。
+- 是否必须暂停：否。
+- 状态：ACTIVE
+
 ## OVR-002
 
 - 时间：2026-09-09 15:52 +08:00

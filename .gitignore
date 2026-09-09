@@ -1,0 +1,39 @@
+# Operating systems
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors and IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Office temporary and lock files
+~$*
+*.tmp
+*.temp
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local build and scratch output
+build/
+dist/
+tmp/
+.cache/
+
+# Local secrets and machine-specific settings
+.env
+.env.*
+!.env.example
+
+# Evidence directories intentionally remain tracked:
+# prompts/, logs/prompts/, logs/reviews/, control/, governance/, docs/

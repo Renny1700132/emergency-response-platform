@@ -1,39 +1,60 @@
-# 应急管理子系统-B
+# 博物馆智能运营中心——应急管理子系统
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+本仓库用于《AI 辅助软件项目全生命周期开发·综合实习》课程项目。当前处于第一关“立项竞标”，本阶段只开展需求与招标解析、方案与投标文档、计划风险、合规检查、述标准备和过程证据管理，不开展正式业务代码研发。
 
-#### 软件架构
-软件架构说明
+## 项目组
 
+| 成员 | 角色 | 唯一主责范围 |
+| --- | --- | --- |
+| A | 项目经理 PM / 总编 / 述标负责人 | 项目建议书、项目计划、风险登记册、技术投标书整合、跨文档一致性、述标与冻结 |
+| B | 技术负责人 / 架构师 | 技术分析、架构、功能方案、数据接口、非功能设计、技术验证与技术质询 |
+| C | 需求 / 质量 / AI 工程负责人 | 需求解析、事实与关键数字、合规矩阵、澄清、AI 留痕与最终符合性 |
 
-#### 安装教程
+## Workspace 导航
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+- `AGENTS.md`：所有 AI 与成员进入任务前必须遵守的根规则。
+- `tasks.md`：第一关任务、主责、复核、依赖和状态。
+- `docs/README.md`：原始资料索引与使用边界。
+- `docs/work/`：当前工作稿；不作为冻结交付物。
+- `docs/deliverables/`：评审通过并准备交付/冻结的正式产物。
+- `control/`：唯一事实源、关键数字、合规矩阵、问题、变更与规则覆盖记录。
+- `governance/`：AI 留痕、来源优先级、评审与 Git 工作流。
+- `prompts/`：可复用 Prompt 与任务 Prompt 记录规则。
+- `logs/`：Prompt、评审、会议、失败与可导出的原始记录。
+- `scripts/`：后续必要的轻量检查和构建脚本。
 
-#### 使用说明
+## 唯一事实源
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+正式材料中的项目事实必须能追溯为“正式材料 → `control/facts.md` / `control/key_numbers.md` → 原始《用户需求书》”。任何未经可靠来源验证的内容标记为 `【待人工确认】`，不得猜测。
 
-#### 参与贡献
+资料裁决优先级为：当前用户 Prompt > 真实项目《用户需求书》 > 《通关实验任务书》 > 学生指导书 > 教学案例 > AI 推理。Prompt 对工作方法有优先权，但不能被 AI 擅自解释为可改变真实项目需求、★条款、性能、边界、验收、SLA 或法规要求。
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+明确标注为课程课件的文件不读取、不解析、不索引为规则来源；教学案例只用于结构、表格、表达和粒度参考，禁止复制案例事实。
 
+## 自动 Prompt 日志
 
-#### 特技
+所有有实际产出的 AI 任务必须读取并遵守 `governance/ai_logging.md`，在执行当日向 `logs/prompts/YYYY-MM-DD.md` 追加真实记录。初始处置为 `PENDING_REVIEW`，之后由人工更新为 `ACCEPTED`、`MODIFIED_ACCEPTED` 或 `REJECTED` 并写明理由。无法导出原始会话时必须记录 `raw_log_unavailable: true`，不得倒推或伪造。
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+## 日常工作流
+
+```text
+Task
+  ↓
+读取 AGENTS 与治理规则
+  ↓
+Preflight Conflict Check
+  ↓
+读取 facts / key_numbers / issues
+  ↓
+在任务边界内执行
+  ↓
+自动追加 Prompt 日志
+  ↓
+人工 Review
+  ↓
+本地 Git commit
+  ↓
+日志回填 commit / PR
+```
+
+当前计划见 `tasks.md`。开始 G1-01 前，先确认操作者成员身份并领取任务。

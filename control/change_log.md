@@ -19,7 +19,7 @@
 - 主责：C
 - 复核/批准：B `PENDING_REVIEW`
 - 新版本：无；BASELINE-V0.1 继续 `PLANNED`
-- Commit / PR：【本任务提交待回填】
+- Commit / PR：`717e2e4722c89a6eee5bc8fc43afcb14d9e64423`；push 待用户对 Gitee 外发内容再次明确授权
 
 ## 变更记录模板
 

@@ -87,3 +87,20 @@
 复核结论：`NOT ACCEPTED`。G1-03 保持 `REVIEW`；A 修订上述两项后，由 C 验证关闭。未发现必须进入 BLOCKED 的真实需求语义冲突。
 
 G1-06 不因本次复核自动启动；G1-05、G1-06 及其他任务均未启动。
+
+## 6. A 修订后 C 复验（2026-09-10）
+
+- 被复验版本：A 内容提交 `9d143089bf8ca356b850128bec58f4a78246cce6`；Markdown `docs/work/A_PM/project_proposal.md` V0.2；Word `docs/deliverables/01-项目建议书.docx` V0.9 符合性复核候选稿，SHA-256 `9087574602B1DA50E6442A22F8D6A39050F3008E2C96662311E3684F5086ECF2`。
+- 冻结输入：`control/baselines/BASELINE-G1-V0.1.md`；同步核对 `control/facts.md`、`control/key_numbers.md`、`control/issues.md`、G1-04 V0.6 及其完成记录。
+- Preflight Conflict Check：未发现 A 修订与 P1/冻结 Baseline 的真实语义冲突；未触发 Change 流程。
+
+| 复验项 | 结果 | 证据与结论 |
+| --- | --- | --- |
+| ISSUE-G1-03-001 | PASS / CLOSED | Markdown §3.3、§7 与 Word 均明确课程模拟裁决的主体、用途和非现实法律文件边界，符合 Baseline §2、§7。 |
+| ISSUE-G1-03-002 | PASS / CLOSED | Markdown 状态为 REVIEW、含 V0.2 修订记录；§3.1、§7 及 Word 均引用已完成的 G1-04 V0.6，不再使用待其后续论证的过时时态。 |
+| Word 与 Markdown 实质内容 | PASS | Word 按 A 获授权的正式候选稿口径移除内部元数据、来源括注和工作流说明，正文结构、责任边界、范围、关键约束及结论与 Markdown 逐块一致；V0.9 为 Word 候选稿版本，V0.2 为 Markdown 工作稿修订号，不构成需求事实冲突。 |
+| Word 与 Baseline | PASS | 匿名项目名、11 个功能域、In/Out Scope、≥30 天录像责任、定位责任、门禁“应支持”、H5、私有部署及外部依赖等均与冻结 Baseline 一致；未发现新增需求外承诺或★条款弱化。 |
+| Word 视觉与结构 | PASS | 文档技能标准渲染因环境缺少 LibreOffice 失败，已如实保留失败结果；随后使用 Microsoft Word 只读导出 PDF，逐页检查 7/7 页。A4、页码、标题、正文和表格均可读，无乱码、裁切、重叠、越界或异常空白页。封面长项目名存在自然换行，属非阻塞排版观察。 |
+| 教学案例边界 | PASS | 仅核验模板化格式结果；未发现案例事实、技术栈、数字、工期、预算或 SLA 污染。 |
+
+复验结论：`ACCEPTED`。两项 Issue 均由 C 验证关闭，G1-03 准出并更新为 `DONE`。未修改 A 主责的 Markdown、Word 或生成脚本；G1-06 不因本次准出自动启动。

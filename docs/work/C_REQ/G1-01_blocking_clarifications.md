@@ -42,3 +42,8 @@
 - 正式归档：`docs/work/C_REQ/G1-01_clarification_record.md` 的 `CLR-001`—`CLR-012`。
 - 当前处置：三项原阻断 Issue 与其余九项 Issue 均已完成 C 侧需求映射，状态为 `RESOLVED / PENDING_B_REVIEW`；这只表示需求歧义已有课程模拟裁决，不表示技术能力或现场验收已验证。
 - G1-01 状态：`REVIEW`；C 侧解除动作完成，等待 B 裁决后复核，尚未完全关闭。B 未明确通过前不得 `DONE`，Issue 不得 `CLOSED`，BASELINE-V0.1 不得冻结。
+
+## 2026-09-10 B 复核结果追加
+
+- B 已在 `logs/reviews/2026-09-10_G1-01-B-post-clarification-review.md` 对 DEC-001—012 的映射和技术可实施性给出 `ACCEPTED`；G1-01 随后进入 `DONE`。
+- 本追加不覆盖上述 BLOCKED 与 REVIEW 历史。12 项 Issue 保持 `RESOLVED / NON_BLOCKING`，仅表示需求解释和映射闭环；视频、定位、门禁、消息、中台、地图、H5、部署、数据、接口及应用安全仍须按后续阶段形成实际验证证据。

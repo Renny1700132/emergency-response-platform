@@ -8,6 +8,19 @@
 | BASELINE-V0.9 | 第一关交付候选基线 | G1-09 至 G1-11 问题闭环 | PLANNED | — | A | C | — |
 | BASELINE-V1.0 | 第一关最终冻结基线 | G1-12 完成、最终三项检查通过 | PLANNED | — | A | C | — |
 
+## 变更记录
+
+### CHG-G1-01-001
+
+- 影响基线：BASELINE-V0.1（仍为 `PLANNED`，未冻结）
+- 变更内容：归档 12 项甲方/招标人（课程模拟）模拟书面裁决，更新 G1-01 控制输入。
+- 变更原因与来源：`prompts/G1-01-A-BR_2026-09-10_1142_baseline-reconciliation.md` 与 `logs/prompts/2026-09-10.md#log-g1-01-a-br-001`；证据提交 `33a32cd`，远程状态提交 `0a3e9d2`。
+- 影响分析：需求歧义可进入 B 裁决后复核；接口、性能、安全与现场能力仍待技术验证；不得据此冻结基线。
+- 主责：C
+- 复核/批准：B `PENDING_REVIEW`
+- 新版本：无；BASELINE-V0.1 继续 `PLANNED`
+- Commit / PR：【本任务提交待回填】
+
 ## 变更记录模板
 
 - 变更编号：CHG-xxx

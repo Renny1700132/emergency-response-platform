@@ -1,7 +1,7 @@
 # 关键数字唯一索引
 
 - 主责：C；复核：B；Task：`G1-01`
-- 状态：`BLOCKED_PENDING_B_REVIEW_AND_CLIENT_CLARIFICATION`
+- 状态：`REVIEW_PENDING_B_POST_CLARIFICATION`；数值未变，课程模拟裁决仅补充责任与验收前置，待 B 复核。
 - 项目数字来源均为 `docs/用户需求书-03-应急管理子系统.docx`（P1）；课程数字来源另标 P2。
 - “可形成对外承诺”仅表示需求书明确要求，不代表已验证履约能力；实现与验收仍须 B/A 后续响应。
 
@@ -12,11 +12,11 @@
 | KN-003 | ≤3 秒 | 预案启动通知/任务下发 | P1 §1.2.2（1）、FR-01.3、PE-01 | 是 | VERIFIED |
 | KN-004 | 7×24 小时 | 系统连续运行 | P1 §1.3（5）、§4.2（2）、§7.5（1） | 是 | VERIFIED |
 | KN-005 | ≤2 小时 | 干净环境容器化部署 | P1 §4.2（3）、§7.8（1） | 是 | VERIFIED；★ |
-| KN-006 | ≥20 路并行 | 消息推送能力 | P1 §4.3（4）、PE-04 | 是 | VERIFIED |
-| KN-007 | ≥99% | 消息推送到达率 | P1 §4.4（2）、FR-08.2、PE-04 | 是 | VERIFIED；依赖外部通道，ISSUE-004 |
-| KN-008 | ≤2 秒/次 | 人员定位刷新 | P1 FR-02.2、§4.4（3）、PE-05 | 是 | VERIFIED_WITH_DEPENDENCY；ISSUE-002 |
-| KN-009 | 亚米级 | 人员定位精度 | P1 FR-02.2、PE-05 | 是 | VERIFIED_WITH_DEPENDENCY；ISSUE-002 |
-| KN-010 | ≤3 秒 | 视频首帧 | P1 FR-02.3、PE-06 | 是 | VERIFIED_WITH_DEPENDENCY；ISSUE-001/010 |
+| KN-006 | ≥20 路并行 | 消息推送能力 | P1 §4.3（4）、PE-04 | 是 | RESOLVED_BY_SIMULATED_CLARIFICATION；CLR-004；甲方提供正常验收通道，乙方验证；能力未验收 |
+| KN-007 | ≥99% | 消息推送到达率 | P1 §4.4（2）、FR-08.2、PE-04 | 是 | RESOLVED_BY_SIMULATED_CLARIFICATION；CLR-004；正常验收通道口径，能力未验收 |
+| KN-008 | ≤2 秒/次 | 人员定位刷新 | P1 FR-02.2、§4.4（3）、PE-05 | 是 | RESOLVED_BY_SIMULATED_CLARIFICATION；CLR-002；乙方链路责任，待现场验证 |
+| KN-009 | 亚米级 | 人员定位精度 | P1 FR-02.2、PE-05 | 是 | RESOLVED_BY_SIMULATED_CLARIFICATION；CLR-002；甲方提供源数据，乙方不得降低源精度，待现场验证 |
+| KN-010 | ≤3 秒 | 视频首帧 | P1 FR-02.3、PE-06 | 是 | RESOLVED_BY_SIMULATED_CLARIFICATION；CLR-001、010；乙方接口调阅责任，待 M2 连通与性能验证 |
 | KN-011 | ≤2 秒 | 报警/告警接入响应 | P1 FR-05.2、PE-02 | 是 | VERIFIED |
 | KN-012 | ≤3 分钟 | 事件确认到任务下达 | P1 FR-05.2、PE-03 | 是 | VERIFIED |
 | KN-013 | 每半年至少 1 次 | 人员密集场所演练频次 | P1 FR-04.1 | 是 | VERIFIED |
@@ -48,8 +48,8 @@
 | KN-039 | ≤2 小时 | 新用户完成完整上报处置学习目标 | P1 §7.4（2） | 是 | VERIFIED |
 | KN-040 | ≥99.5% | 试运行可用率（计划维护除外） | P1 §7.5（1） | 是 | VERIFIED；★ |
 | KN-041 | MTTR≤2 小时 | 单点故障恢复 | P1 §7.5（4） | 是 | VERIFIED |
-| KN-042 | 不低于第二级 | 等保相关应用要求 | P1 §7.6（1） | 是 | VERIFIED；★；确切定级 ISSUE-011 |
-| KN-043 | 高危 0 | 交付前漏洞门禁 | P1 §7.6（2）、§10.2（4） | 是 | VERIFIED；★ |
+| KN-042 | 不低于第二级 | 等保相关应用要求 | P1 §7.6（1） | 是 | RESOLVED_BY_SIMULATED_CLARIFICATION；★；CLR-011；应用条款不弱化，甲方负责最终定级/备案，待 B 复核 |
+| KN-043 | 高危 0 | 交付前漏洞门禁 | P1 §7.6（2）、§10.2（4） | 是 | RESOLVED_BY_SIMULATED_CLARIFICATION；★；CLR-011；乙方应用侧责任，尚未验证 |
 | KN-044 | ≥8 位 | 口令长度 | P1 §7.6（3） | 是 | VERIFIED |
 | KN-045 | ≥70% | 核心模块单元测试覆盖率 | P1 §7.7（3） | 是 | VERIFIED |
 | KN-046 | M1 合同后2周 | 需求确认里程碑 | P1 §9.1 表 | 是 | VERIFIED |
@@ -66,7 +66,7 @@
 | KN-057 | 7×24 / 7×12 | 应急申告/远程支持渠道 | P1 §9.4（3） | 是 | VERIFIED |
 | KN-058 | 24小时 | 重大风险书面报告 | P1 §9.5（2） | 是 | VERIFIED |
 | KN-059 | 15日 | 验收不合格整改申请复验 | P1 §10.1 | 是 | VERIFIED |
-| KN-060 | ≥30天 | 视频录像保存 | P1 §3.3（1） | 是（责任待澄清） | PENDING_CLARIFICATION；ISSUE-001 |
+| KN-060 | ≥30天 | 视频录像保存 | P1 §3.3（1） | 是 | RESOLVED_BY_SIMULATED_CLARIFICATION；CLR-001；强制要求，由既有视频系统负责保存，乙方负责接口回放与验证；能力未验收 |
 | KN-061 | 4 个级别 | 单元/集成/系统/验收测试 | P1 §10.1 | 是 | VERIFIED |
 | KN-062 | 20 项 | 法规标准清单数量 | P1 §2（1）—（20） | 是 | VERIFIED |
 | KN-063 | 39 条；其中34条★ | FR 总数与★数（由表5-1逐行计数） | P1 表5-1 | 是 | VERIFIED；待 B 人工复核计数 |

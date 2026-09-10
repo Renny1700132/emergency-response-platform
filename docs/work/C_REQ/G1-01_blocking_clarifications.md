@@ -30,3 +30,15 @@
 ## 解除条件
 
 三项问题均取得完整、可验证且不与更高优先级真实需求文件冲突的有权书面裁决后，由 C 回填控制文件并提交 B 复核；在此之前三项 Issue 保持 `OPEN / BLOCKING`，G1-01 保持 `BLOCKED`。
+
+---
+
+## 2026-09-10 状态追加（不覆盖上述历史）
+
+- 历史结论保留：本文件此前记录的 `BLOCKED_PENDING_AUTHORIZED_WRITTEN_DECISIONS` 准确描述 2026-09-09 当时缺少证据的状态，不删除、不改写。
+- 新增证据：2026-09-10 已取得“甲方/招标人（课程模拟）”作出的 12 项模拟书面裁决，进入 C 归档与 B 裁决后复核阶段。
+- 身份边界：课程模拟书面裁决不表述为现实自然人、职务、签章、文件编号或现实合同法律文件。
+- 证据链接：`prompts/G1-01-A-BR_2026-09-10_1142_baseline-reconciliation.md`；`logs/prompts/2026-09-10.md#log-g1-01-a-br-001`；提交 `33a32cd`，远程状态提交 `0a3e9d2`。
+- 正式归档：`docs/work/C_REQ/G1-01_clarification_record.md` 的 `CLR-001`—`CLR-012`。
+- 当前处置：三项原阻断 Issue 与其余九项 Issue 均已完成 C 侧需求映射，状态为 `RESOLVED / PENDING_B_REVIEW`；这只表示需求歧义已有课程模拟裁决，不表示技术能力或现场验收已验证。
+- G1-01 状态：`REVIEW`；C 侧解除动作完成，等待 B 裁决后复核，尚未完全关闭。B 未明确通过前不得 `DONE`，Issue 不得 `CLOSED`，BASELINE-V0.1 不得冻结。

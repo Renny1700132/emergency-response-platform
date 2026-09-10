@@ -1,15 +1,15 @@
 # G1-01 条款清单与来源定位工作稿
 
-- 主责：C；复核：B；版本：0.1；状态：`BLOCKED_PENDING_CLARIFICATION`
+- 主责：C；复核：B；版本：0.2；状态：`REVIEW_PENDING_B_POST_CLARIFICATION`
 - P1：`docs/用户需求书-03-应急管理子系统.docx`，SHA-256 `045F1E4083AF5D7CB8C3A18451A6D4F173D1F5F5B85EE7187D989CA36037B28A`，Word 渲染 24 页。
 - P2：`docs/通关实验任务书1-立项竞标.pdf`，SHA-256 `8093C40786FC20F6390B59716F03FCE3CCF37AD1B83DE480B5C2EEA2C90E70E6`，4 页。
-- 定位规则：优先采用章节、表名、FR/PE/里程碑等稳定锚点；页码仅辅助。`VERIFIED` 表示忠实取自原文，不代表 B 已复核；`PENDING/CONFLICT` 见 Issue。
+- 定位规则：优先采用章节、表名、FR/PE/里程碑等稳定锚点；页码仅辅助。`VERIFIED` 表示忠实取自原文，不代表 B 已复核；`RESOLVED_BY_SIMULATED_CLARIFICATION` 表示需求歧义已有课程模拟裁决，但技术能力未验收且仍待 B 复核。裁决证据见 `G1-01_clarification_record.md`。
 
 ## A. 项目、目标、范围与总体技术
 
 | 稳定编号 | 忠实摘要 | 原文定位 | 状态 | 备注 |
 | --- | --- | --- | --- | --- |
-| REQ-PROJ-001 | 项目名称与招标文件性质 | P1 封面 | VERIFIED | 真实馆名 ISSUE-012 |
+| REQ-PROJ-001 | 项目名称与招标文件性质 | P1 封面；CLR-012 | RESOLVED_BY_SIMULATED_CLARIFICATION | 使用正式匿名称；待 B 复核 |
 | REQ-PROJ-002 | 人员密集与文物保护双重对象、复合突发事件背景 | P1 §1.1 前2段 | VERIFIED | 背景事实 |
 | REQ-PROJ-003 | 现状痛点：预案、调度、资源、演练值班、事件闭环五类 | P1 §1.1（1）—（5） | VERIFIED | 不引入外部数据 |
 | REQ-PROJ-004 | 建设四阶段融合指挥中心 | P1 §1.1 末段 | VERIFIED | 事前/事发/事中/事后 |
@@ -24,35 +24,35 @@
 | REQ-ROLE-001 | 8 类角色及职责/主要功能 | P1 §1.4 角色表 | VERIFIED | 含第三方系统 |
 | REQ-SCOPE-001 | Web、移动、接口、文档和培训；11 个模块 | P1 §3.1 表 | VERIFIED | F-01—F-11 |
 | REQ-OOS-001 | 既有安防等前端硬件及子系统自身建设改造范围外 | P1 §3.2（1） | VERIFIED | 接口仍在范围内 |
-| REQ-OOS-002 | 应急物资、安防终端、定位基站采购范围外 | P1 §3.2（2） | VERIFIED | ISSUE-002 |
-| REQ-OOS-003 | 机房、服务器、网络采购范围外，甲方自备 | P1 §3.2（3） | VERIFIED | ISSUE-008 |
+| REQ-OOS-002 | 应急物资、安防终端、定位基站采购范围外 | P1 §3.2（2）；CLR-002 | RESOLVED_BY_SIMULATED_CLARIFICATION | 甲方提供定位基础设施和验收源数据；技术验证待 B 复核 |
+| REQ-OOS-003 | 机房、服务器、网络采购范围外，甲方自备 | P1 §3.2（3）；CLR-008 | RESOLVED_BY_SIMULATED_CLARIFICATION | 甲方另提供域名证书、备份介质、后备电源；乙方提交最低配置和部署方案 |
 | REQ-OOS-004 | 政府应急平台专线范围外，系统预留标准接口 | P1 §3.2（4） | VERIFIED | — |
-| REQ-REL-001 | 视频实时调阅/历史回放，录像保存≥30天 | P1 §3.3（1） | PENDING | ISSUE-001 |
-| REQ-REL-002 | 信息发布一键发布疏散指引/公告 | P1 §3.3（2） | VERIFIED_WITH_DEPENDENCY | ISSUE-010 |
-| REQ-REL-003 | 入侵/门禁/消防告警转事件，疏散门禁免凭证开启 | P1 §3.3（3） | CONFLICT | ISSUE-003 |
-| REQ-REL-004 | 物联网提供设备告警和客流 | P1 §3.3（4） | VERIFIED_WITH_DEPENDENCY | ISSUE-010 |
-| REQ-REL-005 | 中台提供身份、消息、门户、数据汇聚 | P1 §3.3（5） | PENDING | ISSUE-005 |
-| REQ-REL-006 | 复用 APP/短信平台消息通道 | P1 §3.3（6） | PENDING | ISSUE-004 |
+| REQ-REL-001 | 视频实时调阅/历史回放，录像保存≥30天 | P1 §3.3（1）；CLR-001 | RESOLVED_BY_SIMULATED_CLARIFICATION | 历史回放为强制；既有视频系统负责存储及保存，乙方负责接口回放与验证；技术验证待 B 复核 |
+| REQ-REL-002 | 信息发布一键发布疏散指引/公告 | P1 §3.3（2）；CLR-010 | RESOLVED_BY_SIMULATED_CLARIFICATION | 甲方提供/协调接口条件，乙方逐接口适配验证 |
+| REQ-REL-003 | 入侵/门禁/消防告警转事件，疏散门禁开启 | P1 §3.3（3）；CLR-003、010 | RESOLVED_BY_SIMULATED_CLARIFICATION | 门禁联动“应支持”；授权确认、安全联锁、失败告警与人工降级待 B 复核 |
+| REQ-REL-004 | 物联网提供设备告警和客流 | P1 §3.3（4）；CLR-010 | RESOLVED_BY_SIMULATED_CLARIFICATION | 接口条件由甲方提供/协调，乙方适配验证 |
+| REQ-REL-005 | 中台提供身份、组织、权限、消息、工作流、文件存储、门户和数据汇聚 | P1 §3.3（5）；CLR-005 | RESOLVED_BY_SIMULATED_CLARIFICATION | 乙方仅做业务适配；能力待技术验证 |
+| REQ-REL-006 | 复用 APP/短信平台消息通道 | P1 §3.3（6）；CLR-004 | RESOLVED_BY_SIMULATED_CLARIFICATION | 甲方提供通道/账号/签名/配额；乙方调用、并发、重试、回执、留痕 |
 | REQ-FLOW-001 | 预案闭环端到端流程 | P1 §3.4（1） | VERIFIED | — |
 | REQ-FLOW-002 | 演练全流程 | P1 §3.4（2） | VERIFIED | — |
 | REQ-FLOW-003 | 值班打卡流程 | P1 §3.4（3） | VERIFIED | — |
 | REQ-FLOW-004 | 事件接报处置闭环 | P1 §3.4（4） | VERIFIED | — |
 | REQ-FLOW-005 | 物资盘点流程 | P1 §3.4（5） | VERIFIED | — |
-| REQ-ARCH-001 | 数据/支撑/服务/应用四层总体架构 | P1 §4.1（1）—（4） | VERIFIED | 中台支撑边界 ISSUE-005 |
+| REQ-ARCH-001 | 数据/支撑/服务/应用四层总体架构 | P1 §4.1（1）—（4）；CLR-005 | RESOLVED_BY_SIMULATED_CLARIFICATION | 中台通用能力由甲方提供，乙方业务适配 |
 | REQ-ARCH-002 | 投标方案给总体架构图、部署图和技术选型理由 | P1 §4.1 末段 | VERIFIED | — |
-| REQ-DEPLOY-001 | 甲方内部私有环境、Linux 64位或认可国产OS | P1 §4.2（1） | VERIFIED | ISSUE-008 |
-| REQ-DEPLOY-002 | 连续运行及后备电源关键功能 | P1 §4.2（2） | VERIFIED_WITH_DEPENDENCY | ISSUE-008 |
+| REQ-DEPLOY-001 | 甲方内部私有环境、Linux 64位或认可国产OS | P1 §4.2（1）；CLR-008 | RESOLVED_BY_SIMULATED_CLARIFICATION | 甲方提供基础环境，乙方提交最低配置与部署方案 |
+| REQ-DEPLOY-002 | 连续运行及后备电源关键功能 | P1 §4.2（2）；CLR-008 | RESOLVED_BY_SIMULATED_CLARIFICATION | 后备电源由甲方提供，连续性待技术验证 |
 | REQ-DEPLOY-003 | ★容器化一键部署、脚本/文档、≤2小时 | P1 §4.2（3） | VERIFIED | KN-005 |
-| REQ-DEPLOY-004 | Web浏览器；Android/iOS/H5移动端 | P1 §4.2（4） | PENDING | ISSUE-007 |
+| REQ-DEPLOY-004 | Web浏览器；移动端采用 H5 嵌入既有智慧管理 APP | P1 §4.2（4）；CLR-007 | RESOLVED_BY_SIMULATED_CLARIFICATION | 交付 H5 包；甲方负责宿主 APP 和发布；集成待技术验证 |
 | REQ-TECH-001 | 主流开放成熟框架，不绑定单一不可替换闭源组件 | P1 §4.3（1） | VERIFIED | — |
-| REQ-TECH-002 | 二维/三维/楼层地图加载、标注、拾取 | P1 §4.3（2） | PENDING | ISSUE-006 |
+| REQ-TECH-002 | 二维/三维/楼层地图加载、标注、拾取 | P1 §4.3（2）；CLR-006 | RESOLVED_BY_SIMULATED_CLARIFICATION | 甲方提供地图/服务和合法使用权；乙方不负责测绘或三维建模 |
 | REQ-TECH-003 | 视频应支持 GB/T 28181；厂商 SDK/ONVIF 为宜 | P1 §4.3（3） | VERIFIED | 保留强度 |
-| REQ-TECH-004 | 统一消息 APP/短信，≥20路并行 | P1 §4.3（4） | PENDING | ISSUE-004 |
+| REQ-TECH-004 | 统一消息 APP/短信，≥20路并行 | P1 §4.3（4）；CLR-004 | RESOLVED_BY_SIMULATED_CLARIFICATION | 正常验收通道验证；技术能力未验收 |
 | REQ-TECH-005 | 离线安装、无运行时在线激活、开源许可证合规 | P1 §4.3（5） | VERIFIED | — |
 | REQ-TECH-006 | 北京时间 UTC+8、ISO 8601 时间戳 | P1 §4.3（6） | VERIFIED | — |
 | REQ-KEYTECH-001 | 预案并行处理保证≤3秒 | P1 §4.4（1） | VERIFIED | KN-003 |
-| REQ-KEYTECH-002 | 消息重试/回执保证≥99% | P1 §4.4（2） | PENDING | ISSUE-004 |
-| REQ-KEYTECH-003 | 人员≤2秒刷新、视频、物资地图聚合 | P1 §4.4（3） | PENDING | ISSUE-002/006 |
+| REQ-KEYTECH-002 | 消息重试/回执保证≥99% | P1 §4.4（2）；CLR-004 | RESOLVED_BY_SIMULATED_CLARIFICATION | 责任已澄清，消息性能仍待验证 |
+| REQ-KEYTECH-003 | 人员≤2秒刷新、视频、物资地图聚合 | P1 §4.4（3）；CLR-002、006 | RESOLVED_BY_SIMULATED_CLARIFICATION | 甲方提供源能力，乙方适配；定位与地图仍待验证 |
 | REQ-KEYTECH-004 | 流程/模板配置化且无需改代码 | P1 §4.4（4） | VERIFIED | — |
 | REQ-KEYTECH-005 | 跨系统容错、超时、降级 | P1 §4.4（5） | VERIFIED | — |
 | REQ-KEYTECH-006 | 二维码/地理围栏防作弊 | P1 §4.4（6） | VERIFIED | — |
@@ -96,8 +96,8 @@
 | FR-01.3 | 应急处置任务管理 | ★ | VERIFIED；KN-003 |
 | FR-01.4 | 预案附件与预案库 | 否 | VERIFIED |
 | FR-02.1 | 事件救援动态监控 | ★ | VERIFIED |
-| FR-02.2 | 周边人员位置监控 | ★ | PENDING；ISSUE-002 |
-| FR-02.3 | 视频联动查看 | ★ | CONFLICT；ISSUE-001 |
+| FR-02.2 | 周边人员位置监控 | ★ | RESOLVED_BY_SIMULATED_CLARIFICATION；CLR-002；技术/现场验证待 B 复核 |
+| FR-02.3 | 视频联动查看 | ★ | RESOLVED_BY_SIMULATED_CLARIFICATION；CLR-001；历史回放按强制要求，技术验证待 B 复核 |
 | FR-02.4 | 物资站点与配置 | 否 | VERIFIED |
 | FR-03.1 | 应急人员管理 | ★ | VERIFIED |
 | FR-03.2 | 应急值班计划 | 否 | VERIFIED |
@@ -113,14 +113,14 @@
 | FR-06.1 | 打卡小组 | ★ | VERIFIED |
 | FR-06.2 | 打卡点位 | ★ | VERIFIED |
 | FR-06.3 | 就位统计 | ★ | VERIFIED |
-| FR-06.4 | 打卡预警 | ★ | VERIFIED_WITH_DEPENDENCY |
+| FR-06.4 | 打卡预警 | ★ | RESOLVED_BY_SIMULATED_CLARIFICATION；CLR-004；消息通道待验证 |
 | FR-07.1 | 预案类型 | 否 | VERIFIED |
 | FR-07.2 | 事件类型 | ★ | VERIFIED |
 | FR-07.3 | 物资站点 | ★ | VERIFIED |
 | FR-07.4 | 评估模板 | ★ | VERIFIED |
 | FR-07.5 | 核实审批流程 | ★ | VERIFIED |
 | FR-08.1 | 移动事件 | ★ | VERIFIED |
-| FR-08.2 | 移动任务 | ★ | VERIFIED_WITH_DEPENDENCY |
+| FR-08.2 | 移动任务 | ★ | RESOLVED_BY_SIMULATED_CLARIFICATION；CLR-004、007；消息与 H5 集成待验证 |
 | FR-08.3 | 移动知识库 | 否 | VERIFIED |
 | FR-08.4 | 移动演练 | ★ | VERIFIED |
 | FR-08.5 | 移动打卡 | ★ | VERIFIED |
@@ -128,8 +128,8 @@
 | FR-09.1 | 应急信息统计 | ★ | VERIFIED |
 | FR-10.1 | 综合安防显示 | ★ | VERIFIED |
 | FR-11.1 | 物联网对接 | ★ | VERIFIED_WITH_DEPENDENCY |
-| FR-11.2 | 中台对接 | ★ | VERIFIED_WITH_DEPENDENCY |
-| FR-11.3 | 视频与信息发布对接 | ★ | CONFLICT；ISSUE-001/003 |
+| FR-11.2 | 中台对接 | ★ | RESOLVED_BY_SIMULATED_CLARIFICATION；CLR-005；业务适配待验证 |
+| FR-11.3 | 视频与信息发布对接 | ★ | RESOLVED_BY_SIMULATED_CLARIFICATION；CLR-001、003；视频回放强制、门禁“应支持”，待 B 复核 |
 
 ## D. 数据、非功能与接口条款
 
@@ -148,17 +148,17 @@
 | NFR-USE-001—004 | 中文术语、培训后独立操作、二次确认/演练区分、错误引导 | §7.4（1）—（4） | VERIFIED |
 | NFR-REL-001 | ★7×24、试运行≥99.5% | §7.5（1） | VERIFIED |
 | NFR-REL-002—004 | 重试恢复、后备电源、MTTR≤2小时/异常拦截 | §7.5（2）—（4） | VERIFIED_WITH_DEPENDENCY |
-| NFR-SEC-001 | ★等保不低于二级应用条款 | §7.6（1） | PENDING；ISSUE-011 |
-| NFR-SEC-002 | ★扫描/渗透，高危清零 | §7.6（2） | VERIFIED |
+| NFR-SEC-001 | ★等保不低于二级应用条款 | §7.6（1）；CLR-011 | RESOLVED_BY_SIMULATED_CLARIFICATION；责任已分工，应用安全待验证 |
+| NFR-SEC-002 | ★扫描/渗透，高危清零 | §7.6（2）；CLR-011 | RESOLVED_BY_SIMULATED_CLARIFICATION；乙方应用侧责任，指标不弱化 |
 | NFR-SEC-003—004 | 口令/令牌/限流；日志防篡改≥180天 | §7.6（3）—（4） | VERIFIED |
 | NFR-MAINT-001—003 | 模块配置化；源码/构建/文档/健康/日志；单测≥70% | §7.7（1）—（3） | VERIFIED |
 | NFR-PORT-001 | ★一键部署≤2小时且第三方实测 | §7.8（1） | VERIFIED |
 | NFR-PORT-002—003 | 配置代码分离；数据完整导出迁移 | §7.8（2）—（3） | VERIFIED |
-| INT-EXT-001 | 视频 GB/T 28181、实时/云台授权/历史回放 | §8.1（1） | CONFLICT；ISSUE-001 |
-| INT-EXT-002 | 信息发布发布/撤消 | §8.1（2） | VERIFIED_WITH_DEPENDENCY |
-| INT-EXT-003 | 安防消防接入及门禁开启指令 | §8.1（3） | CONFLICT；ISSUE-003 |
-| INT-EXT-004 | 短信网关复用平台通道 | §8.1（4） | PENDING；ISSUE-004 |
-| INT-IN-001—003 | 物联网、中台、内部统一API且界面不得直连库 | §8.2（1）—（3） | VERIFIED_WITH_DEPENDENCY |
+| INT-EXT-001 | 视频 GB/T 28181、实时/云台授权/历史回放 | §8.1（1）；CLR-001、010 | RESOLVED_BY_SIMULATED_CLARIFICATION；历史回放强制，M2 连通和性能待验证 |
+| INT-EXT-002 | 信息发布发布/撤消 | §8.1（2）；CLR-010 | RESOLVED_BY_SIMULATED_CLARIFICATION；接口待验证 |
+| INT-EXT-003 | 安防消防接入及门禁开启指令 | §8.1（3）；CLR-003、010 | RESOLVED_BY_SIMULATED_CLARIFICATION；门禁“应支持”，安全联锁待验证 |
+| INT-EXT-004 | 短信网关复用平台通道 | §8.1（4）；CLR-004、010 | RESOLVED_BY_SIMULATED_CLARIFICATION；通道由甲方提供，乙方适配验证 |
+| INT-IN-001—003 | 物联网、中台、内部统一API且界面不得直连库 | §8.2（1）—（3）；CLR-005、010 | RESOLVED_BY_SIMULATED_CLARIFICATION；接口能力待验证 |
 | INT-OPEN-001 | 至少5类REST API，鉴权/审计/限流/OpenAPI 3.0 | §8.3 | VERIFIED |
 
 ## E. 实施、服务、验收与交付
@@ -179,12 +179,12 @@
 | ACC-INT-001 | 视频/发布/物联网/中台联动及一次模拟联合演练 | §10.2（3） | VERIFIED |
 | ACC-SEC-001 | 高危清零，越权/注入全通过 | §10.2（4） | VERIFIED |
 | ACC-PORT-001 | 非乙方人员干净环境独立部署一次成功 | §10.2（5） | VERIFIED |
-| DEL-SW-001 | 源码/构建、镜像、初始化脚本、移动安装包/H5 | §10.3 软件行 | PENDING；移动形态 ISSUE-007 |
+| DEL-SW-001 | 源码/构建、镜像、初始化脚本、H5 包 | §10.3 软件行；CLR-007 | RESOLVED_BY_SIMULATED_CLARIFICATION；不要求另做原生 APP |
 | DEL-DOC-001 | 计划、SRS、概要/详细/数据库/接口设计 | §10.3 文档第1行 | VERIFIED |
 | DEL-DOC-002 | 测试计划、测试设计、测试报告 | §10.3 文档第2行 | VERIFIED |
 | DEL-DOC-003 | 用户、部署运维、培训材料 | §10.3 文档第3行 | VERIFIED |
 | DEL-DOC-004 | 开源许可证说明、追踪矩阵、试运行、总结 | §10.3 文档第4行 | VERIFIED |
-| DEL-DATA-001 | 基础数据初始化成果，双方确认 | §10.3 数据行 | PENDING；ISSUE-009 |
+| DEL-DATA-001 | 基础数据初始化成果，双方确认 | §10.3 数据行；CLR-009 | RESOLVED_BY_SIMULATED_CLARIFICATION；甲方确认业务正确性，乙方清洗映射/导入/技术校验 |
 | DEL-OTHER-001 | 演练记录、培训记录、质保承诺函 | §10.3 其他行 | VERIFIED |
 | DOC-QA-001—004 | 完整一致、双向追踪、第三方可运维、源文件+PDF | §10.4（1）—（4） | VERIFIED |
 
@@ -207,4 +207,21 @@
 
 ## G. 未决项索引
 
-`ISSUE-G1-01-001` 至 `ISSUE-G1-01-012` 详见 `control/issues.md`。其中 `ISSUE-G1-01-001` 与 `ISSUE-G1-01-003` 涉及 P1 同源强制级别不一致，按 §2 必须由招标人书面澄清，因此 G1-01 当前为 BLOCKED。
+`ISSUE-G1-01-001` 至 `ISSUE-G1-01-012` 详见 `control/issues.md`。截至 2026-09-09 的 `OPEN/BLOCKING` 历史保留；2026-09-10 经课程模拟书面裁决与 C 映射后，12 项均为 `RESOLVED / PENDING_B_REVIEW`，仅表示需求歧义已裁决。G1-01 当前为 `REVIEW`，技术验证与 B 复核尚未完成，Issue 均未 `CLOSED`。
+
+## H. 课程模拟书面裁决证据索引
+
+| CLR | Issue | 关联条款 | 证据与状态 |
+| --- | --- | --- | --- |
+| CLR-001 | ISSUE-G1-01-001 | REQ-REL-001、FR-02.3、FR-11.3、INT-EXT-001、KN-010、KN-060 | `G1-01_clarification_record.md#clr-001`；需求歧义已裁决，视频能力待验证 |
+| CLR-002 | ISSUE-G1-01-002 | REQ-OOS-002、REQ-KEYTECH-003、FR-02.2、KN-008、KN-009 | `#clr-002`；定位能力待现场验证 |
+| CLR-003 | ISSUE-G1-01-003 | REQ-REL-003、FR-11.3、INT-EXT-003 | `#clr-003`；门禁安全联锁待验证 |
+| CLR-004 | ISSUE-G1-01-004 | REQ-REL-006、REQ-TECH-004、REQ-KEYTECH-002、FR-06.4、FR-08.2、INT-EXT-004、KN-006、KN-007 | `#clr-004`；消息能力待验证 |
+| CLR-005 | ISSUE-G1-01-005 | REQ-REL-005、REQ-ARCH-001、FR-11.2、INT-IN-001—003 | `#clr-005`；中台能力待验证 |
+| CLR-006 | ISSUE-G1-01-006 | REQ-TECH-002、REQ-KEYTECH-003 | `#clr-006`；地图适配待验证 |
+| CLR-007 | ISSUE-G1-01-007 | REQ-DEPLOY-004、FR-08.2、DEL-SW-001 | `#clr-007`；H5 宿主集成待验证 |
+| CLR-008 | ISSUE-G1-01-008 | REQ-OOS-003、REQ-DEPLOY-001、REQ-DEPLOY-002 | `#clr-008`；部署环境待验证 |
+| CLR-009 | ISSUE-G1-01-009 | DEL-DATA-001 | `#clr-009`；数据初始化待验证 |
+| CLR-010 | ISSUE-G1-01-010 | REQ-REL-002—004、INT-EXT-001—004、INT-IN-001—003、RISK-001—003 | `#clr-010`；既有接口与 M2 连通待验证 |
+| CLR-011 | ISSUE-G1-01-011 | NFR-SEC-001、NFR-SEC-002、KN-042、KN-043 | `#clr-011`；应用安全待验证 |
+| CLR-012 | ISSUE-G1-01-012 | REQ-PROJ-001 | `#clr-012`；匿名称谓已统一，待 B 映射复核 |

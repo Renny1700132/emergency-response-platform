@@ -35,7 +35,7 @@
 
 ## 自动 Prompt 日志
 
-所有有实际产出的 AI 任务必须读取并遵守 `governance/ai_logging.md`。任务实质执行前必须先把用户 Prompt 完整原文追加到 `logs/prompts/YYYY-MM-DD.md`；任务完成后、正式回复前必须把最终用户可见回答完整原文写入同一条日志。Prompt 摘要继续保留，但不能替代原文证据。无法导出完整对话时记录 `raw_dialogue_available: false`，仍须保留这两段最低证据，且不得倒推或伪造隐藏内容。
+所有有实际产出的 AI 任务必须读取并遵守 `governance/ai_logging.md`。任务实质执行前必须按主责成员把用户 Prompt 完整原文追加到 `logs/prompts/YYYY-MM-DD-A.md`、`-B.md` 或 `-C.md`；非成员系统维护任务使用 `-META.md`。旧的共享日期日志原样保留。任务完成后、正式回复前必须把最终用户可见回答完整原文写入同一条日志。Prompt 摘要继续保留，但不能替代原文证据。无法导出完整对话时记录 `raw_dialogue_available: false`，仍须保留这两段最低证据，且不得倒推或伪造隐藏内容。
 
 ## 日常工作流
 

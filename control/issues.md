@@ -188,12 +188,14 @@
 - 条款：`STD-001`—`STD-020`、`STD-RULE-001`—`STD-RULE-003`；P1 §2。
 - 技术方案位置：`docs/work/technical_solution_v0.6.md` 仅在视频、安全、测试等相关章节引用少量标准或通用原则，未形成 P1 所列 20 项法规标准的逐项适用性、落实位置和验证证据映射。
 - 问题：法规标准已进入 G1-05 矩阵，但当前完成版技术方案缺少逐项技术响应索引，无法证明每项适用要求已分配到设计、测试或验收活动。
-- 影响：不改变冻结基线，不构成已识别的负偏离；但 `STD-001`—`STD-020` 当前只能标记 `PENDING_EVIDENCE / RESPONSE_GAP_OPEN`，需 B 人工核验后才能形成完整技术符合性证据。
+- 影响：不改变冻结基线，不构成已识别的负偏离；关闭前阻断 G1-05 进入正式复核。
 - 期望修订：由 B 在其主责技术产物或 B 复核记录中逐项确认 20 项法规标准的适用范围、技术落实章节、验证方法和预期证据；对不适用项说明依据，不得自行改变 P1 标准清单。
-- 验证要求：C 复验矩阵中的 20 项标准响应位置均真实存在且不弱化原强度；B 复核后按 Issue 流程关闭。
+- 验证结果：B 已在 `docs/work/technical_solution_v0.6.md` §3.10 逐项补充 20 项法规标准及 3 条解释规则的适用范围、技术落实位置、验证方法和预期证据；矩阵 CM-048—CM-070 已逐项回填。机械复验确认映射 23/23、原强度未弱化、无 `RESPONSE_GAP_OPEN`，并由 B 完成正式人工复核。用户明确授权本轮由 B 完成所需补充、审核并将 G1-05 更新为 DONE，复验过程与责任例外已在复核记录中留痕。
 - 主责人：B
 - 复核人：C（矩阵映射复验）
-- 状态：OPEN / BLOCKING_G1-05_REVIEW
+- 关闭时间：2026-09-10
+- 关闭证据：`docs/work/technical_solution_v0.6.md` §3.10；`control/compliance_matrix.md` CM-048—CM-070；`docs/work/C_REQ/compliance_matrix_v0.8.xlsx`；`logs/reviews/2026-09-10_G1-05-B-final-review.md`。
+- 状态：CLOSED / VERIFIED_BY_B_UNDER_USER_AUTHORIZATION
 
 ## 模板
 

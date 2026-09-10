@@ -2,6 +2,31 @@
 
 本文件只记录当前用户 Prompt 对参考方法/过程规则的覆盖。它不能作为修改真实项目功能、★条款、性能、边界、验收、甲方职责、质保/SLA 或法规标准的依据。
 
+## OVR-011
+
+- 时间：2026-09-10 12:46 +08:00
+- Prompt 要求：从 G1-02 起，A/B/C 分别使用 `logs/prompts/YYYY-MM-DD-A.md`、`-B.md`、`-C.md`，特殊系统维护任务可用 `-META.md`；旧共享日志原样保留。
+- 被覆盖规则：现行 `governance/ai_logging.md`、`AGENTS.md`、`README.md` 与 `prompts/README.md` 使用共享 `logs/prompts/YYYY-MM-DD.md`。
+- 来源文档：上述 Workspace 治理文件。
+- 冲突说明：共享日期日志会使三人并行任务修改同一文件，增加无意义合并冲突。
+- 实际执行规则：正式课程任务严格按 `tasks.md` 主责成员选择角色隔离日志；不重命名、拆分、回写或删除旧日志。
+- 风险：日志检索需同时考虑旧格式与新格式；并行 Git 冲突风险降低，审计证据保持完整。
+- 是否已在 Preflight 提示：是；冲突编号 `PFC-G1-02-01`。
+- 状态：ACTIVE
+
+## OVR-012
+
+- 时间：2026-09-10 12:46 +08:00
+- Prompt 要求：授权执行 G1-02，将其主责由 C 改为 A，并依据用户已确认的 A/B/C 讨论结果冻结 `BASELINE-G1-V0.1`；G1-01、G1-01-A、G1-01-A-BR 完成，12 项 Issue 解除 Blocking。
+- 被覆盖规则：现行 `AGENTS.md`/`tasks.md` 暂停 G1-02、将 G1-02 设为 C 主责且 BLOCKED；C 控制文件页眉和 Issue 状态仍保留待澄清口径。
+- 来源文档：`AGENTS.md`、`tasks.md`、`control/facts.md`、`control/key_numbers.md`、`control/issues.md`。
+- 冲突说明：Workspace 状态尚未回填最新人工决策，但本次 P0 Prompt 已明确确认裁决、主责调整和冻结授权。
+- 实际执行规则：保留原需求书和控制文件历史；G1-02 改由 A 整理冻结，12 项 Issue 记录裁决并置为 `RESOLVED / NON_BLOCKING`；不由 A 无必要改写 C 的 facts/key_numbers/compliance_matrix。
+- 风险：若未同步更新下游工作稿，可能继续引用旧的阻塞状态；通过冻结 Baseline、A 一致性 Review 和后续 B/C 任务修订消除。
+- 是否已在 Preflight 提示：是；冲突编号 `PFC-G1-02-02`、`PFC-G1-02-03`。
+- 是否涉及真实项目事实：涉及已由用户明确确认的模拟甲方澄清；不修改原始用户需求书。
+- 状态：ACTIVE
+
 ## OVR-001
 
 - 时间：2026-09-09 15:52 +08:00

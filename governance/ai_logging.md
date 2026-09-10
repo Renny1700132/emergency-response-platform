@@ -37,7 +37,7 @@ PUSHED
 ### BEFORE_TASK
 
 1. 收到正式任务后先确定 Task ID，并按 `governance/git_workflow.md` 完成 `REPOSITORY_BOOTSTRAP → REMOTE_SYNC`。此阶段只允许检查/同步仓库，不得读取业务材料、开展实质性分析或修改 Task 产物。
-2. 同步成功后创建或追加 `logs/prompts/YYYY-MM-DD.md`，建立 `LOG-<TASK-ID>-<SEQ>`，记录 `CREATED`。
+2. 同步成功后，依据 `tasks.md` 的实际执行成员创建或追加角色隔离日志 `logs/prompts/YYYY-MM-DD-<ROLE>.md`，建立 `LOG-<TASK-ID>-<SEQ>`，记录 `CREATED`。正式项目任务的 `<ROLE>` 只能为 `A`、`B` 或 `C`；确实不属于三名成员的系统维护任务可使用 `META`，不得把普通课程任务随意归入 `META`。
 3. 把用户本次输入的 Prompt 完整原文逐字写入 `USER_PROMPT_RAW`。不能只留摘要，不能改写、润色、压缩或补全用户没有提供的内容。
 4. 确认日志落盘成功并记录 `PROMPT_LOGGED` 后，才可读取完整任务材料、进行 Preflight、分析或修改文件，并记录 `RUNNING`。
 5. 在 `tasks.md` 确认主责、复核、输入、输出和状态；检查 `control/facts.md`、`control/key_numbers.md`、`control/issues.md`。
@@ -63,6 +63,18 @@ PUSHED
 ## 4. 日志字段与原文证据
 
 原七字段必须继续保留：时间戳、操作者、任务关联、工具与模型、Prompt 摘要、产出处置、关联 PR/commit。
+
+### 4.1 按角色隔离的日志文件
+
+自 2026-09-10 的 G1-02 起，A/B/C 不再共写共享日期日志，分别使用：
+
+- `logs/prompts/YYYY-MM-DD-A.md`
+- `logs/prompts/YYYY-MM-DD-B.md`
+- `logs/prompts/YYYY-MM-DD-C.md`
+
+正式项目任务按 `tasks.md` 中的主责身份选择文件；同一天同一成员的多项任务追加到同一角色文件，不得覆盖。确实不属于 A/B/C 的系统维护任务使用 `logs/prompts/YYYY-MM-DD-META.md`。
+
+生效前已有的 `logs/prompts/YYYY-MM-DD.md` 属于真实历史证据，必须原样保留，禁止重命名、拆分、按成员重组、回写或删除。新制度只约束生效后的任务。
 
 在七字段基础上，每条日志还必须包含：
 

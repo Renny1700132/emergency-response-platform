@@ -53,24 +53,23 @@ def add_table(doc, rows):
 
 def main():
     doc = Document(); sec = doc.sections[0]
-    sec.top_margin = Cm(2.54); sec.bottom_margin = Cm(2.2); sec.left_margin = Cm(2.54); sec.right_margin = Cm(2.54)
+    sec.page_width = Cm(21); sec.page_height = Cm(29.7)
+    sec.top_margin = Cm(2.54); sec.bottom_margin = Cm(2.54); sec.left_margin = Cm(2.54); sec.right_margin = Cm(2.54)
     styles = doc.styles
-    for name, sz in [('Normal',10.5),('Heading 1',15),('Heading 2',13),('Heading 3',11.5)]:
+    for name, sz in [('Normal',12),('Heading 1',16),('Heading 2',13),('Heading 3',12)]:
         s=styles[name]; s.font.name='宋体'; s._element.rPr.rFonts.set(qn('w:eastAsia'),'宋体'); s.font.size=Pt(sz); s.font.bold=name!='Normal'
     # header/footer
-    hp=sec.header.paragraphs[0]; hp.alignment=WD_ALIGN_PARAGRAPH.CENTER; r=hp.add_run('某自然博物馆智能运营中心建设项目——应急管理子系统  项目建议书'); set_font(r,9)
+    sec.header.paragraphs[0].text = ''
     add_page_number(sec.footer.paragraphs[0])
     # cover
     for _ in range(5): doc.add_paragraph()
-    p=doc.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.CENTER; r=p.add_run('某自然博物馆智能运营中心建设项目——应急管理子系统'); set_font(r,18,True)
-    p=doc.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.CENTER; r=p.add_run('项 目 建 议 书'); set_font(r,24,True)
+    p=doc.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.RIGHT; r=p.add_run('文档编号：【待人工确认】    版本号：V0.9'); set_font(r,12)
+    p=doc.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.RIGHT; r=p.add_run('密  级：【待人工确认】'); set_font(r,12)
+    p=doc.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.CENTER; r=p.add_run('某自然博物馆智能运营中心建设项目——应急管理子系统'); set_font(r,22,True); r.font.name='黑体'; r._element.rPr.rFonts.set(qn('w:eastAsia'),'黑体')
+    p=doc.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.CENTER; r=p.add_run('项 目 建 议 书'); set_font(r,28,True); r.font.name='黑体'; r._element.rPr.rFonts.set(qn('w:eastAsia'),'黑体')
     for _ in range(7): doc.add_paragraph()
-    for label,value in [('版本','V0.9'),('状态','符合性复核前候选稿'),('编制','A（项目经理 PM / 总编）'),('复核','C（符合性复核）'),('编制日期','2026 年 9 月 10 日')]:
+    for label,value in [('编制单位','【待人工确认】'),('编制','A（项目经理 PM / 总编）'),('审核','C（符合性复核）'),('批准','【待人工确认】'),('编制日期','2026 年 9 月 10 日')]:
         p=doc.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.CENTER; r=p.add_run(f'{label}：{value}'); set_font(r,12)
-    doc.add_page_break()
-    doc.add_heading('目录', 1)
-    for item in ['修订记录','1 项目背景与问题理解','2 建设目标与建设内容','3 初步总体方案','4 初步实施思路','5 项目价值与可行性分析','6 主要风险及应对思路','7 结论与建议']:
-        add_para(doc, item)
     doc.add_page_break()
     # parse Markdown preserving material content
     lines=SOURCE.read_text(encoding='utf-8').splitlines(); i=0; table=[]
@@ -93,7 +92,7 @@ def main():
             p=doc.add_paragraph(style='List Bullet'); p.paragraph_format.line_spacing=1.5; r=p.add_run(line[2:]); set_font(r)
         else:
             if table: add_table(doc,table); table=[]
-            add_para(doc,line)
+            p=add_para(doc,line); p.paragraph_format.first_line_indent=Cm(0.74); p.alignment=WD_ALIGN_PARAGRAPH.JUSTIFY
         i+=1
     if table: add_table(doc,table)
     OUT.parent.mkdir(parents=True,exist_ok=True); doc.save(OUT)

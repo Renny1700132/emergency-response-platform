@@ -1,6 +1,6 @@
 # G1-01 条款清单与来源定位工作稿
 
-- 主责：C；复核：B；版本：0.2；状态：`REVIEW_PENDING_B_POST_CLARIFICATION`
+- 主责：C；复核：B；版本：0.2；状态：`ACCEPTED_AS_BASELINE_INPUT / G1-05_MAPPED`
 - P1：`docs/用户需求书-03-应急管理子系统.docx`，SHA-256 `045F1E4083AF5D7CB8C3A18451A6D4F173D1F5F5B85EE7187D989CA36037B28A`，Word 渲染 24 页。
 - P2：`docs/通关实验任务书1-立项竞标.pdf`，SHA-256 `8093C40786FC20F6390B59716F03FCE3CCF37AD1B83DE480B5C2EEA2C90E70E6`，4 页。
 - 定位规则：优先采用章节、表名、FR/PE/里程碑等稳定锚点；页码仅辅助。`VERIFIED` 表示忠实取自原文，不代表 B 已复核；`RESOLVED_BY_SIMULATED_CLARIFICATION` 表示需求歧义已有课程模拟裁决，但技术能力未验收且仍待 B 复核。裁决证据见 `G1-01_clarification_record.md`。
@@ -207,7 +207,7 @@
 
 ## G. 未决项索引
 
-`ISSUE-G1-01-001` 至 `ISSUE-G1-01-012` 详见 `control/issues.md`。截至 2026-09-09 的 `OPEN/BLOCKING` 历史保留；2026-09-10 经课程模拟书面裁决与 C 映射后，12 项均为 `RESOLVED / PENDING_B_REVIEW`，仅表示需求歧义已裁决。G1-01 当前为 `REVIEW`，技术验证与 B 复核尚未完成，Issue 均未 `CLOSED`。
+`ISSUE-G1-01-001` 至 `ISSUE-G1-01-012` 详见 `control/issues.md`。截至 2026-09-09 的 `OPEN/BLOCKING` 历史保留；2026-09-10 经课程模拟书面裁决、C 映射及 B 裁决后技术复核，12 项均为 `RESOLVED / NON_BLOCKING`，仅表示需求歧义已裁决并完成映射复核。G1-01 已为 `DONE`；接口、环境、性能、安全与现场验收证据仍未形成，Issue 不因此冒充现场能力已验证。
 
 ## H. 课程模拟书面裁决证据索引
 

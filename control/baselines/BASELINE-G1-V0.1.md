@@ -8,7 +8,7 @@
 - Owner：A（项目经理 PM / 总编）
 - Reviewers：B、C；冻结依据为 A/B/C 已完成讨论并由用户在 G1-02 Prompt 中确认的决策
 - Frozen At：2026-09-10 13:09 +08:00
-- Git Commit：待提交后回填
+- Git Commit：`3ad0e3723def9f45899b68fe89f99628f4b3ffd3`（Baseline 冻结）；治理提交 `9ba85daf92bb596d80fca039cee0e96210074446`
 - 性质：第一关“立项竞标”阶段编标输入工作基线，不是最终《需求确认书》，也不是下一关正式 SRS 基线
 
 ## 1. Purpose and Applicability

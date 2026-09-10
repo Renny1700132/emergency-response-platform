@@ -5,11 +5,11 @@
 - Task ID：G1-01-A-BR
 - 执行角色：A（PM / 总编）
 - 日期：2026-09-10
-- 状态：PENDING_C_REVIEW
+- 状态：COMPLETED_AND_ACCEPTED_FOR_BASELINE_INPUT
 - 对账对象：`docs/work/A_PM/project_positioning.md`
 - 对账输入：原始《用户需求书-03-应急管理子系统》、`control/facts.md`、`control/key_numbers.md`、`control/compliance_matrix.md`、`control/issues.md`、2026-09-10 甲方模拟书面澄清 12 项
 
-本记录只证明 A 已完成机械核对和工作稿修订，不替代 C 的正式事实基线、合规矩阵、Issue 裁决状态或《澄清与质询记录》。
+本记录证明 A 已完成机械核对和工作稿修订，并已作为 `BASELINE-G1-V0.1` 的输入；它不替代 C 的完整合规矩阵或 G1-05 正式《澄清与质询记录》。
 
 ## 1. 机械核对结果
 
@@ -52,7 +52,7 @@
 
 - 将 12 项甲方模拟书面澄清原文归档至正式《澄清与质询记录》。
 - 更新 `control/facts.md`、`control/key_numbers.md`、`control/compliance_matrix.md` 和 `control/issues.md`，保留 Issue 历史与裁决证据。
-- 对本次修订后的 `project_positioning.md` 完成最终符合性 Review；通过后再决定是否将 G1-01-A 标记为 DONE。
+- 在 G1-05 完成完整合规矩阵和正式澄清记录，继续执行下游符合性检查。
 
 ### B（技术边界复核）
 
@@ -61,4 +61,4 @@
 
 ## 5. 结论
 
-A 侧 Baseline Reconciliation 已完成，`project_positioning.md` 可进入 C 最终符合性复核。由于 C 控制文件尚未吸收本次澄清、合规矩阵仍为模板，本记录和工作稿均不构成冻结基线。
+A 侧 Baseline Reconciliation 已完成并经当前 G1-02 用户 Prompt 确认，可作为 `BASELINE-G1-V0.1` 的输入。冻结权威以 `control/baselines/BASELINE-G1-V0.1.md` 为准；本记录和工作稿本身不构成独立基线。

@@ -4,6 +4,19 @@
 
 ## OVR-013
 
+- 时间：2026-09-10 17:50 +08:00
+- Prompt 要求：G1-06 正式复核开始时不执行 `git fetch` 或 `git pull`，采用用户确认的最新拉取状态。
+- 被覆盖规则：`AGENTS.md`、`governance/ai_logging.md` 与 `governance/git_workflow.md` 默认要求每项正式任务启动时执行 `git fetch origin master`、`git pull --ff-only origin master`。
+- 来源文档：上述 Workspace 治理文件。
+- 冲突说明：当前 P0 对本次 G1-06 启动同步步骤作出一次性明确覆盖。
+- 实际执行规则：启动时只检查工作区、分支和本地 `master...origin/master` 跟踪状态；不执行启动 fetch/pull。内容提交后仍按治理要求执行最终远程安全获取、比较与普通 push。
+- 风险：本地远程跟踪引用可能未反映启动瞬间的服务器端新提交；任务结束前的最终远程检查继续控制覆盖风险。
+- 是否已在 Preflight 提示：是；冲突编号 `PC-G1-06-001`。
+- 是否涉及真实项目事实：否。
+- 状态：ACTIVE
+
+## OVR-014
+
 - 时间：2026-09-11 15:05 +08:00
 - Prompt 要求：成员 C 对 A 已完成的 G1-07 采用“内容合理即可”的宽松标准复核，通过后直接更新为 `DONE` 并推送，以赶进度。
 - 被覆盖规则：`tasks.md` 将 G1-06 列为 G1-07 前置任务，但 G1-06 当前仍为 `REVIEW`；通常应先完成 G1-06 复核，再最终确认 G1-07 的 WBS、里程碑和资源关联。

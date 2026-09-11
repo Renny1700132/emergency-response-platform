@@ -155,3 +155,34 @@ A 需依据四项 Issue 修订唯一正式 Markdown 和配套 PPTX/DOCX；不得
 ### 7.4 结论
 
 复验结论：`REWORK_REQUIRED`。ISSUE-G1-06-002—004 已由 C 验证关闭；ISSUE-G1-06-001 仍为 BLOCKER，另新增非阻断 ISSUE-G1-06-005。G1-06 不准出并保持 `REVIEW`，由 A 再次修订后交 C 复验。
+
+## 8. A V1.2 修订后 C 再复验（2026-09-11）
+
+### 8.1 复验对象与 Preflight
+
+- 修订提交：`2e30d33662530b2fef92a9d48ad893f68922d983`（`docs(G1-06): close remaining plan rework findings`）。
+- 再复验文件：`project_plan_v1.md` V1.2、`project_plan_v1_figures.pptx`、正式 `03-项目计划v1（WBS与甘特图）.docx`、`control/issues.md`。
+- 冻结基线：`BASELINE-G1-V0.1`；复查 KN-049、KN-050、KN-052—057，未发现新增需求冲突、里程碑弱化或需求外承诺。
+- Preflight Conflict Check：PASS；本轮仅验证 A 的修订并维护 C 主责 Review/Issue 与任务状态，不修改 A/B 主责正式产物。
+- Markdown SHA-256：`E2BB5007C793A5DD5827A9157614CDA44F0148D7AD69CAAF0F0527E79DC4AF25`。
+- PPTX SHA-256：`5D5FAF0E0BE32DD15AFEF7D480A0C7850C1AB1E415A047C132E485A06865EBE5`。
+- DOCX SHA-256：`DD029CC9270A908015E946DA8F4F9F9E10CFA3910DE900178809188023A8FBAB`。
+
+### 8.2 剩余 Issue 复验
+
+| Issue | 再复验结论 | 关闭证据 |
+|---|---|---|
+| ISSUE-G1-06-001 | PASS / CLOSED | V1.2 的 6.1、6.2 与 §3.2 已明确 M3 初验后先形成启动记录并立即连续监测；6.2 与培训并行，培训期间监测不中断，完整 W17—W20 均有逐周输出、前置与判据；PPTX 图 3-1/3-2 同步。 |
+| ISSUE-G1-06-005 | PASS / CLOSED | 正式 Word 经 Microsoft Word 只读导出为 17 页，逐页渲染检查无异常空白页；正文中的 V1.2、6.1/6.2、M4/M5 与服务数字同 Markdown 一致。 |
+
+### 8.3 产物与滚动关联检查
+
+- PPTX：标准工具首次因缺少运行时环境变量失败；补齐捆绑运行时变量后包完整性及溢出检查 PASS，4/4 页渲染检查无裁切、重叠或不可识别内容。
+- DOCX：标准 `render_docx.py` 因环境未提供捆绑 `soffice.exe` 再次失败，未将失败写成成功；改用 Microsoft Word 只读导出 PDF，17/17 页逐页检查通过。
+- Markdown、PPTX、DOCX 的 W17—W20 连续试运行、M4→M5、培训并行、职责与服务口径一致。
+- 按 OVR-014 对 G1-07 的 13 项计划关联执行非阻断滚动复查：所引 WBS、M2—M5 与职责均可在 G1-06 V1.2 中对应，未发现需重开 G1-07 的实质冲突；风险登记册原有“待 G1-06 Review 后复核”文字作为已完成版本的历史状态保留，不修改 A 主责产物。
+- 原始需求资料和 A/B 主责文件未被 C 修改；G1-08 未启动。
+
+### 8.4 最终结论
+
+再复验结论：`ACCEPTED`。ISSUE-G1-06-001—005 已全部由 C 验证关闭，G1-06 允许准出并更新为 `DONE`。本结论不自动启动 G1-08。

@@ -123,3 +123,35 @@ A 需依据四项 Issue 修订唯一正式 Markdown 和配套 PPTX/DOCX；不得
 4. 明确 KN-052 培训时长、KN-053—057 服务/SLA 安排及 §10.3 完整交付物形成节点。
 
 全部 BLOCKER/MAJOR 经 A 修订并由 C 复验关闭后，方可将 G1-06 改为 `DONE`。G1-07 未启动。
+
+## 7. A 修订后 C 复验（2026-09-10）
+
+### 7.1 复验对象与方法
+
+- 修订提交：`fa8d049`（`docs(G1-06): resolve plan review findings`）。
+- 复验文件：`project_plan_v1.md`、`project_plan_v1_figures.pptx`、`project_plan_v1.docx`、`control/issues.md`。
+- Markdown SHA-256：`709D9782DE6781A199868EF7E3F85CDA1CE3A6CCBD57A724C6D4315E21F62439`。
+- PPTX SHA-256：`B5BCC855F3640D04B12B9CEDAB93473BDA9B770E51CD054A2F2C8CE7C0A496CE`。
+- DOCX SHA-256：`B22B82EC69A6B277DBF198BBB38173071614A083142919AA2607007E3A12C0C5`。
+- PPTX：包完整性检查通过，4/4 页渲染及逐页查看，无裁切、重叠或不可识别内容。
+- DOCX：Documents 技能标准渲染因运行环境缺少捆绑 `soffice.exe` 失败；已如实保留失败结果，并用 Microsoft Word 只读导出 PDF 后渲染 18/18 页进行替代核验。
+
+### 7.2 Issue 复验结果
+
+| Issue | 复验结论 | 证据与说明 |
+|---|---|---|
+| ISSUE-G1-06-001 | BLOCKER / OPEN | W18—W20 逐周证据已补齐，M4→M5 顺序已明确；但 6.2 首周证据以前置 6.1 整体完成为条件，而 6.1 在 W17 含合计 3.5 天培训，未明确试运行起始时点及并行监测，仍不能证明完整 W17 和初验后连续 4 周。 |
+| ISSUE-G1-06-002 | PASS / CLOSED | 4.12、职责表、风险表和图 4-1 已统一：B 负责数据初始化技术实施，C 仅提供规则、对账及符合性输入。 |
+| ISSUE-G1-06-003 | PASS / CLOSED | W14—W16 的日级顺序及 W15“先 4.11、后第 4—5 工作日 5.1”已消除单一 B 资源的前置冲突。 |
+| ISSUE-G1-06-004 | PASS / CLOSED | 五类培训时长、12 个月质保、三级 SLA、服务渠道、期满报告和 §10.3 交付物均已有明确计划承接。 |
+| ISSUE-G1-06-005 | MINOR / OPEN | Word 第 16 页为空白页，仅影响正式排版，不单独阻断准出。 |
+
+### 7.3 一致性与范围检查
+
+- Markdown、PPTX 与 Word 的核心计划口径一致；PPTX 已同步 M4→M5、W17—W20 运行记录、数据初始化职责及质保启动。
+- 未修改 A 主责正式产物，未修改原始需求资料，未启动 G1-08 或其他业务任务。
+- 原复核记录末尾“G1-07 未启动”为首次复核时点的历史事实；当前仓库中 G1-07 已为 `DONE`。按 `OVR-014`，其计划关联滚动复查待 G1-06 完成后执行，本轮不越界处理。
+
+### 7.4 结论
+
+复验结论：`REWORK_REQUIRED`。ISSUE-G1-06-002—004 已由 C 验证关闭；ISSUE-G1-06-001 仍为 BLOCKER，另新增非阻断 ISSUE-G1-06-005。G1-06 不准出并保持 `REVIEW`，由 A 再次修订后交 C 复验。

@@ -2,6 +2,19 @@
 
 本文件只记录当前用户 Prompt 对参考方法/过程规则的覆盖。它不能作为修改真实项目功能、★条款、性能、边界、验收、甲方职责、质保/SLA 或法规标准的依据。
 
+## OVR-013
+
+- 时间：2026-09-10 17:50 +08:00
+- Prompt 要求：G1-06 正式复核开始时不执行 `git fetch` 或 `git pull`，采用用户确认的最新拉取状态。
+- 被覆盖规则：`AGENTS.md`、`governance/ai_logging.md` 与 `governance/git_workflow.md` 默认要求每项正式任务启动时执行 `git fetch origin master`、`git pull --ff-only origin master`。
+- 来源文档：上述 Workspace 治理文件。
+- 冲突说明：当前 P0 对本次 G1-06 启动同步步骤作出一次性明确覆盖。
+- 实际执行规则：启动时只检查工作区、分支和本地 `master...origin/master` 跟踪状态；不执行启动 fetch/pull。内容提交后仍按治理要求执行最终远程安全获取、比较与普通 push。
+- 风险：本地远程跟踪引用可能未反映启动瞬间的服务器端新提交；任务结束前的最终远程检查继续控制覆盖风险。
+- 是否已在 Preflight 提示：是；冲突编号 `PC-G1-06-001`。
+- 是否涉及真实项目事实：否。
+- 状态：ACTIVE
+
 ## OVR-011
 
 - 时间：2026-09-10 12:46 +08:00

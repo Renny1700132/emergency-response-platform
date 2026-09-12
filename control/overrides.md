@@ -2,6 +2,20 @@
 
 本文件只记录当前用户 Prompt 对参考方法/过程规则的覆盖。它不能作为修改真实项目功能、★条款、性能、边界、验收、甲方职责、质保/SLA 或法规标准的依据。
 
+## OVR-015
+
+- 时间：2026-09-12（Asia/Shanghai）
+- Prompt 要求：用户确认当前项目已经拉取到最新，本次 G1-08 人工核对清单预审不需要额外 pull。
+- 被覆盖规则：`AGENTS.md` 与 `governance/git_workflow.md` 要求正式任务启动时执行 `git fetch origin master` 和 `git pull --ff-only origin master`。
+- 来源文档：当前 G1-08 C 复核 Prompt；`AGENTS.md` BEFORE_TASK；`governance/git_workflow.md` Task Start Repository Sync。
+- 冲突说明：当前 P0 仅覆盖本轮启动同步方法，不覆盖结束时安全获取远程、普通 push、证据留痕或任何真实项目事实。
+- 实际执行规则：启动时只确认工作区、`master`、本地与已知 `origin/master` 跟踪状态及 HEAD；基于用户确认的最新本地提交形成待人工核对清单。结束提交前仍按治理规则执行远程安全检查。
+- 风险：本地远程跟踪引用可能落后于真实远程；若结束 fetch 发现并行更新，必须先安全处理，不得覆盖。
+- 是否已在 Preflight 提示：是；冲突编号 `PFC-G1-08-C-001`。
+- 是否涉及真实项目事实：否。
+- 是否必须暂停：否。
+- 状态：ACTIVE
+
 ## OVR-013
 
 - 时间：2026-09-10 17:50 +08:00

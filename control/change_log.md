@@ -7,7 +7,7 @@
 | BASELINE-V0.1 | 初始需求/招标事实基线（旧计划标识） | G1-01 完成且 B 复核 | SUPERSEDED_BEFORE_FREEZE | — | C | B | — |
 | BASELINE-G1-V0.1 | 第一关立项竞标阶段编标输入工作基线 | 机械核对通过、12 项澄清已裁决、Blocking=0、A/B/C 决策确认 | FROZEN_FOR_BID_DRAFTING | 2026-09-10 13:09 +08:00 | A | B、C（用户确认讨论结果） | `3ad0e3723def9f45899b68fe89f99628f4b3ffd3` |
 | BASELINE-V0.9 | 第一关交付候选基线 | G1-09 至 G1-11 问题闭环 | PLANNED | — | A | C | — |
-| BASELINE-V1.0 | 第一关最终冻结基线 | G1-12 完成、最终三项检查通过 | PLANNED | — | A | C | — |
+| BASELINE-V1.0 | 第一关最终冻结基线 | G1-14 C 最终符合性复核 ACCEPTED | FROZEN | 2026-09-12 20:42 +08:00 | A | C | 527acee（内容）；C 复核提交待回填 |
 
 ## BASELINE-G1-V0.1 冻结记录
 
@@ -36,3 +36,4 @@
 
 | BASELINE-V1.0 | 第一关最终交付归档冻结 | G1-01—G1-13 已完成并复核；G1-14 A 自检通过 | 不改变 P1 事实、范围、★、数字或责任；归档清单记录 SHA-256 | A | C 最终符合性复核待执行 | FROZEN_PENDING_C_FINAL_REVIEW | G1-14 内容提交待回填 |
 - BASELINE-V1.0 内容提交与推送证据：527aceea5162cd4bf4a47e34a985c8c4f581cdd4，2026-09-12 20:26 +08:00；当前状态保持 FROZEN_PENDING_C_FINAL_REVIEW。
+- BASELINE-V1.0 C 最终符合性复核：2026-09-12 20:42 +08:00；结论 ACCEPTED，复核记录 logs/reviews/2026-09-12_G1-14-C-final-compliance-review.md；基线状态更新为 FROZEN，G1-14 更新为 DONE。

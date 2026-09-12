@@ -7,7 +7,7 @@
 | BASELINE-V0.1 | 初始需求/招标事实基线（旧计划标识） | G1-01 完成且 B 复核 | SUPERSEDED_BEFORE_FREEZE | — | C | B | — |
 | BASELINE-G1-V0.1 | 第一关立项竞标阶段编标输入工作基线 | 机械核对通过、12 项澄清已裁决、Blocking=0、A/B/C 决策确认 | FROZEN_FOR_BID_DRAFTING | 2026-09-10 13:09 +08:00 | A | B、C（用户确认讨论结果） | `3ad0e3723def9f45899b68fe89f99628f4b3ffd3` |
 | BASELINE-V0.9 | 第一关交付候选基线 | G1-09 至 G1-11 问题闭环 | PLANNED | — | A | C | — |
-| BASELINE-V1.0 | 第一关最终冻结基线 | G1-14 C 最终符合性复核 ACCEPTED | FROZEN | 2026-09-12 20:42 +08:00 | A | C | 527acee（内容）；C 复核提交待回填 |
+| BASELINE-V1.0 | 第一关最终冻结基线 | G1-14 C 最终符合性复核 ACCEPTED | FROZEN | 2026-09-12 20:42 +08:00 | A | C | 527acee（内容）；f8be033（C 最终复核） |
 
 ## BASELINE-G1-V0.1 冻结记录
 

@@ -1020,6 +1020,13 @@ def build_docx() -> None:
         index += 1
 
     _write_headers_and_footers(doc)
+    # The retained template starts the first section at page 1.  Later
+    # landscape/portrait sections must continue that sequence rather than
+    # restart page numbering at 1.
+    for section in list(doc.sections)[1:]:
+        pg = section._sectPr.find(qn("w:pgNumType"))
+        if pg is not None:
+            section._sectPr.remove(pg)
     doc.core_properties.title = "某自然博物馆智能运营中心建设项目——应急管理子系统 投标文件技术标"
     doc.core_properties.subject = "G1-08 技术投标书整合与重构"
     doc.core_properties.author = "成员A（项目经理/技术标总编）"

@@ -304,3 +304,16 @@
 - A 修订证据：已移除导致异常空白页的分页/分节组合并重新渲染正式 Word；内容与 Markdown V1.2 同步，待 C 复验。
 - C 再复验关闭证据：正式文件 `docs/deliverables/03-项目计划v1（WBS与甘特图）.docx` 经 Microsoft Word 只读导出后为 17 页，逐页渲染检查未发现异常空白页；V1.2、6.1/6.2 试运行口径、里程碑及服务数字与 Markdown 一致。
 - 状态：CLOSED
+
+### ISSUE-G1-09-001
+
+- 提出人：C
+- 时间：2026-09-12
+- 严重级别：MINOR（非阻断）
+- 文件与位置：`control/facts.md`、`control/key_numbers.md` 文件头及模拟澄清状态备注。
+- 当前表述：G1-01 与 G1-05 已经 B 复核并在 `tasks.md` 标记 DONE，但两个控制文件仍写 `REVIEW_PENDING_B_POST_CLARIFICATION` 或“待 B 复核”。
+- 依据：`tasks.md` G1-01/G1-05 状态；`logs/reviews/2026-09-10_G1-05-B-final-review.md`。
+- 影响：不改变需求、数字、范围或投标响应，但会使后续检查误判控制基线尚未完成复核。
+- 处理：C 将文件头更新为 `DONE / B_REVIEW_ACCEPTED`，并把已经完成的澄清复核备注更新为 `B_REVIEW_ACCEPTED`；仍需实施或现场验证的事项继续保留待验证表述。
+- B 复核：状态修订未改变任何事实编号、FR、关键数值、来源或责任边界；复核接受。
+- 状态：CLOSED

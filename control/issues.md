@@ -404,8 +404,9 @@
 - 关闭判据：全部新增数字进入唯一控制索引且属性、来源、单位、条件明确；B 对环境建议、兼容矩阵及 G1-10-001—003 给出明确 ACCEPTED；Markdown/Word 同步；C 复验关闭。
 - B 技术确认：G1-10-001—003 已复验关闭；环境与兼容建议以 ACCEPTED_WITH_CONTROL 接受。
 - 数字控制证据：control/key_numbers.md KN-070—KN-078；Chrome/Edge 继续沿用 KN-038。
-- 当前处置：新增数字已完成 B 技术确认和唯一索引登记，等待 C 按其复核职责执行最终复验。
-- 状态：RESOLVED / PENDING_C_REVIEW
+- 当前处置：新增数字已完成 B 技术确认和唯一索引登记；C 已核对 KN-070—078 与 Markdown/Word 的数值、属性及验证门禁一致。
+- C 关闭证据：`logs/reviews/2026-09-12_G1-08-G1-11-C-final-review.md`；A 修订提交 `29b7f97`。
+- 状态：CLOSED / VERIFIED_BY_C
 
 ### ISSUE-G1-08-002
 
@@ -420,7 +421,8 @@
 - 主责人：A
 - 复核人：C
 - 关闭判据：工作区正式 Word 与 A 明确提交的目标版本一致，仓库干净；C 以该提交重新核对哈希、内容和视觉结果。
-- 状态：OPEN / BLOCKING
+- C 关闭证据：启动时仓库干净；工作区与 HEAD 中正式 Word blob 均为 `c807a0c1ad59dcf08ac7924451c233e071a7ef0f`；Microsoft Word 只读导出为 91 页并经 C 逐页视觉复验通过。详见 `logs/reviews/2026-09-12_G1-08-G1-11-C-final-review.md`。
+- 状态：CLOSED / VERIFIED_BY_C
 
 ## G1-11 跨文档一致性检查复核项
 
@@ -435,7 +437,9 @@
 - 来源优先级裁决：P0 历史教师意见与 P1 冲突，按 `governance/source_priority.md` 采用 P1。正确口径为“FR-02.3 整体是★；其历史回放子句本身为宜支持，但项目仍依据 §8.1（1）和 FR-11.3 强制实现回放”。
 - 主责人：A（修订 G1-11 检查记录）；C（复验）
 - 关闭判据：A 删除“FR-02.3 整体为推荐性”的错误结论，准确区分整体★属性、内部子句强度和其他强制回放依据；不得据此弱化任何现有★映射。
-- 状态：OPEN / BLOCKING
+- A 修订证据：`29b7f97`；Markdown 与 Word 均明确 FR-02.3 整体为★、历史回放子句为“宜支持”，并保留 §8.1（1）和 FR-11.3 强制接口依据。
+- C 复验：内容、★计数和 91 页 Word 视觉检查通过，未发现降级或负偏离。
+- 状态：CLOSED / VERIFIED_BY_C
 
 ### ISSUE-G1-11-006
 
@@ -447,7 +451,9 @@
 - 影响：把已完成事项继续统计为 BLOCKING，导致问题数量、修订包和准出建议不能反映当前受控状态。
 - 主责人：A
 - 关闭判据：A 按当前提交证据更新 ISSUE-G1-11-001、T-06、汇总数量和修订建议；保留历史时间线，但不得把已完成项表述为当前未完成。
-- 状态：OPEN
+- A 修订证据：`logs/reviews/2026-09-12_G1-11_consistency_rework_recheck.md` 已采用 KN-070—078 与 G1-10-001—004 最新关闭状态，不再计入当前阻断。
+- C 复验：与 `control/key_numbers.md`、`control/issues.md` 当前状态一致。
+- 状态：CLOSED / VERIFIED_BY_C
 
 ### ISSUE-G1-11-007
 
@@ -459,4 +465,6 @@
 - 影响：会误导后续修订范围和复验方法，无法证明正式件已完成 KN 清理或 PE 优先追溯。
 - 主责人：A
 - 关闭判据：A 依据当前受控 Word 重做 KN/PE 核对，将结论修订为真实现状；正式件按 PE 逐项可定位，内部 KN 如保留须从属于对应 PE，Markdown 与 Word 同步后由 C 复验。
-- 状态：OPEN
+- A 修订证据：`29b7f97` 在 Markdown §5.12 与正式 Word 新增 PE-01—PE-12 逐项表，并明确 KN 仅为内部台账；不再声称 Word 已去除 KN。
+- C 复验：Word 中 PE-01—PE-12 均可定位，关键正文使用 PE 优先；91 页视觉检查未见表格裁切或分页破坏。
+- 状态：CLOSED / VERIFIED_BY_C

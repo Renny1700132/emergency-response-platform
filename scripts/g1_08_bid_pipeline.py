@@ -943,7 +943,7 @@ def build_docx() -> None:
     meta = doc.add_paragraph()
     meta.alignment = WD_ALIGN_PARAGRAPH.CENTER
     meta.paragraph_format.space_before = Pt(80)
-    mr = meta.add_run("项目编号：【待人工确认】\n投标人：【待人工确认】\n法定代表人或授权代表：【待人工确认】\n日期：【待人工确认】")
+    mr = meta.add_run("项目编号：03\n投标人：严宇、何思源、任俊强\n法定代表人或授权代表：严宇\n日期：2026年9月10日\n用途：仅课程模拟")
     mr.font.name = "宋体"
     mr._element.rPr.rFonts.set(qn("w:eastAsia"), "宋体")
     mr.font.size = Pt(13)
@@ -1028,9 +1028,9 @@ def build_docx() -> None:
         if pg is not None:
             section._sectPr.remove(pg)
     doc.core_properties.title = "某自然博物馆智能运营中心建设项目——应急管理子系统 投标文件技术标"
-    doc.core_properties.subject = "G1-08 技术投标书整合与重构"
+    doc.core_properties.subject = "G1-08 技术投标书统一修订候选稿"
     doc.core_properties.author = "成员A（项目经理/技术标总编）"
-    doc.core_properties.comments = "基于冻结基线、G1-03至G1-07和教学参考格式体系生成；人员、业绩等无依据内容已标记待人工确认。"
+    doc.core_properties.comments = "项目编号03；仅用于课程模拟；人员方案按用户确认的三名成员编制，本次不主张业绩。"
     EXISTING_BID.parent.mkdir(parents=True, exist_ok=True)
     doc.save(EXISTING_BID)
     check = Document(EXISTING_BID)

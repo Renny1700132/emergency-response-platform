@@ -35,3 +35,4 @@
 - Commit / PR：
 
 | BASELINE-V1.0 | 第一关最终交付归档冻结 | G1-01—G1-13 已完成并复核；G1-14 A 自检通过 | 不改变 P1 事实、范围、★、数字或责任；归档清单记录 SHA-256 | A | C 最终符合性复核待执行 | FROZEN_PENDING_C_FINAL_REVIEW | G1-14 内容提交待回填 |
+- BASELINE-V1.0 内容提交与推送证据：527aceea5162cd4bf4a47e34a985c8c4f581cdd4，2026-09-12 20:26 +08:00；当前状态保持 FROZEN_PENDING_C_FINAL_REVIEW。

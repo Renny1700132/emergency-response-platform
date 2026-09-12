@@ -76,3 +76,12 @@
 | KN-067 | D1～D4；D4答辩 | 第一关建议时间 | P2 第3页 §四 | 否（课程） | VERIFIED |
 | KN-068 | 24小时 | 被否决组补正复审窗口 | P2 第3页 §四 | 否（课程） | VERIFIED |
 | KN-069 | 100分；25/50/25 | 总分及招标解析/技术标/AI策略分值 | P2 第3—4页 §五 | 否（课程） | VERIFIED |
+| KN-070 | 2 台；每台 8 vCPU、16 GB 内存、100 GB 系统盘 | 接入与应用节点建议初始配置 | G1-08 V1.1 §3.7.1；ca82f03 | 否（方案建议） | B_TECH_ACCEPTED；PENDING_M2_CAPACITY_VALIDATION；不得表述为甲方既定配置或已验证容量 |
+| KN-071 | 1 主 1 备；每台 8 vCPU、32 GB 内存、500 GB SSD 数据盘 | 数据库节点建议初始配置 | G1-08 V1.1 §3.7.1；ca82f03 | 否（方案建议） | B_TECH_ACCEPTED；PENDING_M2_CAPACITY_VALIDATION；须结合数据量、连接池、慢查询及恢复演练冻结 |
+| KN-072 | 2 台；每台 4 vCPU、8 GB 内存、100 GB 数据盘 | 缓存与消息节点建议初始配置 | G1-08 V1.1 §3.7.1；ca82f03 | 否（方案建议） | B_TECH_ACCEPTED；PENDING_M2_CAPACITY_VALIDATION；须结合队列积压和节点切换测试冻结 |
+| KN-073 | 可用容量不少于 2 TB | 文件与日志存储建议初始容量 | G1-08 V1.1 §3.7.1；ca82f03 | 否（方案建议） | B_TECH_ACCEPTED；PENDING_M2_STORAGE_VALIDATION；不承担视频录像保存 |
+| KN-074 | 可用容量不少于 4 TB | 与生产存储隔离的备份介质建议容量 | G1-08 V1.1 §3.7.1；ca82f03 | 否（方案建议） | B_TECH_ACCEPTED；PENDING_M2_BACKUP_VALIDATION；须结合保存周期、增长率和恢复演练冻结 |
+| KN-075 | 每日增量、每周全量 | 备份策略建议周期 | G1-08 V1.1 §3.7.1；ca82f03 | 否（方案建议） | B_TECH_ACCEPTED；PENDING_M2_BACKUP_POLICY_CONFIRMATION；不得替代甲方最终备份制度 |
+| KN-076 | 节点链路不低于 1 Gbps | 部署网络建议初始链路能力 | G1-08 V1.1 §3.7.1；ca82f03 | 否（方案建议） | B_TECH_ACCEPTED；PENDING_M2_NETWORK_VALIDATION；须由甲方网络方案和端口审批确认 |
+| KN-077 | Android 10 及以上 | H5 宿主 Android 建议验证下限 | G1-08 V1.1 §4.8.8；ca82f03 | 否（方案建议） | B_TECH_ACCEPTED；PENDING_M2_CLIENT_MATRIX_CONFIRMATION；须覆盖目标机型、系统 WebView 和宿主 APP |
+| KN-078 | iOS 15 及以上 | H5 宿主 iOS 建议验证下限 | G1-08 V1.1 §4.8.8；ca82f03 | 否（方案建议） | B_TECH_ACCEPTED；PENDING_M2_CLIENT_MATRIX_CONFIRMATION；须覆盖目标终端、WKWebView 和宿主 APP |

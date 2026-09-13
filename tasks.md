@@ -7,6 +7,7 @@
 | Task ID | 任务 | 主责 | 复核 | 前置任务 | 输入 | 输出 | 状态 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | GOV-001 | AI 留痕与 Git 工作流修订 | C | B | G1-00 | 当前 Prompt、现有治理规范、Git 状态 | 原文日志状态机、安全同步与 push 规范 | DONE |
+| GOV-002 | 正式可交付文档生成/修改 Skill 与入口注册 | A | C | GOV-001 | 当前 Prompt、Reference OOXML/样式、现有文档与 Git 治理 | `docs/deliverables/SKILL.md`、`AGENTS.md` 强制触发规则 | REVIEW |
 | G1-01-A | 项目价值与范围分析 | A | C（技术边界由 B 提供意见） | G1-00 | 真实用户需求书；临时 fallback | `docs/work/A_PM/project_positioning.md` | DONE |
 | G1-01-A-BR | 项目价值与范围 Baseline Reconciliation | A | C（技术边界由 B 提供意见） | G1-01-A、甲方模拟书面澄清 | C 当前控制文件、原始用户需求书、甲方澄清 | 修订后的 `project_positioning.md`、reconciliation 记录 | DONE |
 | G1-00 | Workspace 初始化 | C | B | 无 | 当前 Prompt、允许资料、现有仓库 | Workspace 目录、治理规则、初始化日志、Git 证据 | DONE |

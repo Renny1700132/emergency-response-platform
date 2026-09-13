@@ -5,6 +5,8 @@ description: Create, write, revise, or format formal project deliverables destin
 
 # 正式可交付文档生成与修改
 
+> **硬性扩展入口：** 除本文件外，处理任何正式交付文档前必须完整读取并遵循 `docs/skills/formal_deliverable/SKILL.md`。该文件是 Direct Formatting、Pair-specific Manifest、Reference 直接继承、视觉 Diff 与 FORMAT ONLY 结构边界的补充强制规范；两份规则冲突时，以更严格的内容冻结和逐页可验证要求执行。
+
 ## 1. 适用范围与入口判定
 
 用户明确要求生成、撰写、修改或修订下列成果时，先读取并执行本 Skill：

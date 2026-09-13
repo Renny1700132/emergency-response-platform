@@ -27,6 +27,7 @@
 | G1-14 | 最终冻结与归档 | A | C | G1-13 | 全部通过复核的产物与日志 | BASELINE-V1.0、归档清单、冻结记录 | DONE |
 | G1-15 | 第一关最终返工：日报重建与正式文档逐项模板复刻 | A | C | G1-14 | 冻结交付物、参考样例、Prompt/Review/Git、治理规则 | BASELINE-V1.2、21 份日报、7 份 PASS 文档、8 份 PPTX 图源、最终审计 | DONE |
 | G1-16-FMT-040506 | 04/05/06 正式文档 FORMAT ONLY 复检 | A | C | G1-15 | 已冻结正式稿、对应 Reference、正式交付文档 Skill | 格式复检审计、内容冻结与渲染证据 | REVIEW |
+| G1-17-FMT-VISUAL-040506 | 正式文档 Skill 加固与 04/05/06 纯视觉格式修复 | A | C | G1-16 | 唯一 Reference、冻结正式稿、formal deliverable Skill | 加固 Skill、三份 DOCX、逐 Pair 审计与渲染证据 | REVIEW |
 
 ## 第二关任务看板
 

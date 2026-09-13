@@ -538,4 +538,8 @@
 - 影响：会使 M2 评审错误理解当前编号与全量追踪状态；不改变功能、★属性、优先级、数字、责任或 AC。
 - 主责：C（RTM 规则文字修订）；复核：B（技术边界）、A（双镜像一致性）。
 - 关闭判据：RTM 规则、目录、SRS、spec 和 RTM 明细均明确 001—029 为 MVP Must、030—039 为非 MVP 本期范围；39/39 FR 和 34/34 ★FR 复验一致。
-- 状态：OPEN / BLOCKING_TO_G2-07_DONE
+- 修订证据：RTM §1 已统一为 001—029 MVP Must、030—039 非 MVP 本期范围。
+- C 复验：39/39 FR、34/34 ★FR、117 条唯一 AC；目录至 SRS/spec/RTM 差集均为 0。
+- B 复核：仅修订编号口径，未改变技术边界、数字、范围、责任或验收强度。
+- 关闭证据：logs/reviews/2026-09-13_G2-07-C-compliance-review.md；logs/reviews/2026-09-13_G2-07-B-technical-review.md。
+- 状态：CLOSED / VERIFIED_BY_C_AND_B

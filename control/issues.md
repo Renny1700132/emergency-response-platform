@@ -2,7 +2,7 @@
 
 - 管理规则：发现问题后在此登记，由正式产物主责人修改，默认复核人核验并关闭。
 - 状态建议：OPEN、IN_PROGRESS、RESOLVED、CLOSED；不得删除历史 Issue。
-- 当前 G1 需求澄清 Blocking Issue：0 项；G2 下游输入阻断 Issue：0 项（`ISSUE-G2-02-001` 已完成 C 修订，保持 OPEN 等待 B 复核关闭）。
+- 当前 G1 需求澄清 Blocking Issue：0 项；G2 下游输入阻断 Issue：0 项（`ISSUE-G2-02-001` 已关闭）。
 - 已裁决并保留历史的 Issue：12 项（`ISSUE-G1-01-001`—`ISSUE-G1-01-012`）。
 
 ## G2-02 需求编号基线复核项
@@ -21,7 +21,8 @@
 - 关闭判据：US-017、US-019、US-022、US-024 的角色诉求、FR 映射与对应冻结事实语义一致；29 条故事与 29 条唯一 MVP FR 覆盖仍无遗漏；B 复核通过后由指定复核人关闭。
 - C 修订证据：`docs/work/C_REQ/user_interviews_and_moscow.md` 的 US-017、US-019、US-022、US-024 已分别改为移动事件发起、移动演练执行、盘点计划/差异和值班打卡规则；`control/g2/requirements_catalog.md` 已同步去除待复核标记。机械检查仍为 29 条故事、29 条唯一 MVP FR 覆盖，Must 29，范围与★属性未变。
 - 下游核验：`docs/work/A_PM/software_requirements_specification_v0.1.md` 与 `docs/work/B_TECH/spec.md` 的 G2-FR-009、017、021、023 已采用 canonical FR 的正确语义，未继承原故事偏差，无需修改 A/B 主责正文；其中“待复核/OPEN”提示在 B 关闭本 Issue 前仍为真实状态。
-- 状态：OPEN / C_FIX_READY / PENDING_B_REVIEW；不再阻断 G2-03/G2-04 继续复核，未经 B 明确复核不得写 CLOSED
+- B 关闭证据：2026-09-13 逐条核对四条修订故事与 F-128、F-131、F-111、F-119 及 G2-FR-021、023、009、017，语义一致；机械检查为 US-001—US-029 连续唯一、Must 29 条、覆盖 29 个唯一 MVP FR，双向差集为空。修订未改变★属性、数字、责任、范围或验收强度。SRS/spec 正文已使用正确 canonical 语义；SRS 中历史“待复核/OPEN”状态提示由 G2-03 主责/复核在准出时同步清理，不影响本 Issue 关闭。
+- 状态：CLOSED / VERIFIED_BY_B
 
 ## G1-01 历史与已裁决项
 

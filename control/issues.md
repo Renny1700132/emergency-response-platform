@@ -509,3 +509,17 @@
 - A 修订证据：`29b7f97` 在 Markdown §5.12 与正式 Word 新增 PE-01—PE-12 逐项表，并明确 KN 仅为内部台账；不再声称 Word 已去除 KN。
 - C 复验：Word 中 PE-01—PE-12 均可定位，关键正文使用 PE 优先；91 页视觉检查未见表格裁切或分页破坏。
 - 状态：CLOSED / VERIFIED_BY_C
+
+### ISSUE-G2-06-001
+
+- 提出人：C
+- 时间：2026-09-13
+- 严重级别：BLOCKING_TO_G2-07_M2（不阻断 G2-06 建立 RTM）
+- 文件与位置：`docs/work/A_PM/software_requirements_specification_v0.1.md`、`docs/work/B_TECH/spec.md`、`docs/work/C_REQ/rtm_v1.md` §3。
+- 问题：G2-03/G2-04 已完整覆盖 29 条 MVP FR，但 FR-01.4、FR-03.1、FR-03.2、FR-07.1—FR-07.5、FR-08.3、FR-09.1 共 10 条非 MVP FR 虽仍属本期范围，尚无逐条 SRS 需求、spec Given/When/Then 和 AC。当前“全量 39 条 FR 仍需实施验收”的总述不能构成逐条可执行验收链。
+- 依据：`control/g2/README.md` 第 4 条；`control/g2/requirements_catalog.md` §2；G2-03 SRS §8.1/§8.3；G2-04 spec §1/§3；`control/facts.md` F-103、F-108—109、F-123—127、F-130、F-134；P2 第二关“需求到验收标准正向无断链”。
+- 影响：若不补齐，RTM 可证明“39/39 已纳入目录”，但不能证明 10 条非 MVP FR 已获得可执行规格和验收条件；G2-07/M2 可能错误放行全量需求。
+- 建议修订：A 在 SRS 中为 10 条 FR 建立逐条需求和 AC；B 在 spec 中以原始 FR 编号或经批准的新稳定编号建立等价 Given/When/Then；不得改变本期范围、★属性、数字或责任。C 随后复验 RTM 双向链。
+- 主责人：A（SRS）、B（spec）；协调/复验：C。
+- 关闭判据：10 条均具有可回溯的逐条 SRS 条目、spec GWT/AC、RTM 映射和预留测试挂接；39 条 FR 的正向链无断链，经 C 符合性和 B 技术复核通过。
+- 状态：OPEN / BLOCKING_TO_G2-07_M2

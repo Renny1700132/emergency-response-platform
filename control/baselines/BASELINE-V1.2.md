@@ -9,6 +9,7 @@
 | 主责 / 复核 | A / C |
 | 修订范围 | Daily Report Skill 与 21 份周报重建；7 份正式 DOCX 逐项模板复刻、版本记录和信息图补齐 |
 | 审计记录 | `logs/reviews/final_format_alignment_audit.md` |
+| 主提交 | `c54fecc593a3201389619f40ae5fbe9ccb706e2d`（已推送至 `origin/master`） |
 
 ## 不变约束
 
@@ -32,4 +33,4 @@
 - 7 份正式 DOCX 均完成 reference pair、实际属性、版本、插图和逐页渲染审计，审计状态 7/7 PASS。
 - 8 张新增/重绘信息图均有 PowerPoint 可编辑源、EMF 和 PNG，源目录为 `docs/deliverables/figures/`。
 - 正式文档无成员角色代号残留；技术标中的 A/B/C 仅为普通附录编号。
-- Git commit、push 和 C 独立复核状态在提交后回填，不在本基线中预写为完成。
+- 主提交与非强制 push 已完成；C 独立复核状态保持 PENDING_C_REVIEW。

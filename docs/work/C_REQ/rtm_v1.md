@@ -3,7 +3,7 @@
 - 任务：G2-06
 - 版本：v1.0 候选
 - 主责 / 复核：C / B
-- 状态：DONE（2026-09-13 B 技术复核通过；10 条非 MVP 本期 FR 的逐条 SRS/spec/AC 链缺失仍由 ISSUE-G2-06-001 阻断 G2-07/M2）
+- 状态：DONE（2026-09-13 ISSUE-G2-06-001 已闭环；C 符合性复验与 B 技术复验通过）
 - 输入基线：`control/g2/requirements_catalog.md`、G2-03 SRS v0.1、G2-04 spec.md v0.1、G2-05 澄清记录。
 
 ## 1 追踪规则与读法
@@ -47,37 +47,35 @@
 | G2-FR-028 | FR-11.2 / F-137 | MVP-4 / ★ | SRS §3 G2-FR-028 | AC-G2-FR-028-01—03 | G2-CLR-005、010 | DES-G2-FR-028（待设计） | TC-G2-FR-028-01—03（待测试） | COVERED_PENDING_EVIDENCE |
 | G2-FR-029 | FR-11.3 / F-138 | MVP-2、4 / ★ | SRS §3 G2-FR-029 | AC-G2-FR-029-01—03 | G2-CLR-001、003、010 | DES-G2-FR-029（待设计） | TC-G2-FR-029-01—03（待测试） | COVERED_PENDING_EVIDENCE |
 
-## 3 非 MVP、仍属本期范围的追踪（10 条）
+## 3 非 MVP、仍属本期范围的逐条追踪（10 条）
 
-| 原始 FR / 事实 | 优先级 / ★ | 当前 SRS 证据 | 当前 spec / AC 证据 | 设计/测试挂接 | 追踪状态与处置 |
-| --- | --- | --- | --- | --- | --- |
-| FR-01.4 / F-103 | Should / 非★ | 仅有全量范围声明 | 无逐条 spec/AC | DES/TC 待建立 | GAP-G2-06-001 |
-| FR-03.1 / F-108 | Should / ★ | 仅有全量范围声明 | 无逐条 spec/AC | DES/TC 待建立 | GAP-G2-06-001 |
-| FR-03.2 / F-109 | Should / 非★ | 仅有全量范围声明 | 无逐条 spec/AC | DES/TC 待建立 | GAP-G2-06-001 |
-| FR-07.1 / F-123 | Should / 非★ | 仅有全量范围声明 | 无逐条 spec/AC | DES/TC 待建立 | GAP-G2-06-001 |
-| FR-07.2 / F-124 | Should / ★ | 仅有全量范围声明 | 无逐条 spec/AC | DES/TC 待建立 | GAP-G2-06-001 |
-| FR-07.3 / F-125 | Should / ★ | 仅有全量范围声明 | 无逐条 spec/AC | DES/TC 待建立 | GAP-G2-06-001 |
-| FR-07.4 / F-126 | Should / ★ | 仅有全量范围声明 | 无逐条 spec/AC | DES/TC 待建立 | GAP-G2-06-001 |
-| FR-07.5 / F-127 | Should / ★ | 仅有全量范围声明 | 无逐条 spec/AC | DES/TC 待建立 | GAP-G2-06-001 |
-| FR-08.3 / F-130 | Should / 非★ | 仅有全量范围声明 | 无逐条 spec/AC | DES/TC 待建立 | GAP-G2-06-001 |
-| FR-09.1 / F-134 / KN-017 | Could / ★ | 仅有全量范围声明 | 无逐条 spec/AC | DES/TC 待建立 | GAP-G2-06-001 |
+| G2-FR | 原始 FR / 事实 | 优先级 / ★ | SRS 落点 | spec / 可执行 AC | 设计挂接 | 测试挂接 | 追踪状态 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| G2-FR-030 | FR-01.4 / F-103 | Should / 非★ | SRS §3.5 G2-FR-030 | AC-G2-FR-030-01—03 | DES-G2-FR-030（待设计） | TC-G2-FR-030-01—03（待测试） | COVERED_PENDING_EVIDENCE |
+| G2-FR-031 | FR-03.1 / F-108 | Should / ★ | SRS §3.5 G2-FR-031 | AC-G2-FR-031-01—03 | DES-G2-FR-031（待设计） | TC-G2-FR-031-01—03（待测试） | COVERED_PENDING_EVIDENCE |
+| G2-FR-032 | FR-03.2 / F-109 | Should / 非★ | SRS §3.5 G2-FR-032 | AC-G2-FR-032-01—03 | DES-G2-FR-032（待设计） | TC-G2-FR-032-01—03（待测试） | COVERED_PENDING_EVIDENCE |
+| G2-FR-033 | FR-07.1 / F-123 | Should / 非★ | SRS §3.5 G2-FR-033 | AC-G2-FR-033-01—03 | DES-G2-FR-033（待设计） | TC-G2-FR-033-01—03（待测试） | COVERED_PENDING_EVIDENCE |
+| G2-FR-034 | FR-07.2 / F-124 | Should / ★ | SRS §3.5 G2-FR-034 | AC-G2-FR-034-01—03 | DES-G2-FR-034（待设计） | TC-G2-FR-034-01—03（待测试） | COVERED_PENDING_EVIDENCE |
+| G2-FR-035 | FR-07.3 / F-125 | Should / ★ | SRS §3.5 G2-FR-035 | AC-G2-FR-035-01—03 | DES-G2-FR-035（待设计） | TC-G2-FR-035-01—03（待测试） | COVERED_PENDING_EVIDENCE |
+| G2-FR-036 | FR-07.4 / F-126 | Should / ★ | SRS §3.5 G2-FR-036 | AC-G2-FR-036-01—03 | DES-G2-FR-036（待设计） | TC-G2-FR-036-01—03（待测试） | COVERED_PENDING_EVIDENCE |
+| G2-FR-037 | FR-07.5 / F-127 | Should / ★ | SRS §3.5 G2-FR-037 | AC-G2-FR-037-01—03 | DES-G2-FR-037（待设计） | TC-G2-FR-037-01—03（待测试） | COVERED_PENDING_EVIDENCE |
+| G2-FR-038 | FR-08.3 / F-130 | Should / 非★ | SRS §3.5 G2-FR-038 | AC-G2-FR-038-01—03 | DES-G2-FR-038（待设计） | TC-G2-FR-038-01—03（待测试） | COVERED_PENDING_EVIDENCE |
+| G2-FR-039 | FR-09.1 / F-134 / KN-017 | Could / ★ | SRS §3.5 G2-FR-039 | AC-G2-FR-039-01—03 | DES-G2-FR-039（待设计） | TC-G2-FR-039-01—03（待测试） | COVERED_PENDING_EVIDENCE |
 
 ## 4 覆盖统计与准出
 
 | 检查项 | 结果 | 结论 |
 | --- | --- | --- |
 | 全项目 FR 纳入 RTM | 39 / 39 | 已纳入；无静默裁剪。 |
-| MVP 稳定编号及原始 FR 双向映射 | 29 / 29 | 完整。 |
-| MVP SRS + spec/AC 正向链 | 29 / 29 | 完整；各条仍待设计、测试和现场证据。 |
-| 非 MVP 本期 FR 逐条 SRS/spec/AC 链 | 0 / 10 | 缺失，受 ISSUE-G2-06-001 管理。 |
-| ★ FR 追踪 | MVP 28 / 28；全项目额外 6 条仍有链缺口 | 不得以 MVP 统计替代全项目 34 条★口径。 |
+| 稳定编号及原始 FR 双向映射 | 39 / 39 | 完整；001—029 是 MVP Must，030—039 是非 MVP、本期范围。 |
+| SRS + spec/AC 正向链 | 39 / 39 | 完整；每条均至少 3 条可观察 AC，仍待设计、测试和现场证据。 |
+| 非 MVP、本期 FR 逐条 SRS/spec/AC 链 | 10 / 10 | ISSUE-G2-06-001 已补齐并关闭。 |
+| ★ FR 追踪 | 34 / 34（MVP 28 / 28；非 MVP 6 / 6） | 完整；★属性未变更。 |
 | G2-CLR 裁决边界 | 12 / 12 已归档 | 已映射至受影响 MVP 链或全局约束。 |
 
-**准出结论**：本 RTM 已完成 29 条 MVP 的正向需求—AC 追踪，并如实登记 10 条非 MVP、本期 FR 的缺口。G2-06 候选稿可供 B 复核；G2-07/M2 不得以“39/39 已纳入”替代“39/39 已有可执行验收链”。在 ISSUE-G2-06-001 关闭前，M2 对全量 FR 的双镜像准出为 BLOCKED。
+**准出结论**：39 条 FR 均已形成“原始 FR/事实—稳定编号—SRS—spec/AC—设计/测试预留”的正向链。ISSUE-G2-06-001 不再阻断 G2-07/M2 的全量需求双镜像检查。COVERED_PENDING_EVIDENCE 只表示规格已覆盖，不能表示实现、接口联调、性能、安全、部署或现场验收已通过；这些证据仍须在后续设计、测试与评审中如实补充。
 
 ## 5 后续使用
 
-- A：为 10 条非 MVP FR 补充逐条 SRS 需求和与本矩阵一致的验收编号。
-- B：为相同 10 条 FR 补充 spec Given/When/Then，确认技术边界和可观察结果。
-- C：在主责修改后复验 39 条 FR 的 SRS/spec/AC 双向映射，并更新 RTM 状态。
-- G2-07：使用本矩阵检查编号、裁决、AC、设计和测试证据；不得将 `待设计`、`待测试`或`待验证`误报为完成。
+- G2-07：使用本矩阵逐条核对编号、优先级、★属性、裁决、SRS、AC、设计和测试证据；不得将“待设计/待测试/待验证”误报为完成。
+- A/B/C：后续变更须先更新受控目录、SRS、spec 与本 RTM；若改变范围、★属性、数字、责任或优先级，必须按控制流程另行裁决。

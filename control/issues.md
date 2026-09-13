@@ -522,4 +522,8 @@
 - 建议修订：A 在 SRS 中为 10 条 FR 建立逐条需求和 AC；B 在 spec 中以原始 FR 编号或经批准的新稳定编号建立等价 Given/When/Then；不得改变本期范围、★属性、数字或责任。C 随后复验 RTM 双向链。
 - 主责人：A（SRS）、B（spec）；协调/复验：C。
 - 关闭判据：10 条均具有可回溯的逐条 SRS 条目、spec GWT/AC、RTM 映射和预留测试挂接；39 条 FR 的正向链无断链，经 C 符合性和 B 技术复核通过。
-- 状态：OPEN / BLOCKING_TO_G2-07_M2
+- 修订证据：OVR-020；control/g2/requirements_catalog.md §2（G2-FR-030—039）；SRS §3.5；docs/work/B_TECH/spec.md §3；RTM §3—§4。
+- C 符合性复验：39/39 条 FR 均有稳定编号、逐条 SRS、至少 3 条 spec Given/When/Then 和设计/测试预留；34/34 条★FR 仍完整（MVP 28、非 MVP 6），优先级、范围、数字与责任均未改变。
+- B 技术复验：新增 AC 的权限、历史留存、异常拒绝、空间服务依赖、H5 授权、统计性能记录等机制与原始 FR/KN 一致；不将待设计、待测试或待现场验证写成已通过。
+- 关闭证据：logs/reviews/2026-09-13_ISSUE-G2-06-001-C-compliance-check.md、logs/reviews/2026-09-13_ISSUE-G2-06-001-B-technical-review.md。
+- 状态：CLOSED / VERIFIED_BY_C_AND_B

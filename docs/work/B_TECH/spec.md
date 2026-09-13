@@ -3,7 +3,7 @@
 - 任务：G2-04
 - 版本：v0.1
 - 主责 / 复核：B / A
-- 状态：REVIEW（待 A 复核）
+- 状态：DONE（2026-09-13 A 复核通过；见 `logs/reviews/2026-09-13_G2-04-A-review.md`）
 - 项目：某自然博物馆智能运营中心建设项目——应急管理子系统
 - 受控输入：`control/g2/requirements_catalog.md`、`control/g2/facts.md`、`control/g2/key_numbers.md`、`control/g2/terminology.md`
 - 追踪规则：`G2-FR-001`—`G2-FR-029` 是本文件与 SRS、RTM 共用的主编号；原始 `FR-xx.x` 保留为权威回指。验收标准编号采用 `AC-G2-FR-nnn-xx`。

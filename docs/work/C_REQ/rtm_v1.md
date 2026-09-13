@@ -3,7 +3,7 @@
 - 任务：G2-06
 - 版本：v1.0 候选
 - 主责 / 复核：C / B
-- 状态：REVIEW（29 条 MVP 正向链完整；10 条非 MVP 本期 FR 的逐条 SRS/spec/AC 链缺失，见 ISSUE-G2-06-001）
+- 状态：DONE（2026-09-13 B 技术复核通过；10 条非 MVP 本期 FR 的逐条 SRS/spec/AC 链缺失仍由 ISSUE-G2-06-001 阻断 G2-07/M2）
 - 输入基线：`control/g2/requirements_catalog.md`、G2-03 SRS v0.1、G2-04 spec.md v0.1、G2-05 澄清记录。
 
 ## 1 追踪规则与读法

@@ -5,7 +5,7 @@
 - 复核：B
 - 项目：某自然博物馆智能运营中心建设项目——应急管理子系统
 - 输入：BASELINE-V1.0、需求确认书、facts、key_numbers、G2-00 输入范围决策
-- 状态：REVIEW
+- 状态：DONE（2026-09-13 B 复核通过；见 `logs/reviews/2026-09-13_G2-01-B-technical-review.md`）
 
 ## 1 方法与证据边界
 

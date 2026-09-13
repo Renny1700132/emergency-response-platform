@@ -527,3 +527,15 @@
 - B 技术复验：新增 AC 的权限、历史留存、异常拒绝、空间服务依赖、H5 授权、统计性能记录等机制与原始 FR/KN 一致；不将待设计、待测试或待现场验证写成已通过。
 - 关闭证据：logs/reviews/2026-09-13_ISSUE-G2-06-001-C-compliance-check.md、logs/reviews/2026-09-13_ISSUE-G2-06-001-B-technical-review.md。
 - 状态：CLOSED / VERIFIED_BY_C_AND_B
+
+### ISSUE-G2-07-001
+
+- 提出人：A
+- 时间：2026-09-13
+- 严重级别：MAJOR / BLOCKING_TO_G2-07_DONE
+- 文件与位置：docs/work/C_REQ/rtm_v1.md §1 第 1 条。
+- 问题：该句仍称 10 条非 MVP、本期 FR 尚无 G2 稳定编号；但 requirements_catalog、SRS §3.5、spec §3 和 RTM §3 已连续使用 G2-FR-030—039。
+- 影响：会使 M2 评审错误理解当前编号与全量追踪状态；不改变功能、★属性、优先级、数字、责任或 AC。
+- 主责：C（RTM 规则文字修订）；复核：B（技术边界）、A（双镜像一致性）。
+- 关闭判据：RTM 规则、目录、SRS、spec 和 RTM 明细均明确 001—029 为 MVP Must、030—039 为非 MVP 本期范围；39/39 FR 和 34/34 ★FR 复验一致。
+- 状态：OPEN / BLOCKING_TO_G2-07_DONE

@@ -9,6 +9,7 @@
 | BASELINE-V0.9 | 第一关交付候选基线 | G1-09 至 G1-11 问题闭环 | PLANNED | — | A | C | — |
 | BASELINE-V1.0 | 第一关最终冻结基线 | G1-14 C 最终符合性复核 ACCEPTED | FROZEN | 2026-09-12 20:42 +08:00 | A | C | 527acee（内容）；f8be033（C 最终复核） |
 | BASELINE-V1.1 | 第一关收口呈现修订基线 | G1-15 格式审计、实名化、README 与日报体系完成；不改变需求事实、数字、范围、责任或验收 | PENDING_COMMIT | 2026-09-13 | A | C（待复核） | 待回填 |
+| BASELINE-V1.2 | 第一关最终返工呈现基线 | 21 份日报重建；7 份 DOCX 逐项模板、版本、插图与渲染审计 7/7 PASS；不改变业务事实 | PENDING_COMMIT | 2026-09-13 | A | C（待复核） | 待回填 |
 
 ## BASELINE-G1-V0.1 冻结记录
 
@@ -38,3 +39,4 @@
 | BASELINE-V1.0 | 第一关最终交付归档冻结 | G1-01—G1-13 已完成并复核；G1-14 A 自检通过 | 不改变 P1 事实、范围、★、数字或责任；归档清单记录 SHA-256 | A | C 最终符合性复核待执行 | FROZEN_PENDING_C_FINAL_REVIEW | G1-14 内容提交待回填 |
 - BASELINE-V1.0 内容提交与推送证据：527aceea5162cd4bf4a47e34a985c8c4f581cdd4，2026-09-12 20:26 +08:00；当前状态保持 FROZEN_PENDING_C_FINAL_REVIEW。
 - BASELINE-V1.0 C 最终符合性复核：2026-09-12 20:42 +08:00；结论 ACCEPTED，复核记录 logs/reviews/2026-09-12_G1-14-C-final-compliance-review.md；基线状态更新为 FROZEN，G1-14 更新为 DONE。
+- BASELINE-V1.2 为用户对 G1-15 首轮结果不合格后的完整返工版本；版本事件、插图与格式差异依据 `logs/reviews/final_format_alignment_audit.md`，提交与推送状态待本任务 Git 闭环后回填。

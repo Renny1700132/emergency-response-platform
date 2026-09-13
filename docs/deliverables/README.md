@@ -1,3 +1,9 @@
-# 正式产物目录
+# 正式交付物目录
 
-仅放入已经完成主责修改、复核通过并具备版本信息的交付候选或冻结产物。冻结后不得原位覆盖，变更按 `control/change_log.md` 与 `governance/git_workflow.md` 执行。
+本目录存放已完成主责修改并通过复核的正式交付候选件或冻结件。
+
+第二关已纳入：
+- 07-第二关双镜像一致性检查报告.docx
+- 08-第二关M2评审包.docx
+
+Markdown 源文件保留在 docs/work/A_PM；复核记录保留在 logs/reviews。

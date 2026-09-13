@@ -149,6 +149,14 @@ Reference 有目录则保留同等级目录；无目录不得擅自添加。Refe
 
 ## 8. 修订记录
 
+## Cover Page / 封面强制规则
+
+对存在唯一 `docs/reference/` Pair 的正式文档，默认禁止手工重建封面，必须执行 `Reference Cover Clone → Project Field Replacement`：识别 Reference 完整第一页边界，直接复制第一页 OOXML、`pPr`、`rPr`、Tab、Shape、图片、间距、分页及关联首页 section/page 属性，再仅替换项目自身的文档编号、版本号、密级、项目名称、文档名称、副标题、编制单位、编制/审核/批准人等字段。
+
+不得改变 Reference 封面的字体、字号、粗细、对齐、行距、段前段后、Tab 位置、信息块垂直位置、页面留白或原有布局。替换字段变长时仍优先保留模板布局。克隆后必须清除教学案例项目名称、人员与组名；仅在对象技术上无法克隆时才可按其实际 OOXML 属性逐项重建。
+
+封面完成后独立以同一 renderer 对照 `Reference Page 1 vs Deliverable Page 1`；只有逐页 side-by-side 核验无残留案例文字、无截断、重叠或布局偏移才可 PASS。
+
 每次处理正式文档都检查修订记录：
 
 - 新文档只依据真实 Prompt、Review、Git 和版本规则建立记录。

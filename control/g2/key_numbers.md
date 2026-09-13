@@ -1,6 +1,6 @@
 # G2 关键数字索引
 
-- 状态：REVIEW
+- 状态：DONE（2026-09-13 B 复核通过）
 - 唯一真值：`control/key_numbers.md`
 - 规则：本文件只分组引用，不复制为新的可修改数值库；SRS、`spec.md` 和 RTM 必须使用原 `KN-*` 回指。
 

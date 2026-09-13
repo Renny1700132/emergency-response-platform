@@ -2,7 +2,7 @@
 
 - Task：G2-02
 - 主责 / 复核：C / B
-- 状态：REVIEW（C 自检完成，等待 B 复核）
+- 状态：DONE（2026-09-13 B 复核通过；`ISSUE-G2-02-001` 继续阻断 G2-03 摄入四条问题故事）
 - 上游事实基线：`BASELINE-V1.0`（FROZEN）
 - 范围输入：`docs/work/A_PM/requirements_confirmation.md`
 - 访谈输入：`docs/work/C_REQ/user_interviews_and_moscow.md`（G2-01，DONE）

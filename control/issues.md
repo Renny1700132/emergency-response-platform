@@ -543,3 +543,35 @@
 - B 复核：仅修订编号口径，未改变技术边界、数字、范围、责任或验收强度。
 - 关闭证据：logs/reviews/2026-09-13_G2-07-C-compliance-review.md；logs/reviews/2026-09-13_G2-07-B-technical-review.md。
 - 状态：CLOSED / VERIFIED_BY_C_AND_B
+
+## Prototype G2-P03 复核项
+
+### ISSUE-G2-P03-001
+
+- 提出人：A
+- 时间：2026-09-14
+- 严重级别：MAJOR / BLOCKING_TO_G2-P03_DONE
+- 文件与位置：`prototype/src/domain/prototypeStore.js` 的 `closeIncident`；`prototype/src/views/web/IncidentsView.vue`。
+- 问题：当前事件在关联任务完成后可直接关闭；系统只在时间线自动写入“已形成模拟评估与调查归档入口”，没有最小的评估、调查或报告状态/内容输入与完成门禁。
+- 依据：`prototype/README.md` P1 明确要求“事件关闭 → 评估 / 调查 / 报告”；SRS G2-FR-016 要求关闭评估、事故调查、事件报告和知识沉淀，未完成强制项时应阻止关闭。
+- 影响：P1 可点击主闭环在最终环节中断，且自动时间线文案可能使演示者误以为评估/调查/报告已经完成。
+- 建议修订：B 在原型中补充最小的评估、调查、报告记录状态与填写/确认动作；事件关闭前检查其已完成，并继续明确这些记录为 Mock，不代表正式验收。
+- 主责人：B
+- 复核人：A、C
+- 关闭判据：从事件上报至任务完成后，用户可完成最小评估、调查、报告动作；未完成时关闭被拒绝；完成后形成可见 Mock 时间线/记录，且不改变 SRS/FR/验收事实。
+- 状态：OPEN
+
+### ISSUE-G2-P03-002
+
+- 提出人：A
+- 时间：2026-09-14
+- 严重级别：MAJOR / BLOCKING_TO_G2-P03_DONE
+- 文件与位置：`prototype/src/domain/prototypeStore.js` 的 `checkin`；`prototype/src/views/h5/H5CheckinView.vue`、`prototype/src/views/web/AttendanceView.vue`。
+- 问题：现有 H5 仅提供“有效扫码”和“超出范围”两个手工结果；无效结果被记录，但没有缺卡/超时检测、异常提醒或 Mock 消息/重试状态。
+- 依据：`prototype/README.md` P4 闭环要求“统计 → 异常提醒”；SRS G2-FR-020 要求识别缺卡和超时并通过统一消息通道推送告警。原型可使用 Mock，但不能省略该闭环状态。
+- 影响：P4 从扫码到统计后缺少异常提醒环节，无法验证用户是否能理解异常处理路径。
+- 建议修订：B 增加最小 Mock 缺卡/超时场景、异常提醒记录及“模拟消息 / 待后续集成验证”状态；不调用真实消息通道，不宣称并发或到达率指标已验证。
+- 主责人：B
+- 复核人：A、C
+- 关闭判据：演示有效扫码、无效范围以及至少一种缺卡/超时异常；异常在 Web 端可见，并有明确 Mock 通知状态和非真实验收标识。
+- 状态：OPEN

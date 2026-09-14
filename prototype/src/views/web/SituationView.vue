@@ -1,0 +1,8 @@
+<script setup>import {computed,ref} from 'vue';import {state} from '../../domain/prototypeStore.js';import StatusTag from '../../components/StatusTag.vue';const selectedId=ref(state.events[0]?.id);const event=computed(()=>state.events.find(x=>x.id===selectedId.value)||state.events[0]);const tasks=computed(()=>state.tasks.filter(x=>x.eventId===event.value?.id))</script>
+<template><section class="page-stack"><div class="page-heading"><div class="module-icon">图</div><div><h2>事件态势一张图</h2><p>人员、视频、物资、时间线与任务统一查看</p></div><StatusTag text="全量 Mock"/></div>
+<label class="field">当前事件<select v-model="selectedId"><option v-for="item in state.events" :key="item.id" :value="item.id">{{item.title}}</option></select></label>
+<div v-if="event" class="situation-grid">
+<article class="panel situation-map"><div class="floor-label">一层平面 Mock</div><span class="point event-point">事件<br>{{event.location}}</span><span class="point person-point one">人员<br>已就位</span><span class="point person-point two">人员<br>位置过期</span><span class="point material-point">物资站<br>24件</span></article>
+<article class="panel"><header><div><h2>{{event.title}}</h2><p>{{event.id}}</p></div><StatusTag :text="event.status"/></header><h3>任务状态</h3><div class="mini-list"><div v-for="task in tasks" :key="task.id"><span>{{task.title}}</span><StatusTag :text="task.status"/></div><p v-if="!tasks.length">尚未启动预案，无关联任务。</p></div><h3>视频占位</h3><div class="video-placeholder">CAM-EAST-01<br><small>未连接真实视频/录像</small></div></article>
+</div>
+<article v-if="event" class="panel"><h2>事件时间线</h2><ol class="timeline"><li v-for="item in event.timeline" :key="item.time+item.label"><time>{{item.time}}</time><div><strong>{{item.label}}</strong><p>{{item.detail}}</p></div></li></ol></article></section></template>

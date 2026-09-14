@@ -1,0 +1,4 @@
+<script setup>import {state} from '../../domain/prototypeStore.js';import StatusTag from '../../components/StatusTag.vue'</script>
+<template><section class="page-stack"><div class="page-heading"><div class="module-icon">案</div><div><h2>应急预案</h2><p>启动事件前读取已发布预案和任务模板</p></div><StatusTag text="Mock 数据"/></div>
+<div class="card-grid"><article v-for="plan in state.plans" :key="plan.id" class="panel"><header><div><h2>{{plan.name}}</h2><p>{{plan.id}} · {{plan.level}}</p></div><StatusTag :text="plan.status"/></header><ol class="compact-list"><li v-for="task in plan.tasks" :key="task">{{task}}</li></ol></article></div>
+<div class="notice">G2-P03 使用固定发布预案验证“核实事件 → 启动预案 → 自动生成任务”。预案编辑与版本管理不在本轮实现范围。</div></section></template>

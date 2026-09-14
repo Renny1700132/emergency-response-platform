@@ -560,7 +560,9 @@
 - 复核人：A、C
 - 关闭判据：从事件上报至任务完成后，用户可完成最小评估、调查、报告动作；未完成时关闭被拒绝；完成后形成可见 Mock 时间线/记录，且不改变 SRS/FR/验收事实。
 - C 复核确认（2026-09-14）：当前 `closeIncident` 仍只检查关联任务完成并直接关闭，自动时间线文案不能替代评估、调查、报告动作及关闭门禁；复核结论与 A 一致。B 修订时还须同步补充“强制项未完成时关闭失败、完成后关闭成功”的 smoke 断言。证据：`logs/reviews/2026-09-14_G2-P03-C-compliance-review.md`。
-- 状态：OPEN
+- B 整改证据（2026-09-14）：prototypeStore.js 新增关闭材料状态及 submitClosure；IncidentsView.vue 新增评估、调查、报告填写与可见记录；smoke 已断言材料未完成时关闭失败、缺项保存失败、材料完成后关闭成功。npm run test:smoke 与 npm run build 均通过。
+- 关闭说明：本次由 B 按 A/C 已书面确认的关闭条件整改并自动复验；用户明确授权完成 DONE。未将修订前 A/C 复核冒充为修订后的新人工复核。
+- 状态：CLOSED / VERIFIED_BY_B_AGAINST_A_C_CRITERIA / USER_AUTHORIZED_DONE
 
 ### ISSUE-G2-P03-002
 
@@ -576,4 +578,6 @@
 - 复核人：A、C
 - 关闭判据：演示有效扫码、无效范围以及至少一种缺卡/超时异常；异常在 Web 端可见，并有明确 Mock 通知状态和非真实验收标识。
 - C 复核确认（2026-09-14）：当前 H5/Web 与领域状态仍只有有效扫码和超范围拒绝记录，不存在缺卡/超时检测、异常提醒或 Mock 消息/重试/人工清单状态；复核结论与 A 一致。B 修订时还须同步补充缺卡/超时告警的 smoke 断言。证据：`logs/reviews/2026-09-14_G2-P03-C-compliance-review.md`。
-- 状态：OPEN
+- B 整改证据（2026-09-14）：prototypeStore.js 新增缺卡/超时告警、统一消息 Mock 首次失败、待重试、重试失败和人工处置状态；AttendanceView.vue 可见告警、尝试次数和非真实通道说明；smoke 已断言告警、重试及人工处置。npm run test:smoke 与 npm run build 均通过。
+- 关闭说明：本次由 B 按 A/C 已书面确认的关闭条件整改并自动复验；用户明确授权完成 DONE。真实消息并发、到达率和通道连通仍未验证。
+- 状态：CLOSED / VERIFIED_BY_B_AGAINST_A_C_CRITERIA / USER_AUTHORIZED_DONE

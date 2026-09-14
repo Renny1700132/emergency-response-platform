@@ -42,6 +42,6 @@
 | G2-06 | RTM v1 | C | B | G2-03、G2-04 | 需求编号、验收标准 | 需求追踪矩阵 RTM v1 | DONE |
 | G2-07 | 双镜像一致性与 M2 评审 | A | B、C | G2-05、G2-06 | 全部 G2 候选产物 | 一致性报告、M2 评审包 | DONE |
 | G2-P01 | 最小可验证原型规划与边界冻结 | A | B、C | G2-07 | SRS、spec、RTM、需求确认书、G2 评审记录 | `prototype/README.md`：原型边界、闭环、Mock、完成定义与开发顺序 | DONE |
-| G2-P02 | 原型基础框架与页面骨架 | B | A | G2-P01 | 原型规划、SRS、spec | Vue/Vite 基础框架、Router、Web 菜单、H5 布局与 Mock 基础设施 | REVIEW |
+| G2-P02 | 原型基础框架与页面骨架 | B | A | G2-P01 | 原型规划、SRS、spec | Vue/Vite 基础框架、Router、Web 菜单、H5 布局与 Mock 基础设施 | DONE |
 | G2-P03 | MVP 核心流程原型 | B | A、C | G2-P02 | 原型页面骨架、Mock 规则、MVP FR | 事件处置、态势 Mock、H5 反馈及演练/打卡/盘点最小闭环 | TODO |
 | G2-P04 | 原型走查与收口 | A | B、C | G2-P03 | 原型、SRS、spec、RTM | 核心流程走查、需求映射、少量截图、README 更新和第三关设计输入 | TODO |

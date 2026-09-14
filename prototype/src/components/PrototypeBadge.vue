@@ -1,0 +1,1 @@
+<template><span class="prototype-badge">课程原型 · Mock 数据</span></template>

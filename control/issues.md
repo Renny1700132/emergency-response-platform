@@ -623,7 +623,10 @@
 - 影响文件：`docs/work/C_REQ/ai_reverse_clarifications.md`、09 正式件、RTM、M2 评审包；影响 G3：旧输入不得继续准出。
 - 责任/复核：C / B、A。
 - 关闭条件：旧 12 条分层为上游继承索引；至少 10 条新 G2 澄清均有来源、影响、选项、裁决或真实待确认、落点和验证；不得伪造人工裁决。
-- 状态：OPEN。
+- 人工裁决证据（2026-09-15）：`logs/prompts/2026-09-15-A.md` 的 `LOG-G2-REWORK-DECISIONS-002 / USER_PROMPT_RAW`，由用户以项目负责人身份逐项提供 10 项课程项目人工业务决策；不代表现实甲方法律文件或现场验收结论。
+- C 处置（2026-09-15）：`docs/work/C_REQ/ai_reverse_clarifications.md` v0.2 已将 G2-CLR-001—012 分层为 G1 上游继承索引；建立 G2-RCLR-001—010，每条包含规格来源与歧义、影响、三个备选口径、人工裁决、证据锚点、双镜像落点和验证方式。未改变 FR、★、数字、责任或验收强度。
+- 处置证据：`logs/reviews/2026-09-15_G2-R02-C-self-check.md`。
+- 状态：RESOLVED / PENDING_B_A_REVIEW。
 
 ### ISSUE-G2-R01-002
 - 严重级别：MAJOR / BLOCKING_TO_G2-R04。

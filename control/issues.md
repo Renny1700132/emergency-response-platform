@@ -626,7 +626,8 @@
 - 人工裁决证据（2026-09-15）：`logs/prompts/2026-09-15-A.md` 的 `LOG-G2-REWORK-DECISIONS-002 / USER_PROMPT_RAW`，由用户以项目负责人身份逐项提供 10 项课程项目人工业务决策；不代表现实甲方法律文件或现场验收结论。
 - C 处置（2026-09-15）：`docs/work/C_REQ/ai_reverse_clarifications.md` v0.2 已将 G2-CLR-001—012 分层为 G1 上游继承索引；建立 G2-RCLR-001—010，每条包含规格来源与歧义、影响、三个备选口径、人工裁决、证据锚点、双镜像落点和验证方式。未改变 FR、★、数字、责任或验收强度。
 - 处置证据：`logs/reviews/2026-09-15_G2-R02-C-self-check.md`。
-- 状态：RESOLVED / PENDING_B_A_REVIEW。
+- B 技术复核（2026-09-15）：PASS。复核 `G2-RCLR-001—010` 的可实施性、异常处理和验证方式，未发现对 39 条 FR、34 条 ★FR、既有数字、责任或验收强度的静默变更；记录见 `logs/reviews/2026-09-15_G2-R02-B-technical-review.md`。
+- 状态：RESOLVED / PENDING_A_REVIEW。
 
 ### ISSUE-G2-R01-002
 - 严重级别：MAJOR / BLOCKING_TO_G2-R04。

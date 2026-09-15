@@ -45,3 +45,4 @@
 | G2-P02 | 原型基础框架与页面骨架 | B | A | G2-P01 | 原型规划、SRS、spec | Vue/Vite 基础框架、Router、Web 菜单、H5 布局与 Mock 基础设施 | DONE |
 | G2-P03 | MVP 核心流程原型 | B | A、C | G2-P02 | 原型页面骨架、Mock 规则、MVP FR | 事件处置、态势 Mock、H5 反馈及演练/打卡/盘点最小闭环 | DONE |
 | G2-P04 | 原型走查与收口 | A | B、C | G2-P03 | 原型、SRS、spec、RTM | 核心流程走查、需求映射、少量截图、README 更新和第三关设计输入 | DONE |
+| G2-P05 | 原型可用性与演示收口 | A | B、C | G2-P04 | 现有 Prototype、SRS、spec、RTM、G2-P04 走查结论 | 完成可用性整改的 Prototype、一键服务器管理脚本、展示说明及截图、最终走查记录 | DONE |

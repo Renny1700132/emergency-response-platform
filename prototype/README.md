@@ -165,3 +165,20 @@ npm run build
 - `docs/work/A_PM/G2-P04_prototype_walkthrough.md`
 
 本结论仅表示原型可以作为第三关设计输入：不得将 localStorage 数据结构直接作为正式数据模型，也不得将 Mock 截图、烟测、地图/视频占位或通知状态表述为真实接口、性能、安全、部署或验收结果。G2-P04 仍须 B、C 按任务分工完成复核；通过后停止继续堆叠原型功能，转入第三关正式架构、数据、接口与测试设计。
+
+## 13. G2-P05 可用性与演示收口
+
+推荐使用 Windows PowerShell 一键管理本地演示服务：
+
+```powershell
+cd prototype
+.\server.ps1 start
+.\server.ps1 status
+.\server.ps1 stop
+```
+
+脚本会只记录并停止它自己启动的 Vite 进程。直接执行 `./server.ps1` 可打开简单菜单。Web 地址为 `http://127.0.0.1:5173/#/web/dashboard`，H5 地址为 `http://127.0.0.1:5173/#/h5/home`。
+
+当前页面包括 Web 的驾驶舱、预案、事件、态势、任务、人员值班、物资、演练、打卡、配置、统计、安防和对接状态，以及 H5 的上报、我的事件、任务、演练、打卡、盘点和知识库。全部页面共享 `prototypeStore` 中的 localStorage 演示状态；该状态仅用于原型，不是正式数据库模型。
+
+面向教师、评审和用户的展示说明与整改后截图见 [SHOWCASE.md](./SHOWCASE.md)。

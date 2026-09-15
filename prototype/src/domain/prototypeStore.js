@@ -1,109 +1,11 @@
 import {reactive} from 'vue'
 
-const emptyClosure=()=>({evaluation:'',investigation:'',reportTitle:'',knowledgeNote:'',status:'待填写',completedAt:''})
-const seed=()=>({
-  events:[
-    {id:'EVT-20260914-001',title:'东区展厅烟感告警',type:'消防告警',location:'东区展厅',description:'模拟烟感设备产生告警，等待人工核实。',status:'待核实',planId:null,createdBy:'模拟物联网',updatedAt:'16:20',closure:emptyClosure(),timeline:[{time:'16:20',label:'事件上报',detail:'模拟物联网告警转入待核实事件'}]},
-    {id:'EVT-20260914-002',title:'一层客流密度异常',type:'客流异常',location:'一层中庭',description:'模拟客流密度超过展示阈值。',status:'处置中',planId:'PLAN-CROWD-001',createdBy:'模拟客流平台',updatedAt:'16:05',closure:emptyClosure(),timeline:[{time:'15:54',label:'事件上报',detail:'客流平台模拟告警'},{time:'15:57',label:'核实通过',detail:'值班人员确认需要处置'},{time:'16:05',label:'启动预案',detail:'关联客流疏导预案'}]}
-  ],
-  tasks:[
-    {id:'TASK-20260914-001',eventId:'EVT-20260914-002',title:'疏导一层中庭游客',assignee:'现场处置组',deadline:'17:00',status:'待接收',feedback:''},
-    {id:'TASK-20260914-002',eventId:'EVT-20260914-002',title:'复核主要通道状态',assignee:'安全保障组',deadline:'17:10',status:'执行中',feedback:'已到达现场'}
-  ],
-  plans:[
-    {id:'PLAN-FIRE-001',name:'展厅火情现场处置预案',level:'现场处置',status:'已发布',tasks:['确认报警点','组织人员疏散']},
-    {id:'PLAN-CROWD-001',name:'客流异常疏导预案',level:'专项',status:'已发布',tasks:['疏导游客','复核通道']}
-  ],
-  drill:{id:'DRILL-202609-001',name:'秋季消防疏散演练',place:'东区展厅',owner:'应急保障组',status:'待执行',result:'',improvement:''},
-  checkins:[],
-  attendanceAlerts:[],
-  notificationRecords:[],
-  inventory:{planId:'INV-202609-001',station:'东区物资站',item:'应急手电',bookQuantity:24,actualQuantity:null,difference:null,status:'待盘点',reviewer:''},
-  adapters:[
-    {key:'map',name:'二维/楼层地图',status:'模拟连接',note:'静态平面图与点位'},
-    {key:'position',name:'人员定位',status:'模拟连接',note:'模拟坐标，非真实精度证据'},
-    {key:'video',name:'视频平台',status:'待后续集成验证',note:'占位画面，未连接 GB/T 28181'},
-    {key:'message',name:'统一消息',status:'模拟连接',note:'模拟发送、回执和重试'},
-    {key:'access',name:'疏散门禁',status:'待后续集成验证',note:'不下发真实控制指令'},
-    {key:'middleware',name:'统一中台',status:'模拟连接',note:'模拟用户、组织和权限'}
-  ]
-})
-
-const storageKey='museum-emergency-prototype-v1'
-const clone=value=>JSON.parse(JSON.stringify(value))
-const normalize=saved=>{
-  const base=seed()
-  if(!saved)return base
-  return {...base,...saved,
-    events:(saved.events||base.events).map(event=>({...event,closure:{...emptyClosure(),...(event.closure||{})}})),
-    attendanceAlerts:saved.attendanceAlerts||[],
-    notificationRecords:saved.notificationRecords||[]
-  }
-}
-const load=()=>{
-  if(typeof window==='undefined')return seed()
-  try{return normalize(JSON.parse(window.localStorage.getItem(storageKey)))}catch{return seed()}
-}
-export const state=reactive(load())
-const persist=()=>{if(typeof window!=='undefined')window.localStorage.setItem(storageKey,JSON.stringify(state))}
-const now=()=>new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',hour12:false})
-const nextId=prefix=>`${prefix}-${new Date().toISOString().slice(0,10).replaceAll('-','')}-${String(Date.now()).slice(-4)}`
-const eventBy=id=>state.events.find(item=>item.id===id)
-const taskBy=id=>state.tasks.find(item=>item.id===id)
-const addTimeline=(event,label,detail)=>{event.timeline.push({time:now(),label,detail});event.updatedAt=now()}
-
-export const actions={
-  reset(){Object.assign(state,clone(seed()));persist()},
-  reportIncident(input){
-    if(!input.title?.trim()||!input.type||!input.location?.trim())return{ok:false,message:'请完整填写事件名称、类型和地点'}
-    const event={id:nextId('EVT'),title:input.title.trim(),type:input.type,location:input.location.trim(),description:input.description?.trim()||'未填写补充说明',status:'待核实',planId:null,createdBy:'H5 值班人员',updatedAt:now(),closure:emptyClosure(),timeline:[{time:now(),label:'H5 事件上报',detail:'已保存事件信息；图片为 Mock 引用'}]}
-    state.events.unshift(event);persist();return{ok:true,event}
-  },
-  verifyIncident(id,accepted=true){
-    const event=eventBy(id)
-    if(!event||event.status!=='待核实')return{ok:false,message:'仅待核实事件可提交核实结论'}
-    event.status=accepted?'已核实':'已驳回';addTimeline(event,accepted?'核实通过':'核实驳回',accepted?'值班人员确认进入预案选择':'事件不进入处置流程');persist();return{ok:true}
-  },
-  startIncident(id,planId='PLAN-FIRE-001'){
-    const event=eventBy(id),plan=state.plans.find(item=>item.id===planId&&item.status==='已发布')
-    if(!event||event.status!=='已核实'||!plan)return{ok:false,message:'事件须已核实且预案须已发布'}
-    event.status='处置中';event.planId=plan.id
-    plan.tasks.forEach((title,index)=>state.tasks.push({id:nextId(`TASK${index+1}`),eventId:id,title,assignee:index?'安全保障组':'现场处置组',deadline:'今日 18:00',status:'待接收',feedback:''}))
-    addTimeline(event,'启动预案',`已关联 ${plan.name} 并生成 ${plan.tasks.length} 个 Mock 任务`);persist();return{ok:true}
-  },
-  acceptTask(id){const task=taskBy(id);if(!task||task.status!=='待接收')return{ok:false,message:'仅待接收任务可确认'};task.status='执行中';const event=eventBy(task.eventId);if(event)addTimeline(event,'任务已接收',`${task.assignee} 接收“${task.title}”`);persist();return{ok:true}},
-  feedbackTask(id,text){const task=taskBy(id);if(!task||task.status!=='执行中'||!text?.trim())return{ok:false,message:'执行中任务需要填写反馈'};task.feedback=text.trim();const event=eventBy(task.eventId);if(event)addTimeline(event,'任务反馈',`${task.title}：${task.feedback}`);persist();return{ok:true}},
-  completeTask(id){const task=taskBy(id);if(!task||task.status!=='执行中'||!task.feedback)return{ok:false,message:'请先提交任务反馈'};task.status='已完成';const event=eventBy(task.eventId);if(event)addTimeline(event,'任务完成',task.title);persist();return{ok:true}},
-  submitClosure(id,input){
-    const event=eventBy(id)
-    if(!event||event.status!=='处置中')return{ok:false,message:'仅处置中事件可填写关闭材料'}
-    const evaluation=input.evaluation?.trim(),investigation=input.investigation?.trim(),reportTitle=input.reportTitle?.trim()
-    if(!evaluation||!investigation||!reportTitle)return{ok:false,message:'评估结论、调查记录和报告名称均为必填'}
-    event.closure={evaluation,investigation,reportTitle,knowledgeNote:input.knowledgeNote?.trim()||'未形成知识条目',status:'材料已完成',completedAt:now()}
-    addTimeline(event,'关闭材料完成',`已保存 Mock 评估、调查和报告“${reportTitle}”`);persist();return{ok:true}
-  },
-  closeIncident(id){
-    const event=eventBy(id),related=state.tasks.filter(item=>item.eventId===id)
-    if(!event||event.status!=='处置中')return{ok:false,message:'仅处置中事件可关闭'}
-    if(related.length&&related.some(item=>item.status!=='已完成'))return{ok:false,message:'仍有任务未完成，暂不能关闭'}
-    if(event.closure?.status!=='材料已完成')return{ok:false,message:'请先完成评估、调查和报告材料'}
-    event.status='已关闭';addTimeline(event,'事件关闭',`关闭材料已确认：${event.closure.reportTitle}`);persist();return{ok:true}
-  },
-  advanceDrill(result='按计划完成疏散集合'){const order=['待执行','执行中','待评估','已完成'],index=order.indexOf(state.drill.status);if(index<0||index===order.length-1)return{ok:false,message:'演练已经完成'};state.drill.status=order[index+1];if(state.drill.status==='待评估')state.drill.result=result;if(state.drill.status==='已完成')state.drill.improvement='加强疏散口引导标识检查';persist();return{ok:true}},
-  checkin(valid=true){const record={id:nextId('CHK'),person:'当前值班人员',point:'东区展厅入口',time:now(),status:valid?'有效':'已拒绝',reason:valid?'身份、时段和模拟范围校验通过':'模拟超出有效范围'};state.checkins.unshift(record);persist();return{ok:valid,record,message:record.reason}},
-  detectAttendanceException(){
-    const open=state.attendanceAlerts.find(item=>item.status!=='已处理')
-    if(open)return{ok:false,message:'已有缺卡告警待处理'}
-    const alertId=nextId('ALERT'),messageId=nextId('MSG')
-    state.attendanceAlerts.unshift({id:alertId,person:'夜班巡检员（模拟）',point:'东区展厅入口',type:'缺卡/超时',detectedAt:now(),status:'通知待重试',messageId})
-    state.notificationRecords.unshift({id:messageId,alertId,channel:'统一消息 Mock',attempts:1,status:'Mock 发送失败 / 待重试',note:'未调用真实通道，不计入到达率'})
-    persist();return{ok:true,message:'已生成缺卡/超时告警，Mock 通知首次发送失败'}
-  },
-  retryAttendanceNotification(alertId){
-    const alert=state.attendanceAlerts.find(item=>item.id===alertId),record=state.notificationRecords.find(item=>item.alertId===alertId)
-    if(!alert||!record||alert.status!=='通知待重试')return{ok:false,message:'当前告警不处于待重试状态'}
-    record.attempts+=1;record.status='Mock 重试失败 / 转人工处置';record.note='已加入人工联系清单，未调用真实消息通道';alert.status='人工处置';persist();return{ok:true,message:'Mock 重试失败，已转人工处置'}
-  },
-  submitInventory(value){const actual=Number(value);if(!Number.isInteger(actual)||actual<0)return{ok:false,message:'盘点数量必须是非负整数'};state.inventory.actualQuantity=actual;state.inventory.difference=actual-state.inventory.bookQuantity;state.inventory.status='待复核';persist();return{ok:true}},
-  reviewInventory(){if(state.inventory.status!=='待复核')return{ok:false,message:'仅待复核结果可确认更新'};state.inventory.bookQuantity=state.inventory.actualQuantity;state.inventory.status='已复核';state.inventory.reviewer='物资管理员';persist();return{ok:true}}
-}
+const stamp=()=>new Date().toLocaleString('sv-SE',{timeZone:'Asia/Shanghai'}).replace(' ','T')+'+08:00'
+export const displayTime=value=>(value||'').replace('T',' ').replace(/:..\+08:00$/,'')
+let sequence=0
+const copy=v=>JSON.parse(JSON.stringify(v)), id=p=>`${p}-${stamp().slice(0,10).replaceAll('-','')}-${String((++sequence)%1000).padStart(3,'0')}`
+const closure=()=>({evaluation:'',investigation:'',reportTitle:'',knowledgeNote:'',status:'待完善'})
+const seed=()=>({user:{name:'演示用户',role:'应急指挥人员'},people:[{id:'P-001',name:'周明',role:'应急指挥人员',group:'应急指挥组',contact:'在线',duty:true},{id:'P-002',name:'林晓',role:'值班人员',group:'值班组',contact:'在线',duty:true},{id:'P-003',name:'陈宇',role:'现场处置人员',group:'现场处置组',contact:'待命',duty:false},{id:'P-004',name:'王静',role:'物资管理员',group:'物资保障组',contact:'在线',duty:false}],events:[{id:'EVT-20260915-001',title:'东区展厅烟感告警',type:'消防告警',location:'东区展厅',description:'系统告警已转入人工核实。',status:'待核实',createdBy:'值班人员',createdAt:'2026-09-15T09:20:00+08:00',planId:null,closure:closure(),updates:[],timeline:[{time:'2026-09-15T09:20:00+08:00',label:'事件上报',detail:'已进入事件核实队列',source:'值班人员'}]}],plans:[{id:'PLAN-FIRE-001',name:'展厅火情现场处置预案',type:'现场处置',version:'v1.2',status:'已发布',tasks:[{title:'确认报警点并现场核查',group:'现场处置组',deadline:'30分钟'},{title:'组织人员疏散与通道复核',group:'安全保障组',deadline:'45分钟'}]},{id:'PLAN-CROWD-001',name:'客流异常疏导预案',type:'专项预案',version:'v1.0',status:'已发布',tasks:[{title:'疏导中庭游客',group:'现场处置组',deadline:'20分钟'},{title:'复核主要通道状态',group:'安全保障组',deadline:'30分钟'}]}],tasks:[],drills:[{id:'DRILL-202609-001',name:'秋季消防疏散演练',place:'东区展厅',owner:'应急保障组',status:'待启动',result:'',evaluation:'',createdAt:'2026-09-15T08:00:00+08:00'},{id:'DRILL-202610-001',name:'客流异常处置演练',place:'一层中庭',owner:'值班组',status:'计划中',result:'',evaluation:'',createdAt:'2026-09-15T08:10:00+08:00'}],materials:[{id:'MAT-001',station:'东区物资站',name:'应急手电',quantity:24,status:'充足',location:'东区展厅入口'},{id:'MAT-002',station:'东区物资站',name:'医用急救包',quantity:6,status:'充足',location:'东区展厅入口'},{id:'MAT-003',station:'中庭物资站',name:'警戒带',quantity:12,status:'待补充',location:'一层中庭'}],inventoryPlans:[{id:'INV-20260915-001',station:'东区物资站',materialId:'MAT-001',bookQuantity:24,actualQuantity:null,difference:null,status:'待盘点',createdAt:'2026-09-15T09:00:00+08:00',reviewer:''}],checkinRules:{group:'值班组',point:'东区展厅入口',time:'08:00—20:00',radius:'50米'},checkins:[],attendanceAlerts:[],notificationRecords:[],adapters:[{key:'map',name:'地图服务',status:'模拟接入',updatedAt:'2026-09-15T09:30:00+08:00',note:'展示楼层与业务点位'},{key:'position',name:'人员定位',status:'模拟接入',updatedAt:'2026-09-15T09:30:00+08:00',note:'展示演示位置与就位状态'},{key:'video',name:'视频平台',status:'待接入',updatedAt:'2026-09-15T09:30:00+08:00',note:'展示摄像头清单与画面占位'},{key:'message',name:'统一消息',status:'模拟接入',updatedAt:'2026-09-15T09:30:00+08:00',note:'展示通知、重试和处置状态'},{key:'access',name:'门禁系统',status:'待接入',updatedAt:'2026-09-15T09:30:00+08:00',note:'不下发真实控制指令'},{key:'middleware',name:'统一中台',status:'模拟接入',updatedAt:'2026-09-15T09:30:00+08:00',note:'展示用户和组织信息'}],devices:[{id:'CAM-EAST-01',type:'摄像头',name:'东区展厅入口摄像头',status:'在线',location:'东区展厅入口'},{id:'ACC-EAST-01',type:'门禁',name:'东区疏散门禁',status:'待接入',location:'东区展厅入口'},{id:'LOC-TEAM-01',type:'定位终端',name:'现场处置组定位终端',status:'在线',location:'东区展厅'}],configs:{'预案类型':['综合预案','专项预案','现场处置'],'事件类型':['消防告警','客流异常','设备异常'],'物资站点':['东区物资站','中庭物资站'],'评估模板':['演练评估表','事件关闭评估表'],'审批流程':['事件核实流程','预案发布流程']},knowledge:[{category:'火情处置',title:'展厅初起火情处置要点',content:'先确认人员安全，按现场预案组织疏散并保持通道畅通。'},{category:'人员疏散',title:'人员疏散引导',content:'按分区和通道分流，及时反馈集合与滞留情况。'},{category:'设备故障',title:'设备异常上报',content:'记录位置、现象和影响范围，避免擅自拆修。'},{category:'急救指引',title:'现场急救提示',content:'优先联系现场急救力量，保留事件记录和交接信息。'}]})
+const key='museum-emergency-prototype-demo-v2',load=()=>{try{return {...seed(),...JSON.parse(localStorage.getItem(key)||'null')}}catch{return seed()}}
+export const state=reactive(load());const save=()=>{if(typeof localStorage!=='undefined')localStorage.setItem(key,JSON.stringify(state))},eventOf=i=>state.events.find(x=>x.id===i),line=(e,label,detail)=>e.timeline.push({time:stamp(),label,detail,source:state.user.name})
+export const actions={reset(){Object.assign(state,copy(seed()));save()},switchRole(role){state.user.role=role;save()},reportIncident(input,source='移动端'){if(!input.title?.trim()||!input.type||!input.location?.trim())return{ok:false,message:'请填写事件名称、类型和地点'};const e={id:id('EVT'),title:input.title.trim(),type:input.type,location:input.location.trim(),description:input.description?.trim()||'暂无补充说明',status:'待核实',createdBy:state.user.name,createdAt:stamp(),planId:null,closure:closure(),updates:[],timeline:[]};line(e,'事件上报',`${source}提交事件：${e.description}`);state.events.unshift(e);save();return{ok:true,event:e}},verifyIncident(i,yes=true){const e=eventOf(i);if(!e||e.status!=='待核实')return{ok:false,message:'当前事件不可核实'};e.status=yes?'已核实':'已驳回';line(e,yes?'核实通过':'核实驳回',yes?'请选择处置预案':'事件已结束');save();return{ok:true}},startIncident(i,planId){const e=eventOf(i),p=state.plans.find(x=>x.id===planId&&x.status==='已发布');if(!e||e.status!=='已核实'||!p)return{ok:false,message:'请选择已发布预案'};e.status='处置中';e.planId=p.id;p.tasks.forEach(t=>state.tasks.push({id:id('TASK'),eventId:e.id,title:t.title,assignee:t.group,deadline:t.deadline,status:'待接收',feedback:'',createdAt:stamp(),reminders:0}));line(e,'启动处置',`已采用${p.name}，生成${p.tasks.length}项任务`);save();return{ok:true}},addUpdate(i,text){const e=eventOf(i);if(!e||!text?.trim())return{ok:false,message:'请输入续报内容'};const u={time:stamp(),content:text.trim(),source:state.user.name};e.updates.unshift(u);line(e,'新增续报',u.content);save();return{ok:true}},createTask(x){if(!x.title?.trim()||!x.group||!x.deadline)return{ok:false,message:'请完整填写任务信息'};state.tasks.unshift({id:id('TASK'),eventId:x.eventId||'',title:x.title,assignee:x.group,deadline:x.deadline,status:'待接收',feedback:'',createdAt:stamp(),reminders:0});save();return{ok:true}},acceptTask(i){const t=state.tasks.find(x=>x.id===i);if(!t||t.status!=='待接收')return{ok:false,message:'当前任务不可接收'};t.status='执行中';const e=eventOf(t.eventId);if(e)line(e,'任务接收',`${t.assignee}已接收：${t.title}`);save();return{ok:true}},feedbackTask(i,text){const t=state.tasks.find(x=>x.id===i);if(!t||t.status!=='执行中'||!text?.trim())return{ok:false,message:'请填写处理反馈'};t.feedback=text.trim();const e=eventOf(t.eventId);if(e)line(e,'任务反馈',`${t.title}：${t.feedback}`);save();return{ok:true}},completeTask(i){const t=state.tasks.find(x=>x.id===i);if(!t||t.status!=='执行中'||!t.feedback)return{ok:false,message:'请先提交处理反馈'};t.status='已完成';const e=eventOf(t.eventId);if(e)line(e,'任务完成',t.title);save();return{ok:true}},remindTask(i){const t=state.tasks.find(x=>x.id===i);if(!t)return{ok:false};t.reminders++;save();return{ok:true,message:'已发送催办提醒'}},submitClosure(i,x){const e=eventOf(i);if(!e||!x.evaluation?.trim()||!x.investigation?.trim()||!x.reportTitle?.trim())return{ok:false,message:'请完整填写评估、调查和报告名称'};e.closure={...x,status:'材料已完成'};line(e,'关闭材料完成',x.reportTitle);save();return{ok:true}},closeIncident(i){const e=eventOf(i),open=state.tasks.some(t=>t.eventId===i&&t.status!=='已完成');if(!e||open||e.closure.status!=='材料已完成')return{ok:false,message:'请先完成关联任务和关闭材料'};e.status='已关闭';line(e,'事件关闭','处置记录已归档');save();return{ok:true}},savePlan(x){if(!x.name?.trim()||!x.tasks?.length)return{ok:false,message:'请填写预案名称和至少一项任务'};const p={id:x.id||id('PLAN'),name:x.name,type:x.type||'现场处置',version:x.version||'v1.0',status:x.status||'草稿',tasks:x.tasks},n=state.plans.findIndex(v=>v.id===p.id);n<0?state.plans.unshift(p):state.plans.splice(n,1,p);save();return{ok:true}},togglePlan(i){const p=state.plans.find(x=>x.id===i);if(!p)return{ok:false};p.status=p.status==='已发布'?'已停用':'已发布';save();return{ok:true}},createDrill(x){if(!x.name?.trim()||!x.place?.trim())return{ok:false,message:'请填写演练名称和地点'};state.drills.unshift({id:`DRILL-${stamp().slice(0,7).replace('-','')}-${String(Date.now()).slice(-3)}`,name:x.name,place:x.place,owner:x.owner||'应急保障组',status:'计划中',result:'',evaluation:'',createdAt:stamp()});save();return{ok:true}},startDrill(i){const d=state.drills.find(x=>x.id===i);if(!d||!['计划中','待启动'].includes(d.status))return{ok:false};d.status='执行中';save();return{ok:true}},submitDrill(i,result){const d=state.drills.find(x=>x.id===i);if(!d||d.status!=='执行中'||!result?.trim())return{ok:false,message:'请填写执行结果'};d.result=result;d.status='待评估';save();return{ok:true}},evaluateDrill(i,evaluation){const d=state.drills.find(x=>x.id===i);if(!d||d.status!=='待评估'||!evaluation?.trim())return{ok:false,message:'请填写评估结论'};d.evaluation=evaluation;d.status='已完成';save();return{ok:true}},checkin(valid=true){const r={id:id('CHK'),person:state.user.name,point:state.checkinRules.point,time:stamp(),status:valid?'有效':'已拒绝',reason:valid?'已完成身份、时段和范围校验':'未通过有效范围校验'};state.checkins.unshift(r);save();return{ok:valid,record:r,message:r.reason}},detectAttendanceException(){if(state.attendanceAlerts.some(x=>x.status!=='已处理'))return{ok:false,message:'已有待处理异常'};const a={id:id('ALERT'),person:'夜班巡检员',point:state.checkinRules.point,type:'缺卡/超时',detectedAt:stamp(),status:'待处理'};state.attendanceAlerts.unshift(a);state.notificationRecords.unshift({id:id('MSG'),alertId:a.id,status:'待重试',attempts:1});save();return{ok:true,message:'已生成异常提醒'}},retryAttendance(i){const a=state.attendanceAlerts.find(x=>x.id===i),n=state.notificationRecords.find(x=>x.alertId===i);if(!a||!n)return{ok:false};n.attempts++;a.status='人工跟进';save();return{ok:true,message:'已转人工跟进'}},resolveAttendance(i){const a=state.attendanceAlerts.find(x=>x.id===i);if(!a)return{ok:false};a.status='已处理';save();return{ok:true}},createInventory(station,materialId){const m=state.materials.find(x=>x.id===materialId);if(!m)return{ok:false};state.inventoryPlans.unshift({id:id('INV'),station:station||m.station,materialId:m.id,bookQuantity:m.quantity,actualQuantity:null,difference:null,status:'待盘点',createdAt:stamp(),reviewer:''});save();return{ok:true}},submitInventory(i,value){const p=state.inventoryPlans.find(x=>x.id===i),v=Number(value);if(!p||!Number.isInteger(v)||v<0)return{ok:false,message:'请输入非负整数'};p.actualQuantity=v;p.difference=v-p.bookQuantity;p.status='待复核';save();return{ok:true}},reviewInventory(i){const p=state.inventoryPlans.find(x=>x.id===i),m=p&&state.materials.find(x=>x.id===p.materialId);if(!p||!m||p.status!=='待复核')return{ok:false};m.quantity=p.actualQuantity;p.status='已复核';p.reviewer=state.user.name;save();return{ok:true}},retryAdapter(i){const a=state.adapters.find(x=>x.key===i);if(!a)return{ok:false};a.updatedAt=stamp();a.status='模拟接入';save();return{ok:true,message:'已更新接入状态'}},updateConfig(k,v){if(!v?.trim())return{ok:false};state.configs[k].push(v.trim());save();return{ok:true}},toggleConfig(k,v){const n=state.configs[k].indexOf(v);n>=0?state.configs[k].splice(n,1):state.configs[k].push(v);save();return{ok:true}}}

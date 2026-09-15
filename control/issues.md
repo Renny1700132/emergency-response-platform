@@ -676,4 +676,6 @@
 - 复核人：C（符合性、内容/Word一致性与逐页视觉）；B（技术可实施性）。
 - 关闭判据：最终目录无教学样例条目且页码正确；第5章顺序连续；Markdown、Word、生成脚本的任务编号和字段字典语义一致；39 FR、34★和关键数字不变；最新全页渲染无版式缺陷；C/B 分别复核通过。
 - C 首轮复核证据：`logs/reviews/2026-09-15_G2-R03-C-compliance-review.md`。
+- A 修订证据：提交 `c159709`；已清除样例目录、修正第5章顺序、字段字典和旧任务编号。
+- C 修订后复验：正式 Word 渲染 `logs/reviews/render_G2-R03_SRS_review_fix/page-12.png`—`page-13.png` 显示第4章标题仍位于3.6/3.7之前，正文顺序与目录、Markdown 不一致；`scripts/build_g2_r03_srs.py` 将3.6/3.7插入第4章标题锚点之后。关闭判据尚未满足，待 A 修正顺序、重新渲染并由 C/B 复验。
 - 状态：OPEN / BLOCKING。

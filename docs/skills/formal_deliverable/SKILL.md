@@ -80,3 +80,9 @@ The audit must record, separately for every document:
 - final status, strictly `PASS` or `FAIL`.
 
 Keep business content traceable to `docs/work/` and controlled project sources. Teaching examples supply format only and must never contaminate project facts. Check revision records against real Prompt/Review/Git evidence; do not fabricate version events. Commit only task-related Skill, deliverable, audit and logging evidence after staged-diff checks; fetch/merge safely and non-force push `origin/master`.
+
+## Captions and figure/table-number QA
+
+Treat captions as mandatory deliverable structure, not decoration. Every independently meaningful business table, figure, flow, architecture diagram, ER/UML/data-flow diagram, Gantt chart, screenshot or other illustration must have one adjacent Caption. Layout-only cover/revision key-value tables are exempt only where the unique Reference uses no caption.
+
+Inherit the Reference numbering style first. If the Reference is silent, use `表 X-Y 表名` and `图 X-Y 图名`, with X as chapter and Y as in-chapter sequence. Audit each document after every create/edit for table count, image/shape count, caption count, required-caption coverage, duplicate/skip numbering, caption adjacency, and valid body references. Render final pages and inspect that no caption is separated from its object. Record counts and PASS/FAIL in the document QA; XML-only Caption detection is insufficient.

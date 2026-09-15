@@ -217,4 +217,6 @@ doc.core_properties.title = '某自然博物馆智能运营中心建设项目—
 doc.core_properties.author = '何思源'
 doc.core_properties.last_modified_by = '何思源'
 doc.save(PATH)
+import subprocess
+subprocess.run(['python', str(ROOT / 'scripts' / 'fix_g2_r03_review.py')], check=True)
 print(PATH)

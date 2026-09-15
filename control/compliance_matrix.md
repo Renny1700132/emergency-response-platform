@@ -6,7 +6,7 @@
 - 冻结输入：`control/baselines/BASELINE-G1-V0.1.md`
 - 条款目录：`docs/work/C_REQ/requirements_clause_catalog.md` V0.2
 - 技术输入：`docs/work/technical_solution_v0.6.md`
-- 来源简称：P1=`docs/用户需求书-03-应急管理子系统.docx`；P2=`docs/通关实验任务书1-立项竞标.pdf`。
+- 来源简称：P1=`docs/inputs/G1/用户需求书-03-应急管理子系统.docx`；P2=`docs/inputs/G1/通关实验任务书1-立项竞标.pdf`。
 - 口径：`FULLY_COMPLIANT` 仅用于已冻结且已完成文档响应的事实/边界条款；所有尚待实施、联调、测试、验收或后续整合的条款均为 `PENDING_EVIDENCE`。
 - 责任列口径：“主责”表示该条款响应、实施和证据提交的专业责任人，不表示矩阵维护人；矩阵维护人为 C。“核验人”表示本行内容核验责任人；B 对 G1-05 的最终复核另见正式复核记录。同一人员同时承担技术响应和核验时，须保留独立复核记录，不得把自审当作现场验收。
 - 原子覆盖口径：本文件保留 168 行条款目录矩阵；`docs/work/C_REQ/compliance_matrix_v0.8.xlsx` 的“原子条款”工作表将 18 个聚合目录行拆为 78 个原子行，共 228 行，作为严格逐条覆盖检查依据。

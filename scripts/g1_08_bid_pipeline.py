@@ -19,7 +19,7 @@ from docx.text.paragraph import Paragraph
 
 ROOT = Path(__file__).resolve().parents[1]
 REFERENCE = ROOT / "docs/reference/00-澜图遥感影像智能解译平台-投标文件技术标（教学案例）.docx"
-REQUIREMENTS = ROOT / "docs/用户需求书-03-应急管理子系统.docx"
+REQUIREMENTS = ROOT / "docs/inputs/G1/用户需求书-03-应急管理子系统.docx"
 EXISTING_BID = ROOT / "docs/deliverables/00-投标文件技术标.docx"
 AUDIT = ROOT / "docs/work/A_PM/G1-08_granularity_alignment_audit.md"
 BID_MD = ROOT / "docs/work/A_PM/technical_bid.md"

@@ -678,4 +678,5 @@
 - C 首轮复核证据：`logs/reviews/2026-09-15_G2-R03-C-compliance-review.md`。
 - A 修订证据：提交 `c159709`；已清除样例目录、修正第5章顺序、字段字典和旧任务编号。
 - C 修订后复验：正式 Word 渲染 `logs/reviews/render_G2-R03_SRS_review_fix/page-12.png`—`page-13.png` 显示第4章标题仍位于3.6/3.7之前，正文顺序与目录、Markdown 不一致；`scripts/build_g2_r03_srs.py` 将3.6/3.7插入第4章标题锚点之后。关闭判据尚未满足，待 A 修正顺序、重新渲染并由 C/B 复验。
+- A 二次修订证据（2026-09-15）：正式 Word 正文已机械确认调整为 `3.5→3.6→表3-6→3.7→表3-7→4→5`；`scripts/build_g2_r03_srs.py` 改为在第4章标题前插入3.6，并由 `fix_g2_r03_review.py` 提供幂等顺序修复；回归脚本确认39个G2-FR、PE-01—12、G2-RCLR-001—010及A4页面参数未漂移。标准LibreOffice渲染因本机无`soffice.exe`失败，Word只读导出亦无法打开该既有生成链DOCX，未虚报全页视觉通过；待C在可用渲染环境完成最终逐页复验并决定关闭。
 - 状态：OPEN / BLOCKING。

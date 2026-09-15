@@ -1,0 +1,5458 @@
+{
+  "path": "docs/deliverables/08-软件需求规格说明书SRS.docx",
+  "sha256": "E370C7A0EAC103FBAA91ECE6F8AFE6321BFFC3B12A0EDC26C7576FD05521CC15",
+  "text_sha256": "16FC1CFEAC29CF7F849EC078FB68F72D0EB1C1B8B45496162C2E33F940E06314",
+  "record_count": 605,
+  "records": [
+    {
+      "part": "word/document.xml",
+      "index": "1",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "YJGL-G2-03    V1.1"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "2",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "密    级：内部·教学用"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "3",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": ""
+    },
+    {
+      "part": "word/document.xml",
+      "index": "4",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "某自然博物馆智能运营中心建设项目——应急管理子系统"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "5",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "软件需求规格说明书（SRS）"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "6",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "（课程模拟项目交付件）"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "7",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": ""
+    },
+    {
+      "part": "word/document.xml",
+      "index": "8",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "编制单位：020202项目组"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "9",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "编    制：何思源（项目经理）"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "10",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "审    核：任俊强（需求与合规负责人）"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "11",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "批    准：【待人工确认】"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "12",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "编制日期：2026 年 9 月 15 日"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "13",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "\n"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "14",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "修订记录"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "15",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "版本"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "16",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "日期"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "17",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "修订章节"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "18",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "修订说明"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "19",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "编制/修订人"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "20",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "V0.1"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "21",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "2026-09-13"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "22",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "全文"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "23",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "建立 39 条 FR 的 SRS 及双镜像验收链。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "24",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "何思源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "25",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "V1.0"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "26",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "2026-09-14"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "27",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "全文"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "28",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "按唯一 Pair 重构正式交付承载结构与版式，需求口径不变。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "29",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "何思源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "30",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "V1.1"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "31",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "2026-09-15"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "32",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "第3、5、6、10章"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "33",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-R03深化核心流程、状态模型、字段字典与PE/NFR量化表，重建正式件并完成自动渲染QA。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "34",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "何思源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "35",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "注：业务内容以 G2-R03 深化后的受控 SRS 工作稿为准；教学样例仅用于承载结构和版式。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "36",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "目 录"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "37",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "1 引言\t1\n2 总体说明\t1\n3 功能需求\t2\n3.1 数字预案与事件处置闭环\t2\n3.2 指挥态势、视频与定位联动\t3\n3.3 演练、移动执行与值班物资闭环\t5\n3.4 外部联动与中台业务适配\t8\n3.5 非MVP、本期范围功能需求\t9"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "38",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "3.6 核心业务流程与异常路径\t10\n3.7 核心状态模型\t10\n4 外部接口需求\t10\n5 数据需求\t11\n5.1 核心数据对象\t11\n5.2 核心实体字段字典\t11\n5.3 数据质量与来源\t12\n5.4 数据安全与审计\t12\n6 非功能需求\t12\n7 部署、交付与服务约束\t13\n8 验收与追踪\t14\n9 变更控制与待澄清事项\t14\n10 G2规格化阶段补充业务规则\t15"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "39",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "3.6 核心业务流程与异常路径\t10\n3.7 核心状态模型\t10\n4 外部接口需求\t10\n5 数据需求\t11\n5.1 核心数据对象\t11\n5.2 核心实体字段字典\t11\n5.3 数据质量与来源\t12\n5.4 数据安全与审计\t12\n6 非功能需求\t12\n7 部署、交付与服务约束\t13\n8 验收与追踪\t14\n9 变更控制与待澄清事项\t14\n10 G2规格化阶段补充业务规则\t15"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "40",
+      "kind": "paragraph",
+      "style": "1",
+      "caption": "false",
+      "text": "1 引言"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "41",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "1.1 目的"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "42",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "本说明书以39条受控功能需求为基础，形成可独立阅读、可评审、可验证的需求规格，为spec.md、反向澄清、RTM、设计和测试提供统一输入。本文中的“验证”表示应形成可复核证据，不表示接口、环境或能力已经验收通过。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "43",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "1.2 项目范围"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "44",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "本系统以数字化预案为核心，以应急指挥为枢纽，以 H5 移动处置为延伸，覆盖事前准备、事件接报、指挥处置、现场执行和事后改进。当前 MVP 包含 29 条唯一 FR，均为 Must；其余 10 条 FR 仍属于本期实施、测试和验收范围，不因未进入 MVP 而取消或降低要求。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "45",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "1.3 依据与优先级"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "46",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "需求事实以《用户需求书》和 BASELINE-V1.0 为准；第二关任务要求、G2 需求控制文件和课程模拟访谈依次用于组织规格。课程模拟访谈不是现实访谈原话，不能覆盖冻结的功能、★属性、数字、责任或验收条件。教学参考材料不得作为本项目业务事实来源。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "47",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "1.4 文档约定"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "48",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "G2-FR-nnn 是第二关稳定功能编号，与一个原始 FR-xx.x 一一对应。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "49",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "AC-G2-FR-nnn-01 是 SRS 与 spec.md 共用的验收标准编号。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "50",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "★ 表示实质性条款，不允许负偏离；当前 MVP 有 28 条★、1 条非★。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "51",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "Given、When、Then 分别表示前置条件、触发行为和可观察结果。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "52",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "待验证 表示需要在约定环境、接口或测试中形成证据，不得解释为已通过。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "53",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "1.5 故事映射关闭状态"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "54",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "ISSUE-G2-02-001 已由 C 修订并经 B 复验关闭。US-017、US-019、US-022、US-024 现已分别与 G2-FR-021、023、009、017 的冻结语义一致；本说明书继续以 canonical G2-FR、原始 FR 和冻结事实为准。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "55",
+      "kind": "paragraph",
+      "style": "1",
+      "caption": "false",
+      "text": "2 总体说明"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "56",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": ""
+    },
+    {
+      "part": "word/document.xml",
+      "index": "57",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "图 1-1  需求双镜像与追踪关系"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "58",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "2.1 用户与使用场景"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "59",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "主要用户包括应急值班员、应急指挥人员、演练与安全管理人员、现场处置与物资管理人员、值班管理人员以及平台与接口管理员。用户通过 Web、指挥视图和嵌入甲方既有智慧管理 APP 的 H5 完成工作。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "60",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "2.2 产品边界"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "61",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "本项目建设应急业务软件、H5、数据接口、配套文档和培训。既有视频、定位、门禁、消防、物联网和中台等系统本体及硬件不默认由本项目建设；本项目仍承担约定的软件适配、字段映射、容错、降级、联调、验证和交付责任。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "62",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "2.3 运行与依赖环境"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "63",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "甲方提供私有部署基础环境、既有平台接口、账号权限、合法地图与业务源数据；乙方负责容器化软件交付、最低配置建议、部署验证和数据技术校验。KN-070—KN-078 属于方案建议，不是 P1 强制需求，不写入本 SRS 的强制条款。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "64",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "2.4 约束和假设"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "65",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "视频和统一消息须在 M2 前形成真实连通性验证证据。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "66",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "定位刷新与精度依赖甲方源能力，乙方链路不得降低源精度。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "67",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "门禁控制必须由授权人员确认并服从既有安全联锁；状态不明时不得自动重复控制。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "68",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "正式接口版本、环境容量、目标宿主版本及现场测试结果当前均为待确认或待验证。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "69",
+      "kind": "paragraph",
+      "style": "1",
+      "caption": "false",
+      "text": "3 功能需求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "70",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "下表保留39条受控功能需求及既有验收标准。G2-R02已完成反向澄清裁决，G2-R03仅补充需求级流程、状态、字段和量化语义；本轮影响AC的可观察规则均标记为G2-R05对spec.md与RTM的待同步项。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "71",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "3.1 MVP-1 数字预案与事件处置闭环"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "72",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 3-1 数字预案与事件处置功能需求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "73",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "需求编号"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "74",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "来源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "75",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "需求陈述"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "76",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "验收标准"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "77",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-001★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "78",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-01.1；US-001；F-100"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "79",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应支持综合预案、专项预案和现场处置方案的分层编制，并按区域、时段和风险场景细化。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "80",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-001-01 Given 用户具有预案编制权限，When 新建并保存不同层级和场景的预案，Then 系统保存层级、场景、版本和审计信息，并可按条件检索。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "81",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-002★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "82",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-01.2；US-002；F-101"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "83",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应支持配置处置流程、自定义任务、会议群组、通知人员和调派人员。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "84",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-002-01 Given 预案处于可编辑状态，When 编制人配置流程节点及人员关系并提交校验，Then 系统完整保存配置；缺少强制关系时阻止发布并提示原因。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "85",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-003★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "86",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-01.3；US-003；F-102；KN-003"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "87",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应支持自定义预案任务，并在预案启动时自动向移动终端下发通知和任务。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "88",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-003-01 Given 已发布预案且人员配置有效，When 授权人员启动预案，Then 系统在不超过 3 秒内生成通知和任务下发记录，任务、接收对象、状态和时间可追踪。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "89",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-013★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "90",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-05.1；US-004；F-115"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "91",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应支持 Web/H5 发起事件、提交现场信息并按事件属性检索。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "92",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-013-01 Given 用户具有事件上报权限，When 提交必填信息及允许的现场附件，Then 系统生成唯一事件并可按类型、状态、时间和位置检索；字段不合法时不创建事件。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "93",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-014★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "94",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-05.2；US-005；F-116；KN-011、KN-012"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "95",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应支持事件核实审批、预案启动、生命周期跟踪和过程留痕。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "96",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-014-01 Given 外部告警进入系统，When 告警有效且用户完成核实审批，Then 系统在不超过 2 秒内接入告警，并在不超过 3 分钟内完成处置任务下达；无效告警不启动预案。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "97",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-015★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "98",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-05.3；US-006；F-117"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "99",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应自动下发处置任务，并支持接收、反馈、催办和临时任务。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "100",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-015-01 Given 事件处于处置状态，When 指挥人员下发、催办或新增临时任务，Then 责任人收到任务且状态变化、反馈内容、操作者和时间均可追踪；重复请求不得产生重复任务。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "101",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-016★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "102",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-05.4；US-007；F-118"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "103",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应支持事件关闭评估、事故调查、事件报告和知识沉淀。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "104",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-016-01 Given 事件任务已达到关闭条件，When 授权人员完成评估、调查和报告并关闭事件，Then 系统保存完整记录并可检索；未完成强制项时阻止关闭。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "105",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "3.2 MVP-2 指挥态势 视频与定位联动"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "106",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 3-2 指挥态势、视频与定位功能需求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "107",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "需求编号"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "108",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "来源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "109",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "需求陈述"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "110",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "验收标准"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "111",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-004★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "112",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-02.1；US-008；F-104"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "113",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应在统一事件视图中展示事件动态、续报、时间线、处置任务状态和处理人。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "114",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-004-01 Given 事件存在续报和任务变化，When 指挥人员打开事件态势，Then 页面按时间顺序显示来源、业务时间、任务状态和处理人，刷新后不丢失历史。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "115",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-005★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "116",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-02.2；US-009；F-105；KN-008、KN-009"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "117",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应展示人员位置、职责、就位状态、源时间和新鲜度；刷新不超过 2 秒/次且不得降低甲方亚米级源精度。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "118",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-005-01 Given 甲方定位源正常，When 系统接收连续位置数据，Then 展示刷新间隔不超过 2 秒且输出精度不低于源精度。 AC-G2-FR-005-02 Given 位置过期或不可用，When 用户查看或发起调派，Then 系统显示最后有效时间并禁止自动形成邻近调派结论。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "119",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-006★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "120",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-02.3；US-010；F-106；KN-010、KN-060"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "121",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应一键实时调阅既有视频，并通过既有接口支持历史录像检索和回放。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "122",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-006-01 Given 既有视频接口、权限和通道正常，When 用户选择关联摄像机，Then 实时视频首帧不超过 3 秒。 AC-G2-FR-006-02 Given 既有系统保存不少于 30 天录像，When 用户按时间检索并回放，Then 系统返回对应录像或明确错误，不将存储责任转移给本系统。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "123",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-007"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "124",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-02.4；US-011；F-107；KN-023、KN-024"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "125",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应在地图展示物资站点，并支持钻取站点清单、数量和配置。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "126",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-007-01 Given 已导入不少于 30 个站点和不少于 1000 项台账数据，When 用户在地图选择站点，Then 系统展示对应清单、数量和配置，结果与物资台账一致。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "127",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-026★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "128",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-10.1；US-012；F-135；KN-016"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "129",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应展示安防终端在线/离线状态、告警统计、定位和外部系统跳转。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "130",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-026-01 Given 安防数据源可用，When 用户打开综合安防视图，Then 在线状态、告警统计和定位数据在不超过 30 秒内刷新，并可按权限跳转；接口异常时显示数据时间和故障状态。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "131",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-029★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "132",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-11.3；US-013、US-029；F-138"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "133",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应实现视频调阅/回放接口及受权、安全联锁的疏散门禁联动。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "134",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-029-01 Given 用户具有控制权限且既有联锁允许，When 用户二次确认门禁动作，Then 系统下发一次指令并记录操作者、时间和结果。 AC-G2-FR-029-02 Given 联锁拒绝、超时或状态不明，When 控制失败，Then 系统告警并转人工处置，不绕过联锁或自动重复控制。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "135",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "3.3 MVP-3 演练 移动执行与值班物资闭环"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "136",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 3-3 演练、移动执行与值班物资功能需求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "137",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "需求编号"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "138",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "来源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "139",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "需求陈述"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "140",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "验收标准"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "141",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-008★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "142",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-03.3；US-021；F-110；KN-024"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "143",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应维护物资台账、数量、有效期和临期提醒。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "144",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-008-01 Given 用户具有物资权限，When 新增、修改或查询台账并配置有效期，Then 系统保存数量与有效期，按规则形成临期提醒并记录处置状态；规模支持不少于 1000 项。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "145",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-009★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "146",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-03.4；US-022；F-111"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "147",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应制定盘点计划，形成盘点快照，支持移动盘点、自动比对和差异标识。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "148",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-009-01 Given 已发布盘点计划和台账快照，When 现场人员提交盘点数量，Then 系统以快照自动比对、标识差异并进入复核；复核完成后按权限更新现有数量。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "149",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-010★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "150",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-04.1；US-014；F-112；KN-013"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "151",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应制定月、季、年演练计划，支持提醒、逾期和补演管理，并满足适用对象每半年至少一次。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "152",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-010-01 Given 存在适用对象和演练计划，When 按滚动六个月统计，Then 每个适用对象至少有一次有效演练；未达标时产生提醒、逾期或补演记录。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "153",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-011★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "154",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-04.2；US-015；F-113"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "155",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应在演练周期到达时自动下发演练任务并留痕。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "156",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-011-01 Given 已发布演练计划且周期到达，When 调度任务执行，Then 系统按计划生成一次演练任务并记录接收对象、状态和时间；重复调度不重复生成。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "157",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-012★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "158",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-04.3；US-016；F-114"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "159",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应记录演练执行、模板评估、报告、整改、补演和持续改进。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "160",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-012-01 Given 演练任务已执行，When 管理人员提交评估和整改，Then 系统生成可追踪报告并关联问题、责任、期限、复核及必要的补演记录。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "161",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-017★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "162",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-06.1；US-024；F-119"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "163",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应配置值班打卡小组、时段、点位和代执行规则，并留存代执行记录。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "164",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-017-01 Given 管理员具有配置权限，When 配置小组、人员、时段、点位及代执行关系，Then 系统保存生效范围并记录变更；冲突或缺项时阻止生效并提示。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "165",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-018★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "166",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-06.2；US-025；F-120"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "167",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应维护打卡点位，支持地图拾取、二维码生成和有效半径配置。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "168",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-018-01 Given 合法地图服务可用，When 管理员拾取点位并配置范围，Then 系统保存坐标和有效半径、生成唯一二维码，并可停用或更新。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "169",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-019★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "170",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-06.3；US-025；F-121；KN-014"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "171",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应按点位、小组和人员三个维度统计打卡，并支持明细导出。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "172",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-019-01 Given 存在打卡记录，When 用户选择点位、小组或人员维度统计并导出，Then 统计与明细一致，导出受权限控制并保留审计记录。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "173",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-020★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "174",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-06.4；US-025；F-122；KN-006、KN-007"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "175",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应识别缺卡和超时并通过统一消息通道推送告警。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "176",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-020-01 Given 打卡时段结束且存在缺卡或超时，When 系统执行检查，Then 产生告警并调用不少于 20 路并行消息；在正常甲方通道下验证到达率不低于 99%，失败进入重试或人工清单。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "177",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-021★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "178",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-08.1；US-017；F-128"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "179",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "H5 应支持移动发起事件、拍照上传并查看本人发起的事件。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "180",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-021-01 Given 用户已在甲方宿主 APP 完成认证，When 在 H5 填写事件、拍照并提交，Then 系统创建事件并在个人事件列表可查；本条不包含接收处置任务。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "181",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-022★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "182",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-08.2；US-018、US-028；F-129；KN-006、KN-007"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "183",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "H5 应支持接收、确认、反馈、上传附件并完成处置任务。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "184",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-022-01 Given 用户收到授权范围内任务，When 在 H5 确认、反馈、上传并提交完成，Then 状态按合法顺序更新并保留时间与附件；消息通道异常不丢失已确认业务状态。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "185",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-023★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "186",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-08.4；US-019；F-131"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "187",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "H5 应支持查看和执行演练任务并提交演练结果。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "188",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-023-01 Given 用户收到演练任务，When 在 H5 查看步骤、记录执行并提交结果，Then 系统更新对应演练任务并关联执行证据；本条不替代普通处置任务反馈。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "189",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-024★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "190",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-08.5；US-020；F-132；KN-036"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "191",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "H5 应支持扫码打卡并校验人员身份、有效时段和有效范围。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "192",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-024-01 Given 二维码有效且用户已认证，When 用户扫码打卡，Then 系统在不超过 1 秒内返回成功或明确失败原因，并记录身份、点位、时间和范围校验结果。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "193",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-025★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "194",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-08.6；US-023；F-133"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "195",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "H5 应支持移动盘点物资并在复核后更新现有数量。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "196",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-025-01 Given 用户获得盘点任务和快照，When 扫描或选择物资、提交实盘数量并完成差异复核，Then 系统记录盘点过程并按授权结果更新现有数量。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "197",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "3.4 MVP-4 外部联动与中台业务适配"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "198",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 3-4 外部联动与中台业务适配功能需求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "199",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "需求编号"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "200",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "来源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "201",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "需求陈述"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "202",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "验收标准"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "203",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-027★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "204",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-11.1；US-026、US-029；F-136"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "205",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应接入既有物联网告警和客流数据，支持告警转事件、有限重试和补传。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "206",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-027-01 Given 甲方提供有效接口与测试事件，When 接收告警或客流数据，Then 系统完成字段校验、去重、记录并按规则形成事件；接口失败时告警并受控重试或补传。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "207",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-028★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "208",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-11.2；US-027、US-029；F-137"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "209",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应适配甲方统一中台的身份、组织、权限、消息、工作流、文件、门户和数据汇聚能力，不重复建设通用能力。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "210",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-028-01 Given 甲方提供接口、账号和权限，When 用户经中台进入系统并执行业务，Then 身份、组织和数据权限保持一致，业务按需调用消息、工作流、文件与汇聚接口；中台异常时给出明确降级提示。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "211",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "3.5 非 MVP、仍属本期范围的功能需求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "212",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "下列 10 条不是本阶段 MVP Must，但仍属本期实施、测试与验收范围；其稳定编号为 G2-FR-030—039，优先级不因此改变。AC 均可在 spec.md 中找到等价 Given/When/Then。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "213",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 3-5 非MVP、本期范围功能需求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "214",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "需求编号"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "215",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "来源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "216",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "需求陈述"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "217",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "验收标准"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "218",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-030"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "219",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-01.4；F-103"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "220",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应管理预案附件，支持检索、修订和版本追踪；标准示例模板为宜提供。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "221",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-030-01 Given 已有预案附件，When 授权用户上传、修订或检索，Then 系统保存关联、版本和审计；不可访问附件不返回内容。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "222",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-031★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "223",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-03.1；F-108"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "224",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应管理应急人员档案、职责、小组和调派通知。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "225",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-031-01 Given 管理员具备权限，When 维护人员职责和小组并发起调派通知，Then 系统保存组织关系、通知对象和处理记录。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "226",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-032"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "227",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-03.2；F-109"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "228",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应管理值班计划并与打卡联动，计划调整须留痕。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "229",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-032-01 Given 已配置值班人员和时段，When 发布或调整计划，Then 系统同步可用打卡规则并记录调整前后内容、操作者和时间。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "230",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-033"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "231",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-07.1；F-123"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "232",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应支持预案类型新增、修改和停用。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "233",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-033-01 Given 管理员维护预案类型，When 新增、修改或停用类型，Then 已引用类型保留历史可追溯性，停用类型不可用于新建预案。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "234",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-034★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "235",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-07.2；F-124"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "236",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应维护事件类型；可预置四大类。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "237",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-034-01 Given 管理员维护事件类型，When 新增、修改或停用类型，Then 系统保存类型与审计信息；如配置预置类别，应允许按权限维护而不固化为额外强制范围。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "238",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-035★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "239",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-07.3；F-125"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "240",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应配置物资站点的空间和地图位置。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "241",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-035-01 Given 甲方地图服务可用，When 管理员配置站点及位置，Then 系统保存站点、坐标/楼层和版本，并可供物资一张图加载。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "242",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-036★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "243",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-07.4；F-126"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "244",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应维护条目化、可复用的评估模板。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "245",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-036-01 Given 管理员编辑评估模板，When 增加、排序或复用评估条目，Then 系统保存模板版本，并在演练或事件评估中引用正确版本。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "246",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-037★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "247",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-07.5；F-127"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "248",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应支持自定义核实审批环节、人员和时限，并记录调整。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "249",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-037-01 Given 管理员配置核实审批，When 定义环节、处理人和时限并发布，Then 系统按配置路由核实事项，配置变更可审计。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "250",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-038"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "251",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-08.3；F-130"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "252",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "H5 应提供知识库分类和关键字检索。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "253",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-038-01 Given 用户已认证且知识条目已发布，When 在 H5 按分类或关键字检索，Then 系统仅返回授权范围内的匹配条目；无结果时明确提示。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "254",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-039★"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "255",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-09.1；F-134；KN-017"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "256",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统应统计应急事件、监控和流程，支持筛选与钻取。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "257",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "AC-G2-FR-039-01 Given 存在授权范围内的业务数据，When 用户按条件筛选统计并钻取，Then 指标与明细一致，默认刷新按 KN-017 ≤60 秒形成性能验证记录。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "258",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "3.6核心业务流程与异常路径。表3-6覆盖主路径及异常路径；其可观察规则将在G2-R05同步至spec.md和RTM。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "259",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 3-6 核心业务流程及异常路径"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "260",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "流程"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "261",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "主路径"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "262",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "异常/边界路径"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "263",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "追踪与待同步"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "264",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "事件接报、核实与关闭"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "265",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "接报→创建/关联→人工核实→授权启动预案→任务→反馈/评估/调查/报告→关闭。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "266",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "可靠ID重复接收仅更新/续报；无ID相似告警人工关联；核实超时不自动启动。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "267",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-013—016、027；RCLR-001、002、004、010；spec/RTM待同步"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "268",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "任务下发、执行与重指派"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "269",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "预案启动/临时创建→下发/接收→反馈、催办→完成→复核/归档。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "270",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "重复请求不重复建任务；重指派和显式改期审计；消息异常不丢失确认状态。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "271",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-003、015、022；RCLR-003、008、010；spec/RTM待同步"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "272",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "演练与补演"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "273",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "发布计划→周期下发→执行取证→评估/整改→复核→统计。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "274",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "取消/未完成不计完成；补演保留原计划和逾期历史。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "275",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-010—012、023；RCLR-007；spec/RTM待同步"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "276",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "盘点与物资调整"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "277",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "发布计划并形成快照→实盘→快照比对→复核期间变动→授权调整。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "278",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "正常出入库独立记录；未复核不得形成最终调整。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "279",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-008、009、025；RCLR-006；spec/RTM待同步"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "280",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "值班打卡与告警"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "281",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "发布规则→扫码校验→有效记录→统计；缺卡/超时触发消息。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "282",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "过期码拒绝；重复扫码幂等；超时、重试、降级和迟到回执历史保留。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "283",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-017—020、024、032；RCLR-005、008；spec/RTM待同步"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "284",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "位置态势与受权联动"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "285",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "接收位置→展示新鲜度→有效数据研判/调派；确认后门禁联锁执行。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "286",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "过期仅显示最后有效位置；联锁失败告警并人工降级，不绕过或自动重试控制。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "287",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-005、029；RCLR-009；spec/RTM待同步"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "288",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "3.7核心状态模型。表3-7仅定义需求级可观察状态与迁移约束，不规定技术实现。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "289",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 3-7 核心业务状态模型"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "290",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "对象"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "291",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "正常状态与迁移"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "292",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "异常/受限规则"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "293",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "来源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "294",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "事件"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "295",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "已接报→待核实→已核实→处置中→待关闭→已关闭；驳回核实可标记无效并留痕。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "296",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "核实超时仅提醒升级，不自动生效或启动；关闭前须完成强制评估、调查和报告。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "297",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-013—016；RCLR-001、002、004、010"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "298",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "处置任务"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "299",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "待下发→已下发→已接收→执行中→待复核→已完成/已归档。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "300",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "重指派完整留痕且默认不改截止时间；逾期、下发失败、迟到回执可追溯。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "301",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-003、015、022；RCLR-003、008"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "302",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "演练"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "303",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "草稿→已发布→待执行→执行中→待评估→已完成；整改可待复核/关闭。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "304",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "取消、逾期、未完成均不计完成；补演关联原计划并保留原异常。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "305",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-010—012、023；RCLR-007"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "306",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "盘点"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "307",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "草稿→已发布（快照形成）→盘点中→待复核→已确认/已调整。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "308",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "期间变动独立记录；差异不得绕过复核直接调整。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "309",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-009、025；RCLR-006"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "310",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "打卡"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "311",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "规则草稿→已生效→待打卡→有效/无效打卡→统计归档。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "312",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "过期或校验不符为无效；重复扫码幂等；缺卡与迟到回执历史保留。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "313",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-017—020、024、032；RCLR-005、008"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "314",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "位置与消息"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "315",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "位置：有效→过期→恢复有效；消息：待发送→已发送→已回执/失败/降级处置。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "316",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "过期位置禁止自动调派；迟到回执更新最终送达但不删除过程历史。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "317",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "FR-005、020、022；RCLR-008、009"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "318",
+      "kind": "paragraph",
+      "style": "1",
+      "caption": "false",
+      "text": "4 外部接口需求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "319",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 4-1 外部接口需求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "320",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "接口类别"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "321",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "甲方提供"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "322",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "本系统责任"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "323",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "验证状态"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "324",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "统一中台"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "325",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "身份、组织、权限、消息、工作流、文件、门户、汇聚接口与账号"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "326",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "应急业务适配、权限传递、错误处理、审计"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "327",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "待联调验证"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "328",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "视频平台"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "329",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "GB/T 28181 等既有能力、设备编码、实时流、录像与不少于 30 天保存"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "330",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "实时调阅、历史检索/回放、超时与错误提示"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "331",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "M2 前连通；能力待验证"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "332",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "定位系统"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "333",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "设施、接口、人员标识、坐标/楼层和亚米级源数据"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "334",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "人员关联、映射、新鲜度、展示和刷新验证"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "335",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "待现场验证"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "336",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "统一消息"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "337",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "通道、账号、签名、配额、回执和联调环境"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "338",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "编排、并行、重试、回执、留痕、降级"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "339",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "M2 前连通；指标待验证"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "340",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "地图服务"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "341",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "合法二维、楼层及验收所需三维地图和坐标关系"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "342",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "加载、兼容、标注、拾取和业务叠加"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "343",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "格式与坐标系待确认"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "344",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "门禁与安防"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "345",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "既有联锁、终端、协议、授权和回执"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "346",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "受权控制、二次确认、失败告警、人工降级"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "347",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "联锁与回执待验证"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "348",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "物联网与客流"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "349",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "告警/客流接口、字段和测试环境"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "350",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "接入、校验、转事件、重试、补传、审计"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "351",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "待联调验证"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "352",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "接口调用应使用统一关联标识；可重放操作应具备业务幂等键。控制类动作及无法证明幂等的调用不得自动重放，恢复后应先查询外部最终状态并对账。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "353",
+      "kind": "paragraph",
+      "style": "1",
+      "caption": "false",
+      "text": "5 数据需求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "354",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "5.1 核心数据对象"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "355",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统至少管理预案及版本、流程与任务模板、事件与续报、处置任务、人员与位置状态、物资站点与台账、盘点计划与快照、值班打卡、演练计划与评估、消息回执、外部调用、附件和审计记录。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "356",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 5-1 核心实体字段字典"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "357",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "5.2 核心实体字段字典。表 5-1 为需求级语义字典，不是数据库 ER 或物理表设计。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "358",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 5-1 核心实体字段字典"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "359",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "实体"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "360",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "字段（业务类型/必填）"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "361",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "业务含义与约束"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "362",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "来源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "363",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "关联"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "364",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "应急预案"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "365",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "planId String/是；名称 String/是；状态 Enum/是；适用场景 String/是"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "366",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "唯一标识、名称、草稿/已发布/停用和适用条件"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "367",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-001—003"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "368",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "版本、模板、事件"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "369",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "预案版本"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "370",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "versionId String/是；版本号 String/是；生效状态 Enum/是"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "371",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "版本可追溯，发布后作为启动依据"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "372",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-001"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "373",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "预案、模板"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "374",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "预案任务模板"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "375",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "templateId String/是；任务名称 String/是；责任组 String/是；时限 Duration/是"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "376",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "启动时生成任务；缺关键关系不得发布"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "377",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-002、003"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "378",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "版本、任务"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "379",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "应急事件"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "380",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "incidentId String/是；类型 Enum/是；状态 Enum/是；发生时间 DateTime/是"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "381",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "唯一事件；含待核实/核实超时/处置/关闭状态"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "382",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-013—016"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "383",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "续报、任务、附件"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "384",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "事件续报"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "385",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "updateId String/是；业务时间 DateTime/是；接收时间 DateTime/是；内容 Text/是"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "386",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "迟到数据标记且不覆盖历史"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "387",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-RCLR-001、004"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "388",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "事件"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "389",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "处置任务"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "390",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "taskId String/是；当前责任人 String/是；状态 Enum/是；截止时间 DateTime/是"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "391",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "重指派保留历史，改期显式审计"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "392",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-015、G2-RCLR-003"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "393",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "事件、反馈"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "394",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "任务反馈"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "395",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "feedbackId String/是；内容 Text/是；反馈时间 DateTime/是"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "396",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "接收、反馈、催办和完成证据"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "397",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-015"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "398",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "任务"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "399",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "人员/值班"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "400",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "personId String/是；职责 Enum/是；值班时段 TimeRange/否"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "401",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "人员、职责与当前值班关联"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "402",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-017、018"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "403",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "任务、位置"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "404",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "位置状态"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "405",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "personId String/是；坐标 Location/是；源时间 DateTime/是；新鲜度 Enum/是"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "406",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "过期阈值可配置，过期禁自动调派"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "407",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-005、G2-RCLR-009"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "408",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "人员、事件"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "409",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "物资站点/条目"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "410",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "siteId String/是；itemId String/是；数量 Decimal/是；有效期 Date/否"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "411",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "台账、站点与临期状态"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "412",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-007—009"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "413",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "盘点"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "414",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "盘点计划/快照/记录"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "415",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "planId String/是；快照数量 Decimal/是；实盘数量 Decimal/否；复核状态 Enum/是"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "416",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "快照为比对基准，期间变动单独记录"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "417",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-009、G2-RCLR-006"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "418",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "物资条目"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "419",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "演练计划/执行/评估"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "420",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "drillId String/是；计划时间 DateTime/是；实际完成 DateTime/否；状态 Enum/是"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "421",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "取消/逾期不计完成，补演关联原计划"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "422",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-010—012、G2-RCLR-007"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "423",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "任务、评估"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "424",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "打卡点/记录"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "425",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "pointId String/是；任务Id String/是；扫码时间 DateTime/是；结果 Enum/是"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "426",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "码绑定任务/点位/时段，重复扫码幂等"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "427",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-017—020、G2-RCLR-005"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "428",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "人员"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "429",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "消息发送/外部调用"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "430",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "messageId String/是；尝试序号 Integer/是；最终状态 Enum/是；回执时间 DateTime/否"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "431",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "保留超时/重试/降级历史，重复回执幂等"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "432",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-020、022、G2-RCLR-008"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "433",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "任务、事件"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "434",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "附件/审计记录"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "435",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "attachmentId String/是；关联对象 String/是；删除状态 Enum/是；操作者 String/是"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "436",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "逻辑删除、归档引用保护和删除审计"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "437",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-FR-013、016、G2-RCLR-010"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "438",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "事件、任务、报告"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "439",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "5.3 数据质量与来源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "440",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 5-1 核心实体字段字典"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "441",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "甲方提供真实业务源数据并确认业务正确性；乙方负责模板、映射、清洗、导入和技术校验。外部标识与内部业务标识应保留映射；时间数据应保存来源时间和接收时间；位置数据应保存源精度、新鲜度和最后有效时间。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "442",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "5.4 数据安全与审计"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "443",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "敏感数据应按角色和数据范围控制，导出应审计；事件、任务、控制指令、消息回执和关键配置变更应记录操作者、时间、对象、前后状态及关联标识。日志与过程记录的保存和防篡改要求按冻结基线执行。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "444",
+      "kind": "paragraph",
+      "style": "1",
+      "caption": "false",
+      "text": "6 非功能需求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "445",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "6.1 PE性能指标与容量"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "446",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 6-1 PE-01—PE-12性能指标"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "447",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "编号"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "448",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "量化要求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "449",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "验证口径"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "450",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "来源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "451",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "PE-01"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "452",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "预案启动通知与任务下发≤3秒。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "453",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "授权启动至产生可追踪下发记录的端到端时间戳。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "454",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "KN-003"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "455",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "PE-02"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "456",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "告警接入响应≤2秒。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "457",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "外部告警至本系统接收/记录时间戳。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "458",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "KN-011"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "459",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "PE-03"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "460",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "事件确认至任务下达≤3分钟。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "461",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "核实通过至处置任务下发记录时间戳。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "462",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "KN-012"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "463",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "PE-04"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "464",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "消息并行≥20路、正常通道到达率≥99%。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "465",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "发送、尝试、回执、失败与重复回执统计。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "466",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "KN-006、007"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "467",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "PE-05"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "468",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "位置刷新≤2秒/次且精度不低于甲方亚米级源精度。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "469",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "源、接收、展示时间戳及精度；过期阈值可配置。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "470",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "KN-008、009"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "471",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "PE-06"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "472",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "实时视频首帧≤3秒；既有系统保存录像≥30天。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "473",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "受权首帧计时和既有系统保存责任证据。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "474",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "KN-010、060"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "475",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "PE-07"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "476",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "Web普通页面95%请求≤3秒。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "477",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "目标数据规模与指定浏览器中的分位统计。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "478",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "KN-034"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "479",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "PE-08"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "480",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "地图常规操作≤2秒。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "481",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "合法地图服务、典型点位加载/操作计时。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "482",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "KN-035"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "483",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "PE-09"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "484",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "扫码打卡写入/回传≤1秒。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "485",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "有效与无效扫码均记录响应及校验结果。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "486",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "KN-036"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "487",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "PE-10"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "488",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "综合安防刷新≤30秒；应急信息默认刷新≤60秒。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "489",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "刷新配置与实际时间戳。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "490",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "KN-016、017"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "491",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "PE-11"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "492",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "应急峰值在线用户≥100人。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "493",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "目标环境并发压测，记录成功率、响应和资源。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "494",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "KN-028"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "495",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "PE-12"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "496",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "一年期统计报表生成≤5秒。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "497",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "授权范围内一年期数据的统计用时。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "498",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "KN-037"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "499",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 6-2 容量要求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "500",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "编号"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "501",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "量化要求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "502",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "验证口径"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "503",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-CAP-01"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "504",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "预案≥50个、模板≥200条、应急人员≥300人。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "505",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "初始化/导入后的查询与配置用例。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "506",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-CAP-02"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "507",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "年均事件约200起、平均10任务/起；在线≥10年、事件≥2万、任务≥20万。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "508",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "受控测试数据的导入、查询与保存验证。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "509",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-CAP-03"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "510",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "物资站点≥30个、台账≥1000项、打卡点≥100个。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "511",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "目标数据规模下的配置、检索和关联用例。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "512",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-CAP-04"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "513",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "日打卡约200人次、年约7.3万，在线保存≥3年。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "514",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "保留期和典型统计查询验证。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "515",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "6.2 可用性 可靠性与恢复"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "516",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 6-3 可用性、可靠性与恢复要求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "517",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "编号"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "518",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "量化/可验证要求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "519",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "验证口径"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "520",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-REL-01"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "521",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "7×24运行，试运行可用率≥99.5%（计划维护除外）。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "522",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "试运行监控、维护与不可用时段记录。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "523",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-REL-02"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "524",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "单点故障MTTR≤2小时；未完成任务重启后可恢复。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "525",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "故障演练与恢复记录。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "526",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-REL-03"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "527",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "日增量、周全量备份；过程数据≥3年，审计日志≥180天。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "528",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "备份计划、恢复演练和保留期审计。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "529",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "系统对外部依赖应独立超时、告警和降级，不得静默阻断核心事件流程；控制类动作及不可证明幂等的调用不得自动重放。具体量化要求见表6-3。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "530",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "6.3 安全"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "531",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 6-4 安全要求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "532",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "编号"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "533",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "量化/可验证要求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "534",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "验证口径"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "535",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-SEC-01"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "536",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "应用安全不低于等保二级中与应用软件直接相关条款；交付前高危漏洞为0。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "537",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "应用侧SCA、漏洞扫描、Web渗透复测证据。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "538",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-SEC-02"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "539",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "口令长度≥8位；敏感数据按角色与数据范围控制，导出留痕。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "540",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "身份、权限、导出和审计用例。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "541",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "安全要求见表6-4。正式定级备案、基础环境合规和正式第三方等保测评由甲方组织；本要求不宣称上述活动已完成。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "542",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "6.4 兼容与易用"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "543",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 6-5 易用性与兼容性要求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "544",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "编号"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "545",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "量化/可验证要求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "546",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "验证口径"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "547",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-USE-01"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "548",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "关键操作≤3个页面跳转；新用户≤2小时完成完整上报处置学习目标。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "549",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "可用性走查与培训考核记录。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "550",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-COMP-01"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "551",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "Chrome/Edge最新2个稳定版本；H5嵌入既有宿主APP。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "552",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "甲方确认的终端/宿主矩阵与兼容测试。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "553",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "关键操作不超过3个页面跳转；新用户应在≤2小时完成完整上报处置学习目标。兼容Chrome/Edge最新2个稳定版本；H5嵌入甲方既有宿主APP，不交付独立原生APP。关键操作应提供明确状态、失败原因和下一步，状态不得只靠颜色表达。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "554",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "6.5 可维护性与可测试性"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "555",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 6-6 可维护性与可测试性要求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "556",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "编号"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "557",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "量化/可验证要求"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "558",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "验证口径"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "559",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-MNT-01"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "560",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "核心模块单元测试覆盖率≥70%；39条FR功能覆盖率与验收用例通过率均为100%。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "561",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "测试报告与RTM双向追踪。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "562",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "NFR-MNT-02"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "563",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "非乙方人员按手册在干净环境一次部署成功，用时≤2小时。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "564",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "独立部署验收记录。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "565",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "接口、错误码、配置、部署、恢复和运维操作应形成文档；核心模块单元测试覆盖率≥70%，39条FR功能覆盖率与验收用例通过率均为100%。非乙方人员按手册在干净环境一次部署成功，用时≤2小时。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "566",
+      "kind": "paragraph",
+      "style": "1",
+      "caption": "false",
+      "text": "7 部署 交付与服务约束"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "567",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "软件采用私有化容器部署，提供镜像、初始化、升级、回滚、备份恢复方案及最低配置；非乙方人员应能按手册在干净环境一次部署成功且用时不超过 2 小时。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "568",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "甲方提供机房、服务器、网络、域名证书、备份介质和后备电源等基础资源；本项目不默认采购这些资源。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "569",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "项目提交源码与构建材料、容器制品、H5、配置与初始化、设计/接口/测试/用户/部署运维/培训文档、开源许可、追踪矩阵、试运行和总结材料。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "570",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "质保期为 12 个月；故障响应、恢复、支持渠道、风险报告及不合格整改期限沿用冻结 SLA，不在本 SRS 中扩大承诺。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "571",
+      "kind": "paragraph",
+      "style": "1",
+      "caption": "false",
+      "text": "8 验收与追踪"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "572",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "8.1 验收总则"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "573",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "全部 39 条 FR 均须建立并通过功能用例；PE-01—PE-12逐项在部署环境实测；视频、信息发布、物联网和中台完成端到端联动；至少开展一次模拟突发事件全流程联合演练；高危漏洞清零；部署、文档和交付物按清单点验。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "574",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "8.2 双镜像与 RTM"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "575",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "G2-R05应在spec.md中使用本文件相同的G2-FR和AC编号，并将本轮标记为“spec/RTM待同步”的可观察规则补入双镜像。RTM至少追踪原始FR、G2-FR、用户故事、AC、G2-RCLR、设计、实现、测试和结果；任何编号、范围或验收语义差异均阻断M2返工准出。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "576",
+      "kind": "paragraph",
+      "style": "2",
+      "caption": "false",
+      "text": "8.3 当前完整性"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "577",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "全量 G2-FR：39 条，连续、唯一；其中 MVP Must 29 条（28 条★、1 条非★），非 MVP、本期 10 条（6 条★、4 条非★）。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "578",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "非 MVP、本期 G2-FR：10 条（G2-FR-030—039），均有逐条 SRS 与 AC；全项目合计 39 条 FR、34 条★FR。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "579",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "29 条 G2-FR 均有至少一个 AC-G2-FR-nnn-xx 验收标准。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "580",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "ISSUE-G2-02-001 已关闭；四条修订故事与 canonical G2-FR 的追踪关系已恢复。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "581",
+      "kind": "paragraph",
+      "style": "1",
+      "caption": "false",
+      "text": "9 变更控制与待澄清事项"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "582",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "功能、★属性、数字、责任、期次或验收强度发生变化时，必须先登记Issue、分析影响并取得授权确认，再同步更新SRS、spec.md、RTM和版本记录。G2-R02已形成并记录G2-RCLR-001—010的课程项目人工裁决；其后新发现、且未由冻结事实或现有裁决确定的问题不得静默写入需求，应按Issue/Change流程处理。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "583",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "当前待闭环事项："
+    },
+    {
+      "part": "word/document.xml",
+      "index": "584",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "1. 甲方确认正式接口版本、账号、测试环境、协调窗口、地图与坐标系、宿主版本矩阵。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "585",
+      "kind": "paragraph",
+      "style": "a4",
+      "caption": "false",
+      "text": "2. 视频、消息、定位、门禁、物联网、中台、性能、容量、安全和部署能力形成实际验证证据。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "586",
+      "kind": "paragraph",
+      "style": "1",
+      "caption": "false",
+      "text": "10 G2规格化阶段补充业务规则（课程项目人工决策）"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "587",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "本节继承项目负责人2026-09-15对G2-RCLR-001—010的课程项目人工决策，不是甲方正式法律文件或现实现场验收结论；不改变既有FR、★属性、量化指标或责任边界。表10-1是正文直接可读的规则索引，完整选项和裁决证据见ai_reverse_clarifications.md。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "588",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "逐项继承：G2-RCLR-001、G2-RCLR-002、G2-RCLR-003、G2-RCLR-004、G2-RCLR-005、G2-RCLR-006、G2-RCLR-007、G2-RCLR-008、G2-RCLR-009、G2-RCLR-010。完整选项、来源与验证见 ai_reverse_clarifications.md。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "589",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "表 10-1 G2-RCLR补充业务规则索引"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "590",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "规则域"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "591",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "可直接实施理解"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "592",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "来源"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "593",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "事件与告警"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "594",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "可靠外部告警ID幂等；无可靠ID不自动合并；核实超时仅升级提醒，时间线优先业务时间，迟到不覆盖历史。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "595",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "RCLR-001、002、004"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "596",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "任务与消息"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "597",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "重指派完整留痕、默认不改截止时间；迟到/重复回执幂等并保留超时、重试、降级和人工历史。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "598",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "RCLR-003、008"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "599",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "打卡、位置与盘点"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "600",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "码绑定任务/点位/时段，过期无效、重复扫码幂等；位置过期禁自动调派；盘点以快照比对并纳入期间变动复核。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "601",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "RCLR-005、006、009"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "602",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "演练与附件"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "603",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "取消/未完成不计完成，补演不消除原异常；附件逻辑删除、审计保留、归档引用受保护。"
+    },
+    {
+      "part": "word/document.xml",
+      "index": "604",
+      "kind": "table_cell_paragraph",
+      "style": "",
+      "caption": "false",
+      "text": "RCLR-007、010"
+    },
+    {
+      "part": "word/footer1.xml",
+      "index": "1",
+      "kind": "paragraph",
+      "style": "",
+      "caption": "false",
+      "text": ""
+    }
+  ],
+  "content_records": {
+    "body": [
+      "YJGL-G2-03    V1.1",
+      "密    级：内部·教学用",
+      "",
+      "某自然博物馆智能运营中心建设项目——应急管理子系统",
+      "软件需求规格说明书（SRS）",
+      "（课程模拟项目交付件）",
+      "",
+      "编制单位：020202项目组",
+      "编    制：何思源（项目经理）",
+      "审    核：任俊强（需求与合规负责人）",
+      "批    准：【待人工确认】",
+      "编制日期：2026 年 9 月 15 日",
+      "\n",
+      "修订记录",
+      "版本",
+      "日期",
+      "修订章节",
+      "修订说明",
+      "编制/修订人",
+      "V0.1",
+      "2026-09-13",
+      "全文",
+      "建立 39 条 FR 的 SRS 及双镜像验收链。",
+      "何思源",
+      "V1.0",
+      "2026-09-14",
+      "全文",
+      "按唯一 Pair 重构正式交付承载结构与版式，需求口径不变。",
+      "何思源",
+      "V1.1",
+      "2026-09-15",
+      "第3、5、6、10章",
+      "G2-R03深化核心流程、状态模型、字段字典与PE/NFR量化表，重建正式件并完成自动渲染QA。",
+      "何思源",
+      "注：业务内容以 G2-R03 深化后的受控 SRS 工作稿为准；教学样例仅用于承载结构和版式。",
+      "目 录",
+      "1 引言\t1\n2 总体说明\t1\n3 功能需求\t2\n3.1 数字预案与事件处置闭环\t2\n3.2 指挥态势、视频与定位联动\t3\n3.3 演练、移动执行与值班物资闭环\t5\n3.4 外部联动与中台业务适配\t8\n3.5 非MVP、本期范围功能需求\t9",
+      "3.6 核心业务流程与异常路径\t10\n3.7 核心状态模型\t10\n4 外部接口需求\t10\n5 数据需求\t11\n5.1 核心数据对象\t11\n5.2 核心实体字段字典\t11\n5.3 数据质量与来源\t12\n5.4 数据安全与审计\t12\n6 非功能需求\t12\n7 部署、交付与服务约束\t13\n8 验收与追踪\t14\n9 变更控制与待澄清事项\t14\n10 G2规格化阶段补充业务规则\t15",
+      "3.6 核心业务流程与异常路径\t10\n3.7 核心状态模型\t10\n4 外部接口需求\t10\n5 数据需求\t11\n5.1 核心数据对象\t11\n5.2 核心实体字段字典\t11\n5.3 数据质量与来源\t12\n5.4 数据安全与审计\t12\n6 非功能需求\t12\n7 部署、交付与服务约束\t13\n8 验收与追踪\t14\n9 变更控制与待澄清事项\t14\n10 G2规格化阶段补充业务规则\t15",
+      "1 引言",
+      "1.1 目的",
+      "本说明书以39条受控功能需求为基础，形成可独立阅读、可评审、可验证的需求规格，为spec.md、反向澄清、RTM、设计和测试提供统一输入。本文中的“验证”表示应形成可复核证据，不表示接口、环境或能力已经验收通过。",
+      "1.2 项目范围",
+      "本系统以数字化预案为核心，以应急指挥为枢纽，以 H5 移动处置为延伸，覆盖事前准备、事件接报、指挥处置、现场执行和事后改进。当前 MVP 包含 29 条唯一 FR，均为 Must；其余 10 条 FR 仍属于本期实施、测试和验收范围，不因未进入 MVP 而取消或降低要求。",
+      "1.3 依据与优先级",
+      "需求事实以《用户需求书》和 BASELINE-V1.0 为准；第二关任务要求、G2 需求控制文件和课程模拟访谈依次用于组织规格。课程模拟访谈不是现实访谈原话，不能覆盖冻结的功能、★属性、数字、责任或验收条件。教学参考材料不得作为本项目业务事实来源。",
+      "1.4 文档约定",
+      "G2-FR-nnn 是第二关稳定功能编号，与一个原始 FR-xx.x 一一对应。",
+      "AC-G2-FR-nnn-01 是 SRS 与 spec.md 共用的验收标准编号。",
+      "★ 表示实质性条款，不允许负偏离；当前 MVP 有 28 条★、1 条非★。",
+      "Given、When、Then 分别表示前置条件、触发行为和可观察结果。",
+      "待验证 表示需要在约定环境、接口或测试中形成证据，不得解释为已通过。",
+      "1.5 故事映射关闭状态",
+      "ISSUE-G2-02-001 已由 C 修订并经 B 复验关闭。US-017、US-019、US-022、US-024 现已分别与 G2-FR-021、023、009、017 的冻结语义一致；本说明书继续以 canonical G2-FR、原始 FR 和冻结事实为准。",
+      "2 总体说明",
+      "",
+      "图 1-1  需求双镜像与追踪关系",
+      "2.1 用户与使用场景",
+      "主要用户包括应急值班员、应急指挥人员、演练与安全管理人员、现场处置与物资管理人员、值班管理人员以及平台与接口管理员。用户通过 Web、指挥视图和嵌入甲方既有智慧管理 APP 的 H5 完成工作。",
+      "2.2 产品边界",
+      "本项目建设应急业务软件、H5、数据接口、配套文档和培训。既有视频、定位、门禁、消防、物联网和中台等系统本体及硬件不默认由本项目建设；本项目仍承担约定的软件适配、字段映射、容错、降级、联调、验证和交付责任。",
+      "2.3 运行与依赖环境",
+      "甲方提供私有部署基础环境、既有平台接口、账号权限、合法地图与业务源数据；乙方负责容器化软件交付、最低配置建议、部署验证和数据技术校验。KN-070—KN-078 属于方案建议，不是 P1 强制需求，不写入本 SRS 的强制条款。",
+      "2.4 约束和假设",
+      "视频和统一消息须在 M2 前形成真实连通性验证证据。",
+      "定位刷新与精度依赖甲方源能力，乙方链路不得降低源精度。",
+      "门禁控制必须由授权人员确认并服从既有安全联锁；状态不明时不得自动重复控制。",
+      "正式接口版本、环境容量、目标宿主版本及现场测试结果当前均为待确认或待验证。",
+      "3 功能需求",
+      "下表保留39条受控功能需求及既有验收标准。G2-R02已完成反向澄清裁决，G2-R03仅补充需求级流程、状态、字段和量化语义；本轮影响AC的可观察规则均标记为G2-R05对spec.md与RTM的待同步项。",
+      "3.1 MVP-1 数字预案与事件处置闭环",
+      "表 3-1 数字预案与事件处置功能需求",
+      "需求编号",
+      "来源",
+      "需求陈述",
+      "验收标准",
+      "G2-FR-001★",
+      "FR-01.1；US-001；F-100",
+      "系统应支持综合预案、专项预案和现场处置方案的分层编制，并按区域、时段和风险场景细化。",
+      "AC-G2-FR-001-01 Given 用户具有预案编制权限，When 新建并保存不同层级和场景的预案，Then 系统保存层级、场景、版本和审计信息，并可按条件检索。",
+      "G2-FR-002★",
+      "FR-01.2；US-002；F-101",
+      "系统应支持配置处置流程、自定义任务、会议群组、通知人员和调派人员。",
+      "AC-G2-FR-002-01 Given 预案处于可编辑状态，When 编制人配置流程节点及人员关系并提交校验，Then 系统完整保存配置；缺少强制关系时阻止发布并提示原因。",
+      "G2-FR-003★",
+      "FR-01.3；US-003；F-102；KN-003",
+      "系统应支持自定义预案任务，并在预案启动时自动向移动终端下发通知和任务。",
+      "AC-G2-FR-003-01 Given 已发布预案且人员配置有效，When 授权人员启动预案，Then 系统在不超过 3 秒内生成通知和任务下发记录，任务、接收对象、状态和时间可追踪。",
+      "G2-FR-013★",
+      "FR-05.1；US-004；F-115",
+      "系统应支持 Web/H5 发起事件、提交现场信息并按事件属性检索。",
+      "AC-G2-FR-013-01 Given 用户具有事件上报权限，When 提交必填信息及允许的现场附件，Then 系统生成唯一事件并可按类型、状态、时间和位置检索；字段不合法时不创建事件。",
+      "G2-FR-014★",
+      "FR-05.2；US-005；F-116；KN-011、KN-012",
+      "系统应支持事件核实审批、预案启动、生命周期跟踪和过程留痕。",
+      "AC-G2-FR-014-01 Given 外部告警进入系统，When 告警有效且用户完成核实审批，Then 系统在不超过 2 秒内接入告警，并在不超过 3 分钟内完成处置任务下达；无效告警不启动预案。",
+      "G2-FR-015★",
+      "FR-05.3；US-006；F-117",
+      "系统应自动下发处置任务，并支持接收、反馈、催办和临时任务。",
+      "AC-G2-FR-015-01 Given 事件处于处置状态，When 指挥人员下发、催办或新增临时任务，Then 责任人收到任务且状态变化、反馈内容、操作者和时间均可追踪；重复请求不得产生重复任务。",
+      "G2-FR-016★",
+      "FR-05.4；US-007；F-118",
+      "系统应支持事件关闭评估、事故调查、事件报告和知识沉淀。",
+      "AC-G2-FR-016-01 Given 事件任务已达到关闭条件，When 授权人员完成评估、调查和报告并关闭事件，Then 系统保存完整记录并可检索；未完成强制项时阻止关闭。",
+      "3.2 MVP-2 指挥态势 视频与定位联动",
+      "表 3-2 指挥态势、视频与定位功能需求",
+      "需求编号",
+      "来源",
+      "需求陈述",
+      "验收标准",
+      "G2-FR-004★",
+      "FR-02.1；US-008；F-104",
+      "系统应在统一事件视图中展示事件动态、续报、时间线、处置任务状态和处理人。",
+      "AC-G2-FR-004-01 Given 事件存在续报和任务变化，When 指挥人员打开事件态势，Then 页面按时间顺序显示来源、业务时间、任务状态和处理人，刷新后不丢失历史。",
+      "G2-FR-005★",
+      "FR-02.2；US-009；F-105；KN-008、KN-009",
+      "系统应展示人员位置、职责、就位状态、源时间和新鲜度；刷新不超过 2 秒/次且不得降低甲方亚米级源精度。",
+      "AC-G2-FR-005-01 Given 甲方定位源正常，When 系统接收连续位置数据，Then 展示刷新间隔不超过 2 秒且输出精度不低于源精度。 AC-G2-FR-005-02 Given 位置过期或不可用，When 用户查看或发起调派，Then 系统显示最后有效时间并禁止自动形成邻近调派结论。",
+      "G2-FR-006★",
+      "FR-02.3；US-010；F-106；KN-010、KN-060",
+      "系统应一键实时调阅既有视频，并通过既有接口支持历史录像检索和回放。",
+      "AC-G2-FR-006-01 Given 既有视频接口、权限和通道正常，When 用户选择关联摄像机，Then 实时视频首帧不超过 3 秒。 AC-G2-FR-006-02 Given 既有系统保存不少于 30 天录像，When 用户按时间检索并回放，Then 系统返回对应录像或明确错误，不将存储责任转移给本系统。",
+      "G2-FR-007",
+      "FR-02.4；US-011；F-107；KN-023、KN-024",
+      "系统应在地图展示物资站点，并支持钻取站点清单、数量和配置。",
+      "AC-G2-FR-007-01 Given 已导入不少于 30 个站点和不少于 1000 项台账数据，When 用户在地图选择站点，Then 系统展示对应清单、数量和配置，结果与物资台账一致。",
+      "G2-FR-026★",
+      "FR-10.1；US-012；F-135；KN-016",
+      "系统应展示安防终端在线/离线状态、告警统计、定位和外部系统跳转。",
+      "AC-G2-FR-026-01 Given 安防数据源可用，When 用户打开综合安防视图，Then 在线状态、告警统计和定位数据在不超过 30 秒内刷新，并可按权限跳转；接口异常时显示数据时间和故障状态。",
+      "G2-FR-029★",
+      "FR-11.3；US-013、US-029；F-138",
+      "系统应实现视频调阅/回放接口及受权、安全联锁的疏散门禁联动。",
+      "AC-G2-FR-029-01 Given 用户具有控制权限且既有联锁允许，When 用户二次确认门禁动作，Then 系统下发一次指令并记录操作者、时间和结果。 AC-G2-FR-029-02 Given 联锁拒绝、超时或状态不明，When 控制失败，Then 系统告警并转人工处置，不绕过联锁或自动重复控制。",
+      "3.3 MVP-3 演练 移动执行与值班物资闭环",
+      "表 3-3 演练、移动执行与值班物资功能需求",
+      "需求编号",
+      "来源",
+      "需求陈述",
+      "验收标准",
+      "G2-FR-008★",
+      "FR-03.3；US-021；F-110；KN-024",
+      "系统应维护物资台账、数量、有效期和临期提醒。",
+      "AC-G2-FR-008-01 Given 用户具有物资权限，When 新增、修改或查询台账并配置有效期，Then 系统保存数量与有效期，按规则形成临期提醒并记录处置状态；规模支持不少于 1000 项。",
+      "G2-FR-009★",
+      "FR-03.4；US-022；F-111",
+      "系统应制定盘点计划，形成盘点快照，支持移动盘点、自动比对和差异标识。",
+      "AC-G2-FR-009-01 Given 已发布盘点计划和台账快照，When 现场人员提交盘点数量，Then 系统以快照自动比对、标识差异并进入复核；复核完成后按权限更新现有数量。",
+      "G2-FR-010★",
+      "FR-04.1；US-014；F-112；KN-013",
+      "系统应制定月、季、年演练计划，支持提醒、逾期和补演管理，并满足适用对象每半年至少一次。",
+      "AC-G2-FR-010-01 Given 存在适用对象和演练计划，When 按滚动六个月统计，Then 每个适用对象至少有一次有效演练；未达标时产生提醒、逾期或补演记录。",
+      "G2-FR-011★",
+      "FR-04.2；US-015；F-113",
+      "系统应在演练周期到达时自动下发演练任务并留痕。",
+      "AC-G2-FR-011-01 Given 已发布演练计划且周期到达，When 调度任务执行，Then 系统按计划生成一次演练任务并记录接收对象、状态和时间；重复调度不重复生成。",
+      "G2-FR-012★",
+      "FR-04.3；US-016；F-114",
+      "系统应记录演练执行、模板评估、报告、整改、补演和持续改进。",
+      "AC-G2-FR-012-01 Given 演练任务已执行，When 管理人员提交评估和整改，Then 系统生成可追踪报告并关联问题、责任、期限、复核及必要的补演记录。",
+      "G2-FR-017★",
+      "FR-06.1；US-024；F-119",
+      "系统应配置值班打卡小组、时段、点位和代执行规则，并留存代执行记录。",
+      "AC-G2-FR-017-01 Given 管理员具有配置权限，When 配置小组、人员、时段、点位及代执行关系，Then 系统保存生效范围并记录变更；冲突或缺项时阻止生效并提示。",
+      "G2-FR-018★",
+      "FR-06.2；US-025；F-120",
+      "系统应维护打卡点位，支持地图拾取、二维码生成和有效半径配置。",
+      "AC-G2-FR-018-01 Given 合法地图服务可用，When 管理员拾取点位并配置范围，Then 系统保存坐标和有效半径、生成唯一二维码，并可停用或更新。",
+      "G2-FR-019★",
+      "FR-06.3；US-025；F-121；KN-014",
+      "系统应按点位、小组和人员三个维度统计打卡，并支持明细导出。",
+      "AC-G2-FR-019-01 Given 存在打卡记录，When 用户选择点位、小组或人员维度统计并导出，Then 统计与明细一致，导出受权限控制并保留审计记录。",
+      "G2-FR-020★",
+      "FR-06.4；US-025；F-122；KN-006、KN-007",
+      "系统应识别缺卡和超时并通过统一消息通道推送告警。",
+      "AC-G2-FR-020-01 Given 打卡时段结束且存在缺卡或超时，When 系统执行检查，Then 产生告警并调用不少于 20 路并行消息；在正常甲方通道下验证到达率不低于 99%，失败进入重试或人工清单。",
+      "G2-FR-021★",
+      "FR-08.1；US-017；F-128",
+      "H5 应支持移动发起事件、拍照上传并查看本人发起的事件。",
+      "AC-G2-FR-021-01 Given 用户已在甲方宿主 APP 完成认证，When 在 H5 填写事件、拍照并提交，Then 系统创建事件并在个人事件列表可查；本条不包含接收处置任务。",
+      "G2-FR-022★",
+      "FR-08.2；US-018、US-028；F-129；KN-006、KN-007",
+      "H5 应支持接收、确认、反馈、上传附件并完成处置任务。",
+      "AC-G2-FR-022-01 Given 用户收到授权范围内任务，When 在 H5 确认、反馈、上传并提交完成，Then 状态按合法顺序更新并保留时间与附件；消息通道异常不丢失已确认业务状态。",
+      "G2-FR-023★",
+      "FR-08.4；US-019；F-131",
+      "H5 应支持查看和执行演练任务并提交演练结果。",
+      "AC-G2-FR-023-01 Given 用户收到演练任务，When 在 H5 查看步骤、记录执行并提交结果，Then 系统更新对应演练任务并关联执行证据；本条不替代普通处置任务反馈。",
+      "G2-FR-024★",
+      "FR-08.5；US-020；F-132；KN-036",
+      "H5 应支持扫码打卡并校验人员身份、有效时段和有效范围。",
+      "AC-G2-FR-024-01 Given 二维码有效且用户已认证，When 用户扫码打卡，Then 系统在不超过 1 秒内返回成功或明确失败原因，并记录身份、点位、时间和范围校验结果。",
+      "G2-FR-025★",
+      "FR-08.6；US-023；F-133",
+      "H5 应支持移动盘点物资并在复核后更新现有数量。",
+      "AC-G2-FR-025-01 Given 用户获得盘点任务和快照，When 扫描或选择物资、提交实盘数量并完成差异复核，Then 系统记录盘点过程并按授权结果更新现有数量。",
+      "3.4 MVP-4 外部联动与中台业务适配",
+      "表 3-4 外部联动与中台业务适配功能需求",
+      "需求编号",
+      "来源",
+      "需求陈述",
+      "验收标准",
+      "G2-FR-027★",
+      "FR-11.1；US-026、US-029；F-136",
+      "系统应接入既有物联网告警和客流数据，支持告警转事件、有限重试和补传。",
+      "AC-G2-FR-027-01 Given 甲方提供有效接口与测试事件，When 接收告警或客流数据，Then 系统完成字段校验、去重、记录并按规则形成事件；接口失败时告警并受控重试或补传。",
+      "G2-FR-028★",
+      "FR-11.2；US-027、US-029；F-137",
+      "系统应适配甲方统一中台的身份、组织、权限、消息、工作流、文件、门户和数据汇聚能力，不重复建设通用能力。",
+      "AC-G2-FR-028-01 Given 甲方提供接口、账号和权限，When 用户经中台进入系统并执行业务，Then 身份、组织和数据权限保持一致，业务按需调用消息、工作流、文件与汇聚接口；中台异常时给出明确降级提示。",
+      "3.5 非 MVP、仍属本期范围的功能需求",
+      "下列 10 条不是本阶段 MVP Must，但仍属本期实施、测试与验收范围；其稳定编号为 G2-FR-030—039，优先级不因此改变。AC 均可在 spec.md 中找到等价 Given/When/Then。",
+      "表 3-5 非MVP、本期范围功能需求",
+      "需求编号",
+      "来源",
+      "需求陈述",
+      "验收标准",
+      "G2-FR-030",
+      "FR-01.4；F-103",
+      "系统应管理预案附件，支持检索、修订和版本追踪；标准示例模板为宜提供。",
+      "AC-G2-FR-030-01 Given 已有预案附件，When 授权用户上传、修订或检索，Then 系统保存关联、版本和审计；不可访问附件不返回内容。",
+      "G2-FR-031★",
+      "FR-03.1；F-108",
+      "系统应管理应急人员档案、职责、小组和调派通知。",
+      "AC-G2-FR-031-01 Given 管理员具备权限，When 维护人员职责和小组并发起调派通知，Then 系统保存组织关系、通知对象和处理记录。",
+      "G2-FR-032",
+      "FR-03.2；F-109",
+      "系统应管理值班计划并与打卡联动，计划调整须留痕。",
+      "AC-G2-FR-032-01 Given 已配置值班人员和时段，When 发布或调整计划，Then 系统同步可用打卡规则并记录调整前后内容、操作者和时间。",
+      "G2-FR-033",
+      "FR-07.1；F-123",
+      "系统应支持预案类型新增、修改和停用。",
+      "AC-G2-FR-033-01 Given 管理员维护预案类型，When 新增、修改或停用类型，Then 已引用类型保留历史可追溯性，停用类型不可用于新建预案。",
+      "G2-FR-034★",
+      "FR-07.2；F-124",
+      "系统应维护事件类型；可预置四大类。",
+      "AC-G2-FR-034-01 Given 管理员维护事件类型，When 新增、修改或停用类型，Then 系统保存类型与审计信息；如配置预置类别，应允许按权限维护而不固化为额外强制范围。",
+      "G2-FR-035★",
+      "FR-07.3；F-125",
+      "系统应配置物资站点的空间和地图位置。",
+      "AC-G2-FR-035-01 Given 甲方地图服务可用，When 管理员配置站点及位置，Then 系统保存站点、坐标/楼层和版本，并可供物资一张图加载。",
+      "G2-FR-036★",
+      "FR-07.4；F-126",
+      "系统应维护条目化、可复用的评估模板。",
+      "AC-G2-FR-036-01 Given 管理员编辑评估模板，When 增加、排序或复用评估条目，Then 系统保存模板版本，并在演练或事件评估中引用正确版本。",
+      "G2-FR-037★",
+      "FR-07.5；F-127",
+      "系统应支持自定义核实审批环节、人员和时限，并记录调整。",
+      "AC-G2-FR-037-01 Given 管理员配置核实审批，When 定义环节、处理人和时限并发布，Then 系统按配置路由核实事项，配置变更可审计。",
+      "G2-FR-038",
+      "FR-08.3；F-130",
+      "H5 应提供知识库分类和关键字检索。",
+      "AC-G2-FR-038-01 Given 用户已认证且知识条目已发布，When 在 H5 按分类或关键字检索，Then 系统仅返回授权范围内的匹配条目；无结果时明确提示。",
+      "G2-FR-039★",
+      "FR-09.1；F-134；KN-017",
+      "系统应统计应急事件、监控和流程，支持筛选与钻取。",
+      "AC-G2-FR-039-01 Given 存在授权范围内的业务数据，When 用户按条件筛选统计并钻取，Then 指标与明细一致，默认刷新按 KN-017 ≤60 秒形成性能验证记录。",
+      "3.6核心业务流程与异常路径。表3-6覆盖主路径及异常路径；其可观察规则将在G2-R05同步至spec.md和RTM。",
+      "表 3-6 核心业务流程及异常路径",
+      "流程",
+      "主路径",
+      "异常/边界路径",
+      "追踪与待同步",
+      "事件接报、核实与关闭",
+      "接报→创建/关联→人工核实→授权启动预案→任务→反馈/评估/调查/报告→关闭。",
+      "可靠ID重复接收仅更新/续报；无ID相似告警人工关联；核实超时不自动启动。",
+      "FR-013—016、027；RCLR-001、002、004、010；spec/RTM待同步",
+      "任务下发、执行与重指派",
+      "预案启动/临时创建→下发/接收→反馈、催办→完成→复核/归档。",
+      "重复请求不重复建任务；重指派和显式改期审计；消息异常不丢失确认状态。",
+      "FR-003、015、022；RCLR-003、008、010；spec/RTM待同步",
+      "演练与补演",
+      "发布计划→周期下发→执行取证→评估/整改→复核→统计。",
+      "取消/未完成不计完成；补演保留原计划和逾期历史。",
+      "FR-010—012、023；RCLR-007；spec/RTM待同步",
+      "盘点与物资调整",
+      "发布计划并形成快照→实盘→快照比对→复核期间变动→授权调整。",
+      "正常出入库独立记录；未复核不得形成最终调整。",
+      "FR-008、009、025；RCLR-006；spec/RTM待同步",
+      "值班打卡与告警",
+      "发布规则→扫码校验→有效记录→统计；缺卡/超时触发消息。",
+      "过期码拒绝；重复扫码幂等；超时、重试、降级和迟到回执历史保留。",
+      "FR-017—020、024、032；RCLR-005、008；spec/RTM待同步",
+      "位置态势与受权联动",
+      "接收位置→展示新鲜度→有效数据研判/调派；确认后门禁联锁执行。",
+      "过期仅显示最后有效位置；联锁失败告警并人工降级，不绕过或自动重试控制。",
+      "FR-005、029；RCLR-009；spec/RTM待同步",
+      "3.7核心状态模型。表3-7仅定义需求级可观察状态与迁移约束，不规定技术实现。",
+      "表 3-7 核心业务状态模型",
+      "对象",
+      "正常状态与迁移",
+      "异常/受限规则",
+      "来源",
+      "事件",
+      "已接报→待核实→已核实→处置中→待关闭→已关闭；驳回核实可标记无效并留痕。",
+      "核实超时仅提醒升级，不自动生效或启动；关闭前须完成强制评估、调查和报告。",
+      "FR-013—016；RCLR-001、002、004、010",
+      "处置任务",
+      "待下发→已下发→已接收→执行中→待复核→已完成/已归档。",
+      "重指派完整留痕且默认不改截止时间；逾期、下发失败、迟到回执可追溯。",
+      "FR-003、015、022；RCLR-003、008",
+      "演练",
+      "草稿→已发布→待执行→执行中→待评估→已完成；整改可待复核/关闭。",
+      "取消、逾期、未完成均不计完成；补演关联原计划并保留原异常。",
+      "FR-010—012、023；RCLR-007",
+      "盘点",
+      "草稿→已发布（快照形成）→盘点中→待复核→已确认/已调整。",
+      "期间变动独立记录；差异不得绕过复核直接调整。",
+      "FR-009、025；RCLR-006",
+      "打卡",
+      "规则草稿→已生效→待打卡→有效/无效打卡→统计归档。",
+      "过期或校验不符为无效；重复扫码幂等；缺卡与迟到回执历史保留。",
+      "FR-017—020、024、032；RCLR-005、008",
+      "位置与消息",
+      "位置：有效→过期→恢复有效；消息：待发送→已发送→已回执/失败/降级处置。",
+      "过期位置禁止自动调派；迟到回执更新最终送达但不删除过程历史。",
+      "FR-005、020、022；RCLR-008、009",
+      "4 外部接口需求",
+      "表 4-1 外部接口需求",
+      "接口类别",
+      "甲方提供",
+      "本系统责任",
+      "验证状态",
+      "统一中台",
+      "身份、组织、权限、消息、工作流、文件、门户、汇聚接口与账号",
+      "应急业务适配、权限传递、错误处理、审计",
+      "待联调验证",
+      "视频平台",
+      "GB/T 28181 等既有能力、设备编码、实时流、录像与不少于 30 天保存",
+      "实时调阅、历史检索/回放、超时与错误提示",
+      "M2 前连通；能力待验证",
+      "定位系统",
+      "设施、接口、人员标识、坐标/楼层和亚米级源数据",
+      "人员关联、映射、新鲜度、展示和刷新验证",
+      "待现场验证",
+      "统一消息",
+      "通道、账号、签名、配额、回执和联调环境",
+      "编排、并行、重试、回执、留痕、降级",
+      "M2 前连通；指标待验证",
+      "地图服务",
+      "合法二维、楼层及验收所需三维地图和坐标关系",
+      "加载、兼容、标注、拾取和业务叠加",
+      "格式与坐标系待确认",
+      "门禁与安防",
+      "既有联锁、终端、协议、授权和回执",
+      "受权控制、二次确认、失败告警、人工降级",
+      "联锁与回执待验证",
+      "物联网与客流",
+      "告警/客流接口、字段和测试环境",
+      "接入、校验、转事件、重试、补传、审计",
+      "待联调验证",
+      "接口调用应使用统一关联标识；可重放操作应具备业务幂等键。控制类动作及无法证明幂等的调用不得自动重放，恢复后应先查询外部最终状态并对账。",
+      "5 数据需求",
+      "5.1 核心数据对象",
+      "系统至少管理预案及版本、流程与任务模板、事件与续报、处置任务、人员与位置状态、物资站点与台账、盘点计划与快照、值班打卡、演练计划与评估、消息回执、外部调用、附件和审计记录。",
+      "表 5-1 核心实体字段字典",
+      "5.2 核心实体字段字典。表 5-1 为需求级语义字典，不是数据库 ER 或物理表设计。",
+      "表 5-1 核心实体字段字典",
+      "实体",
+      "字段（业务类型/必填）",
+      "业务含义与约束",
+      "来源",
+      "关联",
+      "应急预案",
+      "planId String/是；名称 String/是；状态 Enum/是；适用场景 String/是",
+      "唯一标识、名称、草稿/已发布/停用和适用条件",
+      "G2-FR-001—003",
+      "版本、模板、事件",
+      "预案版本",
+      "versionId String/是；版本号 String/是；生效状态 Enum/是",
+      "版本可追溯，发布后作为启动依据",
+      "G2-FR-001",
+      "预案、模板",
+      "预案任务模板",
+      "templateId String/是；任务名称 String/是；责任组 String/是；时限 Duration/是",
+      "启动时生成任务；缺关键关系不得发布",
+      "G2-FR-002、003",
+      "版本、任务",
+      "应急事件",
+      "incidentId String/是；类型 Enum/是；状态 Enum/是；发生时间 DateTime/是",
+      "唯一事件；含待核实/核实超时/处置/关闭状态",
+      "G2-FR-013—016",
+      "续报、任务、附件",
+      "事件续报",
+      "updateId String/是；业务时间 DateTime/是；接收时间 DateTime/是；内容 Text/是",
+      "迟到数据标记且不覆盖历史",
+      "G2-RCLR-001、004",
+      "事件",
+      "处置任务",
+      "taskId String/是；当前责任人 String/是；状态 Enum/是；截止时间 DateTime/是",
+      "重指派保留历史，改期显式审计",
+      "G2-FR-015、G2-RCLR-003",
+      "事件、反馈",
+      "任务反馈",
+      "feedbackId String/是；内容 Text/是；反馈时间 DateTime/是",
+      "接收、反馈、催办和完成证据",
+      "G2-FR-015",
+      "任务",
+      "人员/值班",
+      "personId String/是；职责 Enum/是；值班时段 TimeRange/否",
+      "人员、职责与当前值班关联",
+      "G2-FR-017、018",
+      "任务、位置",
+      "位置状态",
+      "personId String/是；坐标 Location/是；源时间 DateTime/是；新鲜度 Enum/是",
+      "过期阈值可配置，过期禁自动调派",
+      "G2-FR-005、G2-RCLR-009",
+      "人员、事件",
+      "物资站点/条目",
+      "siteId String/是；itemId String/是；数量 Decimal/是；有效期 Date/否",
+      "台账、站点与临期状态",
+      "G2-FR-007—009",
+      "盘点",
+      "盘点计划/快照/记录",
+      "planId String/是；快照数量 Decimal/是；实盘数量 Decimal/否；复核状态 Enum/是",
+      "快照为比对基准，期间变动单独记录",
+      "G2-FR-009、G2-RCLR-006",
+      "物资条目",
+      "演练计划/执行/评估",
+      "drillId String/是；计划时间 DateTime/是；实际完成 DateTime/否；状态 Enum/是",
+      "取消/逾期不计完成，补演关联原计划",
+      "G2-FR-010—012、G2-RCLR-007",
+      "任务、评估",
+      "打卡点/记录",
+      "pointId String/是；任务Id String/是；扫码时间 DateTime/是；结果 Enum/是",
+      "码绑定任务/点位/时段，重复扫码幂等",
+      "G2-FR-017—020、G2-RCLR-005",
+      "人员",
+      "消息发送/外部调用",
+      "messageId String/是；尝试序号 Integer/是；最终状态 Enum/是；回执时间 DateTime/否",
+      "保留超时/重试/降级历史，重复回执幂等",
+      "G2-FR-020、022、G2-RCLR-008",
+      "任务、事件",
+      "附件/审计记录",
+      "attachmentId String/是；关联对象 String/是；删除状态 Enum/是；操作者 String/是",
+      "逻辑删除、归档引用保护和删除审计",
+      "G2-FR-013、016、G2-RCLR-010",
+      "事件、任务、报告",
+      "5.3 数据质量与来源",
+      "表 5-1 核心实体字段字典",
+      "甲方提供真实业务源数据并确认业务正确性；乙方负责模板、映射、清洗、导入和技术校验。外部标识与内部业务标识应保留映射；时间数据应保存来源时间和接收时间；位置数据应保存源精度、新鲜度和最后有效时间。",
+      "5.4 数据安全与审计",
+      "敏感数据应按角色和数据范围控制，导出应审计；事件、任务、控制指令、消息回执和关键配置变更应记录操作者、时间、对象、前后状态及关联标识。日志与过程记录的保存和防篡改要求按冻结基线执行。",
+      "6 非功能需求",
+      "6.1 PE性能指标与容量",
+      "表 6-1 PE-01—PE-12性能指标",
+      "编号",
+      "量化要求",
+      "验证口径",
+      "来源",
+      "PE-01",
+      "预案启动通知与任务下发≤3秒。",
+      "授权启动至产生可追踪下发记录的端到端时间戳。",
+      "KN-003",
+      "PE-02",
+      "告警接入响应≤2秒。",
+      "外部告警至本系统接收/记录时间戳。",
+      "KN-011",
+      "PE-03",
+      "事件确认至任务下达≤3分钟。",
+      "核实通过至处置任务下发记录时间戳。",
+      "KN-012",
+      "PE-04",
+      "消息并行≥20路、正常通道到达率≥99%。",
+      "发送、尝试、回执、失败与重复回执统计。",
+      "KN-006、007",
+      "PE-05",
+      "位置刷新≤2秒/次且精度不低于甲方亚米级源精度。",
+      "源、接收、展示时间戳及精度；过期阈值可配置。",
+      "KN-008、009",
+      "PE-06",
+      "实时视频首帧≤3秒；既有系统保存录像≥30天。",
+      "受权首帧计时和既有系统保存责任证据。",
+      "KN-010、060",
+      "PE-07",
+      "Web普通页面95%请求≤3秒。",
+      "目标数据规模与指定浏览器中的分位统计。",
+      "KN-034",
+      "PE-08",
+      "地图常规操作≤2秒。",
+      "合法地图服务、典型点位加载/操作计时。",
+      "KN-035",
+      "PE-09",
+      "扫码打卡写入/回传≤1秒。",
+      "有效与无效扫码均记录响应及校验结果。",
+      "KN-036",
+      "PE-10",
+      "综合安防刷新≤30秒；应急信息默认刷新≤60秒。",
+      "刷新配置与实际时间戳。",
+      "KN-016、017",
+      "PE-11",
+      "应急峰值在线用户≥100人。",
+      "目标环境并发压测，记录成功率、响应和资源。",
+      "KN-028",
+      "PE-12",
+      "一年期统计报表生成≤5秒。",
+      "授权范围内一年期数据的统计用时。",
+      "KN-037",
+      "表 6-2 容量要求",
+      "编号",
+      "量化要求",
+      "验证口径",
+      "NFR-CAP-01",
+      "预案≥50个、模板≥200条、应急人员≥300人。",
+      "初始化/导入后的查询与配置用例。",
+      "NFR-CAP-02",
+      "年均事件约200起、平均10任务/起；在线≥10年、事件≥2万、任务≥20万。",
+      "受控测试数据的导入、查询与保存验证。",
+      "NFR-CAP-03",
+      "物资站点≥30个、台账≥1000项、打卡点≥100个。",
+      "目标数据规模下的配置、检索和关联用例。",
+      "NFR-CAP-04",
+      "日打卡约200人次、年约7.3万，在线保存≥3年。",
+      "保留期和典型统计查询验证。",
+      "6.2 可用性 可靠性与恢复",
+      "表 6-3 可用性、可靠性与恢复要求",
+      "编号",
+      "量化/可验证要求",
+      "验证口径",
+      "NFR-REL-01",
+      "7×24运行，试运行可用率≥99.5%（计划维护除外）。",
+      "试运行监控、维护与不可用时段记录。",
+      "NFR-REL-02",
+      "单点故障MTTR≤2小时；未完成任务重启后可恢复。",
+      "故障演练与恢复记录。",
+      "NFR-REL-03",
+      "日增量、周全量备份；过程数据≥3年，审计日志≥180天。",
+      "备份计划、恢复演练和保留期审计。",
+      "系统对外部依赖应独立超时、告警和降级，不得静默阻断核心事件流程；控制类动作及不可证明幂等的调用不得自动重放。具体量化要求见表6-3。",
+      "6.3 安全",
+      "表 6-4 安全要求",
+      "编号",
+      "量化/可验证要求",
+      "验证口径",
+      "NFR-SEC-01",
+      "应用安全不低于等保二级中与应用软件直接相关条款；交付前高危漏洞为0。",
+      "应用侧SCA、漏洞扫描、Web渗透复测证据。",
+      "NFR-SEC-02",
+      "口令长度≥8位；敏感数据按角色与数据范围控制，导出留痕。",
+      "身份、权限、导出和审计用例。",
+      "安全要求见表6-4。正式定级备案、基础环境合规和正式第三方等保测评由甲方组织；本要求不宣称上述活动已完成。",
+      "6.4 兼容与易用",
+      "表 6-5 易用性与兼容性要求",
+      "编号",
+      "量化/可验证要求",
+      "验证口径",
+      "NFR-USE-01",
+      "关键操作≤3个页面跳转；新用户≤2小时完成完整上报处置学习目标。",
+      "可用性走查与培训考核记录。",
+      "NFR-COMP-01",
+      "Chrome/Edge最新2个稳定版本；H5嵌入既有宿主APP。",
+      "甲方确认的终端/宿主矩阵与兼容测试。",
+      "关键操作不超过3个页面跳转；新用户应在≤2小时完成完整上报处置学习目标。兼容Chrome/Edge最新2个稳定版本；H5嵌入甲方既有宿主APP，不交付独立原生APP。关键操作应提供明确状态、失败原因和下一步，状态不得只靠颜色表达。",
+      "6.5 可维护性与可测试性",
+      "表 6-6 可维护性与可测试性要求",
+      "编号",
+      "量化/可验证要求",
+      "验证口径",
+      "NFR-MNT-01",
+      "核心模块单元测试覆盖率≥70%；39条FR功能覆盖率与验收用例通过率均为100%。",
+      "测试报告与RTM双向追踪。",
+      "NFR-MNT-02",
+      "非乙方人员按手册在干净环境一次部署成功，用时≤2小时。",
+      "独立部署验收记录。",
+      "接口、错误码、配置、部署、恢复和运维操作应形成文档；核心模块单元测试覆盖率≥70%，39条FR功能覆盖率与验收用例通过率均为100%。非乙方人员按手册在干净环境一次部署成功，用时≤2小时。",
+      "7 部署 交付与服务约束",
+      "软件采用私有化容器部署，提供镜像、初始化、升级、回滚、备份恢复方案及最低配置；非乙方人员应能按手册在干净环境一次部署成功且用时不超过 2 小时。",
+      "甲方提供机房、服务器、网络、域名证书、备份介质和后备电源等基础资源；本项目不默认采购这些资源。",
+      "项目提交源码与构建材料、容器制品、H5、配置与初始化、设计/接口/测试/用户/部署运维/培训文档、开源许可、追踪矩阵、试运行和总结材料。",
+      "质保期为 12 个月；故障响应、恢复、支持渠道、风险报告及不合格整改期限沿用冻结 SLA，不在本 SRS 中扩大承诺。",
+      "8 验收与追踪",
+      "8.1 验收总则",
+      "全部 39 条 FR 均须建立并通过功能用例；PE-01—PE-12逐项在部署环境实测；视频、信息发布、物联网和中台完成端到端联动；至少开展一次模拟突发事件全流程联合演练；高危漏洞清零；部署、文档和交付物按清单点验。",
+      "8.2 双镜像与 RTM",
+      "G2-R05应在spec.md中使用本文件相同的G2-FR和AC编号，并将本轮标记为“spec/RTM待同步”的可观察规则补入双镜像。RTM至少追踪原始FR、G2-FR、用户故事、AC、G2-RCLR、设计、实现、测试和结果；任何编号、范围或验收语义差异均阻断M2返工准出。",
+      "8.3 当前完整性",
+      "全量 G2-FR：39 条，连续、唯一；其中 MVP Must 29 条（28 条★、1 条非★），非 MVP、本期 10 条（6 条★、4 条非★）。",
+      "非 MVP、本期 G2-FR：10 条（G2-FR-030—039），均有逐条 SRS 与 AC；全项目合计 39 条 FR、34 条★FR。",
+      "29 条 G2-FR 均有至少一个 AC-G2-FR-nnn-xx 验收标准。",
+      "ISSUE-G2-02-001 已关闭；四条修订故事与 canonical G2-FR 的追踪关系已恢复。",
+      "9 变更控制与待澄清事项",
+      "功能、★属性、数字、责任、期次或验收强度发生变化时，必须先登记Issue、分析影响并取得授权确认，再同步更新SRS、spec.md、RTM和版本记录。G2-R02已形成并记录G2-RCLR-001—010的课程项目人工裁决；其后新发现、且未由冻结事实或现有裁决确定的问题不得静默写入需求，应按Issue/Change流程处理。",
+      "当前待闭环事项：",
+      "1. 甲方确认正式接口版本、账号、测试环境、协调窗口、地图与坐标系、宿主版本矩阵。",
+      "2. 视频、消息、定位、门禁、物联网、中台、性能、容量、安全和部署能力形成实际验证证据。",
+      "10 G2规格化阶段补充业务规则（课程项目人工决策）",
+      "本节继承项目负责人2026-09-15对G2-RCLR-001—010的课程项目人工决策，不是甲方正式法律文件或现实现场验收结论；不改变既有FR、★属性、量化指标或责任边界。表10-1是正文直接可读的规则索引，完整选项和裁决证据见ai_reverse_clarifications.md。",
+      "逐项继承：G2-RCLR-001、G2-RCLR-002、G2-RCLR-003、G2-RCLR-004、G2-RCLR-005、G2-RCLR-006、G2-RCLR-007、G2-RCLR-008、G2-RCLR-009、G2-RCLR-010。完整选项、来源与验证见 ai_reverse_clarifications.md。",
+      "表 10-1 G2-RCLR补充业务规则索引",
+      "规则域",
+      "可直接实施理解",
+      "来源",
+      "事件与告警",
+      "可靠外部告警ID幂等；无可靠ID不自动合并；核实超时仅升级提醒，时间线优先业务时间，迟到不覆盖历史。",
+      "RCLR-001、002、004",
+      "任务与消息",
+      "重指派完整留痕、默认不改截止时间；迟到/重复回执幂等并保留超时、重试、降级和人工历史。",
+      "RCLR-003、008",
+      "打卡、位置与盘点",
+      "码绑定任务/点位/时段，过期无效、重复扫码幂等；位置过期禁自动调派；盘点以快照比对并纳入期间变动复核。",
+      "RCLR-005、006、009",
+      "演练与附件",
+      "取消/未完成不计完成，补演不消除原异常；附件逻辑删除、审计保留、归档引用受保护。",
+      "RCLR-007、010"
+    ],
+    "headers": [],
+    "footers": []
+  }
+}

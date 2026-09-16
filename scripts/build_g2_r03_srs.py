@@ -44,6 +44,12 @@ def insert_para_after(anchor, text, style=None):
     return p
 
 
+def insert_para_before(anchor, text, style=None):
+    p = anchor._parent.add_paragraph(text, style=style)
+    (anchor._p if hasattr(anchor, '_p') else anchor._tbl).addprevious(p._p)
+    return p
+
+
 def set_cell(cell, text, header=False):
     cell.text = text
     cell.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
@@ -143,7 +149,7 @@ flows = [
 ('值班打卡与告警', '发布规则→扫码校验→有效记录→统计；缺卡/超时触发消息。', '过期码拒绝；重复扫码幂等；超时、重试、降级和迟到回执历史保留。', 'FR-017—020、024、032；RCLR-005、008；spec/RTM待同步'),
 ('位置态势与受权联动', '接收位置→展示新鲜度→有效数据研判/调派；确认后门禁联锁执行。', '过期仅显示最后有效位置；联锁失败告警并人工降级，不绕过或自动重试控制。', 'FR-005、029；RCLR-009；spec/RTM待同步'),
 ]
-p = insert_para_after(anchor, '3.6核心业务流程与异常路径。表3-6覆盖主路径及异常路径；其可观察规则将在G2-R05同步至spec.md和RTM。', 'Heading 2')
+p = insert_para_before(anchor, '3.6核心业务流程与异常路径。表3-6覆盖主路径及异常路径；其可观察规则将在G2-R05同步至spec.md和RTM。', 'Heading 2')
 t = table_after(doc, p, '表 3-6 核心业务流程及异常路径', ['流程', '主路径', '异常/边界路径', '追踪与待同步'], flows, table_style, caption_source, [Cm(3), Cm(5), Cm(5), Cm(4)])
 p = insert_para_after(t, '3.7核心状态模型。表3-7仅定义需求级可观察状态与迁移约束，不规定技术实现。', 'Heading 2')
 table_after(doc, p, '表 3-7 核心业务状态模型', ['对象', '正常状态与迁移', '异常/受限规则', '来源'], states, table_style, caption_source, [Cm(2.2), Cm(5.4), Cm(6), Cm(4.2)])

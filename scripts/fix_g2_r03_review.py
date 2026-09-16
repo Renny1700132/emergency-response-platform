@@ -47,6 +47,37 @@ def repeat_header(row):
 
 doc = Document(PATH)
 
+text(doc.paragraphs[0], 'YJGL-G2-03    V1.2')
+text(doc.paragraphs[11], '编制日期：2026 年 9 月 16 日')
+
+# Record this real Review-driven correction in the controlled revision table.
+history = doc.tables[0]
+if not any(row.cells[0].text.strip() == 'V1.2' for row in history.rows[1:]):
+    cells = history.add_row().cells
+    for cell, value in zip(cells, ('V1.2', '2026-09-16', '第3、8章；目录', '按 C Review 修正流程/状态插入顺序、39/39 AC 完整性表述及重复目录续段，并重建渲染证据。', '何思源')):
+        set_cell(cell, value)
+
+# Earlier TOC repair passes could leave a duplicate continuation paragraph.
+# Retain the first controlled continuation only.
+toc_continuations = [
+    p for p in doc.paragraphs
+    if p.text.startswith('3.6 核心业务流程与异常路径\t10')
+]
+for duplicate in toc_continuations[1:]:
+    duplicate._p.getparent().remove(duplicate._p)
+
+# Keep the implementation-level additions in the same body order as the
+# controlled Markdown and the static TOC: 3.5 → 3.6 → 3.7 → 4.
+chapter4 = find(doc, '4 外部接口需求')
+flow_heading = find(doc, '3.6核心业务流程')
+flow_caption = find(doc, '表 3-6')
+flow_table = flow_caption._p.getnext()
+state_heading = find(doc, '3.7核心状态模型')
+state_caption = find(doc, '表 3-7')
+state_table = state_caption._p.getnext()
+for element in [flow_heading._p, flow_caption._p, flow_table, state_heading._p, state_caption._p, state_table]:
+    chapter4._p.addprevious(element)
+
 # Clear stale teaching-case TOC field results and use a controlled static TOC.
 toc = doc.paragraphs[15:18]
 text(toc[0], '目 录')
@@ -57,11 +88,12 @@ text(toc[2], '3.6 核心业务流程与异常路径\t10\n3.7 核心状态模型\
 # Synchronize the task-stage wording with the reviewed working SRS.
 text(find(doc, '下表保留39条'), '下表保留39条受控功能需求及既有验收标准。G2-R02已完成反向澄清裁决，G2-R03仅补充需求级流程、状态、字段和量化语义；本轮影响AC的可观察规则均标记为G2-R05对spec.md与RTM的待同步项。')
 text(find(doc, 'G2-R05应在'), 'G2-R05应在spec.md中使用本文件相同的G2-FR和AC编号，并将本轮标记为“spec/RTM待同步”的可观察规则补入双镜像。RTM至少追踪原始FR、G2-FR、用户故事、AC、G2-RCLR、设计、实现、测试和结果；任何编号、范围或验收语义差异均阻断M2返工准出。')
+text(next(p for p in doc.paragraphs if p.text.startswith(('29 条 G2-FR', '39 条 G2-FR'))), '39 条 G2-FR 均有至少一个 AC-G2-FR-nnn-xx 验收标准。')
 text(find(doc, '功能、★属性、数字'), '功能、★属性、数字、责任、期次或验收强度发生变化时，必须先登记Issue、分析影响并取得授权确认，再同步更新SRS、spec.md、RTM和版本记录。G2-R02已形成并记录G2-RCLR-001—010的课程项目人工裁决；其后新发现、且未由冻结事实或现有裁决确定的问题不得静默写入需求，应按Issue/Change流程处理。')
 
 # Correct the chapter order and rebuild Table 5-1 with the same five requirements-level dimensions as Markdown.
 data_quality = find(doc, '5.3 数据质量')
-field_heading = find(doc, '5.2核心实体字段')
+field_heading = find(doc, '5.2 核心实体字段')
 field_heading._p.getparent().remove(field_heading._p)
 data_quality._p.addprevious(field_heading._p)
 text(field_heading, '5.2 核心实体字段字典。表 5-1 为需求级语义字典，不是数据库 ER 或物理表设计。')

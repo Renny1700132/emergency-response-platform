@@ -97,6 +97,10 @@ field_heading = find(doc, '5.2 核心实体字段')
 field_heading._p.getparent().remove(field_heading._p)
 data_quality._p.addprevious(field_heading._p)
 text(field_heading, '5.2 核心实体字段字典。表 5-1 为需求级语义字典，不是数据库 ER 或物理表设计。')
+# Remove every historical caption left by prior repair passes.  The rebuilt
+# table below owns the single caption that is immediately adjacent to it.
+for stale_caption in [p for p in doc.paragraphs if p.text.strip() == '表 5-1 核心实体字段字典']:
+    stale_caption._p.getparent().remove(stale_caption._p)
 old = doc.tables[9]
 style = old.style
 old._element.getparent().remove(old._element)

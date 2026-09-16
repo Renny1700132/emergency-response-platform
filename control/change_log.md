@@ -10,7 +10,7 @@
 | BASELINE-V1.0 | 第一关最终冻结基线 | G1-14 C 最终符合性复核 ACCEPTED | FROZEN | 2026-09-12 20:42 +08:00 | A | C | 527acee（内容）；f8be033（C 最终复核） |
 | BASELINE-V1.1 | 第一关收口呈现修订基线 | G1-15 格式审计、实名化、README 与日报体系完成；不改变需求事实、数字、范围、责任或验收 | PENDING_COMMIT | 2026-09-13 | A | C（待复核） | 待回填 |
 | BASELINE-V1.2 | 第一关最终返工呈现基线 | 21 份日报重建；7 份 DOCX 逐项模板、版本、插图与渲染审计 7/7 PASS；不改变业务事实 | PENDING_COMMIT | 2026-09-13 | A | C（待复核） | 待回填 |
-| BASELINE-G2-M2-R1.0 | 第二关M2返工复审重新冻结候选 | G2-R05 DONE；五类教师问题均有整改证据；39 FR/34★/117 AC/10 RCLR无漂移；开放接口边界显式保留 | REFREEZE_CANDIDATE / PENDING_B_C_REVIEW | 2026-09-16 | A | B、C（待独立复核） | 待回填 |
+| BASELINE-G2-M2-R1.0 | 第二关M2返工复审重新冻结基线 | G2-R05 DONE；五类教师问题均闭环；39 FR/34★/117 AC/10 RCLR无漂移；开放接口边界显式保留 | FROZEN / VERIFIED_BY_B_AND_C | 2026-09-16 | A | B、C | 待回填 |
 
 ## BASELINE-G1-V0.1 冻结记录
 
@@ -50,5 +50,7 @@
 - 影响分析：不改变39 FR、34★、117 AC、关键数字、责任或验收强度；补充评审、Issue状态和冻结边界。`ISSUE-G3-01-001`保持OPEN，真实接口/现场证据不进入通过结论。
 - 主责：A。
 - 复核/批准：B、C独立复核待执行；在两者PASS前不生效为正式FROZEN。
-- 新版本：`BASELINE-G2-M2-R1.0`（REFREEZE_CANDIDATE）。
+- 新版本：`BASELINE-G2-M2-R1.0`（FROZEN / VERIFIED_BY_B_AND_C）。
+- 最终复核：C 符合性复核 PASS；B 技术复核确认核心技术内容 PASS。`ISSUE-G2-R06-001/002` 均经用户裁决为非阻断并关闭，不改变 FR、AC、★、KN、RCLR、责任或验收强度。
+- 后续门禁：`G3-01R`仅解除为 TODO；`ISSUE-G3-01-001`继续阻断 G3-06 外部接口冻结及 G3-10/M3 最终冻结。
 - Commit / PR：`9fc07e0a2c013ce5733f59c3ed527cb5e8568fe4`（A侧REVIEW候选；已推送）。

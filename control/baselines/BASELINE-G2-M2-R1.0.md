@@ -1,13 +1,15 @@
-# BASELINE-G2-M2-R1.0｜M2返工复审重新冻结候选
+# BASELINE-G2-M2-R1.0｜M2返工复审重新冻结基线
 
 - Task：G2-R06
 - 主责：A
 - 复核：B（技术）、C（符合性）
-- 状态：REFREEZE_CANDIDATE / PENDING_B_C_REVIEW
+- 状态：FROZEN / VERIFIED_BY_B_AND_C
 - 创建日期：2026-09-16
 - 上游：BASELINE-V1.0、G2-R02—G2-R05
 - 变更记录：CHG-G2-R06-001
 - A侧候选提交：`9fc07e0a2c013ce5733f59c3ed527cb5e8568fe4`
+- 复核证据：`logs/reviews/2026-09-16_G2-R06-B-final-rereview.md`、`logs/reviews/2026-09-16_G2-R06-C-compliance-rereview.md`
+- 冻结说明：B/C 已独立复核通过；`ISSUE-G2-R06-001/002` 均经用户裁决降为非阻断并关闭，不改变任何业务事实或验收口径。
 
 ## 1 冻结候选对象
 
@@ -42,9 +44,9 @@
 | --- | --- |
 | ISSUE-G2-R01-001 反向澄清 | CLOSED |
 | ISSUE-G2-R01-002 图表与格式 | CLOSED / VERIFIED_BY_B_AND_C |
-| ISSUE-G2-R01-003 流程/状态/异常粒度 | RESOLVED / PENDING_B_C_R06_REVIEW |
-| ISSUE-G2-R01-004 需求级字段字典 | RESOLVED / PENDING_B_C_R06_REVIEW |
-| ISSUE-G2-R01-005 PE/NFR系统表达 | RESOLVED / PENDING_B_C_R06_REVIEW |
+| ISSUE-G2-R01-003 流程/状态/异常粒度 | CLOSED / VERIFIED_BY_B_AND_C |
+| ISSUE-G2-R01-004 需求级字段字典 | CLOSED / VERIFIED_BY_B_AND_C |
+| ISSUE-G2-R01-005 PE/NFR系统表达 | CLOSED / VERIFIED_BY_B_AND_C |
 
 ## 4 开放边界
 
@@ -52,8 +54,8 @@
 
 ## 5 生效门禁
 
-本文件当前不是最终冻结批准。B、C独立复核均PASS并将G2-R06置为DONE后：
+本文件已在 B、C 独立复核均 PASS、G2-R06 置为 DONE 后正式生效：
 
-1. 状态改为`FROZEN`并回填复核记录和提交；
-2. `G3-01R`才可解除前置阻塞；
+1. 当前状态为 `FROZEN`，复核记录已回填；
+2. `G3-01R`解除前置阻塞并转为 TODO，但不因本次冻结自动启动；
 3. 之后改变FR、★、AC、RCLR、关键数字、责任或验收强度必须登记新Change并发布新基线版本，禁止覆盖本版本。

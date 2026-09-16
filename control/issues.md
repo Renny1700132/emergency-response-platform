@@ -683,7 +683,8 @@
 - 关闭条件：SRS 按功能域补齐人类可读流程、状态、规则、异常、输入输出和 AC 引用，并与 spec/RTM 无冲突。
 - A R06复审（2026-09-16）：SRS §3.6已形成6个核心流程及异常/边界路径，§3.7已形成6组状态模型；39条FR均保留来源、需求描述和AC回指，G2-R05确认与spec/RTM无断链。证据：`docs/work/A_PM/g2_m2_review_pack.md`、`logs/reviews/2026-09-16_G2-R06-A-refreeze-review.md`。
 - C R06复核（2026-09-16）：确认6个核心流程、6组状态模型及异常/边界路径可直接定位，且G2-R05一致性审计无断链。C符合性复核PASS；证据：`logs/reviews/2026-09-16_G2-R06-C-compliance-review.md`。
-- 状态：RESOLVED / VERIFIED_BY_C / PENDING_B_R06_REVIEW。
+- B R06复核（2026-09-16）：确认流程、状态、异常/边界路径具备技术可实施性且相关可观察规则已进入spec/RTM；技术复核PASS。证据：`logs/reviews/2026-09-16_G2-R06-B-final-rereview.md`。
+- 状态：CLOSED / VERIFIED_BY_B_AND_C。
 
 ### ISSUE-G2-R01-004
 - 严重级别：MAJOR / BLOCKING_TO_G2-R06。
@@ -693,7 +694,8 @@
 - 关闭条件：核心实体关系概览和字段字典覆盖教师指定实体；字段为需求级业务字段、可回溯需求，不提前伪造物理数据库设计。
 - A R06复审（2026-09-16）：SRS §5.2已形成15个实体/实体组的五列需求级字段字典，包含业务类型/必填、约束、来源与关联，并明确不是物理数据库设计；正式件唯一表5-1的题注、分页和内容已通过R04/R05证据核验。证据：`docs/work/A_PM/g2_m2_review_pack.md`、`logs/reviews/2026-09-16_G2-R06-A-refreeze-review.md`。
 - C R06复核（2026-09-16）：确认15个实体/实体组的五列需求级字段字典完整可读，类型/必填、约束、来源与关联均有表达，且明确不构成物理数据库设计。C符合性复核PASS；证据：`logs/reviews/2026-09-16_G2-R06-C-compliance-review.md`。
-- 状态：RESOLVED / VERIFIED_BY_C / PENDING_B_R06_REVIEW。
+- B R06复核（2026-09-16）：确认字段字典可作为后续数据设计输入，未提前固化物理库表；技术复核PASS。证据：`logs/reviews/2026-09-16_G2-R06-B-final-rereview.md`。
+- 状态：CLOSED / VERIFIED_BY_B_AND_C。
 
 ### ISSUE-G2-R01-005
 - 严重级别：MAJOR / BLOCKING_TO_G2-R06。
@@ -703,7 +705,8 @@
 - 关闭条件：SRS 的性能、容量、可靠性和安全表逐项回指冻结 `key_numbers.md`/事实来源，明确测量边界和验证方式，不把要求值写成已验证值。
 - A R06复审（2026-09-16）：SRS第6章已逐项列出PE-01—12，并覆盖容量、可靠性/恢复、安全、兼容/易用、维护/可测性要求及KN回指；机械复验未发现未知KN，所有现场指标仍保持待实测/待验证，未写成已通过。证据：`docs/work/A_PM/g2_m2_review_pack.md`、`logs/reviews/2026-09-16_G2-R06-A-refreeze-review.md`。
 - C R06复核（2026-09-16）：确认PE-01—12、容量、可靠性/恢复、安全、兼容/易用、维护/可测性要求及KN回指完整，未知KN为0，现场指标仍保持待实测/待验证。C符合性复核PASS；证据：`logs/reviews/2026-09-16_G2-R06-C-compliance-review.md`。
-- 状态：RESOLVED / VERIFIED_BY_C / PENDING_B_R06_REVIEW。
+- B R06复核（2026-09-16）：确认PE/NFR量化要求、测量边界与验证方式可实施，现场/接口能力未被误报为已通过；技术复核PASS。证据：`logs/reviews/2026-09-16_G2-R06-B-final-rereview.md`。
+- 状态：CLOSED / VERIFIED_BY_B_AND_C。
 
 ### ISSUE-G2-R06-001
 
@@ -731,7 +734,9 @@
 - 主责人：A；复核人：B、C。
 - 关闭条件：A 仅修正文档控制与 §1.1 的当前状态/范围表述，使其明确 G2-R03 已完成、SRS 覆盖全部 39 条 FR（29 MVP Must + 10 非 MVP、本期）；同步正式08（如正式件存在对应表述），不得改变 FR、AC、★、KN、RCLR、责任或验收强度；重跑 39 FR/34★/117 AC/10 RCLR、题注/内容冻结和必要渲染检查，由 B/C 复验通过。
 - B 首轮证据：`logs/reviews/2026-09-16_G2-R06-B-technical-review.md`。
-- 状态：OPEN / BLOCKING_TO_G2-R06_DONE_AND_REFREEZE。
+- 用户裁决（2026-09-16）：该问题不涉及 FR、AC、★、KN、RCLR、责任或验收强度，属于状态/范围说明不够严谨；不作为 G2-R06 DONE 与重新冻结的重大阻断，允许直接准出。
+- B 最终复核（2026-09-16）：39/39 FR 正文与追踪覆盖、29+10范围、34★、117 AC、10/10 RCLR 均已独立验证通过；按用户裁决将本项降为非阻断并关闭。原修正文案建议保留为后续文档维护项，不改变已冻结业务语义。
+- 状态：CLOSED / USER_WAIVED_NON_BLOCKING / VERIFIED_BY_B。
 
 ### ISSUE-G2-R03-001
 

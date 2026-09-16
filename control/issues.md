@@ -637,6 +637,7 @@
 - 责任/复核：A / C。
 - 关闭条件：Skill 形成硬门禁；逐件统计图/表/题注、重复/跳号、缺题注、无效引用与渲染分页结果并 PASS。
 - 状态：IN_PROGRESS。
+- B/C 联合复核（2026-09-16）：远端最新版本只记录 G2-R04 启动，未形成 G2-R04 整改提交、主责自检、07—10 逐件图表题注/引用 QA、FORMAT ONLY 内容冻结 PASS 或完整全页渲染证据；现有 08 渲染属于 G2-R03 修复证据，不能替代本任务全量门禁。因此结论为 `NOT READY FOR REVIEW`，本 Issue 继续 `IN_PROGRESS`。证据：`logs/reviews/2026-09-16_G2-R04-B-technical-review.md`、`logs/reviews/2026-09-16_G2-R04-C-compliance-review.md`。
 
 ### ISSUE-G2-R01-003
 - 严重级别：MAJOR / BLOCKING_TO_G2-R06。

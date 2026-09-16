@@ -682,7 +682,8 @@
 - 责任/复核：A / C、B。
 - 关闭条件：SRS 按功能域补齐人类可读流程、状态、规则、异常、输入输出和 AC 引用，并与 spec/RTM 无冲突。
 - A R06复审（2026-09-16）：SRS §3.6已形成6个核心流程及异常/边界路径，§3.7已形成6组状态模型；39条FR均保留来源、需求描述和AC回指，G2-R05确认与spec/RTM无断链。证据：`docs/work/A_PM/g2_m2_review_pack.md`、`logs/reviews/2026-09-16_G2-R06-A-refreeze-review.md`。
-- 状态：RESOLVED / PENDING_B_C_R06_REVIEW。
+- C R06复核（2026-09-16）：确认6个核心流程、6组状态模型及异常/边界路径可直接定位，且G2-R05一致性审计无断链。C符合性复核PASS；证据：`logs/reviews/2026-09-16_G2-R06-C-compliance-review.md`。
+- 状态：RESOLVED / VERIFIED_BY_C / PENDING_B_R06_REVIEW。
 
 ### ISSUE-G2-R01-004
 - 严重级别：MAJOR / BLOCKING_TO_G2-R06。
@@ -691,7 +692,8 @@
 - 责任/复核：A / C、B。
 - 关闭条件：核心实体关系概览和字段字典覆盖教师指定实体；字段为需求级业务字段、可回溯需求，不提前伪造物理数据库设计。
 - A R06复审（2026-09-16）：SRS §5.2已形成15个实体/实体组的五列需求级字段字典，包含业务类型/必填、约束、来源与关联，并明确不是物理数据库设计；正式件唯一表5-1的题注、分页和内容已通过R04/R05证据核验。证据：`docs/work/A_PM/g2_m2_review_pack.md`、`logs/reviews/2026-09-16_G2-R06-A-refreeze-review.md`。
-- 状态：RESOLVED / PENDING_B_C_R06_REVIEW。
+- C R06复核（2026-09-16）：确认15个实体/实体组的五列需求级字段字典完整可读，类型/必填、约束、来源与关联均有表达，且明确不构成物理数据库设计。C符合性复核PASS；证据：`logs/reviews/2026-09-16_G2-R06-C-compliance-review.md`。
+- 状态：RESOLVED / VERIFIED_BY_C / PENDING_B_R06_REVIEW。
 
 ### ISSUE-G2-R01-005
 - 严重级别：MAJOR / BLOCKING_TO_G2-R06。
@@ -700,7 +702,21 @@
 - 责任/复核：A / B、C。
 - 关闭条件：SRS 的性能、容量、可靠性和安全表逐项回指冻结 `key_numbers.md`/事实来源，明确测量边界和验证方式，不把要求值写成已验证值。
 - A R06复审（2026-09-16）：SRS第6章已逐项列出PE-01—12，并覆盖容量、可靠性/恢复、安全、兼容/易用、维护/可测性要求及KN回指；机械复验未发现未知KN，所有现场指标仍保持待实测/待验证，未写成已通过。证据：`docs/work/A_PM/g2_m2_review_pack.md`、`logs/reviews/2026-09-16_G2-R06-A-refreeze-review.md`。
-- 状态：RESOLVED / PENDING_B_C_R06_REVIEW。
+- C R06复核（2026-09-16）：确认PE-01—12、容量、可靠性/恢复、安全、兼容/易用、维护/可测性要求及KN回指完整，未知KN为0，现场指标仍保持待实测/待验证。C符合性复核PASS；证据：`logs/reviews/2026-09-16_G2-R06-C-compliance-review.md`。
+- 状态：RESOLVED / VERIFIED_BY_C / PENDING_B_R06_REVIEW。
+
+### ISSUE-G2-R06-001
+
+- 提出人：C。
+- 时间：2026-09-16。
+- 严重级别：MAJOR / BLOCKING_TO_G2-R06_DONE_AND_REFREEZE。
+- 文件与位置：`control/baselines/BASELINE-G2-M2-R1.0.md` §2；`logs/reviews/2026-09-16_G2-R06-A-refreeze-review.md` §3。
+- 问题：候选基线的8个Git blob均可复现，但SRS工作稿、spec和AI反向澄清工作稿共3项SHA-256与当前文件实际值不一致；A自检所称“8/8个Git blob与SHA-256均一致”无法复现。
+- 影响：业务内容本身未漂移，但候选冻结基线的完整性证据会对真实候选文件产生假失败，无法作为可重复验证的正式冻结清单。
+- 主责人：A；复核人：C，B独立技术复核保持不变。
+- 关闭条件：明确SHA-256计算对象及换行规范，修正3项指纹或移除不可稳定复现的冗余SHA列；重跑8/8清单并保存可复现证据。不得改变任何候选业务内容、Git blob、FR、AC、★、KN、RCLR、责任或验收强度。
+- C首轮证据：`logs/reviews/2026-09-16_G2-R06-C-compliance-review.md`。
+- 状态：OPEN / BLOCKING。
 
 ### ISSUE-G2-R03-001
 

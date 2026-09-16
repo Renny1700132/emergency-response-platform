@@ -644,7 +644,8 @@
 - 主责人：A（SRS 工作稿与正式08）；复核人：B、C。
 - 关闭条件：将上述旧状态语句统一为已同步的准确表述，不改变任何业务规则、FR、AC、★、数字、责任或验收强度；同步正式08，重跑39 FR/34★/117 AC/10 RCLR检查并完成全页渲染，B/C复验通过。
 - 证据：`logs/reviews/2026-09-16_G2-R05-B-final-technical-review.md`、`logs/reviews/2026-09-16_G2-R05-C-compliance-review.md`。
-- 状态：OPEN。
+- A 最小修复（2026-09-16）：仅将 SRS 工作稿与正式08中的当前态“G2-R05待同步/后续同步”文字改为已完成同步，未改动业务规则、FR、AC、★、关键数字或人工裁决。全文机械检查未发现残留旧状态语义；正式件与修复前相比仅有3个正文段落和1个表头单元格发生文本变化，样式未变。复跑结果为39 FR、34★、117 AC、G2-RCLR-001—010在spec与RTM均10/10；WPS只读导出17页并完成全页视觉检查。证据：`logs/reviews/2026-09-16_G2-R05-002-A-minimal-fix.md`、`logs/reviews/render_G2-R05-002_SRS_final/`。
+- 状态：RESOLVED / PENDING_B_C_REREVIEW。
 
 ### ISSUE-G2-R01-001
 - 严重级别：MAJOR / BLOCKING_TO_G2-R06。

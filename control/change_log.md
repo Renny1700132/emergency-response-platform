@@ -51,4 +51,4 @@
 - 主责：A。
 - 复核/批准：B、C独立复核待执行；在两者PASS前不生效为正式FROZEN。
 - 新版本：`BASELINE-G2-M2-R1.0`（REFREEZE_CANDIDATE）。
-- Commit / PR：待回填。
+- Commit / PR：`9fc07e0a2c013ce5733f59c3ed527cb5e8568fe4`（A侧REVIEW候选；已推送）。

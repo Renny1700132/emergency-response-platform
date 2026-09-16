@@ -294,3 +294,17 @@
 - 是否涉及真实项目事实：否，仅任务启动与方法范围。
 - 是否必须暂停：否。
 - 状态：ACTIVE
+
+## OVR-023
+
+- 时间：2026-09-16（北京时间）
+- Prompt 要求：用户确认项目已经拉取到合适版本，本次 G2-R03 REVIEW 不需要额外 pull。
+- 被覆盖规则：`AGENTS.md` 与 `governance/git_workflow.md` 要求每项正式任务均执行 fetch 与 pull。
+- 来源文档：当前 P0 Prompt；`AGENTS.md` BEFORE_TASK 第 2 条；`governance/git_workflow.md` Task Start Repository Sync。
+- 冲突说明：P0 明确调整本次启动同步方式；启动只读检查显示工作树干净、位于 `master`，且本地跟踪状态显示与 `origin/master` 一致。
+- 实际执行规则：本次启动不重复 fetch/pull；完成复核与提交后仍执行结束前安全 fetch、分叉检查与普通 push，不覆盖远程更新。
+- 评分/审计影响：本地远程跟踪引用可能在启动后滞后；通过结束前强制 fetch 和非 force push 门禁控制风险。
+- 是否已在 Preflight 提示：是；冲突编号 `PFC-G2-R03-001`。
+- 是否涉及真实项目事实：否，仅涉及本次工作流。
+- 是否必须暂停：否。
+- 状态：ACTIVE

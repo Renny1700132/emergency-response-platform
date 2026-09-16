@@ -617,6 +617,19 @@
 
 ## G2 教师核验反馈专项返工
 
+### ISSUE-G2-R05-001
+
+- 提出人：A
+- 时间：2026-09-16
+- 严重级别：CRITICAL / BLOCKING_TO_G2-R06。
+- 文件与位置：`docs/work/B_TECH/spec.md`、`docs/work/C_REQ/rtm_v1.md`；对照 `docs/work/A_PM/software_requirements_specification_v0.1.md` §3.6—§3.7、§5、§10 与 `docs/work/C_REQ/ai_reverse_clarifications.md` §3。
+- 问题：SRS 与澄清记录已包含连续 G2-RCLR-001—010；spec 与 RTM 均未出现该编号。RTM 仍以旧 G2-CLR-001—012 的部分编号作为裁决边界，不能追踪 10 条 G2 规格化人工裁决。
+- 影响：去重、核实超时、任务重指派、多时间、二维码、盘点快照、补演、迟到回执、位置过期和附件逻辑删除规则无法稳定回指到可观察 AC 与追踪矩阵；G2-R05 一致性复验失败，阻断 G2-R06。
+- 责任/复核：B（spec）与 C（RTM/澄清）主责；A 二次一致性复验；B/C 交叉复核。
+- 关闭条件：spec 明确形成受影响 FR 的可观察 RCLR 验收规则；RTM 对受影响 FR/AC 精确挂接 RCLR-001—010，旧 G2-CLR 保留为上游继承索引；复跑 39 FR、34★、117 AC、10 RCLR 一致性检查通过，且不改变冻结事实、数字、责任或验收强度。
+- 证据：`logs/reviews/2026-09-16_G2-R05-A-consistency-audit.md`、`logs/reviews/G2-R05_mechanical_consistency.json`。
+- 状态：OPEN。
+
 ### ISSUE-G2-R01-001
 - 严重级别：MAJOR / BLOCKING_TO_G2-R06。
 - 问题：G2-CLR-001—012 实质为 G1 已冻结课程模拟裁决继承，不能作为 G2 规格化后新发现的反向澄清计数。
@@ -636,7 +649,8 @@
 - 影响文件：07—10 正式件、双镜像报告、M2 评审包及正式交付 Skill；影响 G3：设计输入的可读性和评审证据不足。
 - 责任/复核：A / C。
 - 关闭条件：Skill 形成硬门禁；逐件统计图/表/题注、重复/跳号、缺题注、无效引用与渲染分页结果并 PASS。
-- 状态：IN_PROGRESS。
+- A 整改（2026-09-16）：08 正文、标题、表格与题注已按唯一 Reference 直接继承版式；09/10 已补齐缺失业务表题。07—10 图表/题注/正文引用结构检查均 PASS，08 内容冻结 PASS，09/10 非题注业务内容冻结 PASS，且均完成最新全页渲染。图 1-1 已从修正后的可编辑 PPTX 重导并插入，最终渲染确认节点文字对比度、图题相邻和图内信息均通过。证据：`logs/reviews/2026-09-16_G2-R04-A-format-remediation.md`、`logs/reviews/G2-R04_caption_reference_audit.json`、`logs/reviews/G2-R04_08_content_freeze.json`。
+- 状态：RESOLVED / PENDING_C_REVIEW。
 - B/C 联合复核（2026-09-16）：远端最新版本只记录 G2-R04 启动，未形成 G2-R04 整改提交、主责自检、07—10 逐件图表题注/引用 QA、FORMAT ONLY 内容冻结 PASS 或完整全页渲染证据；现有 08 渲染属于 G2-R03 修复证据，不能替代本任务全量门禁。因此结论为 `NOT READY FOR REVIEW`，本 Issue 继续 `IN_PROGRESS`。证据：`logs/reviews/2026-09-16_G2-R04-B-technical-review.md`、`logs/reviews/2026-09-16_G2-R04-C-compliance-review.md`。
 - B/C 再复核（2026-09-16，基点 `816eec2`）：A 已提交 REVIEW，但提交仅含 QA 说明与任务状态，未修改正式件。独立结构核验确认 07 的 3 张业务表/2 张图、08 的 16 张业务表/1 张图均有题注；09 的唯一业务表无表题，10 的两张 RTM 主表和检查汇总表共 3 张业务表均无表题。FORMAT ONLY 内容冻结 PASS、07/09/10 最新全页渲染及逐页 QA 仍缺失；标准重渲染因受控运行时缺少 `soffice.exe` 在转换前失败。结论 `NOT ACCEPTED`，Issue 继续 `IN_PROGRESS`。证据：`logs/reviews/2026-09-16_G2-R04-B-technical-rereview.md`、`logs/reviews/2026-09-16_G2-R04-C-compliance-rereview.md`。
 

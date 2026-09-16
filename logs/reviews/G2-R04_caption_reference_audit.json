@@ -1,0 +1,381 @@
+{
+  "07": {
+    "file": "docs/deliverables/07-用户访谈记录与MoSCoW优先级.docx",
+    "tables_total": 4,
+    "inline_images": 2,
+    "captions": [
+      {
+        "paragraph": 19,
+        "kind": "图",
+        "id": "1-1",
+        "text": "图 1-1　从访谈输入到需求基线的证据链"
+      },
+      {
+        "paragraph": 24,
+        "kind": "表",
+        "id": "2-1",
+        "text": "表 2-1　用户画像"
+      },
+      {
+        "paragraph": 39,
+        "kind": "表",
+        "id": "4-1",
+        "text": "表 4-1　MVP 用户故事清单"
+      },
+      {
+        "paragraph": 42,
+        "kind": "图",
+        "id": "5-1",
+        "text": "图 5-1　MoSCoW 优先级分布"
+      },
+      {
+        "paragraph": 47,
+        "kind": "表",
+        "id": "5-1",
+        "text": "表 5-1　MoSCoW 优先级判定"
+      }
+    ],
+    "caption_count": 5,
+    "duplicate_caption_ids": [],
+    "body_references": [
+      {
+        "paragraph": 19,
+        "id": "图1-1",
+        "text": "图 1-1　从访谈输入到需求基线的证据链"
+      },
+      {
+        "paragraph": 24,
+        "id": "表2-1",
+        "text": "表 2-1　用户画像"
+      },
+      {
+        "paragraph": 39,
+        "id": "表4-1",
+        "text": "表 4-1　MVP 用户故事清单"
+      },
+      {
+        "paragraph": 42,
+        "id": "图5-1",
+        "text": "图 5-1　MoSCoW 优先级分布"
+      },
+      {
+        "paragraph": 47,
+        "id": "表5-1",
+        "text": "表 5-1　MoSCoW 优先级判定"
+      }
+    ],
+    "invalid_body_references": [],
+    "status": "PASS"
+  },
+  "08": {
+    "file": "docs/deliverables/08-软件需求规格说明书SRS.docx",
+    "tables_total": 17,
+    "inline_images": 1,
+    "captions": [
+      {
+        "paragraph": 35,
+        "kind": "图",
+        "id": "1-1",
+        "text": "图 1-1  需求双镜像与追踪关系"
+      },
+      {
+        "paragraph": 50,
+        "kind": "表",
+        "id": "3-1",
+        "text": "表 3-1 数字预案与事件处置功能需求"
+      },
+      {
+        "paragraph": 52,
+        "kind": "表",
+        "id": "3-2",
+        "text": "表 3-2 指挥态势、视频与定位功能需求"
+      },
+      {
+        "paragraph": 54,
+        "kind": "表",
+        "id": "3-3",
+        "text": "表 3-3 演练、移动执行与值班物资功能需求"
+      },
+      {
+        "paragraph": 56,
+        "kind": "表",
+        "id": "3-4",
+        "text": "表 3-4 外部联动与中台业务适配功能需求"
+      },
+      {
+        "paragraph": 59,
+        "kind": "表",
+        "id": "3-5",
+        "text": "表 3-5 非MVP、本期范围功能需求"
+      },
+      {
+        "paragraph": 61,
+        "kind": "表",
+        "id": "3-6",
+        "text": "表 3-6 核心业务流程及异常路径"
+      },
+      {
+        "paragraph": 63,
+        "kind": "表",
+        "id": "3-7",
+        "text": "表 3-7 核心业务状态模型"
+      },
+      {
+        "paragraph": 65,
+        "kind": "表",
+        "id": "4-1",
+        "text": "表 4-1 外部接口需求"
+      },
+      {
+        "paragraph": 71,
+        "kind": "表",
+        "id": "5-1",
+        "text": "表 5-1 核心实体字段字典"
+      },
+      {
+        "paragraph": 78,
+        "kind": "表",
+        "id": "6-1",
+        "text": "表 6-1 PE-01—PE-12性能指标"
+      },
+      {
+        "paragraph": 79,
+        "kind": "表",
+        "id": "6-2",
+        "text": "表 6-2 容量要求"
+      },
+      {
+        "paragraph": 81,
+        "kind": "表",
+        "id": "6-3",
+        "text": "表 6-3 可用性、可靠性与恢复要求"
+      },
+      {
+        "paragraph": 84,
+        "kind": "表",
+        "id": "6-4",
+        "text": "表 6-4 安全要求"
+      },
+      {
+        "paragraph": 87,
+        "kind": "表",
+        "id": "6-5",
+        "text": "表 6-5 易用性与兼容性要求"
+      },
+      {
+        "paragraph": 90,
+        "kind": "表",
+        "id": "6-6",
+        "text": "表 6-6 可维护性与可测试性要求"
+      },
+      {
+        "paragraph": 115,
+        "kind": "表",
+        "id": "10-1",
+        "text": "表 10-1 G2-RCLR补充业务规则索引"
+      }
+    ],
+    "caption_count": 17,
+    "duplicate_caption_ids": [],
+    "body_references": [
+      {
+        "paragraph": 35,
+        "id": "图1-1",
+        "text": "图 1-1  需求双镜像与追踪关系"
+      },
+      {
+        "paragraph": 50,
+        "id": "表3-1",
+        "text": "表 3-1 数字预案与事件处置功能需求"
+      },
+      {
+        "paragraph": 52,
+        "id": "表3-2",
+        "text": "表 3-2 指挥态势、视频与定位功能需求"
+      },
+      {
+        "paragraph": 54,
+        "id": "表3-3",
+        "text": "表 3-3 演练、移动执行与值班物资功能需求"
+      },
+      {
+        "paragraph": 56,
+        "id": "表3-4",
+        "text": "表 3-4 外部联动与中台业务适配功能需求"
+      },
+      {
+        "paragraph": 59,
+        "id": "表3-5",
+        "text": "表 3-5 非MVP、本期范围功能需求"
+      },
+      {
+        "paragraph": 60,
+        "id": "表3-6",
+        "text": "3.6核心业务流程与异常路径。表3-6覆盖主路径及异常路径；其可观察规则将在G2-R05同步至spec.md和RTM。"
+      },
+      {
+        "paragraph": 61,
+        "id": "表3-6",
+        "text": "表 3-6 核心业务流程及异常路径"
+      },
+      {
+        "paragraph": 62,
+        "id": "表3-7",
+        "text": "3.7核心状态模型。表3-7仅定义需求级可观察状态与迁移约束，不规定技术实现。"
+      },
+      {
+        "paragraph": 63,
+        "id": "表3-7",
+        "text": "表 3-7 核心业务状态模型"
+      },
+      {
+        "paragraph": 65,
+        "id": "表4-1",
+        "text": "表 4-1 外部接口需求"
+      },
+      {
+        "paragraph": 70,
+        "id": "表5-1",
+        "text": "5.2 核心实体字段字典。表 5-1 为需求级语义字典，不是数据库 ER 或物理表设计。"
+      },
+      {
+        "paragraph": 71,
+        "id": "表5-1",
+        "text": "表 5-1 核心实体字段字典"
+      },
+      {
+        "paragraph": 78,
+        "id": "表6-1",
+        "text": "表 6-1 PE-01—PE-12性能指标"
+      },
+      {
+        "paragraph": 79,
+        "id": "表6-2",
+        "text": "表 6-2 容量要求"
+      },
+      {
+        "paragraph": 81,
+        "id": "表6-3",
+        "text": "表 6-3 可用性、可靠性与恢复要求"
+      },
+      {
+        "paragraph": 82,
+        "id": "表6-3",
+        "text": "系统对外部依赖应独立超时、告警和降级，不得静默阻断核心事件流程；控制类动作及不可证明幂等的调用不得自动重放。具体量化要求见表6-3。"
+      },
+      {
+        "paragraph": 84,
+        "id": "表6-4",
+        "text": "表 6-4 安全要求"
+      },
+      {
+        "paragraph": 85,
+        "id": "表6-4",
+        "text": "安全要求见表6-4。正式定级备案、基础环境合规和正式第三方等保测评由甲方组织；本要求不宣称上述活动已完成。"
+      },
+      {
+        "paragraph": 87,
+        "id": "表6-5",
+        "text": "表 6-5 易用性与兼容性要求"
+      },
+      {
+        "paragraph": 90,
+        "id": "表6-6",
+        "text": "表 6-6 可维护性与可测试性要求"
+      },
+      {
+        "paragraph": 113,
+        "id": "表10-1",
+        "text": "本节继承项目负责人2026-09-15对G2-RCLR-001—010的课程项目人工决策，不是甲方正式法律文件或现实现场验收结论；不改变既有FR、★属性、量化指标或责任边界。表10-1是正文直接可读的规则索引，完整选项和裁决证据见ai_reverse_clarifications.md。"
+      },
+      {
+        "paragraph": 115,
+        "id": "表10-1",
+        "text": "表 10-1 G2-RCLR补充业务规则索引"
+      }
+    ],
+    "invalid_body_references": [],
+    "status": "PASS"
+  },
+  "09": {
+    "file": "docs/deliverables/09-AI反向澄清记录.docx",
+    "tables_total": 2,
+    "inline_images": 1,
+    "captions": [
+      {
+        "paragraph": 18,
+        "kind": "表",
+        "id": "4-1",
+        "text": "表 4-1　自检结果"
+      },
+      {
+        "paragraph": 20,
+        "kind": "图",
+        "id": "1-1",
+        "text": "图 1-1  AI 反向澄清裁决闭环"
+      }
+    ],
+    "caption_count": 2,
+    "duplicate_caption_ids": [],
+    "body_references": [
+      {
+        "paragraph": 18,
+        "id": "表4-1",
+        "text": "表 4-1　自检结果"
+      },
+      {
+        "paragraph": 20,
+        "id": "图1-1",
+        "text": "图 1-1  AI 反向澄清裁决闭环"
+      }
+    ],
+    "invalid_body_references": [],
+    "status": "PASS"
+  },
+  "10": {
+    "file": "docs/deliverables/10-需求追踪矩阵RTMv1.docx",
+    "tables_total": 4,
+    "inline_images": 0,
+    "captions": [
+      {
+        "paragraph": 21,
+        "kind": "表",
+        "id": "2-1",
+        "text": "表 2-1　MVP 正向追踪矩阵"
+      },
+      {
+        "paragraph": 24,
+        "kind": "表",
+        "id": "3-1",
+        "text": "表 3-1　非 MVP 本期范围追踪矩阵"
+      },
+      {
+        "paragraph": 27,
+        "kind": "表",
+        "id": "4-1",
+        "text": "表 4-1　覆盖统计与准出"
+      }
+    ],
+    "caption_count": 3,
+    "duplicate_caption_ids": [],
+    "body_references": [
+      {
+        "paragraph": 21,
+        "id": "表2-1",
+        "text": "表 2-1　MVP 正向追踪矩阵"
+      },
+      {
+        "paragraph": 24,
+        "id": "表3-1",
+        "text": "表 3-1　非 MVP 本期范围追踪矩阵"
+      },
+      {
+        "paragraph": 27,
+        "id": "表4-1",
+        "text": "表 4-1　覆盖统计与准出"
+      }
+    ],
+    "invalid_body_references": [],
+    "status": "PASS"
+  }
+}

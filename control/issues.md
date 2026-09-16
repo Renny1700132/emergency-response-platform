@@ -636,7 +636,8 @@
 - 影响文件：07—10 正式件、双镜像报告、M2 评审包及正式交付 Skill；影响 G3：设计输入的可读性和评审证据不足。
 - 责任/复核：A / C。
 - 关闭条件：Skill 形成硬门禁；逐件统计图/表/题注、重复/跳号、缺题注、无效引用与渲染分页结果并 PASS。
-- 状态：IN_PROGRESS。
+- A 整改（2026-09-16）：08 正文、标题、表格与题注已按唯一 Reference 直接继承版式；09/10 已补齐缺失业务表题。07—10 图表/题注/正文引用结构检查均 PASS，08 内容冻结 PASS，09/10 非题注业务内容冻结 PASS，且均完成最新全页渲染。图 1-1 已从修正后的可编辑 PPTX 重导并插入，最终渲染确认节点文字对比度、图题相邻和图内信息均通过。证据：`logs/reviews/2026-09-16_G2-R04-A-format-remediation.md`、`logs/reviews/G2-R04_caption_reference_audit.json`、`logs/reviews/G2-R04_08_content_freeze.json`。
+- 状态：RESOLVED / PENDING_C_REVIEW。
 - B/C 联合复核（2026-09-16）：远端最新版本只记录 G2-R04 启动，未形成 G2-R04 整改提交、主责自检、07—10 逐件图表题注/引用 QA、FORMAT ONLY 内容冻结 PASS 或完整全页渲染证据；现有 08 渲染属于 G2-R03 修复证据，不能替代本任务全量门禁。因此结论为 `NOT READY FOR REVIEW`，本 Issue 继续 `IN_PROGRESS`。证据：`logs/reviews/2026-09-16_G2-R04-B-technical-review.md`、`logs/reviews/2026-09-16_G2-R04-C-compliance-review.md`。
 
 ### ISSUE-G2-R01-003

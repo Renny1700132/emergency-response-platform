@@ -677,7 +677,9 @@
 - 关闭判据：最终目录无教学样例条目且页码正确；第5章顺序连续；Markdown、Word、生成脚本的任务编号和字段字典语义一致；39 FR、34★和关键数字不变；最新全页渲染无版式缺陷；C/B 分别复核通过。
 - C 首轮复核证据：`logs/reviews/2026-09-15_G2-R03-C-compliance-review.md`。
 - C 当前版本复验（2026-09-16）：教学案例目录残留、第5章顺序、字段类型/必填及旧任务引用已修复；39 FR、34★、PE-01—12、G2-RCLR-001—010 未漂移。但正式 Word 实际正文仍为 `3.5→4章标题→3.6→3.7→4章内容→5`，与目录及 Markdown 不一致；标准重新渲染还因受控依赖缺少 `soffice.exe` 在转换前失败。证据：`logs/reviews/2026-09-16_G2-R03-C-compliance-review.md`。
-- 状态：OPEN / BLOCKING。
+- A 二次整改（2026-09-16）：提交 `c629a15` 修正插入锚点并重建正式件，正文顺序调整为 `3.5→3.6→3.7→4→5`，新增 18 页渲染证据。
+- C 再复验（2026-09-16）：正文、目录与 Markdown 顺序一致，原阻断项已消除。证据：`logs/reviews/2026-09-16_G2-R03-C-compliance-rereview.md`。
+- 状态：RESOLVED / VERIFIED_BY_C / PENDING_B_REVIEW。
 
 ### ISSUE-G2-R03-002
 
@@ -693,4 +695,22 @@
 - 复核人：C（计数与双镜像一致性）；B（技术语义）。
 - 关闭判据：Markdown 与正式 Word 均明确 39/39 条 FR 至少挂接一个 AC；与 spec、requirements catalog 一致；39 FR、34★、既有 AC 语义和关键数字不变，经 C/B 复核通过。
 - C 首轮证据：`logs/reviews/2026-09-16_G2-R03-C-compliance-review.md`。
+- A 二次整改（2026-09-16）：Markdown 与正式 Word §8.3 均修正为“39 条 G2-FR 均有至少一个 AC”。
+- C 再复验（2026-09-16）：机械核对 SRS 与 spec 均为 39/39 个 FR 至少挂接一个 AC，MVP 29 条、非 MVP 本期 10 条、34 条★及 AC 语义未改变。证据：`logs/reviews/2026-09-16_G2-R03-C-compliance-rereview.md`。
+- 状态：RESOLVED / VERIFIED_BY_C / PENDING_B_REVIEW。
+
+### ISSUE-G2-R03-003
+
+- 提出人：C
+- 时间：2026-09-16
+- 严重级别：MAJOR / BLOCKING_TO_G2-R03_DONE
+- 文件与位置：`docs/deliverables/08-软件需求规格说明书SRS.docx` 第14张（正文第11页附近）、§5.1—§5.2；`scripts/fix_g2_r03_review.py` 表5-1重建逻辑。
+- 问题：最新正式 Word 在 §5.2 前连续显示多条“表 5-1 核心实体字段字典”，随后真实表题再次出现。结构检查确认同一题注在 DOCX 中共出现 6 次，而实际仅有一个表5-1；这些重复不是跨页表头。
+- 依据：G2-R03 输出包含唯一正式 SRS；`ISSUE-G2-R01-002` 要求图表题注、编号和引用完整可信；用户本轮要求无重大错误方可通过。
+- 影响：正式件产生明显重复题注和编号歧义，影响评审可读性与图表 QA 可信度；属于整改引入的 MAJOR 版式错误。
+- 建议修订：A 在生成/修复脚本中清除历史残留的表5-1题注，仅保留与唯一表5-1相邻的一条题注；重建正式 Word 与全页渲染，并确认其他题注无重复或跳号。
+- 主责人：A
+- 复核人：C（题注结构与全页视觉）；B 技术复核保持独立。
+- 关闭判据：正式 Word 中表5-1题注恰好 1 条且与表格相邻；全部独立业务图/表题注无重复、跳号、裁切或图题分离；最新全页渲染通过 C 复验。
+- C 首轮证据：`logs/reviews/2026-09-16_G2-R03-C-compliance-rereview.md`。
 - 状态：OPEN / BLOCKING。

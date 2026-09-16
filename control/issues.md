@@ -720,6 +720,19 @@
 - C再复核（2026-09-16）：按用户裁决撤销整体阻断，C侧G2-R06符合性结论改为PASS；证据：`logs/reviews/2026-09-16_G2-R06-C-compliance-rereview.md`。
 - 状态：CLOSED / USER_WAIVED_NON_BLOCKING。
 
+### ISSUE-G2-R06-002
+
+- 提出人：B。
+- 时间：2026-09-16。
+- 严重级别：MAJOR / BLOCKING_TO_G2-R06_DONE_AND_REFREEZE。
+- 文件与位置：`docs/work/A_PM/software_requirements_specification_v0.1.md` 文档控制与 §1.1；`control/baselines/BASELINE-G2-M2-R1.0.md` §2。
+- 问题：重新冻结候选明确把 SRS 工作稿列为受控冻结对象，但该文件的文档控制仍写“G2-R03 Review 整改完成，PENDING_REVIEW”，与 `tasks.md` 中 G2-R03 已为 DONE、G2-R04/G2-R05 已通过及当前 G2-R06 重新冻结阶段冲突；§1.1 又只称本说明书整理 29 条 MVP，未明确其正文当前已逐条纳入并规格化全部 39 条 FR，容易与 §3、§8.3 的 39/39 口径产生范围误读。
+- 影响：若按当前候选冻结，G3 设计输入会同时继承“G2-R03仍待复核”和“本说明书只整理29条MVP”的旧状态/范围叙述，无法把该 SRS 作为状态明确、范围自洽的 M2 正式输入。机械追踪虽为 39 FR 全覆盖，但不能替代受控文档自身的准确状态语义。
+- 主责人：A；复核人：B、C。
+- 关闭条件：A 仅修正文档控制与 §1.1 的当前状态/范围表述，使其明确 G2-R03 已完成、SRS 覆盖全部 39 条 FR（29 MVP Must + 10 非 MVP、本期）；同步正式08（如正式件存在对应表述），不得改变 FR、AC、★、KN、RCLR、责任或验收强度；重跑 39 FR/34★/117 AC/10 RCLR、题注/内容冻结和必要渲染检查，由 B/C 复验通过。
+- B 首轮证据：`logs/reviews/2026-09-16_G2-R06-B-technical-review.md`。
+- 状态：OPEN / BLOCKING_TO_G2-R06_DONE_AND_REFREEZE。
+
 ### ISSUE-G2-R03-001
 
 - 提出人：C

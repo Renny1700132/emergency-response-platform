@@ -60,25 +60,8 @@ text(find(doc, 'G2-R05应在'), 'G2-R05应在spec.md中使用本文件相同的G
 text(find(doc, '功能、★属性、数字'), '功能、★属性、数字、责任、期次或验收强度发生变化时，必须先登记Issue、分析影响并取得授权确认，再同步更新SRS、spec.md、RTM和版本记录。G2-R02已形成并记录G2-RCLR-001—010的课程项目人工裁决；其后新发现、且未由冻结事实或现有裁决确定的问题不得静默写入需求，应按Issue/Change流程处理。')
 
 # Correct the chapter order and rebuild Table 5-1 with the same five requirements-level dimensions as Markdown.
-chapter_four = find(doc, '4 外部接口需求')
-flow_heading = find(doc, '3.6核心业务流程')
-state_heading = find(doc, '3.7核心状态模型')
-if chapter_four._p.getparent().index(chapter_four._p) < flow_heading._p.getparent().index(flow_heading._p):
-    # Move both complete heading-caption-table blocks before chapter 4 while preserving their internal order.
-    block = []
-    node = flow_heading._p
-    while node is not None:
-        block.append(node)
-        if node is state_heading._p:
-            # State heading is followed by its caption and table.
-            block.extend([node.getnext(), node.getnext().getnext()])
-            break
-        node = node.getnext()
-    for node in block:
-        chapter_four._p.addprevious(node)
-
 data_quality = find(doc, '5.3 数据质量')
-field_heading = find(doc, '5.2')
+field_heading = find(doc, '5.2核心实体字段')
 field_heading._p.getparent().remove(field_heading._p)
 data_quality._p.addprevious(field_heading._p)
 text(field_heading, '5.2 核心实体字段字典。表 5-1 为需求级语义字典，不是数据库 ER 或物理表设计。')

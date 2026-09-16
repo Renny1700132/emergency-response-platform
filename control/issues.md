@@ -617,6 +617,19 @@
 
 ## G2 教师核验反馈专项返工
 
+### ISSUE-G2-R05-001
+
+- 提出人：A
+- 时间：2026-09-16
+- 严重级别：CRITICAL / BLOCKING_TO_G2-R06。
+- 文件与位置：`docs/work/B_TECH/spec.md`、`docs/work/C_REQ/rtm_v1.md`；对照 `docs/work/A_PM/software_requirements_specification_v0.1.md` §3.6—§3.7、§5、§10 与 `docs/work/C_REQ/ai_reverse_clarifications.md` §3。
+- 问题：SRS 与澄清记录已包含连续 G2-RCLR-001—010；spec 与 RTM 均未出现该编号。RTM 仍以旧 G2-CLR-001—012 的部分编号作为裁决边界，不能追踪 10 条 G2 规格化人工裁决。
+- 影响：去重、核实超时、任务重指派、多时间、二维码、盘点快照、补演、迟到回执、位置过期和附件逻辑删除规则无法稳定回指到可观察 AC 与追踪矩阵；G2-R05 一致性复验失败，阻断 G2-R06。
+- 责任/复核：B（spec）与 C（RTM/澄清）主责；A 二次一致性复验；B/C 交叉复核。
+- 关闭条件：spec 明确形成受影响 FR 的可观察 RCLR 验收规则；RTM 对受影响 FR/AC 精确挂接 RCLR-001—010，旧 G2-CLR 保留为上游继承索引；复跑 39 FR、34★、117 AC、10 RCLR 一致性检查通过，且不改变冻结事实、数字、责任或验收强度。
+- 证据：`logs/reviews/2026-09-16_G2-R05-A-consistency-audit.md`、`logs/reviews/G2-R05_mechanical_consistency.json`。
+- 状态：OPEN。
+
 ### ISSUE-G2-R01-001
 - 严重级别：MAJOR / BLOCKING_TO_G2-R06。
 - 问题：G2-CLR-001—012 实质为 G1 已冻结课程模拟裁决继承，不能作为 G2 规格化后新发现的反向澄清计数。

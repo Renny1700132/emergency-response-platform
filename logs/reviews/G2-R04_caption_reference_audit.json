@@ -299,7 +299,7 @@
   },
   "09": {
     "file": "docs/deliverables/09-AI反向澄清记录.docx",
-    "tables_total": 2,
+    "tables_total": 3,
     "inline_images": 1,
     "captions": [
       {
@@ -313,9 +313,15 @@
         "kind": "图",
         "id": "1-1",
         "text": "图 1-1  AI 反向澄清裁决闭环"
+      },
+      {
+        "paragraph": 129,
+        "kind": "表",
+        "id": "5-1",
+        "text": "表 5-1  G2-RCLR 裁决与双镜像追踪"
       }
     ],
-    "caption_count": 2,
+    "caption_count": 3,
     "duplicate_caption_ids": [],
     "body_references": [
       {
@@ -327,6 +333,11 @@
         "paragraph": 20,
         "id": "图1-1",
         "text": "图 1-1  AI 反向澄清裁决闭环"
+      },
+      {
+        "paragraph": 129,
+        "id": "表5-1",
+        "text": "表 5-1  G2-RCLR 裁决与双镜像追踪"
       }
     ],
     "invalid_body_references": [],

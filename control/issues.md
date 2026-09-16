@@ -629,7 +629,8 @@
 - 关闭条件：spec 明确形成受影响 FR 的可观察 RCLR 验收规则；RTM 对受影响 FR/AC 精确挂接 RCLR-001—010，旧 G2-CLR 保留为上游继承索引；复跑 39 FR、34★、117 AC、10 RCLR 一致性检查通过，且不改变冻结事实、数字、责任或验收强度。
 - 证据：`logs/reviews/2026-09-16_G2-R05-A-consistency-audit.md`、`logs/reviews/G2-R05_mechanical_consistency.json`。
 - A 授权整改（2026-09-16）：用户直接授权 A 修订 `rtm_v1.md`。RTM 已显式挂接 G2-RCLR-001—010 至受影响 SRS §3 与 spec AC-01—03 范围；旧 G2-CLR 行均仅标注为 G1 上游继承。复跑检查：RTM 39 FR 连续、10/10 RCLR 无缺失、FR/★/KN 未变化。A 不修改 B 主责的 `spec.md`。
-- 状态：PARTIALLY_RESOLVED / PENDING_B_SPEC_SYNC。
+- B/spec 整改（2026-09-16）：已在 `docs/work/B_TECH/spec.md` §3.6 将 G2-RCLR-001—010 挂接到受影响 FR 的既有 AC，未新增/改号 AC，39 FR、34★、117 AC、数字、责任和验收强度不变；证据见 `logs/reviews/2026-09-16_G2-R05-B-technical-review.md`。
+- 状态：RESOLVED / PENDING_A_R05_REREVIEW。
 
 ### ISSUE-G2-R01-001
 - 严重级别：MAJOR / BLOCKING_TO_G2-R06。

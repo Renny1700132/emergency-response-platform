@@ -716,7 +716,9 @@
 - 主责人：A；复核人：C，B独立技术复核保持不变。
 - 关闭条件：明确SHA-256计算对象及换行规范，修正3项指纹或移除不可稳定复现的冗余SHA列；重跑8/8清单并保存可复现证据。不得改变任何候选业务内容、Git blob、FR、AC、★、KN、RCLR、责任或验收强度。
 - C首轮证据：`logs/reviews/2026-09-16_G2-R06-C-compliance-review.md`。
-- 状态：OPEN / BLOCKING。
+- 用户裁决（2026-09-16）：该SHA-256仅用于确认文档版本，不算重大阻断，予以忽略；8个Git blob均可复现，且未发现业务语义漂移。因此本项降为辅助信息，不再作为G2-R06准出门禁。
+- C再复核（2026-09-16）：按用户裁决撤销整体阻断，C侧G2-R06符合性结论改为PASS；证据：`logs/reviews/2026-09-16_G2-R06-C-compliance-rereview.md`。
+- 状态：CLOSED / USER_WAIVED_NON_BLOCKING。
 
 ### ISSUE-G2-R03-001
 

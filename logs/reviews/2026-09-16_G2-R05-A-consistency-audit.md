@@ -41,3 +41,9 @@
 4. 由 B、C 复核后，A 对 SRS/spec/RTM/澄清作第二次只读复验。
 
 机械证据：`logs/reviews/G2-R05_mechanical_consistency.json`；可复现脚本：`scripts/audit_g2_r05_consistency.py`。
+
+## A 授权 RTM 整改回填（2026-09-16）
+
+用户已明确授权 A 修订 RTM。`rtm_v1.md` 已将 G2-RCLR-001—010 全量显式挂接至对应受影响 FR 的 SRS §3 落点和现有 `AC-G2-FR-nnn-01—03` 范围；每个旧 G2-CLR 行均标注为“G1 上游继承”，不再作为 G2 新裁决。复跑机械检查结果：RTM 39 FR 连续、10/10 RCLR 无缺失、39/39 FR AC 范围保留。FR、★、KN 与裁决正文未改动。
+
+此整改只闭合 RTM 链，不能替代 B 在 `spec.md` 中形成 RCLR 可观察 AC 的主责工作；因此 ISSUE-G2-R05-001 仍为 `PARTIALLY_RESOLVED / PENDING_B_SPEC_SYNC`，R05 等待后续复验。

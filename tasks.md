@@ -49,7 +49,7 @@
 | G2-R01 | 教师核验问题登记与返工启动 | A | B、C | G2-07、G2-P05 | 教师反馈、G2 受控输入、正式文档 Skill | Issue、返工边界、Skill 图表题注门禁 | DONE |
 | G2-R02 | AI 反向澄清重构 | C | B、A | G2-R01 | SRS、spec、用户故事、RTM、原型走查、G1 继承裁决 | 上游继承索引 + 至少 10 条真正 G2 澄清及裁决/待裁决记录 | DONE |
 | G2-R03 | SRS 实施级深化 | A | C、B | G2-R01、G2-R02 | 受控 FR/AC/PE、澄清记录、SRS | 业务流程、状态模型、字段级数据字典、显式 NFR 的 SRS 与正式件 | DONE |
-| G2-R04 | G2 正式交付物图表题注与格式整改 | A | C | G2-R01、G2-R03 | 工作稿、唯一 Reference、正式交付 Skill | G2 正式件图表题注/编号 QA、渲染证据 | REVIEW |
+| G2-R04 | G2 正式交付物图表题注与格式整改 | A | C | G2-R01、G2-R03 | 工作稿、唯一 Reference、正式交付 Skill | G2 正式件图表题注/编号 QA、渲染证据 | DONE |
 | G2-R05 | SRS/spec/RTM/澄清一致性复验 | A | B、C | G2-R02—G2-R04 | 全部返工候选稿与控制文件 | 39 FR/34 ★/AC/追踪/图表 QA 一致性报告 | REVIEW |
 | G2-R06 | M2 返工复审与重新冻结 | A | B、C | G2-R05 | 一致性报告、Issue、正式候选件 | 更新 M2 评审包、复审结论与冻结/阻塞记录 | TODO |
 | G3-01R | 修订后 G2 输入重新挂接与 G3-01 复验 | B | A、C | G2-R06 | 新 SRS、spec、RTM、澄清、数据与 NFR 输入 | 对 `G3-01_design_input_baseline.md` 的增量修订与复验 | TODO |

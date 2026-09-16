@@ -653,6 +653,8 @@
 - 状态：RESOLVED / PENDING_C_REVIEW。
 - B/C 联合复核（2026-09-16）：远端最新版本只记录 G2-R04 启动，未形成 G2-R04 整改提交、主责自检、07—10 逐件图表题注/引用 QA、FORMAT ONLY 内容冻结 PASS 或完整全页渲染证据；现有 08 渲染属于 G2-R03 修复证据，不能替代本任务全量门禁。因此结论为 `NOT READY FOR REVIEW`，本 Issue 继续 `IN_PROGRESS`。证据：`logs/reviews/2026-09-16_G2-R04-B-technical-review.md`、`logs/reviews/2026-09-16_G2-R04-C-compliance-review.md`。
 - B/C 再复核（2026-09-16，基点 `816eec2`）：A 已提交 REVIEW，但提交仅含 QA 说明与任务状态，未修改正式件。独立结构核验确认 07 的 3 张业务表/2 张图、08 的 16 张业务表/1 张图均有题注；09 的唯一业务表无表题，10 的两张 RTM 主表和检查汇总表共 3 张业务表均无表题。FORMAT ONLY 内容冻结 PASS、07/09/10 最新全页渲染及逐页 QA 仍缺失；标准重渲染因受控运行时缺少 `soffice.exe` 在转换前失败。结论 `NOT ACCEPTED`，Issue 继续 `IN_PROGRESS`。证据：`logs/reviews/2026-09-16_G2-R04-B-technical-rereview.md`、`logs/reviews/2026-09-16_G2-R04-C-compliance-rereview.md`。
+- B/C 最终复核（2026-09-16，候选 `d62bbcd`）：并行整改已补齐 09 表4-1与10表2-1/3-1/4-1，复跑题注审计 07—10 全部 PASS；08 内容冻结、09/10 非题注内容冻结均 PASS；已查看最新 44 页全量渲染，无裁切、重叠、乱码、题注分离或异常断表，08 图1-1对比度修复有效。B 技术复核与 C 符合性复核均 PASS。证据：`logs/reviews/2026-09-16_G2-R04-B-final-technical-review.md`、`logs/reviews/2026-09-16_G2-R04-C-final-compliance-review.md`。
+- 状态：CLOSED / VERIFIED_BY_B_AND_C。
 
 ### ISSUE-G2-R01-003
 - 严重级别：MAJOR / BLOCKING_TO_G2-R06。

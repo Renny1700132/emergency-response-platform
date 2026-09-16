@@ -630,7 +630,21 @@
 - 证据：`logs/reviews/2026-09-16_G2-R05-A-consistency-audit.md`、`logs/reviews/G2-R05_mechanical_consistency.json`。
 - A 授权整改（2026-09-16）：用户直接授权 A 修订 `rtm_v1.md`。RTM 已显式挂接 G2-RCLR-001—010 至受影响 SRS §3 与 spec AC-01—03 范围；旧 G2-CLR 行均仅标注为 G1 上游继承。复跑检查：RTM 39 FR 连续、10/10 RCLR 无缺失、FR/★/KN 未变化。A 不修改 B 主责的 `spec.md`。
 - B/spec 整改（2026-09-16）：已在 `docs/work/B_TECH/spec.md` §3.6 将 G2-RCLR-001—010 挂接到受影响 FR 的既有 AC，未新增/改号 AC，39 FR、34★、117 AC、数字、责任和验收强度不变；证据见 `logs/reviews/2026-09-16_G2-R05-B-technical-review.md`。
-- 状态：RESOLVED / PENDING_A_R05_REREVIEW。
+- A 二次复验与 B/C 独立复核（2026-09-16）：机械差集为 SRS/spec/RTM/澄清记录 10/10 RCLR 无缺失，39 FR、34★、117 AC 和范围口径未漂移；B/C 同意关闭本断链问题。证据：`logs/reviews/2026-09-16_G2-R05-B-final-technical-review.md`、`logs/reviews/2026-09-16_G2-R05-C-compliance-review.md`。
+- 状态：CLOSED / VERIFIED_BY_A_B_C。
+
+### ISSUE-G2-R05-002
+
+- 提出人：C；B 技术复核确认。
+- 时间：2026-09-16。
+- 严重级别：MAJOR / BLOCKING_TO_G2-R05_DONE。
+- 文件与位置：`docs/work/A_PM/software_requirements_specification_v0.1.md` 第66、136、140—145、149、287行；`docs/deliverables/08-软件需求规格说明书SRS.docx` 第3.6节及相关状态说明（最新渲染第10页、第15页附近）。
+- 问题：SRS 工作稿仍把已经完成的 RCLR 双镜像同步写成“G2-R05待同步”“在后续G2-R05同步”；正式 SRS 第3.6节仍写“将在G2-R05同步至spec.md和RTM”。当前 spec、RTM 与正式镜像已完成10/10 G2-RCLR映射，旧语句与当前事实冲突。
+- 影响：SRS/spec/RTM/澄清的状态语义不一致，后续设计与测试无法从受控 SRS 判断规则是否已进入双镜像；G2-R05 不能以“全部一致”准出。
+- 主责人：A（SRS 工作稿与正式08）；复核人：B、C。
+- 关闭条件：将上述旧状态语句统一为已同步的准确表述，不改变任何业务规则、FR、AC、★、数字、责任或验收强度；同步正式08，重跑39 FR/34★/117 AC/10 RCLR检查并完成全页渲染，B/C复验通过。
+- 证据：`logs/reviews/2026-09-16_G2-R05-B-final-technical-review.md`、`logs/reviews/2026-09-16_G2-R05-C-compliance-review.md`。
+- 状态：OPEN。
 
 ### ISSUE-G2-R01-001
 - 严重级别：MAJOR / BLOCKING_TO_G2-R06。

@@ -827,3 +827,16 @@
 - 状态：RESOLVED / USER_AUTHORIZED_DONE。
 
 
+
+## ISSUE-G3-04-001
+
+- 提出人：C（用户授权代理）。
+- 时间：2026-09-17。
+- 严重级别：MAJOR / BLOCKING_TO_G3-04_DONE。
+- 文件与位置：`docs/work/B_TECH/database_design.md` 全文追踪内容及 `docs/deliverables/13-数据库设计说明书.docx`。
+- 问题：工作稿以 FR 范围和数据域描述替代可核验的 AC 追踪；全文未检出 `AC-G2-FR-xxx-xx` 形式的验收锚点，也无法逐条证明 117 条 AC 到数据对象/约束/验证入口的落点。工作稿仅显式命中 12 个 G2-FR 编号，不能作为 39 FR 的可机械复核设计挂接。
+- 影响：G3-08 前虽不要求完成最终 RTM，但 G3-04 本身不能证明所有 FR/AC 均获得数据库设计输入，34 条★FR 和相关 AC 存在遗漏风险。
+- 主责人：B；复核人：A、C。
+- 关闭条件：B 在工作稿与正式件增加可机械核验的数据设计追踪矩阵，至少逐条覆盖 G2-FR-001—039、34 条★标识及 AC-G2-FR-001-01—039-03 到数据域/实体/约束/后续验证入口；不得改动受控 FR、AC、数字或责任边界。A/C 复验通过后关闭。
+- 证据：`logs/reviews/2026-09-17_G3-04-C-compliance-review.md`。
+- 状态：OPEN / BLOCKING。

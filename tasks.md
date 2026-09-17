@@ -85,21 +85,21 @@
 | WBS-03 | WBS-02 | A | 宪章初稿 | AC-G2-FR-013-03 | 核对 AI、范围、代码、文档、测试、接口、变更规则 |
 | WBS-04 | WBS-02 | A | 评审/冻结门禁 | AC-G2-FR-014-01 | D0—D3/M3 均有输入、检查、复核、准出 |
 | WBS-05 | WBS-02 | A | 项目管理计划包 | AC-G2-FR-015-03 | 范围、资源、里程碑、偏差处置章节检查 |
-| WBS-06 | WBS-02 | C | 质量管理计划包 | PE-01—PE-12 | 评审、缺陷、度量、门禁和 PE 口径检查 |
+| WBS-06 | WBS-02 | C | 质量管理计划包 | AC-G2-FR-013-03、PE-01—PE-12 | 评审、缺陷、度量、门禁和 PE 口径检查 |
 | WBS-07 | WBS-02 | A | 配置管理计划包 | AC-G2-FR-013-01 | 配置项、基线、CR、审计、回滚检查 |
 | WBS-08 | WBS-02 | A | 风险管理计划包 | AC-G2-FR-006-01 | 风险四要素、触发器、应对、复核周期检查 |
 | WBS-09 | WBS-04 | B | HLD 模块映射 | AC-G2-FR-003-01、014-01 | MOD-PLAN—MOD-PLATFORM 覆盖且有依赖 |
-| WBS-10 | WBS-09 | B | HLD 数据/部署视图 | PE-01、PE-04 | 外部边界/故障域齐全，待确认项未冻结 |
+| WBS-10 | WBS-09 | B | HLD 数据/部署视图 | AC-G2-FR-014-01、PE-01、PE-04 | 外部边界/故障域齐全，待确认项未冻结 |
 | WBS-11 | WBS-09 | B | DBD 概念模型 | AC-G2-FR-009-01、G2-RCLR-006 | 盘点快照/事件/任务/审计有模块与 AC 回指 |
 | WBS-12 | WBS-11 | B | DBD 逻辑物理设计 | AC-G2-FR-013-01、G2-RCLR-004 | 标识、时间、索引、保存策略有依据 |
-| WBS-13 | WBS-09 | B | ADR-001 | PE-04、PE-10 | 候选≥2、否决理由/证据/后果完整；无证据 Proposed |
+| WBS-13 | WBS-09 | B | ADR-001 | AC-G2-FR-020-02、PE-04、PE-10 | 候选≥2、否决理由/证据/后果完整；无证据 Proposed |
 | WBS-14 | WBS-09 | B | ADR-002/NFR 映射 | AC-G2-FR-020-02、PE-01—12 | NFR 有质量特性、AC/KN、测量方法，非实测 |
 | WBS-15 | WBS-12 | B | DLD 状态机 | AC-G2-FR-015-01、G2-RCLR-003 | 重指派、授权、审计、异常转移可走查 |
 | WBS-16 | WBS-15 | B | DLD 补偿流程 | AC-G2-FR-020-02、G2-RCLR-008 | 超时/回执/降级有可复现路径 |
 | WBS-17 | WBS-15 | B | 内部 API 清单 | AC-G2-FR-013-01、025-02 | 写接口有鉴权、幂等、错误、traceId；无跨域直写 |
 | WBS-18 | WBS-17 | B | 外部端口语义 | AC-G2-FR-006-01、027-01、029-03 | 8 EXT 均有失败/降级；未知字段待确认 |
 | WBS-19 | WBS-18 | B | OpenAPI 草稿 | AC-G2-FR-020-03 | OpenAPI 校验器零 schema error；端点含版本/错误/追踪/AC |
-| WBS-20 | WBS-19 | B | 接口冻结阻断记录 | ISSUE-G3-01-001 | Issue OPEN 时验证未冻结外部接口 |
+| WBS-20 | WBS-19 | B | 接口冻结阻断记录 | AC-G2-FR-006-01、ISSUE-G3-01-001 | Issue OPEN 时验证未冻结外部接口 |
 | WBS-21 | WBS-10—WBS-20 | C | RTM 设计映射 | AC-G2-FR-001-01—039-03 | 统计 39 FR/34★/117 AC 有设计 ID，反向抽查 |
 | WBS-22 | WBS-21 | C | KN-064 映射 | AC-G2-FR-006-01、027-01 | 同 traceId/eventId 的四系统三类场景齐全 |
 | WBS-23 | WBS-21 | C | 测试范围/级别 | AC-G2-FR-013-03、PE-01—12 | GB/T 15532 章节齐全性检查 |
@@ -107,4 +107,54 @@
 | WBS-25 | WBS-05—08、21—24 | A | M3 检查包 | AC-G2-FR-001-01—039-03 | 清单、RTM、评审、Issue 一致；阻断未关不冻结 |
 | WBS-26 | M3+用户启动 | B | G4 实施包 | AC-G2-FR-015-02 | PR 关联设计 ID/AC，单元测试可重复运行 |
 | WBS-27 | WBS-26 | B、C | G4 契约/集成测试包 | AC-G2-FR-027-02、029-03 | OpenAPI 契约及失败降级测试留证 |
-| WBS-28 | WBS-27 | C、A | G5/G6 质量交付包 | PE-01—12 | 质量、缺陷、干净环境、审计分别留证 |
+| WBS-28 | WBS-27 | C、A | G5/G6 质量交付包 | AC-G2-FR-015-02、PE-01—PE-12 | 质量、缺陷、干净环境、审计分别留证 |
+
+
+#### B/C 复核整改：独立外部端口与 KN-064 包（均 ≤0.5 人日）
+
+| ID | 前置 | 责任人 | 输出 | 对应模块 | 具体 AC | 可执行验证标准 |
+|---|---|---|---|---|---|---|
+| WBS-18A | WBS-17 | B | EXT-PUBLISH 接口设计包 | MOD-INTEGRATION | AC-G2-FR-015-02 | 授权内容、受理/发布回执、超时和人工降级独立走查 |
+| WBS-18B | WBS-17 | B | EXT-INTRUSION 接口设计包 | MOD-INTEGRATION | AC-G2-FR-027-01、AC-G2-FR-027-03 | 有效/不可识别告警分别验证事件关联与审计异常 |
+| WBS-18C | WBS-17 | B | EXT-FIRE 接口设计包 | MOD-INTEGRATION | AC-G2-FR-027-01、AC-G2-FR-027-03 | 火警/设备状态关联、失败记录、人工处置独立走查；不控制需求外设备 |
+| WBS-22R | WBS-21、WBS-18A—WBS-18C | C | KN-064 四系统联合验收设计包 | MOD-INTEGRATION、MOD-PLATFORM | AC-G2-FR-006-01、AC-G2-FR-027-01 | 同一 traceId/eventId 覆盖视频、发布、IoT、中台的正常/无权/超时失败 |
+
+18A—18C 后置为 WBS-19；22R 后置为 WBS-23。不得以原 WBS-18/WBS-22 聚合描述替代。
+
+
+#### B/C 整改：逐项模块映射
+
+| 原子包 | 对应模块 |
+|---|---|
+| WBS-01 | MOD-PLATFORM、MOD-EVENT |
+| WBS-02 | MOD-PLATFORM |
+| WBS-03 | MOD-PLATFORM |
+| WBS-04 | MOD-PLATFORM |
+| WBS-05 | MOD-PLATFORM、MOD-EVENT |
+| WBS-06 | MOD-PLATFORM |
+| WBS-07 | MOD-PLATFORM |
+| WBS-08 | MOD-INTEGRATION |
+| WBS-09 | MOD-PLAN、MOD-EVENT、MOD-PLATFORM |
+| WBS-10 | MOD-PLAN、MOD-EVENT、MOD-PLATFORM |
+| WBS-11 | MOD-RESOURCE、MOD-EVENT、MOD-PLATFORM |
+| WBS-12 | MOD-RESOURCE、MOD-EVENT、MOD-PLATFORM |
+| WBS-13 | MOD-PLATFORM、MOD-TASK |
+| WBS-14 | MOD-PLATFORM、MOD-TASK |
+| WBS-15 | MOD-TASK、MOD-EVENT |
+| WBS-16 | MOD-TASK、MOD-EVENT |
+| WBS-17 | MOD-PLATFORM |
+| WBS-18 | MOD-INTEGRATION |
+| WBS-18A | MOD-INTEGRATION（EXT-PUBLISH） |
+| WBS-18B | MOD-INTEGRATION（EXT-INTRUSION） |
+| WBS-18C | MOD-INTEGRATION（EXT-FIRE） |
+| WBS-19 | MOD-PLATFORM、MOD-INTEGRATION |
+| WBS-20 | MOD-INTEGRATION |
+| WBS-21 | MOD-PLATFORM、MOD-INTEGRATION |
+| WBS-22 | MOD-PLATFORM、MOD-INTEGRATION |
+| WBS-22R | MOD-PLATFORM、MOD-INTEGRATION |
+| WBS-23 | MOD-PLATFORM |
+| WBS-24 | MOD-PLATFORM、MOD-INTEGRATION |
+| WBS-25 | MOD-PLATFORM |
+| WBS-26 | MOD-PLATFORM、MOD-TASK |
+| WBS-27 | MOD-PLATFORM、MOD-INTEGRATION |
+| WBS-28 | MOD-PLATFORM、MOD-TASK |

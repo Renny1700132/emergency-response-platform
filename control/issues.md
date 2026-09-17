@@ -643,7 +643,9 @@
 - 主责人：A；复核人：C。
 - 关闭条件：保持物理Reference版式继承，彻底替换封面项目身份和未确认审批信息；修订记录仅保留本项目真实版本历史；集成图补齐8个EXT边界；重跑案例残留扫描、结构检查和全页渲染，由C复核通过。
 - 证据：`logs/reviews/2026-09-17_G3-03-C-compliance-review.md`。
-- 状态：RESOLVED / SELF_CHECKED_BY_A / PENDING_C_REREVIEW。
+- A整改（2026-09-17）：封面项目身份与待确认字段已更正；修订记录仅保留本项目V0.2；指定案例残留扫描为0；集成图补入“入侵”。证据：`logs/reviews/2026-09-17_G3-03-review-remediation.md`。
+- C整改后复核（2026-09-17）：封面、修订历史、案例残留和8个EXT语义均通过；但集成架构图把换行符绘制成可见字面量`\n`（“门禁\n消防”），正式件仍存在可见版式缺陷，现有全页渲染PASS结论不成立。修正图片并重渲染后可快速关闭。证据：`logs/reviews/2026-09-17_G3-03-C-final-rereview.md`。
+- 状态：OPEN / REMEDIATION_INCOMPLETE / MINOR_VISUAL_BLOCKER。
 
 ## G2 教师核验反馈专项返工
 

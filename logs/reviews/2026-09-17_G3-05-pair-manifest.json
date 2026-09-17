@@ -1,0 +1,378 @@
+{
+  "task": "G3-05",
+  "mode": "FORMAT ONLY",
+  "reference": "E:/26shixi/emergency-response-platform/docs/reference/12-详细设计说明书（教学样例）.docx",
+  "before": {
+    "path": ".tmp/G3-05-before-format.docx",
+    "file_sha256": "0729840694315089bcde6281ac0c5e3ec10f789b917df6e6a6b5d06d1d84e713",
+    "visible_content_sha256": "d1588e9292bdf0f10681326f7b86bd6f300198b4b34ffe79208ee043fafe7fdf"
+  },
+  "after": {
+    "path": "docs/deliverables/12-详细设计说明书.docx",
+    "file_sha256": "a82fbd9e619beeadbe9d44d977cbcc0d2eb7b94b39729aa5a15d24ea6dfab6a4",
+    "visible_content_sha256": "d1588e9292bdf0f10681326f7b86bd6f300198b4b34ffe79208ee043fafe7fdf"
+  },
+  "CONTENT_FREEZE_CHECK": "PASS",
+  "manifest": {
+    "physical_page_and_section": {
+      "reference": [
+        {
+          "page_width": 7560310,
+          "page_height": 10692130,
+          "orientation": 0,
+          "top_margin": 914400,
+          "bottom_margin": 914400,
+          "left_margin": 914400,
+          "right_margin": 914400,
+          "header_distance": 449580,
+          "footer_distance": 449580,
+          "start_type": 2,
+          "different_first_page": false
+        }
+      ],
+      "deliverable": [
+        {
+          "page_width": 7560310,
+          "page_height": 10692130,
+          "orientation": 0,
+          "top_margin": 914400,
+          "bottom_margin": 914400,
+          "left_margin": 914400,
+          "right_margin": 914400,
+          "header_distance": 449580,
+          "footer_distance": 449580,
+          "start_type": 2,
+          "different_first_page": false
+        }
+      ],
+      "result": "MATCH"
+    },
+    "front_matter": {
+      "cover": "MATCH",
+      "independent_date_page": "NOT_PRESENT_IN_PAIR",
+      "revision_record": "MATCH_FORMAT_MAPPED_CONTENT",
+      "toc": "NOT_PRESENT_IN_PAIR",
+      "signature_layout": "NOT_PRESENT_IN_PAIR",
+      "body_start": {
+        "reference_paragraph_index": 16,
+        "deliverable_paragraph_index": 16,
+        "result": "MATCH"
+      }
+    },
+    "package_parts": {
+      "word/styles.xml": {
+        "reference": "8e9bfc2d9b75ece7138d8417996719da744878d01733ff924a35b5376e5545a8",
+        "deliverable": "8e9bfc2d9b75ece7138d8417996719da744878d01733ff924a35b5376e5545a8",
+        "result": "MATCH"
+      },
+      "word/numbering.xml": {
+        "reference": "19cf6e9f820eef0b31bb849b7c734555baddbeb1ec509003a13ac198fc704460",
+        "deliverable": "19cf6e9f820eef0b31bb849b7c734555baddbeb1ec509003a13ac198fc704460",
+        "result": "MATCH"
+      },
+      "word/theme/theme1.xml": {
+        "reference": "7017cbe8b7512b56e04e6b3e3579aa862a35b6f9f31e0bf48328f6e5c074ebbd",
+        "deliverable": "7017cbe8b7512b56e04e6b3e3579aa862a35b6f9f31e0bf48328f6e5c074ebbd",
+        "result": "MATCH"
+      },
+      "word/settings.xml": {
+        "reference": "ce0892763f87aaf1152f496bbea43e5352243f3b49c12839a1168371a9735b7b",
+        "deliverable": "ce0892763f87aaf1152f496bbea43e5352243f3b49c12839a1168371a9735b7b",
+        "result": "MATCH"
+      },
+      "word/header1.xml": {
+        "reference": null,
+        "deliverable": null,
+        "result": "MATCH"
+      },
+      "word/footer1.xml": {
+        "reference": "f947394aab7554f655ae8a33cab08f7c876c56f1ba5cd5d45156bb9cdc51d252",
+        "deliverable": "f947394aab7554f655ae8a33cab08f7c876c56f1ba5cd5d45156bb9cdc51d252",
+        "result": "MATCH"
+      }
+    },
+    "role_direct_format": {
+      "cover_document_number": {
+        "pPr": {
+          "reference": "35ec5d4a1723aa07d9d713275d3ccb29136373fa0beb49ae42ebbed66beece82",
+          "deliverable": "35ec5d4a1723aa07d9d713275d3ccb29136373fa0beb49ae42ebbed66beece82",
+          "result": "MATCH"
+        },
+        "rPr": {
+          "reference": "97eb5157c72685ddcf1277433faaddb931a920f49328abcb48cd52532a4dab74",
+          "deliverable": "97eb5157c72685ddcf1277433faaddb931a920f49328abcb48cd52532a4dab74",
+          "result": "MATCH"
+        }
+      },
+      "cover_project_title": {
+        "pPr": {
+          "reference": "ec07fc23a44b310dda49ffa0f5bc541ed316cdc31ab0373303aafbcb03860b6b",
+          "deliverable": "ec07fc23a44b310dda49ffa0f5bc541ed316cdc31ab0373303aafbcb03860b6b",
+          "result": "MATCH"
+        },
+        "rPr": {
+          "reference": "4ebe4f10cfa9c1c34e3d7ac245984af5167a77eed85c2a98319d76009d9846f4",
+          "deliverable": "4ebe4f10cfa9c1c34e3d7ac245984af5167a77eed85c2a98319d76009d9846f4",
+          "result": "MATCH"
+        }
+      },
+      "cover_document_title": {
+        "pPr": {
+          "reference": "a7a590fe5f8c1731f8d8a59872f1a8e0fadf85ae4585511c628bda22a757813c",
+          "deliverable": "a7a590fe5f8c1731f8d8a59872f1a8e0fadf85ae4585511c628bda22a757813c",
+          "result": "MATCH"
+        },
+        "rPr": {
+          "reference": "2d971411e3e3125cc629eb69293165f45df0a16d82c00f74847a1f65d41edf9f",
+          "deliverable": "2d971411e3e3125cc629eb69293165f45df0a16d82c00f74847a1f65d41edf9f",
+          "result": "MATCH"
+        }
+      },
+      "cover_metadata": {
+        "pPr": {
+          "reference": "56850680b73c8dba9131f4daabd8f2c9eab180226b3379dd1e6ae567cc25c7c7",
+          "deliverable": "56850680b73c8dba9131f4daabd8f2c9eab180226b3379dd1e6ae567cc25c7c7",
+          "result": "MATCH"
+        },
+        "rPr": {
+          "reference": "d37c0536e85deef03722ef55ddfedf6f5b2215c13fa71660c34931bd32f7f7b5",
+          "deliverable": "d37c0536e85deef03722ef55ddfedf6f5b2215c13fa71660c34931bd32f7f7b5",
+          "result": "MATCH"
+        }
+      },
+      "revision_title": {
+        "pPr": {
+          "reference": "511a497edbc0a956a265a68ef28cbd6a3db1d271df83cb8b3f5ea0c354457097",
+          "deliverable": "511a497edbc0a956a265a68ef28cbd6a3db1d271df83cb8b3f5ea0c354457097",
+          "result": "MATCH"
+        },
+        "rPr": {
+          "reference": "a16f58fceef2939cc666864395436148e835e81ec398a38d7e004b8f01118b9b",
+          "deliverable": "a16f58fceef2939cc666864395436148e835e81ec398a38d7e004b8f01118b9b",
+          "result": "MATCH"
+        }
+      },
+      "revision_note": {
+        "pPr": {
+          "reference": "6ac8e663b42fb2f9c29fdccdeb5774991429c819a5ccb2b49082a31736dad8e4",
+          "deliverable": "6ac8e663b42fb2f9c29fdccdeb5774991429c819a5ccb2b49082a31736dad8e4",
+          "result": "MATCH"
+        },
+        "rPr": {
+          "reference": "210b49b8d813c3fa9b6b83ab92edb67a0bc9b2f74f424348f975251759eb5bd8",
+          "deliverable": "210b49b8d813c3fa9b6b83ab92edb67a0bc9b2f74f424348f975251759eb5bd8",
+          "result": "MATCH"
+        }
+      },
+      "heading_1": {
+        "pPr": {
+          "reference": "3da41b36de3bd7ed4ca3ef4ea38740f02f6d19fc243d7fd5816c01ed78289520",
+          "deliverable": "3da41b36de3bd7ed4ca3ef4ea38740f02f6d19fc243d7fd5816c01ed78289520",
+          "result": "MATCH"
+        },
+        "rPr": {
+          "reference": "43bda756431164c3842b0661cd78f60e8600df735656ec4d9eab60b2f856ca13",
+          "deliverable": "43bda756431164c3842b0661cd78f60e8600df735656ec4d9eab60b2f856ca13",
+          "result": "MATCH"
+        }
+      },
+      "heading_2": {
+        "pPr": {
+          "reference": "43e752df1a4dd3888effc9b71194e46dd7a7abb45ed32b7a91796fc0dc86fdab",
+          "deliverable": "43e752df1a4dd3888effc9b71194e46dd7a7abb45ed32b7a91796fc0dc86fdab",
+          "result": "MATCH"
+        },
+        "rPr": {
+          "reference": "e0fd314efde2ade69b3663a953b5d8448a8107f0608892e4137056bb8e684b0f",
+          "deliverable": "e0fd314efde2ade69b3663a953b5d8448a8107f0608892e4137056bb8e684b0f",
+          "result": "MATCH"
+        }
+      },
+      "body": {
+        "pPr": {
+          "reference": "5b210b309f651aafd73dccc093b7c5144b3c4f29c2ba95025d977d45e130c459",
+          "deliverable": "5b210b309f651aafd73dccc093b7c5144b3c4f29c2ba95025d977d45e130c459",
+          "result": "MATCH"
+        },
+        "rPr": {
+          "reference": "69d8da1b345b4064ec3875a541ac83c7cc5b69142aa52d5ed2c070531f41b564",
+          "deliverable": "69d8da1b345b4064ec3875a541ac83c7cc5b69142aa52d5ed2c070531f41b564",
+          "result": "MATCH"
+        }
+      },
+      "list": {
+        "pPr": {
+          "reference": "1bd372a97550a720edea48f34659b55955b32d0203e1753e07c2e8171b3f8ac9",
+          "deliverable": "1bd372a97550a720edea48f34659b55955b32d0203e1753e07c2e8171b3f8ac9",
+          "result": "MATCH"
+        },
+        "rPr": {
+          "reference": "585fad9fdb26c58ed182fbc4fdd5a4587ebeb5cebbdc2541a013bba3e908ea0e",
+          "deliverable": "585fad9fdb26c58ed182fbc4fdd5a4587ebeb5cebbdc2541a013bba3e908ea0e",
+          "result": "MATCH"
+        }
+      },
+      "figure_paragraph": {
+        "pPr": {
+          "reference": "77f0fefb623366cfe52141112483467a92d0aa1113beb42cfaf82cec4cdb48dc",
+          "deliverable": "77f0fefb623366cfe52141112483467a92d0aa1113beb42cfaf82cec4cdb48dc",
+          "result": "MATCH"
+        },
+        "rPr": {
+          "reference": "fb275b77c04116f150c40a089acb489af1524644b43a3624c0e073980a050d23",
+          "deliverable": "fb275b77c04116f150c40a089acb489af1524644b43a3624c0e073980a050d23",
+          "result": "MATCH"
+        }
+      },
+      "figure_caption": {
+        "pPr": {
+          "reference": "77f0fefb623366cfe52141112483467a92d0aa1113beb42cfaf82cec4cdb48dc",
+          "deliverable": "77f0fefb623366cfe52141112483467a92d0aa1113beb42cfaf82cec4cdb48dc",
+          "result": "MATCH"
+        },
+        "rPr": {
+          "reference": "e4d32a5048a699746b92dd0da8da62f48fd791e9dcdeaeaa5ce7bfad78c0c3fc",
+          "deliverable": "e4d32a5048a699746b92dd0da8da62f48fd791e9dcdeaeaa5ce7bfad78c0c3fc",
+          "result": "MATCH"
+        }
+      },
+      "table_caption": {
+        "pPr": {
+          "reference": "77f0fefb623366cfe52141112483467a92d0aa1113beb42cfaf82cec4cdb48dc",
+          "deliverable": "3c278c1396ebbe9b661bb0ac3ed592886570d048ff9925f3815af441017f290b",
+          "result": "MISMATCH",
+          "reason": "为防止表题与后续多列表分离，保留 Reference 全部表题格式并仅增加 keep-with-next 分页控制。"
+        },
+        "rPr": {
+          "reference": "a9579bde4d57eefea7f86ed8f0e74d9b9b114be9c275ecf6ad2d262b98437a87",
+          "deliverable": "a9579bde4d57eefea7f86ed8f0e74d9b9b114be9c275ecf6ad2d262b98437a87",
+          "result": "MATCH"
+        }
+      }
+    },
+    "table_direct_format": {
+      "body_pPr": {
+        "reference": "e3f83f732e85f9421c3c61b922ae1c950685f20e9f97cd3312cc346b2e307a26",
+        "deliverable": "e3f83f732e85f9421c3c61b922ae1c950685f20e9f97cd3312cc346b2e307a26",
+        "result": "MATCH"
+      },
+      "body_rPr": {
+        "reference": "1c5a91083b5a3d5e8de75290525c18bdc801a6b52012fc435ed2b63974a4166c",
+        "deliverable": "1c5a91083b5a3d5e8de75290525c18bdc801a6b52012fc435ed2b63974a4166c",
+        "result": "MATCH"
+      },
+      "body_tcPr_without_width": {
+        "reference": "760ecb66575c0aa5154387b585c63c6395d9f5ff2d55de31cb5f64dec5d625ef",
+        "deliverable": "760ecb66575c0aa5154387b585c63c6395d9f5ff2d55de31cb5f64dec5d625ef",
+        "result": "MATCH"
+      },
+      "header_pPr": {
+        "reference": "e3f83f732e85f9421c3c61b922ae1c950685f20e9f97cd3312cc346b2e307a26",
+        "deliverable": "e3f83f732e85f9421c3c61b922ae1c950685f20e9f97cd3312cc346b2e307a26",
+        "result": "MATCH"
+      },
+      "header_rPr": {
+        "reference": "8df1be5a2051cfb2cb4322842c62d769ca5b8e0e73a9d0242f7e93411f9b89ca",
+        "deliverable": "8df1be5a2051cfb2cb4322842c62d769ca5b8e0e73a9d0242f7e93411f9b89ca",
+        "result": "MATCH"
+      },
+      "header_tcPr_without_width": {
+        "reference": "a6eb7259100a9123e2780782d7d2435e2d61019e5159e2d23a589aa83b635d6a",
+        "deliverable": "a6eb7259100a9123e2780782d7d2435e2d61019e5159e2d23a589aa83b635d6a",
+        "result": "MATCH"
+      },
+      "tblPr": {
+        "reference": "d9fc4df5980ba23b782aa7c624fbb56891e3e8fb798afb4f0afdd1cf4664acdb",
+        "deliverable": "d9fc4df5980ba23b782aa7c624fbb56891e3e8fb798afb4f0afdd1cf4664acdb",
+        "result": "MATCH"
+      }
+    },
+    "headers_footers_page_fields": {
+      "header_text_match": true,
+      "footer_text_match": true,
+      "package_part_result": "MATCH"
+    },
+    "images": {
+      "reference_count": 2,
+      "deliverable_count": 4,
+      "reference_geometry": [
+        [
+          5580000,
+          3245827,
+          "WD_INLINE_SHAPE_TYPE.PICTURE"
+        ],
+        [
+          5580000,
+          2980516,
+          "WD_INLINE_SHAPE_TYPE.PICTURE"
+        ]
+      ],
+      "deliverable_geometry": [
+        [
+          5580000,
+          2728000,
+          "WD_INLINE_SHAPE_TYPE.PICTURE"
+        ],
+        [
+          5580000,
+          2728000,
+          "WD_INLINE_SHAPE_TYPE.PICTURE"
+        ],
+        [
+          5580000,
+          2728000,
+          "WD_INLINE_SHAPE_TYPE.PICTURE"
+        ],
+        [
+          5580000,
+          2728000,
+          "WD_INLINE_SHAPE_TYPE.PICTURE"
+        ]
+      ],
+      "mapped_width_result": "MATCH",
+      "result": "STRUCTURAL_DEVIATION"
+    },
+    "paragraph_table_structure": {
+      "reference_paragraphs": 208,
+      "deliverable_paragraphs": 132,
+      "reference_tables": 23,
+      "deliverable_tables": 11,
+      "result": "STRUCTURAL_DEVIATION"
+    }
+  },
+  "structural_deviations": [
+    "业务内容决定 Deliverable 为14章、132个段落、11张表、4张图；Reference 为10章、208个段落、23张表、2张图。FORMAT ONLY 未增删、拆分、合并或改写业务元素。",
+    "Deliverable 的多列表格按 Reference 实现要点表映射表属性、表头/正文单元格和段落/文字直接格式；列数、列宽及跨页重复表头按冻结业务结构保留。",
+    "4张业务图均映射 Reference 首张业务图的宽度、行内位置和图题格式；高度随图源宽高比变化。",
+    "多列表可能跨页，表题在 Reference 直接格式基础上增加 keep-with-next，避免表题孤立在前页。"
+  ],
+  "visual_review": {
+    "renderer": "WPS Kwps.Application",
+    "reference_pages": 14,
+    "deliverable_pages": 20,
+    "page_count_note": "业务结构不同导致页数不同，不以强制等页数替代逐页检查。",
+    "page_by_page": [
+      {"page": 1, "role": "封面", "result": "PASS", "note": "项目字段替换后位置、字号、横线和签署信息块与 Reference Page 1 对齐，无案例残留。"},
+      {"page": 2, "role": "修订记录", "result": "PASS", "note": "表格、标题、注记、页码完整，无截断。"},
+      {"page": 3, "role": "引言与程序结构", "result": "PASS", "note": "标题、正文、图表起始和留白正常。"},
+      {"page": 4, "role": "组件结构与模块职责", "result": "PASS", "note": "图题、表题均与对象相邻，表格边界清晰。"},
+      {"page": 5, "role": "模块职责与公共规则", "result": "PASS", "note": "多列表无越界，标题未孤立。"},
+      {"page": 6, "role": "公共组件", "result": "PASS", "note": "表头、正文映射 Reference，列宽和换行可读。"},
+      {"page": 7, "role": "公共组件与预案", "result": "PASS", "note": "章节连续，表格和段落间距正常。"},
+      {"page": 8, "role": "事件详细设计", "result": "PASS", "note": "流程图清晰，Caption 未分离，列表层级一致。"},
+      {"page": 9, "role": "事件与任务", "result": "PASS", "note": "无孤标题、重叠或异常留白。"},
+      {"page": 10, "role": "任务与资源", "result": "PASS", "note": "流程图、正文和章节转换自然。"},
+      {"page": 11, "role": "盘点与值班", "result": "PASS", "note": "流程图宽度、图题和正文对齐正常。"},
+      {"page": 12, "role": "演练与知识", "result": "PASS", "note": "标题层级、正文密度和分页正常。"},
+      {"page": 13, "role": "H5 与集成端口", "result": "PASS", "note": "端口表格完整，列宽无溢出。"},
+      {"page": 14, "role": "控制与异常", "result": "PASS", "note": "异常表格与后续章节间距正常。"},
+      {"page": 15, "role": "安全测试与追踪表一", "result": "PASS", "note": "表 12-1 Caption 与表同页，表头清晰。"},
+      {"page": 16, "role": "追踪表一续与追踪表二", "result": "PASS", "note": "跨页表头重复；表 12-2 Caption 与后续表同页。"},
+      {"page": 17, "role": "追踪表二续", "result": "PASS", "note": "无拆行、截字或表格越界。"},
+      {"page": 18, "role": "追踪表二续与追踪表三", "result": "PASS", "note": "表 12-3 Caption 与后续表同页，分页连续。"},
+      {"page": 19, "role": "追踪表三续与实现约束", "result": "PASS", "note": "表格收尾、标题和正文均完整。"},
+      {"page": 20, "role": "未决事项与自检结论", "result": "PASS", "note": "列表、末章和页脚完整，无孤标题。"}
+    ],
+    "result": "PASS"
+  }
+}

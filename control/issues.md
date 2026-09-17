@@ -852,4 +852,5 @@
 - 问题：虽有 WPS 14 页渲染记录，但未形成 Reference ↔ Deliverable 的逐元素 Pair Manifest、正文/表格直接格式比对和同渲染器逐页并列证据，不能证明严格继承唯一 Reference。
 - 影响：正式件无法以“完全对齐”交付。
 - 最小修复：执行 Reference 成对 manifest、内容冻结后 FORMAT ONLY 对齐、同渲染器全页并列检查并记录每页结论。
-- 状态：OPEN / BLOCKING。
+- B 整改（2026-09-17）：以原正式件为内容冻结点执行 FORMAT ONLY；封面、Heading 1/2、正文、列表、图题、表题、表格表头/正文均按同角色 Reference 元素复制 `pPr/rPr/tblPr/tcPr`，并恢复 Reference 的 styles、numbering、theme、settings、header/footer 包部件。冻结前后正文、表格、页眉页脚和媒体有序载荷哈希完全一致，`CONTENT_FREEZE_CHECK = PASS`。同一 WPS 渲染 Reference 14 页、整改稿 20 页，已对整改稿 1—20 页逐页检查并记录；结构/页数差异由本项目 14 章、11 表、4 图的冻结业务结构产生，不通过删改内容强行等页。证据见 `logs/reviews/2026-09-17_G3-05-pair-manifest.json` 和 `logs/reviews/2026-09-17_G3-05-B-format-remediation.md`。
+- 状态：RESOLVED_BY_B / PENDING_UNIQUE_REVIEW_REREVIEW。

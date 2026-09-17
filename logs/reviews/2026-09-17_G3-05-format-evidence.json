@@ -7,7 +7,7 @@
     "physical_reference_copy": true,
     "same_renderer": "WPS Kwps.Application",
     "reference_pages": 14,
-    "deliverable_pages": 14,
+    "deliverable_pages": 20,
     "reference_sections": 1,
     "deliverable_sections": 1
   },
@@ -19,7 +19,7 @@
     "inline_figures": 4,
     "numbered_captions": 14,
     "heading_paragraphs": 53,
-    "sha256": "0729840694315089bcde6281ac0c5e3ec10f789b917df6e6a6b5d06d1d84e713"
+    "sha256": "a82fbd9e619beeadbe9d44d977cbcc0d2eb7b94b39729aa5a15d24ea6dfab6a4"
   },
   "figure_source": {
     "path": "docs/deliverables/figures/12-详细设计图源.pptx",
@@ -30,7 +30,7 @@
   },
   "visual_review": {
     "all_pages_inspected": true,
-    "page_range": "1-14",
+    "page_range": "1-20",
     "first_pass_findings": ["追踪表跨页拆行", "孤立二级标题", "短段落跨页"],
     "final_checks": {
       "cover_and_revision": "PASS",
@@ -41,7 +41,8 @@
       "clipping_overlap_overflow": "PASS",
       "sample_business_pollution": "PASS"
     },
-    "result": "PASS"
+    "result": "PASS",
+    "latest_pair_manifest": "logs/reviews/2026-09-17_G3-05-pair-manifest.json"
   },
   "renderer_note": "render_docx.py was invoked but its LibreOffice executable was unavailable (WinError 2); the repository-required WPS pair renderer completed successfully and was used for the authoritative 14-page visual QA."
 }

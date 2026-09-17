@@ -52,7 +52,7 @@
 | G2-R04 | G2 正式交付物图表题注与格式整改 | A | C | G2-R01、G2-R03 | 工作稿、唯一 Reference、正式交付 Skill | G2 正式件图表题注/编号 QA、渲染证据 | DONE |
 | G2-R05 | SRS/spec/RTM/澄清一致性复验 | A | B、C | G2-R02—G2-R04 | 全部返工候选稿与控制文件 | 39 FR/34 ★/AC/追踪/图表 QA 一致性报告 | DONE |
 | G2-R06 | M2 返工复审与重新冻结 | A | B、C | G2-R05 | 一致性报告、Issue、正式候选件 | 更新 M2 评审包、复审结论与冻结/阻塞记录 | DONE |
-| G3-01R | 修订后 G2 输入重新挂接与 G3-01 复验 | B | A、C | G2-R06 | 新 SRS、spec、RTM、澄清、数据与 NFR 输入 | 对 `G3-01_design_input_baseline.md` 的增量修订与复验 | TODO |
+| G3-01R | 修订后 G2 输入重新挂接与 G3-01 复验 | B | A、C | G2-R06 | 新 SRS、spec、RTM、澄清、数据与 NFR 输入 | 对 `G3-01_design_input_baseline.md` 的增量修订与复验 | REVIEW |
 
 ## 第三关任务看板
 

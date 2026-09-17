@@ -5,6 +5,10 @@ description: Govern generation and revision of controlled formal DOCX/PDF delive
 
 # Formal Deliverable Visual Alignment
 
+## Rendered QA cache retention
+
+PDF、逐页 PNG/JPG/JPEG 与 contact sheet 仅是 DOCX 视觉检查的临时缓存。完成检查后必须删除；审计应保留 Markdown/JSON 的方法、页数、结论和问题修复记录。仅当当前任务明确要求长期保留某渲染文件时方可保留，并记录理由和范围。
+
 ## Scope and mode gate
 
 Use this skill for every formal deliverable intended for `docs/deliverables/` or for a client, teacher, reviewer or acceptance audience. Read `AGENTS.md`, the logging and Git workflows, and `docs/deliverables/SKILL.md` first. Then declare exactly one mode:

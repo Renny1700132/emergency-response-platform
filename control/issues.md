@@ -628,7 +628,9 @@
 - 主责人：A；复核人：B、C。
 - 关闭条件：在`plan.md`和`tasks.md`同步为每个WBS补充可定位模块及至少一个真实存在的具体AC；为EXT-PUBLISH、EXT-INTRUSION、EXT-FIRE和KN-064联合验收分别形成可验证工作包；保持每项≤0.5人日、依赖无环且不改变冻结需求、数字、责任或验收强度；复跑逐行AC存在性、双镜像和依赖检查并由B/C复核通过。
 - 证据：`logs/reviews/2026-09-17_G3-02-B-technical-review.md`、`logs/reviews/2026-09-17_G3-02-C-compliance-review.md`。
-- 状态：OPEN / BLOCKING。
+- A整改证据（2026-09-17）：`plan.md`与`tasks.md`同步补齐32个原子工作包的模块映射及具体AC；新增WBS-18A（EXT-PUBLISH）、18B（EXT-INTRUSION）、18C（EXT-FIRE）和22R（KN-064四系统联合验收），并保留`ISSUE-G3-01-001`为OPEN。证据：`logs/reviews/2026-09-17_G3-02-A-remediation-self-check.md`。
+- B/C最终复核（2026-09-17）：确认32个工作包均具备模块、至少一个可解析AC、前置、责任、输出和可执行验证；指定外部端口及KN-064均已独立成包，双镜像一致且依赖无环。主表对拆分包后置关系采用紧邻说明而非直接并入WBS-19/WBS-23前置字段，记为非阻断维护建议。未改变39 FR、34★、117 AC、关键数字、责任边界或验收强度。证据：`logs/reviews/2026-09-17_G3-02-B-final-rereview.md`、`logs/reviews/2026-09-17_G3-02-C-final-rereview.md`。
+- 状态：CLOSED / VERIFIED_BY_B_AND_C。
 
 ## G2 教师核验反馈专项返工
 

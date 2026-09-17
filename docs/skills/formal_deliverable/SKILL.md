@@ -22,7 +22,7 @@ Use this skill for every formal deliverable intended for `docs/deliverables/` or
 
 Do not let a formatting request alter business content, chapter organization, table business information, captions, header/footer text, figure information, version number or revision-record text. Word automatic field caches are the only permitted comparison exclusion and must be named in the audit.
 
-## One Pair, one manifest, one renderer
+## Reference-first physical inheritance (highest priority)`r`n`r`nWhen a unique matching Reference DOCX exists, copy that exact DOCX as the physical Deliverable base before any authoring. Replace project text/content only within the copy; never create a blank DOCX that merely resembles the Reference, and never reconstruct from generic python-docx styles. Use the document-type-specific Reference only. Fallback is allowed only for missing/corrupt Reference or explicit user approval, and must be recorded in QA.`r`n`r`n## One Pair, one manifest, one renderer
 
 For each Deliverable ↔ Reference pair, find one unique corresponding DOCX under `docs/reference/`. If no unique pair exists, stop and record the missing template; never invent a similar design.
 

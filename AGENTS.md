@@ -10,7 +10,7 @@ G1/G2 的任务、基线、评审和过程证据均为历史受控记录，不�
 
 当用户明确要求撰写每日工作日志、日报或总结时，必须先读取并遵循 `docs/daily_reports/SKILL.md`；该 Skill 不适用于未明确提出日报需求的普通任务。
 
-当用户明确要求生成、撰写、修改或修订任何正式可交付文档时，必须先读取并遵循 `docs/deliverables/SKILL.md`，并先判定 `NEW DOCUMENT`、`CONTENT EDIT`、`FORMAT ONLY` 或 `CONTENT + FORMAT`。面向甲方、教师、评委或验收的正式材料，以及最终进入 `docs/deliverables/` 的文档，原则上均触发；普通内部草稿、Prompt、Review、日志和 control 文件编辑不触发。
+当用户明确要求生成、撰写、修改或修订任何正式可交付文档时，必须先读取并遵循 `docs/deliverables/SKILL.md`，并先判定 `NEW DOCUMENT`、`CONTENT EDIT`、`FORMAT ONLY` 或 `CONTENT + FORMAT`。若有对应 Reference DOCX，必须物理复制该 Reference 作为正式件基础，禁止空白重建或仿制。面向甲方、教师、评委或验收的正式材料，以及最终进入 `docs/deliverables/` 的文档，原则上均触发；普通内部草稿、Prompt、Review、日志和 control 文件编辑不触发。
 
 所有 AI 任务必须读取并遵守 `governance/ai_logging.md`。正式任务开始时，先按 `governance/git_workflow.md` 完成仓库启动同步，再写入用户 Prompt 原文；仓库同步不得夹带项目分析或产物修改。
 

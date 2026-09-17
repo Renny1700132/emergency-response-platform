@@ -3,7 +3,7 @@ from docx.shared import Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
-R=Path('docs/reference/11-概要设计说明书（教学样例）.docx'); O=Path('docs/deliverables/11-概要设计说明书.docx'); W=Path('docs/work/A_PM/overview_design.md'); A=Path('docs/work/A_PM/g3_03_figures');A.mkdir(exist_ok=True)
+R=Path('docs/reference/11-概要设计说明书（教学样例）.docx'); O=Path('docs/deliverables/11-概要设计说明书.review.docx'); W=Path('docs/work/A_PM/overview_design.md'); A=Path('docs/work/A_PM/g3_03_figures');A.mkdir(exist_ok=True)
 def ft(n,b=False):
  try:return ImageFont.truetype('C:/Windows/Fonts/simhei.ttf' if b else 'C:/Windows/Fonts/simsun.ttc',n)
  except:return ImageFont.load_default()
@@ -16,7 +16,7 @@ def image(n,title,items):
 image('tech','高层技术架构',[('渠道','Web\n大屏\nH5'),('统一边界','MOD-PLATFORM\n鉴权 审计 traceId'),('领域模块','预案 事件 任务\n资源 值班 演练'),('外部端口','视频 发布 安防\nIoT 中台 消息')])
 image('flow','领域数据流',[('业务写入','唯一写入主责'),('持久化','业务ID 外部ID\n四类时间'),('派生','通知 读投影\n外部适配'),('处置','回执 失败\n人工降级')])
 image('deploy','逻辑部署与故障域',[('渠道/API','Web 大屏 H5'),('业务','模块化应用\n持久化任务'),('适配','独立端口\n限时/重试'),('观测','日志 健康\n恢复演练')])
-image('integration','集成架构',[('应急系统','MOD-INTEGRATION'),('既有平台','中台 视频 消息'),('安防物联','发布 门禁 消防 IoT'),('联动证据','traceId/eventId\n失败降级')])
+image('integration','集成架构',[('应急系统','MOD-INTEGRATION'),('既有平台','中台 视频 消息'),('安防物联','发布 入侵 门禁\\n消防 IoT'),('联动证据','traceId/eventId\n失败降级')])
 D=Document(R); body=D._element.body; sec=body.sectPr
 for e in list(body)[16:]:
  if e is not sec:body.remove(e)
@@ -29,6 +29,13 @@ for r in t.rows:
  for c in r.cells:
   for p in c.paragraphs:
    for x in p.runs:x.text=x.text.replace('V1.0','V0.2').replace('2026-08-19','2026-09-17').replace('首版，随设计冻结发布（D8）','完整重构为本项目概要设计评审稿').replace('乙','A【待人工确认】')
+# Review correction: replace complete cover paragraphs and retain only the one true project revision row.
+cover={0:'文档编号：EM-G3-03　　版本号：V0.2（评审稿）',1:'密　　级：内部 · 评审用',3:'某自然博物馆智能运营中心建设项目——应急管理子系统',4:'概要设计说明书',7:'编制单位：项目组【待人工确认】',8:'编　　制：A（项目负责人）【待人工确认】',9:'审　　核：C（需求与符合性复核）【待人工确认】',10:'批　　准：【待 C Review】',11:'编制日期：2026 年 9 月 17 日'}
+for i,text in cover.items():
+ D.paragraphs[i].clear();D.paragraphs[i].add_run(text)
+while len(t.rows)>2:t._tbl.remove(t.rows[-1]._tr)
+for c,text in zip(t.rows[1].cells,['V0.2','2026-09-17','全部','首次形成概要设计评审稿，待 C 复核','A【待人工确认】']):
+ c.paragraphs[0].clear();c.paragraphs[0].add_run(text)
 def h(x,l=1):D.add_paragraph(x,style='Heading '+str(l))
 def p(x):D.add_paragraph(x)
 def tab(cap,heads,rows):
@@ -66,4 +73,7 @@ for title,text,table in chapters:
 D.save(O)
 W.write_text('# G3-03 概要设计说明书（工作稿）\n\n状态：SELF_CHECKED / REVIEW。受控输入为 SRS、spec、RTM、G3-01R、G3-02、constitution、facts、key_numbers、issues。\n\n'+ '\n\n'.join('## '+x[0]+'\n\n'+x[1] for x in chapters),encoding='utf8')
 print('done')
+
+
+
 

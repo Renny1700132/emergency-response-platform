@@ -643,7 +643,7 @@
 - 主责人：A；复核人：C。
 - 关闭条件：保持物理Reference版式继承，彻底替换封面项目身份和未确认审批信息；修订记录仅保留本项目真实版本历史；集成图补齐8个EXT边界；重跑案例残留扫描、结构检查和全页渲染，由C复核通过。
 - 证据：`logs/reviews/2026-09-17_G3-03-C-compliance-review.md`。
-- 状态：OPEN / BLOCKING。
+- 状态：RESOLVED / SELF_CHECKED_BY_A / PENDING_C_REREVIEW。
 
 ## G2 教师核验反馈专项返工
 
@@ -821,3 +821,5 @@
 - A 整改（2026-09-16）：`scripts/fix_g2_r03_review.py` 先移除所有历史表5-1题注，再只为唯一表5-1插入紧邻题注；机械检查为题注1条、表5-1实体表1张且相邻，LibreOffice重渲染18页。
 - 用户授权准出（2026-09-16）：用户明确要求修复确认后直接将G2-R03设为Done；据此完成任务状态转换。后续全量题注/格式复验纳入已启动的 G2-R04。
 - 状态：RESOLVED / USER_AUTHORIZED_DONE。
+
+

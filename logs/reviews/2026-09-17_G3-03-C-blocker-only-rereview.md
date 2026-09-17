@@ -14,3 +14,7 @@
 ## 结论
 
 不新增Issue；`ISSUE-G3-03-001`继续保持`OPEN / REMEDIATION_INCOMPLETE / MINOR_VISUAL_BLOCKER`，G3-03保持`REVIEW`。将生成脚本文本改为实际换行、重新生成正式件并复验该图后即可关闭。
+
+## 后续人工裁决
+
+2026-09-17，用户经人工审查明确允许忽略该非实质性版式缺陷并要求标记DONE。缺陷本身未技术修复，但按`OVR-024`作为用户接受偏差关闭；`ISSUE-G3-03-001`转为`CLOSED / USER_ACCEPTED_DEVIATION`，G3-03转为DONE。

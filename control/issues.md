@@ -840,4 +840,5 @@
 - 关闭条件：B 在工作稿与正式件增加可机械核验的数据设计追踪矩阵，至少逐条覆盖 G2-FR-001—039、34 条★标识及 AC-G2-FR-001-01—039-03 到数据域/实体/约束/后续验证入口；不得改动受控 FR、AC、数字或责任边界。A/C 复验通过后关闭。
 - 证据：`logs/reviews/2026-09-17_G3-04-C-compliance-review.md`。
 - B 整改（2026-09-17）：V0.2 在工作稿和正式件新增 `DBD-TR-001—039` 逐条矩阵，完整列出 G2-FR-001—039、34★/5非★、117 个精确 AC 锚点及各自数据实体、约束和验证入口；同时补齐应急小组、外部告警、视频引用和门禁控制命令等支撑实体。机械审计对 Markdown 与正式 DOCX 均得到 FR 39/39、★ 34/34、AC 117/117、设计 ID 39/39、缺失 0；证据见 `logs/reviews/2026-09-17_G3-04-traceability-audit.json` 和 `logs/reviews/2026-09-17_G3-04-B-remediation.md`。
-- 状态：RESOLVED_BY_B / PENDING_A_C_REREVIEW。
+- 状态：CLOSED / VERIFIED_BY_A_AND_C。
+

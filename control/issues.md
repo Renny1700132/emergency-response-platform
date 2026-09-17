@@ -617,6 +617,19 @@
 - A 最终复核（2026-09-17）：按当前 G3-01R §3.3、§3.4、§4.1、§4.3、§9.1—§9.2 独立核验，信息发布、入侵、门禁、消防均具独立责任/失败降级边界与 PENDING 状态；F-005、F-208、KN-064 均可回指，未新增范围或把联调写成完成。根据本轮用户授权，A 完成最终复核，不再等待 C 单独复核。
 - 状态：CLOSED / VERIFIED_BY_A
 
+### ISSUE-G3-02-001
+
+- 提出人：B、C。
+- 时间：2026-09-17。
+- 严重级别：MAJOR / BLOCKING_TO_G3-02_DONE。
+- 文件与位置：`docs/work/A_PM/plan.md` §3、`tasks.md`“G3-02原子任务登记”、`docs/work/B_TECH/G3-01_design_input_baseline.md` §9.1；对照第三关任务书§二（2）和§六。
+- 问题：28行原子WBS均未设置逐项“对应模块”字段；WBS-06、10、13、20、28没有任何`spec.md` AC编号；EXT-PUBLISH、EXT-INTRUSION、EXT-FIRE未按G3-01R准出要求分别设置可验证工作包，仍被合并在WBS-18通用“8 EXT”检查中。A自检所称每包均有具体AC与实际不符。
+- 影响：后续设计、接口、RTM和联合验收无法按模块与AC独立追踪，且直接违反第三关任务书对原子任务验证标准的硬要求，影响计划可执行性评分与G3-02准出。
+- 主责人：A；复核人：B、C。
+- 关闭条件：在`plan.md`和`tasks.md`同步为每个WBS补充可定位模块及至少一个真实存在的具体AC；为EXT-PUBLISH、EXT-INTRUSION、EXT-FIRE和KN-064联合验收分别形成可验证工作包；保持每项≤0.5人日、依赖无环且不改变冻结需求、数字、责任或验收强度；复跑逐行AC存在性、双镜像和依赖检查并由B/C复核通过。
+- 证据：`logs/reviews/2026-09-17_G3-02-B-technical-review.md`、`logs/reviews/2026-09-17_G3-02-C-compliance-review.md`。
+- 状态：OPEN / BLOCKING。
+
 ## G2 教师核验反馈专项返工
 
 ### ISSUE-G2-R05-001

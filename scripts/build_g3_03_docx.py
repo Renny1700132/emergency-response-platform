@@ -2,6 +2,7 @@ from docx import Document
 from docx.shared import Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from pathlib import Path
+import copy
 from PIL import Image,ImageDraw,ImageFont
 R=Path('docs/reference/11-概要设计说明书（教学样例）.docx'); O=Path('docs/deliverables/11-概要设计说明书.review.docx'); W=Path('docs/work/A_PM/overview_design.md'); A=Path('docs/work/A_PM/g3_03_figures');A.mkdir(exist_ok=True)
 def ft(n,b=False):
@@ -17,6 +18,7 @@ image('tech','高层技术架构',[('渠道','Web\n大屏\nH5'),('统一边界',
 image('flow','领域数据流',[('业务写入','唯一写入主责'),('持久化','业务ID 外部ID\n四类时间'),('派生','通知 读投影\n外部适配'),('处置','回执 失败\n人工降级')])
 image('deploy','逻辑部署与故障域',[('渠道/API','Web 大屏 H5'),('业务','模块化应用\n持久化任务'),('适配','独立端口\n限时/重试'),('观测','日志 健康\n恢复演练')])
 image('integration','集成架构',[('应急系统','MOD-INTEGRATION'),('既有平台','中台 视频 消息'),('安防物联','发布 入侵 门禁\\n消防 IoT'),('联动证据','traceId/eventId\n失败降级')])
+T=Document(R).tables[1]
 D=Document(R); body=D._element.body; sec=body.sectPr
 for e in list(body)[16:]:
  if e is not sec:body.remove(e)
@@ -39,7 +41,7 @@ for c,text in zip(t.rows[1].cells,['V0.2','2026-09-17','全部','首次形成概
 def h(x,l=1):D.add_paragraph(x,style='Heading '+str(l))
 def p(x):D.add_paragraph(x)
 def tab(cap,heads,rows):
- t=D.add_table(rows=1,cols=len(heads))
+ t=D.add_table(rows=1,cols=len(heads)); t._tbl.tblPr.getparent().replace(t._tbl.tblPr,copy.deepcopy(T._tbl.tblPr))
  for c,x in zip(t.rows[0].cells,heads):c.text=x
  for row in rows:
   for c,x in zip(t.add_row().cells,row):c.text=x
@@ -73,6 +75,8 @@ for title,text,table in chapters:
 D.save(O)
 W.write_text('# G3-03 概要设计说明书（工作稿）\n\n状态：SELF_CHECKED / REVIEW。受控输入为 SRS、spec、RTM、G3-01R、G3-02、constitution、facts、key_numbers、issues。\n\n'+ '\n\n'.join('## '+x[0]+'\n\n'+x[1] for x in chapters),encoding='utf8')
 print('done')
+
+
 
 
 

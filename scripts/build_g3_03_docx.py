@@ -1,62 +1,69 @@
 from docx import Document
-from docx.shared import Inches, Pt
+from docx.shared import Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.enum.section import WD_SECTION
-from docx.oxml import OxmlElement
-from docx.oxml.ns import qn
 from pathlib import Path
-import copy
-ref=Path('docs/reference/11-概要设计说明书（教学样例）.docx')
-out=Path('docs/deliverables/11-概要设计说明书.docx')
-doc=Document(ref)
-body=doc._element.body
-sect=body.sectPr
-for child in list(body):
-    if child is not sect: body.remove(child)
-styles=doc.styles
-for style in ['Normal','Heading 1','Heading 2','Heading 3']:
-    try:
-        styles[style].font.name='Times New Roman';styles[style]._element.rPr.rFonts.set(qn('w:eastAsia'),'宋体' if style=='Normal' else '黑体')
-    except: pass
-sec=doc.sections[0]
-# cover
-p=doc.add_paragraph();p.alignment=WD_ALIGN_PARAGRAPH.CENTER
-r=p.add_run('某自然博物馆智能运营中心建设项目\n应急管理子系统');r.bold=True;r.font.size=Pt(18)
-p=doc.add_paragraph();p.alignment=WD_ALIGN_PARAGRAPH.CENTER;r=p.add_run('概要设计说明书');r.bold=True;r.font.size=Pt(22)
-for x in ['文档编号：EM-G3-03','版本：V0.1（评审稿）','编制：A【待人工确认】','复核：C【待人工确认】','日期：2026年09月17日']:
- p=doc.add_paragraph();p.alignment=WD_ALIGN_PARAGRAPH.CENTER;p.add_run(x)
-doc.add_page_break()
-p=doc.add_paragraph('修订记录',style='Heading 1')
-t=doc.add_table(rows=1, cols=4);
-for c,x in zip(t.rows[0].cells,['版本','日期','修改说明','责任人']): c.text=x
-for row in [('V0.1','2026-09-17','首次形成概要设计评审稿','A【待人工确认】')]:
- cells=t.add_row().cells
- for c,x in zip(cells,row): c.text=x
-doc.add_page_break()
-def h(s,l=1): doc.add_paragraph(s,style=f'Heading {l}')
-def para(s): doc.add_paragraph(s)
-def table(headers, rows):
- t=doc.add_table(rows=1,cols=len(headers));
- for c,x in zip(t.rows[0].cells,headers): c.text=x
+from PIL import Image,ImageDraw,ImageFont
+R=Path('docs/reference/11-概要设计说明书（教学样例）.docx'); O=Path('docs/deliverables/11-概要设计说明书.docx'); W=Path('docs/work/A_PM/overview_design.md'); A=Path('docs/work/A_PM/g3_03_figures');A.mkdir(exist_ok=True)
+def ft(n,b=False):
+ try:return ImageFont.truetype('C:/Windows/Fonts/simhei.ttf' if b else 'C:/Windows/Fonts/simsun.ttc',n)
+ except:return ImageFont.load_default()
+def image(n,title,items):
+ im=Image.new('RGB',(1600,700),'white');d=ImageDraw.Draw(im);d.text((40,25),title,font=ft(36,1),fill='black')
+ for i,(h,x) in enumerate(items):
+  l=40+i*390;d.rectangle((l,180,l+310,520),outline='black',width=4,fill='#f2f2f2');d.multiline_text((l+20,220),h+'\n\n'+x,font=ft(24),fill='black',spacing=10)
+  if i<3:d.line((l+310,350,l+380,350),fill='black',width=4)
+ im.save(A/(n+'.png'))
+image('tech','高层技术架构',[('渠道','Web\n大屏\nH5'),('统一边界','MOD-PLATFORM\n鉴权 审计 traceId'),('领域模块','预案 事件 任务\n资源 值班 演练'),('外部端口','视频 发布 安防\nIoT 中台 消息')])
+image('flow','领域数据流',[('业务写入','唯一写入主责'),('持久化','业务ID 外部ID\n四类时间'),('派生','通知 读投影\n外部适配'),('处置','回执 失败\n人工降级')])
+image('deploy','逻辑部署与故障域',[('渠道/API','Web 大屏 H5'),('业务','模块化应用\n持久化任务'),('适配','独立端口\n限时/重试'),('观测','日志 健康\n恢复演练')])
+image('integration','集成架构',[('应急系统','MOD-INTEGRATION'),('既有平台','中台 视频 消息'),('安防物联','发布 门禁 消防 IoT'),('联动证据','traceId/eventId\n失败降级')])
+D=Document(R); body=D._element.body; sec=body.sectPr
+for e in list(body)[16:]:
+ if e is not sec:body.remove(e)
+for p in D.paragraphs:
+ for a,b in {'LTPT-2026-G3-11':'EM-G3-03','V3.0':'V0.2（评审稿）','内部 · 教学用':'内部 · 评审用','“澜图”遥感影像智能解译与地物提取平台建设项目':'某自然博物馆智能运营中心建设项目','（教学样例）':'','通关实训第 3 组':'项目组','乙（架构师）':'A（项目负责人）【待人工确认】','甲（项目经理）':'C（需求与符合性复核）【待人工确认】','评委会（M2 设计评审）':'【待 C Review】','2026 年 8 月 21 日':'2026 年 9 月 17 日','本表记录自初稿以来的全部版本沿革；逐次修订的详细影响面分析见正文相关章节与变更单。':'本表记录本概要设计的受控版本沿革；本版待 C 复核。'}.items():
+  if a in p.text:
+   for r in p.runs:r.text=r.text.replace(a,b)
+t=D.tables[0]
+for r in t.rows:
+ for c in r.cells:
+  for p in c.paragraphs:
+   for x in p.runs:x.text=x.text.replace('V1.0','V0.2').replace('2026-08-19','2026-09-17').replace('首版，随设计冻结发布（D8）','完整重构为本项目概要设计评审稿').replace('乙','A【待人工确认】')
+def h(x,l=1):D.add_paragraph(x,style='Heading '+str(l))
+def p(x):D.add_paragraph(x)
+def tab(cap,heads,rows):
+ t=D.add_table(rows=1,cols=len(heads))
+ for c,x in zip(t.rows[0].cells,heads):c.text=x
  for row in rows:
-  cells=t.add_row().cells
-  for c,x in zip(cells,row): c.text=x
- return t
-h('1 引言');para('本说明书定义应急管理子系统的高层逻辑架构、数据边界、部署边界、外部系统边界及非功能设计约束，为后续数据库、详细设计、接口契约、ADR、RTM 和测试计划提供受控输入。')
-h('1.1 设计范围',2);para('本设计覆盖 Web、大屏和 H5 渠道接入的应急业务逻辑架构。它不定义类、状态机细节、物理表、字段长度、索引、数据库产品或完整接口字段。原型 Mock、localStorage 和 prototypeStore 不构成正式架构依据。')
-h('1.2 架构状态',2);para('ARC-A（模块化单体、端口适配与持久化异步任务）仅为当前候选；最终拆分粒度、异步一致性和部署编排仍须由后续 ADR 及人工决策确认。')
-h('2 技术架构');para('整体分层关系见表 2-1。渠道经统一 API 边界调用领域模块；领域模块拥有业务规则和写入责任，外部平台只经独立适配端口访问。')
-table(['层次','设计元素'], [('渠道层','Web、大屏、H5；均经统一 API'),('业务层','MOD-PLAN、EVENT、TASK、RESOURCE、DUTY、DRILL、KNOWLEDGE'),('投影与适配层','MOD-SITUATION 只读投影；MOD-INTEGRATION 独立外部端口'),('公共能力层','MOD-PLATFORM：鉴权上下文、traceId、审计、幂等、错误、健康检查')])
-para('表 2-1 逻辑技术架构分层')
-h('2.1 模块职责与依赖',2)
-table(['模块','主责与依赖'], [('MOD-PLAN','预案、版本、流程/任务模板；依赖中台工作流与文件'),('MOD-EVENT','事件、续报、核实、关闭；依赖预案、任务、IoT'),('MOD-TASK','任务快照、派发、反馈、回执补偿；依赖消息与组织权限'),('MOD-SITUATION','可重建态势读投影；依赖事件、资源、任务及地图/视频'),('MOD-RESOURCE','人员、物资、盘点快照/差异；依赖地图、组织、文件'),('MOD-DUTY / MOD-DRILL / MOD-KNOWLEDGE','值班打卡、演练评估、知识检索；分别依赖地图/消息/文件'),('MOD-MOBILE / MOD-INTEGRATION / MOD-PLATFORM','H5 渠道、外部适配、统一 API/审计/幂等/健康检查')])
-h('3 数据架构');para('数据按领域模块唯一写入。事件、任务、资源、值班、演练、知识及审计保留业务编号、外部标识、traceId 和多时间语义。MOD-SITUATION 仅维护可重建投影，不能反向成为事实源。物理模型留待 G3-04。')
-h('4 部署架构与故障域');para('系统部署于甲方内部环境，采用容器制品、配置外置和受控日志。渠道/API、领域业务、外部适配、数据和可观测性为逻辑故障域。建议配置 KN-070—078 尚待容量、网络、存储和恢复验证。')
-table(['故障域','隔离与恢复约束'], [('外部适配','超时/失败不回滚已提交业务；有限重试、审计和人工降级'),('领域业务','先持久化业务状态，再派生通知、外部调用和读投影'),('控制调用','授权、二次确认、单次下发、回执对账；不自动重放'),('数据与可观测性','健康检查、关联日志、备份恢复演练和干净环境部署作为后续验证输入')])
-h('5 外部边界与主要 NFR');para('EXT-VIDEO、EXT-PUBLISH、EXT-INTRUSION、EXT-ACCESS、EXT-FIRE、EXT-IOT、EXT-MIDDLE、EXT-MESSAGE 保持独立语义。甲方提供既有能力、账号、协议和测试环境；本系统负责业务适配、关联、审计和失败处理。')
-para('ISSUE-G3-01-001 仍为 OPEN：视频/消息字段、认证、回执和性能未验证，接口不冻结且不得宣称连通。KN-064 以同一 traceId/eventId 验证视频、信息发布、物联网、中台的正常、无权、超时/失败联动。')
-table(['设计预算','约束（待测）'], [('时效','预案下发≤3秒；告警接入≤2秒；定位≤2秒；视频首帧≤3秒'),('性能容量','95%页面≤3秒；峰值≥100人；事件/任务在线≥10年、≥2万/20万'),('可靠性安全','7×24；试运行≥99.5%；MTTR≤2小时；审计≥180天；高危漏洞0'),('部署','甲方内网私有化；干净环境一次成功且≤2小时')])
-h('6 需求与设计追踪');table(['设计元素','需求/AC 锚点','后续挂接'], [('ARCH-01 统一 API 边界','AC-G2-FR-013-01、013-03','G3-06/G3-08'),('ARCH-02 事件任务编排','AC-G2-FR-003-01、014-01、015-01','G3-05/G3-08'),('ARCH-03 资源与快照','AC-G2-FR-009-01、025-02','G3-04/G3-08'),('ARCH-04 外部端口与降级','AC-G2-FR-006-01、020-02、027-01、029-03','G3-06/G3-08'),('ARCH-05 联动与可观测性','AC-G2-FR-006-01、027-01；KN-064','G3-08/G3-09')])
-para('G3-08 将完成39条 FR、34条★FR、117条 AC 的双向设计挂接；本表不替代 RTM。')
-h('7 设计限制与后续输入');para('本概要设计不替代后续 DBD、DLD、接口说明书、OpenAPI、ADR 或测试计划。任何外部字段、部署资源、坐标体系和中台能力未有受控证据时，标记【待人工确认】并按 Issue/变更流程处理。')
-doc.save(out)
+  for c,x in zip(t.add_row().cells,row):c.text=x
+ q=D.add_paragraph(cap);q.alignment=WD_ALIGN_PARAGRAPH.CENTER
+ for r in q.runs:r.bold=True
+def pic(f,cap):
+ q=D.add_paragraph();q.alignment=WD_ALIGN_PARAGRAPH.CENTER;q.add_run().add_picture(str(A/f),width=Inches(6.0));q=D.add_paragraph(cap);q.alignment=WD_ALIGN_PARAGRAPH.CENTER
+ for r in q.runs:r.bold=True
+chapters=[
+('1 引言','本说明书依据受控 SRS、spec、RTM、G3-01R、G3-02、constitution 与控制台账，定义应急管理子系统的高层设计。覆盖总体、技术、功能、数据、部署、集成、安全、非功能、接口概述、运行、出错、追踪与演进；不冻结 DLD、DBD、OpenAPI 或 ADR。',('表 1-1 设计原则',['原则','约束','回指'],[('单一写入主责','领域对象唯一写入模块','G3-01R'),('先提交后派生','外部失败不回滚业务提交','AC-014-01'),('端口隔离','业务决策不下沉适配器','KN-064'),('可验证','未测不写通过','PE-01—12')])),
+('2 总体设计','系统服务 Web、大屏与 H5；统一中台和既有平台提供通用能力，本系统承担应急业务规则、关联、审计与失败处理。ARC-A 是 Proposed 候选，须后续 ADR 和人工决策。',None),
+('3 技术架构','渠道仅经 MOD-PLATFORM 访问领域模块；公共能力提供鉴权上下文、traceId、审计、幂等、错误和健康检查；外部协议由 MOD-INTEGRATION 隔离。',('表 3-1 技术分层',['层次','职责','元素'],[('渠道','展示和交互','Web、大屏、H5'),('边界','统一入口和治理','MOD-PLATFORM'),('领域','业务与数据主责','PLAN/EVENT/TASK/RESOURCE等'),('投影/适配','读模型与端口隔离','SITUATION/INTEGRATION')])),
+('4 功能架构','MOD-PLAN 管预案，MOD-EVENT 管事件，MOD-TASK 管处置，MOD-SITUATION 管可重建读投影，MOD-RESOURCE 管人员物资，MOD-DUTY 管值班，MOD-DRILL 管演练，MOD-KNOWLEDGE 管知识，MOD-MOBILE 管 H5，MOD-INTEGRATION 管端口，MOD-PLATFORM 管横切能力。',('表 4-1 模块与需求覆盖',['模块','主责','FR'],[('PLAN/EVENT/TASK','预案、事件、任务','001—003、013—016、020、022'),('SITUATION/RESOURCE','态势、人员、物资、盘点','004—009、025、026、039'),('DUTY/DRILL/KNOWLEDGE','值班、演练、知识','010—012、017—024、036、038'),('MOBILE/INTEGRATION/PLATFORM','渠道、端口、公共能力','021—029；横切001—039')])),
+('5 数据架构','数据按领域拥有：预案、事件、任务、资源、值班、演练、知识各有唯一写入主责；所有跨系统记录保留业务标识、外部标识、traceId 与业务发生/源产生/系统接收/处理时间。MOD-SITUATION 仅为可重建投影。物理设计留待 G3-04。',('表 5-1 数据治理边界',['数据','规则','后续'],[('业务事实','唯一写入、逻辑删除、审计','G3-04/05'),('跨系统关联','ID、traceId、四类时间','G3-06'),('投影','可重建，不反写事实','G3-05'),('审计','操作、授权、调用、结果','G3-07')])),
+('6 部署架构','甲方内部环境私有化容器部署，配置、凭据和日志不进入制品。渠道/API、领域业务、外部适配、数据与观测是逻辑故障域；KN-070—078 为建议，待容量、网络、存储和恢复验证。',('表 6-1 故障域',['故障域','隔离与恢复'],[('渠道/API','限时、鉴权、健康检查'),('领域业务','先持久化，再派生'),('外部适配','有限重试、审计、人工降级'),('数据/观测','备份恢复、关联日志、告警')])),
+('7 集成架构','EXT-VIDEO、EXT-PUBLISH、EXT-INTRUSION、EXT-ACCESS、EXT-FIRE、EXT-IOT、EXT-MIDDLE、EXT-MESSAGE 保持独立逻辑语义。ISSUE-G3-01-001 OPEN：字段、认证、回执和性能待验证，禁止冻结或宣称连通。',('表 7-1 端口边界',['端口','责任','状态'],[('VIDEO/PUBLISH','关联、授权、回执、降级','PENDING_INTERFACE_VALIDATION'),('INTRUSION/ACCESS/FIRE','独立语义、审计、失败处置','PENDING_INTERFACE_VALIDATION'),('IOT/MIDDLE/MESSAGE','校验去重、身份消息关联','PENDING_INTERFACE_VALIDATION')])),
+('8 安全架构','采用统一认证授权、最小权限、输入校验、敏感操作审计、凭据外置、脱敏日志和私有化分区。安全要求与高危漏洞、审计留存、扫描门禁均是后续验证条件，不宣称实测通过。',('表 8-1 安全措施',['层面','措施','验证'],[('身份权限','统一上下文、最小权限','AC-013-03'),('接口','校验、幂等、统一错误','AC-020-02'),('数据日志','脱敏、逻辑删除、审计','KN-042—045'),('部署','内网、凭据外置','KN-005、040')])),
+('9 非功能设计','按 GB/T 25000.10 组织性能效率、可靠性、安全性、兼容性、可维护性与可移植性。预案≤3秒、告警≤2秒、定位≤2秒、视频≤3秒、95%页面≤3秒、峰值≥100人、试运行≥99.5%、MTTR≤2小时均为待测要求。',('表 9-1 NFR 映射',['特性','机制','追踪'],[('性能','预算、读投影、限时','PE-01—12'),('可靠性','持久化、恢复、降级','KN-040、041'),('安全','授权、审计、扫描','KN-042—045'),('可移植','容器、配置外置','KN-005、038')])),
+('10 接口设计概述','内部服务经 MOD-PLATFORM 统一边界暴露；版本、鉴权、traceId、幂等、错误和审计为共性约束。【待 G3-06 固化】字段、OpenAPI Schema、外部认证细节和版本策略。',None),
+('11 运行设计','渠道请求先鉴权校验并生成 traceId；领域提交成功后再派生通知、适配调用和态势投影。外部不可用保持业务状态，记录失败、有限重试和人工降级；控制指令不自动重放。',('表 11-1 运行控制',['场景','规则','证据'],[('提交','先持久化','业务ID/traceId'),('外部失败','保留状态、人工降级','调用审计'),('控制调用','二次确认，不自动重放','授权/回执'),('恢复','健康检查、演练','监控记录')])),
+('12 出错处理设计','无权或输入错误不形成不完整状态；外部超时记录请求/结果并转人工；重复或迟到回执按幂等键关联；安全联锁失败等待人工处置。',('表 12-1 错误处理',['类别','原则','回指'],[('无权/输入','拒绝、统一错误','AC-013-03'),('超时失败','有限重试、降级','AC-020-02、029-03'),('重复迟到','幂等关联','RCLR-001、008'),('联锁失败','不自动重放','AC-029-03')])),
+('13 设计追踪、未解决问题与演进','ARCH-01 统一边界、ARCH-02 事件任务、ARCH-03 资源快照、ARCH-04 外部端口、ARCH-05 安全运行分别锚定 FR/AC/PE/KN/RCLR。G3-08 仍须完成 39 FR、34 ★FR、117 AC 的逐条双向 RTM。未决：ISSUE-G3-01-001、地图坐标/楼层、宿主矩阵、部署资源；分别待 G3-04—07 主责固化。',('表 13-1 演进路径',['项','触发','处置'],[('应用拆分','容量/故障证据','ADR Proposed 后人工决策'),('读模型','态势/报表压力','保留迁移边界'),('适配独立部署','协议风险/隔离需要','依据联调压测')]))]
+for title,text,table in chapters:
+ h(title);p(text)
+ if title.startswith('2 '):pic('tech.png','图 2-1 高层技术架构图')
+ if title.startswith('5 '):pic('flow.png','图 5-1 领域数据流图')
+ if title.startswith('6 '):pic('deploy.png','图 6-1 逻辑部署与故障域图')
+ if title.startswith('7 '):pic('integration.png','图 7-1 集成架构图')
+ if title.startswith('11 '):pic('flow.png','图 11-1 运行处理流程图')
+ if table:tab(*table)
+D.save(O)
+W.write_text('# G3-03 概要设计说明书（工作稿）\n\n状态：SELF_CHECKED / REVIEW。受控输入为 SRS、spec、RTM、G3-01R、G3-02、constitution、facts、key_numbers、issues。\n\n'+ '\n\n'.join('## '+x[0]+'\n\n'+x[1] for x in chapters),encoding='utf8')
+print('done')
+

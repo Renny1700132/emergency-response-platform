@@ -2,7 +2,7 @@
 
 - 任务：G3-04
 - 文档编号：YJGL-G3-04
-- 版本：V0.1（评审稿）
+- 版本：V0.2（整改评审稿）
 - 主责 / 复核：B / A、C
 - 状态：SELF_CHECKED / REVIEW
 - 项目：某自然博物馆智能运营中心建设项目——应急管理子系统
@@ -131,6 +131,8 @@ G3-03 已完成 C 最终复核并置为 DONE，本文按其已准出版本中的
 | 表 | 主键与业务键 | 关键字段 | 约束与关系 |
 | --- | --- | --- | --- |
 | `em_person_ref` | `id`; (`source_system`,`external_person_id`) 唯一 | 姓名快照、组织快照、职责、有效状态、同步时间 | 不作为甲方人员主数据权威源；容量输入不少于 300 人 |
+| `em_emergency_group` | `id`; `group_code` 唯一 | 名称、职责、有效状态、版本号 | 应急小组为业务编组，不复制中台组织主数据 |
+| `em_group_member` | `id`; (`group_id`,`person_id`,`effective_from`) 唯一 | 角色、生效/失效时间、来源、调整原因 | 历史成员关系保留；失效人员不可作为新调派对象 |
 | `em_position_snapshot` | `id` | 人员、坐标系、楼层、X/Y、经纬度、源精度、源时间、接收时间、新鲜度状态 | 不得降低源精度；坐标系和楼层映射待确认；过期位置禁止自动调派 |
 | `em_material_site` | `id`; `site_code` 唯一 | 名称、空间标识、楼层、坐标、状态、版本号 | 站点不少于 30 个为容量输入；无有效映射时拒绝保存空间配置 |
 | `em_material_item` | `id`; `item_code` 唯一 | 名称、规格、单位、类别、有效状态 | 历史引用保留名称/规格快照 |
@@ -161,6 +163,9 @@ G3-03 已完成 C 最终复核并置为 DONE，本文按其已准出版本中的
 
 | 表 | 主键与业务键 | 关键字段 | 约束与关系 |
 | --- | --- | --- | --- |
+| `em_external_alert` | `id`; (`source_system`,`external_alert_id`) 条件唯一 | 告警类型、载荷摘要、源/接收时间、处理状态、关联事件 | 有可靠 ID 时幂等关联；无可靠 ID 时保留人工关联，不按类型/地点误合并 |
+| `em_video_reference` | `id`; (`source_system`,`external_video_id`) 唯一 | 摄像机/录像外部标识、事件、起止时间、授权结果、调阅状态 | 仅保存引用和调阅结果，不保存实时流或历史录像文件 |
+| `em_control_command` | `id`; `command_no` 唯一 | 对象、动作、授权确认人、下发时间、联锁结果、回执、状态 | 门禁等控制命令单次下发，禁止通用任务自动重放；失败转人工降级 |
 | `em_outbox_event` | `id`; `event_key` 唯一 | 聚合类型/标识、事件类型、载荷版本、状态、重试时间 | 与领域提交同事务写入；载荷不得包含明文凭据 |
 | `em_message_delivery` | `id`; (`message_key`,`attempt_no`) 唯一 | 通道、接收人、发送时间、回执时间、状态、错误摘要 | 迟到回执关联原消息与尝试；重复回执幂等；目标为正常通道不少于 20 路、成功率不少于 99%，结果待实测 |
 | `em_external_call_log` | `id`; `trace_id` 索引 | 端口、动作、业务对象、请求/响应时间、结果、尝试次数、脱敏摘要 | 控制指令不自动重放；视频/消息真实字段仍待 ISSUE-G3-01-001 关闭 |
@@ -280,20 +285,51 @@ G3-03 已完成 C 最终复核并置为 DONE，本文按其已准出版本中的
 
 ## 8 追踪、验证与未决事项
 
-### 8.1 设计验证矩阵
+### 8.1 需求与验收数据设计追踪矩阵
 
-| 设计 ID | 验证内容 | 关联需求/规则 | 证据形式 |
+本矩阵是 G3-04 的数据设计挂接，不替代 G3-08 最终 RTM，也不表示功能、接口、性能或验收已经通过。每一行保留稳定 FR、★属性、三个完整 AC 锚点、数据对象/约束和后续验证入口；后续 G3-08 应引用 DBD-TR-001—039 建立双向追踪。
+
+| 设计 ID / FR / ★ | 完整 AC 锚点 | 数据域、实体与约束落点 | 后续验证入口 |
 | --- | --- | --- | --- |
-| DBD-01 | 预案版本与任务模板冻结 | G2-FR-001—003、030 | 约束测试、版本回溯用例 |
-| DBD-02 | 事件去重、续报和四类时间 | G2-FR-004、013、014；RCLR-001/004 | 并发/迟到数据集成测试 |
-| DBD-03 | 任务状态和重指派历史 | G2-FR-015、022；RCLR-003 | 状态迁移、并发更新、历史还原测试 |
-| DBD-04 | 定位精度与新鲜度 | G2-FR-005；RCLR-009 | 字段精度检查、过期位置用例、目标环境测试 |
-| DBD-05 | 盘点快照和差异 | G2-FR-009、025；RCLR-006 | 事务并发和三类数量核对 |
-| DBD-06 | 二维码打卡幂等 | G2-FR-017—020、024；RCLR-005 | 过期、重复、并发扫码测试 |
-| DBD-07 | 演练补演与整改历史 | G2-FR-010—012、023；RCLR-007 | 统计口径和历史保留测试 |
-| DBD-08 | 消息尝试、迟到回执和降级 | G2-FR-020、022；RCLR-008 | 回执乱序、重复和失败恢复测试 |
-| DBD-09 | 附件逻辑删除 | G2-FR-013、015、016、021、022；RCLR-010 | 引用保护、授权与审计测试 |
-| DBD-10 | 保存、审计和恢复 | KN-021、026、029、030、040、041 | 生命周期检查、备份恢复演练 |
+| DBD-TR-001<br>G2-FR-001<br>★ | AC-G2-FR-001-01；AC-G2-FR-001-02；AC-G2-FR-001-03 | em_plan、em_plan_version、em_plan_condition：三级父子关系；版本唯一且发布后不可原位修改；授权失败写审计 | 层级/版本约束测试；条件检索；未授权写入测试 |
+| DBD-TR-002<br>G2-FR-002<br>★ | AC-G2-FR-002-01；AC-G2-FR-002-02；AC-G2-FR-002-03 | em_plan_flow_node、em_task_template、em_person_ref：节点顺序和依赖受控；责任角色及通知对象随版本冻结；失效对象不可执行 | 流程图一致性；依赖校验；失效人员保存测试 |
+| DBD-TR-003<br>G2-FR-003<br>★ | AC-G2-FR-003-01；AC-G2-FR-003-02；AC-G2-FR-003-03 | em_plan_version、em_task_template、em_response_task、em_outbox_event、em_message_delivery：启动事务原子创建任务与Outbox；通知尝试和回执可追踪 | 事务回滚；任务生成；目标环境≤3秒性能测试 |
+| DBD-TR-004<br>G2-FR-004<br>★ | AC-G2-FR-004-01；AC-G2-FR-004-02；AC-G2-FR-004-03 | em_incident_update、em_response_task、em_situation_projection、em_audit_log：续报追加且保存四类时间；投影可重建；越权访问留痕 | 时间线排序；任务状态投影；越权访问测试 |
+| DBD-TR-005<br>G2-FR-005<br>★ | AC-G2-FR-005-01；AC-G2-FR-005-02；AC-G2-FR-005-03 | em_person_ref、em_position_snapshot、em_situation_projection：保存源精度和源时间；新鲜度可判定；过期位置禁止自动调派 | 字段精度核对；≤2秒刷新实测；过期位置降级测试 |
+| DBD-TR-006<br>G2-FR-006<br>★ | AC-G2-FR-006-01；AC-G2-FR-006-02；AC-G2-FR-006-03 | em_video_reference、em_external_call_log、em_audit_log：只存既有视频引用和调阅结果；不保存录像；授权与调用可追踪 | 实时/回放联调；≤3秒首帧实测；无权和不可用测试 |
+| DBD-TR-007<br>G2-FR-007<br>非★ | AC-G2-FR-007-01；AC-G2-FR-007-02；AC-G2-FR-007-03 | em_material_site、em_stock_ledger、em_situation_projection：站点坐标/楼层和台账关联；投影只读且可钻取 | 地图加载；站点钻取；无数据和越权测试 |
+| DBD-TR-008<br>G2-FR-008<br>★ | AC-G2-FR-008-01；AC-G2-FR-008-02；AC-G2-FR-008-03 | em_material_item、em_stock_ledger、em_audit_log：站点物资复合唯一；数量采用精确类型和乐观锁；有效期可查询 | 台账增改查；临期边界；并发更新测试 |
+| DBD-TR-009<br>G2-FR-009<br>★ | AC-G2-FR-009-01；AC-G2-FR-009-02；AC-G2-FR-009-03 | em_inventory_plan、em_inventory_snapshot、em_inventory_record、em_inventory_adjustment：发布时固定快照；期间变动独立；实盘、差异和复核证据同时保留 | 快照事务；差异计算；复核更新与审计测试 |
+| DBD-TR-010<br>G2-FR-010<br>★ | AC-G2-FR-010-01；AC-G2-FR-010-02；AC-G2-FR-010-03 | em_drill_plan、em_drill_execution、em_outbox_event：计划频次和状态受控；取消/补演关联原计划；到期事件可持久化 | 频次规则；取消补演；到期扫描测试 |
+| DBD-TR-011<br>G2-FR-011<br>★ | AC-G2-FR-011-01；AC-G2-FR-011-02；AC-G2-FR-011-03 | em_drill_plan、em_drill_execution、em_outbox_event、em_message_delivery：周期到达形成执行任务与Outbox；发送尝试、回执和失败留痕 | 周期触发；任务下发；消息失败恢复测试 |
+| DBD-TR-012<br>G2-FR-012<br>★ | AC-G2-FR-012-01；AC-G2-FR-012-02；AC-G2-FR-012-03 | em_drill_execution、em_evaluation_template、em_drill_evaluation、em_improvement_action：评估固定模板版本；整改保留责任、期限和关闭证据 | 执行记录；模板版本回溯；整改闭环测试 |
+| DBD-TR-013<br>G2-FR-013<br>★ | AC-G2-FR-013-01；AC-G2-FR-013-02；AC-G2-FR-013-03 | em_incident、em_attachment_ref、em_audit_log：事件编号唯一；提交人和多时间保留；附件引用受控且逻辑删除 | Web/H5创建；多条件检索；无权访问审计 |
+| DBD-TR-014<br>G2-FR-014<br>★ | AC-G2-FR-014-01；AC-G2-FR-014-02；AC-G2-FR-014-03 | em_incident、em_verification_action、em_plan_version、em_idempotency_record：可靠告警ID幂等；核实超时只升级；启动保存确定预案版本 | 重复告警；超时升级；核实后启动和状态迁移测试 |
+| DBD-TR-015<br>G2-FR-015<br>★ | AC-G2-FR-015-01；AC-G2-FR-015-02；AC-G2-FR-015-03 | em_response_task、em_task_assignment_history、em_task_feedback、em_outbox_event：任务状态受控；重指派追加历史且默认不改期限；临时任务可追踪 | 自动下发；反馈催办；重指派/改期授权测试 |
+| DBD-TR-016<br>G2-FR-016<br>★ | AC-G2-FR-016-01；AC-G2-FR-016-02；AC-G2-FR-016-03 | em_incident_closure、em_attachment_ref、em_knowledge_item、em_audit_log：关闭材料完整性校验；附件保护；关闭与重开留痕 | 关闭前置；调查报告引用；知识沉淀测试 |
+| DBD-TR-017<br>G2-FR-017<br>★ | AC-G2-FR-017-01；AC-G2-FR-017-02；AC-G2-FR-017-03 | em_duty_schedule、em_attendance_rule、em_group_member、em_audit_log：小组、人员、时段和点位关联；代执行与调整前后快照留痕 | 规则发布；冲突阻断；代执行审计测试 |
+| DBD-TR-018<br>G2-FR-018<br>★ | AC-G2-FR-018-01；AC-G2-FR-018-02；AC-G2-FR-018-03 | em_check_point、em_attendance_rule、em_position_snapshot：点位坐标/楼层、二维码版本、有效半径和时段受控 | 地图拾取；二维码版本；非法坐标/半径测试 |
+| DBD-TR-019<br>G2-FR-019<br>★ | AC-G2-FR-019-01；AC-G2-FR-019-02；AC-G2-FR-019-03 | em_attendance_record、em_person_ref、em_check_point、em_audit_log：记录保留人员/小组/点位/时间；导出范围受权限约束 | 三维统计；筛选导出；越权导出审计 |
+| DBD-TR-020<br>G2-FR-020<br>★ | AC-G2-FR-020-01；AC-G2-FR-020-02；AC-G2-FR-020-03 | em_attendance_alert、em_outbox_event、em_message_delivery：截止扫描生成告警；消息尝试/回执/降级留痕；重复回执幂等 | 缺卡超时；重试回执；≥20路和≥99%实测 |
+| DBD-TR-021<br>G2-FR-021<br>★ | AC-G2-FR-021-01；AC-G2-FR-021-02；AC-G2-FR-021-03 | em_incident、em_attachment_ref、em_person_ref：移动创建保存提交人；照片仅存中台文件引用；个人事件按授权查询 | H5创建拍照；个人列表；断网/上传失败测试 |
+| DBD-TR-022<br>G2-FR-022<br>★ | AC-G2-FR-022-01；AC-G2-FR-022-02；AC-G2-FR-022-03 | em_response_task、em_task_feedback、em_attachment_ref、em_message_delivery：确认/反馈/完成状态受控；附件关联；迟到回执不重复触发 | 任务确认；反馈上传；完成与消息到达率测试 |
+| DBD-TR-023<br>G2-FR-023<br>★ | AC-G2-FR-023-01；AC-G2-FR-023-02；AC-G2-FR-023-03 | em_drill_plan、em_drill_execution、em_improvement_action：仅实际完成计入统计；补演关联原计划；关闭整改不删除逾期历史 | H5列表；执行提交；关闭/无权提交测试 |
+| DBD-TR-024<br>G2-FR-024<br>★ | AC-G2-FR-024-01；AC-G2-FR-024-02；AC-G2-FR-024-03 | em_attendance_rule、em_attendance_record、em_idempotency_record：二维码、身份、时段、点位范围联合校验；重复扫码幂等 | 有效扫码；越界/过期拒绝；≤1秒写入实测 |
+| DBD-TR-025<br>G2-FR-025<br>★ | AC-G2-FR-025-01；AC-G2-FR-025-02；AC-G2-FR-025-03 | em_inventory_plan、em_inventory_snapshot、em_inventory_record、em_inventory_adjustment：实盘关联计划和物资；差异基于固定快照；授权复核后更新台账 | 移动盘点；差异标识；复核调整事务测试 |
+| DBD-TR-026<br>G2-FR-026<br>★ | AC-G2-FR-026-01；AC-G2-FR-026-02；AC-G2-FR-026-03 | em_situation_projection、em_external_alert、em_external_call_log：终端状态/告警/位置为可重建投影；跳转保留业务关联与失败原因 | 状态统计；业务跳转；≤30秒刷新实测 |
+| DBD-TR-027<br>G2-FR-027<br>★ | AC-G2-FR-027-01；AC-G2-FR-027-02；AC-G2-FR-027-03 | em_external_alert、em_incident、em_idempotency_record、em_external_call_log：可靠外部ID去重；未知数据不生成错误事件；断连补传全程留痕 | 告警转事件；断连恢复；未知载荷隔离测试 |
+| DBD-TR-028<br>G2-FR-028<br>★ | AC-G2-FR-028-01；AC-G2-FR-028-02；AC-G2-FR-028-03 | em_person_ref、em_message_delivery、em_attachment_ref、em_external_call_log：中台身份组织仅存引用/快照；消息/文件/流程调用均保留关联结果 | 授权适配；通用能力调用；中台不可用降级测试 |
+| DBD-TR-029<br>G2-FR-029<br>★ | AC-G2-FR-029-01；AC-G2-FR-029-02；AC-G2-FR-029-03 | em_video_reference、em_control_command、em_external_call_log、em_audit_log：录像仅引用；门禁指令需授权确认且服从联锁；控制命令禁止自动重放 | 视频回放；授权下发；拒绝/超时/联锁失败测试 |
+| DBD-TR-030<br>G2-FR-030<br>非★ | AC-G2-FR-030-01；AC-G2-FR-030-02；AC-G2-FR-030-03 | em_plan_version、em_attachment_ref、em_audit_log：附件关联确定预案版本；历史版本保留；下载/修订受权限控制 | 上传关联；版本追踪；无权访问测试 |
+| DBD-TR-031<br>G2-FR-031<br>★ | AC-G2-FR-031-01；AC-G2-FR-031-02；AC-G2-FR-031-03 | em_person_ref、em_emergency_group、em_group_member、em_message_delivery：人员与组织保存外部引用；小组成员有效期受控；失效人员不可调派 | 档案/小组维护；调派通知；失效对象阻断测试 |
+| DBD-TR-032<br>G2-FR-032<br>非★ | AC-G2-FR-032-01；AC-G2-FR-032-02；AC-G2-FR-032-03 | em_duty_schedule、em_attendance_rule、em_audit_log：计划发布生成打卡关联；调整保存前后值；冲突规则不得生效 | 计划发布；调整留痕；冲突校验测试 |
+| DBD-TR-033<br>G2-FR-033<br>非★ | AC-G2-FR-033-01；AC-G2-FR-033-02；AC-G2-FR-033-03 | em_plan_type、em_plan、em_audit_log：类型编码唯一；停用不破坏历史引用；新建不可选择停用类型 | 新增修改；停用历史回溯；无权维护测试 |
+| DBD-TR-034<br>G2-FR-034<br>★ | AC-G2-FR-034-01；AC-G2-FR-034-02；AC-G2-FR-034-03 | em_incident_type、em_incident、em_audit_log：事件类型编码唯一且可配置；预置不构成不可变常量；停用保留历史 | 类型维护；预置调整；停用引用测试 |
+| DBD-TR-035<br>G2-FR-035<br>★ | AC-G2-FR-035-01；AC-G2-FR-035-02；AC-G2-FR-035-03 | em_material_site、em_situation_projection、em_audit_log：站点空间标识、坐标参考和楼层受控；无效映射拒绝保存 | 空间配置；地图钻取；非法坐标/楼层测试 |
+| DBD-TR-036<br>G2-FR-036<br>★ | AC-G2-FR-036-01；AC-G2-FR-036-02；AC-G2-FR-036-03 | em_evaluation_template、em_drill_evaluation、em_audit_log：模板条目排序和版本受控；发布后历史评估引用确定版本 | 模板编辑；版本引用；停用历史回溯测试 |
+| DBD-TR-037<br>G2-FR-037<br>★ | AC-G2-FR-037-01；AC-G2-FR-037-02；AC-G2-FR-037-03 | em_verification_config、em_verification_action、em_audit_log：环节、处理角色、时限和后备角色随版本发布；非法配置不得生效 | 配置发布；实例路由；缺人/非法时限阻断测试 |
+| DBD-TR-038<br>G2-FR-038<br>非★ | AC-G2-FR-038-01；AC-G2-FR-038-02；AC-G2-FR-038-03 | em_knowledge_item、em_attachment_ref、em_audit_log：分类和关键字可检索；未发布或无权条目不返回；文件仅存引用 | 分类浏览；关键字检索；受限内容过滤测试 |
+| DBD-TR-039<br>G2-FR-039<br>★ | AC-G2-FR-039-01；AC-G2-FR-039-02；AC-G2-FR-039-03 | em_situation_projection、em_incident、em_external_alert、em_audit_log：统计投影可重建且按数据权限过滤；钻取与汇总口径一致 | 条件统计；指标钻取；≤60秒刷新实测 |
 
 ### 8.2 未决事项和阻断关系
 

@@ -116,7 +116,7 @@ def parse_blocks(text):
         if line.startswith("|") and i + 1 < len(lines) and re.match(r"^\|\s*[-:]+", lines[i+1]):
             rows=[]
             while i < len(lines) and lines[i].startswith("|"):
-                rows.append([re.sub(r"[`*]", "", c.strip()) for c in lines[i].strip().strip("|").split("|")]); i += 1
+                rows.append([re.sub(r"<br\s*/?>", "\n", re.sub(r"[`*]", "", c.strip()), flags=re.I) for c in lines[i].strip().strip("|").split("|")]); i += 1
             yield ("table", [rows[0]] + rows[2:]); continue
         if re.match(r"^\d+\.\s+", line):
             yield ("list", re.sub(r"^\d+\.\s+", "", line)); i += 1; continue
@@ -159,11 +159,11 @@ def build_docx():
         if remove and child is not sectpr: body.remove(child)
 
     cover = {
-        0: "文档编号：YJGL-G3-04　　版本号：V0.1（评审稿）",
+        0: "文档编号：YJGL-G3-04　　版本号：V0.2（整改评审稿）",
         1: "密　　级：内部 · 评审用",
         3: "某自然博物馆智能运营中心建设项目——应急管理子系统",
         4: "数据库设计说明书",
-        5: "（G3-04 评审稿）",
+        5: "（G3-04 整改评审稿）",
         7: "编制单位：020202项目组【待人工确认】",
         8: "编　　制：B（技术主责）【待人工确认】",
         9: "审　　核：A、C【待复核】",
@@ -177,6 +177,9 @@ def build_docx():
     while len(rev.rows)>2: rev._tbl.remove(rev.rows[-1]._tr)
     vals=["V0.1","2026-09-17","全部","形成概念、逻辑、物理三级数据库设计评审稿","B【待人工确认】"]
     for c,v in zip(rev.rows[1].cells,vals): c.text=v
+    row = rev.add_row()
+    vals=["V0.2","2026-09-17","第4、8章","补齐39 FR、34★、117 AC逐条追踪及支撑实体","B【待人工确认】"]
+    for c,v in zip(row.cells,vals): c.text=v
 
     ref = Document(REFERENCE)
     sample_table = ref.tables[1]
@@ -230,6 +233,8 @@ def build_docx():
                 5: [2.0, 3.1, 2.5, 4.5, 3.1],
             }
             widths = width_map.get(len(rows[0]), [15.2/len(rows[0])] * len(rows[0]))
+            if rows[0][0].startswith("设计 ID / FR"):
+                widths = [2.4, 4.1, 5.4, 3.3]
             tbl_pr = t._tbl.tblPr
             tbl_layout = tbl_pr.find(qn("w:tblLayout"))
             if tbl_layout is None:

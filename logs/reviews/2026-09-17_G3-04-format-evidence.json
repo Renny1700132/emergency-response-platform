@@ -266,7 +266,7 @@
     "tables": [
       {
         "index": 1,
-        "rows": 2,
+        "rows": 3,
         "cols": 5,
         "style": "Normal Table",
         "grid_twips": [
@@ -716,7 +716,7 @@
       },
       {
         "index": 7,
-        "rows": 11,
+        "rows": 13,
         "cols": 4,
         "style": "Normal Table",
         "grid_twips": [
@@ -866,7 +866,7 @@
       },
       {
         "index": 9,
-        "rows": 8,
+        "rows": 11,
         "cols": 4,
         "style": "Normal Table",
         "grid_twips": [
@@ -1217,20 +1217,20 @@
       },
       {
         "index": 14,
-        "rows": 11,
+        "rows": 40,
         "cols": 4,
         "style": "Normal Table",
         "grid_twips": [
-          "1417",
-          "2381",
-          "1928",
-          "2891"
+          "1361",
+          "2324",
+          "3061",
+          "1871"
         ],
         "header_text": [
-          "设计 ID",
-          "验证内容",
-          "关联需求/规则",
-          "证据形式"
+          "设计 ID / FR / ★",
+          "完整 AC 锚点",
+          "数据域、实体与约束落点",
+          "后续验证入口"
         ],
         "tblW": "<w:tblW xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:wpc=\"http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas\" xmlns:cx=\"http://schemas.microsoft.com/office/drawing/2014/chartex\" xmlns:cx1=\"http://schemas.microsoft.com/office/drawing/2015/9/8/chartex\" xmlns:cx2=\"http://schemas.microsoft.com/office/drawing/2015/10/21/chartex\" xmlns:cx3=\"http://schemas.microsoft.com/office/drawing/2016/5/9/chartex\" xmlns:cx4=\"http://schemas.microsoft.com/office/drawing/2016/5/10/chartex\" xmlns:cx5=\"http://schemas.microsoft.com/office/drawing/2016/5/11/chartex\" xmlns:cx6=\"http://schemas.microsoft.com/office/drawing/2016/5/12/chartex\" xmlns:cx7=\"http://schemas.microsoft.com/office/drawing/2016/5/13/chartex\" xmlns:cx8=\"http://schemas.microsoft.com/office/drawing/2016/5/14/chartex\" xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:wp14=\"http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing\" xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\" xmlns:w14=\"http://schemas.microsoft.com/office/word/2010/wordml\" xmlns:w10=\"urn:schemas-microsoft-com:office:word\" xmlns:w15=\"http://schemas.microsoft.com/office/word/2012/wordml\" xmlns:wpg=\"http://schemas.microsoft.com/office/word/2010/wordprocessingGroup\" xmlns:wpi=\"http://schemas.microsoft.com/office/word/2010/wordprocessingInk\" xmlns:wne=\"http://schemas.microsoft.com/office/word/2006/wordml\" xmlns:wps=\"http://schemas.microsoft.com/office/word/2010/wordprocessingShape\" xmlns:wpsCustomData=\"http://www.wps.cn/officeDocument/2013/wpsCustomData\" w:w=\"8618\" w:type=\"dxa\"/>",
         "tblLayout": "<w:tblLayout xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:wpc=\"http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas\" xmlns:cx=\"http://schemas.microsoft.com/office/drawing/2014/chartex\" xmlns:cx1=\"http://schemas.microsoft.com/office/drawing/2015/9/8/chartex\" xmlns:cx2=\"http://schemas.microsoft.com/office/drawing/2015/10/21/chartex\" xmlns:cx3=\"http://schemas.microsoft.com/office/drawing/2016/5/9/chartex\" xmlns:cx4=\"http://schemas.microsoft.com/office/drawing/2016/5/10/chartex\" xmlns:cx5=\"http://schemas.microsoft.com/office/drawing/2016/5/11/chartex\" xmlns:cx6=\"http://schemas.microsoft.com/office/drawing/2016/5/12/chartex\" xmlns:cx7=\"http://schemas.microsoft.com/office/drawing/2016/5/13/chartex\" xmlns:cx8=\"http://schemas.microsoft.com/office/drawing/2016/5/14/chartex\" xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:wp14=\"http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing\" xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\" xmlns:w14=\"http://schemas.microsoft.com/office/word/2010/wordml\" xmlns:w10=\"urn:schemas-microsoft-com:office:word\" xmlns:w15=\"http://schemas.microsoft.com/office/word/2012/wordml\" xmlns:wpg=\"http://schemas.microsoft.com/office/word/2010/wordprocessingGroup\" xmlns:wpi=\"http://schemas.microsoft.com/office/word/2010/wordprocessingInk\" xmlns:wne=\"http://schemas.microsoft.com/office/word/2006/wordml\" xmlns:wps=\"http://schemas.microsoft.com/office/word/2010/wordprocessingShape\" xmlns:wpsCustomData=\"http://www.wps.cn/officeDocument/2013/wpsCustomData\" w:type=\"fixed\"/>",
@@ -1245,10 +1245,10 @@
             "repeat_header": true,
             "cant_split": false,
             "cell_widths_twips": [
-              "1417",
-              "2381",
-              "1928",
-              "2891"
+              "1361",
+              "2324",
+              "3061",
+              "1871"
             ],
             "cell_v_align": [
               "CENTER (1)",
@@ -1270,10 +1270,10 @@
             "repeat_header": false,
             "cant_split": false,
             "cell_widths_twips": [
-              "1417",
-              "2381",
-              "1928",
-              "2891"
+              "1361",
+              "2324",
+              "3061",
+              "1871"
             ],
             "cell_v_align": [
               "CENTER (1)",
@@ -1358,7 +1358,7 @@
         ]
       }
     ],
-    "paragraphs": 102,
+    "paragraphs": 103,
     "table_count": 15,
     "inline_shapes": 1
   },

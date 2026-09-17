@@ -842,3 +842,14 @@
 - B 整改（2026-09-17）：V0.2 在工作稿和正式件新增 `DBD-TR-001—039` 逐条矩阵，完整列出 G2-FR-001—039、34★/5非★、117 个精确 AC 锚点及各自数据实体、约束和验证入口；同时补齐应急小组、外部告警、视频引用和门禁控制命令等支撑实体。机械审计对 Markdown 与正式 DOCX 均得到 FR 39/39、★ 34/34、AC 117/117、设计 ID 39/39、缺失 0；证据见 `logs/reviews/2026-09-17_G3-04-traceability-audit.json` 和 `logs/reviews/2026-09-17_G3-04-B-remediation.md`。
 - 状态：CLOSED / VERIFIED_BY_A_AND_C。
 
+
+## ISSUE-G3-05-001
+
+- 提出人：唯一 Review 人（A+C，用户授权）。
+- 时间：2026-09-17。
+- 严重级别：MAJOR / BLOCKING_TO_G3-05_DONE。
+- 文件与位置：`docs/deliverables/12-详细设计说明书.docx`及现有格式证据。
+- 问题：虽有 WPS 14 页渲染记录，但未形成 Reference ↔ Deliverable 的逐元素 Pair Manifest、正文/表格直接格式比对和同渲染器逐页并列证据，不能证明严格继承唯一 Reference。
+- 影响：正式件无法以“完全对齐”交付。
+- 最小修复：执行 Reference 成对 manifest、内容冻结后 FORMAT ONLY 对齐、同渲染器全页并列检查并记录每页结论。
+- 状态：OPEN / BLOCKING。

@@ -1,0 +1,29 @@
+{
+  "markdown_matrix": {
+    "fr_count": 39,
+    "ac_count": 117,
+    "design_count": 39,
+    "matrix_row_count": 39,
+    "star_count": 34,
+    "non_star_count": 5,
+    "missing_fr": [],
+    "missing_ac": [],
+    "missing_design": [],
+    "wrong_star": [],
+    "wrong_non_star": []
+  },
+  "formal_docx": {
+    "fr_count": 39,
+    "ac_count": 117,
+    "design_count": 39,
+    "matrix_row_count": 39,
+    "star_count": 34,
+    "non_star_count": 5,
+    "missing_fr": [],
+    "missing_ac": [],
+    "missing_design": [],
+    "wrong_star": [],
+    "wrong_non_star": []
+  },
+  "pass": true
+}

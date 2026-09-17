@@ -1,0 +1,47 @@
+{
+  "task": "G3-05",
+  "mode": "MODE-A / NEW DOCUMENT",
+  "pair": {
+    "reference": "docs/reference/12-详细设计说明书（教学样例）.docx",
+    "deliverable": "docs/deliverables/12-详细设计说明书.docx",
+    "physical_reference_copy": true,
+    "same_renderer": "WPS Kwps.Application",
+    "reference_pages": 14,
+    "deliverable_pages": 14,
+    "reference_sections": 1,
+    "deliverable_sections": 1
+  },
+  "deliverable_metrics": {
+    "paragraphs": 132,
+    "tables_total": 11,
+    "numbered_business_tables": 10,
+    "revision_tables": 1,
+    "inline_figures": 4,
+    "numbered_captions": 14,
+    "heading_paragraphs": 53,
+    "sha256": "0729840694315089bcde6281ac0c5e3ec10f789b917df6e6a6b5d06d1d84e713"
+  },
+  "figure_source": {
+    "path": "docs/deliverables/figures/12-详细设计图源.pptx",
+    "slides": 4,
+    "powerpoint_render_checked": true,
+    "first_pass_findings": ["浅色底上的白字", "跨节点连线"],
+    "final_result": "PASS"
+  },
+  "visual_review": {
+    "all_pages_inspected": true,
+    "page_range": "1-14",
+    "first_pass_findings": ["追踪表跨页拆行", "孤立二级标题", "短段落跨页"],
+    "final_checks": {
+      "cover_and_revision": "PASS",
+      "headings_and_body": "PASS",
+      "tables_and_repeated_headers": "PASS",
+      "figures_and_captions": "PASS",
+      "headers_footers_and_page_numbers": "PASS",
+      "clipping_overlap_overflow": "PASS",
+      "sample_business_pollution": "PASS"
+    },
+    "result": "PASS"
+  },
+  "renderer_note": "render_docx.py was invoked but its LibreOffice executable was unavailable (WinError 2); the repository-required WPS pair renderer completed successfully and was used for the authoritative 14-page visual QA."
+}

@@ -645,6 +645,7 @@
 - 证据：`logs/reviews/2026-09-17_G3-03-C-compliance-review.md`。
 - A整改（2026-09-17）：封面项目身份与待确认字段已更正；修订记录仅保留本项目V0.2；指定案例残留扫描为0；集成图补入“入侵”。证据：`logs/reviews/2026-09-17_G3-03-review-remediation.md`。
 - C整改后复核（2026-09-17）：封面、修订历史、案例残留和8个EXT语义均通过；但集成架构图把换行符绘制成可见字面量`\n`（“门禁\n消防”），正式件仍存在可见版式缺陷，现有全页渲染PASS结论不成立。修正图片并重渲染后可快速关闭。证据：`logs/reviews/2026-09-17_G3-03-C-final-rereview.md`。
+- C单项复验（2026-09-17）：按用户要求仅检查上述阻断，不新增问题；远端提交`c42cd05`后图中仍显示字面量`\n`，生成脚本仍使用`\\n`，原阻断未消除。证据：`logs/reviews/2026-09-17_G3-03-C-blocker-only-rereview.md`。
 - 状态：OPEN / REMEDIATION_INCOMPLETE / MINOR_VISUAL_BLOCKER。
 
 ## G2 教师核验反馈专项返工

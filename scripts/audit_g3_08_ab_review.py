@@ -410,8 +410,9 @@ if issue_block:
 g306 = re.search(r"### ISSUE-G3-06-001(.*?)\n## ", issues_text, re.S)
 if g306 and "状态：CLOSED / VERIFIED_BY_C" not in g306.group(1):
     add(problems, "ISSUE_G3_06_001_STATE", "ISSUE-G3-06-001 非 CLOSED")
-if "G3-06/07" in rtm_text:
-    add(observations, "RTM_G3_06_STATUS_STALE", "RTM 仍存在“G3-06/07”合并标注，而 G3-06 已 DONE")
+stale_g3 = re.search(r"待 G3-0[67]|G3-0[67] Review|PENDING_G3-0[67]", rtm_text)
+if stale_g3:
+    add(observations, "RTM_G3_06_STATUS_STALE", f"RTM 仍存在待确认标注“{stale_g3.group(0)}”，而 G3-06/07 均已 DONE")
 
 # 13. ★ 计数 / 覆盖统计自洽
 mvp_star = len([g for g, v in catalog.items() if v["star"] and int(g[-3:]) <= 29])

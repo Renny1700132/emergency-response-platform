@@ -142,4 +142,3 @@ try {
 Write-Output "PPTX=$pptx"
 Write-Output "EMF=$emf"
 Write-Output "PNG=$png"
-

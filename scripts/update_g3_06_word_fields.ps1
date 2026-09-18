@@ -31,4 +31,3 @@ try {
     $word.Quit()
     [Runtime.InteropServices.Marshal]::ReleaseComObject($word) | Out-Null
 }
-

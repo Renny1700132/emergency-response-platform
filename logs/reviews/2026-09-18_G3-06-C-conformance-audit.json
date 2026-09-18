@@ -1,0 +1,263 @@
+{
+  "task": "G3-06",
+  "reviewer": "C",
+  "expectations": {
+    "facts_fr_rows": 39,
+    "facts_star_rows": 34,
+    "facts_non_star": [
+      "FR-01.4",
+      "FR-02.4",
+      "FR-03.2",
+      "FR-07.1",
+      "FR-08.3"
+    ],
+    "spec_fr": 39,
+    "spec_ac": 117,
+    "spec_non_star": [
+      "G2-FR-007",
+      "G2-FR-030",
+      "G2-FR-032",
+      "G2-FR-033",
+      "G2-FR-038"
+    ],
+    "kn_entries": 50
+  },
+  "expectation_join": {
+    "facts_without_spec": [],
+    "spec_without_facts": [],
+    "star_mismatch": [],
+    "ac_not_three": []
+  },
+  "docx": {
+    "paragraphs": 88,
+    "tables": 9,
+    "table_shape": [
+      [
+        3,
+        5
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        58,
+        5
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        40,
+        4
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "inline_shapes": 1,
+    "work_md_figure_placeholder": true,
+    "figure_alt_texts": [
+      "Web、API 网关、领域服务、Outbox 与外部适配器之间的同步事务和异步交互时序"
+    ],
+    "table_captions": 8,
+    "figure_captions": 1,
+    "tracked_or_comments": {
+      "w:ins": 0,
+      "w:del": 0,
+      "comments_part": false,
+      "bad_bookmark_text": 0
+    },
+    "toc": {
+      "anchors": 29,
+      "bookmarks": 29,
+      "missing": []
+    }
+  },
+  "openapi": {
+    "version": "3.0.3",
+    "operations": 57,
+    "unique_operation_ids": 57,
+    "paths": 49,
+    "unresolved_refs": [],
+    "ops_without_requirements": [],
+    "write_ops_missing_idempotency": [],
+    "security": true,
+    "security_schemes": [
+      "middlePlatformBearer"
+    ],
+    "fr_in_yaml": 39,
+    "ac_in_yaml": 117,
+    "fr_outside_spec": [],
+    "ac_outside_spec": [],
+    "fr_missing_in_yaml": [],
+    "ac_missing_in_yaml": []
+  },
+  "endpoint_equivalence": {
+    "docx": 57,
+    "yaml": 57,
+    "only_in_docx": [],
+    "only_in_yaml": [],
+    "operationId_mismatch": []
+  },
+  "traceability": {
+    "rows": 39,
+    "design_ids_unique": true,
+    "design_ids_ok": true,
+    "fr_ids": true,
+    "non_star": [
+      "G2-FR-007",
+      "G2-FR-030",
+      "G2-FR-032",
+      "G2-FR-033",
+      "G2-FR-038"
+    ],
+    "expected_non_star": [
+      "G2-FR-007",
+      "G2-FR-030",
+      "G2-FR-032",
+      "G2-FR-033",
+      "G2-FR-038"
+    ],
+    "ac_missing": [],
+    "bad_endpoints": [],
+    "fr_without_endpoint_row": [],
+    "fr_outside_spec_in_api_table": []
+  },
+  "controlled_numbers": {
+    "unmatched": [],
+    "unmatched_unique": [],
+    "controlled_units": [
+      "%",
+      "GB",
+      "Gbps",
+      "TB",
+      "个",
+      "人",
+      "分钟",
+      "天",
+      "小时",
+      "年",
+      "条",
+      "次",
+      "秒",
+      "路",
+      "项"
+    ]
+  },
+  "boundaries": {
+    "甲方提供视频平台与≥30天录像保存": true,
+    "甲方提供统一消息通道与账号": true,
+    "甲方提供门禁与安全联锁": true,
+    "甲方提供告警源与协议资料": true,
+    "甲方提供中台通用能力": true,
+    "甲方提供定位源与亚米级数据": true,
+    "本系统不保存录像": true
+  },
+  "control_command_discipline": {
+    "授权/二次确认": true,
+    "超时不得自动重放": true,
+    "失败告警与人工降级": true,
+    "结果未知标记": true
+  },
+  "issues": {
+    "g3_01_001_status": "OPEN",
+    "g3_06_001_status": "RESOLVED_BY_B / VERIFIED_BY_A / PENDING_C。仅 A、C 均复核通过后方可关闭并把 G3-06 置为 DONE。",
+    "docx_cites_g3_01_001": true,
+    "docx_pending_external": true,
+    "docx_blocks_freeze": true
+  },
+  "evidence_discipline": [],
+  "sample_pollution": {},
+  "mirror": {
+    "md_lines": 180,
+    "md_lines_missing_in_docx": [],
+    "md_lines_missing_count": 0,
+    "yaml_sha_deliverable": "171b9bf65295fa75",
+    "yaml_sha_work": "171b9bf65295fa75",
+    "yaml_mirror_equal": true
+  },
+  "table_widths": {
+    "表 2-1": {
+      "layout": "fixed",
+      "widths_cm": [
+        1.31,
+        5.49,
+        3.82,
+        3.4,
+        1.88
+      ],
+      "longest_unbreakable_run_chars": [
+        3,
+        12,
+        26,
+        0,
+        3
+      ],
+      "longest_identifiers": [
+        [
+          "API-030",
+          "API-022",
+          "API-033"
+        ],
+        [
+          "access-control-commands",
+          "verification-configs",
+          "evaluation-templates"
+        ],
+        [
+          "verificationConfigsPublish",
+          "evaluationTemplatesCreate",
+          "integrationAlertsReceive"
+        ],
+        [],
+        []
+      ]
+    },
+    "表 7-1": {
+      "layout": "fixed",
+      "widths_cm": [
+        2.56,
+        3.68,
+        5.15,
+        4.52
+      ],
+      "longest_unbreakable_run_chars": [
+        3,
+        3,
+        12,
+        3
+      ],
+      "longest_identifiers": [
+        [
+          "API-TR-027",
+          "API-TR-025",
+          "API-TR-020"
+        ],
+        [],
+        [
+          "access-control-commands",
+          "verification-configs",
+          "evaluation-templates"
+        ],
+        []
+      ]
+    }
+  },
+  "problems": [],
+  "pass": true
+}

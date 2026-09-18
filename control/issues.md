@@ -873,7 +873,8 @@
 - 证据：`logs/reviews/2026-09-18_G3-06-B-remediation.md`、`logs/reviews/2026-09-18_G3-06-remediation-audit.json`、`logs/reviews/2026-09-18_G3-06-contract-audit.json`。
 - A 整改后复核（2026-09-18）：独立追踪审计通过（57 个唯一 OpenAPI 操作、39/39 FR、117/117 AC、34★/5 非★）；图 2-1 可编辑图源、表 2-1/7-1 固定布局、教学案例隔离与全页渲染复验通过。原生 LibreOffice 渲染正式件 24 页、Reference 9 页；B 的 Word/WPS 记录为正式件 23 页、Reference 9 页，页数差异已记录为跨渲染分页差异，未观察到可读性缺陷。
 - 证据补充：`logs/reviews/2026-09-18_G3-06-A-final-rereview.md`、`logs/reviews/2026-09-18_G3-06-A-final-contract-audit.json`。
-- 状态：RESOLVED_BY_B / VERIFIED_BY_A / PENDING_C。仅 A、C 均复核通过后方可关闭并把 G3-06 置为 DONE。
+- C 复核（2026-09-18）：独立符合性审计 `pass=true`（期望值由 `facts.md` / `spec.md` / `key_numbers.md` 推导，非硬编码）：facts 39 行 34★ 与 spec 39 FR/117 AC 全量可连接；表 2-1 与 OpenAPI 端点双向集合等价 57/57（此项 A/B 此前未做）；39 条 `API-TR` 唯一连续、★/非★集合与受控来源一致、AC 锚点逐条相同；正文带单位目标值全部命中受控数值；责任边界 7/7、控制命令纪律 4/4、证据纪律与案例隔离通过；工作稿正文 180 行全部镜像到正式件，OpenAPI 工作稿与正式件 SHA-256 一致。独立 Word COM 渲染：正式件 23 页、Reference 9 页（与 B 的 Word/WPS 记录一致；A 的 LibreOffice 24 页为跨渲染器分页差异）；竖向碎片 0、图 2-1 与题注同页、无未定义书签；单字行占比 2.52% 低于 Reference 的 4.5%。登记 3 项观察项（A 复核记录中表 2-1 列宽引用值需更正、表 2-1 标识符按连字符断行、§8.3“八类外部端口”与表 3-1 端口标识数量的口径），均不阻断本 Issue 关闭。证据：`logs/reviews/2026-09-18_G3-06-C-review.md`、`logs/reviews/2026-09-18_G3-06-C-conformance-audit.json`、`logs/reviews/2026-09-18_G3-06-C-render-evidence.json`、`scripts/audit_g3_06_c_conformance.py`、`scripts/render_docx_word_pages.py`、`scripts/render_evidence_g3_06_c.py`。
+- 状态：CLOSED / VERIFIED_BY_C。三项关闭判据（图件与长表修复、全页渲染无阅读性缺陷、A/C 均确认）均已满足；本次关闭不改变 `ISSUE-G3-01-001` 的 OPEN 状态，也不表示视频/消息外部契约、连通或性能已通过。
 
 ## G3-07 ADR 与非功能设计复核项
 

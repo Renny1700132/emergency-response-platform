@@ -871,7 +871,9 @@
 - B 整改（2026-09-18）：已形成 V0.2 整改评审稿。新增项目化图 2-1“REST 接口与外部适配交互时序”，提供可编辑 PPTX、EMF 与 2400×1207 PNG；图源包含 14 个原生 Shape 与 13 个原生 Connector，并在正文中补齐唯一编号、题注、引用和替代文本。表 2-1、表 7-1 已改为固定布局并重建 `tblGrid`，同时修正同类五列表格的窄首列。目录字段已刷新，无“未定义书签”。
 - B 验证（2026-09-18）：WPS 与 Microsoft Word 对 Reference（各 9 页）和整改稿（各 23 页）完成全页渲染检查；整改稿 23/23 页在两种渲染器中均无逐字竖排、截断、重叠、越界、图题分离或异常断表。机械审计确认 57 个 OpenAPI 操作、39/39 FR、117/117 AC、34★/5 非★未漂移，无教学案例内容污染。
 - 证据：`logs/reviews/2026-09-18_G3-06-B-remediation.md`、`logs/reviews/2026-09-18_G3-06-remediation-audit.json`、`logs/reviews/2026-09-18_G3-06-contract-audit.json`。
-- 状态：RESOLVED_BY_B / PENDING_A_C_REREVIEW。A、C 复核通过后方可关闭并把 G3-06 置为 DONE。
+- A 整改后复核（2026-09-18）：独立追踪审计通过（57 个唯一 OpenAPI 操作、39/39 FR、117/117 AC、34★/5 非★）；图 2-1 可编辑图源、表 2-1/7-1 固定布局、教学案例隔离与全页渲染复验通过。原生 LibreOffice 渲染正式件 24 页、Reference 9 页；B 的 Word/WPS 记录为正式件 23 页、Reference 9 页，页数差异已记录为跨渲染分页差异，未观察到可读性缺陷。
+- 证据补充：`logs/reviews/2026-09-18_G3-06-A-final-rereview.md`、`logs/reviews/2026-09-18_G3-06-A-final-contract-audit.json`。
+- 状态：RESOLVED_BY_B / VERIFIED_BY_A / PENDING_C。仅 A、C 均复核通过后方可关闭并把 G3-06 置为 DONE。
 
 ## G3-07 ADR 与非功能设计复核项
 

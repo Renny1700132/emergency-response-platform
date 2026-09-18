@@ -1,0 +1,47 @@
+{
+  "task": "G3-06",
+  "openapi_version": "3.0.3",
+  "operation_count": 57,
+  "unique_operation_ids": 57,
+  "duplicate_operation_ids": [],
+  "unresolved_local_refs": [],
+  "write_missing_idempotency": [],
+  "security_defined": true,
+  "yaml_fr_count": 39,
+  "yaml_ac_count": 117,
+  "yaml_missing_fr": [],
+  "yaml_missing_ac": [],
+  "issue_boundary": {
+    "documented": true,
+    "pending_external_schema": true,
+    "access_no_auto_replay": true
+  },
+  "markdown": {
+    "fr_count": 39,
+    "ac_count": 117,
+    "trace_count": 39,
+    "star_count": 34,
+    "non_star_count": 5,
+    "missing_fr": [],
+    "missing_ac": [],
+    "missing_trace": [],
+    "star_mismatch": [],
+    "non_star_mismatch": [],
+    "sample_pollution": []
+  },
+  "formal_docx": {
+    "fr_count": 39,
+    "ac_count": 117,
+    "trace_count": 39,
+    "star_count": 34,
+    "non_star_count": 5,
+    "missing_fr": [],
+    "missing_ac": [],
+    "missing_trace": [],
+    "star_mismatch": [],
+    "non_star_mismatch": [],
+    "sample_pollution": []
+  },
+  "yaml_sample_pollution": [],
+  "pass": true
+}

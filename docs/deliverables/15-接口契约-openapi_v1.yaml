@@ -1,0 +1,3709 @@
+# G3-06 接口契约评审候选；外部视频/消息真实 Schema 受 ISSUE-G3-01-001 阻断。
+openapi: 3.0.3
+info:
+  title: 某自然博物馆智能运营中心建设项目——应急管理子系统 API
+  version: 1.0.0-review
+  description: G3-06 评审候选契约。内部归一化模型可评审；视频与统一消息真实外部 Schema 受 ISSUE-G3-01-001 阻断，不代表现场连通或验收通过。
+servers:
+- url: /
+  description: 由目标环境网关提供；真实域名【待人工确认】
+security:
+- middlePlatformBearer: []
+tags:
+- name: 预案
+- name: 事件
+- name: 任务
+- name: 态势
+- name: 资源
+- name: 物资
+- name: 演练
+- name: 值班
+- name: 知识
+- name: 配置
+- name: 中台
+- name: 集成
+paths:
+  /api/v1/plan-types:
+    get:
+      tags:
+      - 预案
+      summary: 查询预案类型
+      operationId: planTypesList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-033
+      x-acceptance:
+      - AC-G2-FR-033-01
+      - AC-G2-FR-033-02
+      - AC-G2-FR-033-03
+      x-contract-status: REVIEW_CANDIDATE
+    post:
+      tags:
+      - 预案
+      summary: 新增预案类型
+      operationId: planTypesCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-033
+      x-acceptance:
+      - AC-G2-FR-033-01
+      - AC-G2-FR-033-02
+      - AC-G2-FR-033-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRequest'
+  /api/v1/plans:
+    get:
+      tags:
+      - 预案
+      summary: 查询预案
+      operationId: plansList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-001
+      - G2-FR-030
+      x-acceptance:
+      - AC-G2-FR-001-01
+      - AC-G2-FR-001-02
+      - AC-G2-FR-001-03
+      - AC-G2-FR-030-01
+      - AC-G2-FR-030-02
+      - AC-G2-FR-030-03
+      x-contract-status: REVIEW_CANDIDATE
+    post:
+      tags:
+      - 预案
+      summary: 创建预案草稿
+      operationId: plansCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-001
+      x-acceptance:
+      - AC-G2-FR-001-01
+      - AC-G2-FR-001-02
+      - AC-G2-FR-001-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlanRequest'
+  /api/v1/plans/{planId}:
+    get:
+      tags:
+      - 预案
+      summary: 读取预案详情与版本
+      operationId: plansGet
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: planId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-001
+      - G2-FR-030
+      x-acceptance:
+      - AC-G2-FR-001-01
+      - AC-G2-FR-001-02
+      - AC-G2-FR-001-03
+      - AC-G2-FR-030-01
+      - AC-G2-FR-030-02
+      - AC-G2-FR-030-03
+      x-contract-status: REVIEW_CANDIDATE
+  /api/v1/plans/{planId}/versions:
+    post:
+      tags:
+      - 预案
+      summary: 创建预案版本
+      operationId: planVersionsCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: planId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-001
+      - G2-FR-002
+      - G2-FR-030
+      x-acceptance:
+      - AC-G2-FR-001-01
+      - AC-G2-FR-001-02
+      - AC-G2-FR-001-03
+      - AC-G2-FR-002-01
+      - AC-G2-FR-002-02
+      - AC-G2-FR-002-03
+      - AC-G2-FR-030-01
+      - AC-G2-FR-030-02
+      - AC-G2-FR-030-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlanVersionRequest'
+  /api/v1/plan-versions/{versionId}/publish:
+    post:
+      tags:
+      - 预案
+      summary: 发布不可变预案版本
+      operationId: planVersionsPublish
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-001
+      - G2-FR-002
+      - G2-FR-030
+      x-acceptance:
+      - AC-G2-FR-001-01
+      - AC-G2-FR-001-02
+      - AC-G2-FR-001-03
+      - AC-G2-FR-002-01
+      - AC-G2-FR-002-02
+      - AC-G2-FR-002-03
+      - AC-G2-FR-030-01
+      - AC-G2-FR-030-02
+      - AC-G2-FR-030-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+  /api/v1/plan-versions/{versionId}/attachments:
+    post:
+      tags:
+      - 预案
+      summary: 绑定中台文件引用
+      operationId: planAttachmentsBind
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-030
+      x-acceptance:
+      - AC-G2-FR-030-01
+      - AC-G2-FR-030-02
+      - AC-G2-FR-030-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRequest'
+  /api/v1/incident-types:
+    get:
+      tags:
+      - 事件
+      summary: 查询事件类型
+      operationId: incidentTypesList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-034
+      x-acceptance:
+      - AC-G2-FR-034-01
+      - AC-G2-FR-034-02
+      - AC-G2-FR-034-03
+      x-contract-status: REVIEW_CANDIDATE
+    post:
+      tags:
+      - 事件
+      summary: 维护事件类型
+      operationId: incidentTypesCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-034
+      x-acceptance:
+      - AC-G2-FR-034-01
+      - AC-G2-FR-034-02
+      - AC-G2-FR-034-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRequest'
+  /api/v1/incidents:
+    get:
+      tags:
+      - 事件
+      summary: 查询授权范围内事件
+      operationId: incidentsList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-004
+      - G2-FR-013
+      - G2-FR-021
+      x-acceptance:
+      - AC-G2-FR-004-01
+      - AC-G2-FR-004-02
+      - AC-G2-FR-004-03
+      - AC-G2-FR-013-01
+      - AC-G2-FR-013-02
+      - AC-G2-FR-013-03
+      - AC-G2-FR-021-01
+      - AC-G2-FR-021-02
+      - AC-G2-FR-021-03
+      x-contract-status: REVIEW_CANDIDATE
+    post:
+      tags:
+      - 事件
+      summary: 上报事件或接收归一化告警
+      operationId: incidentsCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-013
+      - G2-FR-021
+      - G2-FR-027
+      x-acceptance:
+      - AC-G2-FR-013-01
+      - AC-G2-FR-013-02
+      - AC-G2-FR-013-03
+      - AC-G2-FR-021-01
+      - AC-G2-FR-021-02
+      - AC-G2-FR-021-03
+      - AC-G2-FR-027-01
+      - AC-G2-FR-027-02
+      - AC-G2-FR-027-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IncidentCreateRequest'
+  /api/v1/incidents/{incidentId}:
+    get:
+      tags:
+      - 事件
+      summary: 读取事件详情
+      operationId: incidentsGet
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: incidentId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-004
+      - G2-FR-013
+      x-acceptance:
+      - AC-G2-FR-004-01
+      - AC-G2-FR-004-02
+      - AC-G2-FR-004-03
+      - AC-G2-FR-013-01
+      - AC-G2-FR-013-02
+      - AC-G2-FR-013-03
+      x-contract-status: REVIEW_CANDIDATE
+  /api/v1/incidents/{incidentId}/updates:
+    post:
+      tags:
+      - 事件
+      summary: 追加事件续报
+      operationId: incidentUpdatesCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: incidentId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-004
+      x-acceptance:
+      - AC-G2-FR-004-01
+      - AC-G2-FR-004-02
+      - AC-G2-FR-004-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IncidentUpdateRequest'
+  /api/v1/incidents/{incidentId}/verify:
+    post:
+      tags:
+      - 事件
+      summary: 人工核实事件
+      operationId: incidentsVerify
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: incidentId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-014
+      - G2-FR-037
+      x-acceptance:
+      - AC-G2-FR-014-01
+      - AC-G2-FR-014-02
+      - AC-G2-FR-014-03
+      - AC-G2-FR-037-01
+      - AC-G2-FR-037-02
+      - AC-G2-FR-037-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerifyIncidentRequest'
+  /api/v1/incidents/{incidentId}/start-response:
+    post:
+      tags:
+      - 事件
+      summary: 启动响应并生成任务
+      operationId: incidentsStartResponse
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: incidentId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-003
+      - G2-FR-014
+      x-acceptance:
+      - AC-G2-FR-003-01
+      - AC-G2-FR-003-02
+      - AC-G2-FR-003-03
+      - AC-G2-FR-014-01
+      - AC-G2-FR-014-02
+      - AC-G2-FR-014-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StartResponseRequest'
+  /api/v1/incidents/{incidentId}/close:
+    post:
+      tags:
+      - 事件
+      summary: 校验材料后关闭事件
+      operationId: incidentsClose
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: incidentId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-016
+      x-acceptance:
+      - AC-G2-FR-016-01
+      - AC-G2-FR-016-02
+      - AC-G2-FR-016-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+  /api/v1/incidents/{incidentId}/reopen:
+    post:
+      tags:
+      - 事件
+      summary: 授权重开事件
+      operationId: incidentsReopen
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: incidentId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-016
+      x-acceptance:
+      - AC-G2-FR-016-01
+      - AC-G2-FR-016-02
+      - AC-G2-FR-016-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+  /api/v1/tasks:
+    get:
+      tags:
+      - 任务
+      summary: 查询任务
+      operationId: tasksList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-015
+      - G2-FR-022
+      x-acceptance:
+      - AC-G2-FR-015-01
+      - AC-G2-FR-015-02
+      - AC-G2-FR-015-03
+      - AC-G2-FR-022-01
+      - AC-G2-FR-022-02
+      - AC-G2-FR-022-03
+      x-contract-status: REVIEW_CANDIDATE
+    post:
+      tags:
+      - 任务
+      summary: 创建临时任务
+      operationId: tasksCreateTemporary
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-015
+      x-acceptance:
+      - AC-G2-FR-015-01
+      - AC-G2-FR-015-02
+      - AC-G2-FR-015-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskRequest'
+  /api/v1/tasks/{taskId}/acknowledge:
+    post:
+      tags:
+      - 任务
+      summary: 确认接收任务
+      operationId: tasksAcknowledge
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-015
+      - G2-FR-022
+      x-acceptance:
+      - AC-G2-FR-015-01
+      - AC-G2-FR-015-02
+      - AC-G2-FR-015-03
+      - AC-G2-FR-022-01
+      - AC-G2-FR-022-02
+      - AC-G2-FR-022-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+  /api/v1/tasks/{taskId}/feedback:
+    post:
+      tags:
+      - 任务
+      summary: 提交进展与附件引用
+      operationId: taskFeedbackCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-015
+      - G2-FR-022
+      x-acceptance:
+      - AC-G2-FR-015-01
+      - AC-G2-FR-015-02
+      - AC-G2-FR-015-03
+      - AC-G2-FR-022-01
+      - AC-G2-FR-022-02
+      - AC-G2-FR-022-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskFeedbackRequest'
+  /api/v1/tasks/{taskId}/complete:
+    post:
+      tags:
+      - 任务
+      summary: 完成任务
+      operationId: tasksComplete
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-015
+      - G2-FR-022
+      x-acceptance:
+      - AC-G2-FR-015-01
+      - AC-G2-FR-015-02
+      - AC-G2-FR-015-03
+      - AC-G2-FR-022-01
+      - AC-G2-FR-022-02
+      - AC-G2-FR-022-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+  /api/v1/tasks/{taskId}/reassign:
+    post:
+      tags:
+      - 任务
+      summary: 授权重指派
+      operationId: tasksReassign
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-015
+      - G2-FR-022
+      x-acceptance:
+      - AC-G2-FR-015-01
+      - AC-G2-FR-015-02
+      - AC-G2-FR-015-03
+      - AC-G2-FR-022-01
+      - AC-G2-FR-022-02
+      - AC-G2-FR-022-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskReassignRequest'
+  /api/v1/tasks/{taskId}/remind:
+    post:
+      tags:
+      - 任务
+      summary: 催办任务
+      operationId: tasksRemind
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-015
+      x-acceptance:
+      - AC-G2-FR-015-01
+      - AC-G2-FR-015-02
+      - AC-G2-FR-015-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+  /api/v1/situation/incidents/{incidentId}:
+    get:
+      tags:
+      - 态势
+      summary: 查询事件态势快照
+      operationId: situationIncidentGet
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: incidentId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-004
+      - G2-FR-005
+      - G2-FR-006
+      - G2-FR-007
+      x-acceptance:
+      - AC-G2-FR-004-01
+      - AC-G2-FR-004-02
+      - AC-G2-FR-004-03
+      - AC-G2-FR-005-01
+      - AC-G2-FR-005-02
+      - AC-G2-FR-005-03
+      - AC-G2-FR-006-01
+      - AC-G2-FR-006-02
+      - AC-G2-FR-006-03
+      - AC-G2-FR-007-01
+      - AC-G2-FR-007-02
+      - AC-G2-FR-007-03
+      x-contract-status: REVIEW_CANDIDATE
+  /api/v1/situation/resource-map:
+    get:
+      tags:
+      - 态势
+      summary: 查询人员与站点空间投影
+      operationId: situationResourceMap
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-005
+      - G2-FR-007
+      - G2-FR-035
+      x-acceptance:
+      - AC-G2-FR-005-01
+      - AC-G2-FR-005-02
+      - AC-G2-FR-005-03
+      - AC-G2-FR-007-01
+      - AC-G2-FR-007-02
+      - AC-G2-FR-007-03
+      - AC-G2-FR-035-01
+      - AC-G2-FR-035-02
+      - AC-G2-FR-035-03
+      x-contract-status: REVIEW_CANDIDATE
+  /api/v1/statistics/emergency:
+    get:
+      tags:
+      - 态势
+      summary: 查询应急统计与钻取入口
+      operationId: statisticsEmergency
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-026
+      - G2-FR-039
+      x-acceptance:
+      - AC-G2-FR-026-01
+      - AC-G2-FR-026-02
+      - AC-G2-FR-026-03
+      - AC-G2-FR-039-01
+      - AC-G2-FR-039-02
+      - AC-G2-FR-039-03
+      x-contract-status: REVIEW_CANDIDATE
+  /api/v1/persons:
+    get:
+      tags:
+      - 资源
+      summary: 查询中台人员引用
+      operationId: personsList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-031
+      x-acceptance:
+      - AC-G2-FR-031-01
+      - AC-G2-FR-031-02
+      - AC-G2-FR-031-03
+      x-contract-status: REVIEW_CANDIDATE
+  /api/v1/groups:
+    get:
+      tags:
+      - 资源
+      summary: 查询应急小组
+      operationId: groupsList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-031
+      x-acceptance:
+      - AC-G2-FR-031-01
+      - AC-G2-FR-031-02
+      - AC-G2-FR-031-03
+      x-contract-status: REVIEW_CANDIDATE
+    post:
+      tags:
+      - 资源
+      summary: 维护应急小组
+      operationId: groupsCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-031
+      x-acceptance:
+      - AC-G2-FR-031-01
+      - AC-G2-FR-031-02
+      - AC-G2-FR-031-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRequest'
+  /api/v1/positions/latest:
+    get:
+      tags:
+      - 资源
+      summary: 查询最新有效位置
+      operationId: positionsLatest
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-005
+      x-acceptance:
+      - AC-G2-FR-005-01
+      - AC-G2-FR-005-02
+      - AC-G2-FR-005-03
+      x-contract-status: REVIEW_CANDIDATE
+  /api/v1/material-sites:
+    get:
+      tags:
+      - 物资
+      summary: 查询物资站点
+      operationId: materialSitesList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-007
+      - G2-FR-035
+      x-acceptance:
+      - AC-G2-FR-007-01
+      - AC-G2-FR-007-02
+      - AC-G2-FR-007-03
+      - AC-G2-FR-035-01
+      - AC-G2-FR-035-02
+      - AC-G2-FR-035-03
+      x-contract-status: REVIEW_CANDIDATE
+    post:
+      tags:
+      - 物资
+      summary: 配置物资站点
+      operationId: materialSitesCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-035
+      x-acceptance:
+      - AC-G2-FR-035-01
+      - AC-G2-FR-035-02
+      - AC-G2-FR-035-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRequest'
+  /api/v1/material-ledgers:
+    get:
+      tags:
+      - 物资
+      summary: 查询物资台账
+      operationId: materialLedgersList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-008
+      x-acceptance:
+      - AC-G2-FR-008-01
+      - AC-G2-FR-008-02
+      - AC-G2-FR-008-03
+      x-contract-status: REVIEW_CANDIDATE
+    post:
+      tags:
+      - 物资
+      summary: 维护物资台账
+      operationId: materialLedgersUpsert
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-008
+      x-acceptance:
+      - AC-G2-FR-008-01
+      - AC-G2-FR-008-02
+      - AC-G2-FR-008-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaterialLedgerRequest'
+  /api/v1/inventory-plans:
+    post:
+      tags:
+      - 物资
+      summary: 创建并冻结盘点快照
+      operationId: inventoryPlansCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-009
+      x-acceptance:
+      - AC-G2-FR-009-01
+      - AC-G2-FR-009-02
+      - AC-G2-FR-009-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InventoryPlanRequest'
+  /api/v1/inventory-plans/{planId}/records:
+    post:
+      tags:
+      - 物资
+      summary: 提交移动实盘记录
+      operationId: inventoryRecordsSubmit
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: planId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-009
+      - G2-FR-025
+      x-acceptance:
+      - AC-G2-FR-009-01
+      - AC-G2-FR-009-02
+      - AC-G2-FR-009-03
+      - AC-G2-FR-025-01
+      - AC-G2-FR-025-02
+      - AC-G2-FR-025-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InventoryRecordRequest'
+  /api/v1/inventory-plans/{planId}/review:
+    post:
+      tags:
+      - 物资
+      summary: 授权复核差异
+      operationId: inventoryPlansReview
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: planId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-009
+      - G2-FR-025
+      x-acceptance:
+      - AC-G2-FR-009-01
+      - AC-G2-FR-009-02
+      - AC-G2-FR-009-03
+      - AC-G2-FR-025-01
+      - AC-G2-FR-025-02
+      - AC-G2-FR-025-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InventoryReviewRequest'
+  /api/v1/drill-plans:
+    post:
+      tags:
+      - 演练
+      summary: 创建演练计划
+      operationId: drillPlansCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-010
+      x-acceptance:
+      - AC-G2-FR-010-01
+      - AC-G2-FR-010-02
+      - AC-G2-FR-010-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DrillPlanRequest'
+  /api/v1/drill-plans/{planId}/issue:
+    post:
+      tags:
+      - 演练
+      summary: 下发演练任务
+      operationId: drillPlansIssue
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: planId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-010
+      - G2-FR-011
+      x-acceptance:
+      - AC-G2-FR-010-01
+      - AC-G2-FR-010-02
+      - AC-G2-FR-010-03
+      - AC-G2-FR-011-01
+      - AC-G2-FR-011-02
+      - AC-G2-FR-011-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+  /api/v1/drill-executions/{executionId}/submit:
+    post:
+      tags:
+      - 演练
+      summary: 提交演练执行记录
+      operationId: drillExecutionsSubmit
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: executionId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-011
+      - G2-FR-023
+      x-acceptance:
+      - AC-G2-FR-011-01
+      - AC-G2-FR-011-02
+      - AC-G2-FR-011-03
+      - AC-G2-FR-023-01
+      - AC-G2-FR-023-02
+      - AC-G2-FR-023-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DrillExecutionRequest'
+  /api/v1/drill-executions/{executionId}/evaluate:
+    post:
+      tags:
+      - 演练
+      summary: 提交评估和整改
+      operationId: drillExecutionsEvaluate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: executionId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-012
+      - G2-FR-036
+      x-acceptance:
+      - AC-G2-FR-012-01
+      - AC-G2-FR-012-02
+      - AC-G2-FR-012-03
+      - AC-G2-FR-036-01
+      - AC-G2-FR-036-02
+      - AC-G2-FR-036-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommandRequest'
+  /api/v1/evaluation-templates:
+    post:
+      tags:
+      - 演练
+      summary: 维护评估模板
+      operationId: evaluationTemplatesCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-036
+      x-acceptance:
+      - AC-G2-FR-036-01
+      - AC-G2-FR-036-02
+      - AC-G2-FR-036-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRequest'
+  /api/v1/duty-schedules:
+    post:
+      tags:
+      - 值班
+      summary: 发布值班计划和规则
+      operationId: dutySchedulesCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-017
+      - G2-FR-032
+      x-acceptance:
+      - AC-G2-FR-017-01
+      - AC-G2-FR-017-02
+      - AC-G2-FR-017-03
+      - AC-G2-FR-032-01
+      - AC-G2-FR-032-02
+      - AC-G2-FR-032-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRequest'
+  /api/v1/check-points:
+    post:
+      tags:
+      - 值班
+      summary: 配置点位和二维码版本
+      operationId: checkPointsCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-018
+      x-acceptance:
+      - AC-G2-FR-018-01
+      - AC-G2-FR-018-02
+      - AC-G2-FR-018-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateRequest'
+  /api/v1/attendance/check-ins:
+    post:
+      tags:
+      - 值班
+      summary: 扫码打卡
+      operationId: attendanceCheckIn
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-018
+      - G2-FR-024
+      x-acceptance:
+      - AC-G2-FR-018-01
+      - AC-G2-FR-018-02
+      - AC-G2-FR-018-03
+      - AC-G2-FR-024-01
+      - AC-G2-FR-024-02
+      - AC-G2-FR-024-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AttendanceCheckInRequest'
+  /api/v1/attendance/records:
+    get:
+      tags:
+      - 值班
+      summary: 查询和导出考勤
+      operationId: attendanceRecordsList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-019
+      x-acceptance:
+      - AC-G2-FR-019-01
+      - AC-G2-FR-019-02
+      - AC-G2-FR-019-03
+      x-contract-status: REVIEW_CANDIDATE
+  /api/v1/attendance/alerts:
+    get:
+      tags:
+      - 值班
+      summary: 查询缺卡告警
+      operationId: attendanceAlertsList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-020
+      x-acceptance:
+      - AC-G2-FR-020-01
+      - AC-G2-FR-020-02
+      - AC-G2-FR-020-03
+      x-contract-status: REVIEW_CANDIDATE
+  /api/v1/knowledge-items:
+    get:
+      tags:
+      - 知识
+      summary: 检索已发布知识
+      operationId: knowledgeItemsList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-016
+      - G2-FR-038
+      x-acceptance:
+      - AC-G2-FR-016-01
+      - AC-G2-FR-016-02
+      - AC-G2-FR-016-03
+      - AC-G2-FR-038-01
+      - AC-G2-FR-038-02
+      - AC-G2-FR-038-03
+      x-contract-status: REVIEW_CANDIDATE
+  /api/v1/verification-configs:
+    post:
+      tags:
+      - 配置
+      summary: 发布核实配置
+      operationId: verificationConfigsPublish
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-037
+      x-acceptance:
+      - AC-G2-FR-037-01
+      - AC-G2-FR-037-02
+      - AC-G2-FR-037-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VerificationConfigRequest'
+  /api/v1/platform/context:
+    get:
+      tags:
+      - 中台
+      summary: 读取统一身份组织权限上下文
+      operationId: platformContextGet
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-028
+      x-acceptance:
+      - AC-G2-FR-028-01
+      - AC-G2-FR-028-02
+      - AC-G2-FR-028-03
+      x-contract-status: REVIEW_CANDIDATE
+  /api/v1/platform/files/presign:
+    post:
+      tags:
+      - 中台
+      summary: 申请中台文件上传引用
+      operationId: platformFilesPresign
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-028
+      - G2-FR-030
+      x-acceptance:
+      - AC-G2-FR-028-01
+      - AC-G2-FR-028-02
+      - AC-G2-FR-028-03
+      - AC-G2-FR-030-01
+      - AC-G2-FR-030-02
+      - AC-G2-FR-030-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FilePresignRequest'
+  /integration/v1/alerts/{source}:
+    post:
+      tags:
+      - 集成
+      summary: 接收归一化外部告警
+      operationId: integrationAlertsReceive
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: source
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - information-publish
+          - intrusion
+          - fire
+          - iot
+          - other
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-027
+      x-acceptance:
+      - AC-G2-FR-027-01
+      - AC-G2-FR-027-02
+      - AC-G2-FR-027-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExternalAlert'
+  /integration/v1/message-receipts:
+    post:
+      tags:
+      - 集成
+      summary: 接收统一消息回执
+      operationId: messageReceiptsReceive
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-020
+      - G2-FR-022
+      - G2-FR-028
+      x-acceptance:
+      - AC-G2-FR-020-01
+      - AC-G2-FR-020-02
+      - AC-G2-FR-020-03
+      - AC-G2-FR-022-01
+      - AC-G2-FR-022-02
+      - AC-G2-FR-022-03
+      - AC-G2-FR-028-01
+      - AC-G2-FR-028-02
+      - AC-G2-FR-028-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageReceipt'
+      x-external-schema-status: PENDING_EXTERNAL_EVIDENCE
+      x-blocked-by: ISSUE-G3-01-001
+  /api/v1/incidents/{incidentId}/videos/query:
+    post:
+      tags:
+      - 集成
+      summary: 查询实时或回放视频引用
+      operationId: incidentVideosQuery
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: incidentId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-006
+      - G2-FR-029
+      x-acceptance:
+      - AC-G2-FR-006-01
+      - AC-G2-FR-006-02
+      - AC-G2-FR-006-03
+      - AC-G2-FR-029-01
+      - AC-G2-FR-029-02
+      - AC-G2-FR-029-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VideoQuery'
+      x-external-schema-status: PENDING_EXTERNAL_EVIDENCE
+      x-blocked-by: ISSUE-G3-01-001
+  /api/v1/incidents/{incidentId}/access-control-commands:
+    post:
+      tags:
+      - 集成
+      summary: 授权后单次下发门禁指令
+      operationId: accessCommandsCreate
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - name: incidentId
+        in: path
+        required: true
+        schema:
+          type: string
+          minLength: 1
+      - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntityResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '404':
+          $ref: '#/components/responses/Error404'
+        '409':
+          $ref: '#/components/responses/Error409'
+        '422':
+          $ref: '#/components/responses/Error422'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-029
+      x-acceptance:
+      - AC-G2-FR-029-01
+      - AC-G2-FR-029-02
+      - AC-G2-FR-029-03
+      x-contract-status: REVIEW_CANDIDATE
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessControlCommand'
+      x-retry-policy: NO_AUTOMATIC_REPLAY
+components:
+  securitySchemes:
+    middlePlatformBearer:
+      type: http
+      scheme: bearer
+      bearerFormat: 由统一中台签发；格式待接口资料确认
+  parameters:
+    RequestId:
+      name: X-Request-ID
+      in: header
+      required: true
+      schema:
+        type: string
+        minLength: 8
+        maxLength: 128
+      description: 调用链请求标识
+    IdempotencyKey:
+      name: X-Idempotency-Key
+      in: header
+      required: true
+      schema:
+        type: string
+        minLength: 8
+        maxLength: 128
+      description: 写操作幂等键；同键异载荷返回 409
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        default: 1
+    Size:
+      name: size
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 200
+        default: 20
+  schemas:
+    ApiResponse:
+      type: object
+      required:
+      - code
+      - message
+      - traceId
+      - timestamp
+      properties:
+        code:
+          type: string
+          example: OK
+        message:
+          type: string
+          example: success
+        data:
+          nullable: true
+        traceId:
+          type: string
+          example: trace-demo-001
+        timestamp:
+          type: string
+          format: date-time
+    ErrorResponse:
+      type: object
+      required:
+      - code
+      - message
+      - traceId
+      - timestamp
+      properties:
+        code:
+          type: string
+          example: RULE-422
+        message:
+          type: string
+          example: 状态不允许执行该操作
+        fieldErrors:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldError'
+        traceId:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+    FieldError:
+      type: object
+      properties:
+        path:
+          type: string
+        reason:
+          type: string
+    PageResponse:
+      allOf:
+      - $ref: '#/components/schemas/ApiResponse'
+      - type: object
+        properties:
+          data:
+            type: object
+            required:
+            - items
+            - page
+            - size
+            - total
+            properties:
+              items:
+                type: array
+                items:
+                  type: object
+                  additionalProperties: true
+              page:
+                type: integer
+              size:
+                type: integer
+              total:
+                type: integer
+                format: int64
+    CommandRequest:
+      type: object
+      required:
+      - reason
+      properties:
+        reason:
+          type: string
+          minLength: 1
+          maxLength: 1000
+        resourceVersion:
+          type: integer
+          format: int64
+          minimum: 0
+        occurredAt:
+          type: string
+          format: date-time
+        sourceGeneratedAt:
+          type: string
+          format: date-time
+        attributes:
+          type: object
+          additionalProperties: true
+    CreateRequest:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 200
+        typeCode:
+          type: string
+          maxLength: 64
+        occurredAt:
+          type: string
+          format: date-time
+        sourceGeneratedAt:
+          type: string
+          format: date-time
+        coordinateReference:
+          type: string
+          description: 真实坐标系待甲方地图资料确认
+        floorCode:
+          type: string
+        attachmentFileIds:
+          type: array
+          items:
+            type: string
+        attributes:
+          type: object
+          additionalProperties: true
+    ExternalAlert:
+      type: object
+      required:
+      - sourceSystem
+      - externalAlertId
+      - alertType
+      - occurredAt
+      - payloadVersion
+      properties:
+        sourceSystem:
+          type: string
+          enum:
+          - INFORMATION_PUBLISH
+          - INTRUSION
+          - FIRE
+          - IOT
+          - OTHER
+        externalAlertId:
+          type: string
+          description: 源系统可靠唯一 ID；缺失时不得自动合并
+        alertType:
+          type: string
+        occurredAt:
+          type: string
+          format: date-time
+        sourceGeneratedAt:
+          type: string
+          format: date-time
+        payloadVersion:
+          type: string
+        normalizedPayload:
+          type: object
+          additionalProperties: true
+    MessageReceipt:
+      type: object
+      required:
+      - platformMessageId
+      - status
+      - sourceGeneratedAt
+      properties:
+        platformMessageId:
+          type: string
+        attemptNo:
+          type: integer
+          minimum: 1
+        status:
+          type: string
+          enum:
+          - ACCEPTED
+          - DELIVERED
+          - FAILED
+          - UNKNOWN
+        sourceGeneratedAt:
+          type: string
+          format: date-time
+        errorCode:
+          type: string
+        errorSummary:
+          type: string
+      x-external-schema-status: PENDING_EXTERNAL_EVIDENCE
+    VideoQuery:
+      type: object
+      required:
+      - cameraRef
+      - mode
+      properties:
+        cameraRef:
+          type: string
+        mode:
+          type: string
+          enum:
+          - LIVE
+          - PLAYBACK
+        startAt:
+          type: string
+          format: date-time
+        endAt:
+          type: string
+          format: date-time
+      x-external-schema-status: PENDING_EXTERNAL_EVIDENCE
+    AccessControlCommand:
+      type: object
+      required:
+      - doorRef
+      - action
+      - confirmationToken
+      - reason
+      properties:
+        doorRef:
+          type: string
+        action:
+          type: string
+          enum:
+          - REQUEST_OPEN
+        confirmationToken:
+          type: string
+          minLength: 16
+        reason:
+          type: string
+          minLength: 1
+        expiresAt:
+          type: string
+          format: date-time
+    PlanRequest:
+      type: object
+      required:
+      - name
+      - planTypeCode
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 200
+        planTypeCode:
+          type: string
+          maxLength: 64
+        applicableConditions:
+          type: array
+          items:
+            type: string
+        description:
+          type: string
+          maxLength: 2000
+    PlanVersionRequest:
+      type: object
+      required:
+      - versionLabel
+      - nodes
+      - taskTemplates
+      properties:
+        versionLabel:
+          type: string
+          maxLength: 40
+        nodes:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required:
+            - nodeKey
+            - name
+            properties:
+              nodeKey:
+                type: string
+              name:
+                type: string
+              dependsOn:
+                type: array
+                items:
+                  type: string
+        taskTemplates:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required:
+            - templateKey
+            - name
+            - responsibleRole
+            properties:
+              templateKey:
+                type: string
+              name:
+                type: string
+              responsibleRole:
+                type: string
+              deadlineMinutes:
+                type: integer
+                minimum: 1
+        verificationConfigId:
+          type: string
+    IncidentCreateRequest:
+      type: object
+      required:
+      - incidentTypeCode
+      - title
+      - occurredAt
+      - description
+      properties:
+        incidentTypeCode:
+          type: string
+        title:
+          type: string
+          minLength: 1
+          maxLength: 200
+        description:
+          type: string
+          minLength: 1
+          maxLength: 5000
+        occurredAt:
+          type: string
+          format: date-time
+        sourceGeneratedAt:
+          type: string
+          format: date-time
+        sourceSystem:
+          type: string
+        externalAlertId:
+          type: string
+        location:
+          $ref: '#/components/schemas/SpatialReference'
+        attachmentFileIds:
+          type: array
+          items:
+            type: string
+    IncidentUpdateRequest:
+      type: object
+      required:
+      - content
+      - occurredAt
+      properties:
+        content:
+          type: string
+          minLength: 1
+          maxLength: 5000
+        occurredAt:
+          type: string
+          format: date-time
+        sourceGeneratedAt:
+          type: string
+          format: date-time
+        attachmentFileIds:
+          type: array
+          items:
+            type: string
+    VerifyIncidentRequest:
+      type: object
+      required:
+      - decision
+      - reason
+      - resourceVersion
+      properties:
+        decision:
+          type: string
+          enum:
+          - CONFIRMED
+          - REJECTED
+        reason:
+          type: string
+          minLength: 1
+          maxLength: 1000
+        resourceVersion:
+          type: integer
+          format: int64
+          minimum: 0
+    StartResponseRequest:
+      type: object
+      required:
+      - planVersionId
+      - resourceVersion
+      properties:
+        planVersionId:
+          type: string
+        resourceVersion:
+          type: integer
+          format: int64
+          minimum: 0
+        reason:
+          type: string
+          maxLength: 1000
+    TaskRequest:
+      type: object
+      required:
+      - name
+      - assigneeRef
+      - deadlineAt
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 200
+        assigneeRef:
+          type: string
+        deadlineAt:
+          type: string
+          format: date-time
+        description:
+          type: string
+          maxLength: 3000
+    TaskFeedbackRequest:
+      type: object
+      required:
+      - content
+      - resourceVersion
+      properties:
+        content:
+          type: string
+          minLength: 1
+          maxLength: 3000
+        progressPercent:
+          type: integer
+          minimum: 0
+          maximum: 100
+        attachmentFileIds:
+          type: array
+          items:
+            type: string
+        resourceVersion:
+          type: integer
+          format: int64
+          minimum: 0
+    TaskReassignRequest:
+      type: object
+      required:
+      - newAssigneeRef
+      - reason
+      - resourceVersion
+      properties:
+        newAssigneeRef:
+          type: string
+        reason:
+          type: string
+          minLength: 1
+          maxLength: 1000
+        newDeadlineAt:
+          type: string
+          format: date-time
+          description: 缺省时保持原截止时间；变更须具备授权并审计
+        resourceVersion:
+          type: integer
+          format: int64
+          minimum: 0
+    SpatialReference:
+      type: object
+      properties:
+        coordinateReference:
+          type: string
+          description: 真实坐标系待甲方资料确认
+        floorCode:
+          type: string
+        longitude:
+          type: number
+          format: double
+        latitude:
+          type: number
+          format: double
+        x:
+          type: number
+          format: double
+        y:
+          type: number
+          format: double
+        sourceAccuracyMeters:
+          type: number
+          format: double
+          minimum: 0
+        sourceGeneratedAt:
+          type: string
+          format: date-time
+    MaterialLedgerRequest:
+      type: object
+      required:
+      - siteId
+      - materialCode
+      - quantity
+      - unit
+      - resourceVersion
+      properties:
+        siteId:
+          type: string
+        materialCode:
+          type: string
+        quantity:
+          type: number
+          format: double
+          minimum: 0
+        unit:
+          type: string
+        expiresAt:
+          type: string
+          format: date-time
+        resourceVersion:
+          type: integer
+          format: int64
+          minimum: 0
+    InventoryPlanRequest:
+      type: object
+      required:
+      - name
+      - siteIds
+      properties:
+        name:
+          type: string
+          minLength: 1
+        siteIds:
+          type: array
+          minItems: 1
+          items:
+            type: string
+        startsAt:
+          type: string
+          format: date-time
+        endsAt:
+          type: string
+          format: date-time
+    InventoryRecordRequest:
+      type: object
+      required:
+      - snapshotItemId
+      - actualQuantity
+      properties:
+        snapshotItemId:
+          type: string
+        actualQuantity:
+          type: number
+          format: double
+          minimum: 0
+        attachmentFileIds:
+          type: array
+          items:
+            type: string
+        remark:
+          type: string
+          maxLength: 1000
+    InventoryReviewRequest:
+      type: object
+      required:
+      - decision
+      - reason
+      - resourceVersion
+      properties:
+        decision:
+          type: string
+          enum:
+          - APPROVE_ADJUSTMENT
+          - REJECT
+        reason:
+          type: string
+          minLength: 1
+        resourceVersion:
+          type: integer
+          format: int64
+          minimum: 0
+    DrillPlanRequest:
+      type: object
+      required:
+      - name
+      - plannedAt
+      - frequencyRule
+      properties:
+        name:
+          type: string
+          minLength: 1
+        plannedAt:
+          type: string
+          format: date-time
+        frequencyRule:
+          type: string
+        responsibleGroupId:
+          type: string
+        relatedOriginalPlanId:
+          type: string
+          description: 补演时关联原计划
+    DrillExecutionRequest:
+      type: object
+      required:
+      - actualStartAt
+      - actualEndAt
+      - result
+      properties:
+        actualStartAt:
+          type: string
+          format: date-time
+        actualEndAt:
+          type: string
+          format: date-time
+        result:
+          type: string
+          enum:
+          - COMPLETED
+          - CANCELLED
+          - INCOMPLETE
+        attachmentFileIds:
+          type: array
+          items:
+            type: string
+        reason:
+          type: string
+    AttendanceCheckInRequest:
+      type: object
+      required:
+      - taskId
+      - checkPointId
+      - qrToken
+      - position
+      properties:
+        taskId:
+          type: string
+        checkPointId:
+          type: string
+        qrToken:
+          type: string
+          minLength: 16
+        position:
+          $ref: '#/components/schemas/SpatialReference'
+        clientRecordedAt:
+          type: string
+          format: date-time
+    FilePresignRequest:
+      type: object
+      required:
+      - fileName
+      - contentType
+      - size
+      properties:
+        fileName:
+          type: string
+          minLength: 1
+        contentType:
+          type: string
+        size:
+          type: integer
+          format: int64
+          minimum: 1
+        sha256:
+          type: string
+          pattern: ^[0-9a-fA-F]{64}$
+    VerificationConfigRequest:
+      type: object
+      required:
+      - name
+      - steps
+      properties:
+        name:
+          type: string
+          minLength: 1
+        steps:
+          type: array
+          minItems: 1
+          items:
+            type: object
+            required:
+            - stepKey
+            - handlerRole
+            - timeoutMinutes
+            properties:
+              stepKey:
+                type: string
+              handlerRole:
+                type: string
+              fallbackRole:
+                type: string
+              timeoutMinutes:
+                type: integer
+                minimum: 1
+    Entity:
+      type: object
+      required:
+      - id
+      - status
+      - version
+      - createdAt
+      - updatedAt
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+        version:
+          type: integer
+          format: int64
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        attributes:
+          type: object
+          additionalProperties: true
+    EntityResponse:
+      allOf:
+      - $ref: '#/components/schemas/ApiResponse'
+      - type: object
+        properties:
+          data:
+            $ref: '#/components/schemas/Entity'
+  responses:
+    Error400:
+      description: 请求格式错误
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Error401:
+      description: 未认证
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Error403:
+      description: 无权限
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Error404:
+      description: 资源不存在
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Error409:
+      description: 状态、版本或幂等冲突
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Error422:
+      description: 业务规则校验失败
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Error429:
+      description: 超过限流
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Error500:
+      description: 服务内部错误
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Error503:
+      description: 外部依赖不可用
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+x-contract-status: REVIEW_CANDIDATE
+x-open-issues:
+- ISSUE-G3-01-001
+x-change-policy: contract-first

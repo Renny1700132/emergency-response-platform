@@ -905,3 +905,4 @@
 - 关闭判据：工作稿与正式镜像同步更新且 SHA-256 一致，表述与本登记册 `ISSUE-G3-06-001` 状态一致，由 C 复核关闭。
 - 状态：CLOSED / VERIFIED_BY_C
 - C 复核（2026-09-18）：G3-07 三份交付物的需求符合性、★条款、关键数字与来源、责任边界、证据纪律、案例隔离、工作稿—正式镜像一致性与 ADR 引用可解析性均通过；本次登记上述唯一 MINOR 状态过期项。C 复核记录：`logs/reviews/2026-09-18_G3-07-C-review.md`；独立审计：`scripts/audit_g3_07_c_conformance.py`、`logs/reviews/2026-09-18_G3-07-C-conformance-audit.json`（`pass=true`）。G3-07 仍为 REVIEW，不得置 DONE。
+- 最终准出授权（2026-09-18）：用户明确授权 G3-07 最终收口并置 DONE。B 复跑 ADR/NFR 覆盖与独立符合性机械审计，均为 PASS；本授权接受 ADR-001/002 的既有技术决策，不构成性能、外部连通、恢复、安全或验收已通过的证据。两份 ADR 的状态已同步为 Accepted；`ISSUE-G3-01-001` 的既有外部证据与 M3 阻断保持不变。

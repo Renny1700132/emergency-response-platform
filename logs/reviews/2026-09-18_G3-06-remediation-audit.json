@@ -1,0 +1,58 @@
+{
+  "task": "G3-06-remediation",
+  "mode": "CONTENT + FORMAT",
+  "docx": {
+    "inline_shapes": 1,
+    "figure_caption_present": true,
+    "body_reference_present": true,
+    "alt_text_present": true,
+    "table_count_including_revision": 9,
+    "numbered_table_caption_count": 8,
+    "figure_caption_count": 1,
+    "toc_bookmark_error": false,
+    "table_checks": {
+      "table_2_1": {
+        "rows": 58,
+        "widths_cm": [
+          1.31,
+          5.49,
+          3.82,
+          3.4,
+          1.88
+        ],
+        "fixed": true
+      },
+      "table_7_1": {
+        "rows": 40,
+        "widths_cm": [
+          2.56,
+          3.68,
+          5.15,
+          4.52
+        ],
+        "fixed": true
+      }
+    }
+  },
+  "editable_figure": {
+    "assets": {
+      "pptx": true,
+      "emf": true,
+      "png": true
+    },
+    "native_shape_count": 14,
+    "native_connector_count": 13
+  },
+  "renderers": {
+    "WPS": {
+      "pages": 23,
+      "visual_review": "PASS_ALL_PAGES"
+    },
+    "Microsoft Word": {
+      "pages": 23,
+      "visual_review": "PASS_ALL_PAGES"
+    }
+  },
+  "sample_pollution": [],
+  "pass": true
+}

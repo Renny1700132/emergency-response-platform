@@ -12,7 +12,9 @@ import yaml
 from docx import Document
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-from docx.shared import Cm, Pt
+from docx.enum.table import WD_TABLE_ALIGNMENT
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.shared import Cm, Inches, Pt
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,6 +23,8 @@ WORK_MD = ROOT / "docs/work/B_TECH/interface_design.md"
 WORK_YAML = ROOT / "docs/work/B_TECH/openapi_v1.yaml"
 OUTPUT_DOCX = ROOT / "docs/deliverables/14-接口设计说明书.docx"
 OUTPUT_YAML = ROOT / "docs/deliverables/15-接口契约-openapi_v1.yaml"
+FIGURE_STEM = "14-图2-1-REST接口与外部适配交互时序"
+FIGURE_IMAGE = ROOT / "docs/deliverables/figures" / f"{FIGURE_STEM}.png"
 
 PROJECT = "某自然博物馆智能运营中心建设项目——应急管理子系统"
 NON_STAR = {7, 30, 32, 33, 38}
@@ -112,7 +116,7 @@ def acs(n: int) -> list[str]:
 def build_markdown() -> str:
     lines = [
         "# 接口设计说明书（工作稿）", "",
-        "- 任务：G3-06", "- 文档编号：YJGL-G3-06", "- 版本：V0.1（评审稿）",
+        "- 任务：G3-06", "- 文档编号：YJGL-G3-06", "- 版本：V0.2（整改评审稿）",
         "- 主责 / 复核：B / A、C", "- 状态：SELF_CHECKED / REVIEW",
         f"- 项目：{PROJECT}",
         "- 受控输入：BASELINE-G2-M2-R1.0、SRS、spec、RTM、G3-01R、G3-03—05、facts、key_numbers、issues", "",
@@ -135,6 +139,8 @@ def build_markdown() -> str:
         "6. 业务发生时间、源时间、接收时间和处理时间分别保存。迟到数据追加历史，禁止覆盖既有事实。",
         "7. 控制类命令必须包含授权确认和一次性确认令牌；超时不得自动重放，失败进入告警和人工降级。", "",
         "## 2 REST 接口设计", "", "### 2.1 端点总表", "",
+        "关键写请求的同步事务、异步副作用和外部适配边界如图 2-1 所示。应用服务只在同步事务中确认本系统事实；消息、态势投影和专业系统调用由持久化 Outbox 在提交后执行，外部失败不得回滚已确认事件。门禁控制超时必须标记结果未知并告警，禁止自动重放。", "",
+        "[[FIGURE:G3-06-INTERACTION]]", "",
         "| 编号 | 方法与路径 | operationId | 用途 | FR |", "| --- | --- | --- | --- | --- |",
     ]
     for i, (method, path, op, _tag, reqs, summary) in enumerate(ENDPOINTS, 1):
@@ -396,6 +402,8 @@ def parse_blocks(text: str):
             yield "h1", line[3:]; i += 1; continue
         if line.startswith("### "):
             yield "h2", line[4:]; i += 1; continue
+        if line == "[[FIGURE:G3-06-INTERACTION]]":
+            yield "figure", line; i += 1; continue
         if line.startswith("|") and i + 1 < len(lines) and re.match(r"^\|\s*[-:]+", lines[i + 1]):
             rows = []
             while i < len(lines) and lines[i].startswith("|"):
@@ -451,6 +459,44 @@ def copy_cell_format(dst, src):
                 dst_pr.append(copy.deepcopy(child))
 
 
+def set_table_widths(table, widths_cm: list[float]):
+    table.autofit = False
+    table.alignment = WD_TABLE_ALIGNMENT.CENTER
+    tbl_pr = table._tbl.tblPr
+    layout = tbl_pr.find(qn("w:tblLayout"))
+    if layout is None:
+        layout = OxmlElement("w:tblLayout")
+        tbl_pr.append(layout)
+    layout.set(qn("w:type"), "fixed")
+    grid = table._tbl.tblGrid
+    while len(grid):
+        grid.remove(grid[0])
+    for width in widths_cm:
+        col = OxmlElement("w:gridCol")
+        col.set(qn("w:w"), str(Cm(width).twips))
+        grid.append(col)
+    for row in table.rows:
+        for ci, cell in enumerate(row.cells):
+            cell.width = Cm(widths_cm[ci])
+            tc_pr = cell._tc.get_or_add_tcPr()
+            tc_w = tc_pr.find(qn("w:tcW"))
+            if tc_w is None:
+                tc_w = OxmlElement("w:tcW")
+                tc_pr.append(tc_w)
+            tc_w.set(qn("w:type"), "dxa")
+            tc_w.set(qn("w:w"), str(Cm(widths_cm[ci]).twips))
+
+
+def table_widths(chapter: int, table_no: int, column_count: int) -> list[float]:
+    if (chapter, table_no) == (2, 1):
+        return [1.25, 5.25, 3.65, 3.25, 1.80]
+    if (chapter, table_no) == (7, 1):
+        return [2.60, 3.75, 5.25, 4.60]
+    return {4: [2.70, 4.00, 4.10, 4.40], 5: [2.20, 4.00, 3.00, 3.20, 2.80]}.get(
+        column_count, [15.20 / column_count] * column_count
+    )
+
+
 def restore_reference_parts(output: Path):
     parts = {"word/styles.xml", "word/stylesWithEffects.xml", "word/numbering.xml", "word/settings.xml", "word/fontTable.xml", "word/webSettings.xml", "word/theme/theme1.xml", "word/header1.xml", "word/footer1.xml"}
     temp = output.with_suffix(".pair-tmp.docx")
@@ -473,7 +519,7 @@ def build_docx():
         if removing and child is not sectpr:
             body.remove(child)
     cover = {
-        0: "文档编号：YJGL-G3-06　　版本号：V0.1（评审稿）", 1: "密　　级：内部 · 评审用",
+        0: "文档编号：YJGL-G3-06　　版本号：V0.2（整改评审稿）", 1: "密　　级：内部 · 评审用",
         3: PROJECT, 4: "接口设计说明书", 5: "（G3-06 评审稿）",
         7: "编制单位：020202项目组【待人工确认】", 8: "编　　制：B（技术主责）【待人工确认】",
         9: "审　　核：A、C【待复核】", 10: "批　　准：【待人工确认】", 11: "编制日期：2026 年 9 月 18 日",
@@ -484,9 +530,16 @@ def build_docx():
     rev = d.tables[0]
     while len(rev.rows) > 2:
         rev._tbl.remove(rev.rows[-1]._tr)
-    vals = ["V0.1", "2026-09-18", "全部", "形成接口说明书与 OpenAPI v1 评审候选", "B【待人工确认】"]
-    for i, value in enumerate(vals):
-        replace_text(rev.rows[1].cells[i].paragraphs[0], value, refdoc.tables[0].rows[1].cells[i].paragraphs[0])
+    revisions = [
+        ["V0.1", "2026-09-18", "全部", "形成接口说明书与 OpenAPI v1 评审候选", "B【待人工确认】"],
+        ["V0.2", "2026-09-18", "第 2、7 章", "按 ISSUE-G3-06-001 增补接口交互图并修复长表版式", "B【待人工确认】"],
+    ]
+    for ri, values in enumerate(revisions, 1):
+        cells = rev.rows[1].cells if ri == 1 else rev.add_row().cells
+        for ci, value in enumerate(values):
+            source_cell = refdoc.tables[0].rows[min(ri, len(refdoc.tables[0].rows) - 1)].cells[ci]
+            copy_cell_format(cells[ci], source_cell)
+            replace_text(cells[ci].paragraphs[0], value, source_cell.paragraphs[0])
     h1s, h2s, bodys, lists = refdoc.paragraphs[20], refdoc.paragraphs[22], refdoc.paragraphs[21], refdoc.paragraphs[26]
     caps = refdoc.paragraphs[23]
     sample_table = refdoc.tables[1]
@@ -502,6 +555,20 @@ def build_docx():
             p = d.add_paragraph(); copy_para_format(p, bodys); add_inline(p, payload, bodys.runs[0] if bodys.runs else None)
         elif kind == "list":
             p = d.add_paragraph(style="List Paragraph"); copy_para_format(p, lists); add_inline(p, "• " + payload, lists.runs[0] if lists.runs else None)
+        elif kind == "figure":
+            if not FIGURE_IMAGE.exists():
+                raise FileNotFoundError(f"missing editable figure export: {FIGURE_IMAGE}")
+            p = d.add_paragraph()
+            copy_para_format(p, bodys)
+            p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            p.paragraph_format.keep_with_next = True
+            picture = p.add_run().add_picture(str(FIGURE_IMAGE), width=Inches(6.10), height=Inches(3.07))
+            picture._inline.docPr.set("title", "图 2-1 REST 接口与外部适配交互时序")
+            picture._inline.docPr.set("descr", "Web、API 网关、领域服务、Outbox 与外部适配器之间的同步事务和异步交互时序")
+            cap = d.add_paragraph()
+            copy_para_format(cap, refdoc.paragraphs[34])
+            cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            add_inline(cap, "图 2-1 REST 接口与外部适配交互时序", refdoc.paragraphs[34].runs[0] if refdoc.paragraphs[34].runs else None)
         elif kind == "table":
             table_no += 1
             cap = d.add_paragraph(); copy_para_format(cap, caps); cap.paragraph_format.keep_with_next = True
@@ -523,10 +590,8 @@ def build_docx():
                             if ri == 0: run.bold = True
                 trpr = cells[0]._tc.getparent().get_or_add_trPr(); trpr.append(OxmlElement("w:cantSplit"))
                 if ri == 0: trpr.append(OxmlElement("w:tblHeader"))
-            widths = {4: [2.7, 4.0, 4.1, 4.4], 5: [1.2, 4.4, 3.1, 3.5, 3.0]}.get(len(rows[0]), [15.2 / len(rows[0])] * len(rows[0]))
-            for row in t.rows:
-                for ci, cell in enumerate(row.cells):
-                    cell.width = Cm(widths[ci])
+            widths = table_widths(chapter, table_no, len(rows[0]))
+            set_table_widths(t, widths)
     d.core_properties.title = "接口设计说明书"
     d.core_properties.subject = f"{PROJECT} G3-06"
     d.core_properties.author = "020202项目组"

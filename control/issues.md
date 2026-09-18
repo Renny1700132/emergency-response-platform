@@ -883,3 +883,6 @@
 - 最小修复建议：由 B 明确 NFR 正式交付载体及唯一同类型 Reference。若存在受控 Reference，按其结构生成正式件并从正式题名移除“工作稿”；若不存在，按正式文档 Skill 记录缺少模板的事实并取得用户对载体/Reference 的明确裁决后再制作，禁止自行把 ADR 或 XLSX 样例混作模板。同步更新工作稿/正式件状态、Review 与 Pair/结构证据；不得改动 PE、KN、FR、责任边界或未决事项状态。
 - 关闭判据：正式 NFR 具备明确、非工作稿的交付身份；其唯一同类型 Reference/经批准的无 Reference 处置可追溯；结构、内容镜像及相应格式/渲染 QA（若为 DOCX/PDF）均有 PASS 证据；A/C 复核和 ADR 人工接受门禁按任务规则完成。
 - 状态：OPEN
+- B 整改（2026-09-18）：工作稿与正式镜像同步移除“（工作稿）”，并将控制状态明确为“REVIEW（正式交付候选；待 A/C 复核）”；镜像 SHA-256 一致。整改记录：`logs/reviews/2026-09-18_G3-07-B-remediation.md`；机械覆盖复验：`logs/reviews/2026-09-18_G3-07-B-remediation-audit.json`。
+- A 复核（2026-09-18）：确认 18 号交付物为 Markdown 正式交付候选而非 DOCX/PDF；没有匹配 NFR Reference DOCX/Markdown 的事实已透明记录，未将 ADR 或 XLSX 教学样例伪作模板，也未伪造页面/渲染对齐结论。标题、文档控制和工作稿—正式镜像均一致；NFR/ADR 覆盖审计 PASS，案例残留检索为空。原 Issue 的“唯一 Reference—结构/样式对齐”要求不适用于不存在 DOCX/PDF 对的原生 Markdown 交付物，现以透明 N/A 处置关闭。
+- 状态：CLOSED / VERIFIED_BY_A；G3-07 仍须保持 REVIEW，待 C 符合性复核及 ADR 人工接受，不得由本 Issue 关闭推定为任务 DONE。

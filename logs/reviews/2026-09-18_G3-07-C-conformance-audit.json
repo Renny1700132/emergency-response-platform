@@ -1,0 +1,65 @@
+{
+  "task": "G3-07",
+  "reviewer": "C",
+  "controlled_value_problems": [],
+  "pe_target_row_nfr": [
+    "PE-01",
+    "PE-02",
+    "PE-03",
+    "PE-04",
+    "PE-05",
+    "PE-06",
+    "PE-07",
+    "PE-08",
+    "PE-09",
+    "PE-10",
+    "PE-11",
+    "PE-12"
+  ],
+  "pe_extra_numbers": {},
+  "counts": {
+    "spec_fr": 39,
+    "spec_ac": 117,
+    "facts_fr_rows": 39,
+    "facts_star_rows": 34,
+    "nfr_claim": [
+      "39",
+      "34",
+      "117"
+    ],
+    "conform": true
+  },
+  "boundaries": {
+    "甲方负责最终定级/备案": true,
+    "甲方提供定位源/不降低源精度": true,
+    "既有视频系统负责录像保存": true,
+    "甲方提供地图服务": true,
+    "H5 宿主由甲方负责": true,
+    "消息按正常验收通道口径": true,
+    "RPO 保持待人工确认": true
+  },
+  "status": {
+    "issues_md_g3_01_001": "OPEN",
+    "issues_md_g3_06_001": "RESOLVED_BY_B / VERIFIED_BY_A / PENDING_C。仅 A、C 均复核通过后方可关闭并把 G3-06 置为 DONE。",
+    "nfr_cites_g3_01_001": true,
+    "nfr_cites_g3_06_001": true,
+    "nfr_g3_06_claim": [
+      "`ISSUE-G3-01-001` 继续阻断视频和统一消息真实字段、认证、回执、连通与 PE-04/PE-06 现场结论。`ISSUE-G3-06-001` 属于接口正式件版式问题，不改变本文件的 NFR 数字和技术语义，但在关闭前 G3-06 不能标为 DONE。",
+      "| ISSUE-G3-06-001 | 接口正式件图件与断行待 B 修复 | 阻断 G3-06 DONE，不改变本稿 NFR 数字 |"
+    ],
+    "kn_006_007_not_verified": true
+  },
+  "cross_refs": {
+    "adr2_cites_em_outbox_event": true,
+    "adr2_cites_unit_of_work": true,
+    "adr2_cites_dispatcher": true,
+    "adr2_cites_event_envelope": true,
+    "iface_envelope_ids": true
+  },
+  "sample_pollution": {},
+  "adr_status": {
+    "adr1_proposed": true,
+    "adr2_proposed": true
+  },
+  "pass": true
+}

@@ -891,3 +891,16 @@
 - B 整改（2026-09-18）：工作稿与正式镜像同步移除“（工作稿）”，并将控制状态明确为“REVIEW（正式交付候选；待 A/C 复核）”；镜像 SHA-256 一致。整改记录：`logs/reviews/2026-09-18_G3-07-B-remediation.md`；机械覆盖复验：`logs/reviews/2026-09-18_G3-07-B-remediation-audit.json`。
 - A 复核（2026-09-18）：确认 18 号交付物为 Markdown 正式交付候选而非 DOCX/PDF；没有匹配 NFR Reference DOCX/Markdown 的事实已透明记录，未将 ADR 或 XLSX 教学样例伪作模板，也未伪造页面/渲染对齐结论。标题、文档控制和工作稿—正式镜像均一致；NFR/ADR 覆盖审计 PASS，案例残留检索为空。原 Issue 的“唯一 Reference—结构/样式对齐”要求不适用于不存在 DOCX/PDF 对的原生 Markdown 交付物，现以透明 N/A 处置关闭。
 - 状态：CLOSED / VERIFIED_BY_A；G3-07 仍须保持 REVIEW，待 C 符合性复核及 ADR 人工接受，不得由本 Issue 关闭推定为任务 DONE。
+
+### ISSUE-G3-07-002
+
+- 提出人：C
+- 时间：2026-09-18
+- 严重级别：MINOR；不改变 G3-07 的内容符合性结论，但在 G3-07 置 DONE 前须更正并关闭；不改变 `ISSUE-G3-01-001`、`ISSUE-G3-06-001` 的状态与阻断关系。
+- 文件与位置：`docs/deliverables/18-非功能设计与工程规则.md` §11 未决事项表“`ISSUE-G3-06-001`”行；工作稿镜像 `docs/work/B_TECH/nonfunctional_design_and_rules.md` 同一行。
+- 问题：该行仍写“接口正式件图件与断行待 B 修复”，与实际受控状态不符。`ISSUE-G3-06-001` 已于 2026-09-18 由 B 完成 V0.2 整改（`881ed98`，15:39），A 已复核并置为 `RESOLVED_BY_B / VERIFIED_BY_A / PENDING_C`；该句写于 15:30 的 `3cf2d05`，早于整改完成时间。
+- 影响：正式交付候选件内的未决状态描述过期，降低可审计性；不影响 NFR 数字、技术语义、★属性或责任边界，也不改变 G3-06 尚未 DONE 的事实（现阻断点为待 C 复核）。
+- 最小修复：B 将两份镜像该单元格更新为当前受控状态，并同步 §1 段落中“属于接口正式件版式问题”的时态；保留“G3-06 关闭前不得标为 DONE”的准确约束。
+- 关闭判据：工作稿与正式镜像同步更新且 SHA-256 一致，表述与本登记册 `ISSUE-G3-06-001` 状态一致，由 C 复核关闭。
+- 状态：OPEN
+- C 复核（2026-09-18）：G3-07 三份交付物的需求符合性、★条款、关键数字与来源、责任边界、证据纪律、案例隔离、工作稿—正式镜像一致性与 ADR 引用可解析性均通过；本次登记上述唯一 MINOR 状态过期项。C 复核记录：`logs/reviews/2026-09-18_G3-07-C-review.md`；独立审计：`scripts/audit_g3_07_c_conformance.py`、`logs/reviews/2026-09-18_G3-07-C-conformance-audit.json`（`pass=true`）。G3-07 仍为 REVIEW，不得置 DONE。

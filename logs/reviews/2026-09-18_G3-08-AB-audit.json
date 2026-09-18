@@ -1,0 +1,60 @@
+{
+  "rtm": "docs/work/C_REQ/rtm_v1.md",
+  "counts": {
+    "forward_rows": 39,
+    "design_rows": 39,
+    "star_rows": 34,
+    "ac_ranges": 39,
+    "dbd_source": 39,
+    "dld_source": 39,
+    "api_source": 39,
+    "rclr": 10,
+    "openapi_operations": 57,
+    "adr002_related_fr": [
+      "G2-FR-003",
+      "G2-FR-011",
+      "G2-FR-014",
+      "G2-FR-015",
+      "G2-FR-020",
+      "G2-FR-022",
+      "G2-FR-027",
+      "G2-FR-029"
+    ],
+    "rclr_mentions": {
+      "DBD": 11,
+      "DLD": 0,
+      "API": 0,
+      "NFR": 0
+    },
+    "kn_controlled": 78,
+    "mod_controlled": 11,
+    "ext_controlled": 8
+  },
+  "problems": [],
+  "observations": [
+    {
+      "code": "RCLR_SOURCE_DISAGREEMENT",
+      "detail": "G2-RCLR-010：spec §3.6=['G2-FR-013', 'G2-FR-015', 'G2-FR-016', 'G2-FR-021', 'G2-FR-022'] 澄清记录=['G2-FR-013', 'G2-FR-016', 'G2-FR-021', 'G2-FR-022']（以 spec §3.6 为准）"
+    }
+  ],
+  "blockers": [
+    {
+      "code": "ISSUE_G3_01_001_STATE",
+      "detail": "control/issues.md 将 ISSUE-G3-01-001 置为 CLOSED / VERIFIED_BY_C；同一条目的正文仍要求保持 OPEN/继续阻断；RTM §6/§8 仍声明 OPEN。无关闭证据行，待人工裁决，C 不单方回滚他人提交。"
+    },
+    {
+      "code": "FORMAL_RTM_NOT_SYNCED",
+      "detail": "正式件 10-需求追踪矩阵RTMv1.docx 不含 ['DBD-TR', 'DLD-TR', 'API-TR', 'ARCH-', 'MOD-']；G3-08 设计挂接未镜像到正式件"
+    },
+    {
+      "code": "FORMAL_RTM_STATE",
+      "detail": "正式件仍为 G2-R05 内容，未含 G3-08 设计挂接状态列"
+    },
+    {
+      "code": "G3_08_RENDER_QA_MISSING",
+      "detail": "logs/reviews 无 G3-08 渲染 QA 目录（统一 DoD 要求渲染 QA）"
+    }
+  ],
+  "pass": true,
+  "done_ready": false
+}

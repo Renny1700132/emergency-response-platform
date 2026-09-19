@@ -1,0 +1,35 @@
+{
+  "task": "G3-09",
+  "reviewer": "A",
+  "deliverable": "docs/deliverables/19-测试计划.docx",
+  "version": "V0.2",
+  "attempts": [
+    {
+      "renderer": "packaged LibreOffice render_docx.py",
+      "result": "FAILED",
+      "reason": "LibreOffice soffice.exe was not available on PATH; failure was not treated as a pass"
+    },
+    {
+      "renderer": "Microsoft Word 16 COM read-only Repaginate and ExportAsFixedFormat",
+      "result": "COMPLETED",
+      "pages": 11,
+      "pages_inspected": 11
+    }
+  ],
+  "checks": {
+    "g3_08_prerequisite_done": "PASS",
+    "single_A_reviewer_consistency": "PASS",
+    "fr_star_ac_tc_pe_p0_counts": "PASS",
+    "table_8_1_readability": "PASS",
+    "figure_3_1_alt_text": "PASS",
+    "no_clipping_overlap_or_missing_rows": "PASS",
+    "toc_hierarchy_and_dot_leaders": "PASS",
+    "toc_page_numbers_match_rendered_body": "FAIL"
+  },
+  "toc_mismatch": {
+    "9 风险与应对": {"toc": 11, "actual_body_page": 7},
+    "10 配置、报告与准出结论": {"toc": 11, "actual_body_page": 8},
+    "附录 A 证据包最小字段": {"toc": 11, "actual_body_page": 8}
+  },
+  "result": "CHANGES_REQUIRED"
+}

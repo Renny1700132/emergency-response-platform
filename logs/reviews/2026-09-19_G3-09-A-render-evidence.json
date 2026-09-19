@@ -1,0 +1,36 @@
+{
+  "task": "G3-09",
+  "reviewer": "A",
+  "mode": "independent_single_reviewer",
+  "deliverable": "docs/deliverables/19-测试计划.docx",
+  "reference": "docs/reference/21-测试计划（教学样例）.docx",
+  "attempts": [
+    {
+      "renderer": "packaged LibreOffice render_docx.py",
+      "result": "FAILED",
+      "reason": "LibreOffice soffice.exe was not available on PATH; failure was not treated as a pass"
+    },
+    {
+      "renderer": "Microsoft Word 16 COM read-only Repaginate and ExportAsFixedFormat",
+      "result": "COMPLETED",
+      "deliverable_pages": 11,
+      "reference_pages": 8,
+      "pages_inspected": 11,
+      "all_pages_inspected": true
+    }
+  ],
+  "checks": {
+    "no_clipping_overlap_or_missing_pages": "PASS",
+    "table_rows_preserved_across_pages": "PASS",
+    "toc_reference_fidelity_and_navigation": "FAIL",
+    "core_test_index_readability": "FAIL",
+    "figure_alt_text": "FAIL"
+  },
+  "findings": [
+    "Page 3 static TOC omits the reference's page numbers, dot leaders, and second-level hierarchy.",
+    "Pages 9-10 contain excessive character expansion and awkward wrapping in the 117-AC index.",
+    "Figure 3-1 has no title or description alternative text."
+  ],
+  "result": "CHANGES_REQUIRED",
+  "temporary_cache": "deleted after inspection"
+}

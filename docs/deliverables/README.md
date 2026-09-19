@@ -31,5 +31,6 @@ Markdown 源文件保留在 docs/work；复核记录保留在 logs/reviews。
 - 17-ADR-002-事务Outbox与持久任务.md
 - 18-非功能设计与工程规则.md
 - 19-测试计划.docx
+- 20-项目管理计划.docx（G3-11 REVIEW，待 C 复核）
 
-G3-10/M3 最终冻结尚未完成：`ISSUE-G3-01-001` 和 `ISSUE-G3-10-001` 保持 OPEN，`control/baselines/M3-G3-10-FREEZE-BLOCKED.md` 仅记录不准冻结结论，不构成 FROZEN 基线。G3-11—14 的四份管理计划仍未生成，不能列入正式交付目录。
+G3-10/M3 最终冻结尚未完成：`ISSUE-G3-01-001` 和 `ISSUE-G3-10-001` 保持 OPEN，`control/baselines/M3-G3-10-FREEZE-BLOCKED.md` 仅记录不准冻结结论，不构成 FROZEN 基线。G3-11《项目管理计划》已形成 REVIEW 候选；G3-12—14 仍未生成。G3-11 尚待 C 复核，四份管理计划未全部准出前仍不满足 M3 门禁。

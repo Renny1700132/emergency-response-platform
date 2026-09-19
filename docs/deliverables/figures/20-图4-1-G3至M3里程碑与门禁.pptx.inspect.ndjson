@@ -1,0 +1,26 @@
+{"kind":"deck","id":"pr/yys21d","name":"Deck"}
+{"kind":"layout","layoutId":"2b0cd4d4-0d09-4d4f-8448-e91b0f0d2ad1","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"093654ef-d2fd-44c8-9a83-81fd581a479c","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/l332iv","slide":1,"title":"G3 至 M3 里程碑与门禁","textShapes":20}
+{"kind":"textbox","id":"sh/bel8zatc","slide":1,"text":"G3 至 M3 里程碑与门禁","textPreview":"G3 至 M3 里程碑与门禁","textChars":14,"textLines":1,"bbox":[70,32,1140,58]}
+{"kind":"textbox","id":"sh/wfu9sfux","slide":1,"text":"候选成果按依赖推进；阻断未关闭，不得冻结 M3","textPreview":"候选成果按依赖推进；阻断未关闭，不得冻结 M3","textChars":23,"textLines":1,"bbox":[70,92,1140,32]}
+{"kind":"textbox","id":"sh/xg3q1kbi","slide":1,"text":"G3-02\n计划/WBS","textPreview":"G3-02 | 计划/WBS","textChars":12,"textLines":2,"bbox":[54,220,150,108]}
+{"kind":"textbox","id":"sh/y1crupsn","slide":1,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[204,247,18,50]}
+{"kind":"textbox","id":"sh/j2l83ut8","slide":1,"text":"D0\n概要设计","textPreview":"D0 | 概要设计","textChars":7,"textLines":2,"bbox":[222,220,150,108]}
+{"kind":"textbox","id":"sh/k3u9wzat","slide":1,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[372,247,18,50]}
+{"kind":"textbox","id":"sh/54nq54be","slide":1,"text":"D1\n数据 + ADR/NFR","textPreview":"D1 | 数据 + ADR/NFR","textChars":15,"textLines":2,"bbox":[390,220,150,108]}
+{"kind":"textbox","id":"sh/e5s7ylcj","slide":1,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[540,247,18,50]}
+{"kind":"textbox","id":"sh/z618rqt4","slide":1,"text":"D2\n详细 + 接口","textPreview":"D2 | 详细 + 接口","textChars":10,"textLines":2,"bbox":[558,220,150,108]}
+{"kind":"textbox","id":"sh/36hozyp8","slide":1,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[708,247,18,50]}
+{"kind":"textbox","id":"sh/258nqdo3","slide":1,"text":"D3\nRTM + 测试","textPreview":"D3 | RTM + 测试","textChars":11,"textLines":2,"bbox":[726,220,150,108]}
+{"kind":"textbox","id":"sh/psj6187e","slide":1,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[876,247,18,50]}
+{"kind":"textbox","id":"sh/o7q5s36t","slide":1,"text":"P\nG3-11—14","textPreview":"P | G3-11—14","textChars":10,"textLines":2,"bbox":[894,220,150,108]}
+{"kind":"textbox","id":"sh/f2hovypc","slide":1,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[1044,247,18,50]}
+{"kind":"textbox","id":"sh/e18nmtor","slide":1,"text":"M3\n工程基线","textPreview":"M3 | 工程基线","textChars":7,"textLines":2,"bbox":[1062,220,150,108]}
+{"kind":"textbox","id":"sh/14z6x87i","slide":1,"text":"并行","textPreview":"并行","textChars":2,"textLines":1,"bbox":[740,166,70,32]}
+{"kind":"textbox","id":"sh/g3q5o36x","slide":1,"text":"G3-07 可与 G3-04 并行；管理计划在 G3-02 REVIEW 后可并行","textPreview":"G3-07 可与 G3-04 并行；管理计划在 G3-02 REVIEW 后可并行","textChars":41,"textLines":1,"bbox":[805,158,410,45]}
+{"kind":"shape","id":"sh/ryxorepg","slide":1,"bbox":[96,405,1088,170]}
+{"kind":"textbox","id":"sh/6xonitov","slide":1,"text":"M3 准出门禁","textPreview":"M3 准出门禁","textChars":7,"textLines":1,"bbox":[130,425,210,38]}
+{"kind":"textbox","id":"sh/u947a9sn","slide":1,"text":"① G3-02—14 至少 REVIEW    ② 39 FR / 34★ / 117 AC 与设计、测试双向追踪\n③ 评审问题闭环    ④ 阻断关闭，或取得有权书面替代/延期裁决\n⑤ 一致性机械审计通过后，才可创建 FROZEN 基线","textPreview":"① G3-02—14 至少 REVIEW    ② 39 FR / 34★ / 117 AC 与设计、测试双向追踪 | ③ 评审问题闭环    ④ 阻断关闭，或取得有权书面替代/延期裁决 | ⑤ 一致性机械审计通过后，才可创建 FROZEN 基线","textChars":119,"textLines":3,"bbox":[130,472,1010,86]}
+{"kind":"textbox","id":"sh/vuxo3e98","slide":1,"text":"当前：ISSUE-G3-01-001 与 ISSUE-G3-10-001 保持 OPEN；M3 不可冻结","textPreview":"当前：ISSUE-G3-01-001 与 ISSUE-G3-10-001 保持 OPEN；M3 不可冻结","textChars":52,"textLines":1,"bbox":[110,620,1060,45]}
+{"kind":"notes","id":"nt/l332iv","slide":1,"text":"图 4-1 的可编辑源。仅呈现受控依赖和门禁，不代表任何未完成事项已通过。无外部图片。 "}

@@ -1,0 +1,26 @@
+{
+  "task": "G3-09",
+  "artifact": "docs/deliverables/19-测试计划.docx",
+  "version": "V0.2",
+  "renderer": "WPS ExportAsFixedFormat",
+  "pages": 11,
+  "checks": {
+    "all_pages_rendered": "PASS",
+    "toc_hierarchy_dot_leaders_and_page_numbers": "PASS",
+    "toc_page_numbers_match_rendered_body": "PASS",
+    "table_8_1_readability_and_left_alignment": "PASS",
+    "table_8_1_no_clipping_or_overlap": "PASS",
+    "figure_3_1_alt_text_in_ooxml": "PASS",
+    "headers_footers_and_body_page_numbers": "PASS",
+    "blank_or_abnormal_pages": "NONE"
+  },
+  "content_counts": {
+    "fr": 39,
+    "star_fr": 34,
+    "ac_tc": 117,
+    "p0_scenarios": 8,
+    "pe": 12
+  },
+  "evidence_boundary": "Rendering QA verifies document layout only; it does not prove test execution or external interface connectivity.",
+  "result": "PASS_PENDING_A_REVERIFY"
+}

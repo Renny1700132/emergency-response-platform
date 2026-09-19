@@ -59,8 +59,8 @@ def build_markdown(reqs: list[dict[str, object]]) -> str:
         "# 某自然博物馆智能运营中心建设项目——应急管理子系统测试计划",
         "",
         "- 任务：G3-09",
-        "- 版本：V0.1 评审候选",
-        "- 主责 / 复核：C / A、B",
+        "- 版本：V0.2 评审候选",
+        "- 主责 / 复核：C / A（OVR-025 单人复核）",
         "- 状态：REVIEW（计划与测试设计完成，尚未执行测试）",
         "- 日期：2026-09-19",
         "- 依据：G3-08 RTM、spec 39 FR/117 AC、G3-03—07 设计集、GB/T 15532-2008、GB/T 25000.10 质量特性映射。",
@@ -107,7 +107,7 @@ def build_markdown(reqs: list[dict[str, object]]) -> str:
         "| 单元测试 | 验证状态机、校验、幂等、权限和计算规则 | 领域服务、规则、值对象、映射器 | B / A、C |",
         "| 组件与集成测试 | 验证模块、数据库、Outbox、文件和外部适配器协作 | MOD-*、DBD-TR、DLD-TR、EXT-* | B / C |",
         "| 契约测试 | 阻断 OpenAPI、错误码和事件结构漂移 | 57 项操作、API-TR-001—039 | B / A、C |",
-        "| 系统测试 | 按业务角色执行 39 FR/117 AC 端到端场景 | Web、H5、应用服务、数据与地图 | C / A、B |",
+        "| 系统测试 | 按业务角色执行 39 FR/117 AC 端到端场景 | Web、H5、应用服务、数据与地图 | C / A |",
         "| 专项测试 | 验证性能、可靠性、安全、兼容、易用、恢复和部署 | PE/NFR/ENG 与关键数字 | C 组织，B 技术支持，A 协调 |",
         "| 验收支持 | 整理可由甲方复核的测试包和偏差 | ★、关键数字、外部接口、交付物 | A 组织，B/C 支持 |",
         "",
@@ -187,7 +187,7 @@ def build_markdown(reqs: list[dict[str, object]]) -> str:
         "",
         "| 活动 | 工作日 | 主责 | 产出 |",
         "| --- | --- | --- | --- |",
-        "| 计划、TC 编号与门禁冻结 | D7—D8 | C，A/B 复核 | 本计划、RTM 测试挂接候选 |",
+        "| 计划、TC 编号与门禁冻结 | D7—D8 | C，A 单人复核 | 本计划、RTM 测试挂接候选 |",
         "| 单元、契约和迁移测试 | D9—D15 随开发 | B/功能实现人 | CI、覆盖率、契约和迁移报告 |",
         "| 集成与系统测试 | D15—D16 | C 组织，B 支持 | 117 AC 结果、接口与数据证据 |",
         "| 性能、安全、兼容与恢复专项 | D16—D17 | C 组织，A/B 支持 | 专项报告、扫描和演练记录 |",
@@ -199,9 +199,9 @@ def build_markdown(reqs: list[dict[str, object]]) -> str:
         "",
         "| 角色 | 职责 | 不得替代的复核 |",
         "| --- | --- | --- |",
-        "| C | 维护计划、TC/RTM、测试数据、执行组织、结果与符合性 | B 技术正确性，A 准出与计划一致性 |",
-        "| B | 提供环境、脚本、桩、可观测性，支持性能/接口/恢复并修复缺陷 | C 对需求覆盖和证据边界的核验 |",
-        "| A | 协调版本、窗口、资源、评审和验收包，裁定计划偏差 | B/C 对技术和符合性的独立结论 |",
+        "| C | 维护计划、TC/RTM、测试数据、执行组织、结果与符合性 | A 对 G3-09 准出与计划一致性的单人复核 |",
+        "| B | 提供环境、脚本、桩、可观测性，支持性能/接口/恢复并修复缺陷 | 本轮提供技术支持，不作为 G3-09 复核人 |",
+        "| A | 协调版本、窗口、资源、评审和验收包，裁定计划偏差 | 按 OVR-025 独立完成 G3-09 正式复核 |",
         "| 甲方/教师模拟角色 | 提供或确认外部环境、账号、数据、兼容矩阵和验收窗口 | 乙方不能代造其真实环境证据 |",
         "",
         "## 6 P0 场景与外部联动",
@@ -254,16 +254,14 @@ def build_markdown(reqs: list[dict[str, object]]) -> str:
         "",
         "表 8-1 FR—AC—测试设计索引",
         "",
-        "| FR / ★ | 测试编号 | AC 目标摘要 | 建议级别 | 计划证据 |",
-        "| --- | --- | --- | --- | --- |",
+        "| FR / ★ | TC 与 AC 目标 | 建议级别 | 计划证据 |",
+        "| --- | --- | --- |",
     ]
     for req in reqs:
         acs = req["acs"]
         lines.append(
             f"| {req['id']} / {req['star']} | "
-            + "<br>".join(ac.replace("AC-", "TC-") for ac, _ in acs)
-            + " | "
-            + "<br>".join(f"{ac[-2:]}：{summary}" for ac, summary in acs)
+            + "<br>".join(f"{ac.replace('AC-', 'TC-')}：{summary}" for ac, summary in acs)
             + f" | {level_for(req['num'])} | 结果记录、业务/审计数据、必要的请求回执 |"
         )
     lines += [
@@ -285,7 +283,7 @@ def build_markdown(reqs: list[dict[str, object]]) -> str:
         "",
         "测试配置项包括计划、用例、数据生成脚本、环境清单、OpenAPI 快照、执行结果、覆盖率、性能原始数据、安全扫描、故障演练、缺陷和 RTM。测试报告必须按执行版本汇总通过、失败、阻断和未执行项，禁止只给总通过率而省略★、PE、外部接口和开放 Issue。",
         "",
-        "**G3-09 主责结论**：已形成测试级别、范围、策略、进度、环境、准入准出、P0 场景、PE/NFR 与 117 个 AC 级测试编号，可提交 A、B 独立复核。当前状态保持 REVIEW；本结论不表示任何测试已经执行或通过。`ISSUE-G3-01-001` 保持 OPEN，并继续阻断视频/消息真实联调结论和 G3-10/M3 最终冻结。",
+        "**G3-09 主责结论**：已形成测试级别、范围、策略、进度、环境、准入准出、P0 场景、PE/NFR 与 117 个 AC 级测试编号，可按 OVR-025 提交 A 单人复核。当前状态保持 REVIEW；本结论不表示任何测试已经执行或通过。`ISSUE-G3-01-001` 保持 OPEN，并继续阻断视频/消息真实联调结论和 G3-10/M3 最终冻结。",
         "",
         "## 附录 A 证据包最小字段",
         "",
@@ -347,19 +345,31 @@ def replace_toc(doc: Document) -> None:
         raise RuntimeError("Reference TOC content control not found")
     toc = sdts[0]
     entries = [
-        "1 引言", "2 测试范围", "3 测试策略", "4 准入与准出", "5 进度、角色与交付",
-        "6 P0 场景与外部联动", "7 非功能与关键数字验证", "8 117 个 AC 级测试设计索引",
-        "9 风险与应对", "10 配置、报告与准出结论", "附录 A 证据包最小字段",
+        (1, "1 引言", 1), (2, "1.1 编写目的", 1), (2, "1.2 测试依据", 1), (2, "1.3 证据纪律", 1),
+        (1, "2 测试范围", 1), (2, "2.1 测试对象与基线", 1), (2, "2.2 测试级别", 1),
+        (2, "2.3 覆盖规则", 2), (2, "2.4 不测与延期范围", 2),
+        (1, "3 测试策略", 2), (2, "3.1 测试左移与证据链", 2), (2, "3.2 分级策略", 3),
+        (2, "3.3 测试环境与数据", 3), (2, "3.4 缺陷与回归", 3),
+        (1, "4 准入与准出", 3), (1, "5 进度、角色与交付", 4),
+        (2, "5.1 进度安排", 4), (2, "5.2 角色分工", 4),
+        (1, "6 P0 场景与外部联动", 4), (1, "7 非功能与关键数字验证", 5),
+        (1, "8 117 个 AC 级测试设计索引", 5), (1, "9 风险与应对", 11),
+        (1, "10 配置、报告与准出结论", 11), (1, "附录 A 证据包最小字段", 11),
     ]
     title = OxmlElement("w:p")
     ppr = OxmlElement("w:pPr"); style = OxmlElement("w:pStyle"); style.set(qn("w:val"), "TOCHeading"); ppr.append(style)
     jc = OxmlElement("w:jc"); jc.set(qn("w:val"), "center"); ppr.append(jc); title.append(ppr)
     r = OxmlElement("w:r"); t = OxmlElement("w:t"); t.text = "目 录"; r.append(t); title.append(r); toc.addprevious(title)
-    for text in entries:
+    for level, text, page in entries:
         p = OxmlElement("w:p")
         ppr = OxmlElement("w:pPr")
-        style = OxmlElement("w:pStyle"); style.set(qn("w:val"), "TOC1"); ppr.append(style); p.append(ppr)
+        style = OxmlElement("w:pStyle"); style.set(qn("w:val"), f"TOC{level}"); ppr.append(style)
+        tabs = OxmlElement("w:tabs"); tab = OxmlElement("w:tab")
+        tab.set(qn("w:val"), "right"); tab.set(qn("w:leader"), "dot"); tab.set(qn("w:pos"), "8500")
+        tabs.append(tab); ppr.append(tabs); p.append(ppr)
         r = OxmlElement("w:r"); t = OxmlElement("w:t"); t.text = text; r.append(t); p.append(r)
+        rt = OxmlElement("w:r"); rt.append(OxmlElement("w:tab")); p.append(rt)
+        rp = OxmlElement("w:r"); tp = OxmlElement("w:t"); tp.text = str(page); rp.append(tp); p.append(rp)
         toc.addprevious(p)
     body.remove(toc)
 
@@ -368,6 +378,7 @@ def set_cell_text(cell, text: str, size: float, bold: bool = False) -> None:
     cell.text = ""
     parts = text.split("<br>")
     p = cell.paragraphs[0]
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
     for i, part in enumerate(parts):
         if i:
             p.add_run().add_break()
@@ -379,10 +390,10 @@ def set_cell_text(cell, text: str, size: float, bold: bool = False) -> None:
 
 def format_table(table, rows: list[list[str]]) -> None:
     cols = len(rows[0])
-    size = 7.5 if len(rows) > 20 or cols >= 5 else 8.5
+    size = 8.0 if len(rows) > 20 else (7.5 if cols >= 5 else 8.5)
     table.autofit = False
     total = 9072
-    weights = {2: [1, 3], 3: [1, 2, 3], 4: [1.2, 2.2, 2.5, 2.3], 5: [1.2, 1.5, 3.6, 1.5, 2.2]}.get(cols, [1] * cols)
+    weights = {2: [1, 3], 3: [1, 2, 3], 4: ([1.0, 5.5, 1.5, 2.0] if len(rows) > 20 else [1.2, 2.2, 2.5, 2.3]), 5: [1.2, 1.5, 3.6, 1.5, 2.2]}.get(cols, [1] * cols)
     widths = [int(total * w / sum(weights)) for w in weights]
     grid = table._tbl.tblGrid
     for gc, width in zip(grid.gridCol_lst, widths):
@@ -435,7 +446,10 @@ def add_body(doc: Document, markdown: str) -> None:
             pending_caption = raw; i += 1; continue
         if raw == "[FIGURE]":
             p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-            p.add_run().add_picture(str(FIGURE), width=Cm(15.2)); i += 1; continue
+            shape = p.add_run().add_picture(str(FIGURE), width=Cm(15.2))
+            shape._inline.docPr.set("title", "图 3-1 四级测试与验收证据链")
+            shape._inline.docPr.set("descr", "展示单元测试、集成测试、系统测试到验收测试的四级证据递进关系。")
+            i += 1; continue
         if re.match(r"^图\s+\d+-\d+\s+", raw):
             add_caption(doc, raw); i += 1; continue
         if raw.startswith("|"):
@@ -464,14 +478,14 @@ def build_docx(markdown: str) -> None:
     remove_reference_body(doc)
     replace_toc(doc)
     cover = {
-        0: "文档编号：YJGL-G3-09　　版本号：V0.1",
+        0: "文档编号：YJGL-G3-09　　版本号：V0.2",
         1: "密　　级：内部 · 教学用",
         3: "某自然博物馆智能运营中心建设项目——应急管理子系统",
         4: "测试计划",
         5: "（G3-09 评审候选）",
         7: "编制单位：020202项目组【待人工确认】",
         8: "编　　制：C（需求与测试负责人）【待人工确认姓名】",
-        9: "审　　核：A、B（项目与技术复核）",
+        9: "审　　核：A（OVR-025 单人复核）",
         10: "批　　准：【待人工确认】",
         11: "编制日期：2026 年 9 月 19 日",
         13: "修订记录",
@@ -480,10 +494,14 @@ def build_docx(markdown: str) -> None:
     for idx, text in cover.items(): replace_paragraph(doc.paragraphs[idx], text)
     rev = doc.tables[0]
     while len(rev.rows) > 1: rev._tbl.remove(rev.rows[-1]._tr)
-    row = rev.add_row().cells
-    vals = ["V0.1", "2026-09-19", "全文", "建立 G3-09 测试计划评审候选，锁定 117 个 AC 级测试编号和测试左移门禁。", "C"]
-    for cell, val in zip(row, vals): cell.text = val
-    format_table(rev, [["版本", "日期", "修订章节", "修订说明", "编制/修订人"], vals])
+    revisions = [
+        ["V0.1", "2026-09-19", "全文", "建立 G3-09 测试计划评审候选，锁定 117 个 AC 级测试编号和测试左移门禁。", "C"],
+        ["V0.2", "2026-09-19", "封面、目录、5、8、10", "按 A 审核修正复核主体、目录导航、长表可读性和图 3-1 替代文本。", "C"],
+    ]
+    for vals in revisions:
+        row = rev.add_row().cells
+        for cell, val in zip(row, vals): cell.text = val
+    format_table(rev, [["版本", "日期", "修订章节", "修订说明", "编制/修订人"], *revisions])
     add_body(doc, markdown)
     body = doc.element.body
     sect = body.sectPr

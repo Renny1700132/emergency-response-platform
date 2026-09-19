@@ -1,9 +1,9 @@
 {
   "task": "G3-09",
   "reviewer": "A",
-  "source_commit": "267062ed643516e81030f33ff3b508b0d716d866",
+  "source_commit": "e7b52ab",
   "deliverable": "docs/deliverables/19-测试计划.docx",
-  "sha256": "A93DA8B35BED5A9F0D2DCC0C155DDF5184F2905E4B1D72B22D50BE8A5116A534",
+  "sha256": "2A807DDC02B7111F7EAD86EE167363CABB09C3592EACA0E59327ADC52EADE580",
   "renderer": "Microsoft Word 16 COM read-only Repaginate and ExportAsFixedFormat",
   "pages": 11,
   "pages_inspected": 11,

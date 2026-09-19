@@ -1,0 +1,43 @@
+{
+  "task": "G3-09",
+  "date": "2026-09-19",
+  "reviewer": "C",
+  "document": "docs/deliverables/19-测试计划.docx",
+  "renderer": "Microsoft Word 16 read-only ExportAsFixedFormat",
+  "page_count": 11,
+  "all_pages_reviewed": true,
+  "focused_pages_reviewed": [3, 9, 10, 11],
+  "toc_expected": {
+    "9 风险与应对": 7,
+    "10 配置、报告与准出结论": 8,
+    "附录 A 证据包最小字段": 8
+  },
+  "toc_matches_rendered_body": "PASS",
+  "content_freeze": {
+    "before_record_count": 621,
+    "after_record_count": 621,
+    "changed_records": 3,
+    "expected_changes_only": true
+  },
+  "mechanical_audit": {
+    "fr": 39,
+    "star": 34,
+    "ac_tc": 117,
+    "pe": 12,
+    "p0": 8,
+    "result": "PASS"
+  },
+  "visual_checks": {
+    "cropping": "PASS",
+    "overlap": "PASS",
+    "overflow": "PASS",
+    "table_8_1_readability": "PASS",
+    "abnormal_blank_pages": "PASS"
+  },
+  "failed_attempts": [
+    "WPS COM class was not registered",
+    "initial Word COM call had no desktop logon session"
+  ],
+  "result": "PASS",
+  "disposition": "RESOLVED_BY_C / PENDING_A_REVERIFY"
+}

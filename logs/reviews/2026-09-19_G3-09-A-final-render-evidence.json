@@ -1,0 +1,30 @@
+{
+  "task": "G3-09",
+  "reviewer": "A",
+  "source_commit": "267062ed643516e81030f33ff3b508b0d716d866",
+  "deliverable": "docs/deliverables/19-测试计划.docx",
+  "sha256": "A93DA8B35BED5A9F0D2DCC0C155DDF5184F2905E4B1D72B22D50BE8A5116A534",
+  "renderer": "Microsoft Word 16 COM read-only Repaginate and ExportAsFixedFormat",
+  "pages": 11,
+  "pages_inspected": 11,
+  "checks": {
+    "all_pages_readable": "PASS",
+    "no_clipping_overlap_missing_rows": "PASS",
+    "toc_hierarchy_and_dot_leaders": "PASS",
+    "toc_page_numbers": "PASS",
+    "toc_last_entries": "9->7; 10->8; appendix_A->8",
+    "table_8_1_readability": "PASS",
+    "figure_alt_text": "PASS",
+    "a11y_findings": 0,
+    "comments": 0,
+    "tracked_changes": 0
+  },
+  "content_counts": {
+    "fr": 39,
+    "star_fr": 34,
+    "ac_tc": 117,
+    "pe": 12,
+    "p0": 8
+  },
+  "result": "PASS"
+}

@@ -1,0 +1,38 @@
+{
+  "rtm": "docs/work/C_REQ/rtm_v1.md",
+  "counts": {
+    "forward_rows": 39,
+    "design_rows": 39,
+    "star_rows": 34,
+    "ac_ranges": 39,
+    "dbd_source": 39,
+    "dld_source": 39,
+    "api_source": 39,
+    "rclr": 10,
+    "openapi_operations": 57,
+    "adr002_related_fr": [
+      "G2-FR-003",
+      "G2-FR-011",
+      "G2-FR-014",
+      "G2-FR-015",
+      "G2-FR-020",
+      "G2-FR-022",
+      "G2-FR-027",
+      "G2-FR-029"
+    ],
+    "rclr_mentions": {
+      "DBD": 11,
+      "DLD": 0,
+      "API": 0,
+      "NFR": 0
+    },
+    "kn_controlled": 78,
+    "mod_controlled": 11,
+    "ext_controlled": 8
+  },
+  "problems": [],
+  "observations": [],
+  "blockers": [],
+  "pass": true,
+  "done_ready": true
+}

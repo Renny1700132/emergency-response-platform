@@ -1,0 +1,34 @@
+{
+  "task": "G3-08",
+  "mode": "CONTENT + FORMAT",
+  "reference": "docs/reference/26-需求追踪矩阵RTM-v3（设计挂接·教学样例）.docx",
+  "deliverable": "docs/deliverables/10-需求追踪矩阵RTMv1.docx",
+  "renderer": "WPS 12.1 / KWPS.Application",
+  "reference_pages": 8,
+  "deliverable_pages": 12,
+  "pages_inspected": 12,
+  "all_pages_inspected": true,
+  "checks": {
+    "cover_and_front_matter": "PASS",
+    "headings_and_pagination": "PASS",
+    "tables_and_repeated_headers": "PASS",
+    "captions_and_adjacency": "PASS",
+    "no_clipping_overlap_or_overflow": "PASS",
+    "no_vertical_character_wrapping": "PASS",
+    "no_teaching_case_business_contamination": "PASS"
+  },
+  "iteration": {
+    "first_render_pages": 86,
+    "first_render_result": "FAIL: OOXML table widths used EMU values where twips were required, producing one-character vertical wrapping",
+    "fix": "converted table widths to twips and rebuilt from the same Reference base; replaced stale Reference TOC bookmarks after the intermediate 12-page render exposed undefined-bookmark errors",
+    "final_render_pages": 12,
+    "final_render_result": "PASS"
+  },
+  "word_com_export": {
+    "status": "FAILED",
+    "message": "导出失败。无法准备用于导出的文档。",
+    "used_for_pass": false
+  },
+  "temporary_cache": "deleted after inspection per formal deliverable Skill",
+  "status": "PASS"
+}

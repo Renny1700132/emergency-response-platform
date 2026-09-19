@@ -32,6 +32,7 @@ ROOT = Path(__file__).resolve().parents[1]
 RTM = ROOT / "docs/work/C_REQ/rtm_v1.md"
 FORMAL_RTM = ROOT / "docs/deliverables/10-需求追踪矩阵RTMv1.docx"
 RENDER_DIRS = ROOT / "logs/reviews"
+RENDER_QA = RENDER_DIRS / "2026-09-19_G3-08-render-qa.json"
 
 problems = []
 observations = []
@@ -439,9 +440,17 @@ if FORMAL_RTM.exists():
     if "G2-RCLR" in xml and "COVERED_DESIGN" not in xml:
         add(blockers, "FORMAL_RTM_STATE", "正式件仍为 G2-R05 内容，未含 G3-08 设计挂接状态列")
 
-# 16. G3-08 渲染 / 编号引用检查证据
-if not list(RENDER_DIRS.glob("render_G3-08*")):
-    add(blockers, "G3_08_RENDER_QA_MISSING", "logs/reviews 无 G3-08 渲染 QA 目录（统一 DoD 要求渲染 QA）")
+# 16. G3-08 渲染 / 编号引用检查证据。逐页 PNG/PDF 是临时缓存，按正式文档
+# Skill 在检查完成后删除；长期审计证据保留为结构化 JSON。
+if not RENDER_QA.exists():
+    add(blockers, "G3_08_RENDER_QA_MISSING", "缺少 G3-08 持久化渲染 QA 记录")
+else:
+    try:
+        render_qa = json.loads(RENDER_QA.read_text(encoding="utf-8"))
+        if render_qa.get("status") != "PASS" or not render_qa.get("all_pages_inspected"):
+            add(blockers, "G3_08_RENDER_QA_NOT_PASS", "G3-08 渲染 QA 未记录为全页 PASS")
+    except (OSError, json.JSONDecodeError) as exc:
+        add(blockers, "G3_08_RENDER_QA_INVALID", f"G3-08 渲染 QA 记录不可解析：{exc}")
 
 # 17. 测试挂接未冒充已完成
 if re.search(r"TC-G2-FR-\d{3}-01—03（待测试）", rtm_text) and "（G3-09）" in rtm_text:

@@ -1,0 +1,15 @@
+{
+  "fr_rows": 39,
+  "fr_missing": [],
+  "star_expected": 34,
+  "star_rows": 34,
+  "ac_ranges": 39,
+  "ac_effective": 117,
+  "dbd": 39,
+  "dld": 39,
+  "api": 39,
+  "rclr": 10,
+  "current_state_marker": true,
+  "stale_review_marker": false,
+  "pass": true
+}

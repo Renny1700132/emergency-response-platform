@@ -18,3 +18,18 @@
 - 08-第二关M2评审包.docx
 
 Markdown 源文件保留在 docs/work；复核记录保留在 logs/reviews。
+
+第三关当前已完成并通过各自主责/复核门禁的设计与测试候选成果：
+
+- 10-需求追踪矩阵RTMv1.docx（G3-08 设计挂接镜像）
+- 11-概要设计说明书.docx
+- 12-详细设计说明书.docx
+- 13-数据库设计说明书.docx
+- 14-接口设计说明书.docx
+- 15-接口契约-openapi_v1.yaml
+- 16-ADR-001-应用拆分与部署单元.md
+- 17-ADR-002-事务Outbox与持久任务.md
+- 18-非功能设计与工程规则.md
+- 19-测试计划.docx
+
+G3-10/M3 最终冻结尚未完成：`ISSUE-G3-01-001` 和 `ISSUE-G3-10-001` 保持 OPEN，`control/baselines/M3-G3-10-FREEZE-BLOCKED.md` 仅记录不准冻结结论，不构成 FROZEN 基线。G3-11—14 的四份管理计划仍未生成，不能列入正式交付目录。

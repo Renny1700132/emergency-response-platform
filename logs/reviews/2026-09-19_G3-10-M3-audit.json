@@ -1,0 +1,234 @@
+{
+  "task": "G3-10",
+  "audit_date": "2026-09-19",
+  "task_states": {
+    "G3-02": "DONE",
+    "G3-03": "DONE",
+    "G3-04": "DONE",
+    "G3-05": "DONE",
+    "G3-06": "DONE（B 完成 V0.2 整改；A 整改后复核 PASS；C 符合性复核 PASS，独立审计 0 问题、独立 Word 渲染 23 页与 B 一致且竖向碎片 0，并由 C 验证关闭 `ISSUE-G3-06-001`；C 登记 3 项不阻断观察项（A 记录列宽引用值更正、标识符连字符断行、§8.3 端口口径）。`ISSUE-G3-01-001` 仍阻断视频/消息真实外部契约冻结与 M3 最终冻结；冻结前若再次修改 14/15 号交付物须重新触发 A/C 复核）",
+    "G3-07": "DONE（2026-09-18 用户最终准出授权；`ISSUE-G3-07-001/002` 均 CLOSED；A/C Review PASS；ADR-001/002 已 Accepted，PE-01—12、ENG-001—020、39 FR/117 AC/34★、责任边界与未验证事项经最终机械自检无漂移。`ISSUE-G3-01-001` 对真实视频/消息外部证据与 M3 的既有阻断不变）",
+    "G3-08": "DONE（2026-09-19 C 主责整改与符合性复验 PASS、B 独立技术复核 PASS；39 FR/34★/117 AC 与 DBD/DLD/API-TR 39/39 双向追踪、57 项 OpenAPI 操作及 G2-RCLR-001—010 均通过机械复验；正式件 10 已按 Reference 26 物理模板同步并完成 12 页逐页视觉 QA；`ISSUE-G3-08-001—007` 均关闭。`ISSUE-G3-01-001` 保持 OPEN，继续阻断真实视频/消息外部契约冻结与 G3-10/M3 最终冻结）",
+    "G3-09": "DONE（2026-09-19 A 对远程第二次整改最终单人复验 PASS：`ISSUE-G3-09-001/002` 均 CLOSED；39 FR/34★/117 AC/TC、PE-01—12、P0-01—08、复核主体、目录 7/8/8、表 8-1 可读性、图替代文本、证据边界和 11/11 页渲染均通过，无新增问题。仅表示测试计划与设计准出，尚未执行测试；`ISSUE-G3-01-001` 保持 OPEN，继续阻断真实视频/消息联调结论及 G3-10/M3 最终冻结）",
+    "G3-10": "BLOCKED（2026-09-19 A 已完成当前 G3-02—09 候选成果的一致性机械审计，39 FR/34★/117 AC/TC、10 RCLR、DBD/DLD/API-TR 39/39、57 项 OpenAPI、PE-01—12、ENG-001—020及 ADR Accepted 均通过；但 `ISSUE-G3-01-001` 仍 OPEN，且 `plan.md` 的 M3 门禁要求 G3-11—14 至少 REVIEW、当前四项仍 TODO。未创建 FROZEN 基线，见 `ISSUE-G3-10-001` 与 `M3-G3-10-FREEZE-BLOCKED.md`）",
+    "G3-11": "TODO",
+    "G3-12": "TODO",
+    "G3-13": "TODO",
+    "G3-14": "TODO"
+  },
+  "upstream_g3_02_to_09_done": true,
+  "management_plans_g3_11_to_14_review_or_done": false,
+  "issue_g3_01_001_status": "OPEN",
+  "counts": {
+    "fr": 39,
+    "ac": 117,
+    "rclr": 10,
+    "pe": 12,
+    "eng": 20,
+    "star_fr": 34,
+    "tc": 117,
+    "dbd_tr": 39,
+    "dld_tr": 39,
+    "api_tr": 39,
+    "openapi_operations": 57,
+    "openapi_unique_operations": 57
+  },
+  "count_expectations": {
+    "fr": 39,
+    "ac": 117,
+    "rclr": 10,
+    "pe": 12,
+    "eng": 20,
+    "star_fr": 34,
+    "tc": 117,
+    "dbd_tr": 39,
+    "dld_tr": 39,
+    "api_tr": 39,
+    "openapi_operations": 57,
+    "openapi_unique_operations": 57
+  },
+  "count_checks": {
+    "fr": true,
+    "ac": true,
+    "rclr": true,
+    "pe": true,
+    "eng": true,
+    "star_fr": true,
+    "tc": true,
+    "dbd_tr": true,
+    "dld_tr": true,
+    "api_tr": true,
+    "openapi_operations": true,
+    "openapi_unique_operations": true
+  },
+  "adr_status": {
+    "ADR-001": true,
+    "ADR-002": true
+  },
+  "manifest": [
+    {
+      "path": "docs/work/A_PM/plan.md",
+      "exists": true,
+      "size": 10024,
+      "sha256": "52F8831DA4A4D368DD0EDA2C00E0F9F6D5BEA6741B5D920E8D8EACC7DC297545"
+    },
+    {
+      "path": "constitution.md",
+      "exists": true,
+      "size": 4079,
+      "sha256": "6F7C8B3B84A47A1A4CFE16A9EAEC0055950715D4114F9BDB9DE537E7C7FBA0B2"
+    },
+    {
+      "path": "docs/work/A_PM/overview_design.md",
+      "exists": true,
+      "size": 3702,
+      "sha256": "7ABEAA049D0A5930B8BD400D9C700BA124707DFD506B367BAF2E62017F6C12B6"
+    },
+    {
+      "path": "docs/work/B_TECH/database_design.md",
+      "exists": true,
+      "size": 41260,
+      "sha256": "4468CD0A7089FA638E5CB8AD3590D67CA465046AEC63966CEFCAB936076CA344"
+    },
+    {
+      "path": "docs/work/B_TECH/detailed_design.md",
+      "exists": true,
+      "size": 29740,
+      "sha256": "AD1C4A8BECE945B2CE5195471CAD8B706F26E9F4F7EE721524922FE82C32CBCA"
+    },
+    {
+      "path": "docs/work/B_TECH/interface_design.md",
+      "exists": true,
+      "size": 31335,
+      "sha256": "DEF8ED1F440F1E59337D0D78DEAC965BE11AF54BA4A83D9991B9C3170B47EE02"
+    },
+    {
+      "path": "docs/work/C_REQ/rtm_v1.md",
+      "exists": true,
+      "size": 27482,
+      "sha256": "243F52A31459B0992229C74E9049A82A3F7900563D62E1719D4C00CE4400FB52"
+    },
+    {
+      "path": "docs/work/C_REQ/test_plan.md",
+      "exists": true,
+      "size": 30807,
+      "sha256": "0B9150F8B0E0718EF30A031D9AA98664114EDA3D6F9F70C04E5AEA7F59E57517"
+    },
+    {
+      "path": "docs/deliverables/10-需求追踪矩阵RTMv1.docx",
+      "exists": true,
+      "size": 59160,
+      "sha256": "A73E8AEEAF883A33BCFE13E48E8560C76A06AD002B7B473D429D3E6647301259"
+    },
+    {
+      "path": "docs/deliverables/11-概要设计说明书.docx",
+      "exists": true,
+      "size": 420874,
+      "sha256": "763AA427477DAE106ED0B295B0672A1102D2F8B15E096E7FD9E923B2AA08B6C4"
+    },
+    {
+      "path": "docs/deliverables/12-详细设计说明书.docx",
+      "exists": true,
+      "size": 590618,
+      "sha256": "A82FBD9E619BEEADBE9D44D977CBCC0D2EB7B94B39729AA5A15D24EA6DFAB6A4"
+    },
+    {
+      "path": "docs/deliverables/13-数据库设计说明书.docx",
+      "exists": true,
+      "size": 163118,
+      "sha256": "965944399B170AC1C765555BF3C5D08487534A509E3B301C6E7D3A4EAE5E6853"
+    },
+    {
+      "path": "docs/deliverables/14-接口设计说明书.docx",
+      "exists": true,
+      "size": 164300,
+      "sha256": "9340BA117BA01C8F404F12CA775A336756BF95EA4428323298A03EEC13A4C6F3"
+    },
+    {
+      "path": "docs/deliverables/15-接口契约-openapi_v1.yaml",
+      "exists": true,
+      "size": 105660,
+      "sha256": "171B9BF65295FA759D7C7737B08473E47162B14415AC5F3859A4EC1B5806EB71"
+    },
+    {
+      "path": "docs/deliverables/16-ADR-001-应用拆分与部署单元.md",
+      "exists": true,
+      "size": 7191,
+      "sha256": "83DDAD1D47AE8FA5641574D7DA03F741A70595E0CEFA9CCB70E365E1436AAE0A"
+    },
+    {
+      "path": "docs/deliverables/17-ADR-002-事务Outbox与持久任务.md",
+      "exists": true,
+      "size": 6622,
+      "sha256": "42A7669999E799242CE2F0E2A526F8B18532631BB8F16F2DDAF993852C0C8AB3"
+    },
+    {
+      "path": "docs/deliverables/18-非功能设计与工程规则.md",
+      "exists": true,
+      "size": 14516,
+      "sha256": "D3CBA1C19CBA7EEDB7704E4059D3BF122FCA30F9F32FFC8DAFFD7A1E5D37B0E1"
+    },
+    {
+      "path": "docs/deliverables/19-测试计划.docx",
+      "exists": true,
+      "size": 238873,
+      "sha256": "2A807DDC02B7111F7EAD86EE167363CABB09C3592EACA0E59327ADC52EADE580"
+    }
+  ],
+  "review_evidence": {
+    "G3-02": [
+      "logs/reviews/2026-09-17_G3-02-B-final-rereview.md",
+      "logs/reviews/2026-09-17_G3-02-B-technical-review.md",
+      "logs/reviews/2026-09-17_G3-02-C-compliance-review.md",
+      "logs/reviews/2026-09-17_G3-02-C-final-rereview.md"
+    ],
+    "G3-03": [
+      "logs/reviews/2026-09-17_G3-03-C-blocker-only-rereview.md",
+      "logs/reviews/2026-09-17_G3-03-C-compliance-review.md",
+      "logs/reviews/2026-09-17_G3-03-C-final-rereview.md",
+      "logs/reviews/2026-09-17_G3-03-review-remediation.md"
+    ],
+    "G3-04": [
+      "logs/reviews/2026-09-17_G3-04-A-C-delivery-rereview.md",
+      "logs/reviews/2026-09-17_G3-04-A-technical-review.md",
+      "logs/reviews/2026-09-17_G3-04-C-compliance-review.md"
+    ],
+    "G3-05": [
+      "logs/reviews/2026-09-17_G3-05-A-C-review.md",
+      "logs/reviews/2026-09-17_G3-05-unique-complete-review.md",
+      "logs/reviews/2026-09-17_G3-05-unique-rereview.md"
+    ],
+    "G3-06": [
+      "logs/reviews/2026-09-18_G3-06-A-final-rereview.md",
+      "logs/reviews/2026-09-18_G3-06-A-rereview.md",
+      "logs/reviews/2026-09-18_G3-06-A-review.md",
+      "logs/reviews/2026-09-18_G3-06-C-review.md"
+    ],
+    "G3-07": [
+      "logs/reviews/2026-09-18_G3-07-A-rereview.md",
+      "logs/reviews/2026-09-18_G3-07-A-review.md",
+      "logs/reviews/2026-09-18_G3-07-C-review.md"
+    ],
+    "G3-08": [
+      "logs/reviews/2026-09-18_G3-08-AB-review.md",
+      "logs/reviews/2026-09-18_G3-08-C-review-qa.md",
+      "logs/reviews/2026-09-19_G3-08-B-technical-review.md"
+    ],
+    "G3-09": [
+      "logs/reviews/2026-09-19_G3-09-A-final-review.md",
+      "logs/reviews/2026-09-19_G3-09-A-review.md"
+    ]
+  },
+  "case_residue": {},
+  "deliverables_readme_missing": [],
+  "consistency_checks_pass": true,
+  "freeze_ready": false,
+  "decision": "DO_NOT_FREEZE",
+  "blockers": [
+    "ISSUE-G3-01-001 remains OPEN and explicitly blocks G3-10/M3 freeze",
+    "plan.md requires G3-02—G3-14 REVIEW, but G3-11—G3-14 remain TODO"
+  ],
+  "observations": [
+    "G3-06 A review contains a non-blocking column-width transcription observation recorded by C"
+  ]
+}

@@ -1051,3 +1051,19 @@
 - C 第二次整改（2026-09-19）：仅将静态目录三项页码由 `11/11/11` 更正为 `7/8/8`；正式件前后内容快照均为 621 条记录且仅上述 3 条记录变化。Word 16 只读重新分页并导出 11 页，逐页及关键页放大检查通过；39 FR、34★、117 AC/TC、PE-01—12、P0-01—08 机械审计通过。证据见 `logs/reviews/2026-09-19_G3-09-C-remediation.md` 与 `logs/reviews/2026-09-19_G3-09-C-remediation2-render-qa.json`。
 - A 最终复验（2026-09-19）：同步并合并远程提交 `e7b52ab` 后，对第二次整改正式件重新执行机械审计及 Word 16 全 11 页逐页检查。目录末三项为 7/8/8 且与正文一致；点引线、二级层级、表 8-1、图替代文本、39 FR、34★、117 AC/TC、PE-01—12、P0-01—08 和证据边界全部通过，未发现新增问题。
 - 状态：CLOSED / VERIFIED_BY_A
+
+## G3-10 M3 一致性与冻结门禁
+
+### ISSUE-G3-10-001
+
+- 提出人：A
+- 时间：2026-09-19
+- 严重级别：BLOCKER / BLOCKING_TO_G3-10_DONE_AND_M3_FREEZE
+- 文件与位置：`tasks.md` G3-10、G3-11—14；`docs/work/A_PM/plan.md` §2；`control/issues.md` 的 `ISSUE-G3-01-001`；`control/baselines/BASELINE-G2-M2-R1.0.md` §4。
+- 问题：G3-10 当前不能合法完成最终工程基线冻结。其一，`ISSUE-G3-01-001` 仍缺视频和统一消息真实环境/账号、版本或字段、认证、脱敏请求响应/回执、失败场景和连通结论，也未取得书面替代/延期裁决；其二，`tasks.md` 把 G3-10 前置写为 G3-02—09，而受控 `plan.md` 的 M3 门禁要求 G3-02—14 至少 REVIEW，当前 G3-11—14 均为 TODO。
+- 已完成范围：A 已对 G3-02—09 当前候选成果、控制文件、Review 和配置项执行机械一致性审计；39 FR、34★、117 AC/TC、10 RCLR、DBD/DLD/API-TR 各39、57项 OpenAPI 操作、PE-01—12、ENG-001—020、ADR Accepted、正式件存在性与案例隔离均通过。
+- 影响：可以形成 M3 检查包和 `DO_NOT_FREEZE` 记录，但不得生成 `FROZEN` 基线、不得把真实外部契约或现场指标写成已验证，也不得把 G3-10 置 DONE。
+- 主责人：A；复核人：B（技术）、C（符合性）。
+- 关闭条件：① `ISSUE-G3-01-001` 按原关闭条件取得真实证据并经 B/C 复核，或取得明确书面替代/延期裁决并完成影响分析；② 由项目负责人裁决 M3 是否纳入 G3-11—14，若纳入则四项至少进入 REVIEW并满足统一DoD，若不纳入则同步修订 `plan.md`/`tasks.md` 门禁；③ A 复跑 G3-10 审计为 `freeze_ready=true`，B/C 独立复核通过后再创建新 M3 FROZEN 基线。
+- 证据：`docs/work/A_PM/g3_m3_review_pack.md`、`logs/reviews/2026-09-19_G3-10-M3-audit.json`、`logs/reviews/2026-09-19_G3-10-A-self-check.md`、`control/baselines/M3-G3-10-FREEZE-BLOCKED.md`。
+- 状态：OPEN / BLOCKING。

@@ -1,0 +1,23 @@
+{
+  "task": "G3-09",
+  "mode": "NEW DOCUMENT",
+  "reference": "docs/reference/21-测试计划（教学样例）.docx",
+  "deliverable": "docs/deliverables/19-测试计划.docx",
+  "renderer": "WPS 12.1 / KWPS.Application",
+  "reference_pages": 8,
+  "deliverable_pages": 11,
+  "pages_inspected": 11,
+  "all_pages_inspected": true,
+  "checks": {
+    "reference_cover_and_front_matter_inherited": "PASS",
+    "static_toc_no_broken_bookmarks": "PASS",
+    "headings_and_pagination": "PASS",
+    "tables_and_repeated_headers": "PASS",
+    "figure_caption_and_readability": "PASS",
+    "no_clipping_overlap_or_overflow": "PASS",
+    "no_teaching_case_business_contamination": "PASS"
+  },
+  "figure_source": "reused editable project figure docs/deliverables/figures/00-图9-2-四级测试与验收证据链.pptx with its checked PNG rendering",
+  "temporary_cache": "delete after final verification",
+  "status": "PASS"
+}

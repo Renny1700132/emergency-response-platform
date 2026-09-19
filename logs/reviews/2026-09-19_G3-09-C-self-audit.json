@@ -1,0 +1,14 @@
+{
+  "task": "G3-09",
+  "counts": {
+    "fr_rows": 39,
+    "star_rows": 34,
+    "spec_ac": 117,
+    "test_cases": 117,
+    "pe": 12,
+    "p0_scenarios": 8
+  },
+  "problems": [],
+  "pass": true,
+  "review_ready": true
+}

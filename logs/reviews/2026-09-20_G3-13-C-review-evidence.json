@@ -1,0 +1,35 @@
+{
+  "task": "G3-13",
+  "reviewer": "C",
+  "date": "2026-09-20",
+  "result": "CHANGES_REQUIRED",
+  "task_status": "REVIEW",
+  "mechanical_audit": {
+    "script": "scripts/audit_g3_13_configuration_plan.py",
+    "result": "PASS",
+    "heading1": 11,
+    "heading2": 18,
+    "tables_total": 10
+  },
+  "content_checks": {
+    "39_fr_34_star_117_ac_unchanged": "PASS",
+    "open_issue_boundaries_preserved": "PASS",
+    "ac_g2_fr_013_01_semantics_and_trace": "PASS",
+    "teaching_case_pollution": "NONE",
+    "comments_or_tracked_changes": "NONE"
+  },
+  "render": {
+    "renderer": "Microsoft Word 16 COM read-only Repaginate and ExportAsFixedFormat",
+    "pages": 8,
+    "pages_inspected": "8/8",
+    "clipping_overlap_missing_pages_garbled_text_or_table_overflow": "NONE",
+    "toc_matches_body": "PASS"
+  },
+  "caption_audit": {
+    "revision_record_layout_table": 1,
+    "business_tables": 9,
+    "business_tables_with_independent_numbered_caption": 0,
+    "result": "FAIL",
+    "issue": "ISSUE-G3-13-001"
+  }
+}

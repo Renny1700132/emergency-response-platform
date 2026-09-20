@@ -1,0 +1,34 @@
+{
+  "task": "G3-14",
+  "reviewer": "B",
+  "date": "2026-09-20",
+  "result": "CHANGES_REQUIRED",
+  "task_status": "REVIEW",
+  "content_checks": {
+    "risk_ids_01_to_16_complete": "PASS",
+    "risk_four_elements_triggers_actions_owner_review_close": "PASS",
+    "ac_g2_fr_006_01_semantics_and_technical_evidence_boundary": "PASS",
+    "issue_g3_01_001_open": "PASS",
+    "issue_g3_10_001_open": "PASS",
+    "risk_classification_consistency": "FAIL"
+  },
+  "classification_finding": {
+    "declared_high_score_range": "10-16",
+    "high_risks_placed_under_medium_low_heading": ["RR-03", "RR-06", "RR-07", "RR-10", "RR-11", "RR-15"],
+    "issue": "ISSUE-G3-14-001"
+  },
+  "caption_audit": {
+    "tables_total": 8,
+    "revision_record_layout_table": 1,
+    "business_tables": 7,
+    "business_tables_with_numbered_caption": 0,
+    "result": "FAIL",
+    "issue": "ISSUE-G3-14-002"
+  },
+  "render": {
+    "renderer": "Microsoft Word 16 COM read-only Repaginate and ExportAsFixedFormat",
+    "pages": 8,
+    "pages_inspected": "8/8",
+    "clipping_overlap_missing_pages_garbled_text_or_table_overflow": "NONE"
+  }
+}

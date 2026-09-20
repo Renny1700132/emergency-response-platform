@@ -1,0 +1,42 @@
+{
+  "task": "G3-13",
+  "issue": "ISSUE-G3-13-001",
+  "mode": "CONTENT + FORMAT",
+  "version": "V0.2",
+  "result": "PASS_PENDING_C_REREVIEW",
+  "reference": "docs/reference/24-配置管理计划（教学样例）.docx",
+  "deliverable": "docs/deliverables/22-配置管理计划.docx",
+  "deliverable_sha256": "D70F1AAB881C7CCDE825AD9EB40B53D41F5747AF763D5708B6C903A3CCFEE067",
+  "content_freeze": {
+    "before_text_sha256": "B48ED9939BD9722715EC4899D520C6EFE7A45AFE198133ECE30E572C17B5336F",
+    "after_text_sha256": "B48ED9939BD9722715EC4899D520C6EFE7A45AFE198133ECE30E572C17B5336F",
+    "result": "PASS"
+  },
+  "caption_audit": {
+    "business_tables": 9,
+    "business_table_captions": 9,
+    "duplicate_numbers": 0,
+    "skipped_numbers_within_chapter": 0,
+    "adjacent_and_readable": "PASS",
+    "caption_object_page_separation": 0,
+    "revision_table_exemption": "Reference layout table; no business caption required"
+  },
+  "renderer_attempts": [
+    {
+      "renderer": "packaged documents Skill render_docx.py / LibreOffice",
+      "result": "FAIL",
+      "detail": "FileNotFoundError: LibreOffice soffice.exe was not found on PATH"
+    },
+    {
+      "renderer": "Microsoft Word 16 COM read-only Repaginate and ExportAsFixedFormat",
+      "result": "PASS",
+      "reference_pages": 6,
+      "deliverable_pages": 8
+    }
+  ],
+  "pages_inspected": "8/8",
+  "page_results": ["PASS", "PASS", "PASS", "PASS", "PASS", "PASS", "PASS", "PASS"],
+  "controlled_boundary": "39 FR, 34 starred FR, 117 AC, responsibilities, OPEN Issue states and AC-G2-FR-013-01 conclusion unchanged",
+  "issue_status": "OPEN_PENDING_C_REREVIEW",
+  "task_status": "REVIEW"
+}

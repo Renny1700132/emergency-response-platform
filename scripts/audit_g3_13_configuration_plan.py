@@ -6,6 +6,7 @@ from pathlib import Path
 from zipfile import ZipFile
 
 from docx import Document
+from docx.oxml.ns import qn
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,6 +56,30 @@ def main() -> None:
     if len(doc.tables) != 10:
         problems.append({"code": "TABLES", "detail": len(doc.tables)})
 
+    expected_captions = [
+        "表 1-1 配置管理依据及用途", "表 2-1 配置管理角色职责与权限边界",
+        "表 3-1 配置项类别与最低完整性检查", "表 4-1 配置对象版本标识规则",
+        "表 5-1 基线类型、建立门禁与变更权限", "表 6-1 CR 与 CCB 处理流程",
+        "表 7-1 配置审计类型、时点与证据", "表 9-1 配置库逻辑区域与控制要求",
+        "表 10-1 AC-G2-FR-013-01 配置证据抽查",
+    ]
+    actual_captions = [p.text.strip() for p in doc.paragraphs if re.match(r"^表\s+\d+-\d+\s+", p.text.strip())]
+    if actual_captions != expected_captions:
+        problems.append({"code": "TABLE_CAPTIONS", "detail": {"expected": expected_captions, "actual": actual_captions}})
+    work_captions = [line.strip() for line in work.splitlines() if re.match(r"^表\s+\d+-\d+\s+", line.strip())]
+    if work_captions != expected_captions:
+        problems.append({"code": "WORK_TABLE_CAPTIONS", "detail": {"expected": expected_captions, "actual": work_captions}})
+    body_children = list(doc.element.body)
+    adjacent_caption_count = 0
+    for idx, child in enumerate(body_children[:-1]):
+        if child.tag != qn("w:p"):
+            continue
+        text = "".join(t.text or "" for t in child.xpath(".//w:t")).strip()
+        if text in expected_captions and body_children[idx + 1].tag == qn("w:tbl"):
+            adjacent_caption_count += 1
+    if adjacent_caption_count != len(expected_captions):
+        problems.append({"code": "TABLE_CAPTION_ADJACENCY", "detail": adjacent_caption_count})
+
     with ZipFile(DOCX) as zf:
         xml = zf.read("word/document.xml").decode("utf-8")
         comments = "word/comments.xml" in zf.namelist()
@@ -68,7 +93,7 @@ def main() -> None:
         "task": "G3-13",
         "pass": not problems,
         "problems": problems,
-        "counts": {"heading1": heading1, "heading2": heading2, "tables": len(doc.tables), "task_rows": len(status_rows)},
+        "counts": {"heading1": heading1, "heading2": heading2, "tables": len(doc.tables), "business_table_captions": len(actual_captions), "adjacent_caption_table_pairs": adjacent_caption_count, "task_rows": len(status_rows)},
         "task_status": g313,
         "toc_last": {k: v for k, v in toc_pages.items() if k.startswith(("9 ", "10 ", "11 "))},
     }

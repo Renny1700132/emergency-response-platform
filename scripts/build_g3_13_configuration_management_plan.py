@@ -66,7 +66,7 @@ def build() -> None:
     remove_reference_body(doc)
     replace_toc(doc)
     cover = {
-        0: "文档编号：YJGL-G3-13-CMP　　版本号：V0.1",
+        0: "文档编号：YJGL-G3-13-CMP　　版本号：V0.2",
         1: "密　　级：内部 · 教学用",
         3: "某自然博物馆智能运营中心建设项目——应急管理子系统",
         4: "配置管理计划",
@@ -84,10 +84,14 @@ def build() -> None:
     revision = doc.tables[0]
     while len(revision.rows) > 1:
         revision._tbl.remove(revision.rows[-1]._tr)
-    revisions = [["V0.1", "2026-09-20", "全文", "建立 G3-13 配置管理计划评审候选，规定配置项、版本、基线、CR/CCB、权限审计、发布回滚与归档，并抽查 AC-G2-FR-013-01。", "何思源"]]
-    row = revision.add_row().cells
-    for cell, value in zip(row, revisions[0]):
-        cell.text = value
+    revisions = [
+        ["V0.1", "2026-09-20", "全文", "建立 G3-13 配置管理计划评审候选，规定配置项、版本、基线、CR/CCB、权限审计、发布回滚与归档，并抽查 AC-G2-FR-013-01。", "何思源"],
+        ["V0.2", "2026-09-20", "表 1-1—表 10-1", "按 ISSUE-G3-13-001 为 9 张业务表补齐连续、紧邻的独立表题；业务规则、数字、责任、Issue 状态和抽查结论不变。", "何思源"],
+    ]
+    for values in revisions:
+        row = revision.add_row().cells
+        for cell, value in zip(row, values):
+            cell.text = value
     base.format_table(revision, [["版本", "日期", "修订章节", "修订说明", "编制/修订人"], *revisions])
     base.add_body(doc, WORK.read_text(encoding="utf-8"))
     body = doc.element.body; sect = body.sectPr; body.remove(sect); body.append(sect)

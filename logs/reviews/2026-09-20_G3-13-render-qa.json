@@ -1,0 +1,34 @@
+{
+  "task": "G3-13",
+  "mode": "NEW DOCUMENT",
+  "reference": "docs/reference/24-配置管理计划（教学样例）.docx",
+  "deliverable": "docs/deliverables/22-配置管理计划.docx",
+  "sha256": "0FAECF2CDC95A9D1C9F321AAEAF1CF1CC8812634523AAD0B0C4112B8F2FCF254",
+  "renderer_attempts": [
+    {
+      "renderer": "bundled documents Skill render_docx.py / LibreOffice",
+      "result": "FAIL",
+      "detail": "FileNotFoundError: LibreOffice soffice.exe was not found on PATH"
+    },
+    {
+      "renderer": "Microsoft Word 16 COM read-only Repaginate and ExportAsFixedFormat",
+      "result": "PASS",
+      "reference_pages": 6,
+      "deliverable_pages": 8
+    }
+  ],
+  "pages_inspected": "8/8",
+  "page_results": ["PASS", "PASS", "PASS", "PASS", "PASS", "PASS", "PASS", "PASS"],
+  "checks": {
+    "reference_cover_clone": "PASS",
+    "revision_record": "PASS",
+    "toc_hierarchy_dot_leaders_and_final_pagination": "PASS",
+    "tables_readable": "PASS",
+    "no_clipping_overlap_missing_pages_or_orphan_headings": "PASS",
+    "teaching_case_pollution": 0,
+    "a11y_findings": 0,
+    "comments": 0,
+    "tracked_changes": 0
+  },
+  "result": "PASS"
+}

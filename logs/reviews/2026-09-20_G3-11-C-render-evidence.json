@@ -1,0 +1,42 @@
+{
+  "task": "G3-11",
+  "reviewer": "C",
+  "date": "2026-09-20",
+  "reviewed_commit": "4ee46f47fb34c26a09f15b12ad73956b2583aa60",
+  "document": "docs/deliverables/20-项目管理计划.docx",
+  "content_checks": {
+    "markdown_candidate_blocks": 182,
+    "blocks_found_in_docx": 182,
+    "tables": 9,
+    "figures": 1,
+    "fr": 39,
+    "star": 34,
+    "ac": 117,
+    "ac_g2_fr_015_03_occurrences": 4,
+    "sample_pollution": 0,
+    "a11y_high": 0,
+    "a11y_medium": 0,
+    "a11y_low": 0
+  },
+  "renderers": {
+    "microsoft_word_16": {
+      "pages": 8,
+      "all_pages_reviewed": true,
+      "cropping_overlap_overflow": "PASS",
+      "duplicate_toc_heading": "FAIL",
+      "chapter_10_logical_page": 5,
+      "toc_chapter_10_page": 5
+    },
+    "libreoffice": {
+      "pages": 9,
+      "all_pages_reviewed": true,
+      "cropping_overlap_overflow": "PASS",
+      "duplicate_toc_heading": "FAIL",
+      "chapter_10_logical_page": 6,
+      "toc_chapter_10_page": 5
+    }
+  },
+  "issues": ["ISSUE-G3-11-001"],
+  "result": "CHANGES_REQUIRED",
+  "task_status": "REVIEW"
+}

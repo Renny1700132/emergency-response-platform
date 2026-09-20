@@ -1067,3 +1067,20 @@
 - 关闭条件：① `ISSUE-G3-01-001` 按原关闭条件取得真实证据并经 B/C 复核，或取得明确书面替代/延期裁决并完成影响分析；② 由项目负责人裁决 M3 是否纳入 G3-11—14，若纳入则四项至少进入 REVIEW并满足统一DoD，若不纳入则同步修订 `plan.md`/`tasks.md` 门禁；③ A 复跑 G3-10 审计为 `freeze_ready=true`，B/C 独立复核通过后再创建新 M3 FROZEN 基线。
 - 证据：`docs/work/A_PM/g3_m3_review_pack.md`、`logs/reviews/2026-09-19_G3-10-M3-audit.json`、`logs/reviews/2026-09-19_G3-10-A-self-check.md`、`control/baselines/M3-G3-10-FREEZE-BLOCKED.md`。
 - 状态：OPEN / BLOCKING。
+
+## G3-11 项目管理计划 C 复核项
+
+### ISSUE-G3-11-001
+
+- 提出人：C
+- 时间：2026-09-20
+- 严重级别：MAJOR / BLOCKING_TO_G3-11_DONE
+- 文件与位置：`docs/deliverables/20-项目管理计划.docx` 第 3 页目录；LibreOffice 9 页渲染的第 9 页（正文逻辑页 6）；`scripts/build_g3_11_project_management_plan.py` 的 `replace_toc()`。
+- 问题：正式件目录页同时出现大号“目　录”和小号“目 录”两个标题；OOXML 独立检查确认两段均实际存在。静态目录将“10 本计划准出检查”标为正文第 5 页，Microsoft Word 16 的 8 页渲染与之相符，但 LibreOffice 的 9 页渲染把第 10 章排至正文第 6 页，目录仍显示第 5 页，跨渲染器导航失真。
+- 依据：G3-11 统一 DoD 要求目录可定位、正式件全页渲染无明显版式问题；`docs/work/A_PM/project_management_plan.md` 与正文内容本身不受本问题影响。
+- 影响：不改变 39 FR、34★、117 AC、29+10 范围、责任边界或 AC-G2-FR-015-03 语义，但正式件导航与跨渲染器可用性未满足准出条件，G3-11 不能置 DONE。
+- 建议修订：由主责 A 删除重复目录标题，并调整生成逻辑/分页或目录机制，使 Word 与 LibreOffice 最终渲染中的目录页码均能准确定位；不得改动正文业务语义。修订后重新生成正式件，执行 Word 与 LibreOffice 全页渲染、目录逐项核对和 C 复验。
+- 关闭判据：目录只保留一个标题；目录层级与点引线正常；Word 与 LibreOffice 中所有目录页码均与各自最终正文分页一致；Markdown—DOCX 内容镜像、无障碍审计和案例隔离继续通过；由 C 复验关闭。
+- 主责人：A；复核人：C。
+- 证据：`logs/reviews/2026-09-20_G3-11-C-compliance-review.md`、`logs/reviews/2026-09-20_G3-11-C-render-evidence.json`。
+- 状态：OPEN / PENDING_A_REMEDIATION

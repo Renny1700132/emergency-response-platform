@@ -1113,3 +1113,11 @@
 - 业务规则、39 FR、34★、117 AC、责任、既有 Issue 状态与 `AC-G2-FR-013-01` 抽查结论未改变。
 - 证据：`logs/reviews/2026-09-20_G3-13-A-remediation-qa.json`、`logs/reviews/2026-09-20_G3-13-A-self-check.md`。
 - 当前状态仍为 OPEN，等待 C 独立复验后决定是否关闭；G3-13 保持 REVIEW。
+
+#### C 独立复验（2026-09-20）
+
+- 已复跑 `scripts/audit_g3_13_configuration_plan.py`，结果 `pass=true`：工作稿与正式件业务表题均为 9/9，编号唯一、章内连续，题注与表格 OOXML 紧邻 9/9。
+- 使用 Microsoft Word 16 只读重新分页并导出 8 页，逐页检查 8/8；9 张业务表的题注均可读且未与对应表格分页分离，无裁切、重叠、缺页、乱码或表格越界。
+- 复核确认整改只增加题注与 V0.2 修订记录；39 FR、34★、117 AC、责任边界、`ISSUE-G3-01-001`/`ISSUE-G3-10-001` 的 OPEN 状态及 `AC-G2-FR-013-01` 配置追踪结论未改变。
+- 关闭证据：`logs/reviews/2026-09-20_G3-13-C-rereview.md`、`logs/reviews/2026-09-20_G3-13-C-rereview-evidence.json`、A 整改提交 `24326cc`。
+- 状态：CLOSED / VERIFIED_BY_C

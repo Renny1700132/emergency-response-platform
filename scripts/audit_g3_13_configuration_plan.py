@@ -46,7 +46,7 @@ def main() -> None:
             if cells[-1] not in ALLOWED:
                 problems.append({"code": "TASK_STATUS", "detail": [cells[0], cells[-1]]})
     g313 = dict(status_rows).get("G3-13")
-    if g313 != "REVIEW":
+    if g313 not in {"REVIEW", "DONE"}:
         problems.append({"code": "G3_13_STATUS", "detail": g313})
 
     heading1 = sum(1 for p in doc.paragraphs if p.text.strip() and p.style and p.style.name == "Heading 1")

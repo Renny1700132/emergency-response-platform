@@ -1,0 +1,41 @@
+{
+  "task": "G3-13",
+  "reviewer": "C",
+  "date": "2026-09-20",
+  "remediation_commit": "24326cc",
+  "result": "PASS_ACCEPTED",
+  "task_status": "DONE",
+  "issue": {
+    "id": "ISSUE-G3-13-001",
+    "status": "CLOSED_VERIFIED_BY_C"
+  },
+  "mechanical_audit": {
+    "script": "scripts/audit_g3_13_configuration_plan.py",
+    "pass": true,
+    "problems": [],
+    "heading1": 11,
+    "heading2": 18,
+    "tables_total": 10,
+    "business_table_captions": 9,
+    "adjacent_caption_table_pairs": 9
+  },
+  "caption_checks": {
+    "unique": "PASS",
+    "continuous_within_chapter": "PASS",
+    "caption_table_page_separation": 0,
+    "revision_record_exemption": "PASS"
+  },
+  "render": {
+    "renderer": "Microsoft Word 16 COM read-only Repaginate and ExportAsFixedFormat",
+    "pages": 8,
+    "pages_inspected": "8/8",
+    "clipping_overlap_missing_pages_garbled_text_or_table_overflow": "NONE"
+  },
+  "controlled_boundary": {
+    "fr_39_star_34_ac_117": "UNCHANGED",
+    "ac_g2_fr_013_01_trace": "PASS",
+    "issue_g3_01_001": "OPEN_UNCHANGED",
+    "issue_g3_10_001": "OPEN_UNCHANGED",
+    "m3_freeze_authorized": false
+  }
+}

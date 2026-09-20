@@ -1,0 +1,40 @@
+{
+  "task_id": "G3-11",
+  "reviewer": "C",
+  "date": "2026-09-20",
+  "reviewed_commit": "112d555",
+  "formal_document": "docs/deliverables/20-项目管理计划.docx",
+  "result": "ACCEPTED",
+  "toc_title_exact_count": 1,
+  "word_renderer": {
+    "application": "Microsoft Word 16",
+    "page_count": 8,
+    "pages_visually_checked": 8,
+    "chapter_10_toc_logical_page": 5,
+    "chapter_10_body_logical_page": 5,
+    "cropping_overlap_garbled_or_table_overflow": false
+  },
+  "content_delta_from_previous_candidate": {
+    "added_records": 0,
+    "removed_records": [
+      "注：本文件为评审候选；通过 C 复核后方可由 REVIEW 转为 DONE。",
+      "目 录"
+    ],
+    "business_semantics_changed": false
+  },
+  "controlled_content": {
+    "fr": 39,
+    "star_fr": 34,
+    "ac": 117,
+    "scope": "29+10",
+    "ac_g2_fr_015_03_unchanged": true
+  },
+  "accessibility_findings": {
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "user_confirmation": "第十章经确认的确页码为5没有出错",
+  "libreoffice_variance_disposition": "retained_as_non_blocking_cross_renderer_observation",
+  "issue_disposition": "ISSUE-G3-11-001 CLOSED / VERIFIED_BY_C"
+}

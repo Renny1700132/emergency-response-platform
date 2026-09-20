@@ -1,0 +1,39 @@
+{
+  "task_id": "G3-12",
+  "owner": "C",
+  "date": "2026-09-20",
+  "mode": "MODE-A / NEW DOCUMENT",
+  "deliverable": "docs/deliverables/21-质量管理计划.docx",
+  "reference": "docs/reference/23-质量管理计划（教学样例）.docx",
+  "renderer": "Microsoft Word 16 COM read-only repagination and PDF export; Poppler 120 dpi PNG",
+  "reference_pages": 8,
+  "deliverable_pages": 8,
+  "pages_checked": "8/8",
+  "pair_inheritance": {
+    "physical_reference_copy": "PASS",
+    "sections": "3 / 3",
+    "page_size_orientation_margins": "MATCH",
+    "cover_revision_toc_body_skeleton": "MATCH",
+    "styles_theme_numbering_headers_footers": "INHERITED",
+    "structural_deviation": "业务内容扩展为11章、10张业务表且不保留教学样例CI图；属于本项目内容结构，不复制样例事实"
+  },
+  "visual_review": {
+    "cover": "PASS - 无案例残留、截断、重叠或错位",
+    "revision_record": "PASS - 仅记录V0.1真实事件",
+    "toc": "PASS - 单一目录标题、点引线和二级层级完整，页码1/2/3/4与Word最终正文一致",
+    "body": "PASS - 无裁切、重叠、乱码、异常空白页、孤立标题或异常断表",
+    "headers_footers_page_numbers": "PASS",
+    "tables": "PASS - 10张业务表均有题注；修订记录表按Reference免题注",
+    "figures": "N/A - 本文无独立业务插图"
+  },
+  "accessibility": {
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "iteration_history": [
+    "首轮Word渲染发现静态目录第5至11章页码为生成前估算值",
+    "仅修正目录页码并重建；最终Word仍为8页，目录与正文定位一致"
+  ],
+  "result": "PASS"
+}

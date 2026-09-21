@@ -1192,3 +1192,18 @@
 - 证据：`logs/reviews/2026-09-21_G3-14-B-rereview.md`、`logs/reviews/2026-09-21_G3-14-B-rereview-evidence.json`。
 - A 最终修订与验证（2026-09-21）：仅将生成脚本中第 6 章目录页码由 4 改为 5、第 9 章由 5 改为 6；重建后非空可见文本与 B 已修正候选稿的 SHA-256 均为 `516ec22e81dc65c983caca62d3f7384dab95766615a3421eb4f83c75fb13231f`，正文无变化。Word 16 重新分页为 9 页，目录全部条目与正文逻辑页一致，9/9 页无裁切、重叠、题注分离或表格越界；机械审计继续 PASS。当前用户明确授权“检查问题无误后将此任务置为 DONE”，据此完成最终关闭；未冒充 B 新复验。
 - 状态：CLOSED / VERIFIED_BY_A_ON_USER_AUTHORIZATION（2026-09-21）
+
+## G4-01 工程护栏观察项
+
+### ISSUE-G4-01-001
+
+- 提出人：C。
+- 时间：2026-09-21。
+- 严重级别：MINOR / NON_BLOCKING_TO_G4-01_REVIEW / CONTRACT_QUALITY_DEBT。
+- 文件与位置：`docs/work/B_TECH/openapi_v1.yaml` 的 `servers[0].variables.environment`、12 个顶层 tags、`components.schemas.ApiResponse.properties.data`；`evidence/g4/G4-01/pass-evidence.json`。
+- 问题：Redocly 2.53.3 按 minimal 规则完成 OpenAPI 3.0.3 结构校验，schema error 为 0，但保留 14 条 warning：1 条未用于 URL 的 server variable、12 条 tag description 缺失、1 条 nullable 缺少同级 type。
+- 影响：当前冻结契约可解析且错误级门禁通过，G4-01 可进入 Review；warning 不得被隐去，也不得在 G4-01 中静默改写冻结契约。后续生成客户端或收紧 lint 为 warnings-as-errors 前应评估影响。
+- 处置：本任务仅登记质量债，不修改 `BASELINE-G3-M3-R1.0` 或冻结 OpenAPI。若需消除 warning，由 B 发起受控 Issue/CR，完成接口影响分析、Review 和新基线登记。
+- 关闭条件：受控变更批准后修订契约；Redocly 同版本/规则复跑为 0 error、0 warning；契约差异和客户端兼容性检查通过。
+- 主责人：B；复核人：A、C。
+- 状态：OPEN / NON_BLOCKING。

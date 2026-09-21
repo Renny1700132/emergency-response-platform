@@ -1,0 +1,26 @@
+{
+  "taskId": "G4-XX",
+  "owner": "A/B/C",
+  "reviewer": "A/B/C",
+  "traceability": {
+    "taskIds": ["G4-XX"],
+    "requirementIds": ["G2-FR-XXX or controlled NFR/KN identifier"],
+    "acIds": ["AC-G2-FR-XXX-YY"],
+    "designIds": ["MOD/DBD/DLD/API/NFR/ENG identifier"]
+  },
+  "ai": {
+    "scope": "Describe AI-generated or AI-assisted files and decisions.",
+    "disposition": "Describe adopted, modified, and rejected AI output."
+  },
+  "checks": {
+    "scope": { "status": "PASS", "evidence": "Evidence path or command." },
+    "contract": { "status": "PASS", "evidence": "Evidence path or command." },
+    "authorizationAndValidation": { "status": "PASS", "evidence": "Evidence path or command." },
+    "parameterizedAccess": { "status": "N/A", "evidence": "Reason this task has no data access." },
+    "secrets": { "status": "PASS", "evidence": "Evidence path or command." },
+    "logRedaction": { "status": "PASS", "evidence": "Evidence path or command." },
+    "migrationRollback": { "status": "N/A", "evidence": "Reason this task has no migration." },
+    "tests": { "status": "PASS", "evidence": "Evidence path or command." },
+    "traceability": { "status": "PASS", "evidence": "Evidence path or command." }
+  }
+}

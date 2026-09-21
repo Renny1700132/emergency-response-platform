@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G4-01",
+  "evidenceType": "INTENTIONAL_NEGATIVE_BLOCK",
+  "simulated": false,
+  "expected": "BLOCKED",
+  "observed": "BLOCKED",
+  "generatedAt": "2026-09-21T08:07:08.404Z",
+  "environment": {
+    "node": "v24.21.0",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "results": [
+    {
+      "gate": "selfcheck",
+      "command": "D:\\tool\\source\\nodejs\\node.exe scripts/g4/validate-selfcheck.mjs tests/g4/fixtures/selfcheck-blocking.json",
+      "startedAt": "2026-09-21T08:07:08.356Z",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "{\n  \"gate\": \"selfcheck\",\n  \"status\": \"BLOCKED\",\n  \"target\": \"tests/g4/fixtures/selfcheck-blocking.json\",\n  \"errors\": [\n    \"traceability.acIds must contain at least one non-empty identifier\",\n    \"checks.scope.status must be PASS or N/A\",\n    \"checks.contract.status must be PASS or N/A\",\n    \"checks.authorizationAndValidation.status must be PASS or N/A\",\n    \"checks.parameterizedAccess.status must be PASS or N/A\",\n    \"checks.secrets.status must be PASS or N/A\",\n    \"checks.logRedaction.status must be PASS or N/A\",\n    \"checks.migrationRollback.status must be PASS or N/A\",\n    \"checks.tests.status must be PASS or N/A\",\n    \"checks.traceability.status must be PASS or N/A\"\n  ]\n}"
+    }
+  ]
+}

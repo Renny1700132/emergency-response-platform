@@ -24,10 +24,16 @@ __pycache__/
 .venv/
 venv/
 
+# Node caches and local environments
+node_modules/
+coverage/
+npm-debug.log*
+
 # Local build and scratch output
 build/
 dist/
 tmp/
+.tmp/
 .cache/
 
 # Local secrets and machine-specific settings

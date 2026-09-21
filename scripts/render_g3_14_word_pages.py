@@ -4,7 +4,7 @@ from pathlib import Path
 import win32com.client as win32
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/"logs/reviews/G3-14_render"
+OUT=ROOT/".tmp/G3-14-v02-render"
 PAIRS={"current":ROOT/"docs/deliverables/23-风险管理计划与风险登记册v2.docx","reference":ROOT/"docs/reference/25-风险管理计划与风险登记册v2（教学样例）.docx"}
 OUT.mkdir(parents=True,exist_ok=True)
 word=win32.gencache.EnsureDispatch("Word.Application"); word.Visible=False; word.DisplayAlerts=0

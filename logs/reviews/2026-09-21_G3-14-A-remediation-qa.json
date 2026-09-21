@@ -1,0 +1,36 @@
+{
+  "task": "G3-14",
+  "role": "A",
+  "date": "2026-09-21",
+  "version": "V0.2",
+  "status": "REVIEW",
+  "reviewer": "B",
+  "issues": {
+    "ISSUE-G3-14-001": {
+      "remediated": true,
+      "risk_ids_checked": 16,
+      "score_level_consistent": 16,
+      "high_risks_in_high_section": ["RR-03", "RR-06", "RR-07", "RR-10", "RR-11", "RR-15"],
+      "issue_status": "OPEN_PENDING_B_REREVIEW"
+    },
+    "ISSUE-G3-14-002": {
+      "remediated": true,
+      "business_tables": 7,
+      "captions": 7,
+      "adjacent_caption_table_pairs": 7,
+      "caption_ids": ["表 2-1", "表 3-1", "表 4-1", "表 4-2", "表 6-1", "表 7-1", "表 9-1"],
+      "issue_status": "OPEN_PENDING_B_REREVIEW"
+    }
+  },
+  "render_qa": {
+    "renderer": "Microsoft Word 16 COM",
+    "current_pages": 9,
+    "reference_pages": 8,
+    "all_current_pages_visually_checked": true,
+    "clipping_or_overlap": false,
+    "caption_table_separation": false,
+    "toc_pagination_checked": true
+  },
+  "controlled_baseline_changed": false,
+  "deliverable_sha256": "7D497A6BDF5DD4394BE1334BFF5933366274D5B641178978B5A76ABD1213DE5E"
+}

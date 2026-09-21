@@ -1,0 +1,32 @@
+{
+  "task": "G3-14",
+  "reviewer": "B",
+  "date": "2026-09-21",
+  "remediation_commit": "4a58f36",
+  "result": "PARTIAL_PASS_CHANGES_REQUIRED",
+  "task_status": "REVIEW",
+  "closed_issues": {
+    "ISSUE-G3-14-001": "CLOSED_VERIFIED_BY_B",
+    "ISSUE-G3-14-002": "CLOSED_VERIFIED_BY_B"
+  },
+  "open_issue": "ISSUE-G3-14-003",
+  "mechanical_audit": {
+    "script": "scripts/audit_g3_14_risk_plan.py",
+    "pass": true,
+    "risk_ids": 16,
+    "score_level_consistent": 16,
+    "business_table_captions": 7,
+    "adjacent_caption_table_pairs": 7
+  },
+  "render": {
+    "renderer": "Microsoft Word 16 COM read-only Repaginate and ExportAsFixedFormat",
+    "pages": 9,
+    "pages_inspected": "9/9",
+    "clipping_overlap_missing_pages_garbled_text_or_table_overflow": "NONE"
+  },
+  "toc_mismatch": [
+    {"entry": "6 AC-G2-FR-006-01 专项核对", "toc_page": 4, "actual_logical_page": 5},
+    {"entry": "9 主责自检与准出", "toc_page": 5, "actual_logical_page": 6}
+  ],
+  "controlled_content_changed_by_review": false
+}

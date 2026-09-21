@@ -33,8 +33,8 @@ def replace_toc(doc: Document) -> None:
         (1,"1 目的、范围与依据",1),(1,"2 风险治理、角色与衔接",1),(1,"3 识别、评价与优先级",1),
         (2,"3.1 识别与分类",1),(2,"3.2 概率与影响",2),(1,"4 风险登记册 v2",2),
         (2,"4.1 当前极高与高风险",2),(2,"4.2 当前中风险与持续监测",4),(1,"5 触发、监测、应对与升级",4),
-        (1,"6 AC-G2-FR-006-01 专项核对",4),(1,"7 Issue、变更、测试与配置闭环",5),
-        (1,"8 报告、复核与关闭",5),(1,"9 主责自检与准出",5)]
+        (1,"6 AC-G2-FR-006-01 专项核对",5),(1,"7 Issue、变更、测试与配置闭环",5),
+        (1,"8 报告、复核与关闭",5),(1,"9 主责自检与准出",6)]
     for level, label, page in entries:
         p=OxmlElement("w:p"); ppr=OxmlElement("w:pPr"); style=OxmlElement("w:pStyle"); style.set(qn("w:val"),f"TOC{level}"); ppr.append(style)
         tabs=OxmlElement("w:tabs"); tab=OxmlElement("w:tab"); tab.set(qn("w:val"),"right"); tab.set(qn("w:leader"),"dot"); tab.set(qn("w:pos"),"8500"); tabs.append(tab); ppr.append(tabs); p.append(ppr)

@@ -1,0 +1,37 @@
+{
+  "task": "G3-14",
+  "date": "2026-09-21",
+  "issue": "ISSUE-G3-14-003",
+  "authorization": "USER_AUTHORIZED_A_TO_VERIFY_AND_SET_DONE",
+  "changes": {
+    "toc_chapter_6": "4 -> 5",
+    "toc_chapter_9": "5 -> 6",
+    "builder_synchronized": true,
+    "body_changed": false
+  },
+  "content_freeze": {
+    "normalization": "ordered non-empty visible paragraphs and table cells",
+    "before_sha256": "516ec22e81dc65c983caca62d3f7384dab95766615a3421eb4f83c75fb13231f",
+    "after_sha256": "516ec22e81dc65c983caca62d3f7384dab95766615a3421eb4f83c75fb13231f",
+    "pass": true
+  },
+  "mechanical_audit": {
+    "pass": true,
+    "tables_total": 8,
+    "business_tables": 7,
+    "captions": 7,
+    "adjacent_caption_table_pairs": 7,
+    "risk_ids": 16
+  },
+  "render": {
+    "renderer": "Microsoft Word 16 COM",
+    "pages": 9,
+    "pages_inspected": 9,
+    "toc_entries_checked": 13,
+    "toc_matches_body": true,
+    "visual_defects": "NONE"
+  },
+  "deliverable_sha256": "EA8D58E71E2536EF9EC9491DBC40E9E4130BCCB2BED73848E320A62F179708EA",
+  "result": "PASS",
+  "task_status": "DONE"
+}

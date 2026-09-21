@@ -7,6 +7,10 @@
 - 一项正式产物只有主责分支/版本；复核通过 Review/Issue 提交意见，不维护影子分支作为第二正式版本。
 - 未经用户明确授权不得修改 remote、改写默认分支或把任务推送到其他远程。
 
+### 第四关覆盖规则
+
+`G4-00` 是旧工作流切换到第四关治理的启动提交。自 `G4-01` 起，G4 研发任务必须使用 `codex/<task-id>-<short-name>` 功能分支并通过 PR 合并到受保护 `master`，禁止直接推送主干。每个 PR 必须关联 Task、FR/AC/设计 ID，声明 AI 参与范围，附自查、测试、CI 与指定唯一 Review 人的 Approve 证据；CI 未全绿或 Review 未批准不得合并。合并后更新 RTM 与 `tasks.md`。其余安全同步、禁止 force、语义冲突停止和日志回填规则继续适用；详见 `governance/g4_development_workflow.md`。
+
 # Task Start Repository Sync
 
 每项正式任务开始时，在产生本 Task 的项目文件修改之前，必须：

@@ -10,12 +10,18 @@
 
 - `inputs/G1/通关实验任务书1-立项竞标.pdf`：第一关提交物、评分与过关条件。
 - `inputs/G3/通关实验任务书3-设计与计划.pdf`：第三关设计文档集、工程计划、测试左移、ADR 与工程基线的任务要求。
+- `inputs/G4/通关实验任务书4-研发冲刺.pdf`：第四关两个迭代、PR 门禁、测试护栏、AI 资产与过关条件的阶段方法依据；SHA-256 `C9C43927474BF9527842BEE2A2AD1792DF66E6D368E6816BA6858A1DFF70A441`。
 - `inputs/common/AI 辅助软件项目全生命周期开发·综合实习指导书（学生用书）.pdf`：适用于综合实习全阶段的方法论、人机协作、文档工程、配置管理、留痕与评审方法。
 
 ## G3 PLANNING INPUTS
 
 - `inputs/G3/ch1.3 Project使用.pdf`：Microsoft Project 相关教学输入；已按教学课件政策登记，未读取或用作规则裁决。
 - `inputs/G3/第 5 章 5.2 项目组织与管理1.pptx`：项目组织与管理教学课件；已按教学课件政策登记，未读取或用作规则裁决。
+
+## G4 SPRINT INPUTS
+
+- `inputs/G4/通关实验任务书4-研发冲刺.pdf`：已归档并读取，用于第四关阶段方法与准出规则。
+- `inputs/G4/第 6 章 第四关：研发冲刺.pdf`：检测为 Microsoft PowerPoint 生成的课程课件；根据 Workspace 规则停止读取，不作为规则裁决来源；SHA-256 `FA1B69170C94D109BCC91C090D9081AB004C548BC76AD3BAE6FDF846EEC3AC56`。
 
 ## REFERENCE EXAMPLES
 
@@ -75,7 +81,7 @@
 
 ## IGNORED BY POLICY
 
-检测到 `inputs/G3/ch1.3 Project使用.pdf` 与 `inputs/G3/第 5 章 5.2 项目组织与管理1.pptx` 为课程教学输入；根据 Workspace 规则未读取。课程课件不参与任何规则裁决。
+检测到 `inputs/G3/ch1.3 Project使用.pdf`、`inputs/G3/第 5 章 5.2 项目组织与管理1.pptx` 与 `inputs/G4/第 6 章 第四关：研发冲刺.pdf` 为课程教学输入；根据 Workspace 规则未读取或在识别后停止读取。课程课件不参与任何规则裁决。
 
 ## 工作稿与正式产物
 

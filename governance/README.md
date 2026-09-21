@@ -4,5 +4,6 @@
 - `source_priority.md`：指令与资料的裁决顺序、Preflight Conflict Check。
 - `review_workflow.md`：三人主责、交叉复核、Issue 闭环与最终检查。
 - `git_workflow.md`：分支、提交、安全同步远程 master、非 force push、冲突处理、版本与历史保留。
+- `g4_development_workflow.md`：第四关两个 Sprint、功能分支/PR 门禁、研发 DoD、证据与原型边界。
 
 冲突时先按 `source_priority.md` 判断；涉及真实项目事实时不得用方法论或 AI 常识覆盖《用户需求书》。

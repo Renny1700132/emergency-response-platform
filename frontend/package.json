@@ -1,0 +1,28 @@
+{
+  "name": "museum-emergency-response-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20.19.0" },
+  "scripts": {
+    "dev": "vite",
+    "generate:api": "openapi-typescript ../docs/work/B_TECH/openapi_v1.yaml -o src/api/generated/schema.d.ts",
+    "prebuild": "npm run generate:api",
+    "build": "vue-tsc --noEmit && vite build",
+    "typecheck": "npm run generate:api && vue-tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "vue": "3.5.21",
+    "vue-router": "4.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.1",
+    "@vitejs/plugin-vue": "6.0.1",
+    "openapi-typescript": "7.9.1",
+    "typescript": "5.9.2",
+    "vite": "7.3.6",
+    "vitest": "3.2.7",
+    "vue-tsc": "3.0.6"
+  }
+}

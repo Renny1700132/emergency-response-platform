@@ -1,0 +1,231 @@
+{
+  "task": "G3-10",
+  "audit_date": "2026-09-21",
+  "task_states": {
+    "G3-02": "DONE",
+    "G3-03": "DONE",
+    "G3-04": "DONE",
+    "G3-05": "DONE",
+    "G3-06": "DONE",
+    "G3-07": "DONE",
+    "G3-08": "DONE",
+    "G3-09": "DONE",
+    "G3-10": "REVIEW",
+    "G3-11": "DONE",
+    "G3-12": "DONE",
+    "G3-13": "DONE",
+    "G3-14": "DONE"
+  },
+  "upstream_g3_02_to_09_done": true,
+  "management_plans_g3_11_to_14_review_or_done": true,
+  "issue_g3_01_001_status": "CLOSED / RESOLVED_BY_SIMULATED_OWNER_CONFIRMATION / PENDING_B_C_REVIEW_FOR_M3",
+  "counts": {
+    "fr": 39,
+    "ac": 117,
+    "rclr": 10,
+    "pe": 12,
+    "eng": 20,
+    "star_fr": 34,
+    "tc": 117,
+    "dbd_tr": 39,
+    "dld_tr": 39,
+    "api_tr": 39,
+    "openapi_operations": 57,
+    "openapi_unique_operations": 57
+  },
+  "count_expectations": {
+    "fr": 39,
+    "ac": 117,
+    "rclr": 10,
+    "pe": 12,
+    "eng": 20,
+    "star_fr": 34,
+    "tc": 117,
+    "dbd_tr": 39,
+    "dld_tr": 39,
+    "api_tr": 39,
+    "openapi_operations": 57,
+    "openapi_unique_operations": 57
+  },
+  "count_checks": {
+    "fr": true,
+    "ac": true,
+    "rclr": true,
+    "pe": true,
+    "eng": true,
+    "star_fr": true,
+    "tc": true,
+    "dbd_tr": true,
+    "dld_tr": true,
+    "api_tr": true,
+    "openapi_operations": true,
+    "openapi_unique_operations": true
+  },
+  "adr_status": {
+    "ADR-001": true,
+    "ADR-002": true
+  },
+  "manifest": [
+    {
+      "path": "docs/work/A_PM/plan.md",
+      "exists": true,
+      "size": 9937,
+      "sha256": "2C135C7B1D65E6952A37BDCE03E68CE6534667EB90E5DD464FD5055A6009A593"
+    },
+    {
+      "path": "constitution.md",
+      "exists": true,
+      "size": 4032,
+      "sha256": "B674588D2949471EAC57D0D34566B5FBA6A3B096C5F499165B83C501EC438880"
+    },
+    {
+      "path": "docs/work/A_PM/overview_design.md",
+      "exists": true,
+      "size": 3702,
+      "sha256": "7ABEAA049D0A5930B8BD400D9C700BA124707DFD506B367BAF2E62017F6C12B6"
+    },
+    {
+      "path": "docs/work/B_TECH/database_design.md",
+      "exists": true,
+      "size": 41315,
+      "sha256": "D6C9C6B35C61E87393795B7E5449B88415FD3EB971C8B2E407DEC9600D951A5A"
+    },
+    {
+      "path": "docs/work/B_TECH/detailed_design.md",
+      "exists": true,
+      "size": 29812,
+      "sha256": "8AA2FBDE87A4CA0B4B498F29541D2C3CBDC16BD13F6C8571F79E75C5C9CC744C"
+    },
+    {
+      "path": "docs/work/B_TECH/interface_design.md",
+      "exists": true,
+      "size": 31335,
+      "sha256": "DEF8ED1F440F1E59337D0D78DEAC965BE11AF54BA4A83D9991B9C3170B47EE02"
+    },
+    {
+      "path": "docs/work/C_REQ/rtm_v1.md",
+      "exists": true,
+      "size": 27482,
+      "sha256": "243F52A31459B0992229C74E9049A82A3F7900563D62E1719D4C00CE4400FB52"
+    },
+    {
+      "path": "docs/work/C_REQ/test_plan.md",
+      "exists": true,
+      "size": 30807,
+      "sha256": "0B9150F8B0E0718EF30A031D9AA98664114EDA3D6F9F70C04E5AEA7F59E57517"
+    },
+    {
+      "path": "docs/deliverables/10-需求追踪矩阵RTMv1.docx",
+      "exists": true,
+      "size": 59160,
+      "sha256": "A73E8AEEAF883A33BCFE13E48E8560C76A06AD002B7B473D429D3E6647301259"
+    },
+    {
+      "path": "docs/deliverables/11-概要设计说明书.docx",
+      "exists": true,
+      "size": 421274,
+      "sha256": "C655D499C64FE04D896FCBDA4D76E226BC018154A2D154C8B8C9688CADA12973"
+    },
+    {
+      "path": "docs/deliverables/12-详细设计说明书.docx",
+      "exists": true,
+      "size": 590932,
+      "sha256": "CA5A560570C8D0177BCDE381FA438485FF3986D0DBC0DA9476651B4D61ABD330"
+    },
+    {
+      "path": "docs/deliverables/13-数据库设计说明书.docx",
+      "exists": true,
+      "size": 146378,
+      "sha256": "2768EC3F9B93FE5E63AD90D297E35D9751345F76F4223509466E15DFF556E646"
+    },
+    {
+      "path": "docs/deliverables/14-接口设计说明书.docx",
+      "exists": true,
+      "size": 137144,
+      "sha256": "EA4353470A3ECAAAF94DE04A0A30147D8100021FE3972F336553DE667197D497"
+    },
+    {
+      "path": "docs/deliverables/15-接口契约-openapi_v1.yaml",
+      "exists": true,
+      "size": 105834,
+      "sha256": "8988836EB050D6BE43126D0B9B09DC88C63AA97A757B1222A987D7B71BD06D12"
+    },
+    {
+      "path": "docs/deliverables/16-ADR-001-应用拆分与部署单元.md",
+      "exists": true,
+      "size": 7190,
+      "sha256": "A66C64E3FB4AA02E1563FF4CA146F4B412509BB98317DF75EA45AA082530E6E5"
+    },
+    {
+      "path": "docs/deliverables/17-ADR-002-事务Outbox与持久任务.md",
+      "exists": true,
+      "size": 6621,
+      "sha256": "E066FC87B2A10174A0B103013A16F2EF9902972AB65B1DF8696E3524B8A019D4"
+    },
+    {
+      "path": "docs/deliverables/18-非功能设计与工程规则.md",
+      "exists": true,
+      "size": 14600,
+      "sha256": "DB84C8DAD53C9E3EF28ED3870C6CDEEED64A5A721288437E8A3E18D4ABB9619C"
+    },
+    {
+      "path": "docs/deliverables/19-测试计划.docx",
+      "exists": true,
+      "size": 239428,
+      "sha256": "F449CC45F99DB600A251E0D1B0D4A1098A67F3AE22AC4FC39905CF74FF0115A1"
+    }
+  ],
+  "review_evidence": {
+    "G3-02": [
+      "logs/reviews/2026-09-17_G3-02-B-final-rereview.md",
+      "logs/reviews/2026-09-17_G3-02-B-technical-review.md",
+      "logs/reviews/2026-09-17_G3-02-C-compliance-review.md",
+      "logs/reviews/2026-09-17_G3-02-C-final-rereview.md"
+    ],
+    "G3-03": [
+      "logs/reviews/2026-09-17_G3-03-C-blocker-only-rereview.md",
+      "logs/reviews/2026-09-17_G3-03-C-compliance-review.md",
+      "logs/reviews/2026-09-17_G3-03-C-final-rereview.md",
+      "logs/reviews/2026-09-17_G3-03-review-remediation.md"
+    ],
+    "G3-04": [
+      "logs/reviews/2026-09-17_G3-04-A-C-delivery-rereview.md",
+      "logs/reviews/2026-09-17_G3-04-A-technical-review.md",
+      "logs/reviews/2026-09-17_G3-04-C-compliance-review.md"
+    ],
+    "G3-05": [
+      "logs/reviews/2026-09-17_G3-05-A-C-review.md",
+      "logs/reviews/2026-09-17_G3-05-unique-complete-review.md",
+      "logs/reviews/2026-09-17_G3-05-unique-rereview.md"
+    ],
+    "G3-06": [
+      "logs/reviews/2026-09-18_G3-06-A-final-rereview.md",
+      "logs/reviews/2026-09-18_G3-06-A-rereview.md",
+      "logs/reviews/2026-09-18_G3-06-A-review.md",
+      "logs/reviews/2026-09-18_G3-06-C-review.md"
+    ],
+    "G3-07": [
+      "logs/reviews/2026-09-18_G3-07-A-rereview.md",
+      "logs/reviews/2026-09-18_G3-07-A-review.md",
+      "logs/reviews/2026-09-18_G3-07-C-review.md"
+    ],
+    "G3-08": [
+      "logs/reviews/2026-09-18_G3-08-AB-review.md",
+      "logs/reviews/2026-09-18_G3-08-C-review-qa.md",
+      "logs/reviews/2026-09-19_G3-08-B-technical-review.md"
+    ],
+    "G3-09": [
+      "logs/reviews/2026-09-19_G3-09-A-final-review.md",
+      "logs/reviews/2026-09-19_G3-09-A-review.md"
+    ]
+  },
+  "case_residue": {},
+  "deliverables_readme_missing": [],
+  "consistency_checks_pass": true,
+  "freeze_ready": true,
+  "decision": "FREEZE",
+  "blockers": [],
+  "observations": [
+    "G3-06 A review contains a non-blocking column-width transcription observation recorded by C"
+  ]
+}

@@ -6,7 +6,12 @@ info:
   description: G3-06 评审候选契约。内部归一化模型可评审；视频与统一消息真实外部 Schema 受 ISSUE-G3-01-001 阻断，不代表现场连通或验收通过。
 servers:
 - url: /
-  description: 由目标环境网关提供；真实域名【待人工确认】
+  description: 课程模拟环境（SIMULATED_OWNER_CONFIRMATION）；域名使用 .example 保留域
+  variables:
+    environment:
+      default: uat
+      enum: [dev, uat, acc]
+      description: dev=gw-dev、uat=gw-uat、acc=gw-acc.museum-ops.example
 security:
 - middlePlatformBearer: []
 tags:

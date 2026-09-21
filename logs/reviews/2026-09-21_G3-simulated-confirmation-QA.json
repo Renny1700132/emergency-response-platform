@@ -1,0 +1,16 @@
+{
+  "scope": "G3 simulated confirmations Q1-Q6",
+  "date": "2026-09-21",
+  "marker": ["SIMULATED_OWNER_CONFIRMATION", "SIMULATED_EVIDENCE"],
+  "docx_render": {
+    "renderer": "Microsoft Word 16 COM",
+    "files": 9,
+    "pages": {"11": 6, "12": 21, "13": 25, "14": 23, "19": 12, "20": 9, "21": 9, "22": 9, "23": 10},
+    "contact_sheet_review": "PASS",
+    "clipping_overlap_or_table_overflow": "NONE_OBSERVED"
+  },
+  "openapi_yaml_parse": "PASS",
+  "g3_docx_pending_confirmation_hits": 0,
+  "m3_audit": {"consistency_checks_pass": true, "freeze_ready": true, "task_status": "REVIEW", "baseline_created": false},
+  "result": "PASS"
+}

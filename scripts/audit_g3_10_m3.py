@@ -171,14 +171,14 @@ def main() -> None:
     consistency_pass = all(count_checks.values()) and all(item["exists"] for item in manifest)
     consistency_pass = consistency_pass and all(review_evidence.values()) and not case_residue and all(adr_status.values())
     blockers = []
-    if blocker_status != "CLOSED":
+    if not blocker_status.startswith("CLOSED"):
         blockers.append("ISSUE-G3-01-001 remains OPEN and explicitly blocks G3-10/M3 freeze")
     if not management_plans_started:
         blockers.append("plan.md requires G3-02—G3-14 REVIEW, but G3-11—G3-14 remain TODO")
 
     result = {
         "task": "G3-10",
-        "audit_date": "2026-09-19",
+        "audit_date": "2026-09-21",
         "task_states": task_states,
         "upstream_g3_02_to_09_done": upstream_done,
         "management_plans_g3_11_to_14_review_or_done": management_plans_started,

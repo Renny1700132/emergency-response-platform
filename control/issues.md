@@ -600,6 +600,8 @@
 - 状态：OPEN
 - C 审计记录（2026-09-18，G3-08 授权合并复核）：本条目状态行现为 `CLOSED / VERIFIED_BY_C`（`e5417b1`，WhiteApricot，16:56），与本条目上述正文“保持 OPEN / 继续阻断”、关闭条件（真实环境与账号前置、脱敏请求响应/回执、连通结论 + B 技术复验 + C 符合性核验）以及全仓受控文件（`tasks.md` G3-06、RTM §6.4/§8、18 号 §11、14 号 §末、12 号 §306、13 号 §338、G3-01 输入基线、M2 评审包、`BASELINE-G2-M2-R1.0`、`change_log.md`、ADR-002）均不一致，且无整改/复核证据行。已登记 `ISSUE-G3-08-007`；C 不单方回滚他人提交，待人工裁决。
 - B 技术复核确认（2026-09-19）：经用户明确授权以 B 身份复核，确认提交 `e5417b1` 仅改写状态行，未补齐本 Issue 关闭条件所需的真实视频/消息接口资料、脱敏请求响应/回执、失败场景、连通结论或替代/延期裁决。原关闭状态属于误改，现恢复 `OPEN`；继续阻断真实外部契约冻结与 G3-10/M3 最终冻结。
+- 课程模拟替代裁决（2026-09-21）：用户明确确认本项目为模拟项目，提供三个 `.example` 环境、八端口版本/认证/模拟账号责任与联调窗口，并授权以 `SIMULATED_OWNER_CONFIRMATION`、`SIMULATED_EVIDENCE` 形成课程替代验收。证据编号登记于 `evidence/simulated/README.md`；该裁决满足本 Issue“明确替代验收裁决并完成影响分析”的关闭分支，但不构成现实接口、账号或现场连通证据。
+- 状态：CLOSED / RESOLVED_BY_SIMULATED_OWNER_CONFIRMATION / PENDING_B_C_REVIEW_FOR_M3
 
 ## ISSUE-G3-01-002
 
@@ -1067,6 +1069,7 @@
 - 关闭条件：① `ISSUE-G3-01-001` 按原关闭条件取得真实证据并经 B/C 复核，或取得明确书面替代/延期裁决并完成影响分析；② 由项目负责人裁决 M3 是否纳入 G3-11—14，若纳入则四项至少进入 REVIEW并满足统一DoD，若不纳入则同步修订 `plan.md`/`tasks.md` 门禁；③ A 复跑 G3-10 审计为 `freeze_ready=true`，B/C 独立复核通过后再创建新 M3 FROZEN 基线。
 - 证据：`docs/work/A_PM/g3_m3_review_pack.md`、`logs/reviews/2026-09-19_G3-10-M3-audit.json`、`logs/reviews/2026-09-19_G3-10-A-self-check.md`、`control/baselines/M3-G3-10-FREEZE-BLOCKED.md`。
 - 状态：OPEN / BLOCKING。
+- A 重入（2026-09-21）：G3-11—14 均已 DONE；`ISSUE-G3-01-001` 已依据用户课程模拟替代验收裁决关闭现实证据阻断，但所有新增数据均显式标记 SIMULATED。A 重新执行 M3 一致性审计后将 G3-10 置 REVIEW，等待 B 技术复核和 C 符合性复核；本次不创建 FROZEN 基线，不关闭本 Issue。
 
 ## G3-11 项目管理计划 C 复核项
 

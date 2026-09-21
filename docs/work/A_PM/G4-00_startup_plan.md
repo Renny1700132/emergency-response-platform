@@ -32,7 +32,7 @@
 - A：G4-00 → G4-03 → G4-06 → G4-09 → G4-11
 - B：G4-02 → G4-05 → G4-08
 - C：G4-01 → G4-04 → G4-07 → G4-10
-- DoD：任务/AC 明确 → Prompt 留痕 → 实现 + 测试 → 自查 → 队友 Review → CI 全绿 → PR 合并 → RTM/tasks 更新。
+- DoD：任务/AC 明确 → Prompt 留痕 → 功能分支实现 + 测试 → 自查 + 本地 `npm run quality` → push 功能分支 → PR → 指定唯一审核人 Review/Approve → PR Merge → RTM/tasks/日志更新；不要求远程 CI。
 
 ## G4-00 自检
 

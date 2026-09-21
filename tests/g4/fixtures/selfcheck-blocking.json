@@ -1,0 +1,16 @@
+{
+  "taskId": "G4-01",
+  "owner": "C",
+  "reviewer": "B",
+  "traceability": {
+    "taskIds": ["G4-01"],
+    "requirementIds": ["KN-045"],
+    "acIds": [],
+    "designIds": ["NFR-MNT-01"]
+  },
+  "ai": {
+    "scope": "intentional negative fixture",
+    "disposition": "must be rejected"
+  },
+  "checks": {}
+}

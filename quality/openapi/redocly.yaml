@@ -1,0 +1,9 @@
+extends:
+  - minimal
+
+rules:
+  no-unused-components: warn
+  operation-operationId-unique: error
+  operation-parameters-unique: error
+  path-declaration-must-exist: error
+  spec-strict-refs: error

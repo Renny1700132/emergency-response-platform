@@ -41,6 +41,8 @@
 
 ## 日常工作流
 
+以下直推 `master` 流程仅说明 G1—G3 的历史收口方式；自 G4-01 起不再适用：
+
 ```text
 Task
   ↓
@@ -67,4 +69,4 @@ Git commit
 
 当前任务状态见 `tasks.md`。第三关冻结范围包括设计文档集、OpenAPI 契约、ADR、工程计划与四类管理计划、测试计划、`constitution.md`、设计挂接 RTM、Review 证据及 M3 哈希清单；冻结后变更必须走 CR/CCB 并形成新基线版本。
 
-第四关以两个 Sprint 实施：`G2-FR-001—029` 为 MVP Must 优先目标，`G2-FR-030—039` 继续保留为本期 backlog，不删除、不降级、不改需求。研发统一采用功能分支 + PR，受保护主干禁止直推；详细门禁与 DoD 见 `governance/g4_development_workflow.md`。`prototype/` 只用于 UI/交互参考，其 localStorage、Mock 和 `prototypeStore` 不是正式数据或 API 实现。
+第四关以两个 Sprint 实施：`G2-FR-001—029` 为 MVP Must 优先目标，`G2-FR-030—039` 继续保留为本期 backlog，不删除、不降级、不改需求。研发统一采用功能分支 + PR：主责执行自检和本地 `npm run quality` 后 push 功能分支，`tasks.md` 指定唯一审核人 Review/Approve，再通过 PR Merge 进入 `master`；主干不用于日常开发，不要求 Jenkins、Gitee Go 或其他远程 CI。详细门禁与 DoD 见 `governance/g4_development_workflow.md`。`prototype/` 只用于 UI/交互参考，其 localStorage、Mock 和 `prototypeStore` 不是正式数据或 API 实现。

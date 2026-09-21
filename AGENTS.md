@@ -6,7 +6,7 @@
 
 G1/G2/G3 的任务、基线、评审和过程证据均为历史受控记录，不得删除或篡改。`prototype/` 仅可作为页面组织、交互和演示状态的参考，不得将其 localStorage、Mock 数据或 `prototypeStore` 直接视为第四关的正式数据库、接口或技术实现。第四关仍须继承已冻结的需求、关键数字、★属性、责任边界与验收条件。
 
-第四关统一执行 `governance/g4_development_workflow.md`：两个 Sprint，功能分支 + PR，禁止直接推送受保护主干；每个 PR 须完成“AI 生成/人工实现 → 提交者自查 → 至少 1 名指定队友 Review/Approve → CI 全绿 → 合并并更新 RTM/tasks”，并保留 Prompt、AI 参与范围、测试和 Review 证据。G4-00 是从旧治理切换到新治理的启动提交；其后的 G4 研发任务不得以旧规则绕过 PR。
+第四关统一执行 `governance/g4_development_workflow.md`：两个 Sprint，功能分支 + PR，禁止直接推送受保护主干；每个 PR 须完成“AI 生成/人工实现 → 提交者自查与本地 `npm run quality` 质量门禁 → push 功能分支 → 创建 PR → `tasks.md` 指定的唯一审核人 Review/Approve → 通过 PR Merge 进入 `master` → 更新 RTM/tasks/日志”，并保留 Prompt、AI 参与范围、自检结果、审核结论和对应 commit。G4 不要求接入 Jenkins、Gitee Go 或其他远程 CI，也不得把本地质量门禁表述为远程 CI。G4-00 是从旧治理切换到新治理的启动提交；其后的 G4 研发任务不得以旧规则绕过 PR。
 
 ## 2. 每项 AI 任务的强制入口
 
@@ -42,8 +42,8 @@ G1/G2/G3 的任务、基线、评审和过程证据均为历史受控记录，�
 
 17. 运行与风险相称的检查；失败不得写成成功，弃用结果不得省略。
 18. 在正式回复前，先把准备发送给用户的最终可见回答逐字写入同一日志的 `AGENT_FINAL_OUTPUT_RAW`，记录 `OUTPUT_LOGGED`，再进入 `PENDING_REVIEW`。
-19. 按 `governance/git_workflow.md` 检查 staged diff、commit、安全获取并合并远程 `master`、非 force push 到 `master`。
-20. 回填任务 commit、同步/推送结果和时间；回填使用独立小提交并再次安全推送，不形成自引用循环。
+19. 按 `governance/git_workflow.md` 检查 staged diff 并 commit。G4 任务只 push 功能分支并创建/更新 PR；审核通过后仅通过 PR Merge 进入 `master`，不得本地合并后直推 `master`。
+20. 回填任务 commit、分支 push、PR、审核与合并结果及时间；G4 的合并后 RTM/tasks/日志收口也须通过功能分支与 PR，不形成自引用循环。
 21. 更新 `tasks.md` 状态并确认工作区干净、远程已同步。
 22. 日志成功写入后，正式回复原则上只给出简短结果和该日志的本地超链接，不重复长篇内容；发送文本必须与日志中的最终输出原文完全一致。
 
@@ -75,4 +75,4 @@ P0 可覆盖工作方式、文件组织、AI 使用策略、日志策略与当�
 
 ## 6. Git 规则
 
-遵守 `governance/git_workflow.md`：正式任务必须 commit，并在安全同步远程 `master` 后非 force push 到 `master`；保留双方历史与意图，禁止 force push、禁止重写历史、禁止把过程证据加入忽略规则。出现语义不确定的内容冲突时必须停止并等待用户裁决。基线冻结后只能经变更记录产生新版本，不覆盖冻结版。
+遵守 `governance/git_workflow.md`：正式任务必须 commit。G1—G3 历史任务沿用当时的安全同步与非 force push 记录；自 G4-01 起只能 push 功能分支，由指定唯一审核人 Approve 后通过 PR Merge 进入 `master`，主责不得日常直推 `master`。保留双方历史与意图，禁止 force push、禁止重写历史、禁止把过程证据加入忽略规则。出现语义不确定的内容冲突时必须停止并等待用户裁决。基线冻结后只能经变更记录产生新版本，不覆盖冻结版。

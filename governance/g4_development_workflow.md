@@ -16,16 +16,17 @@
 
 1. 自 `G4-01` 起，每项研发任务从最新 `master` 创建 `codex/<task-id>-<short-name>` 功能分支；受保护 `master` 禁止直接 push。
 2. 每个 PR 必须只服务一个清晰任务单元，关联 Task ID、FR/AC、设计 ID、变更文件、风险、回滚方式和测试证据。
-3. PR 固定执行：`AI 生成/人工实现 → 提交者自查 → ≥1 名队友 Review/Approve → CI 全绿 → 合并 → 更新 RTM/tasks`。
+3. PR 固定执行：`主责在功能分支完成任务 → 提交者自查并执行本地 npm run quality → push 功能分支 → 创建 PR → 指定唯一审核人 Review → Review 通过后 APPROVE → 通过 PR Merge 进入 master → 更新 RTM/tasks/日志`。
 4. `tasks.md` 指定的唯一 Review 人必须 Approve；可邀请其他队友评论，但不能用额外评论替代唯一 Review 人的批准。提交者不得自批。
-5. CI 失败、核心模块单元测试覆盖率低于 `KN-045 ≥70%`、安全红线违规、契约破坏、必要测试缺失或 Review 未批准时禁止合并。不得绕过门禁、force push 或改写共享历史。
+5. 本地 `npm run quality` 失败、核心模块单元测试覆盖率低于 `KN-045 ≥70%`、安全红线违规、契约破坏、必要测试缺失或唯一 Review 人未批准时禁止合并。不得绕过门禁、force push 或改写共享历史。
 6. `G4-00` 是建立上述规则的治理切换提交，按切换前已生效的安全同步/commit/push 规则完成；它不构成后续 G4 研发直推主干的先例。
+7. `master` 不用于 G4 日常任务开发，只接收审核通过后的 PR Merge。G4 不要求接入 Jenkins、Gitee Go 或其他远程 CI；远程流水线如自愿存在，也不替代本地 `npm run quality`、唯一审核人 Approve 或 PR 证据。
 
 ## 3 统一研发 DoD
 
 每个 G4 研发任务统一满足：
 
-`任务/AC 明确 → Prompt 留痕 → 实现 + 测试 → 提交者自查 → 指定队友 Review/Approve → CI 全绿 → PR 合并 → RTM/tasks 更新`
+`任务/AC 明确 → Prompt 留痕 → 功能分支实现 + 测试 → 提交者自查 + 本地 npm run quality → push 功能分支 → PR → 指定唯一审核人 Review/Approve → PR Merge → RTM/tasks/日志更新`
 
 其中：
 
@@ -34,11 +35,12 @@
 - 核心逻辑测试先行或与实现同 PR；测试必须回指具体 AC，保留命令、版本、环境、原始结果和失败记录。
 - 自查至少覆盖范围、契约、权限/输入校验、参数化访问、密钥不入库、日志脱敏、迁移/回滚、测试与追踪。
 - Review 记录必须可定位到 PR、commit、意见、整改和 Approve；高危安全问题为零方可合并。
+- `npm run quality` 是本地质量门禁，须记录执行环境、命令、原始结果与对应 commit，不得写成远程 CI 执行结果。
 - 合并后由任务主责或约定责任人更新 RTM 代码/测试证据列与 `tasks.md` 状态，不得预填未执行结果。
 
 ## 4 证据与 AI 资产
 
-每个 PR 至少保留：功能分支和 commit、PR 描述、Prompt 原文及 AI 参与范围、提交者自查、测试/coverage/contract/security/selfcheck 输出、唯一 Review 人意见与 Approve、CI 全绿、合并记录、RTM/tasks 更新。证据不得以口头结论或模拟截图替代真实记录。
+每个 PR 至少保留：任务号、功能分支和对应 commit、PR 描述、Prompt 原文及 AI 参与范围、提交者自查结果、本地 `npm run quality` 及其测试/coverage/contract/security/selfcheck 输出、唯一 Review 人的审核结论与 Approve、PR Merge 记录、RTM/tasks/日志更新。证据不得以口头结论或模拟截图替代真实记录；远程 CI 不是必需证据。
 
 可复用的有效 Prompt 进入《Prompt 模式库》，记录适用场景、输入约束、验证方法和复用次数。至少一项真实 AI 失败/误导/返工进入《AI 翻车记录》，保留现象、影响、五问根因、修复和预防规则；不得虚构翻车以满足数量。
 

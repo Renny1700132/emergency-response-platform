@@ -27,12 +27,12 @@
 - 覆盖率（核心模块必须 ≥70%）：
 - OpenAPI / 契约结果：
 - 安全扫描（高危必须为 0）：
-- CI 链接：
+- 本地 `npm run quality` 命令、结果与对应 commit：
 - Prompt / Review / 证据路径：
 
 ## 合并门禁
 
 - [ ] 唯一 Review 人已 Approve（提交者不得自批）
-- [ ] CI 全绿
+- [ ] 本地 `npm run quality` 已通过并附真实结果（不表述为远程 CI）
 - [ ] 阻断缺陷为 0
 - [ ] 合并后更新 RTM 与 `tasks.md`

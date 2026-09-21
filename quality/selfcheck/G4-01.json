@@ -9,15 +9,15 @@
     "designIds": ["NFR-MNT-01", "ENG-012", "ENG-014", "ENG-015", "ENG-017"]
   },
   "ai": {
-    "scope": "Codex generated the gate scripts, tests, CI configuration, templates, and evidence capture harness under member C direction.",
-    "disposition": "Adopted after local tests; Gitee Go execution and member B approval remain external PR gates."
+    "scope": "Codex generated the local quality-gate scripts, tests, templates, and evidence capture harness under member C direction.",
+    "disposition": "Adopted after local npm run quality; member B Review/Approve and PR Merge remain the external governance gates."
   },
   "checks": {
     "scope": { "status": "PASS", "evidence": "Only G4-01 engineering guardrail files and process evidence are changed." },
     "contract": { "status": "PASS", "evidence": "npm run contract validates docs/work/B_TECH/openapi_v1.yaml without rewriting the frozen contract." },
     "authorizationAndValidation": { "status": "N/A", "evidence": "G4-01 adds no runtime endpoint or authorization decision." },
     "parameterizedAccess": { "status": "N/A", "evidence": "G4-01 adds no database or external data access." },
-    "secrets": { "status": "PASS", "evidence": "npm run security:secrets scans implementation and CI paths and reports locations only." },
+    "secrets": { "status": "PASS", "evidence": "npm run security:secrets scans implementation and engineering configuration paths and reports locations only." },
     "logRedaction": { "status": "PASS", "evidence": "Secret findings omit matched values; tests verify the value is not emitted." },
     "migrationRollback": { "status": "N/A", "evidence": "G4-01 changes no database schema or migration." },
     "tests": { "status": "PASS", "evidence": "npm run test:coverage enforces 70% line/function/branch/statement thresholds on gate libraries." },

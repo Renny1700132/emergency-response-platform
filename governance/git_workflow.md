@@ -2,14 +2,14 @@
 
 ## 分支
 
-- 每项正式任务必须产生 commit，并最终安全同步到远程 `master`。
-- 开始与结束时必须确认当前分支。直接在 `master` 工作时按下述同步门禁执行；使用 `codex/<task-id>-<short-name>` 短生命周期分支时，任务结束前必须安全合并回本地 `master`，再推送 `origin/master`。
+- 每项正式任务必须产生 commit。G1—G3 历史任务按当时规则安全同步远程 `master`；自 `G4-01` 起只 push 功能分支，并由 PR Merge 进入 `master`。
+- 开始与结束时必须确认当前分支。G4 任务从最新 `master` 创建 `codex/<task-id>-<short-name>` 短生命周期分支，禁止在本地合并回 `master` 后直推远程主干。
 - 一项正式产物只有主责分支/版本；复核通过 Review/Issue 提交意见，不维护影子分支作为第二正式版本。
 - 未经用户明确授权不得修改 remote、改写默认分支或把任务推送到其他远程。
 
 ### 第四关覆盖规则
 
-`G4-00` 是旧工作流切换到第四关治理的启动提交。自 `G4-01` 起，G4 研发任务必须使用 `codex/<task-id>-<short-name>` 功能分支并通过 PR 合并到受保护 `master`，禁止直接推送主干。每个 PR 必须关联 Task、FR/AC/设计 ID，声明 AI 参与范围，附自查、测试、CI 与指定唯一 Review 人的 Approve 证据；CI 未全绿或 Review 未批准不得合并。合并后更新 RTM 与 `tasks.md`。其余安全同步、禁止 force、语义冲突停止和日志回填规则继续适用；详见 `governance/g4_development_workflow.md`。
+`G4-00` 是旧工作流切换到第四关治理的启动提交。自 `G4-01` 起，G4 研发任务必须使用 `codex/<task-id>-<short-name>` 功能分支并通过 PR 合并到受保护 `master`，禁止直接推送主干。每个 PR 必须记录任务号、对应 commit、AI 参与范围、自检与本地 `npm run quality` 结果，以及指定唯一 Review 人的审核结论和 Approve；本地门禁失败或 Review 未批准不得合并。G4 不要求 Jenkins、Gitee Go 或其他远程 CI，本地门禁不得写成远程 CI。合并后更新 RTM、`tasks.md` 与日志。其余安全同步、禁止 force、语义冲突停止和日志回填规则继续适用；详见 `governance/g4_development_workflow.md`。
 
 # Task Start Repository Sync
 
@@ -57,6 +57,8 @@ PUSH
 
 ## 安全同步与 Push
 
+以下步骤中的 `master` 直推仅适用于 G1—G3 历史/遗留任务。G4 必须执行后述“G4 功能分支与 PR”流程，不得套用第 5 步直推主干。
+
 1. 在任务 commit 后再次执行 `git fetch origin master`，获取执行期间产生的远程更新。
 2. 比较本地 `master` 与 `origin/master`。远程仅领先时优先 fast-forward；双方分叉时使用普通 merge，禁止通过 force 或历史重写消除分叉。
 3. Git 能自动无冲突合并时，保留自动合并结果并继续；提交/推送前仍须检查合并后的 diff、日志和任务文件。
@@ -66,9 +68,18 @@ PUSH
 7. 推送成功后验证本地 `master`、`origin/master` 与远程引用一致，并把 commit、远程、分支、时间和结果回填 Prompt 日志。
 8. 网络、认证、权限或语义冲突导致无法安全推送时，记录真实失败并进入 `BLOCKED`，不得报告 `PUSHED`。
 
+### G4 功能分支与 PR
+
+1. 功能分支完成任务、提交者自查和本地 `npm run quality` 后，检查 diff 并 commit。
+2. 再次 fetch `origin/master` 并检查分叉；语义冲突按本文件规则停止，不以 rebase/force 覆盖历史。
+3. 非 force push 当前功能分支，创建或更新单任务 PR；不得执行 `git push origin master`。
+4. `tasks.md` 指定的唯一审核人完成 Review；只有其结论通过并在 PR 中 Approve 后，才通过 PR Merge 进入 `master`。
+5. PR 记录任务号、AI 参与范围、自检与本地质量门禁结果、审核结论和对应 commit。远程 CI 不是 G4 合并前提。
+6. 合并后按约定通过后续功能分支/PR 更新 RTM、`tasks.md` 与日志；不得以“收口”为由直接 push `master`。
+
 ## 日志回填提交
 
-内容 commit 与首次 push 完成后，将任务 commit hash 和 push 结果写回日志，创建独立的小型回填 commit，再重复 fetch/必要合并/普通 push。回填 commit 不记录自身 hash，避免无限自引用；禁止 amend、rebase 或重写既有提交。
+内容 commit 与首次 push 完成后，将任务 commit hash 和 push 结果写回日志，创建独立的小型回填 commit。G1—G3 按历史规则再次安全同步并普通 push；G4 将回填 commit push 到功能分支并更新 PR，合并后收口更新仍走功能分支/PR。回填 commit 不记录自身 hash，避免无限自引用；禁止 amend、rebase 或重写既有提交。
 
 ## 禁止事项
 

@@ -601,7 +601,8 @@
 - C 审计记录（2026-09-18，G3-08 授权合并复核）：本条目状态行现为 `CLOSED / VERIFIED_BY_C`（`e5417b1`，WhiteApricot，16:56），与本条目上述正文“保持 OPEN / 继续阻断”、关闭条件（真实环境与账号前置、脱敏请求响应/回执、连通结论 + B 技术复验 + C 符合性核验）以及全仓受控文件（`tasks.md` G3-06、RTM §6.4/§8、18 号 §11、14 号 §末、12 号 §306、13 号 §338、G3-01 输入基线、M2 评审包、`BASELINE-G2-M2-R1.0`、`change_log.md`、ADR-002）均不一致，且无整改/复核证据行。已登记 `ISSUE-G3-08-007`；C 不单方回滚他人提交，待人工裁决。
 - B 技术复核确认（2026-09-19）：经用户明确授权以 B 身份复核，确认提交 `e5417b1` 仅改写状态行，未补齐本 Issue 关闭条件所需的真实视频/消息接口资料、脱敏请求响应/回执、失败场景、连通结论或替代/延期裁决。原关闭状态属于误改，现恢复 `OPEN`；继续阻断真实外部契约冻结与 G3-10/M3 最终冻结。
 - 课程模拟替代裁决（2026-09-21）：用户明确确认本项目为模拟项目，提供三个 `.example` 环境、八端口版本/认证/模拟账号责任与联调窗口，并授权以 `SIMULATED_OWNER_CONFIRMATION`、`SIMULATED_EVIDENCE` 形成课程替代验收。证据编号登记于 `evidence/simulated/README.md`；该裁决满足本 Issue“明确替代验收裁决并完成影响分析”的关闭分支，但不构成现实接口、账号或现场连通证据。
-- 状态：CLOSED / RESOLVED_BY_SIMULATED_OWNER_CONFIRMATION / PENDING_B_C_REVIEW_FOR_M3
+- B/C 复核（2026-09-21，G3-10）：确认用户课程模拟裁决满足“明确替代验收裁决并完成影响分析”的关闭分支，且全程保留 `SIMULATED_OWNER_CONFIRMATION` / `SIMULATED_EVIDENCE` 身份边界；本关闭只适用于课程模拟 M3 输入，不证明现实接口、账号、联调或现场指标通过。
+- 状态：CLOSED / VERIFIED_BY_B_AND_C / SIMULATED_ONLY
 
 ## ISSUE-G3-01-002
 
@@ -1070,6 +1071,20 @@
 - 证据：`docs/work/A_PM/g3_m3_review_pack.md`、`logs/reviews/2026-09-19_G3-10-M3-audit.json`、`logs/reviews/2026-09-19_G3-10-A-self-check.md`、`control/baselines/M3-G3-10-FREEZE-BLOCKED.md`。
 - 状态：OPEN / BLOCKING。
 - A 重入（2026-09-21）：G3-11—14 均已 DONE；`ISSUE-G3-01-001` 已依据用户课程模拟替代验收裁决关闭现实证据阻断，但所有新增数据均显式标记 SIMULATED。A 重新执行 M3 一致性审计后将 G3-10 置 REVIEW，等待 B 技术复核和 C 符合性复核；本次不创建 FROZEN 基线，不关闭本 Issue。
+- B/C 独立复核（2026-09-21）：课程模拟替代裁决分支和 G3-11—14 DONE 状态已确认；但 A 审计未纳入 G3-11—14 工作稿、20—23 正式件及对应 Review，也未把本 Issue 状态作为 `freeze_ready` 门禁，评审包仍含四项 TODO/未生成/待裁决的过期表述。因此关闭条件③尚未满足，本 Issue 保持 OPEN/BLOCKING。证据：`logs/reviews/2026-09-21_G3-10-B-technical-review.md`、`logs/reviews/2026-09-21_G3-10-C-compliance-review.md`、`logs/reviews/2026-09-21_G3-10-BC-review-audit.json`。
+
+### ISSUE-G3-10-002
+
+- 提出人：B、C。
+- 时间：2026-09-21。
+- 严重级别：BLOCKER / BLOCKING_TO_G3-10_DONE_AND_M3_FREEZE。
+- 文件与位置：`scripts/audit_g3_10_m3.py` 的 `candidate_files`、`review_patterns` 和 blocker 计算；`docs/work/A_PM/g3_m3_review_pack.md` §2、§3、§7；`docs/deliverables/README.md` 第三关 20—23 号条目及尾段。
+- 问题：A 重入审计的范围仍停留在 G3-02—09、10—19 号正式件及其 Review，未审计已经纳入 M3 门禁且状态为 DONE 的 G3-11—14 工作稿、20—23 号正式件和复核证据；脚本未检查 `ISSUE-G3-10-001`，却输出 `freeze_ready=true`。评审包 §2/§3/§7 与 §1/§5 对四项管理计划和模拟裁决的状态互相矛盾；正式交付目录仍把 20、22、23 写为 REVIEW。
+- 影响：现有 `freeze_ready=true` 只能代表审计子集通过，不能证明 M3 全量配置项、状态和复核证据完整一致；若据此冻结，将形成不完整工程基线和错误审计结论。
+- 主责人：A；复核人：B（技术）、C（符合性）。
+- 最小修复：A 扩展审计清单和 Review 模式，纳入 G3-11—14 工作稿、20—23 号正式件及复核证据；将 `ISSUE-G3-10-001` 纳入冻结门禁；修正评审包 §2/§3/§7 和正式交付目录的过期状态；重新生成审计结果并提交 B/C 复核。
+- 关闭条件：全量配置清单存在且哈希可追溯，G3-02—14 Review 证据齐套，状态描述一致，`ISSUE-G3-10-001` 的关闭与 `freeze_ready` 计算顺序可审计；A 复跑通过且 B/C 独立复核接受。
+- 状态：OPEN / BLOCKING。
 
 ## G3-11 项目管理计划 C 复核项
 

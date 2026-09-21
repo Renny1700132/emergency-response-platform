@@ -1,0 +1,48 @@
+{
+  "task": "G3-10",
+  "review_date": "2026-09-21",
+  "reviewed_commit": "778ff16666ae303aba406401fed704e460d7a7f6",
+  "reviewers": {
+    "B": "technical",
+    "C": "compliance"
+  },
+  "reproduced_core_counts": {
+    "fr": 39,
+    "star_fr": 34,
+    "ac": 117,
+    "tc": 117,
+    "rclr": 10,
+    "dbd_tr": 39,
+    "dld_tr": 39,
+    "api_tr": 39,
+    "openapi_operations": 57,
+    "openapi_unique_operations": 57
+  },
+  "management_task_states": {
+    "G3-11": "DONE",
+    "G3-12": "DONE",
+    "G3-13": "DONE",
+    "G3-14": "DONE"
+  },
+  "management_deliverables": {
+    "20-项目管理计划.docx": "4E639E41BA6EACC749702451E651F06411AE979A3C2B43DCF7B2BBBB4F78CEE3",
+    "21-质量管理计划.docx": "C0A3FA11EFA3857692A6805EF23CA63F9D840560D98BEBC96905B85CC3CCE206",
+    "22-配置管理计划.docx": "ACBF5A6AC726215E031CA1BF60A15FFB8632DA86986F5C641CE971DB174C2F94",
+    "23-风险管理计划与风险登记册v2.docx": "94D7391AAC18FBE25BCE0CDBB995601216A82D5576912AEF8AC6517F4911065B"
+  },
+  "findings": [
+    "A audit manifest omits G3-11 through G3-14 work products and deliverables 20 through 23",
+    "A review evidence patterns omit G3-11 through G3-14",
+    "A audit does not gate freeze_ready on ISSUE-G3-10-001",
+    "M3 review pack sections 2, 3 and 7 contain stale pre-remediation statements",
+    "deliverables README statuses for 20, 22 and 23 conflict with tasks.md"
+  ],
+  "simulated_confirmation": {
+    "accepted_as_alternative_decision_input": true,
+    "real_world_evidence": false,
+    "required_label": "SIMULATED_ONLY"
+  },
+  "decision": "CHANGES_REQUIRED",
+  "freeze_ready": false,
+  "g3_10_status": "REVIEW"
+}

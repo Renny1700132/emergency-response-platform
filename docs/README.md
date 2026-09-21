@@ -80,4 +80,5 @@
 ## 工作稿与正式产物
 
 - `work/`：主责人的当前工作稿与待评审材料。
-- `deliverables/`：复核通过并准备交付或冻结的版本。
+- `deliverables/`：复核通过并纳入阶段交付或冻结的版本。
+- 第三关当前冻结基线：`../control/baselines/BASELINE-G3-M3-R1.0.md`；逐文件 SHA-256 清单见 `../logs/reviews/2026-09-21_G3-10-M3-final-audit.json`。

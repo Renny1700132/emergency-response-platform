@@ -11,6 +11,7 @@
 | BASELINE-V1.1 | 第一关收口呈现修订基线 | G1-15 格式审计、实名化、README 与日报体系完成；不改变需求事实、数字、范围、责任或验收 | PENDING_COMMIT | 2026-09-13 | A | C（待复核） | 待回填 |
 | BASELINE-V1.2 | 第一关最终返工呈现基线 | 21 份日报重建；7 份 DOCX 逐项模板、版本、插图与渲染审计 7/7 PASS；不改变业务事实 | PENDING_COMMIT | 2026-09-13 | A | C（待复核） | 待回填 |
 | BASELINE-G2-M2-R1.0 | 第二关M2返工复审重新冻结基线 | G2-R05 DONE；五类教师问题均闭环；39 FR/34★/117 AC/10 RCLR无漂移；开放接口边界显式保留 | FROZEN / VERIFIED_BY_B_AND_C | 2026-09-16 | A | B、C | `52887e5cf2ac177de22f63b8906bfb7913506b13` |
+| BASELINE-G3-M3-R1.0 | 第三关设计与计划工程基线 | G3-02—14准出；全量清单、Review、Issue门禁与一致性审计通过 | FROZEN | 2026-09-21 | A | B、C评审输入；A按用户授权最终关闭 | 待回填 |
 
 ## BASELINE-G1-V0.1 冻结记录
 

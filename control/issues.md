@@ -1072,6 +1072,8 @@
 - 状态：OPEN / BLOCKING。
 - A 重入（2026-09-21）：G3-11—14 均已 DONE；`ISSUE-G3-01-001` 已依据用户课程模拟替代验收裁决关闭现实证据阻断，但所有新增数据均显式标记 SIMULATED。A 重新执行 M3 一致性审计后将 G3-10 置 REVIEW，等待 B 技术复核和 C 符合性复核；本次不创建 FROZEN 基线，不关闭本 Issue。
 - B/C 独立复核（2026-09-21）：课程模拟替代裁决分支和 G3-11—14 DONE 状态已确认；但 A 审计未纳入 G3-11—14 工作稿、20—23 正式件及对应 Review，也未把本 Issue 状态作为 `freeze_ready` 门禁，评审包仍含四项 TODO/未生成/待裁决的过期表述。因此关闭条件③尚未满足，本 Issue 保持 OPEN/BLOCKING。证据：`logs/reviews/2026-09-21_G3-10-B-technical-review.md`、`logs/reviews/2026-09-21_G3-10-C-compliance-review.md`、`logs/reviews/2026-09-21_G3-10-BC-review-audit.json`。
+- A 最终整改与用户授权关闭（2026-09-21）：审计清单已扩展至 G3-11—14 工作稿、20—23 正式件和对应 Review；交付目录与评审包过期状态已修正。关闭前审计 `2026-09-21_G3-10-M3-preclose-audit.json` 显示全量清单、计数、Review、案例隔离与目录一致性全部通过，唯一剩余 blocker 为本 Issue 与 `ISSUE-G3-10-002` 自身尚未关闭。用户明确授权“如自检后问题已修复，可将 G3-10 置为 DONE，并正式冻结第三关”，据此由 A 完成最终关闭；未冒充 B/C 对修订后提交再次签署。
+- 状态：CLOSED / VERIFIED_BY_A_ON_USER_AUTHORIZATION（2026-09-21）。
 
 ### ISSUE-G3-10-002
 
@@ -1085,6 +1087,8 @@
 - 最小修复：A 扩展审计清单和 Review 模式，纳入 G3-11—14 工作稿、20—23 号正式件及复核证据；将 `ISSUE-G3-10-001` 纳入冻结门禁；修正评审包 §2/§3/§7 和正式交付目录的过期状态；重新生成审计结果并提交 B/C 复核。
 - 关闭条件：全量配置清单存在且哈希可追溯，G3-02—14 Review 证据齐套，状态描述一致，`ISSUE-G3-10-001` 的关闭与 `freeze_ready` 计算顺序可审计；A 复跑通过且 B/C 独立复核接受。
 - 状态：OPEN / BLOCKING。
+- A 整改与关闭（2026-09-21）：已扩展审计脚本和配置清单，纳入 G3-11—14 工作稿、20—23 正式件、G3-11—14 Review、交付目录状态以及 `ISSUE-G3-10-001/002` 门禁；评审包 §2/§3/§7 和全局 README 已同步。关闭前审计确认业务一致性检查为 PASS，且准确返回两个 Issue 状态 blocker；在用户授权 A 自检闭环后关闭本 Issue，再执行最终审计。
+- 状态：CLOSED / VERIFIED_BY_A_ON_USER_AUTHORIZATION（2026-09-21）。
 
 ## G3-11 项目管理计划 C 复核项
 

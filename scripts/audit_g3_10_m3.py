@@ -71,6 +71,7 @@ def main() -> None:
         any(token in task_states[f"G3-{n:02}"] for token in ("REVIEW", "DONE"))
         for n in range(11, 15)
     )
+    management_plans_done = all(task_states[f"G3-{n:02}"] == "DONE" for n in range(11, 15))
 
     counts = {
         "fr": len(set(re.findall(r"G2-FR-(\d{3})", spec))),
@@ -113,6 +114,10 @@ def main() -> None:
         "docs/work/B_TECH/interface_design.md",
         "docs/work/C_REQ/rtm_v1.md",
         "docs/work/C_REQ/test_plan.md",
+        "docs/work/A_PM/project_management_plan.md",
+        "docs/work/C_REQ/quality_management_plan.md",
+        "docs/work/A_PM/configuration_management_plan.md",
+        "docs/work/A_PM/risk_management_plan.md",
         "docs/deliverables/10-需求追踪矩阵RTMv1.docx",
         "docs/deliverables/11-概要设计说明书.docx",
         "docs/deliverables/12-详细设计说明书.docx",
@@ -123,6 +128,10 @@ def main() -> None:
         "docs/deliverables/17-ADR-002-事务Outbox与持久任务.md",
         "docs/deliverables/18-非功能设计与工程规则.md",
         "docs/deliverables/19-测试计划.docx",
+        "docs/deliverables/20-项目管理计划.docx",
+        "docs/deliverables/21-质量管理计划.docx",
+        "docs/deliverables/22-配置管理计划.docx",
+        "docs/deliverables/23-风险管理计划与风险登记册v2.docx",
     ]
     manifest = []
     for relative in candidate_files:
@@ -145,6 +154,10 @@ def main() -> None:
         "G3-07": "logs/reviews/*G3-07*review*.md",
         "G3-08": "logs/reviews/*G3-08*review*.md",
         "G3-09": "logs/reviews/*G3-09*review*.md",
+        "G3-11": "logs/reviews/*G3-11*review*.md",
+        "G3-12": "logs/reviews/*G3-12*review*.md",
+        "G3-13": "logs/reviews/*G3-13*review*.md",
+        "G3-14": "logs/reviews/*G3-14*review*.md",
     }
     review_evidence = {
         task: sorted(str(path.relative_to(ROOT)).replace("\\", "/") for path in ROOT.glob(pattern))
@@ -161,6 +174,10 @@ def main() -> None:
             case_residue[str(path.relative_to(ROOT)).replace("\\", "/")] = hits
 
     blocker_status = last_issue_status(issues, "ISSUE-G3-01-001")
+    g3_10_issue_statuses = {
+        issue_id: last_issue_status(issues, issue_id)
+        for issue_id in ("ISSUE-G3-10-001", "ISSUE-G3-10-002")
+    }
     adr_status = {
         "ADR-001": bool(re.search(r"状态[：:]\s*Accepted", adr1, re.IGNORECASE)),
         "ADR-002": bool(re.search(r"状态[：:]\s*Accepted", adr2, re.IGNORECASE)),
@@ -169,12 +186,23 @@ def main() -> None:
     readme_missing = [Path(item).name for item in candidate_files if item.startswith("docs/deliverables/") and Path(item).name not in readme]
 
     consistency_pass = all(count_checks.values()) and all(item["exists"] for item in manifest)
-    consistency_pass = consistency_pass and all(review_evidence.values()) and not case_residue and all(adr_status.values())
+    consistency_pass = (
+        consistency_pass
+        and all(review_evidence.values())
+        and not case_residue
+        and all(adr_status.values())
+        and not readme_missing
+    )
     blockers = []
     if not blocker_status.startswith("CLOSED"):
         blockers.append("ISSUE-G3-01-001 remains OPEN and explicitly blocks G3-10/M3 freeze")
     if not management_plans_started:
         blockers.append("plan.md requires G3-02—G3-14 REVIEW, but G3-11—G3-14 remain TODO")
+    if not management_plans_done:
+        blockers.append("G3-11—G3-14 are not all DONE")
+    for issue_id, status in g3_10_issue_statuses.items():
+        if not status.startswith("CLOSED"):
+            blockers.append(f"{issue_id} remains OPEN and blocks G3-10/M3 freeze")
 
     result = {
         "task": "G3-10",
@@ -182,7 +210,9 @@ def main() -> None:
         "task_states": task_states,
         "upstream_g3_02_to_09_done": upstream_done,
         "management_plans_g3_11_to_14_review_or_done": management_plans_started,
+        "management_plans_g3_11_to_14_done": management_plans_done,
         "issue_g3_01_001_status": blocker_status,
+        "g3_10_issue_statuses": g3_10_issue_statuses,
         "counts": counts,
         "count_expectations": count_expectations,
         "count_checks": count_checks,

@@ -1,0 +1,11 @@
+{
+  "marker": "SIMULATED_EVIDENCE",
+  "adapter": "EXT-FIRE",
+  "boundary": "Existing fire platform owns devices; this fixture models alert/status ingestion without device control.",
+  "scenarios": {
+    "normal": { "status": 202, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-FIRE", "code": "SIM-FIRE-NORMALIZED", "externalAlertId": "sim-fire-001", "deviceControlled": false } },
+    "unauthorized": { "status": 403, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-FIRE", "code": "SIM-FIRE-FORBIDDEN" } },
+    "timeout": { "status": 504, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-FIRE", "code": "SIM-FIRE-TIMEOUT", "manualHandlingRequired": true } },
+    "failure": { "status": 503, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-FIRE", "code": "SIM-FIRE-DISCONNECTED" } }
+  }
+}

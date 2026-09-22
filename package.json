@@ -14,8 +14,9 @@
     "security:secrets": "node scripts/g4/scan-secrets.mjs",
     "security:dependencies": "npm audit --audit-level=high",
     "security": "npm run security:secrets && npm run security:dependencies",
-    "selfcheck": "node scripts/g4/validate-selfcheck.mjs quality/selfcheck/G4-01.json",
+    "selfcheck": "node scripts/g4/validate-selfchecks.mjs quality/selfcheck",
     "quality": "npm run test:coverage && npm run contract && npm run security && npm run selfcheck",
+    "simulated:start": "node scripts/g4/simulated-service.mjs",
     "evidence:pass": "node scripts/g4/capture-gate-evidence.mjs pass",
     "evidence:block": "node scripts/g4/capture-gate-evidence.mjs block"
   },

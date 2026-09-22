@@ -1,0 +1,11 @@
+{
+  "marker": "SIMULATED_EVIDENCE",
+  "adapter": "EXT-VIDEO",
+  "boundary": "Existing video platform owns live streams and recordings; this subsystem stores references only.",
+  "scenarios": {
+    "normal": { "status": 200, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-VIDEO", "code": "SIM-VIDEO-REFERENCE", "mode": "LIVE", "videoReference": "sim-video-ref-001", "recordingStoredHere": false } },
+    "unauthorized": { "status": 403, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-VIDEO", "code": "SIM-VIDEO-FORBIDDEN" } },
+    "timeout": { "status": 504, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-VIDEO", "code": "SIM-VIDEO-TIMEOUT", "manualFallback": "USE_EXISTING_VIDEO_PLATFORM" } },
+    "failure": { "status": 503, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-VIDEO", "code": "SIM-VIDEO-UNAVAILABLE" } }
+  }
+}

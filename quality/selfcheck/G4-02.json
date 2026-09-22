@@ -1,0 +1,26 @@
+{
+  "taskId": "G4-02",
+  "owner": "B",
+  "reviewer": "A",
+  "traceability": {
+    "taskIds": ["G4-02"],
+    "requirementIds": ["KN-043", "KN-045", "NFR-MNT-01"],
+    "acIds": ["G4-02-DoD"],
+    "designIds": ["ENG-012", "ENG-014", "ENG-015", "ENG-017"]
+  },
+  "ai": {
+    "scope": "Codex assisted member B in creating the Node backend foundation, PostgreSQL migration scripts, health/readiness endpoints, middle-platform identity adapter boundary, audit redaction, and automated tests.",
+    "disposition": "Adopted after B inspected the implementation and ran local quality checks; member A must independently review before PR merge."
+  },
+  "checks": {
+    "scope": { "status": "PASS", "evidence": "Changes are limited to G4-02 backend, migration, configuration, tests, and self-check assets." },
+    "contract": { "status": "PASS", "evidence": "Frozen OpenAPI is linted without being rewritten; G4-02 adds only internal health and identity skeleton behavior." },
+    "authorizationAndValidation": { "status": "PASS", "evidence": "The minimal protected endpoint rejects absent or insufficient identity context and records the result." },
+    "parameterizedAccess": { "status": "PASS", "evidence": "Audit persistence uses PostgreSQL positional parameters; no dynamic SQL is constructed from request input." },
+    "secrets": { "status": "PASS", "evidence": "Configuration uses environment references only; example files contain no credentials and the secret scan covers backend paths." },
+    "logRedaction": { "status": "PASS", "evidence": "Audit redaction removes token, credential, password and secret values before logging or persistence." },
+    "migrationRollback": { "status": "N/A", "evidence": "001_foundation has reviewed up/down SQL scripts and a transactional migration runner; Docker/PostgreSQL is unavailable on this workstation, so a real forward/rollback execution is explicitly deferred to the PR review environment." },
+    "tests": { "status": "PASS", "evidence": "Backend tests exercise configuration, audit redaction, health/readiness, authorization and audit outcomes." },
+    "traceability": { "status": "PASS", "evidence": "The self-check maps G4-02 to KN-043/045, NFR-MNT-01, G4-02-DoD and ENG-012/014/015/017." }
+  }
+}

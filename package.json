@@ -9,15 +9,20 @@
   "scripts": {
     "test": "npm run test:unit",
     "test:unit": "node --test tests/g4/*.test.mjs",
+    "test:backend": "node --test tests/backend/*.test.mjs",
     "test:coverage": "c8 --all --include=scripts/g4/lib/*.mjs --check-coverage --lines 70 --functions 70 --branches 70 --statements 70 node --test tests/g4/*.test.mjs",
     "contract": "redocly lint docs/work/B_TECH/openapi_v1.yaml --config quality/openapi/redocly.yaml",
     "security:secrets": "node scripts/g4/scan-secrets.mjs",
     "security:dependencies": "npm audit --audit-level=high",
     "security": "npm run security:secrets && npm run security:dependencies",
     "selfcheck": "node scripts/g4/validate-selfcheck.mjs quality/selfcheck/G4-01.json",
-    "quality": "npm run test:coverage && npm run contract && npm run security && npm run selfcheck",
+    "selfcheck:g4-02": "node scripts/g4/validate-selfcheck.mjs quality/selfcheck/G4-02.json",
+    "quality": "npm run test:coverage && npm run test:backend && npm run contract && npm run security && npm run selfcheck && npm run selfcheck:g4-02",
     "evidence:pass": "node scripts/g4/capture-gate-evidence.mjs pass",
     "evidence:block": "node scripts/g4/capture-gate-evidence.mjs block"
+  },
+  "dependencies": {
+    "pg": "8.16.3"
   },
   "devDependencies": {
     "@redocly/cli": "2.53.3",

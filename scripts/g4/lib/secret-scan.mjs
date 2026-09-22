@@ -45,7 +45,7 @@ async function walk(root, current = root) {
 export async function collectScanFiles(root) {
   const candidates = [
     '.workflow', '.gitee', 'backend', 'frontend', 'quality', 'services', 'src',
-    'scripts/g4', 'package.json'
+    'scripts/g4', 'simulated-integrations', 'package.json'
   ];
   const files = [];
   for (const candidate of candidates) {

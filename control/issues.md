@@ -1315,6 +1315,14 @@
 - 类型门禁新增“缺失必填 path”“缺失必填幂等键”两个 `@ts-expect-error` 负例及对应正例；运行时新增 path 参数编码替换测试。
 - 状态保持 `OPEN / PENDING_C_REREVIEW`，等待 C 在 PR #8 独立复验后关闭。
 
+#### C 第二次独立复验（2026-09-23）
+
+- 必填 path 与必填幂等键的 operation-level 类型约束及对应负例已满足上轮要求。
+- 发现运行时仍发送 `Idempotency-Key`，而冻结 OpenAPI 与接口设计要求 `X-Idempotency-Key`；现有测试也断言错误名称，机械门禁无法发现该契约偏差。
+- 最小修复：运行时和测试统一改为 `X-Idempotency-Key`，并断言旧 header 不存在；修正自检口径后复跑完整门禁。
+- 复验证据：`logs/reviews/2026-09-23_G4-03-C-rereview-2.md`；PR #8 head `727c2b9`。
+- 状态：OPEN / CHANGES_REQUIRED。
+
 ### ISSUE-G4-03-003
 
 - 提出人：C。

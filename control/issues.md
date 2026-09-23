@@ -1207,3 +1207,44 @@
 - 关闭条件：受控变更批准后修订契约；Redocly 同版本/规则复跑为 0 error、0 warning；契约差异和客户端兼容性检查通过。
 - 主责人：B；复核人：A、C。
 - 状态：OPEN / NON_BLOCKING。
+
+## G4-03 前端骨架与 API Client 复核项
+
+### ISSUE-G4-03-001
+
+- 提出人：C。
+- 时间：2026-09-23。
+- 严重级别：MAJOR / BLOCKING_TO_G4-03_APPROVE。
+- 文件与位置：`frontend/src/router/modules.ts:13-26`；`quality/selfcheck/G4-03.json:24`；冻结输入 `docs/work/B_TECH/G3-01_design_input_baseline.md:91-103`。
+- 问题：路由元数据中的多组 MOD-*—FR 映射与冻结设计输入不一致；H5 路由直接复用领域模块 ID，未表达 `MOD-MOBILE` 渠道边界；selfcheck 却将该追踪记为 PASS。
+- 影响：后续 G4-06/G4-09 页面、RTM 与验收会使用错误需求范围，形成冻结基线漂移和不真实自检。
+- 最小修复：按冻结 §4.1 修正模块/FR 集合；H5 同时表达 `MOD-MOBILE` 与被调用领域模块；增加自动映射测试并修正 selfcheck。
+- 关闭条件：路由元数据逐项与冻结映射一致，H5 边界清楚，自动测试和本地 `npm run quality` 通过，由 C 复验。
+- 主责人：A；复核人：C。
+- 状态：OPEN / CHANGES_REQUIRED。
+
+### ISSUE-G4-03-002
+
+- 提出人：C。
+- 时间：2026-09-23。
+- 严重级别：MAJOR / BLOCKING_TO_G4-03_APPROVE。
+- 文件与位置：`frontend/src/shared/http/api-client.ts:4-26`。
+- 问题：API Client 仅将 path 限制为 `keyof paths`，method 仍为任意 string，请求体和响应由调用方泛型任意声明，未从 OpenAPI operation 推导方法、参数、body 和成功响应。
+- 影响：错误 HTTP 方法、错误 body 或错误响应类型仍可通过 TypeScript，未满足“类型化 API Client、由冻结契约生成或核对”的核心 DoD。
+- 最小修复：使用生成的 `paths`/operations 建立 operation-level 类型，或采用受控 typed-fetch；补充编译期正例与负例。
+- 关闭条件：错误方法/body/响应声明可被类型检查阻断，正确调用通过；冻结 OpenAPI 不被静默修改；本地质量门禁通过，由 C 复验。
+- 主责人：A；复核人：C。
+- 状态：OPEN / CHANGES_REQUIRED。
+
+### ISSUE-G4-03-003
+
+- 提出人：C。
+- 时间：2026-09-23。
+- 严重级别：MAJOR / BLOCKING_TO_G4-03_APPROVE。
+- 文件与位置：根 `package.json:6-8`；`frontend/package.json:6-8,25-29`；`frontend/package-lock.json:2133`。
+- 问题：项目声明 Node `>=20.19.0`，但 Vitest 5.0.1 要求 `^22.12.0 || ^24.0.0 || >=26.0.0`；本轮只在 Node 24.21.0 验证通过。
+- 影响：声明允许的 Node 20 环境无法保证安装和质量门禁可重复。
+- 最小修复：回退到支持 Node 20.19 的工具链，或经团队环境确认后统一提升最低 Node 版本；同步 README 与锁文件。
+- 关闭条件：根/frontend 版本声明与全部直接工具依赖兼容，并在声明的最低支持版本完成 `npm ci` 与 `npm run quality`，由 C 复验。
+- 主责人：A；复核人：C。
+- 状态：OPEN / CHANGES_REQUIRED。

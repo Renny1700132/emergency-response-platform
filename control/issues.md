@@ -1207,3 +1207,49 @@
 - 关闭条件：受控变更批准后修订契约；Redocly 同版本/规则复跑为 0 error、0 warning；契约差异和客户端兼容性检查通过。
 - 主责人：B；复核人：A、C。
 - 状态：OPEN / NON_BLOCKING。
+
+## G4-02 正式后端与数据库骨架审核项
+
+### ISSUE-G4-02-001
+
+- 提出人：A（何思源 / @WhiteApricot）。
+- 时间：2026-09-23。
+- 严重级别：MAJOR / BLOCKING_TO_G4-02_APPROVE_AND_MERGE。
+- 候选分支/提交：`codex/g4-02-backend-foundation` / `4d110a8`。
+- 文件与位置：`backend/migrations/001_foundation.up.sql` 第 3、17、29 行；`backend/src/audit.mjs` 的审计 INSERT；冻结 `docs/work/B_TECH/database_design.md` §4.8。
+- 问题：候选实现创建 `audit_records`、`idempotency_records`、`outbox_messages`，冻结 DBD 指定 `em_audit_log`、`em_idempotency_record`、`em_outbox_event`。未发现 CR/CCB、新 ADR 或新基线批准该物理模型偏离。
+- 影响：后续按冻结 DBD 实现 G4-05 时可能形成两套公共表、重复迁移或接口接线不一致；当前不满足“基础表/公共数据设施与 DBD 一致”。
+- 主责人：B；唯一复核人：A。
+- 最小修复：由 B 使迁移、SQL 和测试与冻结 DBD 一致；如确需改名，先完成受控变更、兼容迁移和影响分析，不得由 A 静默代改。
+- 关闭条件：隔离 PostgreSQL 上 `up → down → up` 通过；实际表名、关键约束与冻结 DBD 或获批新基线一致；A 复审通过。
+- 状态：OPEN / BLOCKING。
+
+#### A 复审（2026-09-23，候选 `d116ba5`）
+
+- B 已将迁移、索引、回滚与审计 SQL 统一回归冻结 DBD 的三张公共表命名；可重复 `up → down → up` 命令及先前 A 在隔离 PostgreSQL 17 的受控执行证据已纳入候选。
+- A 独立复跑完整质量门禁和 diff 检查通过，本 Issue 的技术关闭条件满足。
+- 状态：RESOLVED_BY_B / VERIFIED_BY_A；等待唯一 G4-02 PR 创建后记录正式 Approve 与 Merge，不再阻断创建 PR。
+- 平台收口：A 已在 PR #5 正式 Approve，PR 已通过普通 merge 进入 `master`，merge commit `8bb19ee4572a48442e559ccbe2cb6b9c186c53f8`。
+- 最终状态：CLOSED / VERIFIED_BY_A / MERGED（2026-09-23）。
+
+### ISSUE-G4-02-002
+
+- 提出人：A（何思源 / @WhiteApricot）。
+- 时间：2026-09-23。
+- 严重级别：MAJOR / BLOCKING_TO_G4-02_APPROVE_AND_MERGE。
+- 候选分支/提交：`codex/g4-02-backend-foundation` / `4d110a8`。
+- 文件与位置：`package.json` 的 `test:coverage`、`test:backend`、`quality`。
+- 问题：覆盖率命令仅采集 `scripts/g4/lib/*.mjs` 并运行 `tests/g4/*.test.mjs`；后端测试虽 4/4 通过，但 `backend/src/*.mjs` 未被采集或执行 `≥70%` 覆盖率检查。当前门禁显示的 100%/90% 不能证明 G4-02 核心后端满足 KN-045。
+- 影响：本地 `npm run quality` 形式通过但缺失本任务核心代码覆盖率硬门禁，违反 G4 DoD，无法批准合并。
+- 主责人：B；唯一复核人：A。
+- 最小修复：由 B 把后端核心模块与 `tests/backend/*.test.mjs` 纳入覆盖率采集和 `≥70%` 阻断，保留命令、版本和原始输出；不得降低既有 G4-01 门禁。
+- 关闭条件：完整 `npm run quality` 对后端核心代码真实统计且四项覆盖率均达到受控门槛；测试断言覆盖 health/readiness、鉴权、traceId/错误、审计及迁移关键路径；A 复审通过。
+- 状态：OPEN / BLOCKING。
+
+#### A 复审（2026-09-23，候选 `d116ba5`）
+
+- `npm run quality` 已纳入 `backend/src/*.mjs` 四项 `≥70%` 门禁；A 独立复跑后端测试 6/6，statements 94.77%、branches 93.93%、functions 93.75%、lines 94.77%。
+- G4 测试 11/11、OpenAPI 0 error/14 个既有 warning、秘密扫描、依赖审计、自检和 `git diff --check` 均通过。
+- 状态：RESOLVED_BY_B / VERIFIED_BY_A；等待唯一 G4-02 PR 创建后记录正式 Approve 与 Merge，不再阻断创建 PR。
+- 平台收口：A 已在 PR #5 正式 Approve，PR 已通过普通 merge 进入 `master`，merge commit `8bb19ee4572a48442e559ccbe2cb6b9c186c53f8`。
+- 最终状态：CLOSED / VERIFIED_BY_A / MERGED（2026-09-23）。

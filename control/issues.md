@@ -1253,3 +1253,111 @@
 - 状态：RESOLVED_BY_B / VERIFIED_BY_A；等待唯一 G4-02 PR 创建后记录正式 Approve 与 Merge，不再阻断创建 PR。
 - 平台收口：A 已在 PR #5 正式 Approve，PR 已通过普通 merge 进入 `master`，merge commit `8bb19ee4572a48442e559ccbe2cb6b9c186c53f8`。
 - 最终状态：CLOSED / VERIFIED_BY_A / MERGED（2026-09-23）。
+
+## G4-03 前端骨架与 API Client 复核项
+
+### ISSUE-G4-03-001
+
+- 提出人：C。
+- 时间：2026-09-23。
+- 严重级别：MAJOR / BLOCKING_TO_G4-03_APPROVE。
+- 文件与位置：`frontend/src/router/modules.ts:13-26`；`quality/selfcheck/G4-03.json:24`；冻结输入 `docs/work/B_TECH/G3-01_design_input_baseline.md:91-103`。
+- 问题：路由元数据中的多组 MOD-*—FR 映射与冻结设计输入不一致；H5 路由直接复用领域模块 ID，未表达 `MOD-MOBILE` 渠道边界；selfcheck 却将该追踪记为 PASS。
+- 影响：后续 G4-06/G4-09 页面、RTM 与验收会使用错误需求范围，形成冻结基线漂移和不真实自检。
+- 最小修复：按冻结 §4.1 修正模块/FR 集合；H5 同时表达 `MOD-MOBILE` 与被调用领域模块；增加自动映射测试并修正 selfcheck。
+- 关闭条件：路由元数据逐项与冻结映射一致，H5 边界清楚，自动测试和本地 `npm run quality` 通过，由 C 复验。
+- 主责人：A；复核人：C。
+- 状态：OPEN / CHANGES_REQUIRED。
+
+#### A 整改响应（2026-09-23）
+
+- `router/modules.ts` 已按冻结 `G3-01_design_input_baseline.md` §4 逐项建立完整 MOD-*—G2-FR 集合，不再使用错误连续区间；H5 路由同时记录 `MOD-MOBILE` 渠道边界、渠道需求集合和被调用领域模块。
+- 新增 `module-traceability.test.ts`，逐项断言 11 个受控模块映射，并检查每个 H5 入口的渠道/领域双边界。
+- 状态保持 `OPEN / PENDING_C_REREVIEW`，由 C 独立复验后关闭。
+
+#### C 独立复验（2026-09-23）
+
+- 复验确认 `moduleRequirements` 与冻结 §4.1 的 11 个 MOD-*—G2-FR 集合一致；H5 路由同时保留 `MOD-MOBILE` 渠道与领域模块边界，2 项追踪测试通过。
+- 关闭证据：`logs/reviews/2026-09-23_G4-03-C-rereview.md`；整改提交 `34435c4`；复验头提交 `c360d59`。
+- 状态：CLOSED / VERIFIED_BY_C。
+
+### ISSUE-G4-03-002
+
+- 提出人：C。
+- 时间：2026-09-23。
+- 严重级别：MAJOR / BLOCKING_TO_G4-03_APPROVE。
+- 文件与位置：`frontend/src/shared/http/api-client.ts:4-26`。
+- 问题：API Client 仅将 path 限制为 `keyof paths`，method 仍为任意 string，请求体和响应由调用方泛型任意声明，未从 OpenAPI operation 推导方法、参数、body 和成功响应。
+- 影响：错误 HTTP 方法、错误 body 或错误响应类型仍可通过 TypeScript，未满足“类型化 API Client、由冻结契约生成或核对”的核心 DoD。
+- 最小修复：使用生成的 `paths`/operations 建立 operation-level 类型，或采用受控 typed-fetch；补充编译期正例与负例。
+- 关闭条件：错误方法/body/响应声明可被类型检查阻断，正确调用通过；冻结 OpenAPI 不被静默修改；本地质量门禁通过，由 C 复验。
+- 主责人：A；复核人：C。
+- 状态：OPEN / CHANGES_REQUIRED。
+
+#### A 整改响应（2026-09-23）
+
+- API Client 已从生成的 `paths[P][method]` operation 推导允许路径、query/path 参数、JSON requestBody 和 2xx JSON 响应；调用方不能再自行声明任意响应泛型。
+- 新增由 `vue-tsc` 执行的编译期正/负例，错误方法、缺失必填 body、GET 携带 body、错误响应赋值均以 `@ts-expect-error` 固化为门禁。
+- 冻结 OpenAPI 未修改。状态保持 `OPEN / PENDING_C_REREVIEW`，由 C 独立复验后关闭。
+
+#### C 独立复验（2026-09-23）
+
+- 方法、body 与成功响应的类型约束已生效，但 operation 必填参数仍不完整：`path` 在 `OptionalTransportOptions` 中固定为可选，缺少 `incidentId` 等必填 path 参数仍能通过类型检查；契约要求的 `X-Idempotency-Key` 也未被推导为必填。
+- 现有类型负例未覆盖“缺少必填 path”和“缺少必填幂等键”；selfcheck 的 contract PASS 语义不完整。
+- 最小修复：条件化要求 path；对契约要求幂等键的写操作要求 `idempotencyKey`；补充两个编译期负例及 path 替换运行时测试，修正 selfcheck 后复跑门禁。
+- 复验证据：`logs/reviews/2026-09-23_G4-03-C-rereview.md`；PR #8 head `c360d59`。
+- 状态：OPEN / CHANGES_REQUIRED。
+
+#### A 二次整改响应（2026-09-23）
+
+- `RequestOptions` 已根据 `PathParameters` 是否为 `never` 条件化：存在契约 path 参数的 operation 必须提供 `path`；无 path 参数时维持可选。
+- 已从 operation header 推导 `X-Idempotency-Key`：契约声明该 header 的 operation 必须提供 `idempotencyKey`，其他 operation 仍允许按需提供。
+- 类型门禁新增“缺失必填 path”“缺失必填幂等键”两个 `@ts-expect-error` 负例及对应正例；运行时新增 path 参数编码替换测试。
+- 状态保持 `OPEN / PENDING_C_REREVIEW`，等待 C 在 PR #8 独立复验后关闭。
+
+#### C 第二次独立复验（2026-09-23）
+
+- 必填 path 与必填幂等键的 operation-level 类型约束及对应负例已满足上轮要求。
+- 发现运行时仍发送 `Idempotency-Key`，而冻结 OpenAPI 与接口设计要求 `X-Idempotency-Key`；现有测试也断言错误名称，机械门禁无法发现该契约偏差。
+- 最小修复：运行时和测试统一改为 `X-Idempotency-Key`，并断言旧 header 不存在；修正自检口径后复跑完整门禁。
+- 复验证据：`logs/reviews/2026-09-23_G4-03-C-rereview-2.md`；PR #8 head `727c2b9`。
+- 状态：OPEN / CHANGES_REQUIRED。
+
+#### A 第三次整改响应（2026-09-23）
+
+- 运行时请求已统一发送冻结契约规定的 `X-Idempotency-Key`，不再发送 `Idempotency-Key`。
+- 单元测试新增双向断言：新 header 的值必须正确，旧 header 必须不存在；selfcheck 的 contract 证据同步明确运行时口径。
+- 冻结 OpenAPI 与接口设计未修改。状态保持 `OPEN / PENDING_C_REREVIEW`，等待 C 在 PR #8 独立复验后关闭。
+
+#### C 第三次独立复验（2026-09-23）
+
+- 运行时已发送冻结契约规定的 `X-Idempotency-Key`；回归测试确认其值正确且旧 `Idempotency-Key` 不存在。
+- operation-level 类型约束、必填 path、必填幂等键、运行时 path 替换及 header 口径全部通过；冻结 OpenAPI 未修改。
+- 完整 `npm run quality` exit 0；frontend 13/13、G4 护栏 11/11、backend 6/6，覆盖率均达门槛；依赖漏洞 0；selfcheck PASS。
+- 关闭证据：`logs/reviews/2026-09-23_G4-03-C-rereview-3.md`；整改提交 `8b24791`；复验 head `ce60240`；PR #8。
+- 状态：CLOSED / VERIFIED_BY_C；允许在 PR #8 APPROVE，合并前 G4-03 不得置 DONE。
+
+### ISSUE-G4-03-003
+
+- 提出人：C。
+- 时间：2026-09-23。
+- 严重级别：MAJOR / BLOCKING_TO_G4-03_APPROVE。
+- 文件与位置：根 `package.json:6-8`；`frontend/package.json:6-8,25-29`；`frontend/package-lock.json:2133`。
+- 问题：项目声明 Node `>=20.19.0`，但 Vitest 5.0.1 要求 `^22.12.0 || ^24.0.0 || >=26.0.0`；本轮只在 Node 24.21.0 验证通过。
+- 影响：声明允许的 Node 20 环境无法保证安装和质量门禁可重复。
+- 最小修复：回退到支持 Node 20.19 的工具链，或经团队环境确认后统一提升最低 Node 版本；同步 README 与锁文件。
+- 关闭条件：根/frontend 版本声明与全部直接工具依赖兼容，并在声明的最低支持版本完成 `npm ci` 与 `npm run quality`，由 C 复验。
+- 主责人：A；复核人：C。
+- 状态：OPEN / CHANGES_REQUIRED。
+
+#### A 整改响应（2026-09-23）
+
+- 根/frontend `engines.node`、两份 lockfile 与 README 已统一为 `^24.14.0 || >=26.0.0`，该范围是 Vitest 5.0.1 支持范围的子集，排除了不受其支持的 Node 20、22 和 25。
+- 在声明的最低版本 Node `v24.14.0` 完成 lockfile 更新、类型检查、前端测试及完整 `npm run quality`；未出现 `EBADENGINE`。
+- 状态保持 `OPEN / PENDING_C_REREVIEW`，由 C 独立复验后关闭。
+
+#### C 独立复验（2026-09-23）
+
+- 根/frontend/lockfile/README 的 Node 范围已一致为 `^24.14.0 || >=26.0.0`，属于 Vitest 5.0.1 支持范围；A 记录最低版本 24.14.0 完整门禁，本机 Node 24.21.0 复跑完整门禁通过。
+- 关闭证据：`logs/reviews/2026-09-23_G4-03-C-rereview.md`；整改提交 `34435c4`；复验头提交 `c360d59`。
+- 状态：CLOSED / VERIFIED_BY_C。

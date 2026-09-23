@@ -1,0 +1,27 @@
+{
+  "taskId": "G4-03",
+  "owner": "A (@WhiteApricot)",
+  "reviewer": "C (@rjq010504)",
+  "traceability": {
+    "taskIds": ["G4-03"],
+    "requirementIds": ["G2-FR-001—029"],
+    "acIds": ["G4-03-DoD"],
+    "designIds": ["MOD-PLAN", "MOD-EVENT", "MOD-TASK", "MOD-SITUATION", "MOD-RESOURCE", "MOD-DRILL", "MOD-DUTY", "MOD-KNOWLEDGE", "MOD-INTEGRATION", "MOD-PLATFORM"]
+  },
+  "ai": {
+    "scope": "Codex scaffolded the Vue 3 Web/H5 runtime, generated-contract API types, API Client, authentication context, route boundaries, tests and configuration under member A direction.",
+    "disposition": "Adopted after local npm run quality; member C Review/Approve and PR Merge remain the external governance gates."
+  },
+  "checks": {
+    "scope": { "status": "PASS", "evidence": "Only frontend infrastructure is implemented; G4-06/G4-09 business workflows remain placeholders." },
+    "contract": { "status": "PASS", "evidence": "Types are generated from docs/work/B_TECH/openapi_v1.yaml; ApiClient derives allowed methods, required path parameters, required X-Idempotency-Key, query parameters, JSON request bodies and success responses from paths operations. Runtime writes X-Idempotency-Key exactly as frozen and the regression test also proves the legacy Idempotency-Key header is absent. vue-tsc includes positive cases plus negative cases for wrong method/body/response, missing required path and missing required idempotency key." },
+    "authorizationAndValidation": { "status": "PASS", "evidence": "Routes require authenticated user context and module permissions; tokens are supplied by the platform/host bridge and not persisted." },
+    "parameterizedAccess": { "status": "N/A", "evidence": "The frontend has no direct database or external-system access; all access crosses the typed API Client." },
+    "secrets": { "status": "PASS", "evidence": "Only empty environment examples are committed; no token or credential is persisted." },
+    "logRedaction": { "status": "PASS", "evidence": "User-facing errors expose normalized message/code/traceId and do not render request credentials." },
+    "migrationRollback": { "status": "N/A", "evidence": "G4-03 changes no database schema or migration." },
+    "tests": { "status": "PASS", "evidence": "API Client and auth-context tests cover request/auth/idempotency headers, encoded required path replacement, traceId/error normalization, cancellation, 401 handling, identity bootstrap and permission checks; module traceability tests cover the complete frozen MOD-* mapping and H5 channel/domain pairing; frontend core coverage is enforced at >=70% for statements/branches/functions/lines." },
+    "traceability": { "status": "PASS", "evidence": "router/modules.ts maps every controlled MOD-* ID to the exact frozen G2-FR set. Each H5 route separately exposes the MOD-MOBILE channel boundary and invoked domain module; module-traceability.test.ts checks both invariants." },
+    "runtimeCompatibility": { "status": "PASS", "evidence": "Root/frontend engines and READMEs consistently declare ^24.14.0 || >=26.0.0, a subset of Vitest 5.0.1 support. npm install and npm run quality execute at the declared minimum Node 24.14.0 without EBADENGINE." }
+  }
+}

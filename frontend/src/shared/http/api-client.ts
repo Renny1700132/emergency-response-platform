@@ -43,7 +43,8 @@ export function createApiClient(options: ApiClientOptions = {}): ApiClient {
     const token = await options.tokenProvider?.()
     const controller = new AbortController()
     const timer = setTimeout(() => controller.abort('request-timeout'), timeoutMs)
-    requestOptions.signal?.addEventListener('abort', () => controller.abort(requestOptions.signal?.reason), { once: true })
+    if (requestOptions.signal?.aborted) controller.abort(requestOptions.signal.reason)
+    else requestOptions.signal?.addEventListener('abort', () => controller.abort(requestOptions.signal?.reason), { once: true })
 
     const headers = new Headers(requestOptions.headers)
     headers.set('Accept', 'application/json')

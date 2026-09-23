@@ -20,7 +20,7 @@
     "secrets": { "status": "PASS", "evidence": "Only empty environment examples are committed; no token or credential is persisted." },
     "logRedaction": { "status": "PASS", "evidence": "User-facing errors expose normalized message/code/traceId and do not render request credentials." },
     "migrationRollback": { "status": "N/A", "evidence": "G4-03 changes no database schema or migration." },
-    "tests": { "status": "PASS", "evidence": "API Client tests cover auth/request headers, traceId error normalization and network-failure normalization; typecheck and production build are quality gates." },
+    "tests": { "status": "PASS", "evidence": "API Client and auth-context tests cover request/auth/idempotency headers, traceId/error normalization, cancellation, 401 handling, identity bootstrap and permission checks; frontend core coverage is enforced at >=70% for statements/branches/functions/lines, and typecheck plus production build remain quality gates." },
     "traceability": { "status": "PASS", "evidence": "router/modules.ts maps formal Web/H5 entry boundaries to stable MOD-* IDs and controlled G2-FR ranges." }
   }
 }

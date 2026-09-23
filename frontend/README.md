@@ -10,9 +10,10 @@ npm run dev
 npm run build
 npm run typecheck
 npm test
+npm run test:coverage
 ```
 
-根目录 `npm run quality` 会依次执行前端类型检查、单测、构建及既有契约、安全、覆盖率和 selfcheck 门禁。
+根目录 `npm run quality` 会依次执行前端类型检查、前端核心基础设施覆盖率门禁、构建及既有契约、安全、G4 护栏覆盖率和 selfcheck 门禁。前端 statements、branches、functions、lines 四项阈值均为 `≥70%`。
 
 ## 边界
 

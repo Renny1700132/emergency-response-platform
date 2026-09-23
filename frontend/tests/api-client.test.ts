@@ -23,4 +23,38 @@ describe('API Client', () => {
     const client = createApiClient({ baseUrl: 'https://gateway.example', fetcher: vi.fn(async () => { throw new Error('socket details') }) })
     await expect(client.get('/api/v1/platform/context')).rejects.toMatchObject({ status: 0, code: 'NETWORK_ERROR', message: '网络不可用，请稍后重试' } satisfies Partial<ApiError>)
   })
+
+  it('sends JSON bodies and idempotency keys for writes', async () => {
+    const fetcher = vi.fn(async (_input: RequestInfo | URL, _init?: RequestInit) => new Response(null, { status: 204 }))
+    const client = createApiClient({ baseUrl: 'https://gateway.example/', fetcher })
+
+    await expect(client.post('/api/v1/incidents', { body: { title: '演示事件' }, idempotencyKey: 'idem-1' })).resolves.toBeUndefined()
+
+    const [, init] = fetcher.mock.calls[0]
+    const headers = new Headers(init?.headers)
+    expect(headers.get('Content-Type')).toBe('application/json')
+    expect(headers.get('Idempotency-Key')).toBe('idem-1')
+    expect(init?.body).toBe(JSON.stringify({ title: '演示事件' }))
+  })
+
+  it('notifies the authentication boundary on a 401 response', async () => {
+    const onUnauthorized = vi.fn()
+    const fetcher = vi.fn(async () => new Response('not-json', { status: 401, headers: { 'X-Trace-Id': 'trace-401' } }))
+    const client = createApiClient({ baseUrl: 'https://gateway.example', fetcher, onUnauthorized })
+
+    await expect(client.get('/api/v1/platform/context')).rejects.toMatchObject({ status: 401, code: 'HTTP_ERROR', traceId: 'trace-401' })
+    expect(onUnauthorized).toHaveBeenCalledTimes(1)
+  })
+
+  it('normalizes an already-aborted caller signal', async () => {
+    const caller = new AbortController()
+    caller.abort('cancelled-by-user')
+    const fetcher = vi.fn(async (_input: RequestInfo | URL, init?: RequestInit) => {
+      if (init?.signal?.aborted) throw new DOMException('aborted', 'AbortError')
+      return new Response('{}')
+    })
+    const client = createApiClient({ baseUrl: 'https://gateway.example', fetcher })
+
+    await expect(client.get('/api/v1/platform/context', { signal: caller.signal })).rejects.toMatchObject({ code: 'REQUEST_ABORTED' })
+  })
 })

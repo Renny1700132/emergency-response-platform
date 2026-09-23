@@ -1,0 +1,26 @@
+{
+  "taskId": "G4-02",
+  "owner": "B",
+  "reviewer": "A",
+  "traceability": {
+    "taskIds": ["G4-02"],
+    "requirementIds": ["KN-043", "KN-045", "NFR-MNT-01"],
+    "acIds": ["G4-02-DoD"],
+    "designIds": ["ENG-012", "ENG-014", "ENG-015", "ENG-017"]
+  },
+  "ai": {
+    "scope": "Codex assisted member B in creating the Node backend foundation, PostgreSQL migration scripts, health/readiness endpoints, middle-platform identity adapter boundary, audit redaction, and automated tests.",
+    "disposition": "Adopted after B inspected the implementation and ran local quality checks; member A must independently review before PR merge."
+  },
+  "checks": {
+    "scope": { "status": "PASS", "evidence": "Changes are limited to G4-02 backend, migration, configuration, tests, and self-check assets." },
+    "contract": { "status": "PASS", "evidence": "Frozen OpenAPI is linted without being rewritten; G4-02 adds only internal health and identity skeleton behavior." },
+    "authorizationAndValidation": { "status": "PASS", "evidence": "The minimal protected endpoint rejects absent or insufficient identity context and records the result." },
+    "parameterizedAccess": { "status": "PASS", "evidence": "Audit persistence uses PostgreSQL positional parameters; no dynamic SQL is constructed from request input." },
+    "secrets": { "status": "PASS", "evidence": "Configuration uses environment references only; example files contain no credentials and the secret scan covers backend paths." },
+    "logRedaction": { "status": "PASS", "evidence": "Audit redaction removes token, credential, password and secret values before logging or persistence." },
+    "migrationRollback": { "status": "PASS", "evidence": "The repeatable DATABASE_URL-gated command npm run test:migration:integration verifies em_audit_log, em_idempotency_record and em_outbox_event through up -> down -> up. A's independent PostgreSQL 17 execution is recorded in evidence/g4/G4-02/migration-integration-2026-09-23.json; no credential is committed." },
+    "tests": { "status": "PASS", "evidence": "Backend tests exercise configuration, audit redaction and persistence, identity, database adapter, health/readiness, authorization, structured 404 and application bootstrap. npm run test:backend:coverage applies the >=70% gate to backend/src/*.mjs." },
+    "traceability": { "status": "PASS", "evidence": "The self-check maps G4-02 to KN-043/045, NFR-MNT-01, G4-02-DoD and ENG-012/014/015/017." }
+  }
+}

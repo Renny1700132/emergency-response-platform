@@ -1,0 +1,15 @@
+{
+  "taskId": "G4-02",
+  "check": "migration-integration",
+  "status": "PASS",
+  "executedBy": "A independent review environment",
+  "environment": "isolated PostgreSQL 17",
+  "command": "DATABASE_URL=<private-isolated-postgresql-url> npm run test:migration:integration",
+  "sequence": "up -> down -> up",
+  "verifiedTables": [
+    "em_audit_log",
+    "em_idempotency_record",
+    "em_outbox_event"
+  ],
+  "evidenceBoundary": "The observed execution result was supplied in A's 2026-09-23 independent review. B adds the repeatable command and records that result here; no database credential is stored in the repository."
+}

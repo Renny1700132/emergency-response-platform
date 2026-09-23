@@ -23,3 +23,9 @@
 - `npm run test:frontend:coverage`：12/12 tests PASS；statements 92.3%、branches 79.74%、functions 82.6%、lines 94.28%。
 - 完整 `npm run quality`：首次运行前半段全部通过，依赖审计因受限网络访问 npm registry 失败，未记为 PASS；授权联网后在 Node `v24.14.0` 完整重跑 PASS。前端 12/12 tests；coverage statements 92.3%、branches 79.74%、functions 82.6%、lines 94.28%；G4 护栏 11/11；OpenAPI 0 error/14 个既有 warning；根/frontend 漏洞均为 0；selfcheck PASS。
 - push 前合入最新 `origin/master`（含 G4-02）。首次合并后验证因未安装新增 `pg` 依赖失败；执行 `npm ci` 后完整复跑 PASS：除上述结果外，backend 6/6 tests、coverage statements/lines 94.77%、branches 93.93%、functions 93.75%，秘密扫描扩展至 46 文件，四份 selfcheck PASS。
+
+## ISSUE-G4-03-002 二次整改
+
+- 根据 C 复验意见，进一步从 operation 参数推导必填 `path` 与 `X-Idempotency-Key`，不再把二者固定声明为可选。
+- 类型负例新增缺少必填 path、缺少必填幂等键两类；正例覆盖带 path 调用，运行时测试覆盖 path 值的 URL 编码替换。
+- 完整 `npm run quality` PASS：frontend 13/13 tests，coverage statements 93.4%、branches 79.74%、functions 86.95%、lines 95.71%；G4 护栏 11/11；backend 6/6；OpenAPI 0 error/14 个既有 warning；根/frontend 漏洞均为 0；四份 selfcheck PASS。本 Issue 仍等待 C 独立复验，不由 A 自行关闭。

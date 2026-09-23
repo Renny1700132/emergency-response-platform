@@ -1308,6 +1308,13 @@
 - 复验证据：`logs/reviews/2026-09-23_G4-03-C-rereview.md`；PR #8 head `c360d59`。
 - 状态：OPEN / CHANGES_REQUIRED。
 
+#### A 二次整改响应（2026-09-23）
+
+- `RequestOptions` 已根据 `PathParameters` 是否为 `never` 条件化：存在契约 path 参数的 operation 必须提供 `path`；无 path 参数时维持可选。
+- 已从 operation header 推导 `X-Idempotency-Key`：契约声明该 header 的 operation 必须提供 `idempotencyKey`，其他 operation 仍允许按需提供。
+- 类型门禁新增“缺失必填 path”“缺失必填幂等键”两个 `@ts-expect-error` 负例及对应正例；运行时新增 path 参数编码替换测试。
+- 状态保持 `OPEN / PENDING_C_REREVIEW`，等待 C 在 PR #8 独立复验后关闭。
+
 ### ISSUE-G4-03-003
 
 - 提出人：C。

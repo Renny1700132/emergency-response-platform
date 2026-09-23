@@ -38,6 +38,15 @@ describe('API Client', () => {
     expect(init?.body).toBe(JSON.stringify(body))
   })
 
+  it('replaces required path parameters with encoded values', async () => {
+    const fetcher = vi.fn(async (_input: RequestInfo | URL) => new Response(JSON.stringify({ data: {} }), { status: 200 }))
+    const client = createApiClient({ baseUrl: 'https://gateway.example', fetcher })
+
+    await client.get('/api/v1/incidents/{incidentId}', { path: { incidentId: 'incident/42' } })
+
+    expect(String(fetcher.mock.calls[0][0])).toBe('https://gateway.example/api/v1/incidents/incident%2F42')
+  })
+
   it('notifies the authentication boundary on a 401 response', async () => {
     const onUnauthorized = vi.fn()
     const fetcher = vi.fn(async () => new Response('not-json', { status: 401, headers: { 'X-Trace-Id': 'trace-401' } }))

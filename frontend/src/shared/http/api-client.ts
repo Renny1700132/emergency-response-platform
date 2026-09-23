@@ -29,6 +29,10 @@ type PathParameters<P extends ApiPath, M extends ApiMethod> = OperationAt<P, M> 
   ? Parameters extends { path?: infer Path } ? Exclude<Path, undefined> : never
   : never
 
+type HeaderParameters<P extends ApiPath, M extends ApiMethod> = OperationAt<P, M> extends { parameters: infer Parameters }
+  ? Parameters extends { header?: infer Header } ? Exclude<Header, undefined> : never
+  : never
+
 type SuccessResponseEntry<Responses> = Responses extends object
   ? Responses[Extract<keyof Responses, 200 | 201 | 202 | 204>]
   : never
@@ -39,19 +43,31 @@ export type ApiResponse<P extends ApiPath, M extends ApiMethod> = OperationAt<P,
 
 type OptionalTransportOptions<P extends ApiPath, M extends ApiMethod> = {
   query?: QueryParameters<P, M>
-  path?: PathParameters<P, M>
   headers?: HeadersInit
   signal?: AbortSignal
-  idempotencyKey?: string
 }
 
-export type RequestOptions<P extends ApiPath, M extends ApiMethod> = RequestBody<P, M> extends never
-  ? OptionalTransportOptions<P, M> & { body?: never }
-  : OptionalTransportOptions<P, M> & { body: RequestBody<P, M> }
+type PathOption<P extends ApiPath, M extends ApiMethod> = PathParameters<P, M> extends never
+  ? { path?: never }
+  : { path: PathParameters<P, M> }
 
-type RequestArguments<P extends ApiPath, M extends ApiMethod> = RequestBody<P, M> extends never
-  ? [options?: RequestOptions<P, M>]
-  : [options: RequestOptions<P, M>]
+type IdempotencyOption<P extends ApiPath, M extends ApiMethod> = HeaderParameters<P, M> extends { 'X-Idempotency-Key': unknown }
+  ? { idempotencyKey: string }
+  : { idempotencyKey?: string }
+
+export type RequestOptions<P extends ApiPath, M extends ApiMethod> = RequestBody<P, M> extends never
+  ? OptionalTransportOptions<P, M> & PathOption<P, M> & IdempotencyOption<P, M> & { body?: never }
+  : OptionalTransportOptions<P, M> & PathOption<P, M> & IdempotencyOption<P, M> & { body: RequestBody<P, M> }
+
+type HasRequiredOptions<P extends ApiPath, M extends ApiMethod> = RequestBody<P, M> extends never
+  ? PathParameters<P, M> extends never
+    ? HeaderParameters<P, M> extends { 'X-Idempotency-Key': unknown } ? true : false
+    : true
+  : true
+
+type RequestArguments<P extends ApiPath, M extends ApiMethod> = HasRequiredOptions<P, M> extends true
+  ? [options: RequestOptions<P, M>]
+  : [options?: RequestOptions<P, M>]
 
 export interface ApiClientOptions {
   baseUrl?: string

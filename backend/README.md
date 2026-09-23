@@ -32,7 +32,16 @@ node backend/scripts/migrate.mjs up
 node backend/scripts/migrate.mjs down
 ```
 
-迁移建立审计、幂等和 Outbox 基础表；后续领域表必须继续遵循“成对迁移、事务提交后派发副作用、控制命令不自动重放”的设计规则。
+迁移建立冻结 DBD 命名的 `em_audit_log`、`em_idempotency_record` 和 `em_outbox_event` 基础表；后续领域表必须继续遵循“成对迁移、事务提交后派发副作用、控制命令不自动重放”的设计规则。
+
+使用隔离 PostgreSQL 环境时，可执行可重复的迁移演练：
+
+```powershell
+$env:DATABASE_URL='<仅从受控部署配置或密钥设施取得>'
+npm run test:migration:integration
+```
+
+该命令验证 `up → down → up` 以及三个公共表的存在性；不写入或打印连接凭据。
 
 ## 私有化容器部署
 

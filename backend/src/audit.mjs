@@ -28,7 +28,7 @@ export function createAuditSink({ logger = console, database = null } = {}) {
       logger.info?.(JSON.stringify({ event: 'audit', ...safeRecord }));
       if (database) {
         await database.query(
-          `INSERT INTO audit_records (trace_id, actor_id, action, outcome, target_type, target_id, details)
+          `INSERT INTO em_audit_log (trace_id, actor_id, action, outcome, target_type, target_id, details)
            VALUES ($1, $2, $3, $4, $5, $6, $7::jsonb)`,
           [safeRecord.traceId, safeRecord.actorId, safeRecord.action, safeRecord.outcome, safeRecord.targetType, safeRecord.targetId, JSON.stringify(safeRecord.details)]
         );

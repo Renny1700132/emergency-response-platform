@@ -1,6 +1,6 @@
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
-CREATE TABLE IF NOT EXISTS audit_records (
+CREATE TABLE IF NOT EXISTS em_audit_log (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   trace_id text NOT NULL,
   actor_id text NOT NULL,
@@ -11,10 +11,10 @@ CREATE TABLE IF NOT EXISTS audit_records (
   details jsonb NOT NULL DEFAULT '{}'::jsonb,
   occurred_at timestamptz NOT NULL DEFAULT now()
 );
-CREATE INDEX IF NOT EXISTS idx_audit_records_trace_id ON audit_records(trace_id);
-CREATE INDEX IF NOT EXISTS idx_audit_records_occurred_at ON audit_records(occurred_at);
+CREATE INDEX IF NOT EXISTS idx_em_audit_log_trace_id ON em_audit_log(trace_id);
+CREATE INDEX IF NOT EXISTS idx_em_audit_log_occurred_at ON em_audit_log(occurred_at);
 
-CREATE TABLE IF NOT EXISTS idempotency_records (
+CREATE TABLE IF NOT EXISTS em_idempotency_record (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   scope text NOT NULL,
   idempotency_key text NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS idempotency_records (
   UNIQUE(scope, idempotency_key)
 );
 
-CREATE TABLE IF NOT EXISTS outbox_messages (
+CREATE TABLE IF NOT EXISTS em_outbox_event (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   aggregate_type text NOT NULL,
   aggregate_id text NOT NULL,
@@ -39,4 +39,4 @@ CREATE TABLE IF NOT EXISTS outbox_messages (
   created_at timestamptz NOT NULL DEFAULT now(),
   sent_at timestamptz
 );
-CREATE INDEX IF NOT EXISTS idx_outbox_messages_pending ON outbox_messages(status, available_at);
+CREATE INDEX IF NOT EXISTS idx_em_outbox_event_pending ON em_outbox_event(status, available_at);

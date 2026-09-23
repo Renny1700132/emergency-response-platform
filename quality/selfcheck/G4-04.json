@@ -1,0 +1,26 @@
+{
+  "taskId": "G4-04",
+  "owner": "C",
+  "reviewer": "B",
+  "traceability": {
+    "taskIds": ["G4-04"],
+    "requirementIds": ["G2-FR-006", "G2-FR-020", "G2-FR-021", "G2-FR-027", "G2-FR-028", "G2-FR-029", "KN-064", "NFR-COMP-01"],
+    "acIds": ["AC-G2-FR-006-01", "AC-G2-FR-020-01", "AC-G2-FR-021-03", "AC-G2-FR-027-01", "AC-G2-FR-027-03", "AC-G2-FR-028-01", "AC-G2-FR-029-01", "G4-04-DoD"],
+    "designIds": ["MOD-INTEGRATION", "MOD-MOBILE", "ARCH-04", "DLD-TR-006", "DLD-TR-020", "DLD-TR-021", "DLD-TR-027", "DLD-TR-028", "DLD-TR-029", "ADR-002", "ENG-017", "ENG-018"]
+  },
+  "ai": {
+    "scope": "Codex generated the deterministic course-simulation fixture registry, local HTTP simulator, tests, usage notes, and trace evidence under member C direction.",
+    "disposition": "Adopted after local automated checks; all results remain SIMULATED_EVIDENCE and member B Review/Approve plus PR Merge are still required."
+  },
+  "checks": {
+    "scope": { "status": "PASS", "evidence": "Changes are limited to G4-04 simulated adapters, fixtures, tests, selfcheck, task/RTM tracking, package scripts, and prompt evidence." },
+    "contract": { "status": "PASS", "evidence": "The frozen OpenAPI is not rewritten; npm run contract remains the authoritative local schema gate." },
+    "authorizationAndValidation": { "status": "PASS", "evidence": "Each adapter exposes an unauthorized fixture; adapter and scenario allowlists fail closed for unknown values." },
+    "parameterizedAccess": { "status": "N/A", "evidence": "The simulator performs no database access and reads only repository-owned allowlisted fixture files." },
+    "secrets": { "status": "PASS", "evidence": "Fixtures use synthetic references only and are covered by the repository secret scan." },
+    "logRedaction": { "status": "PASS", "evidence": "The simulator emits only controlled fixture bodies and never logs request headers, tokens, or personal data." },
+    "migrationRollback": { "status": "N/A", "evidence": "G4-04 adds no database schema or migration; rollback is removal of the simulator files and package script." },
+    "tests": { "status": "PASS", "evidence": "Automated tests cover all eight EXT ports plus GIS/H5, four scenarios, deterministic responses, boundaries, and HTTP evidence headers." },
+    "traceability": { "status": "PASS", "evidence": "This record maps G4-04 to the frozen external integration and H5/GIS design boundaries without claiming real connectivity." }
+  }
+}

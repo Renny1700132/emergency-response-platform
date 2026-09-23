@@ -8,15 +8,22 @@ import { collectScanFiles, scanFiles } from '../../scripts/g4/lib/secret-scan.mj
 test('scan target collection includes implementation files and skips tests', async () => {
   const directory = await mkdtemp(path.join(tmpdir(), 'g4-targets-'));
   const implementationDirectory = path.join(directory, 'scripts', 'g4');
+  const simulatedDirectory = path.join(directory, 'simulated-integrations', 'fixtures');
   const testDirectory = path.join(implementationDirectory, 'tests');
   await mkdir(testDirectory, { recursive: true });
+  await mkdir(simulatedDirectory, { recursive: true });
   await writeFile(path.join(implementationDirectory, 'gate.mjs'), 'export const gate = true;\n', 'utf8');
+  await writeFile(path.join(simulatedDirectory, 'ext-video.json'), '{"marker":"SIMULATED_EVIDENCE"}\n', 'utf8');
   await writeFile(path.join(testDirectory, 'fixture.mjs'), 'const password = "fixture-only";\n', 'utf8');
   await writeFile(path.join(directory, 'package.json'), '{}\n', 'utf8');
 
   const files = (await collectScanFiles(directory))
     .map((file) => path.relative(directory, file).replaceAll('\\', '/'));
-  assert.deepEqual(files, ['package.json', 'scripts/g4/gate.mjs']);
+  assert.deepEqual(files, [
+    'package.json',
+    'scripts/g4/gate.mjs',
+    'simulated-integrations/fixtures/ext-video.json'
+  ]);
 });
 
 test('secret scan accepts ordinary configuration', async () => {

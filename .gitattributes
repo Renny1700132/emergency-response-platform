@@ -1,0 +1,2 @@
+# Prompt logs preserve user-authored trailing spaces verbatim as audit evidence.
+logs/prompts/*.md whitespace=-trailing-space

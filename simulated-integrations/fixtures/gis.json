@@ -1,0 +1,11 @@
+{
+  "marker": "SIMULATED_EVIDENCE",
+  "adapter": "GIS",
+  "boundary": "Client provides lawful map services and source coordinates; this subsystem adapts, overlays and displays without reducing source precision.",
+  "scenarios": {
+    "normal": { "status": 200, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "GIS", "code": "SIM-GIS-LAYER-READY", "coordinateSystem": "EPSG:4490", "provider": "CLIENT_EXISTING_MAP_SERVICE", "sourcePrecisionReduced": false } },
+    "unauthorized": { "status": 403, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "GIS", "code": "SIM-GIS-FORBIDDEN" } },
+    "timeout": { "status": 504, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "GIS", "code": "SIM-GIS-TIMEOUT", "fallback": "NON_MAP_LIST_VIEW" } },
+    "failure": { "status": 503, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "GIS", "code": "SIM-GIS-UNAVAILABLE", "fallback": "NON_MAP_LIST_VIEW" } }
+  }
+}

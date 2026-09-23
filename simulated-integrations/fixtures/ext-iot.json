@@ -1,0 +1,11 @@
+{
+  "marker": "SIMULATED_EVIDENCE",
+  "adapter": "EXT-IOT",
+  "boundary": "Existing IoT platform owns devices; this fixture models normalized device events and stale-data handling.",
+  "scenarios": {
+    "normal": { "status": 202, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-IOT", "code": "SIM-IOT-NORMALIZED", "deviceEventId": "sim-iot-001", "stale": false } },
+    "unauthorized": { "status": 403, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-IOT", "code": "SIM-IOT-FORBIDDEN" } },
+    "timeout": { "status": 504, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-IOT", "code": "SIM-IOT-TIMEOUT", "newerFactOverwritten": false } },
+    "failure": { "status": 422, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-IOT", "code": "SIM-IOT-STALE-DATA", "stale": true, "newerFactOverwritten": false } }
+  }
+}

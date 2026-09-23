@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G4-04",
+  "evidenceType": "SIMULATED_FIXTURE_VERIFICATION",
+  "marker": "SIMULATED_EVIDENCE",
+  "simulated": true,
+  "scope": {
+    "externalPorts": [
+      "EXT-VIDEO",
+      "EXT-PUBLISH",
+      "EXT-INTRUSION",
+      "EXT-ACCESS",
+      "EXT-FIRE",
+      "EXT-IOT",
+      "EXT-MIDDLE",
+      "EXT-MESSAGE"
+    ],
+    "additionalBoundaries": ["GIS", "H5"],
+    "scenarios": ["normal", "unauthorized", "timeout", "failure"]
+  },
+  "automatedChecks": {
+    "tests": "11/11 PASS",
+    "coverage": {
+      "statements": "96.75%",
+      "branches": "81.63%",
+      "functions": "90%",
+      "lines": "96.75%"
+    },
+    "openapi": "0 errors; 14 pre-existing warnings",
+    "secretScan": "PASS; 23 implementation/configuration/fixture files scanned",
+    "dependencyAudit": "0 vulnerabilities",
+    "selfcheck": "PASS"
+  },
+  "limitations": [
+    "No real client endpoint, account, credential, field mapping, receipt semantics, network or production performance was tested.",
+    "The evidence cannot be used as proof of real connectivity, production readiness or site acceptance.",
+    "Member B Review/Approve and PR Merge remain pending."
+  ]
+}

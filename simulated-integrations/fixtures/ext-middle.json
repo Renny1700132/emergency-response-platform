@@ -1,0 +1,11 @@
+{
+  "marker": "SIMULATED_EVIDENCE",
+  "adapter": "EXT-MIDDLE",
+  "boundary": "Existing middle platform owns identity, organization, permissions, workflow, files and portal capabilities.",
+  "scenarios": {
+    "normal": { "status": 200, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-MIDDLE", "code": "SIM-MIDDLE-CONTEXT", "subjectReference": "sim-subject-001", "masterDataCopied": false } },
+    "unauthorized": { "status": 403, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-MIDDLE", "code": "SIM-MIDDLE-FORBIDDEN" } },
+    "timeout": { "status": 504, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-MIDDLE", "code": "SIM-MIDDLE-TIMEOUT", "sensitiveWriteClosed": true } },
+    "failure": { "status": 503, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-MIDDLE", "code": "SIM-MIDDLE-UNAVAILABLE", "sensitiveWriteClosed": true } }
+  }
+}

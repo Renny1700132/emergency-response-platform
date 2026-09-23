@@ -21,6 +21,7 @@
 5. 本地 `npm run quality` 失败、核心模块单元测试覆盖率低于 `KN-045 ≥70%`、安全红线违规、契约破坏、必要测试缺失或唯一 Review 人未批准时禁止合并。不得绕过门禁、force push 或改写共享历史。
 6. `G4-00` 是建立上述规则的治理切换提交，按切换前已生效的安全同步/commit/push 规则完成；它不构成后续 G4 研发直推主干的先例。
 7. `master` 不用于 G4 日常任务开发，只接收审核通过后的 PR Merge。G4 不要求接入 Jenkins、Gitee Go 或其他远程 CI；远程流水线如自愿存在，也不替代本地 `npm run quality`、唯一审核人 Approve 或 PR 证据。
+8. 平台操作默认使用官方 Gitee CLI：Git 同步、提交和推送仍使用现有 Git 凭据；PR 创建、查询、Review、Approve、Merge、评论和状态检查优先使用 `gitee`。禁止临时 curl/API 脚本，禁止在仓库、Prompt、日志、remote URL 或命令输出中记录 PAT；写操作前必须确认 `gitee auth status` 的账号与当前任务角色一致，身份不一致时停止。认证与权限有效时后续任务直接沿用，不重复询问。
 
 ## 3 统一研发 DoD
 

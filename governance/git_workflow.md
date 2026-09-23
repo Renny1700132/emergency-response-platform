@@ -77,6 +77,14 @@ PUSH
 5. PR 记录任务号、AI 参与范围、自检与本地质量门禁结果、审核结论和对应 commit。远程 CI 不是 G4 合并前提。
 6. 合并后按约定通过后续功能分支/PR 更新 RTM、`tasks.md` 与日志；不得以“收口”为由直接 push `master`。
 
+### G4 Gitee 平台操作工具
+
+- Git 的 `fetch`、`pull`、`commit`、`push` 继续使用现有 Git 凭据和本文件的安全同步规则。
+- Gitee PR 创建、查询、Review、Approve、Merge、评论和状态检查优先使用官方 `oschina/gitee-cli` 发布的 Gitee CLI；不再使用临时 curl/API 脚本。Gitee Go 不是本项目门禁，也不要求启用。
+- PAT 仅由成员本人通过 `gitee auth login --hostname gitee.com` 配置在用户级 CLI 凭据中；禁止把 PAT 写入仓库、Prompt、日志、命令输出或 remote URL。
+- 执行任何 Gitee 写操作前，必须用 `gitee auth status` 确认实际登录账号与当前任务角色一致；身份不一致、认证失效或权限不足时停止写操作并由用户处理。
+- CLI 安装和认证验证成功后，后续任务默认沿用该配置，不重复申请使用许可；只有认证失效、权限不足或身份不匹配时再提示用户。
+
 ## 日志回填提交
 
 内容 commit 与首次 push 完成后，将任务 commit hash 和 push 结果写回日志，创建独立的小型回填 commit。G1—G3 按历史规则再次安全同步并普通 push；G4 将回填 commit push 到功能分支并更新 PR，合并后收口更新仍走功能分支/PR。回填 commit 不记录自身 hash，避免无限自引用；禁止 amend、rebase 或重写既有提交。

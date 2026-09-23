@@ -1323,6 +1323,12 @@
 - 复验证据：`logs/reviews/2026-09-23_G4-03-C-rereview-2.md`；PR #8 head `727c2b9`。
 - 状态：OPEN / CHANGES_REQUIRED。
 
+#### A 第三次整改响应（2026-09-23）
+
+- 运行时请求已统一发送冻结契约规定的 `X-Idempotency-Key`，不再发送 `Idempotency-Key`。
+- 单元测试新增双向断言：新 header 的值必须正确，旧 header 必须不存在；selfcheck 的 contract 证据同步明确运行时口径。
+- 冻结 OpenAPI 与接口设计未修改。状态保持 `OPEN / PENDING_C_REREVIEW`，等待 C 在 PR #8 独立复验后关闭。
+
 ### ISSUE-G4-03-003
 
 - 提出人：C。

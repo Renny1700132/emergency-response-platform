@@ -14,7 +14,7 @@
   },
   "checks": {
     "scope": { "status": "PASS", "evidence": "Only frontend infrastructure is implemented; G4-06/G4-09 business workflows remain placeholders." },
-    "contract": { "status": "PASS", "evidence": "Types are generated from docs/work/B_TECH/openapi_v1.yaml; ApiClient derives allowed methods, required path parameters, required X-Idempotency-Key, query parameters, JSON request bodies and success responses from paths operations. vue-tsc includes positive cases plus negative cases for wrong method/body/response, missing required path and missing required idempotency key." },
+    "contract": { "status": "PASS", "evidence": "Types are generated from docs/work/B_TECH/openapi_v1.yaml; ApiClient derives allowed methods, required path parameters, required X-Idempotency-Key, query parameters, JSON request bodies and success responses from paths operations. Runtime writes X-Idempotency-Key exactly as frozen and the regression test also proves the legacy Idempotency-Key header is absent. vue-tsc includes positive cases plus negative cases for wrong method/body/response, missing required path and missing required idempotency key." },
     "authorizationAndValidation": { "status": "PASS", "evidence": "Routes require authenticated user context and module permissions; tokens are supplied by the platform/host bridge and not persisted." },
     "parameterizedAccess": { "status": "N/A", "evidence": "The frontend has no direct database or external-system access; all access crosses the typed API Client." },
     "secrets": { "status": "PASS", "evidence": "Only empty environment examples are committed; no token or credential is persisted." },

@@ -29,3 +29,10 @@
 - 根据 C 复验意见，进一步从 operation 参数推导必填 `path` 与 `X-Idempotency-Key`，不再把二者固定声明为可选。
 - 类型负例新增缺少必填 path、缺少必填幂等键两类；正例覆盖带 path 调用，运行时测试覆盖 path 值的 URL 编码替换。
 - 完整 `npm run quality` PASS：frontend 13/13 tests，coverage statements 93.4%、branches 79.74%、functions 86.95%、lines 95.71%；G4 护栏 11/11；backend 6/6；OpenAPI 0 error/14 个既有 warning；根/frontend 漏洞均为 0；四份 selfcheck PASS。本 Issue 仍等待 C 独立复验，不由 A 自行关闭。
+
+## ISSUE-G4-03-002 第三次整改
+
+- 根据 C 第二次复验意见，将运行时 header 从错误的 `Idempotency-Key` 更正为冻结契约要求的 `X-Idempotency-Key`。
+- 回归测试同时断言 `X-Idempotency-Key` 值正确且旧 `Idempotency-Key` 不存在，避免机械门禁继续接受错误名称。
+- `quality/selfcheck/G4-03.json` 已将“运行时 header 与冻结契约一致”写入 contract 证据。本 Issue 仍为 `OPEN / PENDING_C_REREVIEW`，由 C 在 PR #8 复验后决定是否关闭和 APPROVE。
+- 定向 `api-client.test.ts`：7/7 PASS。首次完整 `npm run quality` 在依赖漏洞审计访问 npm registry 时因沙箱网络权限中止，未记为通过；授权联网后完整重跑 PASS：frontend 13/13，coverage statements 93.4%、branches 79.74%、functions 86.95%、lines 95.71%；G4 护栏 11/11；backend 6/6；OpenAPI 0 error/14 个既有 warning；秘密扫描 46 文件；根/frontend vulnerabilities 均为 0；G4-01—04 selfcheck PASS。

@@ -34,7 +34,8 @@ describe('API Client', () => {
     const [, init] = fetcher.mock.calls[0]
     const headers = new Headers(init?.headers)
     expect(headers.get('Content-Type')).toBe('application/json')
-    expect(headers.get('Idempotency-Key')).toBe('idem-1')
+    expect(headers.get('X-Idempotency-Key')).toBe('idem-1')
+    expect(headers.has('Idempotency-Key')).toBe(false)
     expect(init?.body).toBe(JSON.stringify(body))
   })
 

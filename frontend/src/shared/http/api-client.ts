@@ -118,7 +118,7 @@ export function createApiClient(options: ApiClientOptions = {}): ApiClient {
     headers.set('Accept', 'application/json')
     headers.set('X-Request-Id', newRequestId())
     if (token) headers.set('Authorization', `Bearer ${token}`)
-    if (requestOptions.idempotencyKey) headers.set('Idempotency-Key', requestOptions.idempotencyKey)
+    if (requestOptions.idempotencyKey) headers.set('X-Idempotency-Key', requestOptions.idempotencyKey)
     if (requestOptions.body !== undefined) headers.set('Content-Type', 'application/json')
 
     try {

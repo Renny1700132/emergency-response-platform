@@ -22,3 +22,4 @@
 - `npm run typecheck`：PASS；操作级类型正例通过，4 类负例被预期阻断。
 - `npm run test:frontend:coverage`：12/12 tests PASS；statements 92.3%、branches 79.74%、functions 82.6%、lines 94.28%。
 - 完整 `npm run quality`：首次运行前半段全部通过，依赖审计因受限网络访问 npm registry 失败，未记为 PASS；授权联网后在 Node `v24.14.0` 完整重跑 PASS。前端 12/12 tests；coverage statements 92.3%、branches 79.74%、functions 82.6%、lines 94.28%；G4 护栏 11/11；OpenAPI 0 error/14 个既有 warning；根/frontend 漏洞均为 0；selfcheck PASS。
+- push 前合入最新 `origin/master`（含 G4-02）。首次合并后验证因未安装新增 `pg` 依赖失败；执行 `npm ci` 后完整复跑 PASS：除上述结果外，backend 6/6 tests、coverage statements/lines 94.77%、branches 93.93%、functions 93.75%，秘密扫描扩展至 46 文件，四份 selfcheck PASS。

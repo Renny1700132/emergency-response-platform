@@ -1329,6 +1329,14 @@
 - 单元测试新增双向断言：新 header 的值必须正确，旧 header 必须不存在；selfcheck 的 contract 证据同步明确运行时口径。
 - 冻结 OpenAPI 与接口设计未修改。状态保持 `OPEN / PENDING_C_REREVIEW`，等待 C 在 PR #8 独立复验后关闭。
 
+#### C 第三次独立复验（2026-09-23）
+
+- 运行时已发送冻结契约规定的 `X-Idempotency-Key`；回归测试确认其值正确且旧 `Idempotency-Key` 不存在。
+- operation-level 类型约束、必填 path、必填幂等键、运行时 path 替换及 header 口径全部通过；冻结 OpenAPI 未修改。
+- 完整 `npm run quality` exit 0；frontend 13/13、G4 护栏 11/11、backend 6/6，覆盖率均达门槛；依赖漏洞 0；selfcheck PASS。
+- 关闭证据：`logs/reviews/2026-09-23_G4-03-C-rereview-3.md`；整改提交 `8b24791`；复验 head `ce60240`；PR #8。
+- 状态：CLOSED / VERIFIED_BY_C；允许在 PR #8 APPROVE，合并前 G4-03 不得置 DONE。
+
 ### ISSUE-G4-03-003
 
 - 提出人：C。

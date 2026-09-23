@@ -1229,6 +1229,8 @@
 - B 已将迁移、索引、回滚与审计 SQL 统一回归冻结 DBD 的三张公共表命名；可重复 `up → down → up` 命令及先前 A 在隔离 PostgreSQL 17 的受控执行证据已纳入候选。
 - A 独立复跑完整质量门禁和 diff 检查通过，本 Issue 的技术关闭条件满足。
 - 状态：RESOLVED_BY_B / VERIFIED_BY_A；等待唯一 G4-02 PR 创建后记录正式 Approve 与 Merge，不再阻断创建 PR。
+- 平台收口：A 已在 PR #5 正式 Approve，PR 已通过普通 merge 进入 `master`，merge commit `8bb19ee4572a48442e559ccbe2cb6b9c186c53f8`。
+- 最终状态：CLOSED / VERIFIED_BY_A / MERGED（2026-09-23）。
 
 ### ISSUE-G4-02-002
 
@@ -1249,3 +1251,5 @@
 - `npm run quality` 已纳入 `backend/src/*.mjs` 四项 `≥70%` 门禁；A 独立复跑后端测试 6/6，statements 94.77%、branches 93.93%、functions 93.75%、lines 94.77%。
 - G4 测试 11/11、OpenAPI 0 error/14 个既有 warning、秘密扫描、依赖审计、自检和 `git diff --check` 均通过。
 - 状态：RESOLVED_BY_B / VERIFIED_BY_A；等待唯一 G4-02 PR 创建后记录正式 Approve 与 Merge，不再阻断创建 PR。
+- 平台收口：A 已在 PR #5 正式 Approve，PR 已通过普通 merge 进入 `master`，merge commit `8bb19ee4572a48442e559ccbe2cb6b9c186c53f8`。
+- 最终状态：CLOSED / VERIFIED_BY_A / MERGED（2026-09-23）。

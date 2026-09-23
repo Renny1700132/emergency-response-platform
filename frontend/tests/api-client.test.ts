@@ -28,13 +28,14 @@ describe('API Client', () => {
     const fetcher = vi.fn(async (_input: RequestInfo | URL, _init?: RequestInit) => new Response(null, { status: 204 }))
     const client = createApiClient({ baseUrl: 'https://gateway.example/', fetcher })
 
-    await expect(client.post('/api/v1/incidents', { body: { title: '演示事件' }, idempotencyKey: 'idem-1' })).resolves.toBeUndefined()
+    const body = { incidentTypeCode: 'FIRE', title: '演示事件', description: '测试描述', occurredAt: '2026-09-23T08:00:00Z' }
+    await expect(client.post('/api/v1/incidents', { body, idempotencyKey: 'idem-1' })).resolves.toBeUndefined()
 
     const [, init] = fetcher.mock.calls[0]
     const headers = new Headers(init?.headers)
     expect(headers.get('Content-Type')).toBe('application/json')
     expect(headers.get('Idempotency-Key')).toBe('idem-1')
-    expect(init?.body).toBe(JSON.stringify({ title: '演示事件' }))
+    expect(init?.body).toBe(JSON.stringify(body))
   })
 
   it('notifies the authentication boundary on a 401 response', async () => {

@@ -1,5 +1,7 @@
 # 正式 Vue Web/H5 前端
 
+运行环境：Node.js `^24.14.0 || >=26.0.0`。该范围与 Vitest 5 的兼容区间一致；当前最低声明版本 Node 24.14.0 已执行完整本地质量门禁。
+
 本目录是 G4-03 建立的正式 Vue 3 工程。`prototype/` 仅作为导航、布局和交互参考；本工程不导入 `prototypeStore`、localStorage 或原型 Mock 数据。
 
 ## 命令

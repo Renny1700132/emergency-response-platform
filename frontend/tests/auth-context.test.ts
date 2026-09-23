@@ -1,12 +1,12 @@
 import { describe, expect, it, vi } from 'vitest'
 import { browserTokenProvider, createAuthContext } from '../src/shared/auth/auth-context'
-import type { ApiClient, ApiPath, RequestOptions } from '../src/shared/http/api-client'
+import type { ApiClient } from '../src/shared/http/api-client'
 
-const apiClient = (getMock: (path: ApiPath, options?: RequestOptions) => Promise<unknown>): ApiClient => ({
+const apiClient = (getMock: (path: string, options?: unknown) => Promise<unknown>): ApiClient => ({
   request: vi.fn(),
-  get: async <TResponse>(path: ApiPath, options?: RequestOptions) => await getMock(path, options) as TResponse,
+  get: async (path, ...args) => await getMock(path, args[0]),
   post: vi.fn(),
-})
+} as ApiClient)
 
 describe('authentication context', () => {
   it('stays anonymous when the host provides no access token', async () => {

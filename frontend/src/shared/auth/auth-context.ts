@@ -1,9 +1,7 @@
 import type { InjectionKey, Ref } from 'vue'
 import { inject, readonly, ref } from 'vue'
-import type { components } from '@/api/generated/schema'
 import type { ApiClient, TokenProvider } from '../http/api-client'
 
-type EntityResponse = components['schemas']['EntityResponse']
 export interface UserContext { userId: string; displayName: string; roles: readonly string[]; permissions: readonly string[] }
 export interface AuthContext {
   status: Readonly<Ref<'idle' | 'loading' | 'authenticated' | 'anonymous' | 'error'>>
@@ -33,7 +31,7 @@ export function createAuthContext(api: ApiClient, tokenProvider: TokenProvider =
       const token = await tokenProvider()
       if (!token) return clear()
       try {
-        const response = await api.get<EntityResponse>('/api/v1/platform/context')
+        const response = await api.get('/api/v1/platform/context')
         const data = (response.data ?? {}) as Partial<UserContext>
         user.value = {
           userId: String(data.userId ?? ''), displayName: String(data.displayName ?? '已认证用户'),

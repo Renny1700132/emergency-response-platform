@@ -14,13 +14,14 @@
   },
   "checks": {
     "scope": { "status": "PASS", "evidence": "Only frontend infrastructure is implemented; G4-06/G4-09 business workflows remain placeholders." },
-    "contract": { "status": "PASS", "evidence": "Types are generated from docs/work/B_TECH/openapi_v1.yaml and the existing contract lint remains in npm run quality." },
+    "contract": { "status": "PASS", "evidence": "Types are generated from docs/work/B_TECH/openapi_v1.yaml; ApiClient derives allowed methods, query/path parameters, JSON request bodies and success responses from paths operations. vue-tsc includes positive and @ts-expect-error negative contract cases." },
     "authorizationAndValidation": { "status": "PASS", "evidence": "Routes require authenticated user context and module permissions; tokens are supplied by the platform/host bridge and not persisted." },
     "parameterizedAccess": { "status": "N/A", "evidence": "The frontend has no direct database or external-system access; all access crosses the typed API Client." },
     "secrets": { "status": "PASS", "evidence": "Only empty environment examples are committed; no token or credential is persisted." },
     "logRedaction": { "status": "PASS", "evidence": "User-facing errors expose normalized message/code/traceId and do not render request credentials." },
     "migrationRollback": { "status": "N/A", "evidence": "G4-03 changes no database schema or migration." },
-    "tests": { "status": "PASS", "evidence": "API Client and auth-context tests cover request/auth/idempotency headers, traceId/error normalization, cancellation, 401 handling, identity bootstrap and permission checks; frontend core coverage is enforced at >=70% for statements/branches/functions/lines, and typecheck plus production build remain quality gates." },
-    "traceability": { "status": "PASS", "evidence": "router/modules.ts maps formal Web/H5 entry boundaries to stable MOD-* IDs and controlled G2-FR ranges." }
+    "tests": { "status": "PASS", "evidence": "API Client and auth-context tests cover request/auth/idempotency headers, traceId/error normalization, cancellation, 401 handling, identity bootstrap and permission checks; module traceability tests cover the complete frozen MOD-* mapping and H5 channel/domain pairing; frontend core coverage is enforced at >=70% for statements/branches/functions/lines." },
+    "traceability": { "status": "PASS", "evidence": "router/modules.ts maps every controlled MOD-* ID to the exact frozen G2-FR set. Each H5 route separately exposes the MOD-MOBILE channel boundary and invoked domain module; module-traceability.test.ts checks both invariants." },
+    "runtimeCompatibility": { "status": "PASS", "evidence": "Root/frontend engines and READMEs consistently declare ^24.14.0 || >=26.0.0, a subset of Vitest 5.0.1 support. npm install and npm run quality execute at the declared minimum Node 24.14.0 without EBADENGINE." }
   }
 }

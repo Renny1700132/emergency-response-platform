@@ -1223,6 +1223,12 @@
 - 主责人：A；复核人：C。
 - 状态：OPEN / CHANGES_REQUIRED。
 
+#### A 整改响应（2026-09-23）
+
+- `router/modules.ts` 已按冻结 `G3-01_design_input_baseline.md` §4 逐项建立完整 MOD-*—G2-FR 集合，不再使用错误连续区间；H5 路由同时记录 `MOD-MOBILE` 渠道边界、渠道需求集合和被调用领域模块。
+- 新增 `module-traceability.test.ts`，逐项断言 11 个受控模块映射，并检查每个 H5 入口的渠道/领域双边界。
+- 状态保持 `OPEN / PENDING_C_REREVIEW`，由 C 独立复验后关闭。
+
 ### ISSUE-G4-03-002
 
 - 提出人：C。
@@ -1236,6 +1242,12 @@
 - 主责人：A；复核人：C。
 - 状态：OPEN / CHANGES_REQUIRED。
 
+#### A 整改响应（2026-09-23）
+
+- API Client 已从生成的 `paths[P][method]` operation 推导允许路径、query/path 参数、JSON requestBody 和 2xx JSON 响应；调用方不能再自行声明任意响应泛型。
+- 新增由 `vue-tsc` 执行的编译期正/负例，错误方法、缺失必填 body、GET 携带 body、错误响应赋值均以 `@ts-expect-error` 固化为门禁。
+- 冻结 OpenAPI 未修改。状态保持 `OPEN / PENDING_C_REREVIEW`，由 C 独立复验后关闭。
+
 ### ISSUE-G4-03-003
 
 - 提出人：C。
@@ -1248,3 +1260,9 @@
 - 关闭条件：根/frontend 版本声明与全部直接工具依赖兼容，并在声明的最低支持版本完成 `npm ci` 与 `npm run quality`，由 C 复验。
 - 主责人：A；复核人：C。
 - 状态：OPEN / CHANGES_REQUIRED。
+
+#### A 整改响应（2026-09-23）
+
+- 根/frontend `engines.node`、两份 lockfile 与 README 已统一为 `^24.14.0 || >=26.0.0`，该范围是 Vitest 5.0.1 支持范围的子集，排除了不受其支持的 Node 20、22 和 25。
+- 在声明的最低版本 Node `v24.14.0` 完成 lockfile 更新、类型检查、前端测试及完整 `npm run quality`；未出现 `EBADENGINE`。
+- 状态保持 `OPEN / PENDING_C_REREVIEW`，由 C 独立复验后关闭。

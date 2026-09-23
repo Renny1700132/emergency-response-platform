@@ -1224,6 +1224,12 @@
 - 关闭条件：隔离 PostgreSQL 上 `up → down → up` 通过；实际表名、关键约束与冻结 DBD 或获批新基线一致；A 复审通过。
 - 状态：OPEN / BLOCKING。
 
+#### A 复审（2026-09-23，候选 `d116ba5`）
+
+- B 已将迁移、索引、回滚与审计 SQL 统一回归冻结 DBD 的三张公共表命名；可重复 `up → down → up` 命令及先前 A 在隔离 PostgreSQL 17 的受控执行证据已纳入候选。
+- A 独立复跑完整质量门禁和 diff 检查通过，本 Issue 的技术关闭条件满足。
+- 状态：RESOLVED_BY_B / VERIFIED_BY_A；等待唯一 G4-02 PR 创建后记录正式 Approve 与 Merge，不再阻断创建 PR。
+
 ### ISSUE-G4-02-002
 
 - 提出人：A（何思源 / @WhiteApricot）。
@@ -1237,3 +1243,9 @@
 - 最小修复：由 B 把后端核心模块与 `tests/backend/*.test.mjs` 纳入覆盖率采集和 `≥70%` 阻断，保留命令、版本和原始输出；不得降低既有 G4-01 门禁。
 - 关闭条件：完整 `npm run quality` 对后端核心代码真实统计且四项覆盖率均达到受控门槛；测试断言覆盖 health/readiness、鉴权、traceId/错误、审计及迁移关键路径；A 复审通过。
 - 状态：OPEN / BLOCKING。
+
+#### A 复审（2026-09-23，候选 `d116ba5`）
+
+- `npm run quality` 已纳入 `backend/src/*.mjs` 四项 `≥70%` 门禁；A 独立复跑后端测试 6/6，statements 94.77%、branches 93.93%、functions 93.75%、lines 94.77%。
+- G4 测试 11/11、OpenAPI 0 error/14 个既有 warning、秘密扫描、依赖审计、自检和 `git diff --check` 均通过。
+- 状态：RESOLVED_BY_B / VERIFIED_BY_A；等待唯一 G4-02 PR 创建后记录正式 Approve 与 Merge，不再阻断创建 PR。

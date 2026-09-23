@@ -1,0 +1,11 @@
+{
+  "marker": "SIMULATED_EVIDENCE",
+  "adapter": "EXT-MESSAGE",
+  "boundary": "Existing unified message platform owns channels, accounts, signatures and quotas; this fixture models requests and receipts.",
+  "scenarios": {
+    "normal": { "status": 202, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-MESSAGE", "code": "SIM-MESSAGE-ACCEPTED", "platformMessageId": "sim-message-001" } },
+    "unauthorized": { "status": 403, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-MESSAGE", "code": "SIM-MESSAGE-FORBIDDEN" } },
+    "timeout": { "status": 504, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-MESSAGE", "code": "SIM-MESSAGE-TIMEOUT", "businessStateRetained": true } },
+    "failure": { "status": 503, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-MESSAGE", "code": "SIM-MESSAGE-FAILED", "manualNotificationRequired": true } }
+  }
+}

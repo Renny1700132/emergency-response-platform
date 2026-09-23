@@ -1,0 +1,11 @@
+{
+  "marker": "SIMULATED_EVIDENCE",
+  "adapter": "H5",
+  "boundary": "H5 is embedded in the client's existing smart-management app; client owns host app, signing and release.",
+  "scenarios": {
+    "normal": { "status": 200, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "H5", "code": "SIM-H5-BRIDGE-READY", "delivery": "EMBEDDED_H5_PACKAGE", "nativeApplicationDelivered": false, "capabilities": ["AUTH", "LOCATION", "SCAN", "CAMERA", "UPLOAD", "MESSAGE_OPEN"] } },
+    "unauthorized": { "status": 403, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "H5", "code": "SIM-H5-PERMISSION-DENIED", "nativeApplicationDelivered": false } },
+    "timeout": { "status": 504, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "H5", "code": "SIM-H5-BRIDGE-TIMEOUT", "recoverable": true, "successReported": false } },
+    "failure": { "status": 503, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "H5", "code": "SIM-H5-CAPABILITY-UNAVAILABLE", "manualInputAvailable": true, "successReported": false } }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "marker": "SIMULATED_EVIDENCE",
+  "adapter": "EXT-INTRUSION",
+  "boundary": "Existing intrusion platform owns sensors; this fixture models normalized inbound alerts and quarantine.",
+  "scenarios": {
+    "normal": { "status": 202, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-INTRUSION", "code": "SIM-INTRUSION-NORMALIZED", "externalAlertId": "sim-intrusion-001" } },
+    "unauthorized": { "status": 403, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-INTRUSION", "code": "SIM-INTRUSION-FORBIDDEN" } },
+    "timeout": { "status": 504, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-INTRUSION", "code": "SIM-INTRUSION-TIMEOUT", "incidentCreated": false } },
+    "failure": { "status": 422, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-INTRUSION", "code": "SIM-INTRUSION-QUARANTINED", "incidentCreated": false } }
+  }
+}

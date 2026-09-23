@@ -1,0 +1,11 @@
+{
+  "marker": "SIMULATED_EVIDENCE",
+  "adapter": "EXT-PUBLISH",
+  "boundary": "Existing information-publishing terminals and platform remain external; this fixture models command status only.",
+  "scenarios": {
+    "normal": { "status": 202, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-PUBLISH", "code": "SIM-PUBLISH-ACCEPTED", "publishReference": "sim-publish-001" } },
+    "unauthorized": { "status": 403, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-PUBLISH", "code": "SIM-PUBLISH-FORBIDDEN" } },
+    "timeout": { "status": 504, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-PUBLISH", "code": "SIM-PUBLISH-TIMEOUT", "draftRetained": true } },
+    "failure": { "status": 503, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-PUBLISH", "code": "SIM-PUBLISH-FAILED", "manualPublishAvailable": true } }
+  }
+}

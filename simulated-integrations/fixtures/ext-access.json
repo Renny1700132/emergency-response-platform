@@ -1,0 +1,11 @@
+{
+  "marker": "SIMULATED_EVIDENCE",
+  "adapter": "EXT-ACCESS",
+  "boundary": "Existing access-control platform enforces safety interlocks; commands require authorization and are never blindly replayed.",
+  "scenarios": {
+    "normal": { "status": 202, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-ACCESS", "code": "SIM-ACCESS-ACKNOWLEDGED", "commandReference": "sim-access-001", "autoReplayAllowed": false } },
+    "unauthorized": { "status": 403, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-ACCESS", "code": "SIM-ACCESS-FORBIDDEN", "autoReplayAllowed": false } },
+    "timeout": { "status": 504, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-ACCESS", "code": "SIM-ACCESS-RESULT-UNKNOWN", "autoReplayAllowed": false, "manualConfirmationRequired": true } },
+    "failure": { "status": 409, "body": { "marker": "SIMULATED_EVIDENCE", "adapter": "EXT-ACCESS", "code": "SIM-ACCESS-INTERLOCK-REJECTED", "autoReplayAllowed": false } }
+  }
+}

@@ -1275,6 +1275,12 @@
 - 新增 `module-traceability.test.ts`，逐项断言 11 个受控模块映射，并检查每个 H5 入口的渠道/领域双边界。
 - 状态保持 `OPEN / PENDING_C_REREVIEW`，由 C 独立复验后关闭。
 
+#### C 独立复验（2026-09-23）
+
+- 复验确认 `moduleRequirements` 与冻结 §4.1 的 11 个 MOD-*—G2-FR 集合一致；H5 路由同时保留 `MOD-MOBILE` 渠道与领域模块边界，2 项追踪测试通过。
+- 关闭证据：`logs/reviews/2026-09-23_G4-03-C-rereview.md`；整改提交 `34435c4`；复验头提交 `c360d59`。
+- 状态：CLOSED / VERIFIED_BY_C。
+
 ### ISSUE-G4-03-002
 
 - 提出人：C。
@@ -1294,6 +1300,14 @@
 - 新增由 `vue-tsc` 执行的编译期正/负例，错误方法、缺失必填 body、GET 携带 body、错误响应赋值均以 `@ts-expect-error` 固化为门禁。
 - 冻结 OpenAPI 未修改。状态保持 `OPEN / PENDING_C_REREVIEW`，由 C 独立复验后关闭。
 
+#### C 独立复验（2026-09-23）
+
+- 方法、body 与成功响应的类型约束已生效，但 operation 必填参数仍不完整：`path` 在 `OptionalTransportOptions` 中固定为可选，缺少 `incidentId` 等必填 path 参数仍能通过类型检查；契约要求的 `X-Idempotency-Key` 也未被推导为必填。
+- 现有类型负例未覆盖“缺少必填 path”和“缺少必填幂等键”；selfcheck 的 contract PASS 语义不完整。
+- 最小修复：条件化要求 path；对契约要求幂等键的写操作要求 `idempotencyKey`；补充两个编译期负例及 path 替换运行时测试，修正 selfcheck 后复跑门禁。
+- 复验证据：`logs/reviews/2026-09-23_G4-03-C-rereview.md`；PR #8 head `c360d59`。
+- 状态：OPEN / CHANGES_REQUIRED。
+
 ### ISSUE-G4-03-003
 
 - 提出人：C。
@@ -1312,3 +1326,9 @@
 - 根/frontend `engines.node`、两份 lockfile 与 README 已统一为 `^24.14.0 || >=26.0.0`，该范围是 Vitest 5.0.1 支持范围的子集，排除了不受其支持的 Node 20、22 和 25。
 - 在声明的最低版本 Node `v24.14.0` 完成 lockfile 更新、类型检查、前端测试及完整 `npm run quality`；未出现 `EBADENGINE`。
 - 状态保持 `OPEN / PENDING_C_REREVIEW`，由 C 独立复验后关闭。
+
+#### C 独立复验（2026-09-23）
+
+- 根/frontend/lockfile/README 的 Node 范围已一致为 `^24.14.0 || >=26.0.0`，属于 Vitest 5.0.1 支持范围；A 记录最低版本 24.14.0 完整门禁，本机 Node 24.21.0 复跑完整门禁通过。
+- 关闭证据：`logs/reviews/2026-09-23_G4-03-C-rereview.md`；整改提交 `34435c4`；复验头提交 `c360d59`。
+- 状态：CLOSED / VERIFIED_BY_C。

@@ -3,7 +3,7 @@
 - 用途：在各 G4 单一功能 PR 中同步记录 Task、受控输入、实现/测试证据与 Review；合并记录以 Gitee PR 为证据，供 G4-11 最终补充合并提交哈希并完成 RTM v4 收口。
 - 边界：本文件不替代 `docs/work/C_REQ/rtm_v1.md` 的 G3 冻结设计追踪，也不把工程护栏测试冒充业务 FR/AC 实现或验收证据。
 - 状态：WORKING / APPEND-ONLY
-- 单 PR 规则：功能、测试、本账、日志和 `tasks.md = DONE` 同 PR 提交；PR 创建后在同一分支补充 PR 编号和审核信息。除 G4-04 既有收口 PR 外，不再为 DONE 或合并提交哈希建立第二个 PR。
+- 单 PR 规则：功能、测试、本账、日志和 `tasks.md = DONE` 同 PR 提交；PR 创建后在同一分支补充 PR 编号和审核信息。G4-03/04 各保留一个规则生效前遗留的历史收口 PR；自 G4-05 起不再为 DONE 或合并提交哈希建立第二个 PR。
 
 ## 已合并任务
 
@@ -11,6 +11,7 @@
 | --- | --- | --- | --- | --- |
 | G4-01 | KN-043、KN-045；NFR-MNT-01；ENG-012、ENG-014、ENG-015、ENG-017；G4-01-DoD | `quality/selfcheck/G4-01.json`；`evidence/g4/G4-01/pass-evidence.json`；`evidence/g4/G4-01/block-evidence.json`；本地 `npm run quality` exit 0；覆盖率 statements/lines/functions 100%、branches 90%；OpenAPI 0 error/14 warning；npm vulnerabilities 0 | Gitee PR `!1`；唯一审核位 Review 1/1 完成；合并提交 `fc95b5201846e883b20d825f1fccfe88712be4c1`；源分支 `codex/g4-01-engineering-guards` → `master` | DONE / MERGED；工程门禁已可供后续 G4 任务复用。未声称任何 G2-FR 业务功能已实现；`ISSUE-G4-01-001` 保持 OPEN / NON_BLOCKING。 |
 | G4-02 | KN-043、KN-045；ARCH-01/02/03；DBD §4.8；ENG-012/014/015/017；G4-02-DoD | `backend/`、`backend/migrations/`、`tests/backend/`、`quality/selfcheck/G4-02.json`；实现提交 `d116ba5`；A 独立复跑 `npm run quality`：G4 tests 11/11、backend tests 6/6，后端覆盖率 statements/lines 94.77%、branches 93.93%、functions 93.75%，OpenAPI 0 error/14 个既有 warning，npm vulnerabilities 0 | Gitee PR `!5`；唯一审核人 A（`WhiteApricot`）Review/Approve；普通 merge 提交 `8bb19ee4572a48442e559ccbe2cb6b9c186c53f8`；源分支 `codex/g4-02-backend-foundation` → `master`；审核证据归档于 `logs/reviews/2026-09-23_G4-02-A-review.md` | DONE / MERGED；`ISSUE-G4-02-001/002` 均由 B 修复并经 A 验证关闭；未将 Prototype 存储视为正式实现。 |
+| G4-03 | G4-03-DoD；冻结 OpenAPI；G3-01 §4.1 模块映射；KN-045 | `frontend/`；`quality/selfcheck/G4-03.json`；整改提交 `8b24791`；C 独立复跑本地 `npm run quality`：frontend 13/13、G4 11/11、backend 6/6，覆盖率均达门槛，OpenAPI 0 error/14 个既有 warning，npm vulnerabilities 0 | Gitee PR `!8`；唯一审核人 C 第三次复验 PASS，证据 `logs/reviews/2026-09-23_G4-03-C-rereview-3.md`；合并提交 `bfcd8825ba572fffa19089b4626ac0e639cb4301`；源分支 `codex/g4-03-vue-api-client` → `master` | DONE / MERGED；PR 在单 PR 修订生效前合并，依 `OVR-030` 一次性补齐状态与 RTM，不修改业务实现。 |
 | G4-04 | G2-FR-006/020/021/027/028/029；KN-064；NFR-COMP-01；MOD-INTEGRATION/MOBILE；ARCH-04；DLD-TR-006/020/021/027/028/029；ADR-002；ENG-017/018；G4-04-DoD | `simulated-integrations/`；`tests/g4/integration-simulator.test.mjs`；`quality/selfcheck/G4-04.json`；`evidence/g4/G4-04/simulated-fixture-evidence.json`；本地 `npm run quality` exit 0；11/11 tests；coverage 96.75/81.63/90/96.75%；OpenAPI 0 error/14 个既有 warning；秘密扫描 23 文件 PASS；npm vulnerabilities 0 | Gitee PR `!3`；唯一审核人 B 独立复核 PASS，复核提交 `1fc48464f3a004973bcfcd42388f999f1867351e`；合并提交 `3233849`；源分支 `codex/g4-04-simulated-integrations` → `master` | DONE / MERGED；全部为 `SIMULATED_EVIDENCE`，不证明真实接口、账号、现场网络、生产连通或性能验收。 |
 
 ## 待审核任务

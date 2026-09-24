@@ -2,6 +2,7 @@
 import { onMounted, reactive, ref } from 'vue'
 import AsyncState from '@/components/AsyncState.vue'
 import AttachmentRefsField from '@/components/AttachmentRefsField.vue'
+import PlatformAttachmentField from '@/components/PlatformAttachmentField.vue'
 import { useAuthContext } from '@/shared/auth/auth-context'
 import { useApiClient } from '@/shared/http/api-context'
 import { createResponseWorkflow, visibleError, type VisibleError, type WorkflowItem } from '@/features/response/workflow'
@@ -35,7 +36,7 @@ onMounted(load)
 <template>
   <section class="flow-page">
     <header class="flow-heading"><div><span class="eyebrow">G2-FR-013 / 014 · 正式 API</span><h2>事件处置</h2><p>上报、核实并启动预案；每次写操作均以服务端结果刷新状态。</p></div><button v-if="can('incident:create')" class="primary" @click="reportOpen = !reportOpen">{{ reportOpen ? '取消上报' : '上报事件' }}</button><span v-else class="permission-note">无事件上报权限</span></header>
-    <form v-if="reportOpen" class="action-form" @submit.prevent="submitReport"><h3>事件上报</h3><div class="form-grid"><label>事件类型代码<input v-model.trim="report.incidentTypeCode" required /></label><label>发生时间<input v-model="report.occurredAt" type="datetime-local" required /></label><label class="wide">标题<input v-model.trim="report.title" required /></label><label class="wide">描述<textarea v-model.trim="report.description" required rows="3" /></label><AttachmentRefsField v-model="report.attachmentFileIds" class="wide" /></div><button class="primary" :disabled="busy === 'report'">{{ busy === 'report' ? '提交中…' : '提交上报' }}</button></form>
+    <form v-if="reportOpen" class="action-form" @submit.prevent="submitReport"><h3>事件上报</h3><div class="form-grid"><label>事件类型代码<input v-model.trim="report.incidentTypeCode" required /></label><label>发生时间<input v-model="report.occurredAt" type="datetime-local" required /></label><label class="wide">标题<input v-model.trim="report.title" required /></label><label class="wide">描述<textarea v-model.trim="report.description" required rows="3" /></label><PlatformAttachmentField v-if="audience === 'h5'" v-model="report.attachmentFileIds" capture class="wide"/><AttachmentRefsField v-else v-model="report.attachmentFileIds" class="wide" /></div><button class="primary" :disabled="busy === 'report'">{{ busy === 'report' ? '提交中…' : '提交上报' }}</button></form>
     <p v-if="notice" class="notice" role="status">{{ notice }}</p>
     <AsyncState v-if="loading" state="loading" message="正在从事件 API 获取授权范围内数据。" />
     <AsyncState v-else-if="error" :state="error.kind" :message="error.message" :trace-id="error.traceId" @retry="load" />

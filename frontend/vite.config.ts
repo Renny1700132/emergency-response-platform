@@ -8,7 +8,7 @@ export default defineConfig({
   server: { port: 5174 },
   build: { outDir: 'dist', sourcemap: true },
   test: {
-    environment: 'node',
+    environment: 'jsdom',
     include: ['tests/**/*.test.ts'],
     coverage: {
       provider: 'v8',

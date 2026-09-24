@@ -4,8 +4,8 @@
   "reviewer": "C (@rjq010504)",
   "traceability": {
     "taskIds": ["G4-06"],
-    "requirementIds": ["G2-FR-013", "G2-FR-014", "G2-FR-015", "G2-FR-021", "G2-FR-022"],
-    "acIds": ["G4-06-DoD"],
+    "requirementIds": ["G2-FR-013 (PARTIAL)", "G2-FR-014 (PARTIAL)", "G2-FR-015 (PARTIAL)", "G2-FR-021 (PARTIAL)", "G2-FR-022 (PARTIAL)"],
+    "acIds": ["G4-06-DoD-COMPONENT", "AC-G2-FR-013-01 (PARTIAL)", "AC-G2-FR-014-01 (PARTIAL)", "AC-G2-FR-015-01 (PARTIAL)", "AC-G2-FR-021-01 (PARTIAL)", "AC-G2-FR-022-01 (PARTIAL)"],
     "designIds": ["MOD-EVENT", "MOD-TASK", "MOD-MOBILE", "DLD-TR-013", "DLD-TR-014", "DLD-TR-015", "DLD-TR-021", "DLD-TR-022"]
   },
   "ai": {
@@ -13,14 +13,14 @@
     "disposition": "Adopted after typecheck, focused tests and local npm run quality; C Review/Approve and PR Merge remain required."
   },
   "checks": {
-    "scope": { "status": "PASS", "evidence": "Only Sprint 1 incident reporting/verification/response-start and task acknowledgement/feedback flows are implemented; G4-09 situation, security and remaining MVP views remain placeholders." },
+    "scope": { "status": "PASS", "evidence": "Sprint 1 frontend implements report/verify/start-response, acknowledge/feedback/complete/remind/temporary-task, and H5 presign/upload retry. This is component-level evidence only. Combination incident search is DEFERRED to G4-09 after B-controlled contract change; backend integration, real host-camera/file service, performance, audit and message-channel E2E are DEFERRED to G4-07." },
     "contract": { "status": "PASS", "evidence": "frontend/src/features/response/workflow.ts uses only the generated-operation typed ApiClient and frozen OpenAPI paths; no prototypeStore, localStorage or hard-coded success response is used." },
     "authorizationAndValidation": { "status": "PASS", "evidence": "Route read permissions remain enforced; action controls check operation permissions, required HTML inputs and resource versions; HTTP 403 is rendered as a dedicated visible state." },
     "parameterizedAccess": { "status": "N/A", "evidence": "The frontend has no database access; all business access crosses the typed ApiClient." },
     "secrets": { "status": "PASS", "evidence": "No credentials or persistent token storage added." },
     "logRedaction": { "status": "PASS", "evidence": "Views expose normalized messages and traceId only; request tokens and payload internals are not rendered." },
     "migrationRollback": { "status": "N/A", "evidence": "G4-06 changes no database schema or migration." },
-    "tests": { "status": "PASS", "evidence": "frontend/tests/workflow.test.ts covers empty lists, entity/status mapping, report/verify/start/acknowledge/feedback request construction, attachments, resource versions, idempotency, forbidden/failure/trace states; full local quality result recorded in the task log." },
-    "traceability": { "status": "PASS", "evidence": "Web and H5 MOD-EVENT/MOD-TASK routes now resolve to shared Sprint 1 workflow views; G2-FR and design IDs are recorded in this selfcheck and RTM increment." }
+    "tests": { "status": "PASS", "evidence": "frontend/tests/page-interactions.test.ts mounts the real Vue pages/components and covers Web/H5 route resolution, loading/empty/403/failure/traceId, permission-disabled controls, report/verify/start/acknowledge/feedback/complete/remind/temporary-task forms, refresh after writes, plus H5 upload failure and retry. workflow.test.ts retains typed request construction coverage. Browser/backend E2E is explicitly not claimed and remains G4-07." },
+    "traceability": { "status": "PASS", "evidence": "RTM records every referenced FR/DLD as PARTIAL and separates implemented frontend component evidence from deferred contract/backend/E2E obligations. No complete-FR or complete-DLD claim is made by G4-06." }
   }
 }

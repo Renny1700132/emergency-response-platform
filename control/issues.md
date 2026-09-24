@@ -1309,6 +1309,13 @@
 - 关闭条件：页面能力、测试、RTM 与 selfcheck 的 AC 粒度一致；所有未实现项有明确后置任务/Issue，且不再被声明为已完成，由 C 复验。
 - 状态：OPEN / CHANGES_REQUIRED。
 
+#### A 整改响应（2026-09-24）
+
+- `page-interactions.test.ts` 已挂载真实 `IncidentFlowView`、`TaskFlowView` 和附件组件，覆盖 Web/H5 路由、加载/空/403/普通失败/traceId、权限禁用、事件上报/核实/启动、任务接收/反馈/完成/催办/临时任务、写后刷新以及上传失败重试；函数级 typed API 测试继续保留。
+- H5 事件和任务附件现通过正式 API Client 申请 `/api/v1/platform/files/presign`，再向服务端返回的预签名地址上传；失败保留同一文件并提供重试，不以手工文件 ID 代替 H5 拍照/选择交互。
+- `quality/selfcheck/G4-06.json` 与 G4 RTM 已改为 AC/能力粒度的 `PARTIAL/DEFERRED` 说明：组合检索因冻结列表契约无筛选参数，等待 B 受控契约变更后由 G4-09 实现；真实后端、宿主相机、中台文件、消息、审计和性能 E2E 由 G4-07 验证。本任务不再声称整项 FR/DLD 或 E2E 已完成。
+- 状态：OPEN / PENDING_C_REREVIEW；由 C 独立复验后决定关闭。
+
 ## G4-03 前端骨架与 API Client 复核项（续）
 
 ### ISSUE-G4-03-002

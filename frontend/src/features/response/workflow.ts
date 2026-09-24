@@ -80,5 +80,32 @@ export function createResponseWorkflow(api: ApiClient) {
         path: { taskId: task.id }, body: { ...input, resourceVersion: task.version }, idempotencyKey: idempotencyKey('task-feedback'),
       })
     },
+    async completeTask(task: WorkflowItem, reason: string) {
+      return api.post('/api/v1/tasks/{taskId}/complete', {
+        path: { taskId: task.id }, body: { reason, resourceVersion: task.version }, idempotencyKey: idempotencyKey('task-complete'),
+      })
+    },
+    async remindTask(task: WorkflowItem, reason: string) {
+      return api.post('/api/v1/tasks/{taskId}/remind', {
+        path: { taskId: task.id }, body: { reason, resourceVersion: task.version }, idempotencyKey: idempotencyKey('task-remind'),
+      })
+    },
+    async createTemporaryTask(input: { name: string; assigneeRef: string; deadlineAt: string; description?: string }) {
+      return api.post('/api/v1/tasks', { body: input, idempotencyKey: idempotencyKey('task-temporary') })
+    },
   }
+}
+
+export async function uploadPlatformFile(api: ApiClient, file: File, fetcher: typeof fetch = fetch) {
+  const response = await api.post('/api/v1/platform/files/presign', {
+    body: { fileName: file.name, contentType: file.type || 'application/octet-stream', size: file.size },
+    idempotencyKey: idempotencyKey('file-presign'),
+  })
+  const attributes = record(response.data?.attributes)
+  const fileId = String(attributes.fileId ?? response.data?.id ?? '')
+  const uploadUrl = String(attributes.uploadUrl ?? '')
+  if (!fileId || !uploadUrl) throw new Error('文件服务未返回有效上传地址。')
+  const upload = await fetcher(uploadUrl, { method: 'PUT', body: file, headers: { 'Content-Type': file.type || 'application/octet-stream' } })
+  if (!upload.ok) throw new Error(`附件上传失败（HTTP ${upload.status}）`)
+  return fileId
 }

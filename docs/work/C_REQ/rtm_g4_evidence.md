@@ -1,8 +1,9 @@
 # G4 研发增量追踪证据账
 
-- 用途：在各 G4 PR 合并后增量记录 Task、受控输入、实现/测试证据、Review 与 Merge；供 G4-11 最终 RTM v4 收口使用。
+- 用途：在各 G4 单一功能 PR 中同步记录 Task、受控输入、实现/测试证据与 Review；合并记录以 Gitee PR 为证据，供 G4-11 最终补充合并提交哈希并完成 RTM v4 收口。
 - 边界：本文件不替代 `docs/work/C_REQ/rtm_v1.md` 的 G3 冻结设计追踪，也不把工程护栏测试冒充业务 FR/AC 实现或验收证据。
 - 状态：WORKING / APPEND-ONLY
+- 单 PR 规则：功能、测试、本账、日志和 `tasks.md = DONE` 同 PR 提交；PR 创建后在同一分支补充 PR 编号和审核信息。除 G4-04 既有收口 PR 外，不再为 DONE 或合并提交哈希建立第二个 PR。
 
 ## 已合并任务
 

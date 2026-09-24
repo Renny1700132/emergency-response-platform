@@ -1,6 +1,6 @@
 # 第四关研发冲刺治理
 
-- 生效日期：2026-09-21
+- 生效日期：2026-09-21；单 PR 修订生效日期：2026-09-24
 - 启动任务：`G4-00`
 - 受控输入：`BASELINE-G3-M3-R1.0`、真实《用户需求书》、G2 SRS/spec/RTM、G3 设计/OpenAPI/测试与管理计划
 - 阶段方法依据：`docs/inputs/G4/通关实验任务书4-研发冲刺.pdf`
@@ -16,17 +16,18 @@
 
 1. 自 `G4-01` 起，每项研发任务从最新 `master` 创建 `codex/<task-id>-<short-name>` 功能分支；受保护 `master` 禁止直接 push。
 2. 每个 PR 必须只服务一个清晰任务单元，关联 Task ID、FR/AC、设计 ID、变更文件、风险、回滚方式和测试证据。
-3. PR 固定执行：`主责在功能分支完成任务 → 提交者自查并执行本地 npm run quality → push 功能分支 → 创建 PR → 指定唯一审核人 Review → Review 通过后 APPROVE → 通过 PR Merge 进入 master → 更新 RTM/tasks/日志`。
+3. PR 固定执行：`主责在功能分支完成功能、测试、RTM、日志与 tasks.md = DONE → 提交者自查并执行本地 npm run quality → push 功能分支 → 创建 PR → 在同一分支补充 PR 编号和审核信息 → 指定唯一审核人 Review → Review 通过后 APPROVE → 通过同一 PR Merge 进入 master`。除第 8 条的一次性例外外，一个任务只使用一个功能 PR，不再创建合并后收口 PR。
 4. `tasks.md` 指定的唯一 Review 人必须 Approve；可邀请其他队友评论，但不能用额外评论替代唯一 Review 人的批准。提交者不得自批。
 5. 本地 `npm run quality` 失败、核心模块单元测试覆盖率低于 `KN-045 ≥70%`、安全红线违规、契约破坏、必要测试缺失或唯一 Review 人未批准时禁止合并。不得绕过门禁、force push 或改写共享历史。
 6. `G4-00` 是建立上述规则的治理切换提交，按切换前已生效的安全同步/commit/push 规则完成；它不构成后续 G4 研发直推主干的先例。
 7. `master` 不用于 G4 日常任务开发，只接收审核通过后的 PR Merge。G4 不要求接入 Jenkins、Gitee Go 或其他远程 CI；远程流水线如自愿存在，也不替代本地 `npm run quality`、唯一审核人 Approve 或 PR 证据。
+8. 历史例外：G4-04 的实现 PR `!3` 已携带 `REVIEW` 合并，因此其已经存在的收口 PR 仍须完成 B Approve 和 Merge；该例外不得复制到 G4-05 及后续任务。
 
 ## 3 统一研发 DoD
 
 每个 G4 研发任务统一满足：
 
-`任务/AC 明确 → Prompt 留痕 → 功能分支实现 + 测试 → 提交者自查 + 本地 npm run quality → push 功能分支 → PR → 指定唯一审核人 Review/Approve → PR Merge → RTM/tasks/日志更新`
+`任务/AC 明确 → Prompt 留痕 → 同一功能分支完成功能 + 测试 + RTM + 日志 + tasks.md = DONE → 提交者自查 + 本地 npm run quality → push 功能分支 → 创建 PR → 同一分支补充 PR/审核信息 → 指定唯一审核人 Review/Approve → 同一 PR Merge`
 
 其中：
 
@@ -36,11 +37,12 @@
 - 自查至少覆盖范围、契约、权限/输入校验、参数化访问、密钥不入库、日志脱敏、迁移/回滚、测试与追踪。
 - Review 记录必须可定位到 PR、commit、意见、整改和 Approve；高危安全问题为零方可合并。
 - `npm run quality` 是本地质量门禁，须记录执行环境、命令、原始结果与对应 commit，不得写成远程 CI 执行结果。
-- 合并后由任务主责或约定责任人更新 RTM 代码/测试证据列与 `tasks.md` 状态，不得预填未执行结果。
+- RTM 代码/测试证据列、日志和 `tasks.md = DONE` 必须在审核前随同一功能 PR 提交；这里的 `DONE` 是候选分支状态，只有唯一审核人 Approve 并合并后才进入 `master`，不得预填未执行结果。
+- 合并提交哈希不回写自身 PR，也不为此建立第二个 PR；Gitee PR 的合并记录作为权威证据，由 G4-11 在第四关收口时统一汇总。
 
 ## 4 证据与 AI 资产
 
-每个 PR 至少保留：任务号、功能分支和对应 commit、PR 描述、Prompt 原文及 AI 参与范围、提交者自查结果、本地 `npm run quality` 及其测试/coverage/contract/security/selfcheck 输出、唯一 Review 人的审核结论与 Approve、PR Merge 记录、RTM/tasks/日志更新。证据不得以口头结论或模拟截图替代真实记录；远程 CI 不是必需证据。
+每个 PR 至少保留：任务号、功能分支和对应 commit、PR 描述、Prompt 原文及 AI 参与范围、提交者自查结果、本地 `npm run quality` 及其测试/coverage/contract/security/selfcheck 输出、同一 PR 内的 RTM/tasks/日志更新、唯一 Review 人的审核结论与 Approve，以及 Gitee PR Merge 记录。合并提交哈希不要求写入自身 PR。证据不得以口头结论或模拟截图替代真实记录；远程 CI 不是必需证据。
 
 可复用的有效 Prompt 进入《Prompt 模式库》，记录适用场景、输入约束、验证方法和复用次数。至少一项真实 AI 失败/误导/返工进入《AI 翻车记录》，保留现象、影响、五问根因、修复和预防规则；不得虚构翻车以满足数量。
 

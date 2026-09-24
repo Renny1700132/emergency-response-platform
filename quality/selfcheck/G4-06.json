@@ -1,0 +1,26 @@
+{
+  "taskId": "G4-06",
+  "owner": "A (@WhiteApricot)",
+  "reviewer": "C (@rjq010504)",
+  "traceability": {
+    "taskIds": ["G4-06"],
+    "requirementIds": ["G2-FR-013", "G2-FR-014", "G2-FR-015", "G2-FR-021", "G2-FR-022"],
+    "acIds": ["G4-06-DoD"],
+    "designIds": ["MOD-EVENT", "MOD-TASK", "MOD-MOBILE", "DLD-TR-013", "DLD-TR-014", "DLD-TR-015", "DLD-TR-021", "DLD-TR-022"]
+  },
+  "ai": {
+    "scope": "Codex assisted member A with the Web/H5 incident and task workflow views, reusable interaction logic, visible async/error/permission states, styling, tests and traceability evidence.",
+    "disposition": "Adopted after typecheck, focused tests and local npm run quality; C Review/Approve and PR Merge remain required."
+  },
+  "checks": {
+    "scope": { "status": "PASS", "evidence": "Only Sprint 1 incident reporting/verification/response-start and task acknowledgement/feedback flows are implemented; G4-09 situation, security and remaining MVP views remain placeholders." },
+    "contract": { "status": "PASS", "evidence": "frontend/src/features/response/workflow.ts uses only the generated-operation typed ApiClient and frozen OpenAPI paths; no prototypeStore, localStorage or hard-coded success response is used." },
+    "authorizationAndValidation": { "status": "PASS", "evidence": "Route read permissions remain enforced; action controls check operation permissions, required HTML inputs and resource versions; HTTP 403 is rendered as a dedicated visible state." },
+    "parameterizedAccess": { "status": "N/A", "evidence": "The frontend has no database access; all business access crosses the typed ApiClient." },
+    "secrets": { "status": "PASS", "evidence": "No credentials or persistent token storage added." },
+    "logRedaction": { "status": "PASS", "evidence": "Views expose normalized messages and traceId only; request tokens and payload internals are not rendered." },
+    "migrationRollback": { "status": "N/A", "evidence": "G4-06 changes no database schema or migration." },
+    "tests": { "status": "PASS", "evidence": "frontend/tests/workflow.test.ts covers empty lists, entity/status mapping, report/verify/start/acknowledge/feedback request construction, attachments, resource versions, idempotency, forbidden/failure/trace states; full local quality result recorded in the task log." },
+    "traceability": { "status": "PASS", "evidence": "Web and H5 MOD-EVENT/MOD-TASK routes now resolve to shared Sprint 1 workflow views; G2-FR and design IDs are recorded in this selfcheck and RTM increment." }
+  }
+}

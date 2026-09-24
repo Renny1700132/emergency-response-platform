@@ -1,6 +1,7 @@
 ## 任务与追踪
 
 - Task ID：
+- Gitee PR 编号（创建后在同一分支回填）：
 - FR / NFR / KN：
 - AC：
 - 设计 ID：
@@ -29,10 +30,12 @@
 - 安全扫描（高危必须为 0）：
 - 本地 `npm run quality` 命令、结果与对应 commit：
 - Prompt / Review / 证据路径：
+- 审核信息（Review 意见、整改与 Approve；在同一分支持续补充）：
 
 ## 合并门禁
 
 - [ ] 唯一 Review 人已 Approve（提交者不得自批）
 - [ ] 本地 `npm run quality` 已通过并附真实结果（不表述为远程 CI）
 - [ ] 阻断缺陷为 0
-- [ ] 合并后更新 RTM 与 `tasks.md`
+- [ ] 功能、测试、RTM、日志和 `tasks.md = DONE` 已包含在本 PR
+- [ ] 本 PR 不要求回填自身合并提交哈希；合并后以 Gitee PR 记录为证据，由 G4-11 汇总

@@ -9,7 +9,7 @@
 
 ### 第四关覆盖规则
 
-`G4-00` 是旧工作流切换到第四关治理的启动提交。自 `G4-01` 起，G4 研发任务必须使用 `codex/<task-id>-<short-name>` 功能分支并通过 PR 合并到受保护 `master`，禁止直接推送主干。每个 PR 必须记录任务号、对应 commit、AI 参与范围、自检与本地 `npm run quality` 结果，以及指定唯一 Review 人的审核结论和 Approve；本地门禁失败或 Review 未批准不得合并。G4 不要求 Jenkins、Gitee Go 或其他远程 CI，本地门禁不得写成远程 CI。合并后更新 RTM、`tasks.md` 与日志。其余安全同步、禁止 force、语义冲突停止和日志回填规则继续适用；详见 `governance/g4_development_workflow.md`。
+`G4-00` 是旧工作流切换到第四关治理的启动提交。自 `G4-01` 起，G4 研发任务必须使用 `codex/<task-id>-<short-name>` 功能分支并通过单个功能 PR 合并到受保护 `master`，禁止直接推送主干。功能、测试、RTM、日志和 `tasks.md = DONE` 必须进入同一 PR；PR 创建后在同一分支补充 PR 编号和审核信息。每个 PR 必须记录任务号、对应 commit、AI 参与范围、自检与本地 `npm run quality` 结果，以及指定唯一 Review 人的审核结论和 Approve；本地门禁失败或 Review 未批准不得合并。合并提交哈希不回写自身 PR，以 Gitee PR 合并记录为证据并由 G4-11 汇总。G4 不要求 Jenkins、Gitee Go 或其他远程 CI，本地门禁不得写成远程 CI。除 G4-04 已存在的收口 PR 外，不得再为常规 G4 任务创建第二个收口 PR。其余安全同步、禁止 force、语义冲突停止和日志回填规则继续适用；详见 `governance/g4_development_workflow.md`。
 
 # Task Start Repository Sync
 
@@ -70,16 +70,16 @@ PUSH
 
 ### G4 功能分支与 PR
 
-1. 功能分支完成任务、提交者自查和本地 `npm run quality` 后，检查 diff 并 commit。
+1. 功能分支完成任务的功能、测试、RTM、日志和 `tasks.md = DONE`，提交者自查并通过本地 `npm run quality` 后，检查 diff 并 commit。
 2. 再次 fetch `origin/master` 并检查分叉；语义冲突按本文件规则停止，不以 rebase/force 覆盖历史。
-3. 非 force push 当前功能分支，创建或更新单任务 PR；不得执行 `git push origin master`。
+3. 非 force push 当前功能分支，创建或更新单任务 PR；PR 创建后在同一分支补充 PR 编号、审核信息和必要证据并继续更新该 PR；不得执行 `git push origin master`。
 4. `tasks.md` 指定的唯一审核人完成 Review；只有其结论通过并在 PR 中 Approve 后，才通过 PR Merge 进入 `master`。
-5. PR 记录任务号、AI 参与范围、自检与本地质量门禁结果、审核结论和对应 commit。远程 CI 不是 G4 合并前提。
-6. 合并后按约定通过后续功能分支/PR 更新 RTM、`tasks.md` 与日志；不得以“收口”为由直接 push `master`。
+5. PR 记录任务号、AI 参与范围、自检与本地质量门禁结果、审核结论、对应 commit，以及同一 PR 中的 RTM、日志和 `tasks.md = DONE`。远程 CI 不是 G4 合并前提。
+6. 合并提交哈希不要求写进自身 PR；以 Gitee PR 合并记录为证据，由 G4-11 最终汇总。除 G4-04 已存在的收口 PR 外，不得为回填 DONE、审核或合并提交另建第二个 PR。
 
 ## 日志回填提交
 
-内容 commit 与首次 push 完成后，将任务 commit hash 和 push 结果写回日志，创建独立的小型回填 commit。G1—G3 按历史规则再次安全同步并普通 push；G4 将回填 commit push 到功能分支并更新 PR，合并后收口更新仍走功能分支/PR。回填 commit 不记录自身 hash，避免无限自引用；禁止 amend、rebase 或重写既有提交。
+内容 commit 与首次 push 完成后，将任务 commit hash 和 push 结果写回日志，创建独立的小型回填 commit。G1—G3 按历史规则再次安全同步并普通 push。G4 的回填 commit 只 push 到原功能分支并更新同一 PR；PR 编号和审核信息也在该分支补充。G4 不回填自身 PR 的合并提交哈希，不另建常规收口 PR；该哈希以 Gitee 合并记录为证据并由 G4-11 汇总。回填 commit 不记录自身 hash，避免无限自引用；禁止 amend、rebase 或重写既有提交。
 
 ## 禁止事项
 

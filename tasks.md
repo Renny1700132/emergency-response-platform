@@ -8,6 +8,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | GOV-001 | AI 留痕与 Git 工作流修订 | C | B | G1-00 | 当前 Prompt、现有治理规范、Git 状态 | 原文日志状态机、安全同步与 push 规范 | DONE |
 | GOV-002 | 正式可交付文档生成/修改 Skill 与入口注册 | A | C | GOV-001 | 当前 Prompt、Reference OOXML/样式、现有文档与 Git 治理 | `docs/deliverables/SKILL.md`、`AGENTS.md` 强制触发规则 | REVIEW |
+| GOV-003 | G4 单 PR 工作流修订 | C | B | G4-00 | 当前 Prompt、现有 G4/Git/日志治理、PR 模板与 G4 任务看板 | 单 PR 规则、G4-04 一次性例外、G4-11 合并记录汇总口径 | DONE |
 | G1-01-A | 项目价值与范围分析 | A | C（技术边界由 B 提供意见） | G1-00 | 真实用户需求书；临时 fallback | `docs/work/A_PM/project_positioning.md` | DONE |
 | G1-01-A-BR | 项目价值与范围 Baseline Reconciliation | A | C（技术边界由 B 提供意见） | G1-01-A、甲方模拟书面澄清 | C 当前控制文件、原始用户需求书、甲方澄清 | 修订后的 `project_positioning.md`、reconciliation 记录 | DONE |
 | G1-00 | Workspace 初始化 | C | B | 无 | 当前 Prompt、允许资料、现有仓库 | Workspace 目录、治理规则、初始化日志、Git 证据 | DONE |
@@ -78,14 +79,14 @@
 
 ## 第四关任务看板
 
-范围：优先完成 `G2-FR-001—029` MVP Must；`G2-FR-030—039` 保留为本期 backlog，不删除、不改需求。统一研发 DoD：任务/AC 明确 → Prompt 留痕 → 功能分支实现 + 测试 → 自查 + 本地 `npm run quality` → push 功能分支 → PR → 指定唯一审核人 Review/Approve → PR Merge → RTM/tasks/日志更新。自 `G4-01` 起均使用功能分支 + PR，禁止直接推送受保护主干；不要求远程 CI；证据规则见 `governance/g4_development_workflow.md`。
+范围：优先完成 `G2-FR-001—029` MVP Must；`G2-FR-030—039` 保留为本期 backlog，不删除、不改需求。统一研发 DoD：任务/AC 明确 → Prompt 留痕 → 同一功能分支完成功能 + 测试 + RTM + 日志 + `tasks.md = DONE` → 自查 + 本地 `npm run quality` → push 功能分支 → 创建单个 PR → 同一分支补充 PR/审核信息 → 指定唯一审核人 Review/Approve → 同一 PR Merge。`DONE` 只随已批准 PR 进入 `master`；合并提交哈希以 Gitee PR 记录为证据并由 G4-11 汇总。G4-04 的既有收口 PR 是一次性例外；此后不得再建常规收口 PR。自 `G4-01` 起均使用功能分支 + PR，禁止直接推送受保护主干；不要求远程 CI；证据规则见 `governance/g4_development_workflow.md`。
 
 | Task ID | Sprint | 任务 | 主责 | 唯一 Review 人 | 前置依赖 | 输出 | 可验证完成条件 | 状态 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | G4-00 | 启动 | 第四关启动与任务规划 | A | C | G3-10 DONE；`BASELINE-G3-M3-R1.0` FROZEN；用户明确启动 | G4 输入索引、阶段状态切换、研发治理、12 项看板、启动自检 | G4 任务书已归档/索引；课程课件按规则仅登记；README/AGENTS/tasks/governance 状态一致；两个 Sprint、PR 门禁、DoD、范围与原型边界均可检索；自检无阻断 | DONE |
 | G4-01 | Sprint 1 | 本地测试 / coverage / contract / security / selfcheck 工程护栏 | C | B | G4-00 | 本地质量门禁配置、测试与覆盖率基线、OpenAPI 契约校验、安全扫描、自查模板、PR 模板 | `npm run quality` 在功能分支可重复运行；核心模块单测覆盖率门禁 `≥70%`；契约/安全/selfcheck 任一失败阻断合并；保留一次通过和一次阻断证据；B Review/Approve 后经 PR Merge | DONE |
 | G4-02 | Sprint 1 | 正式后端、数据库及公共基础设施骨架 | B | A | G4-00；G4-01 门禁接口可用 | 正式后端工程、数据库迁移、配置/日志/鉴权/审计/健康检查公共骨架 | 干净环境可启动；迁移可前进/回滚；健康检查和最小鉴权测试通过；不使用 Prototype 存储；PR 关联设计 ID/AC，本地 `npm run quality` 通过且 A Review/Approve 后经 PR Merge | DONE |
-| G4-03 | Sprint 1 | 正式 Vue 前端骨架与 API Client | A | C | G4-00；G4-01 门禁接口可用 | 正式 Vue Web/H5 骨架、路由/权限壳、类型化 API Client、错误与 traceId 处理 | Web/H5 可构建运行；API Client 由冻结契约生成或核对；Mock 仅限显式开发适配层；无 localStorage/prototypeStore 充当正式数据；PR 门禁通过 | TODO |
+| G4-03 | Sprint 1 | 正式 Vue 前端骨架与 API Client | A（@WhiteApricot） | C（@rjq010504） | G4-00；G4-01 门禁接口可用 | 正式 Vue Web/H5 骨架、路由/权限壳、类型化 API Client、错误与 traceId 处理 | Web/H5 可构建运行；API Client 由冻结契约生成或核对；Mock 仅限显式开发适配层；无 localStorage/prototypeStore 充当正式数据；PR 门禁通过 | DOING |
 | G4-04 | Sprint 1 | 八外部端口、GIS/H5 的课程模拟服务与测试 Fixture | C | B | G4-00；G4-01；冻结 OpenAPI 与模拟确认 | 8 个独立外部端口、GIS/H5 模拟服务，正常/无权/超时/失败 Fixture 与使用说明 | EXT-VIDEO/PUBLISH/INTRUSION/ACCESS/FIRE/IOT/MIDDLE/MESSAGE 逐一可辨识；GIS/H5 边界明确；Fixture 可重复、无秘密；所有证据标记 SIMULATED；契约测试通过 | DONE |
 | G4-05 | Sprint 1 | Sprint 1 核心事件处置后端闭环 | B | A | G4-02；G4-04 可用；相关 AC/契约明确 | 预案启动、事件、任务、回执、关闭材料、审计核心后端增量及测试 | 选定的 G2-FR-001—029 核心闭环 AC 均有代码与测试映射；正常/无权/幂等/超时/失败路径通过；数据库状态与审计可核对；PR/本地质量门禁/Review 证据完整 | DOING |
 | G4-06 | Sprint 1 | Sprint 1 Web/H5 前端闭环 | A | C | G4-03；G4-04 可用；与 G4-05 契约先行 | 事件处置 Web/H5 页面、状态与权限交互、附件/反馈最小闭环及测试 | 可经正式 API Client 完成核心演示路径；加载/空/失败/无权状态可见；不直连数据库或原型 Store；组件/交互/E2E 测试通过；PR 门禁完整 | TODO |
@@ -93,7 +94,7 @@
 | G4-08 | Sprint 2 | Sprint 2 剩余 MVP 后端及外部适配 | B | A | G4-07 准出；剩余 MVP 清单冻结 | 剩余 G2-FR-001—029 后端实现、8 端口/GIS/H5 适配、迁移与测试 | 剩余 MVP 后端 AC 逐条有实现/测试/证据；外部正常/无权/超时/失败及人工降级可验证；控制指令不盲重放；PR/本地质量门禁/Review 完整 | TODO |
 | G4-09 | Sprint 2 | Sprint 2 剩余 MVP 前端/态势/安防接线 | A | C | G4-07；G4-03；与 G4-08 契约先行 | 剩余 MVP Web/H5、指挥态势、安防接线与测试 | 剩余 MVP 前端 AC 可通过正式 API 验证；地图/视频/安防状态和降级可见；控制操作有权限与二次确认；兼容/E2E 证据与 PR 门禁完整 | TODO |
 | G4-10 | Sprint 2 | 最终集成、覆盖率、安全、关键性能、故障演练与 MVP 验证 | C | B | G4-08、G4-09 | 最终测试执行包、覆盖率/安全/性能原始结果、故障演练、缺陷与 MVP 验证矩阵 | `G2-FR-001—029` 逐条 AC 有执行结果；功能覆盖与验收用例通过率 100%；核心覆盖率 `≥70%`；高危 0；关键性能和故障演练按受控口径实测，失败/未测不伪装通过 | TODO |
-| G4-11 | Sprint 2 | RTM v4、PR/迭代证据、Prompt 模式库、AI 翻车记录及第四关收口 | A | C | G4-10；全部 G4 PR 合并或有受控处置 | RTM v4、两个 Sprint/燃尽与 PR 证据索引、Prompt 模式库、AI 翻车记录、G4 收口审计 | 12 项任务、全部合并 PR、commit、Prompt、自查、Review、本地质量门禁、测试与 RTM 可双向追踪；至少 1 项真实 AI 翻车完成根因/预防记录；backlog 030—039 仍完整；无开放阻断后给出收口结论 | TODO |
+| G4-11 | Sprint 2 | RTM v4、PR/迭代证据、Prompt 模式库、AI 翻车记录及第四关收口 | A | C | G4-10；全部 G4 PR 合并或有受控处置 | RTM v4、两个 Sprint/燃尽与 PR 证据索引、Prompt 模式库、AI 翻车记录、G4 收口审计 | 12 项任务、全部合并 PR、commit、Prompt、自查、Review、本地质量门禁、测试与 RTM 可双向追踪；依据 Gitee PR 合并记录统一汇总各任务合并提交哈希，无需回写自身 PR；至少 1 项真实 AI 翻车完成根因/预防记录；backlog 030—039 仍完整；无开放阻断后给出收口结论 | TODO |
 
 角色执行链：A `G4-00 → G4-03 → G4-06 → G4-09 → G4-11`；B `G4-02 → G4-05 → G4-08`；C `G4-01 → G4-04 → G4-07 → G4-10`。`G4-02/03/04`、`G4-05/06`、`G4-08/09` 在各自契约和前置满足后尽量并行。
 

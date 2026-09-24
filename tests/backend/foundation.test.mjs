@@ -114,4 +114,11 @@ test('foundation migration has an auditable paired rollback and compose keeps cr
   assert.match(down, /DROP TABLE IF EXISTS em_idempotency_record/);
   assert.match(down, /DROP TABLE IF EXISTS em_audit_log/);
   assert.match(compose, /^\s*POSTGRES_PASSWORD:\s*\$\{POSTGRES_PASSWORD/m);
+  const workflowUp = await readFile(new URL('../../backend/migrations/002_event_workflow.up.sql', import.meta.url), 'utf8');
+  const workflowDown = await readFile(new URL('../../backend/migrations/002_event_workflow.down.sql', import.meta.url), 'utf8');
+  for (const table of ['em_plan_version', 'em_task_template', 'em_incident', 'em_verification_action', 'em_response_task',
+    'em_task_assignment_history', 'em_task_feedback', 'em_incident_closure', 'em_message_delivery']) {
+    assert.match(workflowUp, new RegExp(`CREATE TABLE IF NOT EXISTS ${table}`));
+    assert.match(workflowDown, new RegExp(`DROP TABLE IF EXISTS ${table}`));
+  }
 });

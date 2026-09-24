@@ -20,3 +20,21 @@ test('event workflow enforces verify, idempotent start, task feedback and closur
   assert.equal((await workflow.close(incident.id, { conclusion: 'safe', reportRef: 'report-1' }, 'commander')).status, 'CLOSED');
   assert.equal(published.filter((event) => event.eventType === 'RESPONSE_STARTED').length, 1);
 });
+
+test('message failure keeps business tasks and marks manual review', async () => {
+  const workflow = createEventWorkflow({ notifyTask: async () => { throw Object.assign(new Error('timeout'), { code: 'MESSAGE_TIMEOUT' }); } });
+  const incident = await workflow.createIncident(
+    { incidentTypeCode: 'FIRE', title: 'Smoke', description: 'Observed', occurredAt: new Date().toISOString() },
+    'reporter',
+    'key-0002'
+  );
+  await workflow.verify(incident.id, 'VERIFIED', 'confirmed', 'verifier');
+  const started = await workflow.startResponse(
+    incident.id,
+    { id: 'plan-v1' },
+    [{ name: 'Evacuate', assigneeRef: 'u1', deadlineAt: new Date().toISOString() }],
+    'commander'
+  );
+  assert.equal(started.tasks[0].deliveryStatus, 'MANUAL_REVIEW');
+  assert.equal(started.tasks[0].deliveryError, 'MESSAGE_TIMEOUT');
+});

@@ -79,7 +79,7 @@
 
 ## 第四关任务看板
 
-范围：优先完成 `G2-FR-001—029` MVP Must；`G2-FR-030—039` 保留为本期 backlog，不删除、不改需求。统一研发 DoD：任务/AC 明确 → Prompt 留痕 → 同一功能分支完成功能 + 测试 + RTM + 日志 + `tasks.md = DONE` → 自查 + 本地 `npm run quality` → push 功能分支 → 创建单个 PR → 同一分支补充 PR/审核信息 → 指定唯一审核人 Review/Approve → 同一 PR Merge。`DONE` 只随已批准 PR 进入 `master`；合并提交哈希以 Gitee PR 记录为证据并由 G4-11 汇总。G4-03/04 各保留一个规则生效前遗留的历史收口 PR；自 G4-05 起不得再建常规收口 PR。自 `G4-01` 起均使用功能分支 + PR，禁止直接推送受保护主干；不要求远程 CI；证据规则见 `governance/g4_development_workflow.md`。
+范围：优先完成 `G2-FR-001—029` MVP Must；`G2-FR-030—039` 保留为本期 backlog，不删除、不改需求。统一研发 DoD：任务/AC 明确 → Prompt 留痕 → 同一功能分支完成功能 + 测试 + RTM + 日志 + `tasks.md = DONE` → 自查 + 本地 `npm run quality` → push 功能分支 → 创建单个 PR → 同一分支补充 PR/审核信息 → 指定唯一审核人 Review/Approve → 同一 PR Merge。`DONE` 只随已批准 PR 进入 `master`；合并提交哈希以 Gitee PR 记录为证据并由 G4-11 汇总。G4-04 的既有收口 PR 是一次性例外；此后不得再建常规收口 PR。自 `G4-01` 起均使用功能分支 + PR，禁止直接推送受保护主干；不要求远程 CI；证据规则见 `governance/g4_development_workflow.md`。
 
 | Task ID | Sprint | 任务 | 主责 | 唯一 Review 人 | 前置依赖 | 输出 | 可验证完成条件 | 状态 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |

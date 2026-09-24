@@ -17,7 +17,7 @@
 
 | Task | 需求/指标与设计挂接 | 实现与自检证据 | Review / Merge 证据 | 追踪结论 |
 | --- | --- | --- | --- | --- |
-| G4-06 | G2-FR-013/014/015/021/022；MOD-EVENT/TASK/MOBILE；DLD-TR-013/014/015/021/022；G4-06-DoD | `frontend/src/views/IncidentFlowView.vue`、`TaskFlowView.vue`；`frontend/src/features/response/workflow.ts`；`frontend/tests/workflow.test.ts`；`quality/selfcheck/G4-06.json`；正式 API Client 路径覆盖事件上报/核实/预案启动/任务接收/反馈，加载/空/失败/无权/traceId/附件状态可见 | 功能分支 `codex/g4-06-web-h5-flow` → `master`；唯一审核人 C（`rjq010504`）；PR、Review/Approve 与 Merge 待形成 | DONE CANDIDATE / PENDING C REVIEW；G4-05 尚未合并，未声称真实后端 E2E 已通过，联调留待 G4-07。 |
+| G4-06 | G2-FR-013/014/015/021/022；MOD-EVENT/TASK/MOBILE；DLD-TR-013/014/015/021/022；G4-06-DoD | `frontend/src/views/IncidentFlowView.vue`、`TaskFlowView.vue`；`frontend/src/features/response/workflow.ts`；`frontend/tests/workflow.test.ts`；`quality/selfcheck/G4-06.json`；实现提交 `ad35fec`；本地 `npm run quality` exit 0，frontend 18/18、覆盖率 88.98/76.33/86.48/90.21%，G4 11/11、backend 6/6、OpenAPI 0 error/14 个既有 warning、漏洞 0 | Gitee PR `!10`；功能分支 `codex/g4-06-web-h5-flow` → `master`；唯一审核人应为 C（`rjq010504`）；CLI 创建时平台实际 assignee/tester 错误返回 Admin，待经受控 API 修正；C Review/Approve 与 Merge 尚未发生 | DONE CANDIDATE / PENDING REVIEWER ASSIGNMENT；G4-05 尚未合并，未声称真实后端 E2E 已通过，联调留待 G4-07。 |
 
 ## 维护规则
 

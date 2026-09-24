@@ -1281,6 +1281,60 @@
 - 关闭证据：`logs/reviews/2026-09-23_G4-03-C-rereview.md`；整改提交 `34435c4`；复验头提交 `c360d59`。
 - 状态：CLOSED / VERIFIED_BY_C。
 
+## G4-06 Web/H5 前端闭环审核项
+
+### ISSUE-G4-06-001
+
+- 提出人：C（G4-06 唯一审核人）。
+- 时间：2026-09-24。
+- 严重级别：MAJOR / BLOCKING_TO_G4-06_APPROVE。
+- 候选分支/提交：`codex/g4-06-web-h5-flow` / `429580b`；Gitee PR `!10`。
+- 文件与位置：`frontend/tests/workflow.test.ts`；`frontend/src/views/IncidentFlowView.vue`；`frontend/src/views/TaskFlowView.vue`；`quality/selfcheck/G4-06.json`。
+- 问题：候选分支仅有 workflow 请求构造单元测试，没有挂载两个 Vue 页面或通过路由执行用户交互的组件/交互/E2E 测试；加载、空、失败、无权、按钮权限、表单提交、刷新以及 Web/H5 路由行为均未被实际页面测试覆盖。`quality/selfcheck/G4-06.json` 却将 tests 与 traceability 记为 PASS。
+- 影响：`tasks.md` 对 G4-06 的明确完成条件“组件/交互/E2E 测试通过”没有证据；当前 18/18 通过只能证明函数级请求构造和既有基础设施，不能证明页面闭环可操作，故不可 Approve。
+- 最小修复：由 A 增加可重复的组件/交互测试，至少覆盖 Web/H5 路由落到正确视图、加载/空/403/失败/traceId、授权与无权按钮状态、上报/核实/启动/接收/反馈的表单操作和成功后刷新；如 E2E 明确留到 G4-07，须在任务 DoD、RTM 与 selfcheck 中把本任务实际层级写清，不能继续宣称 E2E 已通过。
+- 关闭条件：新增测试真实执行上述页面行为，完整 `npm run quality` 通过，selfcheck/RTM 与实测一致，并由 C 复验。
+- 状态：OPEN / CHANGES_REQUIRED。
+
+### ISSUE-G4-06-002
+
+- 提出人：C（G4-06 唯一审核人）。
+- 时间：2026-09-24。
+- 严重级别：MAJOR / BLOCKING_TO_G4-06_APPROVE。
+- 候选分支/提交：`codex/g4-06-web-h5-flow` / `429580b`；Gitee PR `!10`。
+- 文件与位置：`frontend/src/views/IncidentFlowView.vue`；`frontend/src/views/TaskFlowView.vue`；`frontend/src/features/response/workflow.ts`；`docs/work/C_REQ/rtm_g4_evidence.md`；`quality/selfcheck/G4-06.json`。
+- 问题：RTM/selfcheck 将 G2-FR-013/015/021/022 与 DLD-TR-013/015/021/022 整体挂接为 PASS，但当前实现没有事件按时间/状态/类型/关键字组合检索（AC-G2-FR-013-02）、H5 拍照上传及相机/网络失败可恢复状态（AC-G2-FR-021-01/03）、任务完成（AC-G2-FR-022-03），也未覆盖催办/临时任务（AC-G2-FR-015-03）。`audience` 属性未参与任何 H5 差异行为，附件组件只是手工录入文件 ID。
+- 影响：追踪结论把部分 API 调用扩大为整个 FR/设计项完成证据，会误导 G4-07 集成/E2E 与最终 RTM；尤其 H5 和任务完成仍不存在可执行路径，不能以“最小闭环”或后续联调替代当前声明。
+- 最小修复：由 A 依据 G4-06 经确认的范围补足缺失的必要交互；确属 G4-07/G4-09 或外部中台阻断的内容，须逐项将 RTM/selfcheck 标为 PARTIAL/DEFERRED/BLOCKED 并回指后续任务或受控 Issue，不得用整项 FR/DLD PASS 表述。冻结 OpenAPI 的事件列表尚无组合检索参数，如需补齐必须先走 B 主责的受控契约变更，A 不得静默修改。
+- 关闭条件：页面能力、测试、RTM 与 selfcheck 的 AC 粒度一致；所有未实现项有明确后置任务/Issue，且不再被声明为已完成，由 C 复验。
+- 状态：OPEN / CHANGES_REQUIRED。
+
+#### A 整改响应（2026-09-24）
+
+- `page-interactions.test.ts` 已挂载真实 `IncidentFlowView`、`TaskFlowView` 和附件组件，覆盖 Web/H5 路由、加载/空/403/普通失败/traceId、权限禁用、事件上报/核实/启动、任务接收/反馈/完成/催办/临时任务、写后刷新以及上传失败重试；函数级 typed API 测试继续保留。
+- H5 事件和任务附件现通过正式 API Client 申请 `/api/v1/platform/files/presign`，再向服务端返回的预签名地址上传；失败保留同一文件并提供重试，不以手工文件 ID 代替 H5 拍照/选择交互。
+- `quality/selfcheck/G4-06.json` 与 G4 RTM 已改为 AC/能力粒度的 `PARTIAL/DEFERRED` 说明：组合检索因冻结列表契约无筛选参数，等待 B 受控契约变更后由 G4-09 实现；真实后端、宿主相机、中台文件、消息、审计和性能 E2E 由 G4-07 验证。本任务不再声称整项 FR/DLD 或 E2E 已完成。
+- 状态：OPEN / PENDING_C_REREVIEW；由 C 独立复验后决定关闭。
+
+#### C 再次独立复验（2026-09-24，候选 `8679ee0`）
+
+- `ISSUE-G4-06-002`：A 已补齐任务完成/催办/临时任务和 H5 预签名上传失败重试，并将组合检索及真实后端/宿主/中台/E2E 明确标为 `PARTIAL/DEFERRED`，RTM/selfcheck 不再冒充整项 FR/DLD 或 E2E 完成。该 Issue 关闭为 `CLOSED / VERIFIED_BY_C`。
+- `ISSUE-G4-06-001`：真实 Vue 组件/页面测试已补齐并由 C 复跑通过；但 `tasks.md` 的 G4-06 完成条件仍明确要求“组件/交互/E2E 测试通过”，而 RTM/selfcheck 明确声明浏览器/后端 E2E 延后至 G4-07。A 尚未按首轮最小修复要求同步任务 DoD，候选分支却再次将 G4-06 置为 DONE，证据与状态仍冲突。
+- 最小剩余修复：A 在同一 PR 将 G4-06 完成条件改为与受控分工一致，例如“组件/交互测试通过；真实前后端 E2E 由 G4-07 准出”，并保持 G4-07 的 E2E 门禁不降低；同步 selfcheck/RTM 后请求 C 复验。
+- 独立门禁：首次因工作区未安装新增 `@vue/test-utils` 而在 typecheck 失败；按候选 lockfile 执行 `npm ci --prefix frontend` 后完整 `npm run quality` exit 0，frontend 27/27、覆盖率 95.41/76.19/95.12/100%，其余门禁通过。
+- 复验证据：`logs/reviews/2026-09-24_G4-06-C-rereview.md`。
+- 结论：`CHANGES_REQUIRED / NOT APPROVED`；仅 `ISSUE-G4-06-001` 剩余 DoD 一致性阻断。
+
+#### C 最终独立复验（2026-09-24，候选 `33610a3`）
+
+- `ISSUE-G4-06-001`：A 已在提交 `e951cba` 将 G4-06 DoD 修正为“组件/交互测试通过；真实前后端 E2E 由 G4-07 准出”，G4-07 的契约、集成、E2E 与质量门禁原文未改，准出要求未降低；状态关闭为 `CLOSED / VERIFIED_BY_C`。
+- `ISSUE-G4-06-002`：维持 `CLOSED / VERIFIED_BY_C`；PARTIAL/DEFERRED 边界与后续任务归属清晰。
+- 独立门禁：完整 `npm run quality` exit 0；frontend 27/27，覆盖率 95.41/76.19/95.12/100%，G4 11/11，backend 6/6，OpenAPI 0 error（14 个既有 warning），依赖漏洞 0，selfcheck PASS。
+- 复验证据：`logs/reviews/2026-09-24_G4-06-C-final-review.md`。
+- 结论：`PASS / ACCEPTED_FOR_APPROVAL`；候选状态可置为 DONE，待 C 在 Gitee PR `!10` 执行平台 APPROVE 并通过 PR Merge 进入 `master` 后正式完成。
+
+## G4-03 前端骨架与 API Client 复核项（续）
+
 ### ISSUE-G4-03-002
 
 - 提出人：C。

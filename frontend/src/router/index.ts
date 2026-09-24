@@ -4,12 +4,14 @@ import WebLayout from '@/layouts/WebLayout.vue'
 import H5Layout from '@/layouts/H5Layout.vue'
 import ModuleBoundaryView from '@/views/ModuleBoundaryView.vue'
 import AccessStateView from '@/views/AccessStateView.vue'
+import IncidentFlowView from '@/views/IncidentFlowView.vue'
+import TaskFlowView from '@/views/TaskFlowView.vue'
 import { moduleRoutes } from './modules'
 
 const children = (audience: 'web' | 'h5'): RouteRecordRaw[] => moduleRoutes.filter((item) => item.audience === audience).map((item) => ({
   path: item.path,
-  component: ModuleBoundaryView,
-  props: { module: item },
+  component: item.id === 'MOD-EVENT' ? IncidentFlowView : item.id === 'MOD-TASK' ? TaskFlowView : ModuleBoundaryView,
+  props: item.id === 'MOD-EVENT' || item.id === 'MOD-TASK' ? { audience: item.audience } : { module: item },
   meta: { title: item.title, requiresAuth: true, permissions: item.permissions },
 }))
 

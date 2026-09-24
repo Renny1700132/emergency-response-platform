@@ -17,7 +17,7 @@
 
 | Task | 需求/指标与设计挂接 | 实现与自检证据 | Review / Merge 证据 | 追踪结论 |
 | --- | --- | --- | --- | --- |
-| G4-06 | PARTIAL：G2-FR-013/014/015/021/022；MOD-EVENT/TASK/MOBILE；DLD-TR-013/014/015/021/022。已实现前端：上报/核实/启动、任务接收/反馈/完成/催办/临时任务、H5 预签名上传失败重试。DEFERRED：FR-013 组合检索（冻结列表契约无筛选参数，需 B 受控契约变更后进入 G4-09）；真实后端/宿主相机/中台文件/消息/审计/性能 E2E（G4-07） | 整改提交 `0d537b9`；`IncidentFlowView.vue`、`TaskFlowView.vue`、`PlatformAttachmentField.vue`、`workflow.ts`；`page-interactions.test.ts` 挂载真实 Vue 页面/组件，覆盖 Web/H5 路由、loading/empty/403/failure/traceId、权限按钮、表单写操作与刷新、上传失败重试；`workflow.test.ts` 覆盖类型化请求构造；`quality/selfcheck/G4-06.json`。本地 quality：frontend 27/27、覆盖率 95.41/76.19/95.12/100%；不声明整项 FR/DLD 或 E2E 已完成 | Gitee PR `!10`；唯一审核人 C（`rjq010504`）；首轮 Review `CHANGES_REQUIRED` 见 `logs/reviews/2026-09-24_G4-06-C-review.md`；`ISSUE-G4-06-001/002` 已由 A 整改并在 PR 评论请求复验，等待 C 关闭与 Approve | DONE CANDIDATE / PENDING C REREVIEW；G4-06 证据限定为前端组件/交互层，后置项已逐项标明。 |
+| G4-06 | PARTIAL：G2-FR-013/014/015/021/022；MOD-EVENT/TASK/MOBILE；DLD-TR-013/014/015/021/022。已实现前端：上报/核实/启动、任务接收/反馈/完成/催办/临时任务、H5 预签名上传失败重试。DEFERRED：FR-013 组合检索（冻结列表契约无筛选参数，需 B 受控契约变更后进入 G4-09）；真实后端/宿主相机/中台文件/消息/审计/性能 E2E（G4-07） | 整改提交 `0d537b9`；`IncidentFlowView.vue`、`TaskFlowView.vue`、`PlatformAttachmentField.vue`、`workflow.ts`；`page-interactions.test.ts` 挂载真实 Vue 页面/组件，覆盖 Web/H5 路由、loading/empty/403/failure/traceId、权限按钮、表单写操作与刷新、上传失败重试；`workflow.test.ts` 覆盖类型化请求构造；`quality/selfcheck/G4-06.json`。C 复跑 quality：frontend 27/27、覆盖率 95.41/76.19/95.12/100%；不声明整项 FR/DLD 或 E2E 已完成 | Gitee PR `!10`；唯一审核人 C（`rjq010504`）；复验证据 `logs/reviews/2026-09-24_G4-06-C-rereview.md`；`ISSUE-G4-06-002` 已关闭，`ISSUE-G4-06-001` 因 tasks DoD 仍要求 E2E 而保持阻断；未 Approve、未 Merge | CHANGES_REQUIRED / NOT APPROVED；实现与组件交互测试已通过，仅待 A 将 G4-06 DoD 与 G4-07 E2E 分工改为一致的受控表述后复验。 |
 
 ## 维护规则
 

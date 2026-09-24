@@ -1316,6 +1316,15 @@
 - `quality/selfcheck/G4-06.json` 与 G4 RTM 已改为 AC/能力粒度的 `PARTIAL/DEFERRED` 说明：组合检索因冻结列表契约无筛选参数，等待 B 受控契约变更后由 G4-09 实现；真实后端、宿主相机、中台文件、消息、审计和性能 E2E 由 G4-07 验证。本任务不再声称整项 FR/DLD 或 E2E 已完成。
 - 状态：OPEN / PENDING_C_REREVIEW；由 C 独立复验后决定关闭。
 
+#### C 再次独立复验（2026-09-24，候选 `8679ee0`）
+
+- `ISSUE-G4-06-002`：A 已补齐任务完成/催办/临时任务和 H5 预签名上传失败重试，并将组合检索及真实后端/宿主/中台/E2E 明确标为 `PARTIAL/DEFERRED`，RTM/selfcheck 不再冒充整项 FR/DLD 或 E2E 完成。该 Issue 关闭为 `CLOSED / VERIFIED_BY_C`。
+- `ISSUE-G4-06-001`：真实 Vue 组件/页面测试已补齐并由 C 复跑通过；但 `tasks.md` 的 G4-06 完成条件仍明确要求“组件/交互/E2E 测试通过”，而 RTM/selfcheck 明确声明浏览器/后端 E2E 延后至 G4-07。A 尚未按首轮最小修复要求同步任务 DoD，候选分支却再次将 G4-06 置为 DONE，证据与状态仍冲突。
+- 最小剩余修复：A 在同一 PR 将 G4-06 完成条件改为与受控分工一致，例如“组件/交互测试通过；真实前后端 E2E 由 G4-07 准出”，并保持 G4-07 的 E2E 门禁不降低；同步 selfcheck/RTM 后请求 C 复验。
+- 独立门禁：首次因工作区未安装新增 `@vue/test-utils` 而在 typecheck 失败；按候选 lockfile 执行 `npm ci --prefix frontend` 后完整 `npm run quality` exit 0，frontend 27/27、覆盖率 95.41/76.19/95.12/100%，其余门禁通过。
+- 复验证据：`logs/reviews/2026-09-24_G4-06-C-rereview.md`。
+- 结论：`CHANGES_REQUIRED / NOT APPROVED`；仅 `ISSUE-G4-06-001` 剩余 DoD 一致性阻断。
+
 ## G4-03 前端骨架与 API Client 复核项（续）
 
 ### ISSUE-G4-03-002

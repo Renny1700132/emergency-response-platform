@@ -359,6 +359,20 @@
 - 是否已在 Preflight 提示：是；冲突编号 `PFC-G4-01-002`。
 - 是否涉及真实项目事实：否，仅第四关 Git、Review 与质量门禁治理。
 - 是否必须暂停：否。
+- 状态：SUPERSEDED_BY_OVR-029（仅“合并后更新 RTM/tasks/日志”部分被替代；本地质量门禁、唯一审核人和 PR Merge 规则继续有效）。
+
+## OVR-029
+
+- 时间：2026-09-24（北京时间）。
+- Prompt 要求：用户将 G4 的“实现 PR 合并后再用收口 PR 回填 DONE、审核和合并提交”改为单 PR；功能、测试、RTM、日志和 `tasks.md = DONE` 均进入同一功能 PR，PR 创建后在同一分支补充 PR 编号和审核信息，唯一审核人 Approve 后合并；合并提交哈希以 Gitee PR 合并记录为证据并由 G4-11 汇总。
+- 被覆盖规则：`AGENTS.md`、`governance/git_workflow.md`、`governance/g4_development_workflow.md`、`governance/ai_logging.md`、PR 模板、G4 任务看板及 RTM 增量账中“合并后更新 RTM/tasks/日志”或另行收口的旧口径。
+- 冲突说明：旧口径为避免 `DONE` 在审核前进入主干而采用两个 PR，但 `DONE` 位于候选功能分支，只有唯一审核人批准的 PR 才能进入受保护 `master`；第二个收口 PR 没有额外主干保护收益，且造成自引用循环和重复审核。
+- 实际执行规则：每个后续 G4 任务只使用一个功能 PR；功能、测试、RTM、日志和 `tasks.md = DONE` 同 PR 提交，创建 PR 后在原分支补充 PR 编号与审核信息；唯一审核人 Approve 后合并。合并提交哈希不写回自身 PR，以 Gitee PR 合并记录为权威证据，由 G4-11 汇总。
+- 历史例外：G4-04 的实现 PR `!3` 已携带 `REVIEW` 合并，因此已经存在的收口 PR 仍须由 B Approve 并 Merge；该例外不得扩展到 G4-05 及后续任务。
+- 评分/审计影响：保留单一 PR 的 Task/commit/Prompt/自检/Review/Approve/质量门禁/RTM/tasks/日志完整证据链，减少重复 PR；合并提交由平台记录和 G4-11 汇总，不降低可追溯性。
+- 是否已在 Preflight 提示：是；冲突编号 `PFC-GOV-003-001`。
+- 是否涉及真实项目事实：否，仅第四关 Git、Review、状态与证据回填治理。
+- 是否必须暂停：否。
 - 状态：ACTIVE。
 
 ## OVR-027

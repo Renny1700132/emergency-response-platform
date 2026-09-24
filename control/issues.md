@@ -1325,6 +1325,14 @@
 - 复验证据：`logs/reviews/2026-09-24_G4-06-C-rereview.md`。
 - 结论：`CHANGES_REQUIRED / NOT APPROVED`；仅 `ISSUE-G4-06-001` 剩余 DoD 一致性阻断。
 
+#### C 最终独立复验（2026-09-24，候选 `33610a3`）
+
+- `ISSUE-G4-06-001`：A 已在提交 `e951cba` 将 G4-06 DoD 修正为“组件/交互测试通过；真实前后端 E2E 由 G4-07 准出”，G4-07 的契约、集成、E2E 与质量门禁原文未改，准出要求未降低；状态关闭为 `CLOSED / VERIFIED_BY_C`。
+- `ISSUE-G4-06-002`：维持 `CLOSED / VERIFIED_BY_C`；PARTIAL/DEFERRED 边界与后续任务归属清晰。
+- 独立门禁：完整 `npm run quality` exit 0；frontend 27/27，覆盖率 95.41/76.19/95.12/100%，G4 11/11，backend 6/6，OpenAPI 0 error（14 个既有 warning），依赖漏洞 0，selfcheck PASS。
+- 复验证据：`logs/reviews/2026-09-24_G4-06-C-final-review.md`。
+- 结论：`PASS / ACCEPTED_FOR_APPROVAL`；候选状态可置为 DONE，待 C 在 Gitee PR `!10` 执行平台 APPROVE 并通过 PR Merge 进入 `master` 后正式完成。
+
 ## G4-03 前端骨架与 API Client 复核项（续）
 
 ### ISSUE-G4-03-002

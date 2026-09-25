@@ -1333,6 +1333,19 @@
 - 复验证据：`logs/reviews/2026-09-24_G4-06-C-final-review.md`。
 - 结论：`PASS / ACCEPTED_FOR_APPROVAL`；候选状态可置为 DONE，待 C 在 Gitee PR `!10` 执行平台 APPROVE 并通过 PR Merge 进入 `master` 后正式完成。
 
+## G4-07 Sprint 1 准出阻断项
+
+### ISSUE-G4-07-001
+
+- 提出人：C（G4-07 主责）。
+- 时间：2026-09-25。
+- 严重级别：BLOCKING_TO_G4-07_EXECUTION_AND_PASS。
+- 前置任务：G4-05、G4-06。
+- 事实：最新 `master` 中 G4-06 已合并并标记 DONE；G4-05 仍为 TODO。远端 `codex/g4-05-core-response` 相对 `master` 仅新增状态核对日志，没有核心事件处置后端实现、测试、RTM、自检或 Review 证据。当前后端只提供 `/healthz`、`/readyz` 和 `/api/v1/_internal/whoami`，前端使用的事件/任务接口尚不存在。
+- 影响：无法在干净环境执行真实前后端核心事件闭环、数据库状态与审计核对，也无法形成 G4-07 要求的集成/E2E 准出结论；不得以 Mock、模拟端口或组件测试冒充真实 E2E。
+- 解除条件：G4-05 在其唯一功能分支完成实现、自检、本地 `npm run quality`、A Review/Approve，并通过 PR Merge 进入 `master`；随后 C 从最新 `master` 更新 G4-07 分支并执行契约、集成、E2E、覆盖率、安全及阻断缺陷核验。
+- 状态：OPEN / BLOCKED_BY_G4-05。
+
 ## G4-03 前端骨架与 API Client 复核项（续）
 
 ### ISSUE-G4-03-002

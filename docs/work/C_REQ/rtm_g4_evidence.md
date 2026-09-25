@@ -17,7 +17,7 @@
 
 | Task | 需求/指标与设计挂接 | 实现与自检证据 | Review / Merge 证据 | 追踪结论 |
 | --- | --- | --- | --- | --- |
-| G4-05 | G2-FR-013（AC-01、03）；G2-FR-014（AC-01、02）；G2-FR-015（AC-01、02）；G2-FR-016（AC-01）；G2-FR-022（AC-01、02）；MOD-EVENT/TASK/PLATFORM；ARCH-02；DLD/DBD/API-TR-013/014/015/016/022；ENG-015/017 | `backend/src/event-workflow.mjs`、`server.mjs`、`event-persistence.mjs`、`idempotency.mjs`、`message-port.mjs`；`backend/migrations/002_event_workflow.*.sql`；`tests/backend/event-workflow.test.mjs`、`g4-05-integration.test.mjs`、`foundation.test.mjs`；`quality/selfcheck/G4-05.json`；`npm run quality` | 功能分支 `codex/g4-05-core-event-backend`；Gitee PR `!13`；唯一审核人 A 待 Review/Approve；未 Merge | DONE_CANDIDATE / PENDING_A_REVIEW；正常、无权、幂等冲突、消息失败/超时和人工降级已自动化覆盖。消息为 `SIMULATED_EVIDENCE`；AC-G2-FR-014-03、022-03 中 KN-011/012/006/007 的目标环境实测不在本任务冒充通过，交 G4-07/后续验收。 |
+| G4-05 | G2-FR-013（AC-01、03）；G2-FR-014（AC-01、02）；G2-FR-015（AC-01、02）；G2-FR-016（AC-01）；G2-FR-022（AC-01、02）；MOD-EVENT/TASK/PLATFORM；ARCH-02；DLD/DBD/API-TR-013/014/015/016/022；ENG-015/017 | `backend/src/database.mjs`、`event-workflow.mjs`、`server.mjs`、`event-persistence.mjs`、`idempotency.mjs`、`message-port.mjs`；`backend/migrations/002_event_workflow.*.sql`；`tests/backend/event-workflow.test.mjs`、`g4-05-integration.test.mjs`、`g4-05-recovery.test.mjs`、`foundation.test.mjs`；`quality/selfcheck/G4-05.json`；`npm run quality` | 功能分支 `codex/g4-05-core-event-backend`；Gitee PR `!13`；A 首轮 CHANGES_REQUIRED；`ISSUE-G4-05-001—003` 已由 B 整改，待 A 复验/Approve；未 Merge | DONE_CANDIDATE / PENDING_A_REREVIEW；冻结契约、数据库恢复、事务原子性、正常、无权、幂等冲突、消息失败/超时和人工降级均有自动化覆盖。消息为 `SIMULATED_EVIDENCE`；AC-G2-FR-014-03、022-03 中 KN-011/012/006/007 的目标环境实测不在本任务冒充通过，交 G4-07/后续验收。 |
 
 ## 维护规则
 

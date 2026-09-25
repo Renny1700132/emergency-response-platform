@@ -15,6 +15,7 @@
     "test": "npm run test:unit",
     "test:unit": "node --test tests/g4/*.test.mjs",
     "test:backend": "node --test tests/backend/*.test.mjs",
+    "test:g4-05:postgres": "node --test tests/backend/g4-05-postgres.integration.mjs",
     "test:backend:coverage": "c8 --all --include=backend/src/*.mjs --check-coverage --lines 70 --functions 70 --branches 70 --statements 70 node --test tests/backend/*.test.mjs",
     "test:migration:integration": "node backend/scripts/verify-migration.mjs",
     "test:coverage": "c8 --all --include=scripts/g4/lib/*.mjs --check-coverage --lines 70 --functions 70 --branches 70 --statements 70 node --test tests/g4/*.test.mjs",

@@ -3,6 +3,7 @@
 - 日期：2026-09-25
 - 执行身份：B（G4-05 主责）
 - 分支：`codex/g4-05-integration-remediation`
+- Gitee PR：`!14`（OPEN，等待 A/Admin Review）
 - 触发：`ISSUE-G4-07-002`、`ISSUE-G4-07-003`
 - 状态：`IMPLEMENTED / PENDING_A_REVIEW_AND_C_RETEST`
 

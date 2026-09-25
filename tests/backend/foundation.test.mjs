@@ -114,4 +114,34 @@ test('foundation migration has an auditable paired rollback and compose keeps cr
   assert.match(down, /DROP TABLE IF EXISTS em_idempotency_record/);
   assert.match(down, /DROP TABLE IF EXISTS em_audit_log/);
   assert.match(compose, /^\s*POSTGRES_PASSWORD:\s*\$\{POSTGRES_PASSWORD/m);
+  const workflowUp = await readFile(new URL('../../backend/migrations/002_event_workflow.up.sql', import.meta.url), 'utf8');
+  const workflowDown = await readFile(new URL('../../backend/migrations/002_event_workflow.down.sql', import.meta.url), 'utf8');
+  for (const table of ['em_plan_version', 'em_task_template', 'em_incident', 'em_verification_action', 'em_response_task',
+    'em_task_assignment_history', 'em_task_feedback', 'em_incident_closure', 'em_message_delivery']) {
+    assert.match(workflowUp, new RegExp(`CREATE TABLE IF NOT EXISTS ${table}`));
+    assert.match(workflowDown, new RegExp(`DROP TABLE IF EXISTS ${table}`));
+  }
+});
+
+test('database transaction commits success and rolls back failure', async () => {
+  const calls = [];
+  const client = {
+    async query(text, parameters = []) { calls.push([text, parameters]); return { rows: [], rowCount: 1 }; },
+    release() { calls.push(['RELEASE']); }
+  };
+  class TransactionPool {
+    async query() { return { rows: [] }; }
+    async connect() { calls.push(['CONNECT']); return client; }
+    async end() {}
+  }
+  const database = createDatabase({ databaseUrl: 'postgres://test' }, TransactionPool);
+  await database.transaction(async (tx) => tx.query('INSERT INTO sample(value) VALUES ($1)', ['ok']));
+  assert.deepEqual(calls.map(([name]) => name), ['CONNECT', 'BEGIN', 'INSERT INTO sample(value) VALUES ($1)', 'COMMIT', 'RELEASE']);
+
+  calls.length = 0;
+  await assert.rejects(() => database.transaction(async (tx) => {
+    await tx.query('INSERT INTO sample(value) VALUES ($1)', ['fail']);
+    throw new Error('injected failure');
+  }), /injected failure/);
+  assert.deepEqual(calls.map(([name]) => name), ['CONNECT', 'BEGIN', 'INSERT INTO sample(value) VALUES ($1)', 'ROLLBACK', 'RELEASE']);
 });

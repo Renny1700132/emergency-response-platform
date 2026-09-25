@@ -2,6 +2,7 @@ import { createDatabase } from './database.mjs';
 import { loadConfig } from './config.mjs';
 import { createServer } from './server.mjs';
 import { createMessagePort } from './message-port.mjs';
+import { createMiddlePlatformPort } from './middle-platform-port.mjs';
 
 export function createApplication({ environment = process.env, logger = console } = {}) {
   const config = loadConfig(environment);
@@ -9,7 +10,19 @@ export function createApplication({ environment = process.env, logger = console 
   const messagePort = config.simulatedIntegrationBaseUrl
     ? createMessagePort({ baseUrl: config.simulatedIntegrationBaseUrl, timeoutMs: config.requestTimeoutMs, scenario: config.simulatedMessageScenario })
     : null;
-  const server = createServer({ config, database, logger, messagePort });
+  const middlePlatformPort = config.middlePlatformBaseUrl
+    ? createMiddlePlatformPort({
+      baseUrl: config.middlePlatformBaseUrl,
+      identityPath: config.middlePlatformIdentityPath,
+      filePresignPath: config.middlePlatformFilePresignPath,
+      timeoutMs: config.requestTimeoutMs
+    })
+    : null;
+  const server = createServer({
+    config, database, logger, messagePort,
+    identityProvider: middlePlatformPort,
+    filePort: middlePlatformPort
+  });
   return Object.freeze({ config, database, server });
 }
 

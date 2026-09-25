@@ -19,6 +19,12 @@ async function post(server, path, body, headers = auth) {
   return { status: response.status, body: await response.json() };
 }
 
+async function get(server, path, headers = auth) {
+  const { port } = server.address();
+  const response = await fetch(`http://127.0.0.1:${port}${path}`, { headers });
+  return { status: response.status, body: await response.json() };
+}
+
 test('HTTP core incident path covers authorization, idempotency, tasks and closure', async (t) => {
   const config = loadConfig({ NODE_ENV: 'development', ALLOW_DEVELOPMENT_IDENTITY_HEADERS: 'true' });
   const planProvider = { async loadPublishedPlan() {
@@ -58,6 +64,70 @@ test('HTTP core incident path covers authorization, idempotency, tasks and closu
   assert.equal(completed.status, 200);
   const closed = await post(server, `/api/v1/incidents/${incidentId}/close`, { reason: 'safe', resourceVersion: 3, attributes: { reportRef: 'report-1' } });
   assert.equal(closed.body.data.status, 'CLOSED');
+});
+
+test('Bearer identity connects the real page routes without development headers', async (t) => {
+  const config = loadConfig({ NODE_ENV: 'development' });
+  const bearerHeaders = {
+    authorization: 'Bearer valid-platform-token',
+    'content-type': 'application/json',
+    'x-idempotency-key': 'bearer-idem-0001'
+  };
+  const calls = [];
+  const identityProvider = { async resolveBearer(token) {
+    calls.push(token);
+    if (token !== 'valid-platform-token') return null;
+    return {
+      actorId: 'commander', displayName: '值班指挥员', roles: ['emergency.read', 'emergency.write'],
+      permissions: ['task:create', 'task:acknowledge', 'task:feedback', 'task:complete', 'task:remind']
+    };
+  } };
+  const filePort = { async presignFile(token, body) {
+    assert.equal(token, 'valid-platform-token');
+    return { id: 'file-1', attributes: { fileId: 'file-1', uploadUrl: `https://upload.invalid/${encodeURIComponent(body.fileName)}` } };
+  } };
+  const planProvider = { async loadPublishedPlan() {
+    return { id: 'plan-v1', templates: [{ name: 'Evacuate', assigneeRef: 'commander', deadlineAt: '2026-09-25T11:00:00Z' }] };
+  } };
+  const messagePort = { async sendTask() { return { status: 'ACCEPTED', marker: 'SIMULATED_EVIDENCE' }; } };
+  const server = createServer({ config, logger: { info() {} }, identityProvider, filePort, planProvider, messagePort });
+  await new Promise((resolve) => server.listen(0, resolve));
+  t.after(() => server.close());
+
+  const context = await get(server, '/api/v1/platform/context', bearerHeaders);
+  assert.equal(context.status, 200);
+  assert.equal(context.body.data.userId, 'commander');
+  assert.ok(context.body.data.permissions.includes('task:create'));
+  assert.equal((await get(server, '/api/v1/incidents?page=1&size=50', bearerHeaders)).status, 200);
+  assert.equal((await get(server, '/api/v1/tasks?page=1&size=50', bearerHeaders)).status, 200);
+
+  const incident = await post(server, '/api/v1/incidents', {
+    incidentTypeCode: 'FIRE', title: 'Bearer incident', description: 'Observed', occurredAt: '2026-09-25T10:00:00Z'
+  }, bearerHeaders);
+  const incidentId = incident.body.data.id;
+  assert.equal((await get(server, `/api/v1/incidents/${incidentId}`, bearerHeaders)).body.data.id, incidentId);
+  await post(server, `/api/v1/incidents/${incidentId}/verify`, { decision: 'CONFIRMED', reason: 'confirmed', resourceVersion: 1 }, bearerHeaders);
+  await post(server, `/api/v1/incidents/${incidentId}/start-response`, { planVersionId: 'plan-v1', resourceVersion: 2 }, bearerHeaders);
+
+  const temporary = await post(server, '/api/v1/tasks', {
+    name: 'Temporary patrol', assigneeRef: 'commander', deadlineAt: '2026-09-25T12:00:00Z', description: 'Check exit'
+  }, bearerHeaders);
+  assert.equal(temporary.status, 200);
+  assert.equal(temporary.body.data.incidentId, incidentId);
+  const reminded = await post(server, `/api/v1/tasks/${temporary.body.data.id}/remind`, {
+    reason: 'Please report', resourceVersion: 1
+  }, bearerHeaders);
+  assert.equal(reminded.status, 200);
+  const listed = await get(server, '/api/v1/tasks?page=1&size=50', bearerHeaders);
+  assert.equal(listed.body.data.total, 2);
+
+  const presigned = await post(server, '/api/v1/platform/files/presign', {
+    fileName: 'photo.jpg', contentType: 'image/jpeg', size: 128
+  }, bearerHeaders);
+  assert.equal(presigned.status, 200);
+  assert.equal(presigned.body.data.attributes.fileId, 'file-1');
+  assert.ok(calls.length >= 1);
+  assert.equal((await get(server, '/api/v1/incidents', { authorization: 'Bearer invalid' })).status, 403);
 });
 
 test('persistence uses parameterized SQL and message port maps failure and timeout', async () => {

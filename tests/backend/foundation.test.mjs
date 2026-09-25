@@ -7,6 +7,7 @@ import { createDatabase } from '../../backend/src/database.mjs';
 import { requireRole, resolveIdentity } from '../../backend/src/identity.mjs';
 import { createApplication, startApplication } from '../../backend/src/main.mjs';
 import { createServer } from '../../backend/src/server.mjs';
+import { createMiddlePlatformPort } from '../../backend/src/middle-platform-port.mjs';
 
 async function request(server, path, headers = {}) {
   const address = server.address();
@@ -35,12 +36,12 @@ test('audit redacts credentials and keeps traceability fields', async () => {
 
 test('identity and database adapters retain their infrastructure boundary', async () => {
   const config = loadConfig({ NODE_ENV: 'development', ALLOW_DEVELOPMENT_IDENTITY_HEADERS: 'true' });
-  const identity = resolveIdentity({ headers: { 'x-actor-id': 'user-1', 'x-actor-roles': 'emergency.read, emergency.write' } }, config);
+  const identity = await resolveIdentity({ headers: { 'x-actor-id': 'user-1', 'x-actor-roles': 'emergency.read, emergency.write' } }, config);
   assert.equal(identity.actorId, 'user-1');
   assert.equal(requireRole(identity, 'emergency.read'), true);
   assert.equal(requireRole(identity, 'missing'), false);
-  assert.equal(resolveIdentity({ headers: {} }, config), null);
-  assert.equal(resolveIdentity({ headers: { 'x-actor-id': 'user-1' } }, { allowDevelopmentIdentityHeaders: false }), null);
+  assert.equal(await resolveIdentity({ headers: {} }, config), null);
+  assert.equal(await resolveIdentity({ headers: { 'x-actor-id': 'user-1' } }, { allowDevelopmentIdentityHeaders: false }), null);
   assert.equal(createDatabase({ databaseUrl: null }), null);
 
   const calls = [];
@@ -54,6 +55,29 @@ test('identity and database adapters retain their infrastructure boundary', asyn
   await database.healthcheck();
   await database.close();
   assert.deepEqual(calls.map(([name]) => name), ['create', 'query', 'query', 'end']);
+});
+
+test('middle-platform bearer adapter validates identity and forwards file requests', async () => {
+  const calls = [];
+  const port = createMiddlePlatformPort({
+    baseUrl: 'https://middle.invalid/root/', timeoutMs: 50,
+    fetcher: async (url, options) => {
+      calls.push({ url: String(url), options });
+      if (String(url).endsWith('/api/v1/platform/context')) {
+        return new Response(JSON.stringify({ data: {
+          userId: 'user-2', displayName: 'User Two', roles: ['emergency.read'], permissions: ['task:feedback']
+        } }), { status: 200, headers: { 'content-type': 'application/json' } });
+      }
+      return new Response(JSON.stringify({ data: { id: 'file-2', attributes: { fileId: 'file-2', uploadUrl: 'https://upload.invalid/file-2' } } }), { status: 200, headers: { 'content-type': 'application/json' } });
+    }
+  });
+  const identity = await port.resolveBearer('secret-token', { traceId: 'trace-2' });
+  assert.equal(identity.actorId, 'user-2');
+  assert.ok(identity.permissions.includes('task:feedback'));
+  const file = await port.presignFile('secret-token', { fileName: 'a.jpg' }, { traceId: 'trace-3' });
+  assert.equal(file.attributes.fileId, 'file-2');
+  assert.equal(calls[0].options.headers.authorization, 'Bearer secret-token');
+  assert.equal(calls[1].options.method, 'POST');
 });
 
 test('health, readiness and minimal authorization return controlled responses', async (t) => {

@@ -1405,7 +1405,7 @@
 - 最小修复：保持冻结 OpenAPI 不变，使运行时输入、状态映射、乐观锁和响应 envelope 与契约一致；补充契约级正/负例，覆盖 `CONFIRMED`、缺失/冲突 `resourceVersion`、响应必填字段和状态码。
 - 关闭条件：自动测试证明冻结 Client 请求可正常完成闭环，契约错误输入被拒绝，完整 `npm run quality` 通过；A 复审通过。
 - 主责人：B；唯一复核人：A。
-- 状态：OPEN / PENDING_A_REREVIEW。
+- 状态：CLOSED / VERIFIED_BY_A。
 
 #### B 整改响应（2026-09-25）
 
@@ -1413,6 +1413,12 @@
 - 核实、启动响应、任务确认/反馈/完成与事件关闭均校验 `resourceVersion`，版本冲突返回 409；契约级测试覆盖缺失版本、旧版本、响应必填字段和状态码。
 - 修复文件：`backend/src/server.mjs`、`backend/src/event-workflow.mjs`；验证：`tests/backend/g4-05-integration.test.mjs`。
 - 状态保持待 A 独立复验，B 不自行关闭。
+
+#### A 独立复验（2026-09-25，候选 `413565d`）
+
+- 冻结外部值 `CONFIRMED`、必填 `resourceVersion`、409 版本冲突、完整响应 envelope 与创建 200 均经实现核对及契约正负例验证通过；冻结 OpenAPI 未修改。
+- 完整 `npm run quality` 通过，复验证据见 `logs/reviews/2026-09-25_G4-05-A-rereview.md`。
+- 状态：CLOSED / VERIFIED_BY_A。
 
 ### ISSUE-G4-05-002
 
@@ -1426,7 +1432,7 @@
 - 最小修复：命令处理按需从正式数据库加载事件/任务及版本，或建立等价的可恢复仓储边界；增加“创建后重建服务实例仍能核实/启动/反馈/完成/关闭”的数据库集成测试。
 - 关闭条件：重启恢复测试通过，不依赖 localStorage/Mock/进程内 Map 作为正式事实源；A 复审通过。
 - 主责人：B；唯一复核人：A。
-- 状态：OPEN / PENDING_A_REREVIEW。
+- 状态：CLOSED / VERIFIED_BY_A。
 
 #### B 整改响应（2026-09-25）
 
@@ -1434,6 +1440,12 @@
 - 新增服务实例重建测试，覆盖创建后分别重建工作流实例继续核实、启动、确认、反馈、完成和关闭。
 - 修复文件：`backend/src/event-persistence.mjs`、`backend/src/event-workflow.mjs`；验证：`tests/backend/g4-05-recovery.test.mjs`。
 - 状态保持待 A 独立复验，B 不自行关闭。
+
+#### A 独立复验（2026-09-25，候选 `413565d`）
+
+- A 在隔离 PostgreSQL 实例实际应用两批迁移并执行 2/2 集成测试；创建后重建工作流实例仍可继续完整闭环，正式事实从数据库恢复。
+- 完整 `npm run quality` 通过，复验证据见 `logs/reviews/2026-09-25_G4-05-A-rereview.md`。
+- 状态：CLOSED / VERIFIED_BY_A。
 
 ### ISSUE-G4-05-003
 
@@ -1447,7 +1459,7 @@
 - 最小修复：以数据库事务包裹业务事实、状态历史、Outbox 和必要审计摘要；外部消息在提交后由持久 Outbox/任务派发，不在业务提交前同步发送；增加中途失败回滚、重复请求和恢复测试。
 - 关闭条件：故障注入证明任一步失败时业务事实/Outbox/审计无不一致，提交后消息失败保留可恢复记录；A 复审通过。
 - 主责人：B；唯一复核人：A。
-- 状态：OPEN / PENDING_A_REREVIEW。
+- 状态：CLOSED / VERIFIED_BY_A。
 
 #### B 整改响应（2026-09-25）
 
@@ -1456,6 +1468,12 @@
 - 新增 Outbox/审计故障注入回滚、提交后消息失败与事务提交/回滚顺序测试。
 - 修复文件：`backend/src/database.mjs`、`backend/src/event-persistence.mjs`、`backend/src/event-workflow.mjs`；验证：`tests/backend/g4-05-recovery.test.mjs`、`tests/backend/foundation.test.mjs`。
 - 状态保持待 A 独立复验，B 不自行关闭。
+
+#### A 独立复验（2026-09-25，候选 `413565d`）
+
+- 显式事务、提交后消息派发与可恢复 Outbox 已核对；PostgreSQL 故障注入证明审计失败时业务事实及 Outbox 同步回滚。
+- 完整 `npm run quality` 通过，复验证据见 `logs/reviews/2026-09-25_G4-05-A-rereview.md`。
+- 状态：CLOSED / VERIFIED_BY_A。
 
 ### ISSUE-G4-03-003
 

@@ -1346,6 +1346,36 @@
 - 解除条件：G4-05 在其唯一功能分支完成实现、自检、本地 `npm run quality`、A Review/Approve，并通过 PR Merge 进入 `master`；随后 C 从最新 `master` 更新 G4-07 分支并执行契约、集成、E2E、覆盖率、安全及阻断缺陷核验。
 - 状态：OPEN / BLOCKED_BY_G4-05。
 
+#### C 解除前置阻断核验（2026-09-25）
+
+- G4-05 PR `!13` 已合并为 `70b5a9f`，G4-05 与 G4-06 在最新 `master` 均为 DONE；`ISSUE-G4-07-001` 关闭为 `CLOSED / PREREQUISITE_RESOLVED`。
+- 合并后的独立 `npm run quality` exit 0：frontend 27/27，G4 11/11，backend 14/14，后端覆盖率 87.38/85.76/80.95/87.38%，OpenAPI 0 error/14 个既有 warning，漏洞 0，selfcheck PASS。
+- 进入真实前后端接线预检后发现新的阻断项 `ISSUE-G4-07-002/003`，G4-07 保持 DOING，不得给出准出 PASS。
+
+### ISSUE-G4-07-002
+
+- 提出人：C（G4-07 主责）。
+- 时间：2026-09-25。
+- 严重级别：MAJOR / BLOCKING_TO_G4-07_E2E_PASS。
+- 文件与位置：`frontend/src/features/response/workflow.ts`；`frontend/src/views/IncidentFlowView.vue`；`frontend/src/views/TaskFlowView.vue`；`backend/src/server.mjs`；冻结 OpenAPI 的 `/api/v1/incidents`、`/api/v1/tasks` 及相关操作。
+- 问题：正式前端页面加载首先调用 `GET /api/v1/incidents` 与 `GET /api/v1/tasks`，并提供临时任务、催办和文件预签名交互；合并后的正式后端没有这些 GET 路由，也没有临时任务、催办或文件预签名路由，未匹配路由统一返回 404。现有 G4-05 后端测试只覆盖 POST 核心命令，G4-06 页面测试使用 mock client，因此两边各自门禁通过但真实页面无法加载核心数据。
+- 影响：无法从正式 Web/H5 页面执行“加载 → 上报/核实/启动 → 任务接收/反馈/完成”的真实前后端核心闭环；不满足 G4-07 干净环境 E2E 和阻断缺陷 0。
+- 主责建议：B 补齐冻结契约所需的后端查询/必要命令路由与持久化读取，A 配合核对前端实际范围；不得在 C 的 G4-07 测试任务中静默代改两名主责的正式实现。
+- 关闭条件：真实后端对前端 Sprint 1 必需路由返回契约一致结果；新增非 mock 前后端集成/E2E 覆盖页面初始加载和核心写后刷新；B/C 复验通过。
+- 状态：OPEN / CHANGES_REQUIRED。
+
+### ISSUE-G4-07-003
+
+- 提出人：C（G4-07 主责）。
+- 时间：2026-09-25。
+- 严重级别：MAJOR / BLOCKING_TO_G4-07_E2E_PASS。
+- 文件与位置：`frontend/src/main.ts`、`frontend/src/shared/http/api-client.ts`；`backend/src/identity.mjs`、`backend/src/config.mjs`。
+- 问题：正式前端只发送 `Authorization: Bearer <token>`；正式后端身份解析只在 development 且显式启用时读取 `X-Actor-Id/X-Actor-Roles`，对 Bearer token 没有解析路径，production 下始终返回无身份。现有测试分别 mock token/client 或注入开发身份头，没有验证双方真实握手。
+- 影响：即使补齐业务路由，默认正式前后端接线仍会在写操作返回 403，不能形成授权状态下的真实 E2E。
+- 主责建议：B 按冻结身份/中台边界提供受控 Bearer 身份适配，A 核对前端 token 传递；若课程环境采用明确的开发适配层，必须隔离配置、禁止生产启用并由端到端测试证明，不得把测试注入头冒充正式认证。
+- 关闭条件：前后端使用同一受控认证契约完成授权/无权两条 E2E；生产配置 fail-closed，开发适配层显式且不泄漏到生产。
+- 状态：OPEN / CHANGES_REQUIRED。
+
 ## G4-03 前端骨架与 API Client 复核项（续）
 
 ### ISSUE-G4-03-002

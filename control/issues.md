@@ -1415,3 +1415,18 @@
 - 根/frontend/lockfile/README 的 Node 范围已一致为 `^24.14.0 || >=26.0.0`，属于 Vitest 5.0.1 支持范围；A 记录最低版本 24.14.0 完整门禁，本机 Node 24.21.0 复跑完整门禁通过。
 - 关闭证据：`logs/reviews/2026-09-23_G4-03-C-rereview.md`；整改提交 `34435c4`；复验头提交 `c360d59`。
 - 状态：CLOSED / VERIFIED_BY_C。
+
+## G4-05 核心事件处置后端闭环复核项
+
+### ISSUE-G4-05-001
+
+- 提出人：A。
+- 时间：2026-09-25。
+- 严重级别：BLOCKER / NOT_READY_FOR_REVIEW。
+- 文件与位置：`codex/g4-05-core-response` 全分支；`tasks.md` G4-05；`logs/prompts/2026-09-25-B.md`。
+- 问题：候选分支相对 `origin/master@9c73112` 只有状态核对与回填日志，没有 G4-05 实现、测试、RTM、自检、质量门禁证据或 `tasks.md = DONE` 候选，且未创建 G4-05 单 PR。
+- 影响：无代码/测试对象可审核，不能验证核心事件闭环、权限、幂等、异常、数据库/审计或覆盖率；不得进入 APPROVE/Merge。
+- 关闭条件：B 在同一 `codex/g4-05-core-response` 分支补齐功能、测试、RTM、日志、自检、`tasks.md = DONE` 和完整本地质量门禁，创建唯一 G4-05 PR；A 对一致 PR head 独立复验通过。
+- 主责人：B；复核人：A。
+- 证据：`logs/reviews/2026-09-25_G4-05-A-review.md`。
+- 状态：OPEN / NOT_READY_FOR_REVIEW。

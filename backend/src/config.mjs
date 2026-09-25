@@ -20,6 +20,8 @@ export function loadConfig(environment = process.env) {
     databaseUrl: environment.DATABASE_URL ?? null,
     middlePlatformBaseUrl: environment.MIDDLE_PLATFORM_BASE_URL ?? null,
     requestTimeoutMs: Number(environment.REQUEST_TIMEOUT_MS ?? 3000),
+    simulatedIntegrationBaseUrl: environment.SIMULATED_INTEGRATION_BASE_URL ?? null,
+    simulatedMessageScenario: environment.SIMULATED_MESSAGE_SCENARIO ?? 'normal',
     allowDevelopmentIdentityHeaders: mode === 'development' && environment.ALLOW_DEVELOPMENT_IDENTITY_HEADERS === 'true'
   });
 }

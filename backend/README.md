@@ -43,6 +43,31 @@ npm run test:migration:integration
 
 该命令验证 `up → down → up` 以及三个公共表的存在性；不写入或打印连接凭据。
 
+## G4-05 核心事件处置闭环
+
+G4-05 在同一后端进程内实现事件创建、人工核实、已发布预案启动、任务确认/反馈/完成和事件关闭。写接口沿用冻结 OpenAPI 的路径与请求结构，要求 `X-Idempotency-Key`；同一作用域内同键同请求返回首次结果，同键异请求返回 `409 IDEMPOTENCY_CONFLICT`。开发身份头仍只允许在显式启用的 development 模式使用。
+
+核心接口：
+
+- `POST /api/v1/incidents`
+- `POST /api/v1/incidents/{incidentId}/verify`
+- `POST /api/v1/incidents/{incidentId}/start-response`
+- `POST /api/v1/tasks/{taskId}/acknowledge`
+- `POST /api/v1/tasks/{taskId}/feedback`
+- `POST /api/v1/tasks/{taskId}/complete`
+- `POST /api/v1/incidents/{incidentId}/close`
+
+迁移 `002_event_workflow` 使用冻结 DBD 的 `em_*` 命名，保存事件、核实动作、确定的预案版本、任务、反馈与附件引用、关闭材料、消息投递记录；公共 `em_idempotency_record`、`em_outbox_event` 和 `em_audit_log` 提供幂等、派生事件和审计证据。所有 SQL 值均通过参数传递。
+
+设置 `SIMULATED_INTEGRATION_BASE_URL` 后，任务通知调用 G4-04 的 `EXT-MESSAGE` 课程模拟端口。失败或超时保留业务任务并标记 `MANUAL_REVIEW`，不自动重放控制指令。该结果仅为 `SIMULATED_EVIDENCE`，不代表真实消息平台、现场网络、并发或到达率验收已通过。
+
+```powershell
+npm run test:backend:coverage
+npm run quality
+```
+
+自动化测试覆盖正常、无权、幂等冲突、模拟消息失败/超时、状态前置、参数化持久化和成对迁移。KN-011、KN-012、KN-006、KN-007 仍须在目标验收环境由后续集成任务形成实测证据。
+
 ## 私有化容器部署
 
 在部署环境的受控密钥设施中提供 `POSTGRES_PASSWORD` 和甲方提供的 `MIDDLE_PLATFORM_BASE_URL` 后运行：

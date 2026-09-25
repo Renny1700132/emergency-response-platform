@@ -1,11 +1,15 @@
 import { createDatabase } from './database.mjs';
 import { loadConfig } from './config.mjs';
 import { createServer } from './server.mjs';
+import { createMessagePort } from './message-port.mjs';
 
 export function createApplication({ environment = process.env, logger = console } = {}) {
   const config = loadConfig(environment);
   const database = createDatabase(config);
-  const server = createServer({ config, database, logger });
+  const messagePort = config.simulatedIntegrationBaseUrl
+    ? createMessagePort({ baseUrl: config.simulatedIntegrationBaseUrl, timeoutMs: config.requestTimeoutMs, scenario: config.simulatedMessageScenario })
+    : null;
+  const server = createServer({ config, database, logger, messagePort });
   return Object.freeze({ config, database, server });
 }
 

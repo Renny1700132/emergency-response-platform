@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS em_message_delivery;
+DROP TABLE IF EXISTS em_incident_closure;
+DROP TABLE IF EXISTS em_task_feedback;
+DROP TABLE IF EXISTS em_task_assignment_history;
+DROP TABLE IF EXISTS em_response_task;
+DROP TABLE IF EXISTS em_verification_action;
+DROP TABLE IF EXISTS em_incident;
+DROP TABLE IF EXISTS em_task_template;
+DROP TABLE IF EXISTS em_plan_version;

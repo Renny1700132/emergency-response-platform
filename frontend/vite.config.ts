@@ -8,11 +8,11 @@ export default defineConfig({
   server: { port: 5174 },
   build: { outDir: 'dist', sourcemap: true },
   test: {
-    environment: 'node',
+    environment: 'jsdom',
     include: ['tests/**/*.test.ts'],
     coverage: {
       provider: 'v8',
-      include: ['src/shared/**/*.ts'],
+      include: ['src/shared/**/*.ts', 'src/features/**/*.ts'],
       exclude: ['src/**/*.d.ts'],
       reporter: ['text', 'json-summary'],
       thresholds: { lines: 70, functions: 70, branches: 70, statements: 70 },

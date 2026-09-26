@@ -1404,7 +1404,9 @@
 - 关闭条件：上述文件在 PR !15 内状态与数字一致，机械检查通过，并由 B 独立复验关闭。
 - 主责人：C；复核人：B。
 - 证据：`logs/reviews/2026-09-26_G4-07-B-review.md`。
-- 状态：OPEN / CHANGES_REQUIRED。
+- 复验（2026-09-26，B）：C 的整改提交 `d381ba4` 及回填 `d974bb6` 仅修改 RTM、准出报告和 C 日志；G4-05/G4-06 已合并状态、G4-07 PR `!15`/首轮审核 HEAD/待复验状态及秘密扫描 56 files 已一致回填。B 在 PR 当前 HEAD `d974bb609748d185643cfc5fde1668767575b8ff` 执行 `git diff --check`、过期状态定向检索、`npm run security:secrets`（56 files PASS）和 `npm run selfcheck`（G4-01—07 全部 PASS），未发现新阻断项。
+- 关闭证据：`logs/reviews/2026-09-26_G4-07-B-rereview.md`。
+- 状态：CLOSED / VERIFIED_BY_B / ACCEPTED_FOR_APPROVAL。
 
 ## G4-03 前端骨架与 API Client 复核项（续）
 

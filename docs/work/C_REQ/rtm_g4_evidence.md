@@ -19,7 +19,7 @@
 
 | Task | 需求/指标与设计挂接 | 实现与自检证据 | Review / Merge 证据 | 追踪结论 |
 | --- | --- | --- | --- | --- |
-| G4-07 | G4-05/G4-06 Sprint 1 集成准出；G2-FR-013/014/015/016/021/022；KN-045；ENG-015/017。KN-006/007/011/012 目标环境实测不在本任务冒充完成，保留至 G4-10/验收 | `frontend/tests/real-stack-e2e.test.ts`：真实 Vue 页面 + 正式 API Client + Bearer + 实际后端 HTTP Server，完成事件上报/核实/启动、任务接收/反馈/完成、事件关闭及 403；最终 `npm run quality`：frontend 28/28，覆盖率 95.41/77.55/95.12/100%，G4 11/11，backend 16/16，后端覆盖率 85.88/78.24/80.48/85.88%，OpenAPI 0 error/14 warning，秘密扫描 56 files PASS，漏洞 0；PostgreSQL 18 专项 2/2 PASS | Gitee PR `!15`；B 首轮审核 HEAD `758db48`，结论 `CHANGES_REQUIRED`；审核记录 `logs/reviews/2026-09-26_G4-07-B-review.md`，审核证据提交 `6d58c5a`、回填 `c3480d0`；`ISSUE-G4-07-004` OPEN，待 B 复验 | DONE CANDIDATE / CHANGES_REQUIRED / PENDING_B_REREVIEW；外部身份、文件、消息仍为 SIMULATED_EVIDENCE，不声明甲方真实环境或性能验收完成。 |
+| G4-07 | G4-05/G4-06 Sprint 1 集成准出；G2-FR-013/014/015/016/021/022；KN-045；ENG-015/017。KN-006/007/011/012 目标环境实测不在本任务冒充完成，保留至 G4-10/验收 | `frontend/tests/real-stack-e2e.test.ts`：真实 Vue 页面 + 正式 API Client + Bearer + 实际后端 HTTP Server，完成事件上报/核实/启动、任务接收/反馈/完成、事件关闭及 403；最终 `npm run quality`：frontend 28/28，覆盖率 95.41/77.55/95.12/100%，G4 11/11，backend 16/16，后端覆盖率 85.88/78.24/80.48/85.88%，OpenAPI 0 error/14 warning，秘密扫描 56 files PASS，漏洞 0；PostgreSQL 18 专项 2/2 PASS | Gitee PR `!15`；B 首轮审核 HEAD `758db48` 为 `CHANGES_REQUIRED`；C 整改/回填 `d381ba4`、`d974bb6`；B 在 HEAD `d974bb6` 复验通过并关闭 `ISSUE-G4-07-004`，记录 `logs/reviews/2026-09-26_G4-07-B-rereview.md` | DONE CANDIDATE / B REREVIEW PASS / ACCEPTED_FOR_APPROVAL；待 B 在平台 APPROVE 并由 PR Merge 进入 `master`；外部身份、文件、消息仍为 SIMULATED_EVIDENCE，不声明甲方真实环境或性能验收完成。 |
 
 ## 维护规则
 

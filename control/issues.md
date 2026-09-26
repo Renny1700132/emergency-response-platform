@@ -1392,6 +1392,20 @@
 - PostgreSQL 18 补充证明跨服务实例事实恢复、分页读模型、完整关闭、Outbox/审计原子提交和注入失败回滚；PostgreSQL 15 的受控证据仍以 G4-05 与 A 审核记录为准。
 - G4-07 无新增阻断缺陷，维持 `DONE CANDIDATE / PENDING_B_REVIEW`。
 
+### ISSUE-G4-07-004
+
+- 提出人：B（G4-07 唯一审核人）。
+- 时间：2026-09-26。
+- 严重级别：MAJOR / BLOCKING_TO_G4-07_APPROVE。
+- 文件与位置：`docs/work/C_REQ/rtm_g4_evidence.md` 的 G4-05—07 行；`logs/prompts/2026-09-26-C.md`；`evidence/g4/G4-07/sprint1-gate-report.md`。
+- 问题：G4-05 行仍称 PR !14 OPEN、待 G4-07 复验，G4-06 行仍称 PR !10 待 Approve/Merge；但两项已合并且 G4-07 已执行。G4-07 行和 C 日志未回填当前唯一 PR !15 及审核 HEAD `758db48`。准出报告写秘密扫描 55 files，与最终门禁和 C 最终日志的 56 files 不一致。
+- 影响：代码、E2E、覆盖率和 PostgreSQL 结果本身已通过 B 独立复现，但 PR/RTM/日志/门禁证据无法形成一致、可审计的单 PR 追踪链，不满足 G4-07 完成条件与第四关治理硬门禁，暂不得 APPROVE。
+- 最小修复：由 C 在 PR !15 原分支同步 G4-05/G4-06 已合并状态；为 G4-07 回填 PR !15、审核 HEAD 与 `CHANGES_REQUIRED / PENDING_B_REREVIEW`；将准出报告秘密扫描数修正为最终 56。不得改动业务实现或另建收口 PR。
+- 关闭条件：上述文件在 PR !15 内状态与数字一致，机械检查通过，并由 B 独立复验关闭。
+- 主责人：C；复核人：B。
+- 证据：`logs/reviews/2026-09-26_G4-07-B-review.md`。
+- 状态：OPEN / CHANGES_REQUIRED。
+
 ## G4-03 前端骨架与 API Client 复核项（续）
 
 ### ISSUE-G4-03-002

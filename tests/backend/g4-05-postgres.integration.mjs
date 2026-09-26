@@ -21,6 +21,12 @@ async function post(server, path, body, key) {
   return { status: response.status, body: await response.json() };
 }
 
+async function get(server, path) {
+  const { port } = server.address();
+  const response = await fetch(`http://127.0.0.1:${port}${path}`, { headers: auth });
+  return { status: response.status, body: await response.json() };
+}
+
 async function withServer(database, action, messagePort = { async sendTask() { return { status: 'ACCEPTED', marker: 'SIMULATED_EVIDENCE' }; } }) {
   const config = loadConfig({ NODE_ENV: 'development', ALLOW_DEVELOPMENT_IDENTITY_HEADERS: 'true' });
   const server = createServer({ config, database, logger: { info() {} }, messagePort });
@@ -51,6 +57,30 @@ test('PostgreSQL remains the fact source across service restarts and commits dom
   }, 'pg-start'));
   assert.equal(started.status, 200);
   const taskId = started.body.data.tasks[0].id;
+  const readModels = await withServer(database, async (server) => ({
+    incidents: await get(server, '/api/v1/incidents?page=1&size=50'),
+    incident: await get(server, `/api/v1/incidents/${incidentId}`),
+    tasks: await get(server, '/api/v1/tasks?page=1&size=50')
+  }));
+  assert.equal(readModels.incidents.body.data.total, 1);
+  assert.equal(readModels.incident.body.data.id, incidentId);
+  assert.equal(readModels.tasks.body.data.total, 1);
+
+  const temporary = await withServer(database, (server) => post(server, '/api/v1/tasks', {
+    name: 'Temporary patrol', assigneeRef: 'commander', deadlineAt: '2026-09-25T12:00:00Z'
+  }, 'pg-temporary'));
+  assert.equal(temporary.status, 200);
+  assert.equal(temporary.body.data.incidentId, incidentId);
+  const temporaryTaskId = temporary.body.data.id;
+  assert.equal((await withServer(database, (server) => post(server, `/api/v1/tasks/${temporaryTaskId}/remind`, {
+    reason: 'Please report', resourceVersion: 1
+  }, 'pg-remind'))).status, 200);
+  assert.equal((await withServer(database, (server) => post(server, `/api/v1/tasks/${temporaryTaskId}/acknowledge`, {
+    reason: 'received', resourceVersion: 1
+  }, 'pg-temp-ack'))).status, 200);
+  assert.equal((await withServer(database, (server) => post(server, `/api/v1/tasks/${temporaryTaskId}/complete`, {
+    reason: 'done', resourceVersion: 2
+  }, 'pg-temp-complete'))).status, 200);
 
   const acknowledged = await withServer(database, (server) => post(server, `/api/v1/tasks/${taskId}/acknowledge`, {
     reason: 'received', resourceVersion: 1

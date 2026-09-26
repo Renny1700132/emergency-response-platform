@@ -18,6 +18,28 @@ export function createEventPersistence(database) {
       );
       return result.rows[0] ? { ...result.rows[0], version: Number(result.rows[0].version), timeline: [] } : null;
     },
+    async listIncidents({ page, size }) {
+      const offset = (page - 1) * size;
+      const [items, count] = await Promise.all([
+        database.query(
+          `SELECT id, incident_no AS "incidentNo", incident_type_code AS "incidentTypeCode", title, description,
+                  source_system AS "sourceSystem", source_generated_at AS "sourceGeneratedAt", received_at AS "receivedAt",
+                  recorded_at AS "recordedAt", created_by AS "createdBy", status, occurred_at AS "occurredAt",
+                  plan_version_id AS "planVersionId", closure, version, created_at AS "createdAt", updated_at AS "updatedAt"
+             FROM em_incident ORDER BY updated_at DESC, id LIMIT $1 OFFSET $2`,
+          [size, offset]
+        ),
+        database.query('SELECT count(*)::bigint AS total FROM em_incident')
+      ]);
+      return { items: items.rows.map((item) => ({ ...item, version: Number(item.version) })), total: Number(count.rows[0]?.total ?? 0) };
+    },
+    async findRespondingIncidents(limit = 2) {
+      const result = await database.query(
+        `SELECT id FROM em_incident WHERE status='RESPONDING' ORDER BY updated_at DESC, id LIMIT $1`,
+        [limit]
+      );
+      return result.rows;
+    },
     async loadTask(taskId) {
       const result = await database.query(
         `SELECT id, incident_id AS "incidentId", name, assignee_ref AS "assigneeRef", deadline_at AS "deadlineAt",
@@ -33,6 +55,19 @@ export function createEventPersistence(database) {
         [taskId]
       );
       return { ...result.rows[0], version: Number(result.rows[0].version), feedback: feedback.rows };
+    },
+    async listTasks({ page, size }) {
+      const offset = (page - 1) * size;
+      const [items, count] = await Promise.all([
+        database.query(
+          `SELECT id, incident_id AS "incidentId", name, assignee_ref AS "assigneeRef", deadline_at AS "deadlineAt",
+                  status, delivery_status AS "deliveryStatus", delivery_error AS "deliveryError", version
+             FROM em_response_task ORDER BY deadline_at, id LIMIT $1 OFFSET $2`,
+          [size, offset]
+        ),
+        database.query('SELECT count(*)::bigint AS total FROM em_response_task')
+      ]);
+      return { items: items.rows.map((item) => ({ ...item, version: Number(item.version) })), total: Number(count.rows[0]?.total ?? 0) };
     },
     async loadTasksByIncident(incidentId) {
       const result = await database.query(

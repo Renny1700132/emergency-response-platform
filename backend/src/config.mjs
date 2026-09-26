@@ -19,6 +19,8 @@ export function loadConfig(environment = process.env) {
     port,
     databaseUrl: environment.DATABASE_URL ?? null,
     middlePlatformBaseUrl: environment.MIDDLE_PLATFORM_BASE_URL ?? null,
+    middlePlatformIdentityPath: environment.MIDDLE_PLATFORM_IDENTITY_PATH ?? '/api/v1/platform/context',
+    middlePlatformFilePresignPath: environment.MIDDLE_PLATFORM_FILE_PRESIGN_PATH ?? '/api/v1/platform/files/presign',
     requestTimeoutMs: Number(environment.REQUEST_TIMEOUT_MS ?? 3000),
     simulatedIntegrationBaseUrl: environment.SIMULATED_INTEGRATION_BASE_URL ?? null,
     simulatedMessageScenario: environment.SIMULATED_MESSAGE_SCENARIO ?? 'normal',

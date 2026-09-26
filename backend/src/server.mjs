@@ -16,13 +16,29 @@ function success(data, traceId) {
 function failure(error, traceId) {
   return { code: error.code ?? 'RULE_422', message: error.message, traceId, timestamp: new Date().toISOString(), retryable: false };
 }
+function bearerToken(request) {
+  const match = /^Bearer\s+(.+)$/i.exec(String(request.headers.authorization ?? '').trim());
+  return match?.[1]?.trim() || null;
+}
+function pagination(request) {
+  const url = new URL(request.url, 'http://localhost');
+  const page = Number(url.searchParams.get('page') ?? 1);
+  const size = Number(url.searchParams.get('size') ?? 50);
+  if (!Number.isInteger(page) || page < 1 || !Number.isInteger(size) || size < 1 || size > 200) {
+    throw Object.assign(new Error('page and size are invalid'), { code: 'BAD_REQUEST' });
+  }
+  return { page, size };
+}
 async function readJson(request) {
   let text = '';
   for await (const part of request) text += part;
   try { return JSON.parse(text || '{}'); } catch { throw Object.assign(new Error('invalid JSON'), { code: 'BAD_JSON' }); }
 }
 
-export function createServer({ config, database = null, logger = console, messagePort = null, planProvider = null }) {
+export function createServer({
+  config, database = null, logger = console, messagePort = null, planProvider = null,
+  identityProvider = null, filePort = null
+}) {
   const audit = createAuditSink({ logger, database });
   const persistence = createEventPersistence(database);
   const idempotency = createIdempotencyGuard(database);
@@ -48,16 +64,6 @@ export function createServer({ config, database = null, logger = console, messag
     const traceId = request.headers['x-trace-id'] ?? randomUUID();
     response.setHeader('x-trace-id', traceId);
     const path = new URL(request.url, 'http://localhost').pathname;
-    const identity = resolveIdentity(request, config);
-    const requireWrite = async () => {
-      if (!identity || !requireRole(identity, 'emergency.write')) {
-        await audit.record(createAuditRecord({ traceId, actorId: identity?.actorId, action: 'event.write', outcome: 'denied' }));
-        sendJson(response, 403, failure(Object.assign(new Error('Authorization is required'), { code: 'AUTH_FORBIDDEN' }), traceId));
-        return false;
-      }
-      return true;
-    };
-    const runCommand = async (scope, body, action) => idempotency.run(scope, request.headers['x-idempotency-key'], body, action);
     if (request.method === 'GET' && path === '/healthz') {
       return sendJson(response, 200, { status: 'ok', service: 'emergency-backend', traceId });
     }
@@ -70,16 +76,49 @@ export function createServer({ config, database = null, logger = console, messag
         return sendJson(response, 503, { status: 'not-ready', reason: 'database-unavailable', traceId });
       }
     }
-    if (request.method === 'GET' && path === '/api/v1/_internal/whoami') {
-      const identity = resolveIdentity(request, config);
-      if (!identity || !requireRole(identity, 'emergency.read')) {
-        await audit.record(createAuditRecord({ traceId, actorId: identity?.actorId, action: 'identity.read', outcome: 'denied' }));
-        return sendJson(response, 403, failure(Object.assign(new Error('Authorization is required'), { code: 'AUTH_FORBIDDEN' }), traceId));
-      }
-      await audit.record(createAuditRecord({ traceId, actorId: identity.actorId, action: 'identity.read', outcome: 'allowed' }));
-      return sendJson(response, 200, { actorId: identity.actorId, roles: identity.roles, traceId });
-    }
     try {
+      const identity = await resolveIdentity(request, config, identityProvider, { traceId });
+      const requireAccess = async (role, action) => {
+        if (!identity || !requireRole(identity, role)) {
+          await audit.record(createAuditRecord({ traceId, actorId: identity?.actorId, action, outcome: 'denied' }));
+          sendJson(response, 403, failure(Object.assign(new Error('Authorization is required'), { code: 'AUTH_FORBIDDEN' }), traceId));
+          return false;
+        }
+        return true;
+      };
+      const requireRead = () => requireAccess('emergency.read', 'event.read');
+      const requireWrite = () => requireAccess('emergency.write', 'event.write');
+      const runCommand = async (scope, body, action) => idempotency.run(scope, request.headers['x-idempotency-key'], body, action);
+      if (request.method === 'GET' && path === '/api/v1/_internal/whoami') {
+        if (!await requireAccess('emergency.read', 'identity.read')) return;
+        await audit.record(createAuditRecord({ traceId, actorId: identity.actorId, action: 'identity.read', outcome: 'allowed' }));
+        return sendJson(response, 200, { actorId: identity.actorId, roles: identity.roles, traceId });
+      }
+      if (request.method === 'GET' && path === '/api/v1/platform/context') {
+        if (!await requireAccess('emergency.read', 'identity.read')) return;
+        await audit.record(createAuditRecord({ traceId, actorId: identity.actorId, action: 'identity.read', outcome: 'allowed' }));
+        return sendJson(response, 200, success({
+          userId: identity.actorId,
+          displayName: identity.displayName,
+          roles: identity.roles,
+          permissions: identity.permissions,
+          organizationId: identity.organizationId,
+          dataScopes: identity.dataScopes
+        }, traceId));
+      }
+      if (request.method === 'GET' && path === '/api/v1/incidents') {
+        if (!await requireRead()) return;
+        return sendJson(response, 200, success(await workflow.listIncidents(pagination(request)), traceId));
+      }
+      const incidentDetail = /^\/api\/v1\/incidents\/([^/]+)$/.exec(path);
+      if (request.method === 'GET' && incidentDetail) {
+        if (!await requireRead()) return;
+        return sendJson(response, 200, success(await workflow.getIncident(incidentDetail[1]), traceId));
+      }
+      if (request.method === 'GET' && path === '/api/v1/tasks') {
+        if (!await requireRead()) return;
+        return sendJson(response, 200, success(await workflow.listTasks(pagination(request)), traceId));
+      }
       if (request.method === 'POST' && path === '/api/v1/incidents') {
         if (!await requireWrite()) return;
         const body = await readJson(request);
@@ -111,6 +150,12 @@ export function createServer({ config, database = null, logger = console, messag
         const data = await runCommand(`tasks:${acknowledge[1]}:acknowledge`, body, () => workflow.acknowledgeTask(acknowledge[1], body.reason, body.resourceVersion, identity.actorId));
         return sendJson(response, 200, success(data, traceId));
       }
+      if (request.method === 'POST' && path === '/api/v1/tasks') {
+        if (!await requireWrite()) return;
+        const body = await readJson(request);
+        const data = await runCommand('tasks:create-temporary', body, () => workflow.createTemporaryTask(body, identity.actorId));
+        return sendJson(response, 200, success(data, traceId));
+      }
       const feedback = /^\/api\/v1\/tasks\/([^/]+)\/feedback$/.exec(path);
       if (request.method === 'POST' && feedback) {
         if (!await requireWrite()) return;
@@ -125,6 +170,22 @@ export function createServer({ config, database = null, logger = console, messag
         const data = await runCommand(`tasks:${complete[1]}:complete`, body, () => workflow.completeTask(complete[1], body.reason, body.resourceVersion, identity.actorId));
         return sendJson(response, 200, success(data, traceId));
       }
+      const remind = /^\/api\/v1\/tasks\/([^/]+)\/remind$/.exec(path);
+      if (request.method === 'POST' && remind) {
+        if (!await requireWrite()) return;
+        const body = await readJson(request);
+        const data = await runCommand(`tasks:${remind[1]}:remind`, body, () => workflow.remindTask(remind[1], body.reason, body.resourceVersion, identity.actorId));
+        return sendJson(response, 200, success(data, traceId));
+      }
+      if (request.method === 'POST' && path === '/api/v1/platform/files/presign') {
+        if (!await requireWrite()) return;
+        if (!filePort?.presignFile) throw Object.assign(new Error('middle platform file service unavailable'), { code: 'MIDDLE_PLATFORM_UNAVAILABLE' });
+        const token = bearerToken(request);
+        if (!token) throw Object.assign(new Error('Bearer token is required'), { code: 'AUTH_FORBIDDEN' });
+        const body = await readJson(request);
+        const data = await runCommand('platform:files:presign', body, () => filePort.presignFile(token, body, { traceId }));
+        return sendJson(response, 200, success(data, traceId));
+      }
       const close = /^\/api\/v1\/incidents\/([^/]+)\/close$/.exec(path);
       if (request.method === 'POST' && close) {
         if (!await requireWrite()) return;
@@ -133,7 +194,11 @@ export function createServer({ config, database = null, logger = console, messag
         return sendJson(response, 200, success(data, traceId));
       }
     } catch (error) {
-      const status = error.code === 'BAD_JSON' ? 400 : ['IDEMPOTENCY_CONFLICT', 'VERSION_CONFLICT'].includes(error.code) ? 409 : 422;
+      const status = ['BAD_JSON', 'BAD_REQUEST'].includes(error.code) ? 400
+        : error.code === 'AUTH_FORBIDDEN' ? 403
+          : error.code === 'NOT_FOUND' ? 404
+            : error.code === 'MIDDLE_PLATFORM_UNAVAILABLE' ? 503
+              : ['IDEMPOTENCY_CONFLICT', 'VERSION_CONFLICT'].includes(error.code) ? 409 : 422;
       return sendJson(response, status, failure(error, traceId));
     }
     return sendJson(response, 404, failure(Object.assign(new Error('Route not found'), { code: 'NOT_FOUND' }), traceId));

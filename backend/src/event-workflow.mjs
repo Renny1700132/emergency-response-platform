@@ -84,6 +84,32 @@ export function createEventWorkflow({
   }
 
   return Object.freeze({
+    async listIncidents({ page = 1, size = 50 } = {}) {
+      if (repository.listIncidents) {
+        const result = await repository.listIncidents({ page, size });
+        for (const incident of result.items) incidents.set(incident.id, incident);
+        return { ...result, page, size };
+      }
+      const all = [...incidents.values()].sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)));
+      return { items: structuredClone(all.slice((page - 1) * size, page * size)), page, size, total: all.length };
+    },
+
+    async getIncident(incidentId) {
+      const incident = await loadIncident(incidentId);
+      rule(incident, 'incident not found', 'NOT_FOUND');
+      return structuredClone(incident);
+    },
+
+    async listTasks({ page = 1, size = 50 } = {}) {
+      if (repository.listTasks) {
+        const result = await repository.listTasks({ page, size });
+        for (const task of result.items) tasks.set(task.id, task);
+        return { ...result, page, size };
+      }
+      const all = [...tasks.values()].sort((a, b) => String(a.deadlineAt).localeCompare(String(b.deadlineAt)));
+      return { items: structuredClone(all.slice((page - 1) * size, page * size)), page, size, total: all.length };
+    },
+
     async createIncident(input, actorId, key) {
       rule(input?.title && input?.incidentTypeCode && input?.occurredAt && input?.description, 'incident fields are required');
       rule(key, 'idempotency key is required');
@@ -176,6 +202,43 @@ export function createEventWorkflow({
         tasks.set(task.id, task);
         return structuredClone(task);
       });
+    },
+
+    async createTemporaryTask(input, actorId) {
+      rule(input?.name && input?.assigneeRef && input?.deadlineAt, 'temporary task fields are required');
+      const task = await transaction(async (store) => {
+        let incidentId = input.incidentId;
+        if (!incidentId) {
+          const responding = store.findRespondingIncidents
+            ? await store.findRespondingIncidents(2)
+            : [...incidents.values()].filter((item) => item.status === 'RESPONDING').slice(0, 2);
+          rule(responding.length === 1, 'incidentId is required unless exactly one responding incident is available');
+          incidentId = responding[0].id;
+        }
+        const incident = await loadIncident(incidentId, store);
+        rule(incident, 'incident not found', 'NOT_FOUND');
+        rule(incident.status === 'RESPONDING', 'temporary tasks require a responding incident');
+        const created = {
+          id: randomUUID(), incidentId: incident.id, name: input.name, description: input.description ?? '',
+          assigneeRef: input.assigneeRef, deadlineAt: input.deadlineAt, status: 'PENDING',
+          deliveryStatus: 'PENDING_DISPATCH', version: 1, feedback: []
+        };
+        await store.persistTask?.(created, 0);
+        await emit({ aggregateType: 'TASK', aggregateId: created.id, eventType: 'TEMPORARY_TASK_CREATED', payload: { incidentId: incident.id } }, actorId, store);
+        tasks.set(created.id, created);
+        return created;
+      });
+      return structuredClone(await dispatchTask(task, actorId));
+    },
+
+    async remindTask(taskId, reason, resourceVersion, actorId) {
+      const task = await loadTask(taskId);
+      rule(task, 'task not found', 'NOT_FOUND');
+      requireVersion(resourceVersion, task.version, 'task');
+      rule(reason, 'reminder reason is required');
+      rule(task.status !== 'COMPLETED', 'completed task cannot be reminded');
+      const reminder = await dispatchTask(task, actorId);
+      return { ...structuredClone(reminder), reminderReason: reason };
     },
 
     async feedback(taskId, input, actorId) {

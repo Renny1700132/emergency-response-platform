@@ -5,7 +5,7 @@
 ## 受控边界
 
 - 采用模块化单体、端口适配与持久化 Outbox；对应 ADR-001、ADR-002。
-- 身份、组织和权限由统一中台提供。生产环境必须由 `MIDDLE_PLATFORM_BASE_URL` 对接中台，开发身份头仅在 `NODE_ENV=development` 且显式开启时可用。
+- 身份、组织和权限由统一中台提供。生产环境必须由 `MIDDLE_PLATFORM_BASE_URL` 对接中台；Bearer 令牌通过中台上下文接口校验后才建立应用身份，校验失败或中台不可用时默认拒绝。开发身份头仅在 `NODE_ENV=development` 且显式开启时可用。
 - 外部视频、消息等真实接口和现场连通性仍按 `ISSUE-G3-01-001` 处理，本骨架不将其写成已验证。
 
 ## 本地运行
@@ -21,6 +21,7 @@ node backend/src/main.mjs
 - `GET /healthz`：进程健康检查。
 - `GET /readyz`：仅在已配置且可访问数据库时返回 200。
 - `GET /api/v1/_internal/whoami`：开发环境需 `X-Actor-Id` 与包含 `emergency.read` 的 `X-Actor-Roles`；允许和拒绝均记录脱敏审计。
+- `GET /api/v1/platform/context`：使用前端传入的 Bearer 令牌，经中台适配器返回用户、角色与权限上下文。
 
 ## 数据库迁移
 
@@ -47,14 +48,17 @@ npm run test:migration:integration
 
 G4-05 在同一后端进程内实现事件创建、人工核实、已发布预案启动、任务确认/反馈/完成和事件关闭。写接口沿用冻结 OpenAPI 的路径与请求结构，要求 `X-Idempotency-Key`；同一作用域内同键同请求返回首次结果，同键异请求返回 `409 IDEMPOTENCY_CONFLICT`。开发身份头仍只允许在显式启用的 development 模式使用。
 
-核心接口：
+核心接口及页面接线接口：
 
 - `POST /api/v1/incidents`
+- `GET /api/v1/incidents`、`GET /api/v1/incidents/{incidentId}`
 - `POST /api/v1/incidents/{incidentId}/verify`
 - `POST /api/v1/incidents/{incidentId}/start-response`
 - `POST /api/v1/tasks/{taskId}/acknowledge`
 - `POST /api/v1/tasks/{taskId}/feedback`
 - `POST /api/v1/tasks/{taskId}/complete`
+- `GET /api/v1/tasks`、`POST /api/v1/tasks`、`POST /api/v1/tasks/{taskId}/remind`
+- `POST /api/v1/platform/files/presign`
 - `POST /api/v1/incidents/{incidentId}/close`
 
 迁移 `002_event_workflow` 使用冻结 DBD 的 `em_*` 命名，保存事件、核实动作、确定的预案版本、任务、反馈与附件引用、关闭材料、消息投递记录；公共 `em_idempotency_record`、`em_outbox_event` 和 `em_audit_log` 提供幂等、派生事件和审计证据。所有 SQL 值均通过参数传递。
@@ -67,6 +71,8 @@ npm run quality
 ```
 
 自动化测试覆盖正常、无权、幂等冲突、模拟消息失败/超时、状态前置、参数化持久化和成对迁移。KN-011、KN-012、KN-006、KN-007 仍须在目标验收环境由后续集成任务形成实测证据。
+
+页面正式接线使用 `Authorization: Bearer <token>`。后端不会直接信任或无签名解码该令牌，而是调用 `MIDDLE_PLATFORM_BASE_URL` 下可配置的身份上下文路径完成校验和角色/权限映射。开发身份头不会作为无效 Bearer 的回退路径。事件与任务列表从正式仓储分页读取；在只有一个处置中事件时，当前冻结 `TaskRequest` 未携带事件标识的临时任务会关联该事件，多事件场景则返回明确的 422，避免错误归属。文件预签名由中台文件端口转发；端口不可用时返回 503，不伪造上传地址。
 
 ## 私有化容器部署
 

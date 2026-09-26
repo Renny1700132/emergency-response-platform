@@ -4,23 +4,23 @@
   "reviewer": "A",
   "traceability": {
     "taskIds": ["G4-05"],
-    "requirementIds": ["G2-FR-013", "G2-FR-014", "G2-FR-015", "G2-FR-016", "G2-FR-022"],
+    "requirementIds": ["G2-FR-013", "G2-FR-014", "G2-FR-015", "G2-FR-016", "G2-FR-022", "G2-FR-028"],
     "acIds": ["AC-G2-FR-013-01", "AC-G2-FR-013-03", "AC-G2-FR-014-01", "AC-G2-FR-014-02", "AC-G2-FR-015-01", "AC-G2-FR-015-02", "AC-G2-FR-016-01", "AC-G2-FR-022-01", "AC-G2-FR-022-02"],
-    "designIds": ["MOD-EVENT", "MOD-TASK", "MOD-PLATFORM", "ARCH-02", "DLD-TR-013", "DLD-TR-014", "DLD-TR-015", "DLD-TR-016", "DLD-TR-022", "DBD-TR-013", "DBD-TR-014", "DBD-TR-015", "DBD-TR-016", "DBD-TR-022", "API-TR-013", "API-TR-014", "API-TR-015", "API-TR-016", "API-TR-022", "ENG-015", "ENG-017"]
+    "designIds": ["MOD-EVENT", "MOD-TASK", "MOD-PLATFORM", "ARCH-02", "DLD-TR-013", "DLD-TR-014", "DLD-TR-015", "DLD-TR-016", "DLD-TR-022", "DLD-TR-028", "DBD-TR-013", "DBD-TR-014", "DBD-TR-015", "DBD-TR-016", "DBD-TR-022", "DBD-TR-028", "API-TR-013", "API-TR-014", "API-TR-015", "API-TR-016", "API-TR-022", "API-TR-028", "ENG-015", "ENG-017"]
   },
   "ai": {
-    "scope": "Codex assisted member B with the event workflow, HTTP adapter, PostgreSQL persistence, paired migration, simulated message adapter, automated tests, and trace evidence.",
+    "scope": "Codex assisted member B with the event workflow, HTTP adapter, PostgreSQL persistence, middle-platform Bearer and file adapters, simulated message adapter, automated tests, and trace evidence.",
     "disposition": "Adopted after local tests and repository quality gates; simulated integration evidence remains explicitly separated from target-environment acceptance."
   },
   "checks": {
     "scope": { "status": "PASS", "evidence": "The increment is limited to the selected G4-05 event/task closure ACs and does not claim unrelated G2-FR-001—029 implementation." },
-    "contract": { "status": "PASS", "evidence": "Runtime accepts CONFIRMED, requires resourceVersion for mutations, returns the frozen 200 status and complete ApiResponse envelope; tests/backend/g4-05-integration.test.mjs covers positive and negative contract cases." },
-    "authorizationAndValidation": { "status": "PASS", "evidence": "tests/backend/g4-05-integration.test.mjs covers denied write, required fields, stale/missing resourceVersion, state preconditions, ownership, and idempotency conflict." },
+    "contract": { "status": "PASS", "evidence": "Runtime implements the frozen Sprint 1 event/task list and command paths, accepts CONFIRMED, requires resourceVersion for mutations, and returns the complete ApiResponse envelope; tests/backend/g4-05-integration.test.mjs covers positive and negative cases." },
+    "authorizationAndValidation": { "status": "PASS", "evidence": "tests/backend/g4-05-integration.test.mjs covers Bearer identity handshake, denied access, required fields, stale/missing resourceVersion, state preconditions, ownership, pagination, and idempotency conflict; invalid Bearer does not fall back to an unverified identity." },
     "parameterizedAccess": { "status": "PASS", "evidence": "backend/src/event-persistence.mjs and backend/src/idempotency.mjs use positional PostgreSQL parameters; automated tests assert parameter arrays." },
     "secrets": { "status": "PASS", "evidence": "Configuration contains placeholders only and is covered by npm run security:secrets." },
     "logRedaction": { "status": "PASS", "evidence": "Domain audit uses the G4-02 redacting audit sink; no headers, credentials, or full message content are logged." },
     "migrationRollback": { "status": "PASS", "evidence": "backend/migrations/002_event_workflow.up.sql and .down.sql are paired; tests/backend/foundation.test.mjs checks every added table in both directions." },
-    "tests": { "status": "PASS", "evidence": "npm run test:backend:coverage covers normal, unauthorized, idempotent, failure, timeout, database-backed service recreation, transactional rollback, post-commit dispatch, audit, and closure paths with global backend coverage above 70%; npm run test:g4-05:postgres passes 2/2 against an isolated PostgreSQL 15 instance after migrations." },
+    "tests": { "status": "PASS", "evidence": "npm run test:backend:coverage passes 16/16 and covers Bearer, page-required routes, normal, unauthorized, idempotent, failure, timeout, database-backed service recreation, transactional rollback, post-commit dispatch, audit, and closure paths with global backend coverage above 70%; npm run test:g4-05:postgres passes 2/2 against an isolated PostgreSQL instance after migrations, including list, temporary-task and reminder persistence." },
     "traceability": { "status": "PASS", "evidence": "docs/work/C_REQ/rtm_g4_evidence.md maps selected ACs to implementation and tests; target-environment KN evidence stays pending." }
   }
 }

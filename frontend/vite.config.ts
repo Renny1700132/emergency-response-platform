@@ -2,7 +2,8 @@ import { fileURLToPath, URL } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vitest/config'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  define: { 'import.meta.env.VITE_PRESENTATION_MODE': JSON.stringify(mode === 'presentation') },
   plugins: [vue()],
   resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
   server: { port: 5174 },
@@ -18,4 +19,4 @@ export default defineConfig({
       thresholds: { lines: 70, functions: 70, branches: 70, statements: 70 },
     },
   }
-})
+}))

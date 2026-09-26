@@ -15,6 +15,14 @@ npm test
 npm run test:coverage
 ```
 
+### 汇报演示模式
+
+```bash
+npm run demo
+```
+
+演示模式使用独立的内存适配层并在页面持续显示“演示数据 · 非验收证据”。它不读取 `prototypeStore` 或 localStorage，不代表 G4-08 后端、真实外部系统、甲方环境或最终 E2E 已通过；正式开发仍使用 `npm run dev` 和统一 API Client。
+
 根目录 `npm run quality` 会依次执行前端类型检查、前端核心基础设施覆盖率门禁、构建及既有契约、安全、G4 护栏覆盖率和 selfcheck 门禁。前端 statements、branches、functions、lines 四项阈值均为 `≥70%`。
 
 ## 边界

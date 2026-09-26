@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "demo": "vite --mode presentation",
     "generate:api": "openapi-typescript ../docs/work/B_TECH/openapi_v1.yaml -o src/api/generated/schema.d.ts",
     "prebuild": "npm run generate:api",
     "build": "vue-tsc --noEmit && vite build",

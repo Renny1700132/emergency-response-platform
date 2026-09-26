@@ -4,11 +4,13 @@ import { authContextKey, browserTokenProvider, createAuthContext } from './share
 import { createApiClient } from './shared/http/api-client'
 import { apiClientKey } from './shared/http/api-context'
 import { createAppRouter } from './router'
+import { createPresentationApiClient } from './shared/demo/presentation-api'
 import './styles/base.css'
 
-const tokenProvider = browserTokenProvider()
+const presentationMode = import.meta.env.VITE_PRESENTATION_MODE === 'true'
+const tokenProvider = presentationMode ? async () => 'presentation-demo-token' : browserTokenProvider()
 let auth: ReturnType<typeof createAuthContext>
-const api = createApiClient({ tokenProvider, onUnauthorized: () => auth?.clear() })
+const api = presentationMode ? createPresentationApiClient() : createApiClient({ tokenProvider, onUnauthorized: () => auth?.clear() })
 auth = createAuthContext(api, tokenProvider)
 const router = createAppRouter(auth)
 

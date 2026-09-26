@@ -1,0 +1,26 @@
+{
+  "taskId": "G4-07",
+  "owner": "C",
+  "reviewer": "B",
+  "traceability": {
+    "taskIds": ["G4-07"],
+    "requirementIds": ["G2-FR-013", "G2-FR-014", "G2-FR-015", "G2-FR-016", "G2-FR-021", "G2-FR-022", "KN-045"],
+    "acIds": ["AC-G2-FR-013-01", "AC-G2-FR-014-01", "AC-G2-FR-014-02", "AC-G2-FR-015-01", "AC-G2-FR-015-02", "AC-G2-FR-016-01", "AC-G2-FR-021-02", "AC-G2-FR-022-01", "AC-G2-FR-022-02"],
+    "designIds": ["MOD-EVENT", "MOD-TASK", "MOD-MOBILE", "MOD-PLATFORM", "ENG-015", "ENG-017"]
+  },
+  "ai": {
+    "scope": "Codex assisted member C with the non-mock cross-package E2E, quality execution, defect closure, evidence report, RTM and selfcheck.",
+    "disposition": "Adopted after the real Vue/API-client/backend HTTP path and full local quality gate passed; PostgreSQL and external-port evidence boundaries remain explicit."
+  },
+  "checks": {
+    "scope": { "status": "PASS", "evidence": "evidence/g4/G4-07/sprint1-gate-report.md limits the result to Sprint 1 integration and preserves target-environment performance for G4-10/acceptance." },
+    "contract": { "status": "PASS", "evidence": "npm run contract reports 0 errors; frontend/tests/real-stack-e2e.test.ts exercises frozen typed paths through the real HTTP server." },
+    "authorizationAndValidation": { "status": "PASS", "evidence": "The E2E bootstraps Bearer context and verifies the authorized closure path plus invalid-token 403; backend tests cover validation and conflict paths." },
+    "parameterizedAccess": { "status": "PASS", "evidence": "G4-05 PostgreSQL 15 evidence and C's independent PostgreSQL 18 test database run verify parameterized persistence, recovery and transaction rollback." },
+    "secrets": { "status": "PASS", "evidence": "npm run security:secrets passes; fixtures contain markers only and no real token or credential." },
+    "logRedaction": { "status": "PASS", "evidence": "Inherited audit redaction tests pass and the E2E does not log Bearer values or request bodies." },
+    "migrationRollback": { "status": "N/A", "evidence": "G4-07 adds no migration; C applied the paired 001/002 up migrations to an isolated PostgreSQL 18 test database before the 2/2 integration run." },
+    "tests": { "status": "PASS", "evidence": "frontend 28/28 including real-stack E2E, G4 11/11 and backend 16/16 pass; frontend and backend coverage exceed 70%." },
+    "traceability": { "status": "PASS", "evidence": "docs/work/C_REQ/rtm_g4_evidence.md maps G4-07 to requirements, automated evidence, issues and remaining target-environment boundaries." }
+  }
+}

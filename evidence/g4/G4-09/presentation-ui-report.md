@@ -30,6 +30,10 @@
 - 指挥态势：综合安防地图、模拟视频、视频调阅、信息发布和门禁控制均可见；门禁二次确认对话框正常显示。
 - H5：手机框架、事件卡片、状态、反馈入口及底部六个核心导航均正常渲染。
 - 响应式：当前 Codex 内嵌浏览器窄视口下自动折叠侧栏与指标栅格，未发现溢出阻断；桌面布局由构建及 CSS 断点覆盖。
+- 启动回归：首次交付后发现自定义演示标志被配置为布尔值、页面却按字符串比较，导致 `npm run demo --prefix frontend` 仍进入正式认证页；现已统一改用 Vite 内建 `import.meta.env.MODE === 'presentation'`，并为 5174 增加 `--strictPort`，防止端口冲突时静默漂移。修复后在 `http://127.0.0.1:5174/web/overview` 实际复验，页面直接进入“应急态势总览”。
+- 修复后专项检查：`npm run typecheck --prefix frontend`、前端 30/30 测试及 `npm run build --prefix frontend -- --mode presentation` 均 exit 0。
+- 启动回归：首次交付后发现自定义演示标志被配置为布尔值、页面却按字符串比较，导致 `npm run demo --prefix frontend` 仍进入正式认证页；现已统一改用 Vite 内建 `import.meta.env.MODE === 'presentation'`，并为 5174 增加 `--strictPort`，防止端口冲突时静默漂移。修复后在 `http://127.0.0.1:5174/web/overview` 实际复验，页面直接进入“应急态势总览”。
+- 修复后专项检查：`npm run typecheck --prefix frontend`、前端 30/30 测试及 `npm run build --prefix frontend -- --mode presentation` 均 exit 0。
 
 ## 4 待完成项
 

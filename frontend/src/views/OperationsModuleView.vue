@@ -4,7 +4,7 @@ import type { ModuleRoute } from '@/router/modules'
 
 const props = defineProps<{ module: ModuleRoute }>()
 const notice = ref(''), query = ref(''), showConfirm = ref(false)
-const presentation = import.meta.env.VITE_PRESENTATION_MODE === 'true'
+const presentation = import.meta.env.MODE === 'presentation'
 type ModuleContent = { kicker: string; description: string; metrics: { label: string; value: string; hint: string }[]; primary: string; secondary: string }
 const contents: Record<string, ModuleContent> = {
   'MOD-PLAN': { kicker: 'PLAN ORCHESTRATION', description: '分层预案、流程任务、资源与通知对象统一编排，版本全程可追溯。', metrics: [{ label: '已发布预案', value: '18', hint: '综合 3 · 专项 6 · 现场 9' }, { label: '待审核版本', value: '3', hint: '平均审核时长 1.2 天' }, { label: '覆盖风险类型', value: '12', hint: '本月新增 2 类' }], primary: '新建预案', secondary: '版本对比' },

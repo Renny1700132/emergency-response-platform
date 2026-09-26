@@ -7,7 +7,7 @@ import { createAppRouter } from './router'
 import { createPresentationApiClient } from './shared/demo/presentation-api'
 import './styles/base.css'
 
-const presentationMode = import.meta.env.VITE_PRESENTATION_MODE === 'true'
+const presentationMode = import.meta.env.MODE === 'presentation'
 const tokenProvider = presentationMode ? async () => 'presentation-demo-token' : browserTokenProvider()
 let auth: ReturnType<typeof createAuthContext>
 const api = presentationMode ? createPresentationApiClient() : createApiClient({ tokenProvider, onUnauthorized: () => auth?.clear() })

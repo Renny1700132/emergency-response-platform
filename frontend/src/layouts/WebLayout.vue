@@ -6,7 +6,7 @@ import { moduleRoutes } from '@/router/modules'
 const route = useRoute(), auth = useAuthContext(), collapsed = ref(false)
 const title = computed(() => String(route.meta.title ?? '应急管理'))
 const navigation = moduleRoutes.filter((item) => item.audience === 'web')
-const presentation = import.meta.env.VITE_PRESENTATION_MODE === 'true'
+const presentation = import.meta.env.MODE === 'presentation'
 </script>
 <template>
   <div class="web-shell" :class="{ collapsed }">

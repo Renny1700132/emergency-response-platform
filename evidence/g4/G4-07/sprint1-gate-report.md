@@ -23,7 +23,7 @@
 
 ## PostgreSQL 与环境边界
 
-本机未配置 `DATABASE_URL`，Docker 不可用；`npm run test:g4-05:postgres` 因缺少连接配置 exit 1，该失败未隐藏。数据库准出证据回指 G4-05 在隔离 PostgreSQL 15 上的迁移、跨实例恢复、读模型、完整关闭与事务回滚 2/2，以及 A 在 PR `!14` 的独立审核。C 本轮不把该既有结果表述为本机复跑。
+C 在本机独立 PostgreSQL 18 测试库 `emergency_g4_test` 补跑。首次连接后因空库尚未迁移，专项测试 0/2（缺少 `em_incident`、`em_message_delivery`），失败未隐藏；确认目标为独立测试库后应用 `001_foundation` 与 `002_event_workflow` 迁移，随后 `npm run test:g4-05:postgres` 2/2 PASS，覆盖跨服务实例事实恢复、分页读模型、完整关闭、Outbox/审计原子提交及注入失败回滚。该结果是 PostgreSQL 18 兼容性补充；受控 PostgreSQL 15 证据仍回指 G4-05 的 2/2 和 A 独立审核。
 
 ## 未提前关闭的后续验收
 

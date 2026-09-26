@@ -1385,6 +1385,13 @@
 - 本机 PostgreSQL 专项命令因未配置 `DATABASE_URL` 失败并如实保留；数据库层采用 G4-05 隔离 PostgreSQL 15 的 2/2 执行证据及 A 独立复验结论，本轮不伪装为 C 本机复跑。
 - 最终状态：`ISSUE-G4-07-002/003 CLOSED / VERIFIED_BY_C`。
 
+#### C PostgreSQL 补充复验（2026-09-26）
+
+- 经用户单次明确授权，C 仅读取本机用户级连接变量并校验目标为独立测试库 `emergency_g4_test`，未输出或写入仓库任何凭据。
+- 空库首次专项执行因未应用迁移而 0/2 失败；应用 `001_foundation`、`002_event_workflow` 后重跑 2/2 PASS。
+- PostgreSQL 18 补充证明跨服务实例事实恢复、分页读模型、完整关闭、Outbox/审计原子提交和注入失败回滚；PostgreSQL 15 的受控证据仍以 G4-05 与 A 审核记录为准。
+- G4-07 无新增阻断缺陷，维持 `DONE CANDIDATE / PENDING_B_REVIEW`。
+
 ## G4-03 前端骨架与 API Client 复核项（续）
 
 ### ISSUE-G4-03-002

@@ -7,8 +7,9 @@
     "node": "^24.14.0 || >=26.0.0"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode presentation --port 5174 --strictPort",
     "demo": "vite --mode presentation --port 5174 --strictPort",
+    "dev:formal": "vite --mode development --port 5174 --strictPort",
     "generate:api": "openapi-typescript ../docs/work/B_TECH/openapi_v1.yaml -o src/api/generated/schema.d.ts",
     "prebuild": "npm run generate:api",
     "build": "vue-tsc --noEmit && vite build",

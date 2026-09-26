@@ -5,9 +5,11 @@ import { createApiClient } from './shared/http/api-client'
 import { apiClientKey } from './shared/http/api-context'
 import { createAppRouter } from './router'
 import { createPresentationApiClient } from './shared/demo/presentation-api'
+import { enablePresentationSync } from './shared/demo/presentation-state'
 import './styles/base.css'
 
 const presentationMode = import.meta.env.MODE === 'presentation'
+if (presentationMode) enablePresentationSync()
 const tokenProvider = presentationMode ? async () => 'presentation-demo-token' : browserTokenProvider()
 let auth: ReturnType<typeof createAuthContext>
 const api = presentationMode ? createPresentationApiClient() : createApiClient({ tokenProvider, onUnauthorized: () => auth?.clear() })

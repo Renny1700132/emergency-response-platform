@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { onMounted, reactive, ref } from 'vue'
+import { onMounted, reactive, ref, watch } from 'vue'
 import AsyncState from '@/components/AsyncState.vue'
 import AttachmentRefsField from '@/components/AttachmentRefsField.vue'
 import PlatformAttachmentField from '@/components/PlatformAttachmentField.vue'
 import { useAuthContext } from '@/shared/auth/auth-context'
 import { useApiClient } from '@/shared/http/api-context'
 import { createResponseWorkflow, visibleError, type VisibleError, type WorkflowItem } from '@/features/response/workflow'
+import { presentationState } from '@/shared/demo/presentation-state'
 
 defineProps<{ audience: 'web' | 'h5' }>()
 const auth = useAuthContext()
@@ -31,6 +32,7 @@ async function submitReport() {
   if (!error.value) reportOpen.value = false
 }
 onMounted(load)
+if (import.meta.env.MODE === 'presentation') watch(() => presentationState.revision, load)
 </script>
 
 <template>

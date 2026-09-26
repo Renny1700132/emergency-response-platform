@@ -1,7 +1,9 @@
-import { describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 import { createPresentationApiClient } from '@/shared/demo/presentation-api'
+import { presentationState, resetPresentationState, switchDemoRole } from '@/shared/demo/presentation-state'
 
 describe('presentation API adapter', () => {
+  beforeEach(resetPresentationState)
   it('provides an explicit demo identity and mutable incident workflow', async () => {
     const api = createPresentationApiClient() as any
     const context = await api.get('/api/v1/platform/context')
@@ -33,5 +35,17 @@ describe('presentation API adapter', () => {
     expect(task.status).toBe('COMPLETED')
     const fallback = await api.request('post', '/api/v1/platform/files/presign', { body: {} })
     expect(fallback.data).toMatchObject({ accepted: true, demo: true })
+  })
+
+  it('shares role actions and workflow changes with the live presentation state', async () => {
+    const api = createPresentationApiClient() as any
+    switchDemoRole('SECURITY')
+    const context = await api.get('/api/v1/platform/context')
+    expect(context.data.displayName).toBe('现场安保员')
+    await api.post('/api/v1/tasks/{taskId}/feedback', { path: { taskId: 'TSK-260926-01' }, body: { progressPercent: 88 } })
+    expect(presentationState.tasks[0].attributes.progressPercent).toBe(88)
+    expect(presentationState.lastActor).toBe('现场安保员')
+    expect(presentationState.lastAction).toContain('88%')
+    expect(presentationState.revision).toBeGreaterThan(1)
   })
 })

@@ -3,7 +3,9 @@
 - 主责：C
 - 唯一审核人：B
 - 日期：2026-09-26
-- 状态：DONE CANDIDATE / PENDING B REVIEW
+- PR：Gitee `!15`
+- B 首轮审核 HEAD：`758db48`
+- 状态：DONE CANDIDATE / CHANGES_REQUIRED / PENDING B REREVIEW
 
 ## 准出结果
 
@@ -18,7 +20,7 @@
 - G4 工程护栏：11/11；coverage 96.75% / 81.63% / 90% / 96.75%。
 - backend：16/16；coverage statements 85.88%、branches 78.24%、functions 80.48%、lines 85.88%。
 - OpenAPI：0 error；14 个已登记非阻断 warning。
-- secret scan：55 files PASS；根目录与 frontend 依赖漏洞 0。
+- secret scan：56 files PASS；根目录与 frontend 依赖漏洞 0。
 - selfcheck：加入 `quality/selfcheck/G4-07.json` 后复验。
 
 ## PostgreSQL 与环境边界

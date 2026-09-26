@@ -1376,6 +1376,15 @@
 - 关闭条件：前后端使用同一受控认证契约完成授权/无权两条 E2E；生产配置 fail-closed，开发适配层显式且不泄漏到生产。
 - 状态：OPEN / CHANGES_REQUIRED。
 
+#### C 独立复验（2026-09-26）
+
+- PR `!14` 已合并进入 `master`（`f3a83c8`）。C 新增 `frontend/tests/real-stack-e2e.test.ts`，未使用 Mock API Client：实际挂载 Vue 事件/任务页面，经正式 API Client、Bearer 身份和真实后端 HTTP Server 完成事件上报、核实、启动、任务接收、反馈、完成与事件关闭，并验证无效 Bearer 返回 403。
+- 事件/任务列表、写后刷新、核心命令路由均通过；`ISSUE-G4-07-002` 关闭为 `CLOSED / VERIFIED_BY_C`。
+- Bearer 身份上下文、授权路径和无权路径均通过；`ISSUE-G4-07-003` 关闭为 `CLOSED / VERIFIED_BY_C`。
+- 外部身份、文件与消息端口仍为 `SIMULATED_EVIDENCE`；不声明甲方真实中台、现场网络或目标环境性能已验收。
+- 本机 PostgreSQL 专项命令因未配置 `DATABASE_URL` 失败并如实保留；数据库层采用 G4-05 隔离 PostgreSQL 15 的 2/2 执行证据及 A 独立复验结论，本轮不伪装为 C 本机复跑。
+- 最终状态：`ISSUE-G4-07-002/003 CLOSED / VERIFIED_BY_C`。
+
 ## G4-03 前端骨架与 API Client 复核项（续）
 
 ### ISSUE-G4-03-002

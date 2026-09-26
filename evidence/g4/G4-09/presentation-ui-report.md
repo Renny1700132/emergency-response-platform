@@ -3,6 +3,8 @@
 - 日期：2026-09-26
 - 分支：`codex/g4-09-sprint2-frontend`
 - 状态：PRESENTATION UI CANDIDATE / G4-09 DOING
+- 实现提交：`1c121c4`
+- PR：Gitee `!16`（`codex/g4-09-sprint2-frontend` → `master`，OPEN）
 - 边界：依据 `OVR-030`，本记录只证明汇报级前端与显式演示适配层可运行；不证明 G4-08 后端、真实外部系统、甲方环境、性能或最终 E2E 已完成。
 
 ## 1 可见范围

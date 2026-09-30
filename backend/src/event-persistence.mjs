@@ -18,18 +18,24 @@ export function createEventPersistence(database) {
       );
       return result.rows[0] ? { ...result.rows[0], version: Number(result.rows[0].version), timeline: [] } : null;
     },
-    async listIncidents({ page, size }) {
+    async listIncidents({ page, size, status = null, incidentTypeCode = null, keyword = null, occurredFrom = null, occurredTo = null }) {
       const offset = (page - 1) * size;
+      const filters = [status, incidentTypeCode, keyword ? `%${keyword}%` : null, occurredFrom, occurredTo];
+      const where = `WHERE ($3::text IS NULL OR status=$3)
+        AND ($4::text IS NULL OR incident_type_code=$4)
+        AND ($5::text IS NULL OR title ILIKE $5 OR description ILIKE $5)
+        AND ($6::timestamptz IS NULL OR occurred_at >= $6)
+        AND ($7::timestamptz IS NULL OR occurred_at <= $7)`;
       const [items, count] = await Promise.all([
         database.query(
           `SELECT id, incident_no AS "incidentNo", incident_type_code AS "incidentTypeCode", title, description,
                   source_system AS "sourceSystem", source_generated_at AS "sourceGeneratedAt", received_at AS "receivedAt",
                   recorded_at AS "recordedAt", created_by AS "createdBy", status, occurred_at AS "occurredAt",
                   plan_version_id AS "planVersionId", closure, version, created_at AS "createdAt", updated_at AS "updatedAt"
-             FROM em_incident ORDER BY updated_at DESC, id LIMIT $1 OFFSET $2`,
-          [size, offset]
+             FROM em_incident ${where} ORDER BY updated_at DESC, id LIMIT $1 OFFSET $2`,
+          [size, offset, ...filters]
         ),
-        database.query('SELECT count(*)::bigint AS total FROM em_incident')
+        database.query(`SELECT count(*)::bigint AS total FROM em_incident ${where}`, [size, offset, ...filters])
       ]);
       return { items: items.rows.map((item) => ({ ...item, version: Number(item.version) })), total: Number(count.rows[0]?.total ?? 0) };
     },

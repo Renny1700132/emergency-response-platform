@@ -1,0 +1,31 @@
+-- Sprint 2 MVP domain snapshots. Core event/task facts remain in migration 002.
+-- Payloads preserve the frozen business shape while real external master data stays authoritative upstream.
+CREATE TABLE IF NOT EXISTS em_plan_type (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_plan (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+ALTER TABLE em_plan_version ADD COLUMN IF NOT EXISTS payload jsonb;
+ALTER TABLE em_plan_version ADD COLUMN IF NOT EXISTS updated_at timestamptz NOT NULL DEFAULT now();
+CREATE TABLE IF NOT EXISTS em_incident_type (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_incident_update (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_person_ref (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_emergency_group (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_position_snapshot (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_material_site (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_stock_ledger (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_inventory_plan (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_drill_plan (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_drill_execution (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_evaluation_template (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_duty_schedule (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_check_point (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_attendance_record (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE UNIQUE INDEX IF NOT EXISTS uq_em_attendance_record_idempotency ON em_attendance_record ((payload->>'idempotencyKey')) WHERE payload ? 'idempotencyKey';
+CREATE TABLE IF NOT EXISTS em_attendance_alert (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_knowledge_item (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_verification_config (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_external_alert (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE UNIQUE INDEX IF NOT EXISTS uq_em_external_alert_source_id ON em_external_alert ((payload->>'source'), (payload->>'externalAlertId')) WHERE payload ? 'externalAlertId';
+CREATE TABLE IF NOT EXISTS em_video_reference (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_control_command (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS em_external_call_log (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());
+CREATE INDEX IF NOT EXISTS idx_em_external_call_trace ON em_external_call_log ((payload->>'traceId'), updated_at);
+CREATE TABLE IF NOT EXISTS em_situation_projection (id text PRIMARY KEY, payload jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now());

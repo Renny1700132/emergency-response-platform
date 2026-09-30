@@ -1,0 +1,26 @@
+{
+  "taskId": "G4-08",
+  "owner": "B",
+  "reviewer": "A",
+  "traceability": {
+    "taskIds": ["G4-08"],
+    "requirementIds": ["G2-FR-001—012", "G2-FR-013-02", "G2-FR-016-02/03", "G2-FR-017—020", "G2-FR-023—029", "KN-045"],
+    "acIds": ["AC-G2-FR-001-01—AC-G2-FR-012-03", "AC-G2-FR-013-02", "AC-G2-FR-016-02/03", "AC-G2-FR-017-01—AC-G2-FR-020-03", "AC-G2-FR-023-01—AC-G2-FR-029-03"],
+    "designIds": ["MOD-PLAN", "MOD-RESOURCE", "MOD-EVENT", "MOD-TASK", "MOD-INTEGRATION", "MOD-PLATFORM", "DBD-TR-001—029", "DLD-TR-001—029", "ENG-015", "ENG-017"]
+  },
+  "ai": {
+    "scope": "Codex assisted B with Sprint 2 backend services, paired migration, external adapters, tests, evidence and traceability.",
+    "disposition": "Adopted after automated functional, failure-path, persistence-recovery, contract, security and coverage checks; target-environment evidence remains explicitly pending."
+  },
+  "checks": {
+    "scope": { "status": "PASS", "evidence": "evidence/g4/G4-08/sprint2-backend-report.md maps the remaining MVP backend scope and excludes G2-FR-030—039 backlog." },
+    "contract": { "status": "PASS", "evidence": "Frozen OpenAPI paths are wired through server.mjs and sprint2-service.mjs; npm run contract is part of npm run quality." },
+    "authorizationAndValidation": { "status": "PASS", "evidence": "Server read/write guards, plan validation, scan identity/time/radius checks and access-control confirmation tests pass." },
+    "parameterizedAccess": { "status": "PASS", "evidence": "sprint2-persistence.mjs parameterizes values; injection-like input test confirms values are not interpolated into SQL." },
+    "secrets": { "status": "PASS", "evidence": "No credential is stored; npm run security:secrets is part of npm run quality." },
+    "logRedaction": { "status": "PASS", "evidence": "External call logs retain trace/result metadata without Bearer values or request credentials." },
+    "migrationRollback": { "status": "PASS", "evidence": "003_sprint2_mvp has paired up/down static verification in the G4-08 test; DATABASE_URL is unavailable, so real PostgreSQL up-down-up remains explicitly pending for A/G4-10." },
+    "tests": { "status": "PASS", "evidence": "npm run test:g4-08: 4/4 PASS; backend coverage: 20/20 PASS and all dimensions above 70%." },
+    "traceability": { "status": "PASS", "evidence": "docs/work/C_REQ/rtm_g4_evidence.md and evidence/g4/G4-08/sprint2-backend-report.md map code/tests/evidence and target-environment boundaries." }
+  }
+}

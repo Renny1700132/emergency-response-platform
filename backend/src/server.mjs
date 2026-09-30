@@ -27,7 +27,14 @@ function pagination(request) {
   if (!Number.isInteger(page) || page < 1 || !Number.isInteger(size) || size < 1 || size > 200) {
     throw Object.assign(new Error('page and size are invalid'), { code: 'BAD_REQUEST' });
   }
-  return { page, size };
+  return {
+    page, size,
+    status: url.searchParams.get('status') || null,
+    incidentTypeCode: url.searchParams.get('incidentTypeCode') || null,
+    keyword: url.searchParams.get('keyword') || null,
+    occurredFrom: url.searchParams.get('occurredFrom') || null,
+    occurredTo: url.searchParams.get('occurredTo') || null
+  };
 }
 async function readJson(request) {
   let text = '';
@@ -37,7 +44,7 @@ async function readJson(request) {
 
 export function createServer({
   config, database = null, logger = console, messagePort = null, planProvider = null,
-  identityProvider = null, filePort = null
+  identityProvider = null, filePort = null, sprint2Service = null
 }) {
   const audit = createAuditSink({ logger, database });
   const persistence = createEventPersistence(database);
@@ -193,8 +200,24 @@ export function createServer({
         const data = await runCommand(`incidents:${close[1]}:close`, body, () => workflow.close(close[1], { conclusion: body.reason, reportRef: body.attributes?.reportRef }, body.resourceVersion, identity.actorId));
         return sendJson(response, 200, success(data, traceId));
       }
+      if (sprint2Service) {
+        const isWrite = !['GET', 'HEAD'].includes(request.method);
+        if (!await (isWrite ? requireWrite() : requireRead())) return;
+        const body = isWrite ? await readJson(request) : {};
+        const url = new URL(request.url, 'http://localhost');
+        const execute = () => sprint2Service.handle({
+          method: request.method, path, url, body, actorId: identity.actorId,
+          roles: identity.roles, traceId, idempotencyKey: request.headers['x-idempotency-key']
+        });
+        const result = isWrite
+          ? await runCommand(`sprint2:${request.method}:${path}`, body, execute)
+          : await execute();
+        if (result) return sendJson(response, result.status, success(result.data, traceId));
+      }
     } catch (error) {
-      const status = ['BAD_JSON', 'BAD_REQUEST'].includes(error.code) ? 400
+      const externalStatus = Number(error.details?.record?.status);
+      const status = Number.isInteger(externalStatus) && externalStatus >= 400 && externalStatus <= 599 ? externalStatus
+        : ['BAD_JSON', 'BAD_REQUEST'].includes(error.code) ? 400
         : error.code === 'AUTH_FORBIDDEN' ? 403
           : error.code === 'NOT_FOUND' ? 404
             : error.code === 'MIDDLE_PLATFORM_UNAVAILABLE' ? 503

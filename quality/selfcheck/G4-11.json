@@ -1,0 +1,16 @@
+{
+  "taskId":"G4-11","owner":"A","reviewer":"C",
+  "traceability":{"taskIds":["G4-00—G4-11"],"requirementIds":["G2-FR-001—039"],"acIds":["AC-G2-FR-001-01—AC-G2-FR-029-03","G2-FR-030—039 BACKLOG_PRESERVED"],"designIds":["BASELINE-G3-M3-R1.0","RTM-v4"]},
+  "ai":{"scope":"Codex assisted A with RTM v4, Sprint/PR evidence, prompt patterns, AI failure records and closeout audit.","disposition":"Evidence is complete as a PR candidate; closure remains pending C Review/Approve and merge."},
+  "checks":{
+    "scope":{"status":"PASS","evidence":"RTM v4 preserves the MVP and all ten backlog requirements."},
+    "contract":{"status":"PASS","evidence":"Closeout references the validated OpenAPI without a second contract."},
+    "authorizationAndValidation":{"status":"PASS","evidence":"C remains the independent final reviewer; A does not self-approve."},
+    "parameterizedAccess":{"status":"N/A","evidence":"G4-11 documentation performs no database access."},
+    "secrets":{"status":"PASS","evidence":"Final secret and dependency gates pass."},
+    "logRedaction":{"status":"PASS","evidence":"Evidence contains no credentials or hidden reasoning."},
+    "migrationRollback":{"status":"PASS","evidence":"Closeout indexes PostgreSQL up/down/re-up and restart evidence."},
+    "tests":{"status":"PASS","evidence":"Final quality, verification, PostgreSQL, performance and fault checks pass."},
+    "traceability":{"status":"PASS","evidence":"RTM v4, PR index, prompt library, AI failure record and audit are present."}
+  }
+}

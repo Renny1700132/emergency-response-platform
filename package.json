@@ -19,6 +19,7 @@
     "test:g4-08": "node --test tests/backend/g4-08-sprint2.test.mjs",
     "test:backend:coverage": "c8 --all --include=backend/src/*.mjs --check-coverage --lines 70 --functions 70 --branches 70 --statements 70 node --test tests/backend/*.test.mjs",
     "test:migration:integration": "node backend/scripts/verify-migration.mjs",
+    "verify:g4-final": "node scripts/g4/run-final-verification.mjs",
     "test:coverage": "c8 --all --include=scripts/g4/lib/*.mjs --check-coverage --lines 70 --functions 70 --branches 70 --statements 70 node --test tests/g4/*.test.mjs",
     "contract": "redocly lint docs/work/B_TECH/openapi_v1.yaml --config quality/openapi/redocly.yaml",
     "security:secrets": "node scripts/g4/scan-secrets.mjs",

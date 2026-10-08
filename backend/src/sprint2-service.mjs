@@ -168,8 +168,8 @@ export function createSprint2Service({ persistence = {}, adapters = null, now = 
       return save('videoReference', { id: id('video-ref'), incidentId, mode: body.mode ?? 'LIVE', externalVideoId: response.videoReference ?? response.streamId ?? response.videoId ?? null, recordingStoredHere: false, marker: response.marker, queriedAt: iso(now) });
     },
     async accessCommand(incidentId, body, actorId, context) {
-      rule(body?.authorizedConfirmation === true && body?.reason, 'authorized confirmation and reason are required', 'CONTROL_CONFIRMATION_REQUIRED');
-      const command = { id: id('access-command'), incidentId, targetId: body.targetId, action: body.action, reason: body.reason, confirmedBy: actorId, status: 'PENDING', createdAt: iso(now) };
+      rule(body?.confirmationToken && body?.doorRef && body?.action === 'REQUEST_OPEN' && body?.reason, 'confirmation token, door and reason are required', 'CONTROL_CONFIRMATION_REQUIRED');
+      const command = { id: id('access-command'), incidentId, targetId: body.doorRef, action: body.action, reason: body.reason, confirmedBy: actorId, status: 'PENDING', createdAt: iso(now) };
       await save('controlCommand', command);
       try {
         const receipt = await external('EXT-ACCESS', 'ACCESS_CONTROL', body, { ...context, businessId: command.id, authorizedConfirmation: actorId });

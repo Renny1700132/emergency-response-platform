@@ -1617,3 +1617,20 @@
 - 处置：C在G5-01核验既有能力与真实TC结果，全量FR/★逐项记录PASS/FAIL/BLOCKED/NOT_RUN；已有能力可实测，未实现不能以需求文档检查或MVP PASS冒充功能PASS。不得新增backlog功能或擅自缩小分母。
 - 关闭条件：全量每需求至少1条实际PASS且★核验完整的可回指证据，经A Review；若仍不满足，则G5-03明确不允许进入G6。后续任何真实需求/验收变更必须特别警告并等待用户确认，G5-00不请求也不实施该变更。
 - 历史：G4证据、RTM v4和G3基线不回改；本Issue不把未执行的G5检查伪写成失败或已测结论。
+
+#### G5-01 C 执行核验（2026-10-08）
+
+- 基线 `302502c8bbe19091b6860810e98bfc837838b8d8` 上完成单元、模块/适配器集成、Web/H5 系统、真实 PostgreSQL 集成、前后端覆盖率和类型检查；最终各执行套件均 PASS。
+- 全量结果：87 AC PASS / 30 AC BLOCKED；28 个★FR PASS / 6 个★FR BLOCKED。G2-FR-030—039 确认无可执行实现，未新增功能、未以文档检查或 G4 MVP 结果冒充全量 PASS。
+- 证据：`evidence/g5/G5-01/functional-gate-raw.json`、`ac-117-matrix.md`、`docs/work/C_REQ/rtm_g5_increment.md`。
+- 状态：`OPEN / VERIFIED_BLOCKING_BY_C / PENDING_A_REVIEW`；关闭条件未满足，继续阻断 G5 最终准出。
+
+## ISSUE-G5-01-002｜兼容矩阵与真实用户易用性资源不足
+
+- 日期/提出：2026-10-08，C（G5-01 主责）；Review：A。
+- 依据：KN-038 要求 Chrome/Edge 最新两个稳定版本；冻结 H5 范围要求 Android/iOS 宿主；KN-039 要求真实新用户在≤2小时完成完整上报处置学习目标。
+- 本轮事实：Edge `154.0.4258.62` 已完成桌面 1440×1000 与 H5 390×844 实际渲染截图并通过人工查看，但缺 Edge 第二稳定版本；Chrome 未安装；无 Android/iOS 设备、宿主 APP/确认矩阵和真实新用户计时。Chromium 会话完成 Web/H5 上报与跨端同步，只作为参考交互走查。
+- 严重度：`BLOCKING_TO_G5-01_DONE_AND_G5_FINAL_GATE`。
+- 状态：`OPEN / ENVIRONMENT_AND_PARTICIPANT_REQUIRED / PENDING_A_REVIEW`。
+- 解除条件：提供 Chrome/Edge 各最新两个稳定版本、甲方确认 Android/iOS 设备/宿主矩阵并执行核心流程/上传/扫码/定位/返回键/生命周期；由真实新用户完成≤2小时学习计时，保留版本、人员边界与结果。
+- 证据：`evidence/g5/G5-01/compatibility-matrix.md`、`error-semantics-review.md`。

@@ -106,7 +106,7 @@
 | Task ID | 任务 | 主责 | Review | 前置 | 输入 | 输出 | DoD | 状态 |
 |---|---|---|---|---|---|---|---|---|
 | G5-00 | 启动、治理切换与长任务规划 | A（何思源 / @WhiteApricot） | A启动自检关闭；C后续抽查不冒充已完成 | G4-00—11 DONE/master；G3冻结 | G5任务书、公共指导书、测试计划、SRS/spec/RTM v4、G4 evidence、当前P0 | G5输入索引、OVR-032、完整治理切换、范围/适用性、三个长任务、总checklist、自检证据 | 原始输入归档；当前规则无G5强制PR冲突；四项任务/角色/依赖/DoD齐全；硬门禁与简化/N/A透明；历史G4 evidence/基线未改；启动自检通过；commit及安全push留痕 | DONE |
-| G5-01 | 三级测试、功能正确性、兼容性与缺陷闭环 | C | A | G5-00 | 测试计划117TC、SRS/spec/RTM v4、冻结★/AC、G4测试与缺陷 | 最终用例集/三级实际数据、兼容矩阵、错误语义走查、FR/AC/TC结果挂接、缺陷看板/修复复测记录 | 单元/集成/系统实际执行；集成最终100%PASS；★全部核验；每需求≥1真实PASS且RTM无断链；最小有效兼容矩阵实测；缺陷分级/修复/复测闭环；严重清零；整体A Review留痕；未实现backlog/外部缺证据如实BLOCKED，不能以MVP覆盖冒充全量完成 | TODO |
+| G5-01 | 三级测试、功能正确性、兼容性与缺陷闭环 | C | A | G5-00 | 测试计划117TC、SRS/spec/RTM v4、冻结★/AC、G4测试与缺陷 | 最终用例集/三级实际数据、兼容矩阵、错误语义走查、FR/AC/TC结果挂接、缺陷看板/修复复测记录 | 单元/集成/系统实际执行；集成最终100%PASS；★全部核验；每需求≥1真实PASS且RTM无断链；最小有效兼容矩阵实测；缺陷分级/修复/复测闭环；严重清零；整体A Review留痕；未实现backlog/外部缺证据如实BLOCKED，不能以MVP覆盖冒充全量完成 | BLOCKED（87/117 AC PASS；28/34★PASS；兼容/KN-039资源缺失；PENDING_A_REVIEW） |
 | G5-02 | 性能、可靠性、维护性、可移植性与故障演练 | B | C | G5-00 | 冻结PE/KN/NFR、设计/部署契约、G4专项原始数据与环境 | 性能原始数据/报告输入、P50/P95/P99、恢复/故障演练、静态/安全/coverage/OpenAPI/secret/dependency audit、Docker干净部署证据、技术缺陷修复复测 | 可测PE/KN逐项真实执行；并发/主要接口与P99；外部超时失败/消息失败/数据库服务恢复；至少一轮故障或破坏性演练；静态无阻断；核心coverage≥70%、高危0、OpenAPI零schema error；Docker/Compose干净部署；技术缺陷整改复测；整体C Review；目标环境缺失保留BLOCKED不代造PASS | TODO |
 | G5-03 | 正式测试报告、RTM闭环与第五关最终收口 | A | C最终复核 | G5-01、G5-02 DONE | 两项真实完整数据与Review、缺陷、RTM、正式文档Skill/唯一Reference | 正式《测试报告》、性能压测报告、《缺陷看板与修复记录》、RTM闭环核验记录、八特性自评、三审、最终一致性/阶段结论 | 四成果齐套含用例/coverage/数据/遗留、性能环境规模并发P50/P95/P99失败率原始数据与边界；每需求≥1PASS/★全核验/RTM无断链；八特性有证据；三审无BLOCKER、严重缺陷0；DOCX Reference物理复制+渲染QA；tasks/README/RTM/Git一致；C最终复核并明确是否进入G6，任一硬门禁未满足不得置DONE | TODO |
 

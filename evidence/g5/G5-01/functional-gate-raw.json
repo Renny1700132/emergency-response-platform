@@ -1,0 +1,1518 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G5-01",
+  "generatedAt": "2026-10-08T13:19:11.987Z",
+  "commit": "302502c8bbe19091b6860810e98bfc837838b8d8",
+  "environment": {
+    "node": "v24.21.0",
+    "platform": "win32",
+    "arch": "x64",
+    "browsers": [
+      {
+        "family": "Edge",
+        "version": "154.0.4258.62",
+        "executable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+      }
+    ]
+  },
+  "scope": {
+    "fr": 39,
+    "ac": 117,
+    "starFr": 34
+  },
+  "suites": [
+    {
+      "id": "unit-domain-and-guards",
+      "command": "D:\\tool\\source\\nodejs\\node.exe --test tests/backend/event-workflow.test.mjs tests/g4/selfcheck.test.mjs tests/g4/secret-scan.test.mjs tests/g4/integration-simulator.test.mjs",
+      "startedAt": "2026-10-08T13:18:58.501Z",
+      "finishedAt": "2026-10-08T13:18:58.687Z",
+      "exitCode": 0,
+      "status": "PASS",
+      "stdout": "✔ event workflow enforces verify, idempotent start, task feedback and closure rules (2.5583ms)\n✔ message failure keeps business tasks and marks manual review (1.7214ms)\n✔ registry exposes eight distinct EXT ports plus GIS and H5 (7.4323ms)\n✔ every adapter has deterministic marked normal, unauthorized, timeout and failure fixtures (3.4392ms)\n✔ unknown adapters and scenarios fail closed with simulated markers (2.4198ms)\n✔ GIS and H5 fixtures retain frozen responsibility boundaries (3.4155ms)\n✔ HTTP simulator returns fixture status, body and evidence header (30.7464ms)\n✔ scan target collection includes implementation files and skips tests (9.6333ms)\n✔ secret scan accepts ordinary configuration (2.9827ms)\n✔ secret scan blocks assigned credentials without disclosing the value (2.2295ms)\n✔ selfcheck accepts complete evidence (0.8159ms)\n✔ selfcheck blocks a missing check and empty traceability (0.139ms)\n✔ selfcheck permits an evidenced not-applicable result (0.1115ms)\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 138.5953",
+      "stderr": ""
+    },
+    {
+      "id": "integration-backend",
+      "command": "D:\\tool\\source\\nodejs\\node.exe --test tests/backend/foundation.test.mjs tests/backend/g4-05-integration.test.mjs tests/backend/g4-05-recovery.test.mjs tests/backend/g4-08-sprint2.test.mjs",
+      "startedAt": "2026-10-08T13:18:58.687Z",
+      "finishedAt": "2026-10-08T13:18:58.903Z",
+      "exitCode": 0,
+      "status": "PASS",
+      "stdout": "✔ production configuration requires database and middle-platform endpoints (0.7822ms)\n✔ audit redacts credentials and keeps traceability fields (1.4273ms)\n✔ identity and database adapters retain their infrastructure boundary (0.7202ms)\n✔ middle-platform bearer adapter validates identity and forwards file requests (2.4156ms)\n✔ health, readiness and minimal authorization return controlled responses (22.2575ms)\n✔ readiness and application bootstrap cover available and unavailable database states (11.0173ms)\n✔ foundation migration has an auditable paired rollback and compose keeps credentials external (3.2637ms)\n✔ database transaction commits success and rolls back failure (0.4505ms)\n✔ HTTP core incident path covers authorization, idempotency, tasks and closure (38.7768ms)\n✔ Bearer identity connects the real page routes without development headers (22.3009ms)\n✔ persistence uses parameterized SQL and message port maps failure and timeout (9.1192ms)\n✔ database-backed aggregate survives service recreation through the full closure path (4.4658ms)\n✔ business fact, outbox and audit roll back together on injected failure (0.5669ms)\n✔ message dispatch occurs after commit and failure remains recoverable (0.506ms)\n✔ G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands (14.2609ms)\n✔ G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths (7.7913ms)\n✔ G4-08 persistence parameterizes values and HTTP routes enforce authorization/idempotency (25.1276ms)\n✔ G4-08 migration is paired and persisted Sprint 2 records recover after service recreation (4.8592ms)\nℹ tests 18\nℹ suites 0\nℹ pass 18\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 170.2823",
+      "stderr": ""
+    },
+    {
+      "id": "system-web-h5",
+      "command": "npm run test --prefix frontend -- --reporter=verbose",
+      "startedAt": "2026-10-08T13:18:58.903Z",
+      "finishedAt": "2026-10-08T13:19:00.952Z",
+      "exitCode": 0,
+      "status": "PASS",
+      "stdout": "> museum-emergency-response-frontend@0.1.0 test\n> vitest run --reporter=verbose\n\n\n RUN  v5.0.1 D:/project/emergency-response-platform/frontend\n\n ✓ tests/module-traceability.test.ts > frozen module traceability > matches every controlled MOD-* to its frozen G2-FR set 1ms\n ✓ tests/module-traceability.test.ts > frozen module traceability > keeps the MOD-MOBILE channel boundary and the invoked domain on every H5 route 0ms\n ✓ tests/api-client.test.ts > API Client > adds authentication, request id and query parameters 4ms\n ✓ tests/api-client.test.ts > API Client > normalizes contract errors and preserves traceId 1ms\n ✓ tests/api-client.test.ts > API Client > reports network failures without leaking request details 0ms\n ✓ tests/api-client.test.ts > API Client > sends JSON bodies and idempotency keys for writes 1ms\n ✓ tests/api-client.test.ts > API Client > replaces required path parameters with encoded values 0ms\n ✓ tests/api-client.test.ts > API Client > notifies the authentication boundary on a 401 response 0ms\n ✓ tests/api-client.test.ts > API Client > normalizes an already-aborted caller signal 0ms\n ✓ tests/presentation-state.test.ts > presentation session synchronization > broadcasts role and workflow changes as cloneable plain snapshots 65ms\n ✓ tests/presentation-state.test.ts > presentation session synchronization > applies a remote workflow snapshot to the live session state 1ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-PLAN without presentation fallback 1ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-RESOURCE without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-DRILL without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-DUTY without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-KNOWLEDGE without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-SITUATION without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-INTEGRATION without presentation fallback 0ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > maps generic contract entities into visible incident and task state 1ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > loads lists through the formal client and preserves empty data 1ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > submits incident report, verification and response start with typed paths and idempotency 1ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > submits task acknowledgement and feedback with attachments and resource version 0ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > keeps forbidden, failure and trace states visible 0ms\n ✓ tests/auth-context.test.ts > authentication context > stays anonymous when the host provides no access token 2ms\n ✓ tests/auth-context.test.ts > authentication context > loads identity and evaluates permissions without persisting the token 1ms\n ✓ tests/auth-context.test.ts > authentication context > enters a controlled error state when identity loading fails 0ms\n ✓ tests/auth-context.test.ts > authentication context > reads a short-lived token from the host bridge without persistence 1ms\n ✓ tests/presentation-api.test.ts > presentation API adapter > provides an explicit demo identity and mutable incident workflow 4ms\n ✓ tests/presentation-api.test.ts > presentation API adapter > supports task actions and a safe generic acknowledgement 1ms\n ✓ tests/presentation-api.test.ts > presentation API adapter > shares role actions and workflow changes with the live presentation state 1ms\n ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > renders Dashboard only from formal responses and omits presentation facts 30ms\n ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > omits situation presentation facts and sends a typed formal access command with visible receipt 14ms\n ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > does not fall back to presentation facts when formal Dashboard APIs fail 4ms\n ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > shows formal control failure and explicit manual degradation without a success claim 5ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > renders loading then empty state from the real incident component 12ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > renders dedicated 403 and ordinary failure states with traceId and retry 10ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > keeps unauthorized actions visible and disabled 6ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > submits an incident report through the mounted form and refreshes server state 9ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > submits verification and response start from the mounted incident card 8ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > executes acknowledge, feedback, remind and complete from the mounted task page 10ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > creates a temporary task from the mounted Web task form 4ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > uses the same controlled views for Web and H5 routes 6ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > shows H5 upload failure and retries the same selected file 4ms\n ✓ tests/real-stack-e2e.test.ts > G4-07 real frontend/backend E2E > runs the core incident closure through the formal client, Bearer identity, HTTP server and mounted pages 240ms\n\n Test Files  10 passed (10)\n      Tests  44 passed (44)\n   Start at  21:18:59\n   Duration  1.33s (environment 63%, transform 20%, import 10%, tests 7%, worker 1%)",
+      "stderr": ""
+    },
+    {
+      "id": "coverage-frontend",
+      "command": "npm run test:frontend:coverage",
+      "startedAt": "2026-10-08T13:19:00.952Z",
+      "finishedAt": "2026-10-08T13:19:03.880Z",
+      "exitCode": 0,
+      "status": "PASS",
+      "stdout": "> museum-emergency-response-quality-gates@0.1.0 test:frontend:coverage\n> npm run test:coverage --prefix frontend\n\n\n> museum-emergency-response-frontend@0.1.0 test:coverage\n> vitest run --coverage\n\n\n RUN  v5.0.1 D:/project/emergency-response-platform/frontend\n      Coverage enabled with v8\n\n\n Test Files  10 passed (10)\n      Tests  44 passed (44)\n   Start at  21:19:02\n   Duration  1.43s (environment 61%, transform 19%, import 10%, tests 7%, worker 4%)\n\n % Coverage report from v8\n-------------------|---------|----------|---------|---------|-------------------\nFile               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s \n-------------------|---------|----------|---------|---------|-------------------\nAll files          |   95.57 |    77.73 |   97.36 |     100 |                   \n features/formal   |     100 |    78.94 |     100 |     100 |                   \n  ...-workbench.ts |     100 |    78.94 |     100 |     100 | 14-15,17-18,89-98 \n features/response |   94.28 |    74.24 |     100 |     100 |                   \n  workflow.ts      |   94.28 |    74.24 |     100 |     100 | ...,48-71,101-109 \n shared/auth       |   96.96 |    66.66 |     100 |     100 |                   \n  auth-context.ts  |   96.96 |    66.66 |     100 |     100 | 16-17,35-39,57    \n shared/demo       |   93.87 |     77.5 |     100 |     100 |                   \n  ...tation-api.ts |     100 |       90 |     100 |     100 | 11,22,26,29       \n  ...tion-state.ts |    87.5 |    56.66 |     100 |     100 | 32-65             \n shared/http       |   95.23 |    85.96 |   85.71 |     100 |                   \n  api-client.ts    |   96.15 |    87.27 |   83.33 |     100 | 87,95,106,108,140 \n  api-context.ts   |      80 |       50 |     100 |     100 | 9                 \n-------------------|---------|----------|---------|---------|-------------------\n\n=============================== Coverage summary ===============================\nStatements   : 95.57% ( 259/271 )\nBranches     : 77.73% ( 206/265 )\nFunctions    : 97.36% ( 74/76 )\nLines        : 100% ( 200/200 )\n================================================================================",
+      "stderr": ""
+    },
+    {
+      "id": "coverage-backend",
+      "command": "npm run test:backend:coverage",
+      "startedAt": "2026-10-08T13:19:03.880Z",
+      "finishedAt": "2026-10-08T13:19:06.535Z",
+      "exitCode": 0,
+      "status": "PASS",
+      "stdout": "> museum-emergency-response-quality-gates@0.1.0 test:backend:coverage\n> c8 --all --include=backend/src/*.mjs --check-coverage --lines 70 --functions 70 --branches 70 --statements 70 node --test tests/backend/*.test.mjs\n\n✔ event workflow enforces verify, idempotent start, task feedback and closure rules (3.1336ms)\n✔ message failure keeps business tasks and marks manual review (1.2091ms)\n✔ production configuration requires database and middle-platform endpoints (0.9489ms)\n✔ audit redacts credentials and keeps traceability fields (1.2085ms)\n✔ identity and database adapters retain their infrastructure boundary (0.8479ms)\n✔ middle-platform bearer adapter validates identity and forwards file requests (2.8309ms)\n✔ health, readiness and minimal authorization return controlled responses (23.6277ms)\n✔ readiness and application bootstrap cover available and unavailable database states (9.1419ms)\n✔ foundation migration has an auditable paired rollback and compose keeps credentials external (3.5853ms)\n✔ database transaction commits success and rolls back failure (0.6147ms)\n✔ HTTP core incident path covers authorization, idempotency, tasks and closure (43.0342ms)\n✔ Bearer identity connects the real page routes without development headers (21.8414ms)\n✔ persistence uses parameterized SQL and message port maps failure and timeout (14.3226ms)\n✔ database-backed aggregate survives service recreation through the full closure path (4.5194ms)\n✔ business fact, outbox and audit roll back together on injected failure (0.575ms)\n✔ message dispatch occurs after commit and failure remains recoverable (1.2992ms)\n✔ G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands (16.1453ms)\n✔ G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths (7.7651ms)\n✔ G4-08 persistence parameterizes values and HTTP routes enforce authorization/idempotency (26.369ms)\n✔ G4-08 migration is paired and persisted Sprint 2 records recover after service recreation (4.1252ms)\nℹ tests 20\nℹ suites 0\nℹ pass 20\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 202.2394\n--------------------------|---------|----------|---------|---------|--------------------------------\nFile                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              \n--------------------------|---------|----------|---------|---------|--------------------------------\nAll files                 |   87.69 |    77.74 |   85.24 |   87.69 |                                \n audit.mjs                |     100 |    92.85 |     100 |     100 | 4                              \n config.mjs               |     100 |      100 |     100 |     100 |                                \n database.mjs             |     100 |     90.9 |     100 |     100 | 20                             \n event-persistence.mjs    |   35.78 |    63.63 |   17.64 |   35.78 | ...166,169-173,176-180,183-188 \n event-workflow.mjs       |   97.47 |    87.87 |     100 |   97.47 | 89-92,112-115                  \n external-adapters.mjs    |     100 |    70.27 |     100 |     100 | 14,26-35,45-53,62              \n idempotency.mjs          |     100 |    88.23 |     100 |     100 | 12-13                          \n identity.mjs             |     100 |    71.87 |     100 |     100 | 5,11-13,16-20,27               \n main.mjs                 |   70.17 |       50 |      50 |   70.17 | 19-23,28-31,50-57              \n message-port.mjs         |     100 |    54.54 |     100 |     100 | 4,15-16,20                     \n middle-platform-port.mjs |   92.75 |    34.78 |   83.33 |   92.75 | 1-3,24-25                      \n server.mjs               |   97.81 |    79.01 |     100 |   97.81 | 28-29,63-64,149                \n sprint2-persistence.mjs  |   74.46 |    72.72 |     100 |   74.46 | 20-28,40-42                    \n sprint2-service.mjs      |   96.74 |    77.58 |   96.66 |   96.74 | 53-54,135-136,211-213,242      \n--------------------------|---------|----------|---------|---------|--------------------------------",
+      "stderr": ""
+    },
+    {
+      "id": "frontend-typecheck",
+      "command": "npm run typecheck --prefix frontend",
+      "startedAt": "2026-10-08T13:19:06.535Z",
+      "finishedAt": "2026-10-08T13:19:10.819Z",
+      "exitCode": 0,
+      "status": "PASS",
+      "stdout": "> museum-emergency-response-frontend@0.1.0 typecheck\n> npm run generate:api && vue-tsc --noEmit\n\n\n> museum-emergency-response-frontend@0.1.0 generate:api\n> openapi-typescript ../docs/work/B_TECH/openapi_v1.yaml -o src/api/generated/schema.d.ts\n\n✨ openapi-typescript 7.9.1\n🚀 ../docs/work/B_TECH/openapi_v1.yaml → src/api/generated/schema.d.ts [74.2ms]",
+      "stderr": ""
+    },
+    {
+      "id": "integration-postgresql",
+      "command": "npm run test:g4-05:postgres (protected local test database)",
+      "startedAt": "2026-10-08T13:19:10.819Z",
+      "finishedAt": "2026-10-08T13:19:11.631Z",
+      "exitCode": 0,
+      "status": "PASS",
+      "stdout": "> museum-emergency-response-quality-gates@0.1.0 test:g4-05:postgres\n> node --test tests/backend/g4-05-postgres.integration.mjs\n\n✔ PostgreSQL remains the fact source across service restarts and commits domain evidence atomically (312.6055ms)\n✔ PostgreSQL transaction rolls back business fact and outbox when audit persistence fails (69.9314ms)\nℹ tests 2\nℹ suites 0\nℹ pass 2\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 487.9289",
+      "stderr": ""
+    }
+  ],
+  "resultSummary": {
+    "PASS": 87,
+    "BLOCKED": 30
+  },
+  "starSummary": {
+    "PASS": 28,
+    "BLOCKED": 6
+  },
+  "compatibility": {
+    "status": "BLOCKED",
+    "required": "Chrome and Edge latest two stable versions plus confirmed Android/iOS H5 host matrix",
+    "observed": [
+      {
+        "family": "Edge",
+        "version": "154.0.4258.62",
+        "executable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+      }
+    ],
+    "missing": [
+      "Chrome latest two stable versions",
+      "Edge second stable version",
+      "Android H5 host/device matrix",
+      "iOS H5 host/device matrix"
+    ]
+  },
+  "acResults": [
+    {
+      "acId": "AC-G2-FR-001-01",
+      "frId": "G2-FR-001",
+      "frNumber": 1,
+      "expected": "**Given** 管理员进入预案编制，**When** 新建综合预案并关联专项和现场预案，**Then** 系统保存三级关系并可按层级查看。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-001-02",
+      "frId": "G2-FR-001",
+      "frNumber": 1,
+      "expected": "**Given** 已有预案，**When** 设置分区、分时或分险适用条件，**Then** 系统保存条件并在检索结果中显示。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-001-03",
+      "frId": "G2-FR-001",
+      "frNumber": 1,
+      "expected": "**Given** 无编辑权限的用户，**When** 尝试新增或修改预案，**Then** 系统拒绝操作并留存授权失败审计。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-002-01",
+      "frId": "G2-FR-002",
+      "frNumber": 2,
+      "expected": "**Given** 管理员编辑预案，**When** 增加流程节点、任务和责任人，**Then** 系统保存顺序、责任和依赖关系。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-002-02",
+      "frId": "G2-FR-002",
+      "frNumber": 2,
+      "expected": "**Given** 预案需要协同，**When** 配置会议群组和通知对象，**Then** 系统在预案版本中保留配置并可供启动时读取。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-002-03",
+      "frId": "G2-FR-002",
+      "frNumber": 2,
+      "expected": "**Given** 人员目录不可用或对象失效，**When** 保存编排，**Then** 系统提示不可用项，不将失效对象作为可执行调派对象。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-003-01",
+      "frId": "G2-FR-003",
+      "frNumber": 3,
+      "expected": "**Given** 管理员在预案中新增自定义任务，**When** 保存并发布预案，**Then** 任务名称、责任人、时限和执行状态可被读取。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-003-02",
+      "frId": "G2-FR-003",
+      "frNumber": 3,
+      "expected": "**Given** 已核实事件并选择有效预案，**When** 授权人员启动预案，**Then** 系统自动创建对应处置任务并向移动端发送通知。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-003-03",
+      "frId": "G2-FR-003",
+      "frNumber": 3,
+      "expected": "**Given** 验收通道和目标设备可用，**When** 启动预案，**Then** 从启动到通知/任务下发满足 KN-003 的 ≤3 秒指标；未满足时记录测量结果与异常，不宣称通过。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-004-01",
+      "frId": "G2-FR-004",
+      "frNumber": 4,
+      "expected": "**Given** 已创建事件，**When** 有人提交续报，**Then** 事件时间线按发生/接收时间展示续报及来源。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/formal-module-workbench.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-004-02",
+      "frId": "G2-FR-004",
+      "frNumber": 4,
+      "expected": "**Given** 事件关联任务，**When** 任务被接收、反馈或完成，**Then** 态势视图显示当前状态和处理人。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/formal-module-workbench.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-004-03",
+      "frId": "G2-FR-004",
+      "frNumber": 4,
+      "expected": "**Given** 未获事件权限的用户，**When** 访问事件详情，**Then** 系统拒绝展示受限内容并记录访问审计。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/formal-module-workbench.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-005-01",
+      "frId": "G2-FR-005",
+      "frNumber": 5,
+      "expected": "**Given** 定位源返回有效人员位置，**When** 指挥人员打开事件地图，**Then** 系统叠加人员位置、职责和就位状态。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/formal-module-workbench.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-005-02",
+      "frId": "G2-FR-005",
+      "frNumber": 5,
+      "expected": "**Given** 连续定位数据可用，**When** 执行目标环境性能测试，**Then** 刷新周期满足 KN-008 ≤2 秒/次，且处理后精度不低于 KN-009 的源精度；结果以测试记录判定。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/formal-module-workbench.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-005-03",
+      "frId": "G2-FR-005",
+      "frNumber": 5,
+      "expected": "**Given** 位置过期或源不可用，**When** 用户查看地图，**Then** 系统标识新鲜度/不可用状态，并禁止将其作为自动邻近调派结论。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/formal-module-workbench.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-006-01",
+      "frId": "G2-FR-006",
+      "frNumber": 6,
+      "expected": "**Given** 用户选择有权限的视频点位，**When** 发起实时调阅，**Then** 系统通过既有接口请求并展示实时画面或明确失败原因。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/formal-module-workbench.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-006-02",
+      "frId": "G2-FR-006",
+      "frNumber": 6,
+      "expected": "**Given** 既有系统存在指定时段录像，**When** 用户检索并回放，**Then** 系统通过接口完成调阅，不创建或承担录像存储。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/formal-module-workbench.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-006-03",
+      "frId": "G2-FR-006",
+      "frNumber": 6,
+      "expected": "**Given** 目标视频环境可用，**When** 执行首帧与保存条件验证，**Then** 首帧按 KN-010 ≤3 秒测量，保存条件按 KN-060 ≥30 天由既有系统证据确认。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/formal-module-workbench.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-007-01",
+      "frId": "G2-FR-007",
+      "frNumber": 7,
+      "expected": "**Given** 已配置物资站点坐标，**When** 打开态势地图，**Then** 系统展示站点图层。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/formal-module-workbench.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-007-02",
+      "frId": "G2-FR-007",
+      "frNumber": 7,
+      "expected": "**Given** 用户选择一个站点，**When** 打开站点详情，**Then** 系统展示该站点的物资清单、数量和配置。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/formal-module-workbench.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-007-03",
+      "frId": "G2-FR-007",
+      "frNumber": 7,
+      "expected": "**Given** 站点无有效台账关联，**When** 用户钻取详情，**Then** 系统提示数据缺失并保留异常记录，不展示虚构数量。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/formal-module-workbench.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-008-01",
+      "frId": "G2-FR-008",
+      "frNumber": 8,
+      "expected": "**Given** 管理员录入物资，**When** 保存名称、数量、有效期和站点，**Then** 系统生成可查询台账记录。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-008-02",
+      "frId": "G2-FR-008",
+      "frNumber": 8,
+      "expected": "**Given** 台账物资临近有效期，**When** 执行提醒规则，**Then** 系统生成临期提醒并记录触发时间。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-008-03",
+      "frId": "G2-FR-008",
+      "frNumber": 8,
+      "expected": "**Given** 验收数据规模达到约定基线，**When** 导入台账和站点，**Then** 系统可承载 KN-023 ≥30 站点、KN-024 ≥1000 项的验证数据，结果以导入与查询证据判定。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-009-01",
+      "frId": "G2-FR-009",
+      "frNumber": 9,
+      "expected": "**Given** 管理员选择站点和物资，**When** 创建盘点计划，**Then** 系统保存计划范围和台账快照。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-009-02",
+      "frId": "G2-FR-009",
+      "frNumber": 9,
+      "expected": "**Given** 现场人员打开计划，**When** 提交移动盘点数量，**Then** 系统将结果与计划快照自动比对并标识差异。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-009-03",
+      "frId": "G2-FR-009",
+      "frNumber": 9,
+      "expected": "**Given** 出现盘点差异，**When** 管理员复核处理，**Then** 系统保留原快照、盘点值、复核人和处理结果。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-010-01",
+      "frId": "G2-FR-010",
+      "frNumber": 10,
+      "expected": "**Given** 管理员新建演练计划，**When** 选择月、季或年周期及场所，**Then** 系统保存计划、责任人和目标时间。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-010-02",
+      "frId": "G2-FR-010",
+      "frNumber": 10,
+      "expected": "**Given** 人员密集场所被纳入监管，**When** 检查任一滚动六个月，**Then** 系统可验证每半年至少一次演练安排（KN-013）。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-010-03",
+      "frId": "G2-FR-010",
+      "frNumber": 10,
+      "expected": "**Given** 计划冲突或缺少责任人，**When** 发布计划，**Then** 系统阻止发布或给出可追溯的校验提示。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-011-01",
+      "frId": "G2-FR-011",
+      "frNumber": 11,
+      "expected": "**Given** 到达计划触发时间，**When** 系统执行计划调度，**Then** 自动创建对应演练任务。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-011-02",
+      "frId": "G2-FR-011",
+      "frNumber": 11,
+      "expected": "**Given** 演练任务已创建，**When** 通知下发，**Then** 系统记录接收对象、下发时间、回执或失败状态。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-011-03",
+      "frId": "G2-FR-011",
+      "frNumber": 11,
+      "expected": "**Given** 消息通道不可用，**When** 下发失败，**Then** 系统进入重试/告警或人工处置流程并留痕。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-012-01",
+      "frId": "G2-FR-012",
+      "frNumber": 12,
+      "expected": "**Given** 演练正在执行，**When** 人员提交执行记录，**Then** 系统关联计划、任务、人员和时间。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-012-02",
+      "frId": "G2-FR-012",
+      "frNumber": 12,
+      "expected": "**Given** 执行记录完成，**When** 评估人按模板评分，**Then** 系统保存评估条目、结论和附件引用。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-012-03",
+      "frId": "G2-FR-012",
+      "frNumber": 12,
+      "expected": "**Given** 评估发现整改项，**When** 创建改进措施，**Then** 系统可追踪整改状态并在报告中关联展示。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-013-01",
+      "frId": "G2-FR-013",
+      "frNumber": 13,
+      "expected": "**Given** 授权用户在 Web 或 H5 端，**When** 提交事件基本信息，**Then** 系统创建事件并生成可追踪编号。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "frontend/tests/real-stack-e2e.test.ts",
+        "tests/backend/g4-05-postgres.integration.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-013-02",
+      "frId": "G2-FR-013",
+      "frNumber": 13,
+      "expected": "**Given** 存在多个事件，**When** 用户按时间、状态、类型或关键字组合检索，**Then** 系统返回符合条件的事件列表。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "frontend/tests/real-stack-e2e.test.ts",
+        "tests/backend/g4-05-postgres.integration.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-013-03",
+      "frId": "G2-FR-013",
+      "frNumber": 13,
+      "expected": "**Given** 必填字段缺失或用户无权限，**When** 提交事件，**Then** 系统拒绝提交并提示原因，不生成不完整事件。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "frontend/tests/real-stack-e2e.test.ts",
+        "tests/backend/g4-05-postgres.integration.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-014-01",
+      "frId": "G2-FR-014",
+      "frNumber": 14,
+      "expected": "**Given** 新事件等待核实，**When** 核实人提交通过或驳回意见，**Then** 系统记录意见、处理人、时间和状态变更。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "frontend/tests/real-stack-e2e.test.ts",
+        "tests/backend/g4-05-postgres.integration.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-014-02",
+      "frId": "G2-FR-014",
+      "frNumber": 14,
+      "expected": "**Given** 事件已核实且预案可用，**When** 授权人员启动预案，**Then** 系统进入处置生命周期并关联预案与任务。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "frontend/tests/real-stack-e2e.test.ts",
+        "tests/backend/g4-05-postgres.integration.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-014-03",
+      "frId": "G2-FR-014",
+      "frNumber": 14,
+      "expected": "**Given** 目标验收环境可用，**When** 测量告警接入和任务下达，**Then** 分别按 KN-011 ≤2 秒、KN-012 ≤3 分钟形成测试记录。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "frontend/tests/real-stack-e2e.test.ts",
+        "tests/backend/g4-05-postgres.integration.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-015-01",
+      "frId": "G2-FR-015",
+      "frNumber": 15,
+      "expected": "**Given** 预案启动，**When** 系统生成处置任务，**Then** 任务自动关联事件、责任人、时限和状态。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "frontend/tests/real-stack-e2e.test.ts",
+        "tests/backend/g4-05-postgres.integration.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-015-02",
+      "frId": "G2-FR-015",
+      "frNumber": 15,
+      "expected": "**Given** 任务已接收，**When** 执行人提交反馈，**Then** 系统记录反馈内容、附件引用、时间和处理状态。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "frontend/tests/real-stack-e2e.test.ts",
+        "tests/backend/g4-05-postgres.integration.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-015-03",
+      "frId": "G2-FR-015",
+      "frNumber": 15,
+      "expected": "**Given** 任务逾期或指挥人员需追加任务，**When** 触发催办或创建临时任务，**Then** 系统记录触发原因和后续处置。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "frontend/tests/real-stack-e2e.test.ts",
+        "tests/backend/g4-05-postgres.integration.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-016-01",
+      "frId": "G2-FR-016",
+      "frNumber": 16,
+      "expected": "**Given** 事件满足关闭条件，**When** 关闭人提交评估，**Then** 系统记录评估结论和关闭状态。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "frontend/tests/real-stack-e2e.test.ts",
+        "tests/backend/g4-05-postgres.integration.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-016-02",
+      "frId": "G2-FR-016",
+      "frNumber": 16,
+      "expected": "**Given** 需要事故调查，**When** 填写调查记录并生成报告，**Then** 系统关联事件证据、调查结论和报告版本。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "frontend/tests/real-stack-e2e.test.ts",
+        "tests/backend/g4-05-postgres.integration.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-016-03",
+      "frId": "G2-FR-016",
+      "frNumber": 16,
+      "expected": "**Given** 事件已关闭，**When** 用户检索历史处置，**Then** 系统可在授权范围内查询其时间线、报告和知识条目。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "frontend/tests/real-stack-e2e.test.ts",
+        "tests/backend/g4-05-postgres.integration.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-017-01",
+      "frId": "G2-FR-017",
+      "frNumber": 17,
+      "expected": "**Given** 管理员设置值班规则，**When** 选择小组、时段和点位，**Then** 系统保存可执行的打卡配置。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-017-02",
+      "frId": "G2-FR-017",
+      "frNumber": 17,
+      "expected": "**Given** 需要代执行，**When** 管理员按授权指定代执行人，**Then** 系统记录授权关系、操作者和时间。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-017-03",
+      "frId": "G2-FR-017",
+      "frNumber": 17,
+      "expected": "**Given** 配置存在无效人员或点位，**When** 发布规则，**Then** 系统提示并阻止无效配置生效。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-018-01",
+      "frId": "G2-FR-018",
+      "frNumber": 18,
+      "expected": "**Given** 管理员在地图选择位置，**When** 保存打卡点，**Then** 系统保存坐标、楼层和点位属性。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-018-02",
+      "frId": "G2-FR-018",
+      "frNumber": 18,
+      "expected": "**Given** 已保存点位，**When** 生成或更新二维码和有效半径，**Then** 系统将其与点位关联并保留版本记录。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-018-03",
+      "frId": "G2-FR-018",
+      "frNumber": 18,
+      "expected": "**Given** 地图服务或坐标不合法，**When** 保存点位，**Then** 系统提示失败原因且不产生无效点位。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-019-01",
+      "frId": "G2-FR-019",
+      "frNumber": 19,
+      "expected": "**Given** 已产生打卡记录，**When** 用户选择统计周期，**Then** 系统按点位、小组、人员三个维度汇总（KN-014）。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-019-02",
+      "frId": "G2-FR-019",
+      "frNumber": 19,
+      "expected": "**Given** 用户筛选统计条件，**When** 导出明细，**Then** 导出内容与当前权限和筛选范围一致。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-019-03",
+      "frId": "G2-FR-019",
+      "frNumber": 19,
+      "expected": "**Given** 无权限用户尝试导出，**When** 发起导出，**Then** 系统拒绝并记录审计。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-020-01",
+      "frId": "G2-FR-020",
+      "frNumber": 20,
+      "expected": "**Given** 已到打卡截止时间且无有效记录，**When** 规则引擎检查，**Then** 系统创建缺卡或超时告警。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-020-02",
+      "frId": "G2-FR-020",
+      "frNumber": 20,
+      "expected": "**Given** 告警需要通知，**When** 调用统一消息通道，**Then** 系统记录请求、重试、回执或失败结果。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-020-03",
+      "frId": "G2-FR-020",
+      "frNumber": 20,
+      "expected": "**Given** 正常验收通道可用，**When** 执行并发测试，**Then** ≥20 路、≥99% 到达率按 KN-006、KN-007 实测并保留结果；未通过时进入异常处置。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-021-01",
+      "frId": "G2-FR-021",
+      "frNumber": 21,
+      "expected": "**Given** 授权用户打开 H5，**When** 发起事件并拍照上传，**Then** 系统保存事件、图片引用和提交人。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-021-02",
+      "frId": "G2-FR-021",
+      "frNumber": 21,
+      "expected": "**Given** 用户已有本人发起或参与的事件，**When** 打开个人事件，**Then** 系统仅展示其授权范围内的事件。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-021-03",
+      "frId": "G2-FR-021",
+      "frNumber": 21,
+      "expected": "**Given** 相机或网络不可用，**When** 用户提交事件，**Then** H5 明确提示可恢复状态并防止把未上传附件标记为已上传。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-022-01",
+      "frId": "G2-FR-022",
+      "frNumber": 22,
+      "expected": "**Given** 用户收到任务通知，**When** 在 H5 确认任务，**Then** 系统更新任务接收状态并留痕。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-022-02",
+      "frId": "G2-FR-022",
+      "frNumber": 22,
+      "expected": "**Given** 任务执行中，**When** 用户提交反馈和附件，**Then** 系统关联任务、上传结果和时间。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-022-03",
+      "frId": "G2-FR-022",
+      "frNumber": 22,
+      "expected": "**Given** 任务条件满足，**When** 用户提交完成，**Then** 系统更新任务状态；消息并发与到达率按 KN-006、KN-007 在正常验收通道验证。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-023-01",
+      "frId": "G2-FR-023",
+      "frNumber": 23,
+      "expected": "**Given** 用户有待执行演练，**When** 打开 H5 演练列表，**Then** 系统展示本人授权任务及状态。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-023-02",
+      "frId": "G2-FR-023",
+      "frNumber": 23,
+      "expected": "**Given** 用户进入演练任务，**When** 提交执行结果，**Then** 系统记录结果、时间和关联任务。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-023-03",
+      "frId": "G2-FR-023",
+      "frNumber": 23,
+      "expected": "**Given** 任务已关闭或用户无权限，**When** 尝试提交，**Then** 系统拒绝并保留可追溯提示。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-024-01",
+      "frId": "G2-FR-024",
+      "frNumber": 24,
+      "expected": "**Given** 用户扫描有效点位二维码，**When** 身份、时段和范围均符合规则，**Then** 系统写入有效打卡记录。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-024-02",
+      "frId": "G2-FR-024",
+      "frNumber": 24,
+      "expected": "**Given** 用户不在有效半径、时段或小组内，**When** 扫码，**Then** 系统拒绝打卡并说明失败维度。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-024-03",
+      "frId": "G2-FR-024",
+      "frNumber": 24,
+      "expected": "**Given** 目标环境可用，**When** 执行扫码写入测试，**Then** 按 KN-036 ≤1 秒记录性能结果。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-025-01",
+      "frId": "G2-FR-025",
+      "frNumber": 25,
+      "expected": "**Given** 用户打开本人盘点计划，**When** 录入或扫描物资盘点数量，**Then** 系统关联计划、物资和现场记录。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-025-02",
+      "frId": "G2-FR-025",
+      "frNumber": 25,
+      "expected": "**Given** 用户提交盘点，**When** 系统校验计划快照，**Then** 自动标识与快照的数量差异。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-025-03",
+      "frId": "G2-FR-025",
+      "frNumber": 25,
+      "expected": "**Given** 盘点结果经授权复核，**When** 确认更新，**Then** 系统更新现有数量并保留盘点和复核证据。",
+      "result": "PASS",
+      "executionKind": "LOCAL_CONTROLLED_EXECUTION",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "frontend/tests/page-interactions.test.ts"
+      ],
+      "note": "Fresh unit/integration/system execution passed on the controlled local environment."
+    },
+    {
+      "acId": "AC-G2-FR-026-01",
+      "frId": "G2-FR-026",
+      "frNumber": 26,
+      "expected": "**Given** 接入终端在线状态和告警数据，**When** 打开综合安防视图，**Then** 系统展示在线状态、告警统计和空间定位。",
+      "result": "PASS",
+      "executionKind": "LOCAL_WITH_SIMULATED_EXTERNAL_PORTS",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "tests/g4/integration-simulator.test.mjs"
+      ],
+      "note": "Fresh local execution passed with explicitly simulated external ports; this is not production or customer-environment acceptance."
+    },
+    {
+      "acId": "AC-G2-FR-026-02",
+      "frId": "G2-FR-026",
+      "frNumber": 26,
+      "expected": "**Given** 用户选择终端或告警，**When** 发起业务跳转，**Then** 系统跳转至关联业务上下文或明确记录失败原因。",
+      "result": "PASS",
+      "executionKind": "LOCAL_WITH_SIMULATED_EXTERNAL_PORTS",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "tests/g4/integration-simulator.test.mjs"
+      ],
+      "note": "Fresh local execution passed with explicitly simulated external ports; this is not production or customer-environment acceptance."
+    },
+    {
+      "acId": "AC-G2-FR-026-03",
+      "frId": "G2-FR-026",
+      "frNumber": 26,
+      "expected": "**Given** 目标环境具备验收数据，**When** 测量视图刷新，**Then** 按 KN-016 ≤30 秒形成测试证据。",
+      "result": "PASS",
+      "executionKind": "LOCAL_WITH_SIMULATED_EXTERNAL_PORTS",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "tests/g4/integration-simulator.test.mjs"
+      ],
+      "note": "Fresh local execution passed with explicitly simulated external ports; this is not production or customer-environment acceptance."
+    },
+    {
+      "acId": "AC-G2-FR-027-01",
+      "frId": "G2-FR-027",
+      "frNumber": 27,
+      "expected": "**Given** 物联网接口推送有效告警，**When** 系统接收并匹配规则，**Then** 创建或关联应急事件并保留原始关联信息。",
+      "result": "PASS",
+      "executionKind": "LOCAL_WITH_SIMULATED_EXTERNAL_PORTS",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "tests/g4/integration-simulator.test.mjs"
+      ],
+      "note": "Fresh local execution passed with explicitly simulated external ports; this is not production or customer-environment acceptance."
+    },
+    {
+      "acId": "AC-G2-FR-027-02",
+      "frId": "G2-FR-027",
+      "frNumber": 27,
+      "expected": "**Given** 接口暂时断连，**When** 连接恢复，**Then** 系统按重试/补传策略处理并记录成功、失败或待人工处置状态。",
+      "result": "PASS",
+      "executionKind": "LOCAL_WITH_SIMULATED_EXTERNAL_PORTS",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "tests/g4/integration-simulator.test.mjs"
+      ],
+      "note": "Fresh local execution passed with explicitly simulated external ports; this is not production or customer-environment acceptance."
+    },
+    {
+      "acId": "AC-G2-FR-027-03",
+      "frId": "G2-FR-027",
+      "frNumber": 27,
+      "expected": "**Given** 不可识别的告警或客流数据，**When** 接收处理，**Then** 系统不自动生成错误事件，并输出可审计的异常记录。",
+      "result": "PASS",
+      "executionKind": "LOCAL_WITH_SIMULATED_EXTERNAL_PORTS",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "tests/g4/integration-simulator.test.mjs"
+      ],
+      "note": "Fresh local execution passed with explicitly simulated external ports; this is not production or customer-environment acceptance."
+    },
+    {
+      "acId": "AC-G2-FR-028-01",
+      "frId": "G2-FR-028",
+      "frNumber": 28,
+      "expected": "**Given** 中台返回用户、组织或权限信息，**When** 用户访问应急业务，**Then** 系统按中台授权执行业务访问控制。",
+      "result": "PASS",
+      "executionKind": "LOCAL_WITH_SIMULATED_EXTERNAL_PORTS",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "tests/g4/integration-simulator.test.mjs"
+      ],
+      "note": "Fresh local execution passed with explicitly simulated external ports; this is not production or customer-environment acceptance."
+    },
+    {
+      "acId": "AC-G2-FR-028-02",
+      "frId": "G2-FR-028",
+      "frNumber": 28,
+      "expected": "**Given** 应急业务需要消息、流程或文件能力，**When** 发起相应调用，**Then** 系统通过中台适配层调用并记录关联结果。",
+      "result": "PASS",
+      "executionKind": "LOCAL_WITH_SIMULATED_EXTERNAL_PORTS",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "tests/g4/integration-simulator.test.mjs"
+      ],
+      "note": "Fresh local execution passed with explicitly simulated external ports; this is not production or customer-environment acceptance."
+    },
+    {
+      "acId": "AC-G2-FR-028-03",
+      "frId": "G2-FR-028",
+      "frNumber": 28,
+      "expected": "**Given** 中台接口不可用，**When** 业务访问受影响，**Then** 系统展示可观察错误并记录降级/人工处置，不以本地重复建设替代中台通用能力。",
+      "result": "PASS",
+      "executionKind": "LOCAL_WITH_SIMULATED_EXTERNAL_PORTS",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "tests/g4/integration-simulator.test.mjs"
+      ],
+      "note": "Fresh local execution passed with explicitly simulated external ports; this is not production or customer-environment acceptance."
+    },
+    {
+      "acId": "AC-G2-FR-029-01",
+      "frId": "G2-FR-029",
+      "frNumber": 29,
+      "expected": "**Given** 用户具有视频权限且既有录像可用，**When** 发起调阅或历史回放，**Then** 系统通过既有接口完成请求、记录结果并遵循既有系统保存责任。",
+      "result": "PASS",
+      "executionKind": "LOCAL_WITH_SIMULATED_EXTERNAL_PORTS",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "tests/g4/integration-simulator.test.mjs"
+      ],
+      "note": "Fresh local execution passed with explicitly simulated external ports; this is not production or customer-environment acceptance."
+    },
+    {
+      "acId": "AC-G2-FR-029-02",
+      "frId": "G2-FR-029",
+      "frNumber": 29,
+      "expected": "**Given** 疏散场景满足业务条件，**When** 授权人员确认开启门禁，**Then** 系统向既有门禁发送指令并等待安全联锁结果，不绕过联锁。",
+      "result": "PASS",
+      "executionKind": "LOCAL_WITH_SIMULATED_EXTERNAL_PORTS",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "tests/g4/integration-simulator.test.mjs"
+      ],
+      "note": "Fresh local execution passed with explicitly simulated external ports; this is not production or customer-environment acceptance."
+    },
+    {
+      "acId": "AC-G2-FR-029-03",
+      "frId": "G2-FR-029",
+      "frNumber": 29,
+      "expected": "**Given** 门禁拒绝、超时或联锁失败，**When** 接收失败回执，**Then** 系统产生告警、保留回执并转入人工降级处置。",
+      "result": "PASS",
+      "executionKind": "LOCAL_WITH_SIMULATED_EXTERNAL_PORTS",
+      "evidence": [
+        "tests/backend/g4-08-sprint2.test.mjs",
+        "tests/g4/integration-simulator.test.mjs"
+      ],
+      "note": "Fresh local execution passed with explicitly simulated external ports; this is not production or customer-environment acceptance."
+    },
+    {
+      "acId": "AC-G2-FR-030-01",
+      "frId": "G2-FR-030",
+      "frNumber": 30,
+      "expected": "**Given** 授权用户选择预案，**When** 上传附件，**Then** 系统保存附件与预案、版本和上传审计的关联。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-030-02",
+      "frId": "G2-FR-030",
+      "frNumber": 30,
+      "expected": "**Given** 已有附件版本，**When** 提交修订，**Then** 系统保留历史版本并能按权限检索。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-030-03",
+      "frId": "G2-FR-030",
+      "frNumber": 30,
+      "expected": "**Given** 用户无附件权限，**When** 尝试下载或修订，**Then** 系统拒绝并记录访问审计。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-031-01",
+      "frId": "G2-FR-031",
+      "frNumber": 31,
+      "expected": "**Given** 管理员具有权限，**When** 维护人员档案、职责和小组，**Then** 系统保存可追溯的组织关联。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-031-02",
+      "frId": "G2-FR-031",
+      "frNumber": 31,
+      "expected": "**Given** 人员已加入有效小组，**When** 触发调派通知，**Then** 系统记录接收对象、时间和回执或失败状态。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-031-03",
+      "frId": "G2-FR-031",
+      "frNumber": 31,
+      "expected": "**Given** 人员已失效或无调派权限，**When** 被选作调派对象，**Then** 系统提示并阻止无效下发。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-032-01",
+      "frId": "G2-FR-032",
+      "frNumber": 32,
+      "expected": "**Given** 管理员选择人员和时段，**When** 发布值班计划，**Then** 系统生成对应可执行的打卡关联。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-032-02",
+      "frId": "G2-FR-032",
+      "frNumber": 32,
+      "expected": "**Given** 已发布计划，**When** 调整人员或时段，**Then** 系统保存调整前后内容、操作者和时间。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-032-03",
+      "frId": "G2-FR-032",
+      "frNumber": 32,
+      "expected": "**Given** 调整与现有打卡规则冲突，**When** 提交变更，**Then** 系统提示冲突并阻止无效规则生效。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-033-01",
+      "frId": "G2-FR-033",
+      "frNumber": 33,
+      "expected": "**Given** 管理员具有配置权限，**When** 新增或修改预案类型，**Then** 系统保存类型和变更审计。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-033-02",
+      "frId": "G2-FR-033",
+      "frNumber": 33,
+      "expected": "**Given** 类型已被预案引用，**When** 管理员停用该类型，**Then** 历史预案保留原类型，新建预案不能再选择该类型。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-033-03",
+      "frId": "G2-FR-033",
+      "frNumber": 33,
+      "expected": "**Given** 无权限用户，**When** 尝试维护类型，**Then** 系统拒绝操作并记录审计。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-034-01",
+      "frId": "G2-FR-034",
+      "frNumber": 34,
+      "expected": "**Given** 管理员具有配置权限，**When** 新增、修改或停用事件类型，**Then** 系统保存类型和变更审计。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-034-02",
+      "frId": "G2-FR-034",
+      "frNumber": 34,
+      "expected": "**Given** 已配置预置类别，**When** 管理员维护类别，**Then** 系统允许按权限调整，不将预置类别误写为新增强制范围。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-034-03",
+      "frId": "G2-FR-034",
+      "frNumber": 34,
+      "expected": "**Given** 类型已被事件引用，**When** 停用类型，**Then** 历史事件保留可查，新建事件不能选择该类型。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-035-01",
+      "frId": "G2-FR-035",
+      "frNumber": 35,
+      "expected": "**Given** 甲方地图服务可用，**When** 管理员配置物资站点位置，**Then** 系统保存站点、坐标/楼层和版本。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-035-02",
+      "frId": "G2-FR-035",
+      "frNumber": 35,
+      "expected": "**Given** 站点位置有效，**When** 打开物资地图，**Then** 系统加载配置的位置并支持关联台账钻取。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-035-03",
+      "frId": "G2-FR-035",
+      "frNumber": 35,
+      "expected": "**Given** 坐标或楼层映射无效，**When** 保存站点，**Then** 系统提示并拒绝保存无效空间配置。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-036-01",
+      "frId": "G2-FR-036",
+      "frNumber": 36,
+      "expected": "**Given** 管理员创建模板，**When** 增加、排序或修改评估条目，**Then** 系统保存模板及版本。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-036-02",
+      "frId": "G2-FR-036",
+      "frNumber": 36,
+      "expected": "**Given** 模板已发布，**When** 演练或事件评估引用模板，**Then** 系统关联使用的模板版本。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-036-03",
+      "frId": "G2-FR-036",
+      "frNumber": 36,
+      "expected": "**Given** 模板被历史评估引用，**When** 修改或停用模板，**Then** 历史评估仍保留原版本可追溯。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-037-01",
+      "frId": "G2-FR-037",
+      "frNumber": 37,
+      "expected": "**Given** 管理员配置核实流程，**When** 定义环节、处理人和时限并发布，**Then** 系统保存生效配置和审计。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-037-02",
+      "frId": "G2-FR-037",
+      "frNumber": 37,
+      "expected": "**Given** 事件进入核实，**When** 流程实例化，**Then** 系统按当前有效配置路由审批事项。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-037-03",
+      "frId": "G2-FR-037",
+      "frNumber": 37,
+      "expected": "**Given** 配置存在缺少处理人或非法时限，**When** 发布，**Then** 系统阻止生效并提示校验原因。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-038-01",
+      "frId": "G2-FR-038",
+      "frNumber": 38,
+      "expected": "**Given** 已发布知识条目，**When** 用户在 H5 按分类浏览，**Then** 系统返回其授权范围内的条目。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-038-02",
+      "frId": "G2-FR-038",
+      "frNumber": 38,
+      "expected": "**Given** 用户输入关键字，**When** 执行检索，**Then** 系统返回匹配条目或明确无结果提示。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-038-03",
+      "frId": "G2-FR-038",
+      "frNumber": 38,
+      "expected": "**Given** 条目未发布或用户无权限，**When** 检索，**Then** 系统不返回受限内容并记录必要审计。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-039-01",
+      "frId": "G2-FR-039",
+      "frNumber": 39,
+      "expected": "**Given** 存在授权范围内的业务数据，**When** 用户选择统计条件，**Then** 系统展示事件、监控和流程统计结果。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-039-02",
+      "frId": "G2-FR-039",
+      "frNumber": 39,
+      "expected": "**Given** 统计结果存在明细，**When** 用户钻取指标，**Then** 系统展示与指标一致的授权范围内明细。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    },
+    {
+      "acId": "AC-G2-FR-039-03",
+      "frId": "G2-FR-039",
+      "frNumber": 39,
+      "expected": "**Given** 目标环境可用，**When** 测量默认刷新，**Then** 按 KN-017 ≤60 秒形成性能验证记录。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists."
+    }
+  ],
+  "overall": "BLOCKED"
+}

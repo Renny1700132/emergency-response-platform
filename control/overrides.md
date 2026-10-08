@@ -14,7 +14,7 @@
 - 是否已在 Preflight 提示：是；冲突编号 `CONFLICT-G4-ACCEPTANCE-PPT-DIRECT-001`。
 - 是否涉及真实项目事实：否。
 - 是否必须暂停：否，用户已明确授权该方法覆盖。
-- 状态：ACTIVE
+- 状态：CLOSED（2026-10-08 C 独立复核 `PASS / ACCEPTED`；直推历史与原风险披露继续保留）
 
 ## OVR-025
 

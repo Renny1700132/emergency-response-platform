@@ -3,7 +3,7 @@
 - 基线：`BASELINE-G3-M3-R1.0`（只读设计输入）。
 - MVP：G2-FR-001—029；执行明细见 `evidence/g4/G4-10/mvp-87-ac-matrix.md`。
 - 外部八端口、GIS、H5：课程模拟证据标记 `SIMULATED_EVIDENCE`，不等同生产联调。
-- 状态：G4-09—G4-11 已由 C 独立复验通过，待 PR !16 平台 Approve/Merge 后正式关闭。
+- 状态：C 独立复验通过，PR !16 已合并，第四关 MVP 研发准出完成。
 
 ## MVP 双向追踪
 

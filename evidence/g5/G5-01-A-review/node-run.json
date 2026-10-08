@@ -1,0 +1,9 @@
+{
+  "sourceCommit": "4b94b33",
+  "boundary": "in-memory and local HTTP only; no PostgreSQL suite rerun",
+  "finishedAt": "2026-10-08T21:40:38.9573787+08:00",
+  "startedAt": "2026-10-08T21:40:36.5461939+08:00",
+  "environment": "Node v24.14.0 / Windows",
+  "command": "node --test (G5-01 unit 4 files + integration 4 files)",
+  "exitCode": 0
+}

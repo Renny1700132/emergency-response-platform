@@ -1634,3 +1634,36 @@
 - 状态：`OPEN / ENVIRONMENT_AND_PARTICIPANT_REQUIRED / PENDING_A_REVIEW`。
 - 解除条件：提供 Chrome/Edge 各最新两个稳定版本、甲方确认 Android/iOS 设备/宿主矩阵并执行核心流程/上传/扫码/定位/返回键/生命周期；由真实新用户完成≤2小时学习计时，保留版本、人员边界与结果。
 - 证据：`evidence/g5/G5-01/compatibility-matrix.md`、`error-semantics-review.md`。
+
+### A审查追加（2026-10-08）｜ISSUE-G5-00-001 / ISSUE-G5-01-002
+
+- 审核HEAD：4b94b33；实际主体：本次用户授权Codex以A角色辅助审查。
+- 001的backlog及002的兼容/KN-039资源阻断确认成立，继续OPEN；C此前的87AC/28★PASS声明因新增003/004未获A认可，不能作为已核验通过事实继承。
+- A Review结论CHANGES_REQUIRED，任务保持BLOCKED；记录logs/reviews/2026-10-08_G5-01-A-review.md。不改写C原始执行/声明历史。
+
+## ISSUE-G5-01-003｜统一套件结果自动派生逐AC PASS
+
+- 日期：2026-10-08；提出/Review：A（用户授权Codex辅助）；主责整改：C。
+- 严重度：MAJOR / BLOCKING_TO_G5-01_ACCEPTANCE；状态：OPEN / CHANGES_REQUIRED。
+- 位置：scripts/g5/run-functional-gate.mjs:103、113—140、147—151；G5-01 JSON/117AC矩阵/RTM增量及摘要。
+- 问题：套件全部通过即将001—029的87条AC无条件PASS，只选择整测试文件，没有TC/具体断言/逐AC实际值；AC-005-02定位刷新、006-03首帧/保存、022-03消息并发/到达率、024-03打卡耗时、026-03刷新均缺对应测量。
+- 影响：87AC/28★PASS不可采纳；真实31+44套件通过不等于这些AC通过。未推断主观造假意图，但缺证据不能填PASS。
+- 修正/关闭：C建立逐AC可复核映射及预期/实际/执行ID；未测NOT_RUN/BLOCKED，跨G5-02专项等待真实证据；重生成汇总/RTM/看板/摘要并保留原版本与失败；A复验后关闭。不新增backlog，不降低门禁。
+- 证据：logs/reviews/2026-10-08_G5-01-A-review.md；evidence/g5/G5-01-A-review/review-summary.json。
+
+## ISSUE-G5-01-004｜混合前端测试缺完整系统级用例执行证明
+
+- 日期：2026-10-08；提出/Review：A（用户授权Codex辅助）；主责整改：C。
+- 严重度：MAJOR / BLOCKING_TO_G5-01_ACCEPTANCE；状态：OPEN / CHANGES_REQUIRED。
+- 位置：evidence/g5/G5-01/execution-summary.md:14；frontend/tests/real-stack-e2e.test.ts:20、61；formal-module-workbench.test.ts的Mock API。
+- 问题：44项是混合组件/函数/Mock与一个核心HTTP E2E；E2E注入身份/预案/消息且未配置数据库，不能证明所有29FR/87AC系统层覆盖。单独PostgreSQL2/2不是完整Web/H5→API→数据库系统级执行；浏览器演示内存走查也不能替代。
+- 修正/关闭：C正确标注层级/模拟依赖，补齐需要系统验证的FR/AC正式链路与正负例/步骤/原始证据，缺项保持NOT_RUN/BLOCKED；A复验系统包后关闭。
+- A独立复跑：31/31 Node tests、44/44前端测试实际通过；PostgreSQL/coverage本轮未复跑，未虚报。
+
+## ISSUE-G5-01-005｜H5截图裁切与渲染PASS描述冲突
+
+- 日期：2026-10-08；提出/Review：A（用户授权Codex辅助）；主责整改：C（必要产品修复由对应实现主责协作）。
+- 严重度：一般 / BLOCKING_TO_COMPATIBILITY_EVIDENCE_ACCEPTANCE；状态：OPEN / NEEDS_REPRODUCTION_AND_CORRECTION。
+- 位置：evidence/g5/G5-01/compatibility-matrix.md:6、17、21；edge-154-h5-events.png（390×844）。
+- 问题：右侧说明、事件卡状态徽标、外层手机壳明显被可见区域切断，不能称无裁切/当前版本渲染PASS。现有图为演示模式，不能据此宣称所有正式宿主已失效，但须核实。
+- 修正/关闭：C登记复现并区分布局问题/截图采集问题，必要时修复已有能力并390×844及最小矩阵复测；修正兼容结论/缺陷统计，不裁图或缩放掩盖；A依据实际步骤/截图/复测关闭。

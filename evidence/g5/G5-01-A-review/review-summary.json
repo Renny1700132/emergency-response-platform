@@ -1,0 +1,42 @@
+{
+  "reviewHead": "4b94b33",
+  "decision": "CHANGES_REQUIRED",
+  "claimedResultSummary": {
+    "PASS": 87,
+    "BLOCKED": 30
+  },
+  "claimedStarSummary": {
+    "PASS": 28,
+    "BLOCKED": 6
+  },
+  "claimedPassAccepted": false,
+  "uniqueAcCount": 117,
+  "totalAcCount": 117,
+  "reviewRerunNode": 31,
+  "reviewRerunFrontend": 44,
+  "postgresReviewRerun": "NOT_RUN",
+  "coverageReviewRerun": "NOT_RUN",
+  "unsupportedPassExamples": [
+    "AC-G2-FR-005-02",
+    "AC-G2-FR-006-03",
+    "AC-G2-FR-022-03",
+    "AC-G2-FR-024-03",
+    "AC-G2-FR-026-03"
+  ],
+  "findings": [
+    "ISSUE-G5-01-003",
+    "ISSUE-G5-01-004",
+    "ISSUE-G5-01-005"
+  ],
+  "originalEvidenceHashes": {
+    "evidence/g5/G5-01/ac-117-matrix.md": "0afe3af4900918cd5d5767c0107104f6e706f185bec54f63d3c31d8b5a2a9c68",
+    "evidence/g5/G5-01/compatibility-matrix.md": "70cfa421fcc1f350010e8b3cf169101125390251c56d7784c1af418b85e8db84",
+    "evidence/g5/G5-01/defect-register.md": "5da8aa2645e6537d89333906591ea5cb958b6e91574349edd76b3276845102d2",
+    "evidence/g5/G5-01/edge-154-h5-events.png": "eb77b16b98403463242dfde2854c6c96997d02ce464dafc6e62a85891f1da574",
+    "evidence/g5/G5-01/edge-154-web-incidents.png": "733e8df7f9b02e98220cf68f6eb577d30055a22afe438951e5977234ba32b6e4",
+    "evidence/g5/G5-01/error-semantics-review.md": "342adee90ac9152a7c2a1ff72dc2f4a0b32b631fd10d43755048c67c0bd3ec16",
+    "evidence/g5/G5-01/execution-summary.md": "4ae10e20d25cf650891a076b04c2f57488adc34a15f949f19e2eb79924b10d36",
+    "evidence/g5/G5-01/functional-gate-raw.json": "295b45a86ff2106f874412a6704f57250444f8087c83e847b98f18f9329b4b34",
+    "evidence/g5/G5-01/review-request.md": "f9d9118f4afe0625bb456a5bd919fe6eba2a4fb33f2ee03045de50eba159003c"
+  }
+}

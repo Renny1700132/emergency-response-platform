@@ -1,0 +1,39 @@
+✔ event workflow enforces verify, idempotent start, task feedback and closure rules (6.1079ms)
+✔ message failure keeps business tasks and marks manual review (3.0678ms)
+✔ production configuration requires database and middle-platform endpoints (0.9294ms)
+✔ audit redacts credentials and keeps traceability fields (1.4794ms)
+✔ identity and database adapters retain their infrastructure boundary (1.1879ms)
+✔ middle-platform bearer adapter validates identity and forwards file requests (3.6351ms)
+✔ health, readiness and minimal authorization return controlled responses (45.5901ms)
+✔ readiness and application bootstrap cover available and unavailable database states (24.3573ms)
+✔ foundation migration has an auditable paired rollback and compose keeps credentials external (56.9777ms)
+✔ database transaction commits success and rolls back failure (0.8701ms)
+✔ HTTP core incident path covers authorization, idempotency, tasks and closure (102.969ms)
+✔ Bearer identity connects the real page routes without development headers (54.5836ms)
+✔ persistence uses parameterized SQL and message port maps failure and timeout (21.4249ms)
+✔ database-backed aggregate survives service recreation through the full closure path (9.7588ms)
+✔ business fact, outbox and audit roll back together on injected failure (1.4654ms)
+✔ message dispatch occurs after commit and failure remains recoverable (1.5074ms)
+✔ G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands (94.6613ms)
+✔ G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths (14.1788ms)
+✔ G4-08 persistence parameterizes values and HTTP routes enforce authorization/idempotency (52.5981ms)
+✔ G4-08 migration is paired and persisted Sprint 2 records recover after service recreation (28.2159ms)
+✔ registry exposes eight distinct EXT ports plus GIS and H5 (122.8969ms)
+✔ every adapter has deterministic marked normal, unauthorized, timeout and failure fixtures (7.7632ms)
+✔ unknown adapters and scenarios fail closed with simulated markers (5.3457ms)
+✔ GIS and H5 fixtures retain frozen responsibility boundaries (5.7307ms)
+✔ HTTP simulator returns fixture status, body and evidence header (56.9304ms)
+✔ scan target collection includes implementation files and skips tests (27.5758ms)
+✔ secret scan accepts ordinary configuration (29.6548ms)
+✔ secret scan blocks assigned credentials without disclosing the value (29.7492ms)
+✔ selfcheck accepts complete evidence (4.023ms)
+✔ selfcheck blocks a missing check and empty traceability (0.4388ms)
+✔ selfcheck permits an evidenced not-applicable result (0.2743ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2303.6042

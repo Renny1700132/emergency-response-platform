@@ -1,0 +1,9 @@
+{
+  "boundary": "Vitest jsdom and one core HTTP E2E; not full browser/DB system matrix",
+  "command": "npm run test --prefix frontend -- --reporter=verbose",
+  "exitCode": 0,
+  "environment": "Node v24.14.0 / Windows",
+  "startedAt": "2026-10-08T21:40:39.4336826+08:00",
+  "finishedAt": "2026-10-08T21:41:11.8907230+08:00",
+  "sourceCommit": "4b94b33"
+}

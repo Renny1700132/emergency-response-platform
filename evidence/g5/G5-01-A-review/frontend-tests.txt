@@ -1,0 +1,57 @@
+
+> museum-emergency-response-frontend@0.1.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.0.1 E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend
+
+ ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-PLAN without presentation fallback 3ms
+ ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-RESOURCE without presentation fallback 0ms
+ ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-DRILL without presentation fallback 0ms
+ ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-DUTY without presentation fallback 0ms
+ ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-KNOWLEDGE without presentation fallback 0ms
+ ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-SITUATION without presentation fallback 0ms
+ ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-INTEGRATION without presentation fallback 0ms
+ ✓ tests/presentation-state.test.ts > presentation session synchronization > broadcasts role and workflow changes as cloneable plain snapshots 149ms
+ ✓ tests/presentation-state.test.ts > presentation session synchronization > applies a remote workflow snapshot to the live session state 2ms
+ ✓ tests/presentation-api.test.ts > presentation API adapter > provides an explicit demo identity and mutable incident workflow 6ms
+ ✓ tests/presentation-api.test.ts > presentation API adapter > supports task actions and a safe generic acknowledgement 3ms
+ ✓ tests/presentation-api.test.ts > presentation API adapter > shares role actions and workflow changes with the live presentation state 1ms
+ ✓ tests/workflow.test.ts > Sprint 1 response workflow > maps generic contract entities into visible incident and task state 3ms
+ ✓ tests/workflow.test.ts > Sprint 1 response workflow > loads lists through the formal client and preserves empty data 4ms
+ ✓ tests/workflow.test.ts > Sprint 1 response workflow > submits incident report, verification and response start with typed paths and idempotency 2ms
+ ✓ tests/workflow.test.ts > Sprint 1 response workflow > submits task acknowledgement and feedback with attachments and resource version 1ms
+ ✓ tests/workflow.test.ts > Sprint 1 response workflow > keeps forbidden, failure and trace states visible 1ms
+ ✓ tests/module-traceability.test.ts > frozen module traceability > matches every controlled MOD-* to its frozen G2-FR set 3ms
+ ✓ tests/module-traceability.test.ts > frozen module traceability > keeps the MOD-MOBILE channel boundary and the invoked domain on every H5 route 1ms
+ ✓ tests/api-client.test.ts > API Client > adds authentication, request id and query parameters 10ms
+ ✓ tests/api-client.test.ts > API Client > normalizes contract errors and preserves traceId 5ms
+ ✓ tests/api-client.test.ts > API Client > reports network failures without leaking request details 2ms
+ ✓ tests/api-client.test.ts > API Client > sends JSON bodies and idempotency keys for writes 2ms
+ ✓ tests/api-client.test.ts > API Client > replaces required path parameters with encoded values 2ms
+ ✓ tests/api-client.test.ts > API Client > notifies the authentication boundary on a 401 response 2ms
+ ✓ tests/api-client.test.ts > API Client > normalizes an already-aborted caller signal 2ms
+ ✓ tests/auth-context.test.ts > authentication context > stays anonymous when the host provides no access token 3ms
+ ✓ tests/auth-context.test.ts > authentication context > loads identity and evaluates permissions without persisting the token 1ms
+ ✓ tests/auth-context.test.ts > authentication context > enters a controlled error state when identity loading fails 1ms
+ ✓ tests/auth-context.test.ts > authentication context > reads a short-lived token from the host bridge without persistence 1ms
+ ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > renders Dashboard only from formal responses and omits presentation facts 122ms
+ ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > omits situation presentation facts and sends a typed formal access command with visible receipt 48ms
+ ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > does not fall back to presentation facts when formal Dashboard APIs fail 9ms
+ ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > shows formal control failure and explicit manual degradation without a success claim 13ms
+ ✓ tests/real-stack-e2e.test.ts > G4-07 real frontend/backend E2E > runs the core incident closure through the formal client, Bearer identity, HTTP server and mounted pages 345ms
+ ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > renders loading then empty state from the real incident component 18ms
+ ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > renders dedicated 403 and ordinary failure states with traceId and retry 15ms
+ ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > keeps unauthorized actions visible and disabled 12ms
+ ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > submits an incident report through the mounted form and refreshes server state 18ms
+ ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > submits verification and response start from the mounted incident card 14ms
+ ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > executes acknowledge, feedback, remind and complete from the mounted task page 20ms
+ ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > creates a temporary task from the mounted Web task form 7ms
+ ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > uses the same controlled views for Web and H5 routes 15ms
+ ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > shows H5 upload failure and retries the same selected file 7ms
+
+ Test Files  10 passed (10)
+      Tests  44 passed (44)
+   Start at  21:40:47
+   Duration  24.76s (environment 95%, transform 2%, import 2%, worker 1%)
+

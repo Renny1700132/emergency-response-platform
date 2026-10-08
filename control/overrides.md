@@ -362,6 +362,19 @@
 - 是否必须暂停：否。
 - 状态：ACTIVE。
 
+## OVR-031
+
+- 时间：2026-10-08（北京时间）。
+- Prompt 要求：用户授权 A 在既有 `codex/g4-09-sprint2-frontend` 与既有 G4-09 PR 中连续完成 G4-09、G4-10、G4-11，作为第四关最终冲刺；不得降低各任务原有实质验收要求，并在最终由 C 独立 Review / Approve 后通过同一 PR 合并。
+- 被覆盖规则：`tasks.md` 与 `governance/g4_development_workflow.md` 中 G4-09、G4-10、G4-11 通常按三个独立任务、逐项进入 REVIEW/DONE、分别形成过程节点的执行方法。
+- 冲突说明：P0 仅合并本次执行批次、分支和 PR，不合并或删除三项任务的 DoD、验证责任、状态证据和独立结论；不改变冻结的 29 项 MVP、87 项 AC、★属性、关键数字、责任边界或 C 的独立审核职责。
+- 实际执行规则：使用一个受控状态文件分阶段执行 `PHASE-0 RECONCILE → PHASE-1 G4-09 FORMAL → PHASE-2 G4-10 VERIFY → PHASE-3 G4-11 CLOSEOUT → FINAL REVIEW`；每阶段仅可为 `TODO/DOING/DONE/BLOCKED`。全部实现、测试、RTM、日志和任务状态进入既有 G4-09 功能分支及既有 PR；A 不得以 C 身份批准自己的 PR。C 未实际批准时，最终 PR 保持 OPEN、`FINAL REVIEW = TODO`，不得宣称已合并到 master。
+- 评分/审计影响：保持 G4-09—G4-11 原 DoD 全量可追溯，以单分支单 PR 减少重复收口；最终准出仍取决于 C 的独立复核与平台合并记录。
+- 是否已在 Preflight 提示：是；冲突编号 `PFC-G4-FINAL-001`。
+- 是否涉及真实项目事实：否，仅本次任务编排、状态和 PR 收口方式。
+- 是否必须暂停：否。
+- 状态：ACTIVE。
+
 ## OVR-028
 
 - 时间：2026-09-21（北京时间）

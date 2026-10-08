@@ -1,0 +1,332 @@
+{
+  "marker": "SIMULATED_EVIDENCE",
+  "scenarios": {
+    "normal": [
+      {
+        "adapter": "EXT-VIDEO",
+        "status": 200,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-VIDEO",
+          "code": "SIM-VIDEO-REFERENCE",
+          "mode": "LIVE",
+          "videoReference": "sim-video-ref-001",
+          "recordingStoredHere": false
+        }
+      },
+      {
+        "adapter": "EXT-PUBLISH",
+        "status": 202,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-PUBLISH",
+          "code": "SIM-PUBLISH-ACCEPTED",
+          "publishReference": "sim-publish-001"
+        }
+      },
+      {
+        "adapter": "EXT-INTRUSION",
+        "status": 202,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-INTRUSION",
+          "code": "SIM-INTRUSION-NORMALIZED",
+          "externalAlertId": "sim-intrusion-001"
+        }
+      },
+      {
+        "adapter": "EXT-ACCESS",
+        "status": 202,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-ACCESS",
+          "code": "SIM-ACCESS-ACKNOWLEDGED",
+          "commandReference": "sim-access-001",
+          "autoReplayAllowed": false
+        }
+      },
+      {
+        "adapter": "EXT-FIRE",
+        "status": 202,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-FIRE",
+          "code": "SIM-FIRE-NORMALIZED",
+          "externalAlertId": "sim-fire-001",
+          "deviceControlled": false
+        }
+      },
+      {
+        "adapter": "EXT-IOT",
+        "status": 202,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-IOT",
+          "code": "SIM-IOT-NORMALIZED",
+          "deviceEventId": "sim-iot-001",
+          "stale": false
+        }
+      },
+      {
+        "adapter": "EXT-MIDDLE",
+        "status": 200,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-MIDDLE",
+          "code": "SIM-MIDDLE-CONTEXT",
+          "subjectReference": "sim-subject-001",
+          "masterDataCopied": false
+        }
+      },
+      {
+        "adapter": "EXT-MESSAGE",
+        "status": 202,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-MESSAGE",
+          "code": "SIM-MESSAGE-ACCEPTED",
+          "platformMessageId": "sim-message-001"
+        }
+      }
+    ],
+    "unauthorized": [
+      {
+        "adapter": "EXT-VIDEO",
+        "status": 403,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-VIDEO",
+          "code": "SIM-VIDEO-FORBIDDEN"
+        }
+      },
+      {
+        "adapter": "EXT-PUBLISH",
+        "status": 403,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-PUBLISH",
+          "code": "SIM-PUBLISH-FORBIDDEN"
+        }
+      },
+      {
+        "adapter": "EXT-INTRUSION",
+        "status": 403,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-INTRUSION",
+          "code": "SIM-INTRUSION-FORBIDDEN"
+        }
+      },
+      {
+        "adapter": "EXT-ACCESS",
+        "status": 403,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-ACCESS",
+          "code": "SIM-ACCESS-FORBIDDEN",
+          "autoReplayAllowed": false
+        }
+      },
+      {
+        "adapter": "EXT-FIRE",
+        "status": 403,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-FIRE",
+          "code": "SIM-FIRE-FORBIDDEN"
+        }
+      },
+      {
+        "adapter": "EXT-IOT",
+        "status": 403,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-IOT",
+          "code": "SIM-IOT-FORBIDDEN"
+        }
+      },
+      {
+        "adapter": "EXT-MIDDLE",
+        "status": 403,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-MIDDLE",
+          "code": "SIM-MIDDLE-FORBIDDEN"
+        }
+      },
+      {
+        "adapter": "EXT-MESSAGE",
+        "status": 403,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-MESSAGE",
+          "code": "SIM-MESSAGE-FORBIDDEN"
+        }
+      }
+    ],
+    "timeout": [
+      {
+        "adapter": "EXT-VIDEO",
+        "status": 504,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-VIDEO",
+          "code": "SIM-VIDEO-TIMEOUT",
+          "manualFallback": "USE_EXISTING_VIDEO_PLATFORM"
+        }
+      },
+      {
+        "adapter": "EXT-PUBLISH",
+        "status": 504,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-PUBLISH",
+          "code": "SIM-PUBLISH-TIMEOUT",
+          "draftRetained": true
+        }
+      },
+      {
+        "adapter": "EXT-INTRUSION",
+        "status": 504,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-INTRUSION",
+          "code": "SIM-INTRUSION-TIMEOUT",
+          "incidentCreated": false
+        }
+      },
+      {
+        "adapter": "EXT-ACCESS",
+        "status": 504,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-ACCESS",
+          "code": "SIM-ACCESS-RESULT-UNKNOWN",
+          "autoReplayAllowed": false,
+          "manualConfirmationRequired": true
+        }
+      },
+      {
+        "adapter": "EXT-FIRE",
+        "status": 504,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-FIRE",
+          "code": "SIM-FIRE-TIMEOUT",
+          "manualHandlingRequired": true
+        }
+      },
+      {
+        "adapter": "EXT-IOT",
+        "status": 504,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-IOT",
+          "code": "SIM-IOT-TIMEOUT",
+          "newerFactOverwritten": false
+        }
+      },
+      {
+        "adapter": "EXT-MIDDLE",
+        "status": 504,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-MIDDLE",
+          "code": "SIM-MIDDLE-TIMEOUT",
+          "sensitiveWriteClosed": true
+        }
+      },
+      {
+        "adapter": "EXT-MESSAGE",
+        "status": 504,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-MESSAGE",
+          "code": "SIM-MESSAGE-TIMEOUT",
+          "businessStateRetained": true
+        }
+      }
+    ],
+    "failure": [
+      {
+        "adapter": "EXT-VIDEO",
+        "status": 503,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-VIDEO",
+          "code": "SIM-VIDEO-UNAVAILABLE"
+        }
+      },
+      {
+        "adapter": "EXT-PUBLISH",
+        "status": 503,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-PUBLISH",
+          "code": "SIM-PUBLISH-FAILED",
+          "manualPublishAvailable": true
+        }
+      },
+      {
+        "adapter": "EXT-INTRUSION",
+        "status": 422,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-INTRUSION",
+          "code": "SIM-INTRUSION-QUARANTINED",
+          "incidentCreated": false
+        }
+      },
+      {
+        "adapter": "EXT-ACCESS",
+        "status": 409,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-ACCESS",
+          "code": "SIM-ACCESS-INTERLOCK-REJECTED",
+          "autoReplayAllowed": false
+        }
+      },
+      {
+        "adapter": "EXT-FIRE",
+        "status": 503,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-FIRE",
+          "code": "SIM-FIRE-DISCONNECTED"
+        }
+      },
+      {
+        "adapter": "EXT-IOT",
+        "status": 422,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-IOT",
+          "code": "SIM-IOT-STALE-DATA",
+          "stale": true,
+          "newerFactOverwritten": false
+        }
+      },
+      {
+        "adapter": "EXT-MIDDLE",
+        "status": 503,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-MIDDLE",
+          "code": "SIM-MIDDLE-UNAVAILABLE",
+          "sensitiveWriteClosed": true
+        }
+      },
+      {
+        "adapter": "EXT-MESSAGE",
+        "status": 503,
+        "body": {
+          "marker": "SIMULATED_EVIDENCE",
+          "adapter": "EXT-MESSAGE",
+          "code": "SIM-MESSAGE-FAILED",
+          "manualNotificationRequired": true
+        }
+      }
+    ]
+  }
+}

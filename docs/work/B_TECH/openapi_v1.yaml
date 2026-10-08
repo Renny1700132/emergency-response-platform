@@ -1995,6 +1995,41 @@ paths:
             schema:
               $ref: '#/components/schemas/InventoryReviewRequest'
   /api/v1/drill-plans:
+    get:
+      tags:
+      - 演练
+      summary: 查询演练计划
+      operationId: drillPlansList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-010
+      x-acceptance:
+      - AC-G2-FR-010-01
+      - AC-G2-FR-010-02
+      - AC-G2-FR-010-03
+      x-contract-status: REVIEW_CANDIDATE
     post:
       tags:
       - 演练
@@ -2260,6 +2295,41 @@ paths:
             schema:
               $ref: '#/components/schemas/CreateRequest'
   /api/v1/duty-schedules:
+    get:
+      tags:
+      - 值班
+      summary: 查询值班计划和规则
+      operationId: dutySchedulesList
+      parameters:
+      - $ref: '#/components/parameters/RequestId'
+      - $ref: '#/components/parameters/Page'
+      - $ref: '#/components/parameters/Size'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageResponse'
+        '400':
+          $ref: '#/components/responses/Error400'
+        '401':
+          $ref: '#/components/responses/Error401'
+        '403':
+          $ref: '#/components/responses/Error403'
+        '429':
+          $ref: '#/components/responses/Error429'
+        '500':
+          $ref: '#/components/responses/Error500'
+        '503':
+          $ref: '#/components/responses/Error503'
+      x-requirements:
+      - G2-FR-017
+      x-acceptance:
+      - AC-G2-FR-017-01
+      - AC-G2-FR-017-02
+      - AC-G2-FR-017-03
+      x-contract-status: REVIEW_CANDIDATE
     post:
       tags:
       - 值班

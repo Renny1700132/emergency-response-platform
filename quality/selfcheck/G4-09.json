@@ -1,26 +1,16 @@
 {
-  "taskId": "G4-09",
-  "owner": "A",
-  "reviewer": "C",
-  "traceability": {
-    "taskIds": ["G4-09"],
-    "requirementIds": ["G2-FR-001—029 (PRESENTATION ENTRY COVERAGE; NOT FINAL AC PASS)"],
-    "acIds": ["G4-09-PRESENTATION-UI-CANDIDATE"],
-    "designIds": ["MOD-PLAN", "MOD-EVENT", "MOD-TASK", "MOD-SITUATION", "MOD-RESOURCE", "MOD-DRILL", "MOD-DUTY", "MOD-KNOWLEDGE", "MOD-INTEGRATION", "MOD-MOBILE"]
-  },
-  "ai": {
-    "scope": "Codex assisted member A with the presentation-ready Web/H5 console, explicit in-memory presentation adapter, tests, visual QA and traceability evidence.",
-    "disposition": "Adopted as a presentation UI candidate after local quality and browser visual checks; final G4-09 acceptance remains blocked on G4-08 formal APIs, real integration/E2E and C Review."
-  },
-  "checks": {
-    "scope": { "status": "PASS", "evidence": "evidence/g4/G4-09/presentation-ui-report.md explicitly limits this result to a presentation UI candidate and preserves G4-08, real integration, target environment and final E2E as pending." },
-    "contract": { "status": "PASS", "evidence": "Production mode retains the frozen generated ApiClient; presentation mode is isolated by Vite mode and does not modify the OpenAPI contract." },
-    "authorizationAndValidation": { "status": "PASS", "evidence": "Formal routes retain AuthContext guards and action permissions; the presentation identity is available only in explicit presentation mode; access control commands visibly require secondary confirmation." },
-    "parameterizedAccess": { "status": "N/A", "evidence": "G4-09 frontend and its presentation adapter perform no direct database access." },
-    "secrets": { "status": "PASS", "evidence": "npm run security:secrets scans 57 files PASS; no persistent token or real external credential is included." },
-    "logRedaction": { "status": "PASS", "evidence": "The candidate renders normalized visible state only and does not display token values or internal credential payloads." },
-    "migrationRollback": { "status": "N/A", "evidence": "G4-09 presentation UI changes no database schema or migration." },
-    "tests": { "status": "PASS", "evidence": "npm run quality exits 0: frontend 30/30 with 96.57/81.67/96/100 coverage, G4 11/11, backend 16/16, dependency vulnerabilities 0; browser QA covers overview, situation, confirmation and H5 six-entry navigation." },
-    "traceability": { "status": "PASS", "evidence": "docs/work/C_REQ/rtm_g4_evidence.md maps the candidate to modules and requirements while explicitly withholding final AC PASS until G4-08 and real E2E complete." }
+  "taskId":"G4-09","owner":"A","reviewer":"C",
+  "traceability":{"taskIds":["G4-09"],"requirementIds":["G2-FR-001—029"],"acIds":["AC-G2-FR-001-01—AC-G2-FR-029-03"],"designIds":["MOD-PLAN","MOD-EVENT","MOD-TASK","MOD-SITUATION","MOD-RESOURCE","MOD-DRILL","MOD-DUTY","MOD-KNOWLEDGE","MOD-INTEGRATION","MOD-MOBILE"]},
+  "ai":{"scope":"Codex assisted A with formal Sprint 2 workbenches, dashboard, typed API wiring, tests and evidence while preserving explicit presentation mode.","disposition":"Adopted as a formal-mode review candidate after typecheck, real HTTP E2E, coverage, build and contract checks."},
+  "checks":{
+    "scope":{"status":"PASS","evidence":"Formal Web/H5 scope is G2-FR-001—029; backlog 030—039 is unchanged."},
+    "contract":{"status":"PASS","evidence":"Typed ApiClient is regenerated from OpenAPI; schema errors are 0."},
+    "authorizationAndValidation":{"status":"PASS","evidence":"Auth guards remain active; access control retains secondary confirmation."},
+    "parameterizedAccess":{"status":"N/A","evidence":"Frontend has no direct database access."},
+    "secrets":{"status":"PASS","evidence":"Secret scan passes and no persistent credential was added."},
+    "logRedaction":{"status":"PASS","evidence":"Views do not render tokens or credentials."},
+    "migrationRollback":{"status":"N/A","evidence":"G4-09 changes no database schema."},
+    "tests":{"status":"PASS","evidence":"Frontend 40/40; real E2E; frontend lines 100% and branches 77.30%."},
+    "traceability":{"status":"PASS","evidence":"RTM v4 and 87 AC matrix map formal frontend, backend and tests."}
   }
 }

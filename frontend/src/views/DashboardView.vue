@@ -1,22 +1,44 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { presentationState, type DemoRecord } from '@/shared/demo/presentation-state'
+import { useApiClient } from '@/shared/http/api-context'
+import { createResponseWorkflow } from '@/features/response/workflow'
+import { loadFormalModule } from '@/features/formal/module-workbench'
 
 const activeFloor = ref('二层')
+const presentation = import.meta.env.MODE === 'presentation'
+const api = useApiClient()
+const workflow = createResponseWorkflow(api)
+const formalIncidents = ref<DemoRecord[]>([])
+const formalTasks = ref<DemoRecord[]>([])
+const formalSituation = ref<{ sites: number; positions: number; drills: string }>({ sites: 0, positions: 0, drills: '0' })
+const formalStatus = ref('正在读取正式服务')
+onMounted(async () => {
+  if (presentation) return
+  try {
+    const [incidents, tasks, situation] = await Promise.all([workflow.listIncidents(), workflow.listTasks(), loadFormalModule(api, 'MOD-SITUATION')])
+    formalIncidents.value = incidents as unknown as DemoRecord[]
+    formalTasks.value = tasks as unknown as DemoRecord[]
+    formalSituation.value = { sites: Number(situation.metrics[0]?.value ?? 0), positions: Number(situation.metrics[1]?.value ?? 0), drills: situation.metrics[2]?.value ?? '0' }
+    formalStatus.value = '正式 API 已同步'
+  } catch (error) { formalStatus.value = `正式服务不可用：${error instanceof Error ? error.message : '未知错误'}（未使用演示回退）` }
+})
 const floors = ['一层', '二层', '三层']
 const clock = computed(() => new Intl.DateTimeFormat('zh-CN', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()))
 const attribute = (record: DemoRecord | undefined, key: string) => String(record?.attributes[key] ?? '')
 const statusText: Record<string, string> = { PENDING: '待执行', ACKNOWLEDGED: '已接收', IN_PROGRESS: '处置中', COMPLETED: '已完成', PENDING_VERIFY: '待核实', VERIFIED: '已核实', RESPONDING: '处置中', CLOSED: '已关闭', REJECTED: '已驳回' }
-const activeIncident = computed(() => presentationState.incidents.find((item) => !['CLOSED', 'REJECTED'].includes(item.status)) ?? presentationState.incidents[0])
+const incidentSource = computed(() => presentation ? presentationState.incidents : formalIncidents.value)
+const taskSource = computed(() => presentation ? presentationState.tasks : formalTasks.value)
+const activeIncident = computed(() => incidentSource.value.find((item) => !['CLOSED', 'REJECTED'].includes(item.status)) ?? incidentSource.value[0])
 const metrics = computed(() => [
-  { label: '进行中事件', value: String(presentationState.incidents.filter((item) => !['CLOSED', 'REJECTED'].includes(item.status)).length), trend: `${presentationState.incidents.filter((item) => item.status === 'PENDING_VERIFY').length} 起待核实`, tone: 'orange', icon: '!' },
-  { label: '处置任务', value: String(presentationState.tasks.length), trend: `${presentationState.tasks.filter((item) => item.status === 'COMPLETED').length} 项已完成`, tone: 'blue', icon: '✓' },
-  { label: '在线设备', value: '286', trend: '在线率 98.6%', tone: 'green', icon: '⌁' },
-  { label: '今日值守', value: '24', trend: '到岗率 100%', tone: 'purple', icon: '◉' },
+  { label: '进行中事件', value: String(incidentSource.value.filter((item) => !['CLOSED', 'REJECTED'].includes(item.status)).length), trend: `${incidentSource.value.filter((item) => item.status === 'PENDING_VERIFY').length} 起待核实`, tone: 'orange', icon: '!' },
+  { label: '处置任务', value: String(taskSource.value.length), trend: `${taskSource.value.filter((item) => item.status === 'COMPLETED').length} 项已完成`, tone: 'blue', icon: '✓' },
+  { label: '资源站点', value: presentation ? '32' : String(formalSituation.value.sites), trend: presentation ? '演示数据' : `${formalSituation.value.positions} 个人员定位`, tone: 'green', icon: '⌁' },
+  { label: '完成演练', value: presentation ? '17' : formalSituation.value.drills, trend: presentation ? '演示数据' : '正式统计接口', tone: 'purple', icon: '◉' },
 ])
-const tasks = computed(() => presentationState.tasks.slice(0, 4).map((task) => ({ title: attribute(task, 'name'), owner: attribute(task, 'assigneeRef') || '待分派', value: Number(task.attributes.progressPercent ?? 0), state: statusText[task.status] ?? task.status })))
+const tasks = computed(() => taskSource.value.slice(0, 4).map((task) => ({ title: attribute(task, 'name'), owner: attribute(task, 'assigneeRef') || '待分派', value: Number(task.attributes.progressPercent ?? 0), state: statusText[task.status] ?? task.status })))
 const timeline = computed(() => [
-  { time: clock.value.split(' ').at(-1) ?? '刚刚', title: presentationState.lastAction, text: `${presentationState.lastActor} · 已同步至 Web/H5 全流程`, tone: 'success' },
+  { time: clock.value.split(' ').at(-1) ?? '刚刚', title: presentation ? presentationState.lastAction : formalStatus.value, text: presentation ? `${presentationState.lastActor} · 已同步至 Web/H5 全流程` : '数据经类型化 API Client 获取', tone: 'success' },
   { time: '13:42', title: '烟感与温度联动告警', text: '东展厅二层 · 自动关联事件 EVT-20260926-001', tone: 'danger' },
   { time: '13:44', title: '值班人员完成核实', text: '确认现场轻微烟雾，启动《展厅火情专项预案》', tone: 'warning' },
   { time: '13:45', title: '处置任务自动下发', text: '3 个任务已发送至移动端，消息回执 3/3', tone: 'info' },
@@ -26,7 +48,7 @@ const timeline = computed(() => [
 <template>
   <section class="dashboard-page">
     <header class="hero-strip">
-      <div><span class="eyebrow">EMERGENCY COMMAND CENTER</span><h2>应急态势总览</h2><p>{{ clock }} · 会话内数据已实时互通（版本 {{ presentationState.revision }}）</p></div>
+      <div><span class="eyebrow">EMERGENCY COMMAND CENTER</span><h2>应急态势总览</h2><p>{{ clock }} · {{ presentation ? `演示会话版本 ${presentationState.revision}` : formalStatus }}</p></div>
       <div class="hero-actions"><span class="live-pill"><i /> 实时更新</span><RouterLink class="primary" to="/web/incidents">进入事件处置</RouterLink></div>
     </header>
     <div class="metric-grid"><article v-for="item in metrics" :key="item.label" class="metric-card" :class="`tone-${item.tone}`"><span class="metric-icon">{{ item.icon }}</span><div><small>{{ item.label }}</small><strong>{{ item.value }}</strong><p>{{ item.trend }}</p></div></article></div>

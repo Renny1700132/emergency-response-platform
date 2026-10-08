@@ -26,6 +26,11 @@ export function createEventPersistence(database) {
         AND ($5::text IS NULL OR title ILIKE $5 OR description ILIKE $5)
         AND ($6::timestamptz IS NULL OR occurred_at >= $6)
         AND ($7::timestamptz IS NULL OR occurred_at <= $7)`;
+      const countWhere = `WHERE ($1::text IS NULL OR status=$1)
+        AND ($2::text IS NULL OR incident_type_code=$2)
+        AND ($3::text IS NULL OR title ILIKE $3 OR description ILIKE $3)
+        AND ($4::timestamptz IS NULL OR occurred_at >= $4)
+        AND ($5::timestamptz IS NULL OR occurred_at <= $5)`;
       const [items, count] = await Promise.all([
         database.query(
           `SELECT id, incident_no AS "incidentNo", incident_type_code AS "incidentTypeCode", title, description,
@@ -35,7 +40,7 @@ export function createEventPersistence(database) {
              FROM em_incident ${where} ORDER BY updated_at DESC, id LIMIT $1 OFFSET $2`,
           [size, offset, ...filters]
         ),
-        database.query(`SELECT count(*)::bigint AS total FROM em_incident ${where}`, [size, offset, ...filters])
+        database.query(`SELECT count(*)::bigint AS total FROM em_incident ${countWhere}`, filters)
       ]);
       return { items: items.rows.map((item) => ({ ...item, version: Number(item.version) })), total: Number(count.rows[0]?.total ?? 0) };
     },

@@ -62,6 +62,9 @@ test('PostgreSQL remains the fact source across service restarts and commits dom
     incident: await get(server, `/api/v1/incidents/${incidentId}`),
     tasks: await get(server, '/api/v1/tasks?page=1&size=50')
   }));
+  assert.equal(readModels.incidents.status, 200, JSON.stringify(readModels.incidents.body));
+  assert.equal(readModels.incident.status, 200, JSON.stringify(readModels.incident.body));
+  assert.equal(readModels.tasks.status, 200, JSON.stringify(readModels.tasks.body));
   assert.equal(readModels.incidents.body.data.total, 1);
   assert.equal(readModels.incident.body.data.id, incidentId);
   assert.equal(readModels.tasks.body.data.total, 1);

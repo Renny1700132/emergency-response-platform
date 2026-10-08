@@ -1,0 +1,13 @@
+{
+  "gate": "formal-http-performance",
+  "status": "PASS",
+  "target": "KN-034: 95% requests <= 3000ms",
+  "concurrency": 100,
+  "samples": 100,
+  "minMs": 42.75,
+  "p50Ms": 47.71,
+  "p95Ms": 53.79,
+  "maxMs": 55.27,
+  "boundary": "Local formal frontend/backend HTTP contract path; not a production capacity claim.",
+  "executedAt": "2026-10-08T06:29:27.072Z"
+}

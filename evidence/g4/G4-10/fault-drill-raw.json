@@ -1,0 +1,25 @@
+{
+  "gate": "fault-drill",
+  "status": "PASS",
+  "formalUnauthorized": {
+    "expected": 403,
+    "actual": 403
+  },
+  "injectedFault": {
+    "adapter": "EXT-ACCESS",
+    "scenario": "timeout",
+    "evidenceKind": "SIMULATED_EVIDENCE",
+    "response": {
+      "status": 504,
+      "body": {
+        "marker": "SIMULATED_EVIDENCE",
+        "adapter": "EXT-ACCESS",
+        "code": "SIM-ACCESS-RESULT-UNKNOWN",
+        "autoReplayAllowed": false,
+        "manualConfirmationRequired": true
+      }
+    }
+  },
+  "control": "门禁未知结果禁止自动重放，转人工核验；正式接口拒绝无效身份。",
+  "executedAt": "2026-10-08T06:29:27.076Z"
+}

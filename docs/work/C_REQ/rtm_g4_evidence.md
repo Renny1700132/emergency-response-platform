@@ -15,16 +15,16 @@
 | G4-05 | G2-FR-013（AC-01、03）；G2-FR-014（AC-01、02）；G2-FR-015（AC-01、02）；G2-FR-016（AC-01）；G2-FR-022（AC-01、02）；G2-FR-028（AC-01）；MOD-EVENT/TASK/PLATFORM；ARCH-02；DLD/DBD/API-TR-013/014/015/016/022/028；ENG-015/017 | `backend/src/database.mjs`、`event-workflow.mjs`、`server.mjs`、`event-persistence.mjs`、`idempotency.mjs`、`identity.mjs`、`middle-platform-port.mjs`、`message-port.mjs`；`backend/migrations/002_event_workflow.*.sql`；后端与 PostgreSQL 集成测试；`quality/selfcheck/G4-05.json` | Gitee PR `!13` 经 A Review/Approve 后合并为 `70b5a9f`；集成修复 PR `!14` 经 A Review/Approve 后合并为 `f3a83c8`；复核证据 `logs/reviews/2026-09-25_G4-05-A-rereview.md`、`logs/reviews/2026-09-26_G4-05-A-pr14-review.md`；G4-07 非 Mock E2E 与 PostgreSQL 复验通过 | DONE / MERGED；冻结契约、数据库恢复、事务原子性、页面必需路由、Bearer 授权及失败降级已有证据；外部消息和中台仍为 `SIMULATED_EVIDENCE`。 |
 | G4-06 | PARTIAL：G2-FR-013/014/015/021/022；MOD-EVENT/TASK/MOBILE；DLD-TR-013/014/015/021/022。已实现上报/核实/启动、任务接收/反馈/完成/催办/临时任务及 H5 上传重试；组合检索等后续范围继续受控追踪 | `IncidentFlowView.vue`、`TaskFlowView.vue`、`PlatformAttachmentField.vue`、`workflow.ts`；组件/交互测试及 `quality/selfcheck/G4-06.json`；C 最终复验通过 | Gitee PR `!10`；唯一审核人 C Review/Approve；合并提交 `9c73112`；审核记录 `logs/reviews/2026-09-24_G4-06-C-final-review.md`；真实前后端闭环由 G4-07 非 Mock E2E 补充验证 | DONE / MERGED；组件/交互门禁与 Sprint 1 真实接线均已有证据；不扩大为全部 FR、真实外部中台或目标环境性能完成。 |
 
-## 已完成准出与待审核任务
+## 已完成准出与最终合并任务
 
 | Task | 需求/指标与设计挂接 | 实现与自检证据 | Review / Merge 证据 | 追踪结论 |
 | --- | --- | --- | --- | --- |
 | G4-07 | G4-05/G4-06 Sprint 1 集成准出；G2-FR-013/014/015/016/021/022；KN-045；ENG-015/017。KN-006/007/011/012 目标环境实测不在本任务冒充完成，保留至 G4-10/验收 | `frontend/tests/real-stack-e2e.test.ts`：真实 Vue 页面 + 正式 API Client + Bearer + 实际后端 HTTP Server，完成事件上报/核实/启动、任务接收/反馈/完成、事件关闭及 403；最终 `npm run quality`：frontend 28/28，覆盖率 95.41/77.55/95.12/100%，G4 11/11，backend 16/16，后端覆盖率 85.88/78.24/80.48/85.88%，OpenAPI 0 error/14 warning，秘密扫描 56 files PASS，漏洞 0；PostgreSQL 18 专项 2/2 PASS | Gitee PR `!15`；B 首轮审核 HEAD `758db48` 为 `CHANGES_REQUIRED`；C 整改/回填 `d381ba4`、`d974bb6`；B 在 HEAD `d974bb6` 复验通过并关闭 `ISSUE-G4-07-004`，记录 `logs/reviews/2026-09-26_G4-07-B-rereview.md` | DONE / MERGED；PR !15 已由 B 复验通过并合并为 `78f4129ae517c7296cf238b1e9509ec0e25b2ffb`；外部身份、文件、消息仍为 SIMULATED_EVIDENCE，不声明甲方真实环境或性能验收完成。 |
 | G4-08 | 剩余 MVP：G2-FR-001—012、013-02、016-02/03、017—020、023—029；MOD-PLAN/RESOURCE/EVENT/INTEGRATION/PLATFORM；DBD/DLD-TR-001—029；ENG-015/017 | `backend/src/sprint2-service.mjs`、`external-adapters.mjs`、`sprint2-persistence.mjs`、迁移 `003_sprint2_mvp.*.sql`、`tests/backend/g4-08-sprint2.test.mjs`、`quality/selfcheck/G4-08.json`、`evidence/g4/G4-08/sprint2-backend-report.md` | PR `!18`；实现 `08f8f4a`；审核回填 `be18849`；merge `d520ce5` | DONE / MERGED；8 外部端口及 GIS/H5 四场景保持 `SIMULATED_EVIDENCE`；PostgreSQL 隔离库实跑由 G4-10 补齐。 |
-| G4-09—11 | G2-FR-001—029；87 AC；KN-034/043/045；RTM v4 与第四关收口 | 正式 Dashboard/工作台、页面级正式/演示隔离及门禁回执正负例、真实 HTTP E2E、`npm run quality`、PostgreSQL up/down/re-up 与重启恢复、`evidence/g4/G4-10/`、`docs/work/C_REQ/rtm_v4.md`、`evidence/g4/G4-11/` | 复用 PR `!16`，分支 `codex/g4-09-sprint2-frontend`；C 在 HEAD `4d8ba75` 复验 PASS，关闭 `ISSUE-G4-09-001`；证据 `logs/reviews/2026-10-08_G4-09-11-C-rereview.md` | DONE CANDIDATE / ACCEPTED_FOR_APPROVAL；87 PASS / 0 FAIL / 0 BLOCKED；待 PR !16 平台 Approve/Merge 后正式关闭。 |
+| G4-09—11 | G2-FR-001—029；87 AC；KN-034/043/045；RTM v4 与第四关收口 | 正式 Dashboard/工作台、页面级正式/演示隔离及门禁回执正负例、真实 HTTP E2E、`npm run quality`、PostgreSQL up/down/re-up 与重启恢复、`evidence/g4/G4-10/`、`docs/work/C_REQ/rtm_v4.md`、`evidence/g4/G4-11/` | PR `!16`，分支 `codex/g4-09-sprint2-frontend`；C 在 HEAD `4d8ba75` 复验 PASS，关闭 `ISSUE-G4-09-001`；平台 merge `5b31e0f06748fe1b5253771583140e23398ce6bf`；证据 `logs/reviews/2026-10-08_G4-09-11-C-rereview.md` | DONE / MERGED；87 PASS / 0 FAIL / 0 BLOCKED；第四关 MVP 研发准出完成。 |
 
 ## 维护规则
 
-1. 开发中任务只进入“待审核任务”；仅在对应 PR 已由 `tasks.md` 指定唯一审核人 Approve 并 Merge 后移入“已合并任务”。
+1. 开发中任务只进入待审核区；仅在对应 PR 已由 `tasks.md` 指定唯一审核人完成审核并 Merge 后移入已合并区。
 2. 记录实际 commit、命令和结果；失败、warning、未测项不得省略或包装为通过。
 3. 最终 RTM v4 由 G4-11 主责 A 汇总；本证据账只提供已核验增量输入。

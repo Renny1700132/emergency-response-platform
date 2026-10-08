@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G5-02",
+  "generatedAt": "2026-10-09T08:15:00+08:00",
+  "qualityCommand": "npm run quality",
+  "status": "PASS",
+  "frontend": {
+    "testFiles": 10,
+    "tests": 44,
+    "coverage": {
+      "statements": 95.57,
+      "branches": 77.73,
+      "functions": 97.36,
+      "lines": 100
+    }
+  },
+  "engineeringGuards": {
+    "tests": 11,
+    "coverage": {
+      "statements": 96.75,
+      "branches": 81.63,
+      "functions": 90,
+      "lines": 96.75
+    }
+  },
+  "backend": {
+    "tests": 20,
+    "coverage": {
+      "statements": 87.69,
+      "branches": 77.74,
+      "functions": 85.24,
+      "lines": 87.69
+    }
+  },
+  "openapi": {
+    "errors": 0,
+    "warnings": 14,
+    "status": "PASS_WITH_WARNINGS"
+  },
+  "secretScan": {
+    "status": "PASS",
+    "filesScanned": 67
+  },
+  "dependencyAudit": {
+    "rootVulnerabilities": 0,
+    "frontendVulnerabilities": 0,
+    "highOrCritical": 0
+  },
+  "selfcheck": {
+    "status": "PASS",
+    "targets": 11
+  },
+  "boundary": "Local quality gate; it is not remote CI, penetration testing, formal graded-protection assessment, or owner-environment acceptance."
+}

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G5-02",
+  "generatedAt": "2026-10-08T16:12:11.675Z",
+  "drill": "controlled external timeout and message failure injection",
+  "evidenceKind": "LOCAL_CONTROLLED_WITH_SIMULATED_EXTERNAL_FAILURE",
+  "unauthorized": {
+    "expectedStatus": 403,
+    "actualStatus": 403,
+    "traceId": "g5-318593ae-fe84-405c-a94c-57756797d56f"
+  },
+  "messageFailure": {
+    "code": "MESSAGE_TIMEOUT",
+    "message": "injected message timeout"
+  },
+  "accessControl": {
+    "httpStatus": 200,
+    "state": "MANUAL_DEGRADATION",
+    "automaticReplay": false,
+    "traceId": "g5-468fdb7c-7420-4872-ba68-ddc94b4ece10"
+  },
+  "externalCalls": [
+    {
+      "adapter": "EXT-ACCESS",
+      "action": "ACCESS_CONTROL",
+      "scenario": "timeout",
+      "traceId": "g5-468fdb7c-7420-4872-ba68-ddc94b4ece10",
+      "at": "2026-10-08T16:12:11.674Z"
+    }
+  ],
+  "assertions": {
+    "unauthorizedRejected": true,
+    "messageFailureObserved": true,
+    "accessUnknownResultDegraded": true,
+    "controlWasNotAutomaticallyReplayed": true
+  },
+  "databaseRecovery": {
+    "status": "BLOCKED",
+    "reason": "A PostgreSQL service is listening locally, but no authorized test credential/DATABASE_URL is available for this execution."
+  },
+  "longAvailability": {
+    "status": "NOT_RUN",
+    "reason": "A short controlled drill cannot prove 7x24 or >=99.5% trial-operation availability."
+  },
+  "status": "PASS"
+}

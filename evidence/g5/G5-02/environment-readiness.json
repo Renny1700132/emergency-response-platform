@@ -1,0 +1,24 @@
+{
+  "taskId": "G5-02",
+  "generatedAt": "2026-10-08T16:14:50.7922806Z",
+  "docker": {
+    "status": "BLOCKED",
+    "exitCode": 1,
+    "reason": "docker executable is not installed or not available on PATH"
+  },
+  "postgresql": {
+    "listener": "127.0.0.1:5432 - accepting connections",
+    "authorizedDatabaseUrlPresent": false,
+    "recoveryDrill": "BLOCKED",
+    "migrationAttemptExitCode": 1,
+    "reason": "No authorized G5_DATABASE_URL/DATABASE_URL was supplied; connection credentials are not inferred or fabricated."
+  },
+  "independentDeployer": {
+    "status": "BLOCKED",
+    "reason": "No non-contractor human operator participated in this execution."
+  },
+  "ownerExternalSystems": {
+    "status": "BLOCKED",
+    "reason": "Owner video, message, location, GIS and other target endpoints/accounts are unavailable; local adapter results remain SIMULATED_EVIDENCE."
+  }
+}

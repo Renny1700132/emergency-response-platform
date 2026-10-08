@@ -1,0 +1,371 @@
+
+> museum-emergency-response-quality-gates@0.1.0 contract
+> redocly lint docs/work/B_TECH/openapi_v1.yaml --config quality/openapi/redocly.yaml --format=json
+
+
+    ╔═══════════════════════════════════════════════════════╗
+    ║                                                       ║
+    ║  A new version of Redocly CLI (2.60.0) is available.  ║
+    ║  Update now: `npm i -g @redocly/cli@latest`.          ║
+    ║  Changelog: https://redocly.com/docs/cli/changelog/   ║
+    ║                                                       ║
+    ╚═══════════════════════════════════════════════════════╝
+
+validating docs\work\B_TECH\openapi_v1.yaml...
+{
+  "totals": {
+    "errors": 0,
+    "warnings": 14,
+    "ignored": 0
+  },
+  "version": "2.53.3",
+  "problems": [
+    {
+      "ruleId": "no-undefined-server-variable",
+      "severity": "warn",
+      "message": "The `environment` variable is not used in the server's `url` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/servers/0/variables/environment",
+          "reportOnKey": true,
+          "start": {
+            "line": 11,
+            "col": 5
+          },
+          "end": {
+            "line": 11,
+            "col": 16
+          }
+        }
+      ],
+      "from": {
+        "source": {
+          "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+        },
+        "pointer": "#/servers/0/url"
+      },
+      "reference": "https://redocly.com/docs/cli/rules/oas/no-undefined-server-variable",
+      "suggest": []
+    },
+    {
+      "ruleId": "tag-description",
+      "severity": "warn",
+      "message": "Tag object should contain `description` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/tags/0/description",
+          "reportOnKey": true,
+          "start": {
+            "line": 18,
+            "col": 3
+          },
+          "end": {
+            "line": 18,
+            "col": 11
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/tag-description",
+      "suggest": []
+    },
+    {
+      "ruleId": "tag-description",
+      "severity": "warn",
+      "message": "Tag object should contain `description` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/tags/1/description",
+          "reportOnKey": true,
+          "start": {
+            "line": 19,
+            "col": 3
+          },
+          "end": {
+            "line": 19,
+            "col": 11
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/tag-description",
+      "suggest": []
+    },
+    {
+      "ruleId": "tag-description",
+      "severity": "warn",
+      "message": "Tag object should contain `description` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/tags/2/description",
+          "reportOnKey": true,
+          "start": {
+            "line": 20,
+            "col": 3
+          },
+          "end": {
+            "line": 20,
+            "col": 11
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/tag-description",
+      "suggest": []
+    },
+    {
+      "ruleId": "tag-description",
+      "severity": "warn",
+      "message": "Tag object should contain `description` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/tags/3/description",
+          "reportOnKey": true,
+          "start": {
+            "line": 21,
+            "col": 3
+          },
+          "end": {
+            "line": 21,
+            "col": 11
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/tag-description",
+      "suggest": []
+    },
+    {
+      "ruleId": "tag-description",
+      "severity": "warn",
+      "message": "Tag object should contain `description` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/tags/4/description",
+          "reportOnKey": true,
+          "start": {
+            "line": 22,
+            "col": 3
+          },
+          "end": {
+            "line": 22,
+            "col": 11
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/tag-description",
+      "suggest": []
+    },
+    {
+      "ruleId": "tag-description",
+      "severity": "warn",
+      "message": "Tag object should contain `description` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/tags/5/description",
+          "reportOnKey": true,
+          "start": {
+            "line": 23,
+            "col": 3
+          },
+          "end": {
+            "line": 23,
+            "col": 11
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/tag-description",
+      "suggest": []
+    },
+    {
+      "ruleId": "tag-description",
+      "severity": "warn",
+      "message": "Tag object should contain `description` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/tags/6/description",
+          "reportOnKey": true,
+          "start": {
+            "line": 24,
+            "col": 3
+          },
+          "end": {
+            "line": 24,
+            "col": 11
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/tag-description",
+      "suggest": []
+    },
+    {
+      "ruleId": "tag-description",
+      "severity": "warn",
+      "message": "Tag object should contain `description` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/tags/7/description",
+          "reportOnKey": true,
+          "start": {
+            "line": 25,
+            "col": 3
+          },
+          "end": {
+            "line": 25,
+            "col": 11
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/tag-description",
+      "suggest": []
+    },
+    {
+      "ruleId": "tag-description",
+      "severity": "warn",
+      "message": "Tag object should contain `description` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/tags/8/description",
+          "reportOnKey": true,
+          "start": {
+            "line": 26,
+            "col": 3
+          },
+          "end": {
+            "line": 26,
+            "col": 11
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/tag-description",
+      "suggest": []
+    },
+    {
+      "ruleId": "tag-description",
+      "severity": "warn",
+      "message": "Tag object should contain `description` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/tags/9/description",
+          "reportOnKey": true,
+          "start": {
+            "line": 27,
+            "col": 3
+          },
+          "end": {
+            "line": 27,
+            "col": 11
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/tag-description",
+      "suggest": []
+    },
+    {
+      "ruleId": "tag-description",
+      "severity": "warn",
+      "message": "Tag object should contain `description` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/tags/10/description",
+          "reportOnKey": true,
+          "start": {
+            "line": 28,
+            "col": 3
+          },
+          "end": {
+            "line": 28,
+            "col": 11
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/tag-description",
+      "suggest": []
+    },
+    {
+      "ruleId": "tag-description",
+      "severity": "warn",
+      "message": "Tag object should contain `description` field.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/tags/11/description",
+          "reportOnKey": true,
+          "start": {
+            "line": 29,
+            "col": 3
+          },
+          "end": {
+            "line": 29,
+            "col": 11
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/tag-description",
+      "suggest": []
+    },
+    {
+      "ruleId": "nullable-type-sibling",
+      "severity": "warn",
+      "message": "The `type` field must be defined when the `nullable` field is used.",
+      "location": [
+        {
+          "source": {
+            "ref": "docs\\work\\B_TECH\\openapi_v1.yaml"
+          },
+          "pointer": "#/components/schemas/ApiResponse/properties/data/nullable",
+          "reportOnKey": false,
+          "start": {
+            "line": 3035,
+            "col": 21
+          },
+          "end": {
+            "line": 3035,
+            "col": 25
+          }
+        }
+      ],
+      "reference": "https://redocly.com/docs/cli/rules/oas/nullable-type-sibling",
+      "suggest": []
+    }
+  ]
+docs\work\B_TECH\openapi_v1.yaml: validated in 66ms
+
+Woohoo! Your API description is valid. 🎉
+You have 14 warnings.
+
+}

@@ -1,0 +1,11 @@
+{
+  "taskId": "G5-02",
+  "status": "PASS_WITH_EXTERNAL_BLOCKERS",
+  "checkedMetrics": 8,
+  "blockers": [
+    "docker-clean-deploy",
+    "postgresql-recovery",
+    "independent-deployer",
+    "owner-external-systems"
+  ]
+}

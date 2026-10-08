@@ -1,0 +1,72 @@
+{
+  "taskId": "G5-02",
+  "generatedAt": "2026-10-09T08:21:00+08:00",
+  "baseline": "e6e12b59fc5749cdf0475ed9631bac7d21d4bb1a",
+  "files": [
+    {
+      "file": "dependency-audit-frontend.json",
+      "bytes": 386,
+      "sha256": "afaa53175a23e2863188fb6b14ca25f2092ca0adde3d342532c3038451c42053"
+    },
+    {
+      "file": "dependency-audit-root.json",
+      "bytes": 383,
+      "sha256": "b9c1bb602a124bbc8d65f112786f6fada91ac85fb8023087e3597104434d087a"
+    },
+    {
+      "file": "docker-probe.log",
+      "bytes": 97,
+      "sha256": "a9e6bd08cf0775688acbe29cf6dc41fc99b6126063d56eee4ecb325d3f44c857"
+    },
+    {
+      "file": "environment-readiness.json",
+      "bytes": 905,
+      "sha256": "88c6b9099b42c0d0128ddbf6759df246e4f819d73901276270987f56c0a984bd"
+    },
+    {
+      "file": "fault-drill-raw.json",
+      "bytes": 1417,
+      "sha256": "046a610b3235395a49ec9fc5c403cbd84a69d72e1476228b08ff7d19aa99e7ce"
+    },
+    {
+      "file": "openapi-lint.log",
+      "bytes": 10340,
+      "sha256": "66f22345aece45b258ca88a25084710d213da46593f2258c9dc252f76fe7b7c8"
+    },
+    {
+      "file": "performance-raw.json",
+      "bytes": 3171603,
+      "sha256": "00b47d1d196954c0cd896d0db0bf775f87fce171e0d06a78a611049eba915320"
+    },
+    {
+      "file": "performance-samples.csv",
+      "bytes": 144955,
+      "sha256": "6e5c98ba1f9e2b055533f808c6f1a73b0be0ebc3c0f0f634c6701768c35ff047"
+    },
+    {
+      "file": "postgres-migration-attempt.log",
+      "bytes": 782,
+      "sha256": "949f284f311f35e7228382e622930de4b39466dc17492bcd7da73ee4cd4214ff"
+    },
+    {
+      "file": "quality-gate.log",
+      "bytes": 15898,
+      "sha256": "bddae4ebdd3fd76a2318084beac154baf1215da31577581d968412ae6fe797cd"
+    },
+    {
+      "file": "quality-summary.json",
+      "bytes": 1145,
+      "sha256": "1d9331e1527bdd2e1d1a5b543e17ca670bd1d36727cf99410f65dbfc15b6b2ab"
+    },
+    {
+      "file": "secret-scan.log",
+      "bytes": 181,
+      "sha256": "2298cbfac47105345aacaa789025322f63380889bdbe26e341d1ba3b0efa41b5"
+    },
+    {
+      "file": "technical-gate-validation.log",
+      "bytes": 233,
+      "sha256": "bd6349d1a34362f3fb6312e2b380a76bbb136b6e1ee62bdc2b20c94f51979a47"
+    }
+  ]
+}

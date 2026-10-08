@@ -10,7 +10,7 @@
     "secrets":{"status":"PASS","evidence":"Secret scan passes and no persistent credential was added."},
     "logRedaction":{"status":"PASS","evidence":"Views do not render tokens or credentials."},
     "migrationRollback":{"status":"N/A","evidence":"G4-09 changes no database schema."},
-    "tests":{"status":"PASS","evidence":"Frontend 40/40; real E2E; frontend lines 100% and branches 77.30%."},
+    "tests":{"status":"PASS","evidence":"Frontend 44/44, including formal-page isolation and access-control success/failure receipt paths; real E2E; frontend lines 100% and branches 77.73%."},
     "traceability":{"status":"PASS","evidence":"RTM v4 and 87 AC matrix map formal frontend, backend and tests."}
   }
 }

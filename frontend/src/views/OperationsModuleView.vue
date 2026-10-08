@@ -3,18 +3,28 @@ import { computed, onMounted, ref, watch } from 'vue'
 import type { ModuleRoute } from '@/router/modules'
 import { useApiClient } from '@/shared/http/api-context'
 import { loadFormalModule, type FormalModuleSnapshot } from '@/features/formal/module-workbench'
+import { createResponseWorkflow } from '@/features/response/workflow'
 
 const props = defineProps<{ module: ModuleRoute }>()
 const notice = ref(''), query = ref(''), showConfirm = ref(false)
 const presentation = import.meta.env.MODE === 'presentation'
 const api = useApiClient()
+const workflow = createResponseWorkflow(api)
 const formal = ref<FormalModuleSnapshot | null>(null)
 const loading = ref(false)
+const formalIncidentId = ref('')
+const doorRef = ref('')
+const controlPending = ref(false)
 async function refreshFormal() {
   if (presentation) return
   loading.value = true
   try {
-    formal.value = await loadFormalModule(api, props.module.id)
+    const [snapshot, incidents] = await Promise.all([
+      loadFormalModule(api, props.module.id),
+      props.module.id === 'MOD-SITUATION' ? workflow.listIncidents() : Promise.resolve([]),
+    ])
+    formal.value = snapshot
+    formalIncidentId.value = incidents.find((item) => !['CLOSED', 'REJECTED'].includes(item.status))?.id ?? ''
     notice.value = `正式数据已刷新（${formal.value.evidence}）`
   } catch (error) {
     notice.value = `正式数据加载失败：${error instanceof Error ? error.message : '未知错误'}`
@@ -59,6 +69,26 @@ function action(label: string) {
   if (presentation) notice.value = `${label}已在演示模式中触发；正式提交将经过权限校验、二次确认与审计留痕。`
   else { notice.value = `${label}进入正式权限与审计边界；本页已重新读取正式 API。`; void refreshFormal() }
 }
+async function sendAccessControl() {
+  if (presentation) { showConfirm.value = false; action('门禁开启指令'); return }
+  if (!formalIncidentId.value || !doorRef.value.trim()) {
+    notice.value = '正式控制需要进行中事件和门禁编号；未发送任何指令。'
+    showConfirm.value = false
+    return
+  }
+  controlPending.value = true
+  try {
+    const result = await api.post('/api/v1/incidents/{incidentId}/access-control-commands', {
+      path: { incidentId: formalIncidentId.value },
+      body: { doorRef: doorRef.value.trim(), action: 'REQUEST_OPEN', confirmationToken: `confirmed-${globalThis.crypto.randomUUID()}`, reason: '应急疏散人工二次确认' },
+      idempotencyKey: globalThis.crypto.randomUUID(),
+    })
+    const payload = result && typeof result === 'object' && 'data' in result ? result.data as Record<string, unknown> : result as Record<string, unknown>
+    notice.value = `门禁控制回执：${String(payload?.status ?? 'UNKNOWN')}（指令 ${String(payload?.id ?? '—')}）`
+  } catch (error) {
+    notice.value = `门禁控制失败：${error instanceof Error ? error.message : '未知错误'}；请转人工处置。`
+  } finally { controlPending.value = false; showConfirm.value = false }
+}
 </script>
 
 <template>
@@ -67,13 +97,17 @@ function action(label: string) {
     <p v-if="notice" class="notice" role="status">{{ notice }}</p>
     <div v-if="!presentation" class="formal-boundary"><strong>正式 API 模式</strong><p>{{ loading ? '正在读取正式服务…' : (formal ? `已接入：${formal.evidence}` : '正式服务暂不可用；未回退到演示数据。') }}</p></div>
     <div class="module-metrics"><article v-for="metric in content.metrics" :key="metric.label"><small>{{ metric.label }}</small><strong>{{ metric.value }}</strong><p>{{ metric.hint }}</p></article></div>
-    <div v-if="module.id === 'MOD-SITUATION'" class="situation-layout">
+    <div v-if="module.id === 'MOD-SITUATION' && presentation" class="situation-layout">
       <article class="panel situation-map"><header class="panel-heading"><div><span class="panel-kicker">LIVE MAP</span><h3>综合安防态势</h3></div><span class="live-pill"><i/> 30 秒刷新</span></header><div class="security-map"><div class="map-grid"/><div class="building-zone zone-a"><b>东展厅</b><small>告警 1</small></div><div class="building-zone zone-b"><b>中央大厅</b><small>设备 68</small></div><div class="building-zone zone-c"><b>西展厅</b><small>人员 12</small></div><span class="pulse alarm" style="left:30%;top:32%">!</span><span class="pulse camera" style="left:56%;top:45%">▶</span><span class="pulse access" style="left:72%;top:64%">↔</span></div></article>
       <article class="panel control-panel"><header class="panel-heading"><div><span class="panel-kicker danger-text">SECURITY CONTROL</span><h3>联动控制</h3></div></header><div class="video-placeholder"><span>▶</span><b>东展厅 · CAM-2F-018</b><small>模拟视频画面 · EXT-VIDEO</small></div><div class="control-list"><button @click="action('实时视频调阅')"><span>视频调阅</span><small>在线 · 82 ms</small></button><button class="warning-action" @click="showConfirm = true"><span>授权开启门禁</span><small>需二次确认与安全联锁</small></button><button @click="action('信息发布')"><span>发布疏散信息</span><small>统一发布接口</small></button></div></article>
     </div>
+    <div v-else-if="module.id === 'MOD-SITUATION'" class="situation-layout" data-evidence-mode="formal">
+      <article class="panel data-panel"><header class="panel-heading"><div><span class="panel-kicker">FORMAL RESOURCE MAP</span><h3>正式资源与人员态势</h3></div></header><div class="data-table"><div class="table-row table-head"><b v-for="head in headings" :key="head">{{ head }}</b></div><div v-if="rows.length === 0" class="table-footer">正式接口当前无资源站点或人员定位记录</div><div v-for="row in rows" :key="row.join('|')" class="table-row"><span v-for="cell in row" :key="cell">{{ cell }}</span></div></div></article>
+      <article class="panel control-panel"><header class="panel-heading"><div><span class="panel-kicker danger-text">FORMAL SECURITY CONTROL</span><h3>门禁联动控制</h3></div></header><p>当前事件：{{ formalIncidentId || '无进行中事件' }}</p><label class="search-box"><span>门禁</span><input v-model="doorRef" placeholder="输入正式门禁编号"/></label><div class="control-list"><button class="warning-action" :disabled="!formalIncidentId || !doorRef.trim() || controlPending" @click="showConfirm = true"><span>{{ controlPending ? '发送中…' : '授权开启门禁' }}</span><small>正式接口 · 二次确认 · 回执判定</small></button></div></article>
+    </div>
     <article v-else class="panel data-panel"><header class="panel-heading"><div><span class="panel-kicker">OPERATION RECORDS</span><h3>{{ module.title }}工作台</h3></div><label class="search-box"><span>⌕</span><input v-model="query" placeholder="搜索名称、状态或责任人"/></label></header><div class="data-table"><div class="table-row table-head"><b v-for="head in headings" :key="head">{{ head }}</b></div><button v-for="row in rows" :key="row[0]" class="table-row" @click="action(`查看${row[0]}详情`)"><span v-for="(cell,index) in row" :key="cell" :class="{ 'row-status': index === row.length - 1 }">{{ cell }}</span></button></div><footer class="table-footer"><span>共 {{ rows.length }} 条{{ presentation ? '演示' : '正式' }}记录</span><div><button disabled>上一页</button><b>1</b><button disabled>下一页</button></div></footer></article>
-    <div v-if="module.id === 'MOD-RESOURCE'" class="insight-grid"><article><span>临期物资</span><strong>7</strong><p>其中 2 项需在 7 天内处置</p></article><article><span>盘点差异</span><strong>3</strong><p>已保留快照与复核记录</p></article><article><span>待补充站点</span><strong>1</strong><p>地下库房物资点</p></article></div>
-    <div v-if="module.id === 'MOD-DRILL'" class="calendar-strip"><div v-for="day in ['26 周六','27 周日','28 周一','29 周二','30 周三']" :key="day" :class="{ selected: day.startsWith('28') }"><small>09 月</small><b>{{ day }}</b><span v-if="day.startsWith('28')">疏散演练</span></div></div>
-    <div v-if="showConfirm" class="modal-backdrop" @click.self="showConfirm = false"><section class="confirm-dialog"><span class="confirm-icon">!</span><h3>确认发送门禁开启指令？</h3><p>该操作将通过既有门禁接口发送授权请求，必须等待安全联锁回执。拒绝、超时或联锁失败将进入人工降级处置。</p><div><button class="secondary" @click="showConfirm = false">取消</button><button class="danger-button" @click="showConfirm = false; action('门禁开启指令')">确认并发送</button></div></section></div>
+    <div v-if="module.id === 'MOD-RESOURCE' && presentation" class="insight-grid"><article><span>临期物资</span><strong>7</strong><p>其中 2 项需在 7 天内处置</p></article><article><span>盘点差异</span><strong>3</strong><p>已保留快照与复核记录</p></article><article><span>待补充站点</span><strong>1</strong><p>地下库房物资点</p></article></div>
+    <div v-if="module.id === 'MOD-DRILL' && presentation" class="calendar-strip"><div v-for="day in ['26 周六','27 周日','28 周一','29 周二','30 周三']" :key="day" :class="{ selected: day.startsWith('28') }"><small>09 月</small><b>{{ day }}</b><span v-if="day.startsWith('28')">疏散演练</span></div></div>
+    <div v-if="showConfirm" class="modal-backdrop" @click.self="showConfirm = false"><section class="confirm-dialog"><span class="confirm-icon">!</span><h3>确认发送门禁开启指令？</h3><p>该操作将通过既有门禁接口发送授权请求，必须等待安全联锁回执。拒绝、超时或联锁失败将进入人工降级处置。</p><div><button class="secondary" @click="showConfirm = false">取消</button><button class="danger-button" @click="sendAccessControl">确认并发送</button></div></section></div>
   </section>
 </template>

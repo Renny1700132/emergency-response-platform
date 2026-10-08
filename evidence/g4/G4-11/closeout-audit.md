@@ -7,10 +7,10 @@
 | 87 AC | PASS | 87 PASS / 0 FAIL / 0 BLOCKED |
 | 正式前后端 | PASS | 类型化 Client + 实际 HTTP Server E2E；正式模式不回退演示数据 |
 | PostgreSQL | PASS | up/down/re-up、2/2 集成、进程重启后表与业务/审计记录存在 |
-| 覆盖率 | PASS | 前端 lines 100%、branches 77.30%；后端 lines 87.69%、branches 77.74% |
+| 覆盖率 | PASS | 前端 lines 100%、branches 77.73%；后端 lines 87.69%、branches 77.74% |
 | 安全 | PASS | secret scan PASS；根与前端依赖高危 0 |
 | OpenAPI | PASS | schema error 0；14 个既有非阻断 warning |
-| 性能 | PASS（本地受控） | 100 并发，p95 53.79ms，满足 KN-034；不作生产容量承诺 |
+| 性能 | PASS（本地受控） | A 整改复跑 100 并发 p95 53.83ms；C 首轮独立复核 p95 51.68ms；均满足 KN-034，不作生产容量承诺 |
 | 故障演练 | PASS | 无效身份 403；门禁超时 504 且禁止自动重放 |
 | 外部四场景 | PASS（SIMULATED） | 8 个 EXT 端口 normal/unauthorized/timeout/failure，均标记 `SIMULATED_EVIDENCE` |
 | PR / Review | CHANGES_REQUIRED | C 首轮复核发现 `ISSUE-G4-09-001`：正式页面仍展示固定演示事实且控制提交未接正式接口；PR !16 当前不得 Merge 或宣称第四关已正式关闭 |

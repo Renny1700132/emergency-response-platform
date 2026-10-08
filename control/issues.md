@@ -1298,6 +1298,14 @@
 - 复核证据：`logs/reviews/2026-10-08_G4-09-11-C-review.md`。
 - 状态：OPEN / CHANGES_REQUIRED。
 
+#### A 整改响应（2026-10-08）
+
+- Dashboard 正式模式已移除固定客流、告警时间线、消息回执和外部系统在线/延迟事实；只展示正式事件、任务、资源图和统计接口返回，无数据或失败时明确显示不可用且不回退 presentation。
+- 指挥态势正式模式已移除固定区域告警、模拟视频和固定延迟，改为正式资源/人员数据表；门禁控制要求进行中事件、门禁编号和人工二次确认，并调用冻结 `/api/v1/incidents/{incidentId}/access-control-commands`，显示正式成功回执或失败后的人工降级提示。
+- 后端门禁实现已对齐冻结 OpenAPI 的 `doorRef / REQUEST_OPEN / confirmationToken / reason`，不再使用契约外字段。
+- 新增页面级正式模式测试，覆盖 Dashboard/态势无演示事实、正式 envelope 解包、门禁成功回执、正式 API 失败不回退和控制超时/失败人工降级。
+- 状态：OPEN / PENDING_C_REREVIEW；仅由 C 复验后关闭。
+
 ## G4-06 Web/H5 前端闭环审核项
 
 ### ISSUE-G4-06-001

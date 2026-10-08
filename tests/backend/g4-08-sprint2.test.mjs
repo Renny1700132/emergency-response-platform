@@ -102,7 +102,7 @@ test('G4-08 service closes plan, resource, inventory, drill, attendance and inte
   assert.equal(alert.id, duplicate.id);
   assert.equal((await handle('POST', '/integration/v1/alerts/fire', { externalAlertId: 'fire-unknown' })).data.status, 'MANUAL_REVIEW');
   assert.ok((await handle('POST', '/api/v1/incidents/incident-1/videos/query', { mode: 'PLAYBACK' })).data.externalVideoId);
-  assert.equal((await handle('POST', '/api/v1/incidents/incident-1/access-control-commands', { targetId: 'door-1', action: 'OPEN', reason: 'evacuate', authorizedConfirmation: true, scenario: 'timeout' })).data.automaticReplay, false);
+  assert.equal((await handle('POST', '/api/v1/incidents/incident-1/access-control-commands', { doorRef: 'door-1', action: 'REQUEST_OPEN', reason: 'evacuate', confirmationToken: 'confirmed-by-operator', scenario: 'timeout' })).data.automaticReplay, false);
   assert.equal((await handle('GET', '/api/v1/statistics/emergency')).data.drillsCompleted, 1);
   await service.publishKnowledge({ title: 'Fire response review', category: 'FIRE', keywords: ['evacuation'] }, actor);
   assert.equal((await handle('GET', '/api/v1/knowledge-items')).data.total, 1);

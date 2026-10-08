@@ -10,8 +10,9 @@ export type FormalModuleSnapshot = {
 
 type Page = { items?: Record<string, unknown>[]; total?: number }
 type RecordValue = Record<string, unknown>
-const page = (value: unknown) => (value ?? {}) as Page
-const record = (value: unknown) => (value ?? {}) as RecordValue
+const unwrap = (value: unknown): unknown => value && typeof value === 'object' && 'data' in value ? (value as RecordValue).data : value
+const page = (value: unknown) => (unwrap(value) ?? {}) as Page
+const record = (value: unknown) => (unwrap(value) ?? {}) as RecordValue
 const text = (value: unknown, fallback = '—') => value === undefined || value === null || value === '' ? fallback : String(value)
 const total = (value: unknown) => Number(page(value).total ?? page(value).items?.length ?? 0)
 const items = (value: unknown) => page(value).items ?? []

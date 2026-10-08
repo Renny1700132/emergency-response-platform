@@ -6,7 +6,12 @@ const execute = promisify(execFile);
 const databaseUrl = process.env.DATABASE_URL;
 if (!databaseUrl) throw new Error('DATABASE_URL is required for migration integration verification');
 
-const expectedTables = ['em_audit_log', 'em_idempotency_record', 'em_outbox_event'];
+const expectedTables = [
+  'em_audit_log', 'em_idempotency_record', 'em_outbox_event',
+  'em_plan', 'em_material_site', 'em_inventory_plan', 'em_drill_plan',
+  'em_attendance_record', 'em_external_alert', 'em_video_reference',
+  'em_control_command', 'em_external_call_log'
+];
 
 async function migrate(direction) {
   await execute(process.execPath, ['backend/scripts/migrate.mjs', direction], {

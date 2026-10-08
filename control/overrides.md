@@ -2,6 +2,20 @@
 
 本文件只记录当前用户 Prompt 对参考方法/过程规则的覆盖。它不能作为修改真实项目功能、★条款、性能、边界、验收、甲方职责、质保/SLA 或法规标准的依据。
 
+## OVR-030
+
+- 时间：2026-09-26（Asia/Shanghai）
+- Prompt 要求：删去 PR 记录，直接推送到 `master`。
+- 被覆盖规则：`AGENTS.md`、`governance/git_workflow.md` 与 `governance/g4_development_workflow.md` 要求 G4 任务通过功能分支、唯一审核人 Review/Approve 和 PR Merge 进入 `master`，禁止日常直推受保护主干。
+- 来源文档：当前 P0 Prompt；上述仓库治理文件；Gitee PR !17。
+- 冲突说明：P0 可覆盖本次工作方式，但不能删除或篡改既有受控记录；Gitee PR 对象也不能物理抹除。因此不删除 PR !17 或既有日志，只将 PR !17 关闭，并保留其创建、关闭及本次直推事实。
+- 实际执行规则：仅针对 `G4-ACCEPTANCE-PPT-01`，将已完成并通过自动 QA 的验收汇报提交直接带入并非 force 推送至 `master`；不通过 PR 合并，不声称已完成 C 独立复核，不改变 G4-08—G4-11 状态。
+- 风险：绕过了既定的 C 独立 Review/Approve 与 PR Merge 门禁；远程 `master` 仅能证明提交已进入主干，不能替代独立人工复核结论。
+- 是否已在 Preflight 提示：是；冲突编号 `CONFLICT-G4-ACCEPTANCE-PPT-DIRECT-001`。
+- 是否涉及真实项目事实：否。
+- 是否必须暂停：否，用户已明确授权该方法覆盖。
+- 状态：ACTIVE
+
 ## OVR-025
 
 - 时间：2026-09-19 15:34 +08:00

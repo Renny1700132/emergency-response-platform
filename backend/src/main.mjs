@@ -1,8 +1,12 @@
+import { randomUUID } from 'node:crypto';
 import { createDatabase } from './database.mjs';
 import { loadConfig } from './config.mjs';
 import { createServer } from './server.mjs';
 import { createMessagePort } from './message-port.mjs';
 import { createMiddlePlatformPort } from './middle-platform-port.mjs';
+import { createExternalAdapters } from './external-adapters.mjs';
+import { createSprint2Persistence } from './sprint2-persistence.mjs';
+import { createSprint2Service } from './sprint2-service.mjs';
 
 export function createApplication({ environment = process.env, logger = console } = {}) {
   const config = loadConfig(environment);
@@ -18,10 +22,20 @@ export function createApplication({ environment = process.env, logger = console 
       timeoutMs: config.requestTimeoutMs
     })
     : null;
+  const sprint2Persistence = createSprint2Persistence(database);
+  const externalAdapters = config.simulatedIntegrationBaseUrl
+    ? createExternalAdapters({
+      baseUrl: config.simulatedIntegrationBaseUrl,
+      timeoutMs: config.requestTimeoutMs,
+      callLog: (record) => sprint2Persistence.save?.('externalCall', { id: randomUUID(), ...record })
+    })
+    : null;
+  const sprint2Service = createSprint2Service({ persistence: sprint2Persistence, adapters: externalAdapters });
   const server = createServer({
     config, database, logger, messagePort,
     identityProvider: middlePlatformPort,
-    filePort: middlePlatformPort
+    filePort: middlePlatformPort,
+    sprint2Service
   });
   return Object.freeze({ config, database, server });
 }

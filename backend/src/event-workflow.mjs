@@ -84,13 +84,20 @@ export function createEventWorkflow({
   }
 
   return Object.freeze({
-    async listIncidents({ page = 1, size = 50 } = {}) {
+    async listIncidents({ page = 1, size = 50, status = null, incidentTypeCode = null, keyword = null, occurredFrom = null, occurredTo = null } = {}) {
       if (repository.listIncidents) {
-        const result = await repository.listIncidents({ page, size });
+        const result = await repository.listIncidents({ page, size, status, incidentTypeCode, keyword, occurredFrom, occurredTo });
         for (const incident of result.items) incidents.set(incident.id, incident);
         return { ...result, page, size };
       }
-      const all = [...incidents.values()].sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)));
+      const normalizedKeyword = keyword?.toLocaleLowerCase();
+      const all = [...incidents.values()].filter((item) =>
+        (!status || item.status === status)
+        && (!incidentTypeCode || item.incidentTypeCode === incidentTypeCode)
+        && (!normalizedKeyword || `${item.title} ${item.description}`.toLocaleLowerCase().includes(normalizedKeyword))
+        && (!occurredFrom || new Date(item.occurredAt) >= new Date(occurredFrom))
+        && (!occurredTo || new Date(item.occurredAt) <= new Date(occurredTo))
+      ).sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)));
       return { items: structuredClone(all.slice((page - 1) * size, page * size)), page, size, total: all.length };
     },
 

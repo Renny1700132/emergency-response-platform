@@ -2,9 +2,13 @@
 
 > G4 本地研发与质量门禁使用 Node.js `^24.14.0 || >=26.0.0`；当前最低声明版本 Node 24.14.0 已验证。
 
-本仓库用于《AI 辅助软件项目全生命周期开发·综合实习》课程项目。第一关“立项竞标”已冻结，第二关“需求与规格”已通过 M2，第三关“设计与计划”已通过 M3 并冻结为 `BASELINE-G3-M3-R1.0`。第四关“研发冲刺”已于 2026-09-21 由用户明确启动，当前从第三关冻结基线受控接力。
+本仓库用于《AI 辅助软件项目全生命周期开发·综合实习》课程项目。第一关“立项竞标”已冻结，第二关“需求与规格”已通过 M2，第三关“设计与计划”已通过 M3 并冻结为 `BASELINE-G3-M3-R1.0`。第四关“研发冲刺”已完成并收口；第五关已于 2026-10-08 启动，沿用第三关冻结设计，只做验证、缺陷修复与质量收口。
 
 第一关已完成需求与招标解析、编标输入基线、项目建议书、技术方案、澄清与合规检查、项目计划、风险登记册、技术投标书、述标、需求确认书及最终冻结。第二关已形成 SRS、spec、RTM、M2 评审证据及仅供设计参考的 Prototype。
+
+## 当前执行：G5（OVR-032，2026-10-08）
+
+G4-00—G4-11 已 DONE 并收口进入 master；第五关“质量门禁（测试与质量特性验证）”已启动。自 G5-00 起在最新 master 上完成长任务，自检/必要 Review 留痕、安全 commit、重新 fetch 后非 force 直接 push master；不要求功能分支、PR/Approve/Merge 或远程 CI。保留真实测试、缺陷、RTM、八大质量特性和验收门禁。当前专项规则为 `governance/g5_quality_workflow.md`，规划为 `docs/work/A_PM/g5_quality_gate_plan.md`。以下 G4 专项表述仅解释历史，不约束 G5。
 
 ## 项目组
 
@@ -17,9 +21,9 @@
 ## Workspace 导航
 
 - `AGENTS.md`：所有 AI 与成员进入任务前必须遵守的根规则。
-- `tasks.md`：G1—G3 历史任务与 G4 研发冲刺看板、主责、复核、依赖和状态。
+- `tasks.md`：G1—G4 历史任务与 G5 长任务看板、主责、复核、依赖和状态。
 - `docs/README.md`：原始资料的 G1/G3/公共分类索引与使用边界。
-- `docs/inputs/`：按关卡归档的原始输入（`G1/`、`G3/`、`G4/`）及全阶段公共材料（`common/`）。
+- `docs/inputs/`：按关卡归档的原始输入（`G1/`—`G5/`）及全阶段公共材料（`common/`）。
 - `docs/work/`：当前工作稿；不作为冻结交付物。
 - `docs/deliverables/`：评审通过并准备交付/冻结的正式产物。
 - `docs/daily_reports/`：按何思源、严宇、任俊强归档的每日工作报告与编写 Skill。
@@ -43,7 +47,7 @@
 
 ## 日常工作流
 
-以下直推 `master` 流程仅说明 G1—G3 的历史收口方式；自 G4-01 起不再适用：
+以下安全直推 `master` 流程自 G5-00 起重新适用（OVR-032）；G4 历史采用 PR：
 
 ```text
 Task
@@ -60,7 +64,7 @@ Preflight 与事实基线检查
   ↓
 写入 AGENT_FINAL_OUTPUT_RAW
   ↓
-人工 Review
+必要 Review 留痕（G5-00 启动自检关闭；不冒充独立人工复核）
   ↓
 Git commit
   ↓
@@ -71,4 +75,4 @@ Git commit
 
 当前任务状态见 `tasks.md`。第三关冻结范围包括设计文档集、OpenAPI 契约、ADR、工程计划与四类管理计划、测试计划、`constitution.md`、设计挂接 RTM、Review 证据及 M3 哈希清单；冻结后变更必须走 CR/CCB 并形成新基线版本。
 
-第四关以两个 Sprint 实施：`G2-FR-001—029` 为 MVP Must 优先目标，`G2-FR-030—039` 继续保留为本期 backlog，不删除、不降级、不改需求。研发统一采用功能分支 + PR：主责执行自检和本地 `npm run quality` 后 push 功能分支，`tasks.md` 指定唯一审核人 Review/Approve，再通过 PR Merge 进入 `master`；主干不用于日常开发，不要求 Jenkins、Gitee Go 或其他远程 CI。详细门禁与 DoD 见 `governance/g4_development_workflow.md`。`prototype/` 只用于 UI/交互参考，其 localStorage、Mock 和 `prototypeStore` 不是正式数据或 API 实现。
+第四关历史以两个 Sprint 实施：`G2-FR-001—029` 为 MVP Must 优先目标，`G2-FR-030—039` 继续保留为本期 backlog，不删除、不降级、不改需求。研发统一采用功能分支 + PR：主责执行自检和本地 `npm run quality` 后 push 功能分支，`tasks.md` 指定唯一审核人 Review/Approve，再通过 PR Merge 进入 `master`；主干不用于日常开发，不要求 Jenkins、Gitee Go 或其他远程 CI。详细门禁与 DoD 见 `governance/g4_development_workflow.md`。`prototype/` 只用于 UI/交互参考，其 localStorage、Mock 和 `prototypeStore` 不是正式数据或 API 实现。

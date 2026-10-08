@@ -1,13 +1,17 @@
 # Git 与配置管理工作流
 
+## 当前执行：G5（OVR-032，2026-10-08）
+
+G4-00—G4-11 已 DONE 并收口进入 master；第五关“质量门禁（测试与质量特性验证）”已启动。自 G5-00 起在最新 master 上完成长任务，自检/必要 Review 留痕、安全 commit、重新 fetch 后非 force 直接 push master；不要求功能分支、PR/Approve/Merge 或远程 CI。保留真实测试、缺陷、RTM、八大质量特性和验收门禁。当前专项规则为 `g5_quality_workflow.md`，规划为 `docs/work/A_PM/g5_quality_gate_plan.md`。以下 G4 专项表述仅解释历史，不约束 G5。
+
 ## 分支
 
-- 每项正式任务必须产生 commit。G1—G3 历史任务按当时规则安全同步远程 `master`；自 `G4-01` 起只 push 功能分支，并由 PR Merge 进入 `master`。
+- 每项正式任务必须产生 commit。G1—G3 历史任务按当时规则安全同步远程 `master`；仅第四关历史自 `G4-01` 起只 push 功能分支，并由 PR Merge 进入 `master`。
 - 开始与结束时必须确认当前分支。G4 任务从最新 `master` 创建 `codex/<task-id>-<short-name>` 短生命周期分支，禁止在本地合并回 `master` 后直推远程主干。
 - 一项正式产物只有主责分支/版本；复核通过 Review/Issue 提交意见，不维护影子分支作为第二正式版本。
 - 未经用户明确授权不得修改 remote、改写默认分支或把任务推送到其他远程。
 
-### 第四关覆盖规则
+### 第四关历史覆盖规则（仅G4）
 
 `G4-00` 是旧工作流切换到第四关治理的启动提交。自 `G4-01` 起，G4 研发任务必须使用 `codex/<task-id>-<short-name>` 功能分支并通过单个功能 PR 合并到受保护 `master`，禁止直接推送主干。功能、测试、RTM、日志和 `tasks.md = DONE` 必须进入同一 PR；PR 创建后在同一分支补充 PR 编号和审核信息。每个 PR 必须记录任务号、对应 commit、AI 参与范围、自检与本地 `npm run quality` 结果，以及指定唯一 Review 人的审核结论和 Approve；本地门禁失败或 Review 未批准不得合并。合并提交哈希不回写自身 PR，以 Gitee PR 合并记录为证据并由 G4-11 汇总。G4 不要求 Jenkins、Gitee Go 或其他远程 CI，本地门禁不得写成远程 CI。除 G4-04 已存在的收口 PR 外，不得再为常规 G4 任务创建第二个收口 PR。其余安全同步、禁止 force、语义冲突停止和日志回填规则继续适用；详见 `governance/g4_development_workflow.md`。
 
@@ -57,7 +61,7 @@ PUSH
 
 ## 安全同步与 Push
 
-以下步骤中的 `master` 直推仅适用于 G1—G3 历史/遗留任务。G4 必须执行后述“G4 功能分支与 PR”流程，不得套用第 5 步直推主干。
+以下安全直接 push master 步骤自 G5-00 起适用，同时保留 G1—G3 历史解释；G4 历史仅用后述 PR 流程。G5 标准长任务顺序见 g5_quality_workflow.md；普通 merge 后必须重跑受影响检查。
 
 1. 在任务 commit 后再次执行 `git fetch origin master`，获取执行期间产生的远程更新。
 2. 比较本地 `master` 与 `origin/master`。远程仅领先时优先 fast-forward；双方分叉时使用普通 merge，禁止通过 force 或历史重写消除分叉。
@@ -68,7 +72,7 @@ PUSH
 7. 推送成功后验证本地 `master`、`origin/master` 与远程引用一致，并把 commit、远程、分支、时间和结果回填 Prompt 日志。
 8. 网络、认证、权限或语义冲突导致无法安全推送时，记录真实失败并进入 `BLOCKED`，不得报告 `PUSHED`。
 
-### G4 功能分支与 PR
+### G4 历史功能分支与 PR（不用于G5）
 
 1. 功能分支完成任务的功能、测试、RTM、日志和 `tasks.md = DONE`，提交者自查并通过本地 `npm run quality` 后，检查 diff 并 commit。
 2. 再次 fetch `origin/master` 并检查分叉；语义冲突按本文件规则停止，不以 rebase/force 覆盖历史。
@@ -79,7 +83,7 @@ PUSH
 
 ## 日志回填提交
 
-内容 commit 与首次 push 完成后，将任务 commit hash 和 push 结果写回日志，创建独立的小型回填 commit。G1—G3 按历史规则再次安全同步并普通 push。G4 的回填 commit 只 push 到原功能分支并更新同一 PR；PR 编号和审核信息也在该分支补充。G4 不回填自身 PR 的合并提交哈希，不另建常规收口 PR；该哈希以 Gitee 合并记录为证据并由 G4-11 汇总。回填 commit 不记录自身 hash，避免无限自引用；禁止 amend、rebase 或重写既有提交。
+内容 commit 与首次 push 完成后，将任务 commit hash 和 push 结果写回日志，创建独立的小型回填 commit。G5 回填再次 fetch、安全同步、非 force push master；G1—G3 按历史规则再次安全同步并普通 push。G4 的回填 commit 只 push 到原功能分支并更新同一 PR；PR 编号和审核信息也在该分支补充。G4 不回填自身 PR 的合并提交哈希，不另建常规收口 PR；该哈希以 Gitee 合并记录为证据并由 G4-11 汇总。回填 commit 不记录自身 hash，避免无限自引用；禁止 amend、rebase 或重写既有提交。
 
 ## 禁止事项
 

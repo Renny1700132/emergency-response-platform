@@ -55,3 +55,10 @@
 - 最终复核：C 符合性复核 PASS；B 技术复核确认核心技术内容 PASS。`ISSUE-G2-R06-001/002` 均经用户裁决为非阻断并关闭，不改变 FR、AC、★、KN、RCLR、责任或验收强度。
 - 后续门禁：`G3-01R`仅解除为 TODO；`ISSUE-G3-01-001`继续阻断 G3-06 外部接口冻结及 G3-10/M3 最终冻结。
 - Commit / PR：`9fc07e0a2c013ce5733f59c3ed527cb5e8568fe4`（A侧REVIEW候选；已推送）。
+
+## CHG-G5-00-001｜当前执行治理阶段补充
+
+- 日期：2026-10-08；主责A；批准来源：当前P0明确授权/OVR-032。
+- 变化：G5-00起直接安全push master、长任务与Review留痕；当前constitution增加阶段性流程补充，原G3版本在历史commit/M3 manifest保留。
+- 边界：只覆盖工程执行方式；不修改M3基线文件、manifest、正式冻结设计/计划、FR/AC/★/PE/KN或责任验收。不声称重新冻结或替换BASELINE-G3-M3-R1.0。
+- 自检证据：evidence/g5/G5-00/governance-selfcheck.json；内容commit见LOG-G5-00-001回填，PR N/A。

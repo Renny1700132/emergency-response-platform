@@ -1607,3 +1607,13 @@
 - 根/frontend/lockfile/README 的 Node 范围已一致为 `^24.14.0 || >=26.0.0`，属于 Vitest 5.0.1 支持范围；A 记录最低版本 24.14.0 完整门禁，本机 Node 24.21.0 复跑完整门禁通过。
 - 关闭证据：`logs/reviews/2026-09-23_G4-03-C-rereview.md`；整改提交 `34435c4`；复验头提交 `c360d59`。
 - 状态：CLOSED / VERIFIED_BY_C。
+
+## ISSUE-G5-00-001｜全需求PASS门禁与保留backlog的质量收口风险
+
+- 日期：2026-10-08；提出/登记：A（当前P0授权的G5-00范围分析）；执行核验主责：C；Review：A。
+- 依据：G3测试计划39FR/34★/117AC；RTM v4仅001—029 MVP/87AC已验证，030—039 BACKLOG_PRESERVED；G5任务书要求每条需求至少1条PASS，当前P0禁止新增030—039实现。
+- 严重度：BLOCKING_TO_G5_FINAL_GATE（不阻断G5-00启动规划与可执行项测试）。
+- 状态：OPEN / PENDING_G5-01_SCOPE_VERIFICATION。
+- 处置：C在G5-01核验既有能力与真实TC结果，全量FR/★逐项记录PASS/FAIL/BLOCKED/NOT_RUN；已有能力可实测，未实现不能以需求文档检查或MVP PASS冒充功能PASS。不得新增backlog功能或擅自缩小分母。
+- 关闭条件：全量每需求至少1条实际PASS且★核验完整的可回指证据，经A Review；若仍不满足，则G5-03明确不允许进入G6。后续任何真实需求/验收变更必须特别警告并等待用户确认，G5-00不请求也不实施该变更。
+- 历史：G4证据、RTM v4和G3基线不回改；本Issue不把未执行的G5检查伪写成失败或已测结论。

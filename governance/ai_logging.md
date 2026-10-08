@@ -1,5 +1,9 @@
 # AI 任务自动留痕规范
 
+## 当前执行：G5（OVR-032，2026-10-08）
+
+G4-00—G4-11 已 DONE 并收口进入 master；第五关“质量门禁（测试与质量特性验证）”已启动。自 G5-00 起在最新 master 上完成长任务，自检/必要 Review 留痕、安全 commit、重新 fetch 后非 force 直接 push master；不要求功能分支、PR/Approve/Merge 或远程 CI。保留真实测试、缺陷、RTM、八大质量特性和验收门禁。当前专项规则为 `governance/g5_quality_workflow.md`，规划为 `docs/work/A_PM/g5_quality_gate_plan.md`。以下 G4 专项表述仅解释历史，不约束 G5。
+
 ## 1. 适用范围与课程规则偏离
 
 每一个具有实际产出的 AI 任务都必须执行本规范。本 Workspace 采用“自动生成 + 自动写入 + 人工抽查”。该做法覆盖学生指导书 2.8.6 的“日志内容必须人写”方法规则，偏离详情见 `control/overrides.md` 的 `OVR-001`。
@@ -57,7 +61,7 @@ PUSHED
 13. 确认最终输出原文落盘后记录 `OUTPUT_LOGGED`，再进入 `PENDING_REVIEW`。
 14. 按复核结果进入 `ACCEPTED`、`MODIFIED_ACCEPTED` 或 `REJECTED`；复核主体和依据必须明确，人工核验状态单独保留，不得伪装成人工结论。
 15. 按 `governance/git_workflow.md` 完成 staged diff 检查、commit、安全同步远程 `master` 和非 force push，依次记录 `COMMITTED`、`PUSHED`。
-16. 回填 commit hash、push 目标、远程结果和时间。回填使用独立小提交并再次安全推送；该回填提交不要求记录自身 hash，避免无限自引用。G4 的回填只更新原功能分支和同一 PR；合并提交哈希不回写自身 PR，以 Gitee PR 合并记录为证据并由 G4-11 汇总。
+16. 回填 commit hash、push 目标、远程结果和时间。回填使用独立小提交并再次安全推送；该回填提交不要求记录自身 hash，避免无限自引用。仅 G4 历史的回填只更新原功能分支和同一 PR；合并提交哈希不回写自身 PR，以 Gitee PR 合并记录为证据并由 G4-11 汇总。
 17. 只有工作区干净、远程 `master` 已包含任务提交与回填提交后，才发送与 `AGENT_FINAL_OUTPUT_RAW` 完全一致的正式回复。
 
 ## 4. 日志字段与原文证据
@@ -141,9 +145,9 @@ PUSHED
 
 ## 9. Commit / PR / Push 回填
 
-任务内容提交后回填完整 commit hash、提交时间和分支；有 PR 时追加 PR 编号/链接。按 `governance/git_workflow.md` 推送后，追加远程、目标分支、push 时间和结果，并进入 `PUSHED`。
+任务内容提交后回填完整 commit hash、提交时间和分支；仅实际存在 PR 时追加编号/链接；G5 不要求 PR，Review 记录在 logs/reviews/、Issue 或 quality evidence；关联字段保留 commit，PR 写 N/A（OVR-032）。按 `governance/git_workflow.md` 推送后，追加远程、目标分支、push 时间和结果，并进入 `PUSHED`。
 
-由于内容 commit 不能包含自身最终 hash，hash 与 push 结果使用独立的小型回填提交，并再次安全同步/推送。回填提交不记录自身 hash，避免无限自引用；禁止 amend 或重写历史解决自引用问题。G4 的功能、测试、RTM、日志和 `tasks.md = DONE` 均须在同一功能 PR；PR 创建后只在原分支补充 PR 编号和审核信息。合并提交哈希不回写自身 PR，不为此创建第二个收口 PR；以 Gitee PR 合并记录为证据，由 G4-11 汇总。
+由于内容 commit 不能包含自身最终 hash，hash 与 push 结果使用独立的小型回填提交，并再次安全同步/推送。回填提交不记录自身 hash，避免无限自引用；禁止 amend 或重写历史解决自引用问题。仅 G4 历史的功能、测试、RTM、日志和 `tasks.md = DONE` 均须在同一功能 PR；PR 创建后只在原分支补充 PR 编号和审核信息。合并提交哈希不回写自身 PR，不为此创建第二个收口 PR；以 Gitee PR 合并记录为证据，由 G4-11 汇总。
 
 ## 10. 人工核验
 

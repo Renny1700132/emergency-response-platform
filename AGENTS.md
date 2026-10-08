@@ -1,5 +1,9 @@
 # Workspace 执行规则
 
+## 当前执行：G5（OVR-032，2026-10-08）
+
+G4-00—G4-11 已 DONE 并收口进入 master；第五关“质量门禁（测试与质量特性验证）”已启动。自 G5-00 起在最新 master 上完成长任务，自检/必要 Review 留痕、安全 commit、重新 fetch 后非 force 直接 push master；不要求功能分支、PR/Approve/Merge 或远程 CI。保留真实测试、缺陷、RTM、八大质量特性和验收门禁。当前专项规则为 `governance/g5_quality_workflow.md`，规划为 `docs/work/A_PM/g5_quality_gate_plan.md`。以下 G4 专项表述仅解释历史，不约束 G5。
+
 ## 1. 项目与当前关卡
 
 本项目为“博物馆智能运营中心——应急管理子系统”。第一关“立项竞标”已冻结，第二关需求与规格（M2）及原型走查已完成，第三关“设计与计划”已通过 M3 并冻结为 `BASELINE-G3-M3-R1.0`。用户已于 2026-09-21 明确启动第四关“研发冲刺”；第四关必须以第三关冻结基线为唯一受控设计输入，不得静默改写冻结成果。
@@ -75,4 +79,4 @@ P0 可覆盖工作方式、文件组织、AI 使用策略、日志策略与当�
 
 ## 6. Git 规则
 
-遵守 `governance/git_workflow.md`：正式任务必须 commit。G1—G3 历史任务沿用当时的安全同步与非 force push 记录；自 G4-01 起只能 push 功能分支，由指定唯一审核人 Approve 后通过 PR Merge 进入 `master`，主责不得日常直推 `master`。保留双方历史与意图，禁止 force push、禁止重写历史、禁止把过程证据加入忽略规则。出现语义不确定的内容冲突时必须停止并等待用户裁决。基线冻结后只能经变更记录产生新版本，不覆盖冻结版。
+遵守 `governance/git_workflow.md`：正式任务必须 commit。G1—G3 历史任务沿用当时的安全同步与非 force push 记录；仅第四关历史自 G4-01 起只能 push 功能分支，由指定唯一审核人 Approve 后通过 PR Merge 进入 `master`，主责不得日常直推 `master`。保留双方历史与意图，禁止 force push、禁止重写历史、禁止把过程证据加入忽略规则。出现语义不确定的内容冲突时必须停止并等待用户裁决。基线冻结后只能经变更记录产生新版本，不覆盖冻结版。

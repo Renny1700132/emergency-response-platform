@@ -13,6 +13,12 @@
 - `inputs/G4/通关实验任务书4-研发冲刺.pdf`：第四关两个迭代、PR 门禁、测试护栏、AI 资产与过关条件的阶段方法依据；SHA-256 `C9C43927474BF9527842BEE2A2AD1792DF66E6D368E6816BA6858A1DFF70A441`。
 - `inputs/common/AI 辅助软件项目全生命周期开发·综合实习指导书（学生用书）.pdf`：适用于综合实习全阶段的方法论、人机协作、文档工程、配置管理、留痕与评审方法。
 
+## G5 QUALITY INPUTS
+
+- `inputs/G5/README.md`：输入归档、SHA-256、读取状态、三审定义及适用性。
+- `inputs/G5/通关实验任务书5-质量门禁.pdf`：真实原文件已归档；三级测试、P99、八大质量特性、四类交付与G5准出要求。
+- `work/A_PM/g5_quality_gate_plan.md`：当前G5内部执行计划；不改变历史冻结文档。
+
 ## G3 PLANNING INPUTS
 
 - `inputs/G3/ch1.3 Project使用.pdf`：Microsoft Project 相关教学输入；已按教学课件政策登记，未读取或用作规则裁决。

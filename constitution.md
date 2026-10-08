@@ -1,8 +1,12 @@
 # 工程宪章（G3-02 规划初稿）
 
-- 状态：PLANNED / REVIEW；M3 前仅可走变更流程修订，冻结后不得原位覆盖。
+- 状态：G3 原规划文本已进入 M3 冻结；下列新增 G5 流程补充依据 P0 / OVR-032 / CHG-G5-00-001 生效。G3 原版以 M3 清单与历史 commit 为准，本补充不发布或替换设计基线。
 - 适用对象：人员、AI、代码、文档、OpenAPI、测试、配置与过程证据。
 - 上位依据：P0 当前指令、真实《用户需求书》、受控 `spec.md`/RTM/控制文件与 `AGENTS.md`；冲突按 `governance/source_priority.md` 处理。
+
+## 当前执行：G5（OVR-032，2026-10-08）
+
+G4-00—G4-11 已 DONE 并收口进入 master；第五关“质量门禁（测试与质量特性验证）”已启动。自 G5-00 起在最新 master 上完成长任务，自检/必要 Review 留痕、安全 commit、重新 fetch 后非 force 直接 push master；不要求功能分支、PR/Approve/Merge 或远程 CI。保留真实测试、缺陷、RTM、八大质量特性和验收门禁。当前专项规则为 `governance/g5_quality_workflow.md`，规划为 `docs/work/A_PM/g5_quality_gate_plan.md`。以下 G4 专项表述仅解释历史，不约束 G5。
 
 ## 1 AI 与人工责任
 
@@ -41,7 +45,7 @@
 1. 正式任务开始和结束遵守安全同步、非 force 提交/推送、最小暂存和日志回填；不处理来源不明修改，不重写共享历史。
 2. 基线候选列明配置项、版本、依赖、检查与批准；冻结后发现问题以新版本/变更记录处理，不原位改写。
 3. 主责自检后由指定复核人审查；意见以 Issue/Review 闭环。M3 仅在交付物、RTM、审计、开放 Issue 与准出一致时冻结。
-4. 自 G4-01 起，`master` 不用于日常研发，只接收 `tasks.md` 指定唯一审核人完成 Review 并 Approve 后的 PR Merge。主责在功能分支完成实现、自检与本地 `npm run quality` 门禁并 push 后创建 PR；不要求 Jenkins、Gitee Go 或其他远程 CI。
+4. 仅第四关历史自 G4-01 起，`master` 不用于日常研发，只接收 `tasks.md` 指定唯一审核人完成 Review 并 Approve 后的 PR Merge。主责在功能分支完成实现、自检与本地 `npm run quality` 门禁并 push 后创建 PR；不要求 Jenkins、Gitee Go 或其他远程 CI。
 
 ## 7 提交前检查
 

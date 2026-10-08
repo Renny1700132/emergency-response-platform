@@ -1,5 +1,15 @@
 # 主责与评审工作流
 
+## 当前执行：G5（OVR-032，2026-10-08）
+
+G4-00—G4-11 已 DONE 并收口进入 master；第五关“质量门禁（测试与质量特性验证）”已启动。自 G5-00 起在最新 master 上完成长任务，自检/必要 Review 留痕、安全 commit、重新 fetch 后非 force 直接 push master；不要求功能分支、PR/Approve/Merge 或远程 CI。保留真实测试、缺陷、RTM、八大质量特性和验收门禁。当前专项规则为 `governance/g5_quality_workflow.md`，规划为 `docs/work/A_PM/g5_quality_gate_plan.md`。以下 G4 专项表述仅解释历史，不约束 G5。
+
+## G5 长任务复核
+
+G5-00：A 自检关闭（本次P0授权），C人工抽查字段保留 PENDING_REVIEW，不宣称C已审核。G5-01：C主责/A Review；G5-02：B主责/C Review；G5-03：A主责/C最终复核。每个长任务整体一次Review，必要整改复验仍须执行；不对内部子检查独立流转。
+
+Review 不依赖 Gitee Approve/PR Merge；写入 logs/reviews/、Issue 或 quality evidence，记录实际复核人、任务、版本、检查、缺陷、整改和结论。自检与AI检查不代替指定人的独立Review。G5-03严重缺陷/★失败/RTM断链/三审BLOCKER未关闭不能准出。
+
 ## 唯一主责
 
 - A 主责：项目建议书、项目计划 v1、风险登记册 v1、技术投标书整合、跨文档一致性、述标、最终冻结。

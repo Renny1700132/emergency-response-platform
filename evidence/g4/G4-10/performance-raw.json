@@ -4,10 +4,10 @@
   "target": "KN-034: 95% requests <= 3000ms",
   "concurrency": 100,
   "samples": 100,
-  "minMs": 41.58,
-  "p50Ms": 47.32,
-  "p95Ms": 53.83,
-  "maxMs": 54.98,
+  "minMs": 44.17,
+  "p50Ms": 46.51,
+  "p95Ms": 51.39,
+  "maxMs": 52.59,
   "boundary": "Local formal frontend/backend HTTP contract path; not a production capacity claim.",
-  "executedAt": "2026-10-08T06:53:10.669Z"
+  "executedAt": "2026-10-08T07:00:05.497Z"
 }

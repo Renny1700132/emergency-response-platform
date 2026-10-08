@@ -1306,6 +1306,14 @@
 - 新增页面级正式模式测试，覆盖 Dashboard/态势无演示事实、正式 envelope 解包、门禁成功回执、正式 API 失败不回退和控制超时/失败人工降级。
 - 状态：OPEN / PENDING_C_REREVIEW；仅由 C 复验后关闭。
 
+#### C 独立复验（2026-10-08，整改 `a083a58`，HEAD `4d8ba75`）
+
+- 正式 Dashboard/态势页已移除固定演示事实，正式 API 失败不回退 presentation；门禁二次确认真实调用冻结控制接口并展示成功回执或失败人工降级。
+- 页面级正式/演示隔离及控制正负例由 C 独立复跑通过；完整 `npm run quality` exit 0，frontend 44/44、backend 20/20、G4 11/11；OpenAPI 0 error/14 warning；漏洞 0；最终验证 87/87，最终复跑 p95 51.39ms。
+- PostgreSQL 本轮按明确边界未重复执行清库型复验，继续引用既有原始通过证据。
+- 关闭证据：`logs/reviews/2026-10-08_G4-09-11-C-rereview.md`。
+- 状态：CLOSED / VERIFIED_BY_C / ACCEPTED_FOR_APPROVAL。
+
 ## G4-06 Web/H5 前端闭环审核项
 
 ### ISSUE-G4-06-001

@@ -10,9 +10,9 @@
 | 覆盖率 | PASS | 前端 lines 100%、branches 77.73%；后端 lines 87.69%、branches 77.74% |
 | 安全 | PASS | secret scan PASS；根与前端依赖高危 0 |
 | OpenAPI | PASS | schema error 0；14 个既有非阻断 warning |
-| 性能 | PASS（本地受控） | A 整改复跑 100 并发 p95 53.83ms；C 首轮独立复核 p95 51.68ms；均满足 KN-034，不作生产容量承诺 |
+| 性能 | PASS（本地受控） | A 整改复跑 100 并发 p95 53.83ms；C 整改复验最终复跑 p95 51.39ms；均满足 KN-034，不作生产容量承诺 |
 | 故障演练 | PASS | 无效身份 403；门禁超时 504 且禁止自动重放 |
 | 外部四场景 | PASS（SIMULATED） | 8 个 EXT 端口 normal/unauthorized/timeout/failure，均标记 `SIMULATED_EVIDENCE` |
-| PR / Review | CHANGES_REQUIRED | C 首轮复核发现 `ISSUE-G4-09-001`：正式页面仍展示固定演示事实且控制提交未接正式接口；PR !16 当前不得 Merge 或宣称第四关已正式关闭 |
+| PR / Review | ACCEPTED_FOR_APPROVAL | C 在 HEAD `4d8ba75` 整改复验 PASS，`ISSUE-G4-09-001` CLOSED；待 PR !16 平台 Approve/Merge |
 
-结论：本地机械门禁通过，但 `ISSUE-G4-09-001` 为开放 MAJOR。A 须在原 PR !16 修复并由 C 复验通过后，方可 Approve / Merge 并正式关闭第四关。
+结论：实现、证据和 C 独立复验均已满足准入条件；PR !16 可执行平台 Approve，并在 Merge 进入 `master` 后正式关闭第四关。

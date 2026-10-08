@@ -94,7 +94,7 @@ const backlogRows = Array.from({ length: 10 }, (_, index) => {
 })
 const rtmV4 = `# RTM v4（第四关最终追踪矩阵）\n\n` +
   `- 基线：\`BASELINE-G3-M3-R1.0\`（只读设计输入）。\n- MVP：G2-FR-001—029；执行明细见 \`evidence/g4/G4-10/mvp-87-ac-matrix.md\`。\n` +
-  `- 外部八端口、GIS、H5：课程模拟证据标记 \`SIMULATED_EVIDENCE\`，不等同生产联调。\n- 状态：G4-09—G4-11 候选证据已完成，待 C 在 PR !16 独立复核。\n\n` +
+  `- 外部八端口、GIS、H5：课程模拟证据标记 \`SIMULATED_EVIDENCE\`，不等同生产联调。\n- 状态：G4-09—G4-11 已由 C 独立复验通过，待 PR !16 平台 Approve/Merge 后正式关闭。\n\n` +
   `## MVP 双向追踪\n\n| 需求 | AC | 实现/测试证据 | 结果 |\n|---|---|---|---|\n${rtmRows.join('\n')}\n\n` +
   `## 非 MVP 保全\n\n| 需求 | 状态 | 处置 |\n|---|---|---|\n${backlogRows.join('\n')}\n\n` +
   `## 反向索引\n\n- 正式前端：\`frontend/src/views\`、\`frontend/src/features/formal/module-workbench.ts\` → G2-FR-001—029。\n` +

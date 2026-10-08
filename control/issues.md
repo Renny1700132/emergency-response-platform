@@ -1281,6 +1281,23 @@
 - 关闭证据：`logs/reviews/2026-09-23_G4-03-C-rereview.md`；整改提交 `34435c4`；复验头提交 `c360d59`。
 - 状态：CLOSED / VERIFIED_BY_C。
 
+## G4-09—G4-11 最终冲刺复核项
+
+### ISSUE-G4-09-001
+
+- 提出人：C。
+- 时间：2026-10-08。
+- 严重级别：MAJOR / BLOCKING_TO_G4-09—11_APPROVE_AND_MERGE。
+- 候选分支/提交：`codex/g4-09-sprint2-frontend` / `2e882e3`；PR !16。
+- 文件与位置：`frontend/src/views/DashboardView.vue:41-44,52,58,61,65`；`frontend/src/views/OperationsModuleView.vue:71-72,77`；`frontend/tests/formal-module-workbench.test.ts`。
+- 问题：正式模式仍固定展示未由正式 API 返回的客流、告警、事件时间线及外部系统在线/延迟状态；态势页门禁“确认并发送”只刷新查询，没有调用正式控制命令接口。现有测试未覆盖页面级正式/演示隔离或控制提交。
+- 影响：违反 G4-09 正式 API、地图/视频/安防状态、权限与二次确认 DoD，以及 `OVR-030/031` 的证据边界；87 AC 全通过和第四关收口结论暂不能成立。
+- 最小修复：正式模式只显示正式 API 事实；无数据时显示未接入/待联调/不可用。门禁确认真实调用冻结契约对应接口并处理权限、成功、超时、失败与人工降级，或禁用未接线提交并明确标识。补充页面级正负例并同步 RTM/AC/收口状态。
+- 关闭条件：正式模式无固定演示事实；控制路径和页面级正负例完整；本地质量门禁及最终验证通过；C 在原 PR !16 复验。
+- 主责人：A；唯一复核人：C。
+- 复核证据：`logs/reviews/2026-10-08_G4-09-11-C-review.md`。
+- 状态：OPEN / CHANGES_REQUIRED。
+
 ## G4-06 Web/H5 前端闭环审核项
 
 ### ISSUE-G4-06-001

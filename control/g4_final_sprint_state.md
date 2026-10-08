@@ -12,7 +12,7 @@
 | PHASE-1 G4-09 FORMAL | DONE | 正式前端接入已合并 G4-08 后端；presentation 模式仅作显式演示 | 正式 Dashboard/工作台经类型化 Client 读取 plans、resources、drills、duty、knowledge、situation；正式失败不回退演示数据；frontend 40/40 |
 | PHASE-2 G4-10 VERIFY | DONE | 87 AC、质量、覆盖率、安全、OpenAPI、PostgreSQL、正式 E2E、模拟场景、性能和故障演练完成 | 87 PASS / 0 FAIL / 0 BLOCKED；前端 lines 100%、后端 lines 87.69%；高危 0；OpenAPI error 0；PostgreSQL 与性能/故障证据见 `evidence/g4/G4-10/` |
 | PHASE-3 G4-11 CLOSEOUT | DONE | RTM v4、Git/PR、Sprint、Prompt 模式、AI 失败记录和一致性审计完成 | `docs/work/C_REQ/rtm_v4.md`；`evidence/g4/G4-11/`；G4-01—08 合并、G4-09—11 复用 PR !16 待审核 |
-| FINAL REVIEW | TODO | C 独立 Review / Approve；仅批准后通过 PR 合并 master | PR 保持 OPEN，禁止 A 自批 |
+| FINAL REVIEW | TODO | C 独立 Review / Approve；仅批准后通过 PR 合并 master | C 首轮结论 `CHANGES_REQUIRED`；`ISSUE-G4-09-001` OPEN；PR 保持 OPEN，不得合并 |
 
 ## 边界
 

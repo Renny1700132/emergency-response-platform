@@ -13,6 +13,6 @@
 | 性能 | PASS（本地受控） | 100 并发，p95 53.79ms，满足 KN-034；不作生产容量承诺 |
 | 故障演练 | PASS | 无效身份 403；门禁超时 504 且禁止自动重放 |
 | 外部四场景 | PASS（SIMULATED） | 8 个 EXT 端口 normal/unauthorized/timeout/failure，均标记 `SIMULATED_EVIDENCE` |
-| PR / Review | PENDING | 复用 PR !16；待 C 独立 Review / Approve，当前不得 Merge 或宣称第四关已正式关闭 |
+| PR / Review | CHANGES_REQUIRED | C 首轮复核发现 `ISSUE-G4-09-001`：正式页面仍展示固定演示事实且控制提交未接正式接口；PR !16 当前不得 Merge 或宣称第四关已正式关闭 |
 
-结论：实现和本地验证已达到提交独立复核的工程标准；不存在已知阻断缺陷。第四关关闭的唯一剩余门禁是 C 对 PR !16 的独立 Review / Approve 及平台 Merge。
+结论：本地机械门禁通过，但 `ISSUE-G4-09-001` 为开放 MAJOR。A 须在原 PR !16 修复并由 C 复验通过后，方可 Approve / Merge 并正式关闭第四关。

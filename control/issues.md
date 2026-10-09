@@ -1696,3 +1696,11 @@
 - 状态：`OPEN / ENVIRONMENT_AND_PARTICIPANT_REQUIRED / PENDING_C_REVIEW`。
 - 解除条件：提供隔离数据库授权连接串与可控故障窗口、可用 Docker/Compose 干净主机，并由非乙方人员独立执行一次；完成迁移 up/down/up、备份/恢复一致性、容器建卷/启动/冒烟/回滚和≤2h计时，由 C 复核。
 - 证据：`evidence/g5/G5-02/environment-readiness.json`、`postgres-migration-attempt.log`、`docker-probe.log`。
+
+### A复审结论追加（2026-10-09）｜ISSUE-G5-01-003/004/005
+
+- 审核HEAD b2e251a；记录logs/reviews/2026-10-09_G5-01-A-rereview.md；当前用户授权Codex辅助A复审。
+- 003：OPEN / CHANGES_REQUIRED。已取消87条批量PASS，但029-02仍以未确认拒绝证明确认后下发/联锁；016-01仅CLOSED未证实评估记录；015-03仅Mock调用未证实触发原因/后续处置记录。局部断言不等于完整AC通过，24PASS/1★PASS不作已完整采纳结论；C须逐项完整判定并同步。
+- 004：PARTIALLY_REMEDIATED / OPEN。旧测试层级夸大表述已纠正，45项明示混合组件/Mock与单条内存HTTP E2E；完整Web/H5→API→PostgreSQL系统包仍未补齐，原关闭条件未满足。
+- 005：CLOSED / VERIFIED_BY_A。独立查看新390×844事件图和正式未登录边界图，旧右裁切消失；CSS/新增回归与图像一致。A本轮前端11文件45/45 PASS；未重新运行Edge或真实宿主，不外推全兼容通过。
+- 用户“上一轮问题全部解决则通过”的条件未成立，G5-01仍BLOCKED；不增加需求、不修改原始产物来代替C整改。001/002范围资源门禁继续保留。

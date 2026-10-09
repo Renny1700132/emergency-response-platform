@@ -1,0 +1,29 @@
+{
+  "reviewHead": "b2e251a",
+  "decision": "CHANGES_REQUIRED",
+  "frontendRerun": {
+    "files": 11,
+    "tests": 45,
+    "result": "PASS"
+  },
+  "sourceAcCounts": {
+    "NOT_RUN": 47,
+    "PASS": 24,
+    "BLOCKED": 46
+  },
+  "sourceStarSummary": {
+    "BLOCKED": 33,
+    "PASS": 1
+  },
+  "countsSemanticallyAccepted": false,
+  "issue003": "OPEN",
+  "issue004": "PARTIALLY_REMEDIATED_OPEN",
+  "issue005": "CLOSED_VERIFIED_BY_A",
+  "unsupportedCompletePassExamples": [
+    "AC-G2-FR-029-02",
+    "AC-G2-FR-016-01",
+    "AC-G2-FR-015-03"
+  ],
+  "postgresRerun": "NOT_RUN",
+  "browserRerun": "NOT_RUN"
+}

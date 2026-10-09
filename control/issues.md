@@ -1708,7 +1708,7 @@
 
 - 日期/提出：2026-10-09，C（G5-02 Review）；主责整改：B；复核：C。
 - 严重度：`MAJOR / BLOCKING_TO_G5-02_EVIDENCE_ACCEPTANCE`。
-- 状态：`OPEN / B_REMEDIATED_SECOND / PENDING_C_REREVIEW`。
+- 状态：`CLOSED / VERIFIED_BY_C`。
 - 位置：`evidence/g5/G5-02/manifest.json`、`scripts/g5/validate-technical-gate.mjs`。
 - 问题：manifest 以提交前混合换行字节生成。对 `e012137` 仓库 blob 校验时 8/13 条 byte/hash 不匹配；当前 Windows checkout 为 6/13 条不匹配，无法 13/13 闭环。现有校验脚本不校验 manifest，也不从原始样本复算分位数/核对 CSV，因此完整性损坏时仍会输出 PASS_WITH_EXTERNAL_BLOCKERS。
 - 影响：原始证据包的防篡改清单不可复核，技术自检未覆盖其声明的关键审计链。
@@ -1735,11 +1735,18 @@
 - 新增可选 `--git-ref=<ref>`，用于对指定提交的 Git blob 逐项执行精确 bytes/SHA-256 校验；提交后须以 `--git-ref=HEAD` 复验。
 - JSON↔CSV 1160 条、8 组原始分位数和 PE-04 报告回指校验继续保留。状态只改为待 C 复验。
 
+#### C 第三轮复验（2026-10-09）
+
+- 状态：`CLOSED / VERIFIED_BY_C`；记录：`logs/reviews/2026-10-09_G5-02-C-rereview-2.md`。
+- 当前最新 master 的 Windows 工作区直接运行默认校验通过：canonical manifest 13/13、JSON/CSV 1160/1160、8 组分位数复算一致，并透明报告 12 个原始换行差异；未 reset、未重新签出或修改受控证据。
+- `--git-ref=HEAD` 精确 Git blob 校验亦为 13/13。工作区规范化 LF 与提交 blob 精确字节两种口径已明确，原关闭条件满足。
+- 关闭仅针对证据包完整性和可复跑性；目标环境、数据库恢复及部署门禁仍由 001/002 阻断。
+
 ## ISSUE-G5-02-004｜PE-04 技术记录与原始数据不一致
 
 - 日期/提出：2026-10-09，C（G5-02 Review）；主责整改：B；复核：C。
 - 严重度：`MINOR / BLOCKING_TO_G5-02_REPORT_ACCEPTANCE`。
-- 状态：`OPEN / B_REMEDIATED / PENDING_C_REREVIEW`。
+- 状态：`CLOSED / VERIFIED_BY_C`。
 - 位置：`docs/work/B_TECH/g5_technical_validation.md:28`、`evidence/g5/G5-02/performance-raw.json` 的 `messageBatch.durationMs`。
 - 问题：技术记录写 PE-04 模拟 20 路耗时 `0.037ms`，归档原始 JSON 为 `0.065ms`，轮次未区分且没有另一份原始数据支撑。
 - 影响：虽然不改变“SIMULATED_EVIDENCE / 真实通道仍 BLOCKED”的结论，但报告输入不能精确回指原始数据。
@@ -1760,7 +1767,7 @@
 
 - 日期/提出：2026-10-09，C（G5-02 第二轮复验）；主责整改：B；复核：C。
 - 严重度：`MINOR / BLOCKING_TO_G5-02_REVIEW_EVIDENCE_ACCEPTANCE`。
-- 状态：`OPEN / B_REMEDIATED / PENDING_C_REREVIEW`。
+- 状态：`CLOSED / VERIFIED_BY_C`。
 - 位置：`logs/prompts/2026-10-09-B.md:62,96`。
 - 问题：两处回填整改 commit 为不存在的 `279976c338c0a60971a92e94f02bb24ae88f75e1`；仓库实际对象为 `279976c54bd9b77fc2ee78fb5997d09100608628`。短前缀相同不能替代要求回填的完整 hash。
 - 影响：AI 日志的提交追踪无法按完整对象 ID 复核。
@@ -1771,6 +1778,11 @@
 - 保留 `LOG-G5-02-002` 中原错误哈希，不删除、不覆盖。
 - 正确整改提交经 `git rev-parse 279976c` 与 `git cat-file -t` 核验为 `279976c54bd9b77fc2ee78fb5997d09100608628`（commit）。
 - 错误原因：此前仅取得短哈希后错误补全了不存在的完整值，未先执行对象解析。已在 B 日志追加 `AUDIT_CORRECTION`；状态待 C 复验。
+
+#### C 第三轮复验（2026-10-09）
+
+- 状态：`CLOSED / VERIFIED_BY_C`；B 已保留原错误记录，并追加正确完整 hash `279976c54bd9b77fc2ee78fb5997d09100608628`、错误原因和更正事件。
+- 独立 Git 对象检查确认该正确 hash 与本轮整改提交 `6946645428fca33b953316ce92a96a437e1df5c4` 均为有效 commit；原关闭条件满足。
 
 ### A复审结论追加（2026-10-09）｜ISSUE-G5-01-003/004/005
 

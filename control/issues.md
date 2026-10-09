@@ -1748,3 +1748,11 @@
 - 004：CLOSED / VERIFIED_BY_A。新增Web/H5→正式Client→HTTP→PostgreSQL系统包及2/2归档输出齐备，核心正负例和六类工作台同链路读取具备证据；模拟外部边界透明，45项普通测试与专用系统包分开陈述。仅关闭原证据包缺失/层级问题，不外推全量AC通过。
 - A本轮常规前端45PASS/2SKIPPED；没有数据库连接，不执行TRUNCATE系统包，归档2/2为C实际结果，不称A新跑。
 - 005维持CLOSED；G5-01整体仍BLOCKED，未开启G5-02/03，未删除001/002资源范围门禁。
+
+### C第三轮整改回填（2026-10-09）｜仅 ISSUE-G5-01-003
+
+- 针对 `AC-G2-FR-013-02` 的单事件不可判别问题，系统测试新增 4 条单条件近似反例：状态反例保持 `PENDING_VERIFICATION`；类型反例使用 `WATER`；关键字反例不含“数据库烟雾”；时间反例早于 `occurredFrom`。其余条件分别与目标条件一致。
+- 检索前直接核对 PostgreSQL 共 5 条事件且包含目标 ID 与四个反例 ID；组合检索断言 `total=1`、结果 ID 集合仅为目标 ID，并断言结果不包含四个反例 ID。由此忽略状态、类型、关键字或时间中的任一条件都会使测试失败。
+- 专用 Web/H5→HTTP→PostgreSQL 系统包独立复跑 2/2 PASS；完整 G5-01 功能门禁各套件 PASS，AC 汇总保持 11 PASS / 59 NOT_RUN / 47 BLOCKED、★FR 1 PASS / 33 BLOCKED。
+- 004、005 保持 `CLOSED / VERIFIED_BY_A`，本轮未修改其已关闭范围。003 当前为 `PENDING_A_REREVIEW_3`，不得由 C 自行标 CLOSED；G5-01 继续 BLOCKED。
+- 证据：`frontend/tests/postgresql-system-e2e.test.ts`、`scripts/g5/run-functional-gate.mjs`、`evidence/g5/G5-01/functional-gate-raw.json`、`ac-117-matrix.md`、`execution-summary.md`、`review-request.md`、`docs/work/C_REQ/rtm_g5_increment.md`。

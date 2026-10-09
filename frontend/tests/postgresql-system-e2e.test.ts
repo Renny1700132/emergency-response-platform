@@ -205,11 +205,44 @@ describe.skipIf(!enabled)('G5-01 Web/H5 to HTTP to PostgreSQL system package', (
     expect(feedback.occurred_at).toBeTruthy()
     expect((await database.query(`SELECT status FROM em_response_task WHERE id=$1`, [task.id])).rows[0].status).toBe('IN_PROGRESS')
 
+    const createSearchCandidate = async (suffix: string, input: { incidentTypeCode: string; title: string; description: string; occurredAt: string }, responding: boolean) => {
+      const created = await api.post('/api/v1/incidents', {
+        body: input,
+        idempotencyKey: `g5-system-search-${suffix}`,
+      })
+      const candidate = created.data
+      if (!candidate?.id) throw new Error(`search candidate ${suffix} was not created`)
+      if (responding) {
+        await api.post('/api/v1/incidents/{incidentId}/verify', {
+          path: { incidentId: candidate.id },
+          body: { decision: 'CONFIRMED', reason: `检索反例 ${suffix} 核实`, resourceVersion: 1 },
+          idempotencyKey: `g5-system-search-${suffix}-verify`,
+        })
+        await api.post('/api/v1/incidents/{incidentId}/start-response', {
+          path: { incidentId: candidate.id },
+          body: { planVersionId: 'plan-system-v1', resourceVersion: 2, reason: `检索反例 ${suffix} 启动` },
+          idempotencyKey: `g5-system-search-${suffix}-start`,
+        })
+      }
+      return candidate.id
+    }
+    const excludedIds = [
+      await createSearchCandidate('status', { incidentTypeCode: 'FIRE', title: '数据库烟雾状态反例', description: '仅状态不匹配', occurredAt: '2026-10-09T02:00:00Z' }, false),
+      await createSearchCandidate('type', { incidentTypeCode: 'WATER', title: '数据库烟雾类型反例', description: '仅类型不匹配', occurredAt: '2026-10-09T02:01:00Z' }, true),
+      await createSearchCandidate('keyword', { incidentTypeCode: 'FIRE', title: '展厅温度异常', description: '仅关键字不匹配', occurredAt: '2026-10-09T02:02:00Z' }, true),
+      await createSearchCandidate('time', { incidentTypeCode: 'FIRE', title: '数据库烟雾时间反例', description: '仅时间不匹配', occurredAt: '2025-12-31T23:59:59Z' }, true),
+    ]
+    const allIncidentIds = (await database.query(`SELECT id FROM em_incident ORDER BY id`)).rows.map((row: { id: string }) => row.id)
+    expect(allIncidentIds).toHaveLength(5)
+    expect(allIncidentIds).toEqual(expect.arrayContaining([incident.id, ...excludedIds]))
+
     const filtered = await api.get('/api/v1/incidents', {
       query: { page: 1, size: 50, status: 'RESPONDING', incidentTypeCode: 'FIRE', keyword: '数据库烟雾', occurredFrom: '2026-01-01T00:00:00Z' },
     } as never)
     expect(filtered.data?.total).toBe(1)
-    expect(filtered.data?.items?.[0]?.id).toBe(incident.id)
+    const filteredIds = filtered.data?.items?.map((item) => item.id) ?? []
+    expect(filteredIds).toEqual([incident.id])
+    for (const excludedId of excludedIds) expect(filteredIds).not.toContain(excludedId)
 
     const forbidden = createApiClient({
       baseUrl: apiBaseUrl(), tokenProvider: async () => 'g5-system-invalid-token',

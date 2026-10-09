@@ -1,6 +1,6 @@
 # G5-01 117 AC 实际执行矩阵
 
-- 执行版本：`97153c1a5a8a22044fee642db80c6e106042b844` + 本次G5-01受控工作树修改（明细见原始JSON；提交后由A按新HEAD复验）
+- 执行版本：`92085e963a4fc130c2293cb8439f289d562782c4` + 本次G5-01受控工作树修改（明细见原始JSON；提交后由A按新HEAD复验）
 - 汇总：PASS 11 / FAIL 0 / BLOCKED 47 / NOT_RUN 59
 - ★需求汇总：PASS 1 / BLOCKED 33（分母 34 个★FR）
 - 判定规则：仅白名单中的逐AC测试名称、断言和实际值允许产生PASS；套件总绿不得批量提升AC。
@@ -45,7 +45,7 @@
 | G2-FR-012 | AC-G2-FR-012-02 | NOT_RUN | NOT_RUN_NO_AC_LEVEL_ASSERTION | N/A | N/A | N/A | N/A | 现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。 |
 | G2-FR-012 | AC-G2-FR-012-03 | NOT_RUN | NOT_RUN_NO_AC_LEVEL_ASSERTION | N/A | N/A | N/A | N/A | 现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。 |
 | G2-FR-013 | AC-G2-FR-013-01 | PASS | SYSTEM_WEB_H5_HTTP_POSTGRESQL | core positive and negative system flow | mounted Web form creates a PostgreSQL incident with a traceable incident number | status=PENDING_VERIFICATION; created_by=commander; incident_no matches INC-* | frontend/tests/postgresql-system-e2e.test.ts<br>evidence/g5/G5-01/functional-gate-raw.json | 判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。 |
-| G2-FR-013 | AC-G2-FR-013-02 | PASS | SYSTEM_WEB_H5_HTTP_POSTGRESQL | core positive and negative system flow | combined time, status, type and keyword query returns only the matching PostgreSQL incident | total=1; returned incident id equals created incident id | frontend/tests/postgresql-system-e2e.test.ts<br>evidence/g5/G5-01/functional-gate-raw.json | 判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。 |
+| G2-FR-013 | AC-G2-FR-013-02 | PASS | SYSTEM_WEB_H5_HTTP_POSTGRESQL | core positive and negative system flow | among five PostgreSQL incidents, combined time, status, type and keyword filters retain the one full match and exclude four single-condition near misses | database total=5; filtered total=1; matching id returned; status/type/keyword/time near-miss ids all excluded | frontend/tests/postgresql-system-e2e.test.ts<br>evidence/g5/G5-01/functional-gate-raw.json | 判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。 |
 | G2-FR-013 | AC-G2-FR-013-03 | PASS | SYSTEM_WEB_H5_HTTP_POSTGRESQL | core positive and negative system flow | invalid Bearer identity is rejected with reason, creates no incident and records denied audit | HTTP 403 AUTH_FORBIDDEN; incident count unchanged; denied audit count=1 | frontend/tests/postgresql-system-e2e.test.ts<br>evidence/g5/G5-01/functional-gate-raw.json | 判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。 |
 | G2-FR-014 | AC-G2-FR-014-01 | PASS | SYSTEM_WEB_H5_HTTP_POSTGRESQL | core positive and negative system flow | verification stores decision, reason, actor, time and changes incident state | decision=VERIFIED; reason and actor persisted; occurred_at present | frontend/tests/postgresql-system-e2e.test.ts<br>evidence/g5/G5-01/functional-gate-raw.json | 判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。 |
 | G2-FR-014 | AC-G2-FR-014-02 | PASS | SYSTEM_WEB_H5_HTTP_POSTGRESQL_WITH_SIMULATED_MESSAGE | core positive and negative system flow | verified incident enters responding state and links the published plan and generated task | incident.status=RESPONDING; plan_version_id=plan-system-v1; task persisted | frontend/tests/postgresql-system-e2e.test.ts<br>evidence/g5/G5-01/functional-gate-raw.json | 判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。 |

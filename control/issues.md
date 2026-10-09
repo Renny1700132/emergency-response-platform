@@ -1784,6 +1784,13 @@
 - 状态：`CLOSED / VERIFIED_BY_C`；B 已保留原错误记录，并追加正确完整 hash `279976c54bd9b77fc2ee78fb5997d09100608628`、错误原因和更正事件。
 - 独立 Git 对象检查确认该正确 hash 与本轮整改提交 `6946645428fca33b953316ce92a96a437e1df5c4` 均为有效 commit；原关闭条件满足。
 
+### C 第四轮状态收口复验（2026-10-09）｜ISSUE-G5-02-001—005
+
+- 记录：`logs/reviews/2026-10-09_G5-02-C-rereview-3.md`；被复核收口提交：`3df7fc20b54d33da930c43773b5ec526ec2346ff`。
+- 状态收口 `ACCEPTED`，无新增 Issue：003/004/005 继续 `CLOSED / VERIFIED_BY_C`；001/002 继续 `OPEN / VERIFIED_BLOCKING_BY_C`。
+- 默认工作区及 `--git-ref=HEAD` 两种校验均为 `PASS_WITH_EXTERNAL_BLOCKERS`，manifest 13/13、JSON/CSV 1160/1160、8 组指标复算通过；四类外部资源阻断仍被校验器明确报告。
+- 本次接受只确认跨文件状态与历史数值口径已统一，不代表 G5-02 DONE；在 001/002 解除前不得进入 G5-03 正式收口。
+
 ### A复审结论追加（2026-10-09）｜ISSUE-G5-01-003/004/005
 
 - 审核HEAD b2e251a；记录logs/reviews/2026-10-09_G5-01-A-rereview.md；当前用户授权Codex辅助A复审。

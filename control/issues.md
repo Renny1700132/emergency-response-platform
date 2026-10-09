@@ -1713,3 +1713,11 @@
 - 005：保持 `CLOSED / VERIFIED_BY_A`；本轮未修改其 CSS、截图、兼容矩阵或缺陷记录。
 - 当前状态：003/004 为 `PENDING_A_REREVIEW_2`，不得由 C 自行标 CLOSED；G5-01 保持 BLOCKED，001/002 与其余缺证/资源门禁继续阻断 DONE。
 - 证据：`frontend/tests/postgresql-system-e2e.test.ts`、`scripts/g5/run-functional-gate.mjs`、`evidence/g5/G5-01/functional-gate-raw.json`、`ac-117-matrix.md`、`execution-summary.md`、`review-request.md`、`docs/work/C_REQ/rtm_g5_increment.md`。
+
+### A再复审追加（2026-10-09）｜ISSUE-G5-01-003/004
+
+- 审核HEAD 7fa74a4；详见logs/reviews/2026-10-09_G5-01-A-rereview-2.md，当前用户授权Codex辅助A复审。
+- 003：OPEN / CHANGES_REQUIRED。015-03/016-01旧局部PASS已降级，029-02正向联锁证据已补；但013-02要求存在多个事件并组合过滤，当前系统测试清表后只创建一个事件，total=1/id相同不能证明过滤正确，忽略过滤也可能通过。C应补多事件匹配/不匹配排除测试或暂降该AC，修正受影响RTM/★汇总；A不认可“1个★FR完整通过”。
+- 004：CLOSED / VERIFIED_BY_A。新增Web/H5→正式Client→HTTP→PostgreSQL系统包及2/2归档输出齐备，核心正负例和六类工作台同链路读取具备证据；模拟外部边界透明，45项普通测试与专用系统包分开陈述。仅关闭原证据包缺失/层级问题，不外推全量AC通过。
+- A本轮常规前端45PASS/2SKIPPED；没有数据库连接，不执行TRUNCATE系统包，归档2/2为C实际结果，不称A新跑。
+- 005维持CLOSED；G5-01整体仍BLOCKED，未开启G5-02/03，未删除001/002资源范围门禁。

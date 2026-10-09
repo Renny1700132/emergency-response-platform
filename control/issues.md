@@ -1721,6 +1721,13 @@
 - 校验器逐行解析 CSV，与 JSON 的 metric/index/method/path/status/duration/traceId 对照，共 1160/1160；按 nearest-rank 从原始样本独立复算 min/P50/P95/P99/max、成功数、失败数和成功率，全部一致。
 - 状态只改为待 C 复验，不由 B 自行关闭。
 
+#### C 第二轮复验（2026-10-09）
+
+- 状态：`OPEN / PARTIALLY_REMEDIATED / CHANGES_REQUIRED`；记录：`logs/reviews/2026-10-09_G5-02-C-rereview.md`。
+- 已通过：HEAD 的最终 Git blob 与 manifest 13/13 bytes/SHA-256 一致；仓库 blob 中 JSON/CSV 均为 1160 条，8 组 P50/P95/P99 独立复算一致；校验脚本已覆盖原关闭条件所列逻辑。
+- 未通过：本次从最新 master 快进后的既有 Windows checkout 中，13 个 manifest 对象有 12 个仍为 CRLF 且 bytes/hash 不匹配；直接执行校验器首项即报 `386 !== 364`。`.gitattributes` 未使现有工作区的校验链可直接复跑，不能关闭。
+- 继续整改：校验器按最终 Git blob或显式规范化 LF 字节校验，并证明既有 Windows checkout 与干净 checkout 均可直接复跑；不得要求审核人重置受控证据来取得 PASS。
+
 ## ISSUE-G5-02-004｜PE-04 技术记录与原始数据不一致
 
 - 日期/提出：2026-10-09，C（G5-02 Review）；主责整改：B；复核：C。
@@ -1736,6 +1743,21 @@
 - 技术记录已明确为“本次归档轮次”，PE-04 模拟 20 路耗时改为 `0.065ms`，与 `performance-raw.json.messageBatch.durationMs` 一致。
 - 校验器新增报告数值回指断言，并在 manifest 重建后整体通过。
 - SIMULATED_EVIDENCE 边界与 ISSUE-G5-02-001/002 的资源阻断不变；状态只改为待 C 复验。
+
+#### C 第二轮复验（2026-10-09）
+
+- 状态：`CLOSED / VERIFIED_BY_C`；技术记录已改为本次归档 `0.065ms`，与 Git blob 中原始 JSON 的 `messageBatch.durationMs=0.065` 一致，且不再出现 `耗时 0.037ms`。
+- 关闭只针对报告值回指一致性，不外推 PE-04 真实消息通道性能；SIMULATED_EVIDENCE 与 ISSUE-G5-02-001 阻断保持不变。
+
+## ISSUE-G5-02-005｜整改提交完整哈希回填错误
+
+- 日期/提出：2026-10-09，C（G5-02 第二轮复验）；主责整改：B；复核：C。
+- 严重度：`MINOR / BLOCKING_TO_G5-02_REVIEW_EVIDENCE_ACCEPTANCE`。
+- 状态：`OPEN / CHANGES_REQUIRED`。
+- 位置：`logs/prompts/2026-10-09-B.md:62,96`。
+- 问题：两处回填整改 commit 为不存在的 `279976c338c0a60971a92e94f02bb24ae88f75e1`；仓库实际对象为 `279976c54bd9b77fc2ee78fb5997d09100608628`。短前缀相同不能替代要求回填的完整 hash。
+- 影响：AI 日志的提交追踪无法按完整对象 ID 复核。
+- 关闭条件：B 在自身日志追加更正事件与正确完整 hash，保留原错误及更正原因，不静默删除或改写原记录；C 复验关闭。
 
 ### A复审结论追加（2026-10-09）｜ISSUE-G5-01-003/004/005
 

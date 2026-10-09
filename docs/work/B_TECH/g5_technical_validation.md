@@ -1,6 +1,6 @@
 # G5-02 技术专项验证记录
 
-- Task：G5-02；主责：B；整体 Review：C（待执行）。
+- Task：G5-02；主责：B；整体 Review：C 第三轮复验已接受（003/004/005 已关闭；001/002 已确认继续阻断）。
 - 执行基线：`e6e12b59fc5749cdf0475ed9631bac7d21d4bb1a`。
 - 本轮性质：性能、可靠性、维护性、可移植性和故障演练的内部工作记录；不是正式《性能压测报告》。
 - 原始数据：`evidence/g5/G5-02/performance-raw.json`、`performance-samples.csv`、`fault-drill-raw.json`、`quality-gate.log`、`environment-readiness.json`。
@@ -56,6 +56,6 @@ PE-04 在本次归档轮次的模拟正常通道并行 20 路，20/20 接受、1
 | 甲方视频/消息/定位/GIS/安防接口 | BLOCKED | 提供目标环境、账号、合法测试数据和窗口；按 PE-02/04/05/06/08/10 复测 |
 | 7×24、≥99.5% | NOT_RUN | 取得约定试运行观测窗口和维护排除记录 |
 
-## 6 任务结论与 C Review 请求
+## 6 任务结论与 C Review 结果
 
-本地可执行范围无 FAIL，质量门禁及受控故障演练通过；但 G5-02 DoD 明确要求 Docker 干净部署、数据库服务恢复和目标环境缺项保留阻断。故任务状态应为 `BLOCKED（LOCAL_GATES_PASS / ENVIRONMENT_REQUIRED / PENDING_C_REVIEW）`，不能置 DONE。请 C 复核脚本、原始样本、分位算法、证据边界和阻断登记；外部资源补齐后由 B 复测，再提交 C 整体复验。
+本地可执行范围无 FAIL，质量门禁及受控故障演练通过。C 第三轮复验已接受本地证据整改：ISSUE-G5-02-003/004/005 均为 `CLOSED / VERIFIED_BY_C`。但 G5-02 DoD 明确要求 Docker 干净部署、数据库服务恢复和目标环境验证，C 同时确认 ISSUE-G5-02-001/002 仍为环境与参与方资源阻断。因此任务状态为 `BLOCKED（C_REREVIEW_ACCEPTED / ENVIRONMENT_REQUIRED）`，不能置 DONE，也不能进入 G5-03 正式收口。待真实外部系统、授权隔离数据库、Docker/Compose 干净主机和非乙方部署人员到位后，由 B 执行缺失实测并提交 C 复验。

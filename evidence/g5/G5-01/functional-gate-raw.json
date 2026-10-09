@@ -260,7 +260,7 @@
         "evidence/g5/G5-02/performance-raw.json",
         "docs/work/B_TECH/g5_technical_validation.md"
       ],
-      "note": "保留本地实测值但不提升为PASS；G5-02本身仍待C整体Review且目标环境/真实通道缺失。"
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。"
     },
     {
       "acId": "AC-G2-FR-004-01",
@@ -328,7 +328,7 @@
         "evidence/g5/G5-02/performance-raw.json",
         "docs/work/B_TECH/g5_technical_validation.md"
       ],
-      "note": "保留本地实测值但不提升为PASS；G5-02本身仍待C整体Review且目标环境/真实通道缺失。"
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。"
     },
     {
       "acId": "AC-G2-FR-005-03",
@@ -382,7 +382,7 @@
       "evidence": [
         "docs/work/B_TECH/g5_technical_validation.md"
       ],
-      "note": "保留本地实测值但不提升为PASS；G5-02本身仍待C整体Review且目标环境/真实通道缺失。"
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。"
     },
     {
       "acId": "AC-G2-FR-007-01",
@@ -712,7 +712,7 @@
         "evidence/g5/G5-02/performance-raw.json",
         "docs/work/B_TECH/g5_technical_validation.md"
       ],
-      "note": "保留本地实测值但不提升为PASS；G5-02本身仍待C整体Review且目标环境/真实通道缺失。"
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。"
     },
     {
       "acId": "AC-G2-FR-015-01",
@@ -950,12 +950,12 @@
       "executionKind": "PARTIAL_LOCAL_MEASUREMENT_TARGET_EVIDENCE_MISSING",
       "testCase": "G5-02 PE-04 simulated message concurrency",
       "assertion": "20-way simulated channel result cannot replace the normal acceptance channel",
-      "actualValue": "20/20 accepted; 100%; 0.037ms; acceptance channel NOT_RUN",
+      "actualValue": "20/20 accepted; 100%; 0.065ms; acceptance channel NOT_RUN",
       "evidence": [
         "evidence/g5/G5-02/performance-raw.json",
         "docs/work/B_TECH/g5_technical_validation.md"
       ],
-      "note": "保留本地实测值但不提升为PASS；G5-02本身仍待C整体Review且目标环境/真实通道缺失。"
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。"
     },
     {
       "acId": "AC-G2-FR-021-01",
@@ -1042,7 +1042,7 @@
         "evidence/g5/G5-02/performance-raw.json",
         "docs/work/B_TECH/g5_technical_validation.md"
       ],
-      "note": "保留本地实测值但不提升为PASS；G5-02本身仍待C整体Review且目标环境/真实通道缺失。"
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。"
     },
     {
       "acId": "AC-G2-FR-023-01",
@@ -1123,7 +1123,7 @@
         "evidence/g5/G5-02/performance-raw.json",
         "docs/work/B_TECH/g5_technical_validation.md"
       ],
-      "note": "保留本地实测值但不提升为PASS；G5-02本身仍待C整体Review且目标环境/真实通道缺失。"
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。"
     },
     {
       "acId": "AC-G2-FR-025-01",
@@ -1203,7 +1203,7 @@
       "evidence": [
         "docs/work/B_TECH/g5_technical_validation.md"
       ],
-      "note": "保留本地实测值但不提升为PASS；G5-02本身仍待C整体Review且目标环境/真实通道缺失。"
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。"
     },
     {
       "acId": "AC-G2-FR-027-01",

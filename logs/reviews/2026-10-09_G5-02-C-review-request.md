@@ -26,3 +26,10 @@
 - ISSUE-G5-02-003：校验器改为按规范化 UTF-8 LF 内容核验当前工作区，不要求 reset/重签出；13 个对象全部转换为 CRLF 的模拟 Windows checkout 仍 13/13 PASS，并报告原始换行差异。另提供 `--git-ref=HEAD` 精确校验提交 blob。
 - ISSUE-G5-02-005：B 日志已追加审计更正。正确提交为 `279976c54bd9b77fc2ee78fb5997d09100608628`；原错误完整哈希保留作为历史。
 - ISSUE-G5-02-004 保持 `CLOSED / VERIFIED_BY_C`；001/002 继续 OPEN，G5-02 不请求 DONE。
+
+## C 第三轮复验收口（2026-10-09）
+
+- 本轮整改结论：`ACCEPTED`；ISSUE-G5-02-003/004/005 均为 `CLOSED / VERIFIED_BY_C`。
+- 默认 Windows 工作区校验通过：canonical manifest 13/13、JSON/CSV 1160/1160、8 组分位数一致；`--git-ref=HEAD` 的 Git blob 13/13 通过。
+- ISSUE-G5-02-001/002 经 C 确认为真实环境与参与方资源阻断，保持 `OPEN / VERIFIED_BLOCKING_BY_C`。
+- 本 Review 请求已完成；G5-02 总体状态保持 `BLOCKED（C_REREVIEW_ACCEPTED / ENVIRONMENT_REQUIRED）`，不能置 DONE，也不能进入 G5-03 正式收口。

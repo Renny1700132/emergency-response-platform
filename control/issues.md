@@ -1683,7 +1683,7 @@
 - 依据：G5-02 DoD、PE-02/04/05/06/08/10、KN-006—010、016—017、040—041。
 - 本轮事实：本地真实 HTTP 与模拟外部适配器专项无 FAIL；没有甲方视频、正常消息通道、定位源、GIS、安防/信息发布环境、账号与合法测试数据。PE-06 未执行；其余相关本地测量均明确为 PARTIAL 或 SIMULATED_EVIDENCE。
 - 严重度：`BLOCKING_TO_G5-02_DONE_AND_G5_FINAL_GATE`。
-- 状态：`OPEN / ENVIRONMENT_REQUIRED / PENDING_C_REVIEW`。
+- 状态：`OPEN / VERIFIED_BLOCKING_BY_C / ENVIRONMENT_REQUIRED`。
 - 解除条件：甲方提供对应环境、账号、数据和窗口，B 按受控 PE/KN 重跑并保留逐请求/逐回执/首帧/刷新/精度原始数据，C 整体复核。
 - 证据：`docs/work/B_TECH/g5_technical_validation.md`、`evidence/g5/G5-02/performance-raw.json`、`performance-samples.csv`、`fault-drill-raw.json`。
 
@@ -1693,7 +1693,7 @@
 - 依据：G5-02 DoD、KN-005/041/065、NFR-REL-02/03、NFR-MNT-02、NFR-PORT-01。
 - 本轮事实：本机 PostgreSQL 15 端口可达，但未提供授权隔离库连接串，迁移演练实际因缺 `DATABASE_URL` 退出；Docker/Compose 命令不存在；没有真实非乙方部署操作者。未猜测凭据、未操作共享数据库、未伪造部署结果。
 - 严重度：`BLOCKING_TO_G5-02_DONE_AND_G5_FINAL_GATE`。
-- 状态：`OPEN / ENVIRONMENT_AND_PARTICIPANT_REQUIRED / PENDING_C_REVIEW`。
+- 状态：`OPEN / VERIFIED_BLOCKING_BY_C / ENVIRONMENT_AND_PARTICIPANT_REQUIRED`。
 - 解除条件：提供隔离数据库授权连接串与可控故障窗口、可用 Docker/Compose 干净主机，并由非乙方人员独立执行一次；完成迁移 up/down/up、备份/恢复一致性、容器建卷/启动/冒烟/回滚和≤2h计时，由 C 复核。
 - 证据：`evidence/g5/G5-02/environment-readiness.json`、`postgres-migration-attempt.log`、`docker-probe.log`。
 

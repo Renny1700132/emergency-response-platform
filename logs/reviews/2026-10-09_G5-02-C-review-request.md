@@ -20,3 +20,9 @@
 - ISSUE-G5-02-004：PE-04 记录统一为归档原始值 `0.065ms`，校验器增加报告回指断言。
 - B 自检：`node scripts/g5/validate-technical-gate.mjs` 输出 `PASS_WITH_EXTERNAL_BLOCKERS`、`rawSamples=1160`、`csvRows=1160`、`manifestFiles=13`。
 - 请求 C 仅复验 003/004 并决定是否关闭；001/002 保持 OPEN，G5-02 继续 BLOCKED，不请求 DONE。
+
+## B 针对第二轮 C Review 的整改交接（2026-10-09）
+
+- ISSUE-G5-02-003：校验器改为按规范化 UTF-8 LF 内容核验当前工作区，不要求 reset/重签出；13 个对象全部转换为 CRLF 的模拟 Windows checkout 仍 13/13 PASS，并报告原始换行差异。另提供 `--git-ref=HEAD` 精确校验提交 blob。
+- ISSUE-G5-02-005：B 日志已追加审计更正。正确提交为 `279976c54bd9b77fc2ee78fb5997d09100608628`；原错误完整哈希保留作为历史。
+- ISSUE-G5-02-004 保持 `CLOSED / VERIFIED_BY_C`；001/002 继续 OPEN，G5-02 不请求 DONE。

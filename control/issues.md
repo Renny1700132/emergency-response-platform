@@ -1708,7 +1708,7 @@
 
 - 日期/提出：2026-10-09，C（G5-02 Review）；主责整改：B；复核：C。
 - 严重度：`MAJOR / BLOCKING_TO_G5-02_EVIDENCE_ACCEPTANCE`。
-- 状态：`OPEN / B_REMEDIATED / PENDING_C_REREVIEW`。
+- 状态：`OPEN / B_REMEDIATED_SECOND / PENDING_C_REREVIEW`。
 - 位置：`evidence/g5/G5-02/manifest.json`、`scripts/g5/validate-technical-gate.mjs`。
 - 问题：manifest 以提交前混合换行字节生成。对 `e012137` 仓库 blob 校验时 8/13 条 byte/hash 不匹配；当前 Windows checkout 为 6/13 条不匹配，无法 13/13 闭环。现有校验脚本不校验 manifest，也不从原始样本复算分位数/核对 CSV，因此完整性损坏时仍会输出 PASS_WITH_EXTERNAL_BLOCKERS。
 - 影响：原始证据包的防篡改清单不可复核，技术自检未覆盖其声明的关键审计链。
@@ -1727,6 +1727,13 @@
 - 已通过：HEAD 的最终 Git blob 与 manifest 13/13 bytes/SHA-256 一致；仓库 blob 中 JSON/CSV 均为 1160 条，8 组 P50/P95/P99 独立复算一致；校验脚本已覆盖原关闭条件所列逻辑。
 - 未通过：本次从最新 master 快进后的既有 Windows checkout 中，13 个 manifest 对象有 12 个仍为 CRLF 且 bytes/hash 不匹配；直接执行校验器首项即报 `386 !== 364`。`.gitattributes` 未使现有工作区的校验链可直接复跑，不能关闭。
 - 继续整改：校验器按最终 Git blob或显式规范化 LF 字节校验，并证明既有 Windows checkout 与干净 checkout 均可直接复跑；不得要求审核人重置受控证据来取得 PASS。
+
+#### B 第二轮整改响应（2026-10-09）
+
+- manifest 口径明确为“规范化 UTF-8 LF 内容”；校验器读取 Windows 工作区后只规范化换行再核对 bytes/SHA-256，不要求审核人 reset、重新签出或改写证据。
+- 在当前 LF 工作区实际执行为 13/13 PASS；随后把 13 个清单对象全部临时转换为 CRLF 模拟既有 Windows checkout，校验仍为 13/13 PASS，并如实报告 `workspaceRawLineEndingDifferences=13`；恢复 LF 后再次 PASS。
+- 新增可选 `--git-ref=<ref>`，用于对指定提交的 Git blob 逐项执行精确 bytes/SHA-256 校验；提交后须以 `--git-ref=HEAD` 复验。
+- JSON↔CSV 1160 条、8 组原始分位数和 PE-04 报告回指校验继续保留。状态只改为待 C 复验。
 
 ## ISSUE-G5-02-004｜PE-04 技术记录与原始数据不一致
 
@@ -1753,11 +1760,17 @@
 
 - 日期/提出：2026-10-09，C（G5-02 第二轮复验）；主责整改：B；复核：C。
 - 严重度：`MINOR / BLOCKING_TO_G5-02_REVIEW_EVIDENCE_ACCEPTANCE`。
-- 状态：`OPEN / CHANGES_REQUIRED`。
+- 状态：`OPEN / B_REMEDIATED / PENDING_C_REREVIEW`。
 - 位置：`logs/prompts/2026-10-09-B.md:62,96`。
 - 问题：两处回填整改 commit 为不存在的 `279976c338c0a60971a92e94f02bb24ae88f75e1`；仓库实际对象为 `279976c54bd9b77fc2ee78fb5997d09100608628`。短前缀相同不能替代要求回填的完整 hash。
 - 影响：AI 日志的提交追踪无法按完整对象 ID 复核。
 - 关闭条件：B 在自身日志追加更正事件与正确完整 hash，保留原错误及更正原因，不静默删除或改写原记录；C 复验关闭。
+
+#### B 审计更正（2026-10-09）
+
+- 保留 `LOG-G5-02-002` 中原错误哈希，不删除、不覆盖。
+- 正确整改提交经 `git rev-parse 279976c` 与 `git cat-file -t` 核验为 `279976c54bd9b77fc2ee78fb5997d09100608628`（commit）。
+- 错误原因：此前仅取得短哈希后错误补全了不存在的完整值，未先执行对象解析。已在 B 日志追加 `AUDIT_CORRECTION`；状态待 C 复验。
 
 ### A复审结论追加（2026-10-09）｜ISSUE-G5-01-003/004/005
 

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { readFile, readdir } from 'node:fs/promises'
 
@@ -10,20 +11,37 @@ const fault = await readJson('fault-drill-raw.json')
 const quality = await readJson('quality-summary.json')
 const environment = await readJson('environment-readiness.json')
 const manifest = await readJson('manifest.json')
+const gitRefArgument = process.argv.find((argument) => argument.startsWith('--git-ref='))
+const gitRef = gitRefArgument?.slice('--git-ref='.length) || null
+const canonicalLf = (bytes) => Buffer.from(bytes.toString('utf8').replace(/\r\n/g, '\n').replace(/\r/g, '\n'), 'utf8')
 
 const manifestResults = []
+let workspaceRawLineEndingDifferences = 0
+let gitBlobMatches = 0
 const evidenceFiles = (await readdir(root)).filter((name) => name !== 'manifest.json').sort()
 assert.deepEqual(manifest.files.map((entry) => entry.file).sort(), evidenceFiles)
 for (const entry of manifest.files) {
-  const bytes = await readFile(new URL(entry.file, root))
+  const workspaceBytes = await readFile(new URL(entry.file, root))
+  const bytes = canonicalLf(workspaceBytes)
   const actual = {
     file: entry.file,
     bytes: bytes.length,
     sha256: createHash('sha256').update(bytes).digest('hex'),
   }
-  assert.equal(actual.bytes, entry.bytes, `manifest byte count mismatch: ${entry.file}`)
-  assert.equal(actual.sha256, entry.sha256, `manifest SHA-256 mismatch: ${entry.file}`)
+  if (workspaceBytes.length !== bytes.length || !workspaceBytes.equals(bytes)) workspaceRawLineEndingDifferences += 1
+  assert.equal(actual.bytes, entry.bytes, `canonical-LF workspace byte count mismatch: ${entry.file}`)
+  assert.equal(actual.sha256, entry.sha256, `canonical-LF workspace SHA-256 mismatch: ${entry.file}`)
   manifestResults.push(actual)
+  if (gitRef) {
+    const blob = execFileSync('git', ['show', `${gitRef}:evidence/g5/G5-02/${entry.file}`], {
+      encoding: null,
+      maxBuffer: 16 * 1024 * 1024,
+      windowsHide: true,
+    })
+    assert.equal(blob.length, entry.bytes, `Git blob byte count mismatch: ${entry.file}`)
+    assert.equal(createHash('sha256').update(blob).digest('hex'), entry.sha256, `Git blob SHA-256 mismatch: ${entry.file}`)
+    gitBlobMatches += 1
+  }
 }
 assert.equal(manifestResults.length, 13)
 
@@ -117,5 +135,9 @@ console.info(JSON.stringify({
   rawSamples: rawSampleCount,
   csvRows: csvRows.length,
   manifestFiles: manifestResults.length,
+  workspaceCanonicalManifest: manifestResults.length,
+  workspaceRawLineEndingDifferences,
+  gitRef,
+  gitBlobManifest: gitRef ? gitBlobMatches : null,
   blockers: ['docker-clean-deploy', 'postgresql-recovery', 'independent-deployer', 'owner-external-systems'],
 }, null, 2))

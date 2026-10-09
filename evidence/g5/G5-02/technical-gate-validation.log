@@ -5,6 +5,10 @@
   "rawSamples": 1160,
   "csvRows": 1160,
   "manifestFiles": 13,
+  "workspaceCanonicalManifest": 13,
+  "workspaceRawLineEndingDifferences": 0,
+  "gitRef": null,
+  "gitBlobManifest": null,
   "blockers": [
     "docker-clean-deploy",
     "postgresql-recovery",

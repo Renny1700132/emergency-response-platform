@@ -1,8 +1,8 @@
 {
   "taskId": "G5-02",
-  "generatedAt": "2026-10-09T16:24:00+08:00",
+  "generatedAt": "2026-10-09T18:05:00+08:00",
   "baseline": "e6e12b59fc5749cdf0475ed9631bac7d21d4bb1a",
-  "normalization": "All listed evidence files are tracked as text eol=lf; hashes are over repository/checkout LF bytes.",
+  "normalization": "Manifest bytes and SHA-256 are calculated over canonical UTF-8 LF content. Git blobs must match exactly; Windows workspace CRLF is canonicalized to LF by the validator before comparison.",
   "files": [
     {
       "file": "dependency-audit-frontend.json",
@@ -66,8 +66,8 @@
     },
     {
       "file": "technical-gate-validation.log",
-      "bytes": 285,
-      "sha256": "da4d8f3141a2d9bca80be5fc1baa2c4f5aa6effba47eef72a2fe1c851c13adf4"
+      "bytes": 409,
+      "sha256": "8ec813147759727538d87e5e134b1f6f4b2efecf1bccc9c6c065a210719a733b"
     }
   ]
 }

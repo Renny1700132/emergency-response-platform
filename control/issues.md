@@ -1697,6 +1697,33 @@
 - 解除条件：提供隔离数据库授权连接串与可控故障窗口、可用 Docker/Compose 干净主机，并由非乙方人员独立执行一次；完成迁移 up/down/up、备份/恢复一致性、容器建卷/启动/冒烟/回滚和≤2h计时，由 C 复核。
 - 证据：`evidence/g5/G5-02/environment-readiness.json`、`postgres-migration-attempt.log`、`docker-probe.log`。
 
+### C Review 回填（2026-10-09）｜ISSUE-G5-02-001 / 002
+
+- 审核 HEAD：`29efab40691922303baa5aa22e58677bc68a8265`；记录：`logs/reviews/2026-10-09_G5-02-C-review.md`。
+- 001：`OPEN / VERIFIED_BLOCKING_BY_C`。目标环境、账号、合法数据与接口窗口缺失属实；本地 HTTP、内存持久层及模拟适配器结果未被接受为甲方真实验收。
+- 002：`OPEN / VERIFIED_BLOCKING_BY_C`。无授权隔离库、数据库故障窗口、Docker/Compose 干净主机及非乙方独立部署人属实；迁移失败与 Docker 探测失败保留。
+- 两项资源阻断均继续阻断 G5-02 DONE 与 G5 最终准出；C 的确认不代表阻断关闭。
+
+## ISSUE-G5-02-003｜证据清单哈希与入库字节不一致
+
+- 日期/提出：2026-10-09，C（G5-02 Review）；主责整改：B；复核：C。
+- 严重度：`MAJOR / BLOCKING_TO_G5-02_EVIDENCE_ACCEPTANCE`。
+- 状态：`OPEN / CHANGES_REQUIRED`。
+- 位置：`evidence/g5/G5-02/manifest.json`、`scripts/g5/validate-technical-gate.mjs`。
+- 问题：manifest 以提交前混合换行字节生成。对 `e012137` 仓库 blob 校验时 8/13 条 byte/hash 不匹配；当前 Windows checkout 为 6/13 条不匹配，无法 13/13 闭环。现有校验脚本不校验 manifest，也不从原始样本复算分位数/核对 CSV，因此完整性损坏时仍会输出 PASS_WITH_EXTERNAL_BLOCKERS。
+- 影响：原始证据包的防篡改清单不可复核，技术自检未覆盖其声明的关键审计链。
+- 关闭条件：B 统一证据换行或 Git 属性，从最终入库字节重建 manifest；独立校验 13/13 通过；校验脚本验证 manifest、JSON↔CSV 样本数以及从原始样本复算的 P50/P95/P99；C 复验关闭。
+
+## ISSUE-G5-02-004｜PE-04 技术记录与原始数据不一致
+
+- 日期/提出：2026-10-09，C（G5-02 Review）；主责整改：B；复核：C。
+- 严重度：`MINOR / BLOCKING_TO_G5-02_REPORT_ACCEPTANCE`。
+- 状态：`OPEN / CHANGES_REQUIRED`。
+- 位置：`docs/work/B_TECH/g5_technical_validation.md:28`、`evidence/g5/G5-02/performance-raw.json` 的 `messageBatch.durationMs`。
+- 问题：技术记录写 PE-04 模拟 20 路耗时 `0.037ms`，归档原始 JSON 为 `0.065ms`，轮次未区分且没有另一份原始数据支撑。
+- 影响：虽然不改变“SIMULATED_EVIDENCE / 真实通道仍 BLOCKED”的结论，但报告输入不能精确回指原始数据。
+- 关闭条件：以归档原始值修正记录，或另存真实对应轮次并明确口径；同步重建 manifest，B 自检后由 C 复验。
+
 ### A复审结论追加（2026-10-09）｜ISSUE-G5-01-003/004/005
 
 - 审核HEAD b2e251a；记录logs/reviews/2026-10-09_G5-01-A-rereview.md；当前用户授权Codex辅助A复审。

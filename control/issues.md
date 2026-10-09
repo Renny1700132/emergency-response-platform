@@ -1804,3 +1804,10 @@
 - 专用 Web/H5→HTTP→PostgreSQL 系统包独立复跑 2/2 PASS；完整 G5-01 功能门禁各套件 PASS，AC 汇总保持 11 PASS / 59 NOT_RUN / 47 BLOCKED、★FR 1 PASS / 33 BLOCKED。
 - 004、005 保持 `CLOSED / VERIFIED_BY_A`，本轮未修改其已关闭范围。003 当前为 `PENDING_A_REREVIEW_3`，不得由 C 自行标 CLOSED；G5-01 继续 BLOCKED。
 - 证据：`frontend/tests/postgresql-system-e2e.test.ts`、`scripts/g5/run-functional-gate.mjs`、`evidence/g5/G5-01/functional-gate-raw.json`、`ac-117-matrix.md`、`execution-summary.md`、`review-request.md`、`docs/work/C_REQ/rtm_g5_increment.md`。
+
+### A第三轮复验关闭（2026-10-09）｜ISSUE-G5-01-003
+
+- 审核HEAD 07ee990；记录logs/reviews/2026-10-09_G5-01-A-rereview-3.md；当前P0授权Codex辅助A。
+- 003：CLOSED / VERIFIED_BY_A。新增1条全匹配+4条单条件近似反例，SQL核对5条记录，组合查询仅保留目标ID并排除四反例ID；忽略任一过滤条件不再能够通过。原始归档专用系统包exit0、2/2PASS，矩阵/RTM/摘要/白名单同步，关闭最后缺口。
+- 004/005维持CLOSED；本轮整改复审PASS，不新增其他问题。2/2为C实际归档结果，A本轮审查源码/原始输出，不宣称独立重跑。
+- G5-01完整质量门禁仍BLOCKED：11PASS/59NOT_RUN/47BLOCKED、兼容/KN-039及backlog等既有门禁未满足；Review PASS不改写这些实际结果，不等于进入G6。

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G5-02",
+  "generatedAt": "2026-10-09T22:51:05+08:00",
+  "evidenceKind": "WSL2_DOCKER_COMPOSE_CLEAN_DEPLOYMENT",
+  "environment": {
+    "docker": "28.1.1",
+    "compose": "2.35.1",
+    "platform": "Linux 5.10.16.3-microsoft-standard-WSL2 x86_64 GNU/Linux"
+  },
+  "sequence": ["down-volume-clean", "no-cache-build", "compose-up-wait", "migration-up", "health-ready", "backend-restart", "ready-after-restart", "down-volume-clean"],
+  "durationSeconds": 17,
+  "withinTwoHours": true,
+  "healthStatus": 200,
+  "readyStatus": 200,
+  "readyAfterRestartStatus": 200,
+  "publicTableCount": 37,
+  "images": {
+    "backend": "f0a2d2f732e714e86ab8d38978b28b83c4ac7a0ea3ad8ef83676b43383bbd538",
+    "database": "81bd698b4594e751a3269e4dcd3e03a4a0ec0daf7b72e7aa1abd43cce9887542"
+  },
+  "status": "PASS",
+  "boundaries": [
+    "The run used a clean WSL2 Docker Engine and removed project containers and volumes before and after execution.",
+    "Owner external systems were not connected; MIDDLE_PLATFORM_BASE_URL remained a non-authoritative placeholder and no owner-interface PASS is claimed.",
+    "The executing operator was member B; this run does not satisfy the independent non-contractor deployment requirement."
+  ],
+  "startedAt": "2026-10-09T22:50:48+08:00",
+  "finishedAt": "2026-10-09T22:51:05+08:00"
+}

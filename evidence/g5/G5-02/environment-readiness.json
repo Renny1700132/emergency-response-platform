@@ -1,17 +1,33 @@
 {
   "taskId": "G5-02",
-  "generatedAt": "2026-10-08T16:14:50.7922806Z",
+  "generatedAt": "2026-10-09T14:52:04.958Z",
   "docker": {
-    "status": "BLOCKED",
-    "exitCode": 1,
-    "reason": "docker executable is not installed or not available on PATH"
+    "status": "PASS",
+    "engine": "WSL2 Docker Engine 28.1.1",
+    "compose": "2.35.1",
+    "cleanDeploy": "PASS",
+    "durationSeconds": 17,
+    "publicTableCount": 37,
+    "evidence": "docker-clean-deploy.json",
+    "previousProbe": {
+      "status": "BLOCKED",
+      "reason": "Windows PATH had no docker executable; WSL2 engine was subsequently started and used."
+    }
   },
   "postgresql": {
-    "listener": "127.0.0.1:5432 - accepting connections",
-    "authorizedDatabaseUrlPresent": false,
-    "recoveryDrill": "BLOCKED",
-    "migrationAttemptExitCode": 1,
-    "reason": "No authorized G5_DATABASE_URL/DATABASE_URL was supplied; connection credentials are not inferred or fabricated."
+    "status": "PASS",
+    "sharedListener": "127.0.0.1:5432 - accepting connections",
+    "sharedCredentialUsed": false,
+    "isolatedCluster": "PostgreSQL 15.14 disposable task-owned cluster",
+    "recoveryDrill": "PASS",
+    "migrationSequence": "up-down-up",
+    "serviceRestart": "PASS",
+    "backupRestore": "PASS",
+    "evidence": "postgres-recovery-drill.json",
+    "previousAttempt": {
+      "status": "BLOCKED",
+      "reason": "No authorized shared DATABASE_URL was supplied; remediation used a new isolated disposable cluster without shared credentials."
+    }
   },
   "independentDeployer": {
     "status": "BLOCKED",

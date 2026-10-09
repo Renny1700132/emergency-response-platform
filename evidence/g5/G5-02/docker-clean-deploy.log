@@ -1,0 +1,81 @@
+WARNING: No blkio throttle.read_bps_device support
+WARNING: No blkio throttle.write_bps_device support
+WARNING: No blkio throttle.read_iops_device support
+WARNING: No blkio throttle.write_iops_device support
+G5-02 clean deployment started at 2026-10-09T22:50:48+08:00
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "default" instance using docker driver
+
+#1 [backend internal] load build definition from Dockerfile
+#1 transferring dockerfile: 212B 0.0s done
+#1 DONE 0.0s
+
+#2 [backend internal] load metadata for docker.io/library/node:24-alpine
+#2 DONE 0.0s
+
+#3 [backend internal] load .dockerignore
+#3 transferring context: 2B 0.0s done
+#3 DONE 0.0s
+
+#4 [backend 1/5] FROM docker.io/library/node:24-alpine
+#4 DONE 0.0s
+
+#5 [backend 2/5] WORKDIR /app
+#5 DONE 0.0s
+
+#6 [backend internal] load build context
+#6 transferring context: 4.67kB 0.1s done
+#6 DONE 0.1s
+
+#7 [backend 3/5] COPY package.json package-lock.json ./
+#7 DONE 0.0s
+
+#8 [backend 4/5] RUN npm ci --omit=dev
+#8 1.374
+#8 1.374 added 14 packages, and audited 15 packages in 967ms
+#8 1.375
+#8 1.375 found 0 vulnerabilities
+#8 1.376 npm notice
+#8 1.376 npm notice New major version of npm available! 11.19.0 -> 12.2.0
+#8 1.376 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+#8 1.376 npm notice To update run: npm install -g npm@12.2.0
+#8 1.376 npm notice
+#8 DONE 1.4s
+
+#9 [backend 5/5] COPY backend ./backend
+#9 DONE 0.0s
+
+#10 [backend] exporting to image
+#10 exporting layers 0.1s done
+#10 writing image sha256:f0a2d2f732e714e86ab8d38978b28b83c4ac7a0ea3ad8ef83676b43383bbd538 done
+#10 naming to docker.io/library/g502clean-backend done
+#10 DONE 0.1s
+
+#11 [backend] resolving provenance for metadata file
+#11 DONE 0.0s
+ backend  Built
+ Network g502clean_default  Creating
+ Network g502clean_default  Created
+ Volume "g502clean_emergency-postgres"  Creating
+ Volume "g502clean_emergency-postgres"  Created
+ Container g502clean-database-1  Creating
+ Container g502clean-database-1  Created
+ Container g502clean-backend-1  Creating
+ Container g502clean-backend-1  Created
+ Container g502clean-database-1  Starting
+ Container g502clean-database-1  Started
+ Container g502clean-database-1  Waiting
+ Container g502clean-database-1  Healthy
+ Container g502clean-backend-1  Starting
+ Container g502clean-backend-1  Started
+ Container g502clean-backend-1  Waiting
+ Container g502clean-database-1  Waiting
+ Container g502clean-backend-1  Healthy
+ Container g502clean-database-1  Healthy
+{"migration":"001_foundation.up.sql","direction":"up","status":"applied"}
+{"migration":"002_event_workflow.up.sql","direction":"up","status":"applied"}
+{"migration":"003_sprint2_mvp.up.sql","direction":"up","status":"applied"}
+ Container g502clean-backend-1  Restarting
+ Container g502clean-backend-1  Started
+G5-02 clean deployment PASS in 17s; public tables=37

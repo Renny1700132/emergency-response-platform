@@ -1,18 +1,19 @@
 {
   "schemaVersion": 1,
   "taskId": "G5-02",
-  "generatedAt": "2026-10-09T08:15:00+08:00",
+  "generatedAt": "2026-10-09T14:57:37.972Z",
   "qualityCommand": "npm run quality",
   "status": "PASS",
   "frontend": {
-    "testFiles": 10,
-    "tests": 44,
+    "testFiles": 11,
+    "tests": 45,
     "coverage": {
       "statements": 95.57,
       "branches": 77.73,
       "functions": 97.36,
       "lines": 100
-    }
+    },
+    "skippedTests": 2
   },
   "engineeringGuards": {
     "tests": 11,
@@ -24,12 +25,12 @@
     }
   },
   "backend": {
-    "tests": 20,
+    "tests": 21,
     "coverage": {
-      "statements": 87.69,
-      "branches": 77.74,
-      "functions": 85.24,
-      "lines": 87.69
+      "statements": 87.75,
+      "branches": 77.77,
+      "functions": 85.36,
+      "lines": 87.75
     }
   },
   "openapi": {

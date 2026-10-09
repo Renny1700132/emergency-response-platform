@@ -1,0 +1,19 @@
+WARNING: No blkio throttle.read_bps_device support
+WARNING: No blkio throttle.write_bps_device support
+WARNING: No blkio throttle.read_iops_device support
+WARNING: No blkio throttle.write_iops_device support
+G5-02 clean deployment started at 2026-10-09T22:35:51+08:00
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "default" instance using docker driver
+
+#1 [backend internal] load build definition from Dockerfile
+#1 transferring dockerfile: 212B 0.0s done
+#1 DONE 0.0s
+
+#2 [backend internal] load metadata for docker.io/library/node:20-alpine
+#2 ERROR: failed to do request: Head "https://registry-1.docker.io/v2/library/node/manifests/20-alpine": dial tcp 65.22.160.17:443: i/o timeout
+------
+ > [backend internal] load metadata for docker.io/library/node:20-alpine:
+------
+failed to solve: DeadlineExceeded: DeadlineExceeded: DeadlineExceeded: node:20-alpine: failed to resolve source metadata for docker.io/library/node:20-alpine: failed to do request: Head "https://registry-1.docker.io/v2/library/node/manifests/20-alpine": dial tcp 65.22.160.17:443: i/o timeout

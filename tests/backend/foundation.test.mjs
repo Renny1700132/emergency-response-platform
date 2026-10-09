@@ -1,11 +1,13 @@
 import assert from 'node:assert/strict';
 import { access, readFile } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
 import test from 'node:test';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { loadConfig } from '../../backend/src/config.mjs';
 import { createAuditRecord, createAuditSink, redact } from '../../backend/src/audit.mjs';
 import { createDatabase } from '../../backend/src/database.mjs';
 import { requireRole, resolveIdentity } from '../../backend/src/identity.mjs';
-import { createApplication, startApplication } from '../../backend/src/main.mjs';
+import { createApplication, isMainModule, startApplication } from '../../backend/src/main.mjs';
 import { createServer } from '../../backend/src/server.mjs';
 import { createMiddlePlatformPort } from '../../backend/src/middle-platform-port.mjs';
 
@@ -19,6 +21,13 @@ test('production configuration requires database and middle-platform endpoints',
   assert.throws(() => loadConfig({ NODE_ENV: 'production' }), /DATABASE_URL, MIDDLE_PLATFORM_BASE_URL/);
   assert.throws(() => loadConfig({ PORT: '0' }), /PORT must be an integer/);
   assert.equal(loadConfig({ PORT: '3001' }).port, 3001);
+});
+
+test('main module detection resolves relative container entrypoints against the working directory', () => {
+  const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
+  const mainUrl = pathToFileURL(resolve(repositoryRoot, 'backend/src/main.mjs')).href;
+  assert.equal(isMainModule(mainUrl, { argv1: 'backend/src/main.mjs', cwd: repositoryRoot }), true);
+  assert.equal(isMainModule(mainUrl, { argv1: 'backend/src/server.mjs', cwd: repositoryRoot }), false);
 });
 
 test('audit redacts credentials and keeps traceability fields', async () => {

@@ -1687,15 +1687,15 @@
 - 解除条件：甲方提供对应环境、账号、数据和窗口，B 按受控 PE/KN 重跑并保留逐请求/逐回执/首帧/刷新/精度原始数据，C 整体复核。
 - 证据：`docs/work/B_TECH/g5_technical_validation.md`、`evidence/g5/G5-02/performance-raw.json`、`performance-samples.csv`、`fault-drill-raw.json`。
 
-## ISSUE-G5-02-002｜数据库恢复与 Docker 干净部署资源不足
+## ISSUE-G5-02-002｜数据库恢复、Docker 干净部署与独立部署资源不足
 
 - 日期/提出：2026-10-09，B（G5-02 主责）；Review：C。
 - 依据：G5-02 DoD、KN-005/041/065、NFR-REL-02/03、NFR-MNT-02、NFR-PORT-01。
 - 本轮事实：本机 PostgreSQL 15 端口可达，但未提供授权隔离库连接串，迁移演练实际因缺 `DATABASE_URL` 退出；Docker/Compose 命令不存在；没有真实非乙方部署操作者。未猜测凭据、未操作共享数据库、未伪造部署结果。
 - 严重度：`BLOCKING_TO_G5-02_DONE_AND_G5_FINAL_GATE`。
-- 状态：`OPEN / VERIFIED_BLOCKING_BY_C / ENVIRONMENT_AND_PARTICIPANT_REQUIRED`。
-- 解除条件：提供隔离数据库授权连接串与可控故障窗口、可用 Docker/Compose 干净主机，并由非乙方人员独立执行一次；完成迁移 up/down/up、备份/恢复一致性、容器建卷/启动/冒烟/回滚和≤2h计时，由 C 复核。
-- 证据：`evidence/g5/G5-02/environment-readiness.json`、`postgres-migration-attempt.log`、`docker-probe.log`。
+- 状态：`OPEN / PARTIALLY_REMEDIATED_BY_B / PENDING_C_REREVIEW / PARTICIPANT_REQUIRED`。
+- 剩余解除条件：由真实非乙方人员在干净环境独立执行 `scripts/g5/run-docker-clean-deploy.sh` 或等价部署步骤，保留操作者身份边界、命令、时间和结果；C 复核 KN-065 后决定关闭。
+- 证据：`evidence/g5/G5-02/environment-readiness.json`、`postgres-migration-attempt.log`、`docker-probe.log`、`postgres-recovery-drill.json`、`docker-clean-deploy.json`、`docker-clean-deploy.log`、`docker-clean-deploy-attempt-1.log`、`docker-clean-deploy-attempt-2.log`。
 
 ### C Review 回填（2026-10-09）｜ISSUE-G5-02-001 / 002
 
@@ -1703,6 +1703,13 @@
 - 001：`OPEN / VERIFIED_BLOCKING_BY_C`。目标环境、账号、合法数据与接口窗口缺失属实；本地 HTTP、内存持久层及模拟适配器结果未被接受为甲方真实验收。
 - 002：`OPEN / VERIFIED_BLOCKING_BY_C`。无授权隔离库、数据库故障窗口、Docker/Compose 干净主机及非乙方独立部署人属实；迁移失败与 Docker 探测失败保留。
 - 两项资源阻断均继续阻断 G5-02 DONE 与 G5 最终准出；C 的确认不代表阻断关闭。
+
+### B 第五轮整改响应（2026-10-09）｜ISSUE-G5-02-002
+
+- 数据库部分已真实补齐：使用任务专用一次性 PostgreSQL 15.14 隔离集群，不读取、猜测或修改共享实例凭据；迁移 up→down→up、服务 stop/start、custom-format 备份、数据库销毁重建、恢复及 37 张 public 表和哨兵记录一致性全部 PASS。
+- Docker 部分已真实补齐：启用机器既有 WSL2 Docker Engine 28.1.1 / Compose 2.35.1，从空卷和无缓存应用镜像完成 build、up、迁移、health/ready、后端重启后 ready=200，并在 17 秒内结束；退出时已删除项目容器、卷和网络。
+- 失败未隐去：首次 Docker Hub 拉取超时；第二次部署发现容器入口未启动且 Node 20 不满足项目 engines。对应原始日志保留，入口路径与 Dockerfile 已修复，复测通过。
+- 002 当前只剩 KN-065 非乙方独立部署证据。B 不冒充独立人员，不自行关闭 Issue；提交 C 复验。
 
 ## ISSUE-G5-02-003｜证据清单哈希与入库字节不一致
 
@@ -1790,6 +1797,24 @@
 - 状态收口 `ACCEPTED`，无新增 Issue：003/004/005 继续 `CLOSED / VERIFIED_BY_C`；001/002 继续 `OPEN / VERIFIED_BLOCKING_BY_C`。
 - 默认工作区及 `--git-ref=HEAD` 两种校验均为 `PASS_WITH_EXTERNAL_BLOCKERS`，manifest 13/13、JSON/CSV 1160/1160、8 组指标复算通过；四类外部资源阻断仍被校验器明确报告。
 - 本次接受只确认跨文件状态与历史数值口径已统一，不代表 G5-02 DONE；在 001/002 解除前不得进入 G5-03 正式收口。
+
+## ISSUE-G5-02-006｜容器入口未启动后端服务
+
+- 日期/提出：2026-10-09，B（G5-02 Docker 干净部署演练）；主责整改：B；复核：C。
+- 严重度：`MAJOR / BLOCKING_TO_DOCKER_CLEAN_DEPLOYMENT`。
+- 状态：`B_REMEDIATED / PENDING_C_REREVIEW`。
+- 问题：`backend/src/main.mjs` 以手工拼接的 `file:///` URL 判断入口；容器内相对参数 `backend/src/main.mjs` 被解析为 `/backend/...`，与真实 `/app/backend/...` 不同，进程以 0 退出且服务未监听。
+- 整改：使用 `pathToFileURL(resolve(cwd, argv1))` 做跨平台入口判断；增加相对容器入口单元测试。Docker 复测中 backend 保持运行，health/ready 均为 200，重启后 ready=200。
+- 证据：`docker-clean-deploy-attempt-2.log`、`docker-clean-deploy.json`、`backend/src/main.mjs`、`tests/backend/foundation.test.mjs`。
+
+## ISSUE-G5-02-007｜Docker 运行时低于项目 engines
+
+- 日期/提出：2026-10-09，B（G5-02 Docker 干净部署演练）；主责整改：B；复核：C。
+- 严重度：`MAJOR / BLOCKING_TO_SUPPORTED_DEPLOYMENT`。
+- 状态：`B_REMEDIATED / PENDING_C_REREVIEW`。
+- 问题：`backend/Dockerfile` 使用 Node 20，但根 `package.json` 声明 `^24.14.0 || >=26.0.0`；构建真实出现 `EBADENGINE`，不能作为受支持运行时准出。
+- 整改：基础镜像更新为 `node:24-alpine`。无缓存构建不再出现 `EBADENGINE`，依赖 0 漏洞，Compose 干净部署通过。
+- 证据：`docker-clean-deploy-attempt-2.log`、`docker-clean-deploy.log`、`docker-clean-deploy.json`、`backend/Dockerfile`。
 
 ### A复审结论追加（2026-10-09）｜ISSUE-G5-01-003/004/005
 

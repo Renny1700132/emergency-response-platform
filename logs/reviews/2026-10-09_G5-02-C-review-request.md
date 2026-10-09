@@ -33,3 +33,11 @@
 - 默认 Windows 工作区校验通过：canonical manifest 13/13、JSON/CSV 1160/1160、8 组分位数一致；`--git-ref=HEAD` 的 Git blob 13/13 通过。
 - ISSUE-G5-02-001/002 经 C 确认为真实环境与参与方资源阻断，保持 `OPEN / VERIFIED_BLOCKING_BY_C`。
 - 本 Review 请求已完成；G5-02 总体状态保持 `BLOCKED（C_REREVIEW_ACCEPTED / ENVIRONMENT_REQUIRED）`，不能置 DONE，也不能进入 G5-03 正式收口。
+
+## B 第五轮整改复验请求（2026-10-09）
+
+- ISSUE-G5-02-002 数据库恢复部分：一次性隔离 PostgreSQL 15.14 已完成迁移 up/down/up、服务重启、备份、销毁重建、恢复及 37 表/哨兵一致性，状态 PASS。
+- ISSUE-G5-02-002 Docker 部分：WSL2 Docker Engine 28.1.1 / Compose 2.35.1 已从空卷、无缓存应用镜像完成迁移、health/ready、重启恢复和清理，总耗时 17s，状态 PASS。
+- 新发现 ISSUE-G5-02-006/007：容器入口路径判断错误、Docker Node 20 低于 engines；均已修复，单元测试和干净部署复测通过。
+- 首次 Docker Hub 超时与第二次容器退出/`EBADENGINE` 均保留原始失败日志，不覆盖或美化。
+- 请求 C 复验上述新证据并决定 006/007 是否关闭、002 是否缩减为仅 KN-065 非乙方独立部署阻断。ISSUE-G5-02-001 继续 OPEN；B 不请求 G5-02 DONE。

@@ -1,0 +1,78 @@
+WARNING: No blkio throttle.read_bps_device support
+WARNING: No blkio throttle.write_bps_device support
+WARNING: No blkio throttle.read_iops_device support
+WARNING: No blkio throttle.write_iops_device support
+G5-02 clean deployment started at 2026-10-09T22:48:42+08:00
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "default" instance using docker driver
+
+#1 [backend internal] load build definition from Dockerfile
+#1 transferring dockerfile: 212B 0.0s done
+#1 DONE 0.0s
+
+#2 [backend internal] load metadata for docker.io/library/node:20-alpine
+#2 DONE 0.0s
+
+#3 [backend internal] load .dockerignore
+#3 transferring context: 2B 0.0s done
+#3 DONE 0.0s
+
+#4 [backend internal] load build context
+#4 ...
+
+#5 [backend 1/5] FROM docker.io/library/node:20-alpine
+#5 DONE 0.0s
+
+#6 [backend 2/5] WORKDIR /app
+#6 DONE 0.1s
+
+#4 [backend internal] load build context
+#4 transferring context: 138.58kB 0.1s done
+#4 DONE 0.2s
+
+#7 [backend 3/5] COPY package.json package-lock.json ./
+#7 DONE 0.0s
+
+#8 [backend 4/5] RUN npm ci --omit=dev
+#8 0.697 npm warn EBADENGINE Unsupported engine {
+#8 0.697 npm warn EBADENGINE   package: 'museum-emergency-response-quality-gates@0.1.0',
+#8 0.697 npm warn EBADENGINE   required: { node: '^24.14.0 || >=26.0.0' },
+#8 0.697 npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+#8 0.697 npm warn EBADENGINE }
+#8 1.246
+#8 1.246 added 14 packages, and audited 15 packages in 826ms
+#8 1.247
+#8 1.247 found 0 vulnerabilities
+#8 DONE 1.3s
+
+#9 [backend 5/5] COPY backend ./backend
+#9 DONE 0.0s
+
+#10 [backend] exporting to image
+#10 exporting layers 0.1s done
+#10 writing image sha256:2bd280dbe353b25fa856f827a80dccfd52da3f7f0b49551cea0afaccbef61b7e 0.0s done
+#10 naming to docker.io/library/g502clean-backend done
+#10 DONE 0.1s
+
+#11 [backend] resolving provenance for metadata file
+#11 DONE 0.0s
+ backend  Built
+ Network g502clean_default  Creating
+ Network g502clean_default  Created
+ Volume "g502clean_emergency-postgres"  Creating
+ Volume "g502clean_emergency-postgres"  Created
+ Container g502clean-database-1  Creating
+ Container g502clean-database-1  Created
+ Container g502clean-backend-1  Creating
+ Container g502clean-backend-1  Created
+ Container g502clean-database-1  Starting
+ Container g502clean-database-1  Started
+ Container g502clean-database-1  Waiting
+ Container g502clean-database-1  Healthy
+ Container g502clean-backend-1  Starting
+ Container g502clean-backend-1  Started
+ Container g502clean-backend-1  Waiting
+ Container g502clean-database-1  Waiting
+ Container g502clean-database-1  Healthy
+container g502clean-backend-1 exited (0)

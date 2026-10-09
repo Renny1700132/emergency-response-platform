@@ -1,6 +1,6 @@
 {
   "taskId": "G5-02",
-  "generatedAt": "2026-10-09T18:05:00+08:00",
+  "generatedAt": "2026-10-09T14:58:03.549Z",
   "baseline": "e6e12b59fc5749cdf0475ed9631bac7d21d4bb1a",
   "normalization": "Manifest bytes and SHA-256 are calculated over canonical UTF-8 LF content. Git blobs must match exactly; Windows workspace CRLF is canonicalized to LF by the validator before comparison.",
   "files": [
@@ -15,14 +15,34 @@
       "sha256": "292bceb36ebad8b267c5a8b2abf7443db9f369504361cfa5a75b73a73c60c38e"
     },
     {
+      "file": "docker-clean-deploy-attempt-1.log",
+      "bytes": 1138,
+      "sha256": "86deb07a4b5a9db02d7579305dd65b1cfd59601e4900adc2e203b0bb71ec1803"
+    },
+    {
+      "file": "docker-clean-deploy-attempt-2.log",
+      "bytes": 2651,
+      "sha256": "c6317c35212db78dfd0d2a1d0bec2059933a36c4f96d787c3585832b60f6a764"
+    },
+    {
+      "file": "docker-clean-deploy.json",
+      "bytes": 1338,
+      "sha256": "84855c0c76374e5c80e2cf9e4930f98cf3c5f3a1d4db428e989c01bf577443aa"
+    },
+    {
+      "file": "docker-clean-deploy.log",
+      "bytes": 2890,
+      "sha256": "ce1a371c55d0e0d432fb812f4ed9885dbbeefba4f828c6e0f5692d927991d722"
+    },
+    {
       "file": "docker-probe.log",
       "bytes": 95,
       "sha256": "d8b5579cfb0e35a9eecdf49d51c00fd89f54be805babe9fb638c79f53411fda3"
     },
     {
       "file": "environment-readiness.json",
-      "bytes": 881,
-      "sha256": "b2a04ce2d4de4cf39d0d9a8994fbe0ab91ac10b3396697bff2698af2be21a529"
+      "bytes": 1409,
+      "sha256": "e5ba7c168e2f5ed47d95f7e977f8e626925506e16e4b017f3f4e2fba59d81bae"
     },
     {
       "file": "fault-drill-raw.json",
@@ -50,19 +70,24 @@
       "sha256": "80006b6a200405a827464e33944e2f7d5961789f9b03c10620aa92637f220a93"
     },
     {
+      "file": "postgres-recovery-drill.json",
+      "bytes": 4151,
+      "sha256": "a9cdfb6c004bd47e73615386b806b48e0445e7fa03916b983b2b486f049d36c7"
+    },
+    {
       "file": "quality-gate.log",
-      "bytes": 15898,
-      "sha256": "bddae4ebdd3fd76a2318084beac154baf1215da31577581d968412ae6fe797cd"
+      "bytes": 16711,
+      "sha256": "d7428e249842b7410997430cc7da5c2f6e75ce18a3be0c87567c7fe2ac163a10"
     },
     {
       "file": "quality-summary.json",
-      "bytes": 1145,
-      "sha256": "1d9331e1527bdd2e1d1a5b543e17ca670bd1d36727cf99410f65dbfc15b6b2ab"
+      "bytes": 1167,
+      "sha256": "aceefd0535487f375f3f9c7723cf8de3732026041cd2add7939cb09b553fb3db"
     },
     {
       "file": "secret-scan.log",
-      "bytes": 172,
-      "sha256": "4e1b733d80b6387128b9d45cba80937cd731f4bad165492766f06eca7bf36622"
+      "bytes": 70,
+      "sha256": "a4adffee96dc3fc13fdb2cfe54d2211d71121e98507c399efab0567f26c16aa5"
     },
     {
       "file": "technical-gate-validation.log",

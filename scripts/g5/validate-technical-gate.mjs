@@ -10,6 +10,8 @@ const performance = await readJson('performance-raw.json')
 const fault = await readJson('fault-drill-raw.json')
 const quality = await readJson('quality-summary.json')
 const environment = await readJson('environment-readiness.json')
+const dockerCleanDeploy = await readJson('docker-clean-deploy.json')
+const postgresRecovery = await readJson('postgres-recovery-drill.json')
 const manifest = await readJson('manifest.json')
 const gitRefArgument = process.argv.find((argument) => argument.startsWith('--git-ref='))
 const gitRef = gitRefArgument?.slice('--git-ref='.length) || null
@@ -43,7 +45,8 @@ for (const entry of manifest.files) {
     gitBlobMatches += 1
   }
 }
-assert.equal(manifestResults.length, 13)
+assert.equal(manifestResults.length, manifest.files.length)
+assert.ok(manifestResults.length >= 18)
 
 function parseCsvLine(line) {
   const fields = []
@@ -123,10 +126,18 @@ assert.equal(quality.openapi.errors, 0)
 assert.equal(quality.dependencyAudit.highOrCritical, 0)
 assert.equal(quality.secretScan.status, 'PASS')
 
-assert.equal(environment.docker.status, 'BLOCKED')
-assert.equal(environment.postgresql.recoveryDrill, 'BLOCKED')
+assert.equal(environment.docker.status, 'PASS')
+assert.equal(environment.docker.cleanDeploy, 'PASS')
+assert.equal(environment.postgresql.recoveryDrill, 'PASS')
 assert.equal(environment.independentDeployer.status, 'BLOCKED')
 assert.equal(environment.ownerExternalSystems.status, 'BLOCKED')
+assert.equal(dockerCleanDeploy.status, 'PASS')
+assert.equal(dockerCleanDeploy.withinTwoHours, true)
+assert.equal(dockerCleanDeploy.healthStatus, 200)
+assert.equal(dockerCleanDeploy.readyStatus, 200)
+assert.equal(dockerCleanDeploy.readyAfterRestartStatus, 200)
+assert.equal(postgresRecovery.status, 'PASS')
+for (const value of Object.values(postgresRecovery.assertions)) assert.equal(value, true)
 
 console.info(JSON.stringify({
   taskId: 'G5-02',
@@ -139,5 +150,5 @@ console.info(JSON.stringify({
   workspaceRawLineEndingDifferences,
   gitRef,
   gitBlobManifest: gitRef ? gitBlobMatches : null,
-  blockers: ['docker-clean-deploy', 'postgresql-recovery', 'independent-deployer', 'owner-external-systems'],
+  blockers: ['independent-deployer', 'owner-external-systems'],
 }, null, 2))

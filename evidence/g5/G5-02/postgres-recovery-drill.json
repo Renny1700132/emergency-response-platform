@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G5-02",
+  "generatedAt": "2026-10-09T14:33:43.873Z",
+  "evidenceKind": "LOCAL_ISOLATED_POSTGRESQL_RECOVERY_DRILL",
+  "authorizationBoundary": "Disposable cluster created under the current task; no shared service credentials or data were used.",
+  "environment": {
+    "platform": "win32",
+    "node": "v24.14.0",
+    "postgres": "initdb (PostgreSQL) 15.14"
+  },
+  "sequence": [
+    "initdb",
+    "migration-up-down-up",
+    "seed-sentinel",
+    "pg-dump",
+    "service-stop-start",
+    "drop-create-database",
+    "pg-restore",
+    "consistency-check"
+  ],
+  "migration": {
+    "status": "PASS",
+    "sequence": "up-down-up",
+    "expectedTables": 12
+  },
+  "serviceRestart": {
+    "sentinelBefore": 1,
+    "sentinelAfterRestart": 1
+  },
+  "backupRestore": {
+    "format": "custom",
+    "dumpBytes": 48434,
+    "dumpSha256": "f1f1f4734934287b70a741c315f51e33c11c989266f59fecc0e8152c60a79b16",
+    "tableCountBefore": 37,
+    "tableCountAfter": 37,
+    "sentinelBefore": 1,
+    "sentinelAfterRestore": 1
+  },
+  "assertions": {
+    "migrationUpDownUpPassed": true,
+    "serviceRestartPreservedData": true,
+    "backupRestorePreservedSchema": true,
+    "backupRestorePreservedSentinel": true
+  },
+  "status": "PASS",
+  "boundaries": [
+    "This proves repeatable migration, restart and backup/restore on an isolated local PostgreSQL 15 cluster.",
+    "It does not prove Docker/Compose clean deployment, owner production database recovery, or independent non-contractor deployment."
+  ],
+  "events": [
+    {
+      "step": "initdb",
+      "startedAt": "2026-10-09T14:33:34.080Z",
+      "finishedAt": "2026-10-09T14:33:34.118Z",
+      "exitCode": 0
+    },
+    {
+      "step": "initdb",
+      "startedAt": "2026-10-09T14:33:34.118Z",
+      "finishedAt": "2026-10-09T14:33:38.723Z",
+      "exitCode": 0
+    },
+    {
+      "step": "pg_ctl",
+      "startedAt": "2026-10-09T14:33:38.723Z",
+      "finishedAt": "2026-10-09T14:33:39.014Z",
+      "exitCode": 0
+    },
+    {
+      "step": "createdb",
+      "startedAt": "2026-10-09T14:33:39.014Z",
+      "finishedAt": "2026-10-09T14:33:39.388Z",
+      "exitCode": 0
+    },
+    {
+      "step": "backend/scripts/verify-migration.mjs",
+      "startedAt": "2026-10-09T14:33:39.389Z",
+      "finishedAt": "2026-10-09T14:33:41.101Z",
+      "exitCode": 0
+    },
+    {
+      "step": "psql",
+      "startedAt": "2026-10-09T14:33:41.101Z",
+      "finishedAt": "2026-10-09T14:33:41.168Z",
+      "exitCode": 0
+    },
+    {
+      "step": "psql",
+      "startedAt": "2026-10-09T14:33:41.168Z",
+      "finishedAt": "2026-10-09T14:33:41.236Z",
+      "exitCode": 0
+    },
+    {
+      "step": "psql",
+      "startedAt": "2026-10-09T14:33:41.236Z",
+      "finishedAt": "2026-10-09T14:33:41.300Z",
+      "exitCode": 0
+    },
+    {
+      "step": "pg_dump",
+      "startedAt": "2026-10-09T14:33:41.300Z",
+      "finishedAt": "2026-10-09T14:33:41.488Z",
+      "exitCode": 0
+    },
+    {
+      "step": "pg_ctl",
+      "startedAt": "2026-10-09T14:33:41.489Z",
+      "finishedAt": "2026-10-09T14:33:42.497Z",
+      "exitCode": 0
+    },
+    {
+      "step": "pg_ctl",
+      "startedAt": "2026-10-09T14:33:42.497Z",
+      "finishedAt": "2026-10-09T14:33:42.792Z",
+      "exitCode": 0
+    },
+    {
+      "step": "psql",
+      "startedAt": "2026-10-09T14:33:42.792Z",
+      "finishedAt": "2026-10-09T14:33:42.871Z",
+      "exitCode": 0
+    },
+    {
+      "step": "dropdb",
+      "startedAt": "2026-10-09T14:33:42.871Z",
+      "finishedAt": "2026-10-09T14:33:43.179Z",
+      "exitCode": 0
+    },
+    {
+      "step": "createdb",
+      "startedAt": "2026-10-09T14:33:43.179Z",
+      "finishedAt": "2026-10-09T14:33:43.398Z",
+      "exitCode": 0
+    },
+    {
+      "step": "pg_restore",
+      "startedAt": "2026-10-09T14:33:43.398Z",
+      "finishedAt": "2026-10-09T14:33:43.742Z",
+      "exitCode": 0
+    },
+    {
+      "step": "psql",
+      "startedAt": "2026-10-09T14:33:43.742Z",
+      "finishedAt": "2026-10-09T14:33:43.806Z",
+      "exitCode": 0
+    },
+    {
+      "step": "psql",
+      "startedAt": "2026-10-09T14:33:43.806Z",
+      "finishedAt": "2026-10-09T14:33:43.873Z",
+      "exitCode": 0
+    }
+  ]
+}

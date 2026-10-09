@@ -1,4 +1,6 @@
 import { randomUUID } from 'node:crypto';
+import { resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { createDatabase } from './database.mjs';
 import { loadConfig } from './config.mjs';
 import { createServer } from './server.mjs';
@@ -46,7 +48,11 @@ export function startApplication({ environment = process.env, logger = console }
   return application;
 }
 
-if (process.argv[1] && new URL(`file:///${process.argv[1].replace(/\\/g, '/')}`).href === import.meta.url) {
+export function isMainModule(metaUrl, { argv1 = process.argv[1], cwd = process.cwd() } = {}) {
+  return Boolean(argv1) && pathToFileURL(resolve(cwd, argv1)).href === metaUrl;
+}
+
+if (isMainModule(import.meta.url)) {
   const application = startApplication();
   const shutdown = (signal) => {
     console.info(JSON.stringify({ event: 'server.stopping', signal }));

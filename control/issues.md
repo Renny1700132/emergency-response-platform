@@ -1668,6 +1668,15 @@
 - 问题：右侧说明、事件卡状态徽标、外层手机壳明显被可见区域切断，不能称无裁切/当前版本渲染PASS。现有图为演示模式，不能据此宣称所有正式宿主已失效，但须核实。
 - 修正/关闭：C登记复现并区分布局问题/截图采集问题，必要时修复已有能力并390×844及最小矩阵复测；修正兼容结论/缺陷统计，不裁图或缩放掩盖；A依据实际步骤/截图/复测关闭。
 
+### C整改回填（2026-10-09）｜ISSUE-G5-01-003 / 004 / 005
+
+- 003：`run-functional-gate.mjs` 已取消 `localSuitesPass` 批量派生 AC 结论，改为逐 AC 白名单；每个 PASS 带测试用例、具体断言、实际值、层级和证据路径。重跑结果为 24 PASS / 47 NOT_RUN / 46 BLOCKED，★FR 为 1 PASS / 33 BLOCKED；G5-02 局部性能值只作为部分证据，未提升目标环境 AC。
+- 004：前端 45 项已改称“函数/契约/组件/Mock + 单条 HTTP E2E”；单条 E2E 明示内存持久化和注入端口，PostgreSQL 2/2 单列，不再宣称全量正式 Web/H5→API→数据库系统测试。
+- 005：确认旧截图为真实一般缺陷 `DEF-G5-01-001`；已修复 H5 外壳/网格/卡片收缩与换行，新增回归测试。Edge 154 以 DevTools 精确设置 CSS 视口 390×844，返回 `innerWidth=390`、`scrollWidth=390`；presentation 事件卡和正式未登录边界截图均留存，未裁图或缩放掩盖。
+- 失败留痕：布局测试首轮 1 FAIL / 44 PASS；第一轮修复图仍裁切；命令行截图的 CSS 视口为 500px；DevTools 采集首轮临时锁清理 `EBUSY`。上述均已修正并复跑成功，详见执行摘要和缺陷看板。
+- 当前状态：003/004/005 均为 `PENDING_A_REREVIEW`，不得由 C 自行标 CLOSED；001 backlog、002 兼容/KN-039及其余 AC 缺证继续阻断 G5-01 DONE。
+- 证据：`evidence/g5/G5-01/functional-gate-raw.json`、`ac-117-matrix.md`、`execution-summary.md`、`compatibility-matrix.md`、`defect-register.md`、`edge-154-h5-events-fixed-390x844.png`、`edge-154-formal-auth-required-390x844.png`、`docs/work/C_REQ/rtm_g5_increment.md`。
+
 ## ISSUE-G5-02-001｜目标环境与真实外部系统不足
 
 - 日期/提出：2026-10-09，B（G5-02 主责）；Review：C。

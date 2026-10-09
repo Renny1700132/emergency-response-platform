@@ -1,37 +1,40 @@
-# G5-01 三级测试与功能正确性执行摘要
+# G5-01 三级测试与功能正确性执行摘要（A Review 整改版）
 
-- Task：G5-01；主责：C（任俊强）；Review：A（待执行）。
-- 执行基线：`302502c8bbe19091b6860810e98bfc837838b8d8`。
-- 环境：Windows / Node `v24.21.0` / npm `11.19.0` / PostgreSQL 18 本机隔离库 `emergency_g4_test`。
+- Task：G5-01；主责：C（任俊强）；指定 Review：A。
+- 执行基线：`b9c35ac80f9fa55ec9209d24d8e6fc9ddd76fc2f` + 本次受控 G5-01 工作树修改。
 - 原始数据：`functional-gate-raw.json`；逐 AC 明细：`ac-117-matrix.md`。
+- 历史声明：提交 `9548466b10e0ddd48d0e3c87ea28e43321e8700d` 中的“87/117 AC PASS、28/34★FR PASS”已被 A Review 否决，不再作为当前事实；Git 历史原样保留。
 
-## 最终执行结果
+## 本轮实际套件结果与层级
 
-| 层级/门禁 | 结果 | 实际数据 |
+| 层级/门禁 | 结果 | 实际数据与边界 |
 |---|---|---|
-| 单元与工程护栏 | PASS | 13/13 |
-| 后端模块/适配器集成 | PASS | 18/18 |
-| Web/H5 系统与真实前后端 HTTP E2E | PASS | 10 files / 44 tests |
-| PostgreSQL 集成 | PASS | 2/2；跨服务恢复、事务原子回滚 |
+| 领域单元与工程护栏 | PASS | 13/13；不代表业务 AC 系统验收 |
+| 后端模块/HTTP 集成 | PASS | 18/18；内存持久化和模拟外部端口边界逐项保留 |
+| 前端函数/契约/组件 + 单条 HTTP E2E | PASS | 11 files / 45 tests；仅 `real-stack-e2e.test.ts` 为挂载页面→正式客户端→真实 HTTP 服务，且使用内存持久化与注入端口 |
+| PostgreSQL 后端集成 | PASS | 2/2；不是同一条 Web/H5→API→PostgreSQL 系统流程 |
 | 前端覆盖率 | PASS | statements 95.57%、branches 77.73%、functions 97.36%、lines 100% |
 | 后端覆盖率 | PASS | statements/lines 87.69%、branches 77.74%、functions 85.24% |
 | 类型检查/OpenAPI 类型生成 | PASS | exit 0 |
-| 本地浏览器兼容走查 | PASS（受限） | Chromium 会话完成 Web/H5 上报及 H5→Web 状态同步；Edge 154 完成桌面/H5 实际渲染；不替代缺失版本与移动宿主矩阵 |
+| Edge 窄屏布局复测 | PASS（布局范围） | Edge 154；CSS 视口 390×844；`innerWidth=390`、`scrollWidth=390`；演示事件卡和正式未登录边界分别留图 |
 
-## 117 AC 与★结果
+前端 45 项不再统称“Web/H5 系统测试”。组件 Mock、契约、演示状态、模块集成、PostgreSQL 集成和单条 HTTP E2E 均按真实层级陈述；当前没有完整正式 Web/H5→API→PostgreSQL 的全模块系统包。
 
-- 全量分母：39 FR / 117 AC / 34 个★FR。
-- 已实现范围：G2-FR-001—029，共 87 AC，本轮 87 PASS / 0 FAIL / 0 BLOCKED。
-- 非 MVP backlog：G2-FR-030—039，共 30 AC，0 PASS / 0 FAIL / 30 BLOCKED；本任务不得新增实现。
-- ★FR：28 PASS / 6 BLOCKED；阻断项为 G2-FR-031、034、035、036、037、039。
-- G2-FR-026—029 的适配器结果为本地 `SIMULATED_EVIDENCE`，不冒充甲方真实接口或目标环境联调。
+## 117 AC 与★重新判定
 
-## 执行异常与复测
+- 全量分母保持 39 FR / 117 AC / 34 个★FR。
+- 当前逐 AC 结果：24 PASS / 0 FAIL / 47 NOT_RUN / 46 BLOCKED。
+- 其中 FR-001—029：24 PASS / 47 NOT_RUN / 16 BLOCKED；FR-030—039：30 BLOCKED（未实现且 G5 禁止新增功能）。
+- ★FR：仅 G2-FR-013 的 3 条 AC 均有逐项 PASS，故 1/34★FR PASS、33/34 BLOCKED；不再把局部 PASS 汇总成整个 FR 通过。
+- G5-02 已提供的本地性能值仅作为部分证据挂接：例如扫码 API P99 3.697ms、定位处理 P99 0.181ms、模拟消息 20/20；真实扫码/H5 宿主、连续定位源、正常验收消息通道等仍缺，相关 AC 保持 BLOCKED。
 
-1. 首轮在沙箱内执行时，本地回环 HTTP 被 `EACCES` 拒绝；这是执行环境限制。改在获准的本机环境原样重跑后，相关单元/集成/系统测试全部通过。
-2. PostgreSQL 首轮 0/2，原因为 `127.0.0.1:5432 ECONNREFUSED`，本机 PostgreSQL 18 手动服务处于停止状态。Windows 服务启动权限不足，随后使用既有 `pg_ctl` 和原数据目录启动，不新建数据库；完整重跑后 2/2 PASS。
-3. 上述失败均保留于本记录；最终数字只采用同一基线上的完整复跑结果。
+## 异常、缺陷与复测
+
+1. 历史首轮沙箱回环 `EACCES`、PostgreSQL 停止导致的 0/2，及后续 2/2 PASS 均保留在既有记录。
+2. 本次新增 H5 布局回归测试首次因测试路径 URL 方案错误出现 1 FAIL / 44 PASS；修正测试读取路径后完整复跑 45/45 PASS，失败未隐去。
+3. 第一轮 Edge 修复截图仍裁切。复核发现 Windows headless 命令行生成 390px 图片时 CSS 视口被强制为 500px；未裁图或缩放掩盖，改用 Edge DevTools 显式设定 390×844。最终 `scrollWidth=390`，事件卡、状态徽标、说明和手机壳均在视口内。
+4. 视口采集脚本首次成功写图后因临时配置锁文件产生 `EBUSY`；增加浏览器关闭等待与受控临时目录重试后复跑成功退出。
 
 ## 结论
 
-已完成可执行范围的三级测试、覆盖率、数据库集成、错误语义走查和缺陷分级。已执行范围未发现产品 FAIL 或致命/严重产品缺陷，但全量门禁仍为 `BLOCKED`：10 个 backlog FR/30 AC 无实现，且 Chrome/Edge 双版本、Android/iOS H5 宿主矩阵缺少实际资源。因此 G5-01 不得置 `DONE`，也不允许用 87/87 代替 117/117；等待 A Review，并将阻断项带入 G5-03 准出判断。
+A 的 003/004/005 三项意见已完成主责整改并提交复验材料：逐 AC 改为白名单断言映射，测试层级与模拟边界已纠正，H5 裁切缺陷已修复并复测。G5-01 仍为 `BLOCKED / PENDING_A_REREVIEW`：多数 AC 尚无完整执行证据，FR-030—039 未实现，兼容版本/Android/iOS/KN-039 等资源门禁仍未满足。不得置 `DONE`，不得进入 G6。

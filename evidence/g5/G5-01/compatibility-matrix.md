@@ -1,21 +1,23 @@
-# G5-01 兼容性最小矩阵
+# G5-01 兼容性最小矩阵（A Review 整改版）
 
 | 对象 | 目标范围 | 本轮环境/版本 | 场景 | 结果 | 边界 |
 |---|---|---|---|---|---|
-| Chromium 浏览器会话 | 辅助走查 | Codex in-app Chromium，版本未暴露 | Web 事件上报、H5 事件上报、H5→Web 状态同步、核心导航 | PASS（参考） | 真实浏览器交互，但不是冻结要求指定的 Chrome/Edge 版本证据 |
-| Microsoft Edge | 最新 2 个稳定版本 | `154.0.4258.62`，仅 1 个版本 | Web 1440×1000、H5 390×844 渲染 | PASS（当前版本）/ BLOCKED（第二版本） | 两张实际 Edge 截图已人工查看，未见明显裁切、重叠或导航缺失；仍缺第二稳定版本及完整交互矩阵 |
-| Google Chrome | 最新 2 个稳定版本 | 未检测到安装 | Web/H5 | BLOCKED | 缺少两个实际稳定版本 |
-| Android H5 宿主 | 甲方确认机型、Android/WebView；建议下限 Android 10 | 无设备、宿主 APP、版本矩阵 | 核心流程、上传、扫码、定位、返回键/生命周期 | BLOCKED | jsdom 与桌面响应式页面不能替代真实宿主 |
-| iOS H5 宿主 | 甲方确认终端、iOS/WKWebView；建议下限 iOS 15 | 无设备、宿主 APP、版本矩阵 | 核心流程、上传、扫码、定位、返回键/生命周期 | BLOCKED | 无法在 Windows 本机代造 iOS 证据 |
+| Microsoft Edge | 最新 2 个稳定版本 | `154.0.4258.62`，仅 1 个版本 | presentation 事件卡，390×844 CSS 视口 | PASS（单版本布局复测） | `innerWidth=390`、`scrollWidth=390`；不替代第二稳定版本和完整交互 |
+| Microsoft Edge | 正式模式边界 | `154.0.4258.62` | 未注入宿主令牌访问 `/h5/events`，390×844 | PASS（访问边界渲染） | 正确进入 AUTH REQUIRED；不是正式业务页流程，因为无合法宿主令牌 |
+| Chromium 浏览器会话 | 辅助走查 | Codex in-app Chromium，版本未暴露 | 历史 Web/H5 上报与会话同步 | PASS（参考） | 演示内存状态，不是正式数据库或指定 Chrome 版本证据 |
+| Google Chrome | 最新 2 个稳定版本 | 未检测到安装 | Web/H5 | BLOCKED | 缺两个实际稳定版本 |
+| Android H5 宿主 | 甲方确认机型、Android/WebView | 无设备、宿主 APP、版本矩阵 | 核心流程、上传、扫码、定位、返回键/生命周期 | BLOCKED | jsdom 与桌面响应式页面不能替代真实宿主 |
+| iOS H5 宿主 | 甲方确认终端、iOS/WKWebView | 无设备、宿主 APP、版本矩阵 | 核心流程、上传、扫码、定位、返回键/生命周期 | BLOCKED | Windows 本机不能代造 iOS 证据 |
 
-## 本轮浏览器交互记录
+## ISSUE-G5-01-005 复现与修复
 
-1. `/web/incidents` 打开“上报事件”，填写合成数据并提交，页面提示“事件已提交，状态以服务端返回为准”，新事件进入 `PENDING_VERIFY`。
-2. `/h5/events` 完成同类上报，页面显示“实时互通 1”。
-3. 通过页面内 H5→Web 链接返回总览，新事件成为活动事件，进行中事件由 2 更新为 3，待核实由 1 更新为 2，证明同一会话跨端状态同步。
-4. 本轮合成记录只存在于演示会话内存，未写入正式数据库，不作为正式功能数据或甲方验收证据。
-5. Edge 154 实际渲染证据：`edge-154-web-incidents.png`、`edge-154-h5-events.png`；人工查看桌面事件卡片和移动底部导航，未见明显布局阻断。
+1. A 指出的旧图 `edge-154-h5-events.png` 确实存在手机壳、状态徽标及文本右侧裁切；旧结论“未见明显裁切”作废，但旧图和 Git 历史保留。
+2. 根因是 `.record-grid` 的 `minmax(300px,1fr)` 与窄内容区叠加，以及手机壳在网格中的固有宽度没有可靠随视口收缩。
+3. 修复为：手机壳显式按 `100vw - 48px` 收缩并限制最大 430px；主内容 `min-width:0` 且禁横向溢出；记录网格使用 `minmax(0,1fr)`；卡片头允许换行；长文本和状态标识允许断行。
+4. 自动回归：`frontend/tests/h5-responsive-layout.test.ts` PASS。
+5. 实际复测：`edge-154-h5-events-fixed-390x844.png`；Edge DevTools 返回 `innerWidth=390`、`innerHeight=844`、`scrollWidth=390`，人工查看未见旧缺陷中的右侧裁切。
+6. 正式边界复测：`edge-154-formal-auth-required-390x844.png`；未登录时正确展示统一门户/APP 进入提示，未将演示数据注入正式模式。
 
 ## 结论
 
-自动化系统测试、Chromium 交互走查及 Edge 154 桌面/H5 渲染通过，但冻结要求的最小兼容矩阵未满足，整体兼容性结论为 `BLOCKED`。解除条件：补齐 Chrome 最新两个稳定版本、Edge 第二稳定版本，以及甲方确认的 Android/iOS H5 宿主与设备矩阵，按核心流程、上传、扫码、定位、返回键/生命周期实测并留存版本和结果。
+当前 Edge 154 的 390×844 布局缺陷已修复并复测；兼容性总体仍为 `BLOCKED`，因为 Chrome/Edge 双版本和 Android/iOS 真实宿主矩阵未完成。

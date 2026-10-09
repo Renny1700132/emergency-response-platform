@@ -1,27 +1,28 @@
 {
   "taskId": "G5-02",
-  "generatedAt": "2026-10-09T08:21:00+08:00",
+  "generatedAt": "2026-10-09T16:24:00+08:00",
   "baseline": "e6e12b59fc5749cdf0475ed9631bac7d21d4bb1a",
+  "normalization": "All listed evidence files are tracked as text eol=lf; hashes are over repository/checkout LF bytes.",
   "files": [
     {
       "file": "dependency-audit-frontend.json",
-      "bytes": 386,
-      "sha256": "afaa53175a23e2863188fb6b14ca25f2092ca0adde3d342532c3038451c42053"
+      "bytes": 364,
+      "sha256": "0027e56970227d57a499b26588d5d0afaabed7aee251f0c1aa1d2ea57affcf8c"
     },
     {
       "file": "dependency-audit-root.json",
-      "bytes": 383,
-      "sha256": "b9c1bb602a124bbc8d65f112786f6fada91ac85fb8023087e3597104434d087a"
+      "bytes": 361,
+      "sha256": "292bceb36ebad8b267c5a8b2abf7443db9f369504361cfa5a75b73a73c60c38e"
     },
     {
       "file": "docker-probe.log",
-      "bytes": 97,
-      "sha256": "a9e6bd08cf0775688acbe29cf6dc41fc99b6126063d56eee4ecb325d3f44c857"
+      "bytes": 95,
+      "sha256": "d8b5579cfb0e35a9eecdf49d51c00fd89f54be805babe9fb638c79f53411fda3"
     },
     {
       "file": "environment-readiness.json",
-      "bytes": 905,
-      "sha256": "88c6b9099b42c0d0128ddbf6759df246e4f819d73901276270987f56c0a984bd"
+      "bytes": 881,
+      "sha256": "b2a04ce2d4de4cf39d0d9a8994fbe0ab91ac10b3396697bff2698af2be21a529"
     },
     {
       "file": "fault-drill-raw.json",
@@ -30,8 +31,8 @@
     },
     {
       "file": "openapi-lint.log",
-      "bytes": 10340,
-      "sha256": "66f22345aece45b258ca88a25084710d213da46593f2258c9dc252f76fe7b7c8"
+      "bytes": 9969,
+      "sha256": "e0970b9e584f6c98f6f82f247212320f9ea4fd441ac70465d6a5eae52cdbc1c5"
     },
     {
       "file": "performance-raw.json",
@@ -45,8 +46,8 @@
     },
     {
       "file": "postgres-migration-attempt.log",
-      "bytes": 782,
-      "sha256": "949f284f311f35e7228382e622930de4b39466dc17492bcd7da73ee4cd4214ff"
+      "bytes": 771,
+      "sha256": "80006b6a200405a827464e33944e2f7d5961789f9b03c10620aa92637f220a93"
     },
     {
       "file": "quality-gate.log",
@@ -60,13 +61,13 @@
     },
     {
       "file": "secret-scan.log",
-      "bytes": 181,
-      "sha256": "2298cbfac47105345aacaa789025322f63380889bdbe26e341d1ba3b0efa41b5"
+      "bytes": 172,
+      "sha256": "4e1b733d80b6387128b9d45cba80937cd731f4bad165492766f06eca7bf36622"
     },
     {
       "file": "technical-gate-validation.log",
-      "bytes": 233,
-      "sha256": "bd6349d1a34362f3fb6312e2b380a76bbb136b6e1ee62bdc2b20c94f51979a47"
+      "bytes": 285,
+      "sha256": "da4d8f3141a2d9bca80be5fc1baa2c4f5aa6effba47eef72a2fe1c851c13adf4"
     }
   ]
 }

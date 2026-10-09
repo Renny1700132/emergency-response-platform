@@ -1708,21 +1708,34 @@
 
 - 日期/提出：2026-10-09，C（G5-02 Review）；主责整改：B；复核：C。
 - 严重度：`MAJOR / BLOCKING_TO_G5-02_EVIDENCE_ACCEPTANCE`。
-- 状态：`OPEN / CHANGES_REQUIRED`。
+- 状态：`OPEN / B_REMEDIATED / PENDING_C_REREVIEW`。
 - 位置：`evidence/g5/G5-02/manifest.json`、`scripts/g5/validate-technical-gate.mjs`。
 - 问题：manifest 以提交前混合换行字节生成。对 `e012137` 仓库 blob 校验时 8/13 条 byte/hash 不匹配；当前 Windows checkout 为 6/13 条不匹配，无法 13/13 闭环。现有校验脚本不校验 manifest，也不从原始样本复算分位数/核对 CSV，因此完整性损坏时仍会输出 PASS_WITH_EXTERNAL_BLOCKERS。
 - 影响：原始证据包的防篡改清单不可复核，技术自检未覆盖其声明的关键审计链。
 - 关闭条件：B 统一证据换行或 Git 属性，从最终入库字节重建 manifest；独立校验 13/13 通过；校验脚本验证 manifest、JSON↔CSV 样本数以及从原始样本复算的 P50/P95/P99；C 复验关闭。
 
+#### B 整改响应（2026-10-09）
+
+- `.gitattributes` 已将 `evidence/g5/G5-02/*` 固定为 `text eol=lf`；13 个清单对象统一转为 LF 后从最终工作区字节重建 manifest，`git ls-files --eol` 显示全部 `i/lf w/lf attr/text eol=lf`。
+- 校验器现在逐文件核对 manifest 的字节数和 SHA-256，并校验证据目录除 manifest 外的文件集合恰为清单集合；13/13 通过。
+- 校验器逐行解析 CSV，与 JSON 的 metric/index/method/path/status/duration/traceId 对照，共 1160/1160；按 nearest-rank 从原始样本独立复算 min/P50/P95/P99/max、成功数、失败数和成功率，全部一致。
+- 状态只改为待 C 复验，不由 B 自行关闭。
+
 ## ISSUE-G5-02-004｜PE-04 技术记录与原始数据不一致
 
 - 日期/提出：2026-10-09，C（G5-02 Review）；主责整改：B；复核：C。
 - 严重度：`MINOR / BLOCKING_TO_G5-02_REPORT_ACCEPTANCE`。
-- 状态：`OPEN / CHANGES_REQUIRED`。
+- 状态：`OPEN / B_REMEDIATED / PENDING_C_REREVIEW`。
 - 位置：`docs/work/B_TECH/g5_technical_validation.md:28`、`evidence/g5/G5-02/performance-raw.json` 的 `messageBatch.durationMs`。
 - 问题：技术记录写 PE-04 模拟 20 路耗时 `0.037ms`，归档原始 JSON 为 `0.065ms`，轮次未区分且没有另一份原始数据支撑。
 - 影响：虽然不改变“SIMULATED_EVIDENCE / 真实通道仍 BLOCKED”的结论，但报告输入不能精确回指原始数据。
 - 关闭条件：以归档原始值修正记录，或另存真实对应轮次并明确口径；同步重建 manifest，B 自检后由 C 复验。
+
+#### B 整改响应（2026-10-09）
+
+- 技术记录已明确为“本次归档轮次”，PE-04 模拟 20 路耗时改为 `0.065ms`，与 `performance-raw.json.messageBatch.durationMs` 一致。
+- 校验器新增报告数值回指断言，并在 manifest 重建后整体通过。
+- SIMULATED_EVIDENCE 边界与 ISSUE-G5-02-001/002 的资源阻断不变；状态只改为待 C 复验。
 
 ### A复审结论追加（2026-10-09）｜ISSUE-G5-01-003/004/005
 

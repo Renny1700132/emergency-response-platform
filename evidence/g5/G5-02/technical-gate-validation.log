@@ -2,6 +2,9 @@
   "taskId": "G5-02",
   "status": "PASS_WITH_EXTERNAL_BLOCKERS",
   "checkedMetrics": 8,
+  "rawSamples": 1160,
+  "csvRows": 1160,
+  "manifestFiles": 13,
   "blockers": [
     "docker-clean-deploy",
     "postgresql-recovery",

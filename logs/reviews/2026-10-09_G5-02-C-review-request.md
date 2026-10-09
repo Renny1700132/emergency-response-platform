@@ -13,3 +13,10 @@
 4. coverage≥70%、OpenAPI 0 schema error、高危依赖 0、secret scan PASS 是否可复核；
 5. Docker、数据库恢复、非乙方独立部署和真实外部环境是否正确保持 BLOCKED；
 6. 在阻断解除前，G5-02 不得改为 DONE。
+
+## B 针对首轮 C Review 的整改交接（2026-10-09）
+
+- ISSUE-G5-02-003：证据目录固定 `text eol=lf`，13 个对象从最终 LF 字节重建 manifest；校验器已实际验证文件集合、13/13 bytes/SHA-256、JSON↔CSV 1160 行及原始分位数复算。
+- ISSUE-G5-02-004：PE-04 记录统一为归档原始值 `0.065ms`，校验器增加报告回指断言。
+- B 自检：`node scripts/g5/validate-technical-gate.mjs` 输出 `PASS_WITH_EXTERNAL_BLOCKERS`、`rawSamples=1160`、`csvRows=1160`、`manifestFiles=13`。
+- 请求 C 仅复验 003/004 并决定是否关闭；001/002 保持 OPEN，G5-02 继续 BLOCKED，不请求 DONE。

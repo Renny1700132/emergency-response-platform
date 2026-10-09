@@ -1,2 +1,5 @@
 # Prompt logs preserve user-authored trailing spaces verbatim as audit evidence.
 logs/prompts/*.md whitespace=-trailing-space
+
+# G5-02 evidence hashes are calculated over repository bytes; keep checkout and blob bytes LF-stable.
+evidence/g5/G5-02/* text eol=lf

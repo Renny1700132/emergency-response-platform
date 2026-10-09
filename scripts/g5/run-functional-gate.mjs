@@ -27,9 +27,9 @@ const execute = (id, command, args, options = {}) => {
   }
 }
 
-const npm = (id, args) => process.platform === 'win32'
-  ? execute(id, process.env.ComSpec ?? 'C:\\Windows\\System32\\cmd.exe', ['/d', '/s', '/c', ['npm', ...args].join(' ')], { displayCommand: ['npm', ...args].join(' ') })
-  : execute(id, 'npm', args)
+const npm = (id, args, options = {}) => process.platform === 'win32'
+  ? execute(id, process.env.ComSpec ?? 'C:\\Windows\\System32\\cmd.exe', ['/d', '/s', '/c', ['npm', ...args].join(' ')], { ...options, displayCommand: options.displayCommand ?? ['npm', ...args].join(' ') })
+  : execute(id, 'npm', args, options)
 
 const suites = [
   execute('unit-domain-and-guards', process.execPath, ['--test',
@@ -84,6 +84,23 @@ if (!databaseUrl) {
 }
 suites.push(databaseSuite)
 
+const systemPostgresqlSuite = databaseSuite.status === 'PASS'
+  ? npm('system-web-h5-http-postgresql', ['run', 'test', '--prefix', 'frontend', '--', '--run', 'tests/postgresql-system-e2e.test.ts', '--reporter=verbose'], {
+    env: { G5_SYSTEM_POSTGRES: 'true', G4_DATABASE_URL: databaseUrl },
+    displayCommand: 'npm run test --prefix frontend -- --run tests/postgresql-system-e2e.test.ts --reporter=verbose (protected local test database)',
+  })
+  : {
+    id: 'system-web-h5-http-postgresql',
+    command: 'npm run test --prefix frontend -- --run tests/postgresql-system-e2e.test.ts (protected local test database)',
+    startedAt: new Date().toISOString(),
+    finishedAt: new Date().toISOString(),
+    exitCode: null,
+    status: 'BLOCKED',
+    stdout: '',
+    stderr: 'The isolated PostgreSQL integration suite must pass before the Web/H5 system package can run.',
+  }
+suites.push(systemPostgresqlSuite)
+
 const browserCandidates = [
   { family: 'Chrome', path: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' },
   { family: 'Chrome', path: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe' },
@@ -114,31 +131,19 @@ if (acEntries.length !== 117) throw new Error(`Expected 117 AC entries, found ${
 
 // A passing suite never promotes unrelated ACs. PASS is an AC-level allow-list
 // with a named test, a concrete assertion and an observed value.
+const systemEvidence = ['frontend/tests/postgresql-system-e2e.test.ts', 'evidence/g5/G5-01/functional-gate-raw.json']
 const verifiedAc = {
-  'AC-G2-FR-002-01': { suite: 'integration-backend', layer: 'MODULE_INTEGRATION', testCase: 'G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths', assertion: 'publish returns PUBLISHED and an unknown dependency is rejected', actualValue: 'status=PUBLISHED; invalid dependency rejected', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
-  'AC-G2-FR-003-02': { suite: 'unit-domain-and-guards', layer: 'DOMAIN_UNIT_WITH_SIMULATED_MESSAGE', testCase: 'event workflow enforces verify, idempotent start, task feedback and closure rules', assertion: 'verified incident start creates a task and emits RESPONSE_STARTED once', actualValue: 'tasks.length=1; RESPONSE_STARTED count=1', evidence: ['tests/backend/event-workflow.test.mjs'] },
-  'AC-G2-FR-005-03': { suite: 'integration-backend', layer: 'MODULE_INTEGRATION', testCase: 'G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths', assertion: 'stale position is labelled and excluded from dispatch', actualValue: 'freshness=STALE; usableForDispatch=false', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
-  'AC-G2-FR-009-02': { suite: 'integration-backend', layer: 'MODULE_INTEGRATION', testCase: 'G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths', assertion: 'counted quantity 8 is compared with ledger quantity 10', actualValue: 'difference=-2', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
-  'AC-G2-FR-013-01': { suite: 'frontend-mixed-unit-component-contract-and-one-http-e2e', layer: 'SYSTEM_HTTP_WITH_IN_MEMORY_PERSISTENCE', testCase: 'runs the core incident closure through the formal client, Bearer identity, HTTP server and mounted pages', assertion: 'mounted Web form creates an incident and renders its title through the real HTTP API', actualValue: 'title=展厅烟雾 rendered after HTTP create', evidence: ['frontend/tests/real-stack-e2e.test.ts'] },
-  'AC-G2-FR-013-02': { suite: 'integration-backend', layer: 'HTTP_MODULE_INTEGRATION', testCase: 'G4-08 persistence parameterizes values and HTTP routes enforce authorization/idempotency', assertion: 'type, keyword and occurredFrom filter returns the seeded incident only', actualValue: 'total=1', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
-  'AC-G2-FR-013-03': { suite: 'integration-backend', layer: 'HTTP_MODULE_INTEGRATION', testCase: 'HTTP core incident path covers authorization, idempotency, tasks and closure', assertion: 'unauthenticated incident submission is rejected', actualValue: 'HTTP 403', evidence: ['tests/backend/g4-05-integration.test.mjs'] },
-  'AC-G2-FR-014-02': { suite: 'frontend-mixed-unit-component-contract-and-one-http-e2e', layer: 'SYSTEM_HTTP_WITH_IN_MEMORY_PERSISTENCE', testCase: 'runs the core incident closure through the formal client, Bearer identity, HTTP server and mounted pages', assertion: 'verified incident starts the selected plan and enters response lifecycle', actualValue: 'incident.status=RESPONDING; task=现场疏散', evidence: ['frontend/tests/real-stack-e2e.test.ts'] },
-  'AC-G2-FR-015-02': { suite: 'integration-backend', layer: 'HTTP_MODULE_INTEGRATION', testCase: 'HTTP core incident path covers authorization, idempotency, tasks and closure', assertion: 'task feedback keeps the attachment reference', actualValue: 'HTTP 200; attachmentFileIds=[file-ref-1]', evidence: ['tests/backend/g4-05-integration.test.mjs'] },
-  'AC-G2-FR-015-03': { suite: 'frontend-mixed-unit-component-contract-and-one-http-e2e', layer: 'COMPONENT_WITH_MOCK_API', testCase: 'executes acknowledge, feedback, remind and complete / creates a temporary task', assertion: 'mounted task page calls remind and temporary-task API paths', actualValue: 'remind and task-create calls observed', evidence: ['frontend/tests/page-interactions.test.ts'] },
-  'AC-G2-FR-016-01': { suite: 'frontend-mixed-unit-component-contract-and-one-http-e2e', layer: 'SYSTEM_HTTP_WITH_IN_MEMORY_PERSISTENCE', testCase: 'runs the core incident closure through the formal client, Bearer identity, HTTP server and mounted pages', assertion: 'completed response task permits incident closure', actualValue: 'incident.status=CLOSED', evidence: ['frontend/tests/real-stack-e2e.test.ts'] },
-  'AC-G2-FR-018-01': { suite: 'integration-backend', layer: 'MODULE_INTEGRATION', testCase: 'G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths', assertion: 'saved check point retains coordinates and floor for subsequent check-in', actualValue: 'x=0; y=0; floor=1F', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
-  'AC-G2-FR-020-01': { suite: 'integration-backend', layer: 'MODULE_INTEGRATION_WITH_SIMULATED_MESSAGE', testCase: 'G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths', assertion: 'missing attendance after deadline creates an alert and exposes degradation', actualValue: 'delivery.status=MANUAL_DEGRADATION', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
-  'AC-G2-FR-021-03': { suite: 'frontend-mixed-unit-component-contract-and-one-http-e2e', layer: 'COMPONENT_WITH_MOCK_FILE_PORT', testCase: 'shows H5 upload failure and retries the same selected file', assertion: 'first upload failure remains visible and retry uses the same File object', actualValue: 'post calls=2; fileRef=file-1', evidence: ['frontend/tests/page-interactions.test.ts'] },
-  'AC-G2-FR-022-01': { suite: 'frontend-mixed-unit-component-contract-and-one-http-e2e', layer: 'SYSTEM_HTTP_WITH_IN_MEMORY_PERSISTENCE', testCase: 'runs the core incident closure through the formal client, Bearer identity, HTTP server and mounted pages', assertion: 'mounted H5 task flow acknowledges the generated task', actualValue: 'acknowledge completed before feedback', evidence: ['frontend/tests/real-stack-e2e.test.ts'] },
-  'AC-G2-FR-022-02': { suite: 'integration-backend', layer: 'HTTP_MODULE_INTEGRATION', testCase: 'HTTP core incident path covers authorization, idempotency, tasks and closure', assertion: 'feedback content, progress and attachment reference are accepted', actualValue: 'HTTP 200; attachmentFileIds=[file-ref-1]', evidence: ['tests/backend/g4-05-integration.test.mjs'] },
-  'AC-G2-FR-024-01': { suite: 'integration-backend', layer: 'MODULE_INTEGRATION', testCase: 'G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths', assertion: 'valid QR/time/radius check-in is idempotent', actualValue: 'replay.id equals first.id', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
-  'AC-G2-FR-024-02': { suite: 'integration-backend', layer: 'MODULE_INTEGRATION', testCase: 'G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths', assertion: 'position outside configured radius is rejected', actualValue: 'error contains outside the allowed radius', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
-  'AC-G2-FR-025-02': { suite: 'integration-backend', layer: 'MODULE_INTEGRATION', testCase: 'G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths', assertion: 'submitted quantity is compared with the inventory-plan basis', actualValue: 'difference=-2', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
-  'AC-G2-FR-027-03': { suite: 'integration-backend', layer: 'MODULE_INTEGRATION_WITH_SIMULATED_EXTERNAL_PORT', testCase: 'G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths', assertion: 'unrecognized fire alert is not auto-accepted', actualValue: 'status=MANUAL_REVIEW', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
-  'AC-G2-FR-028-01': { suite: 'integration-backend', layer: 'HTTP_MODULE_INTEGRATION_WITH_SIMULATED_IDENTITY', testCase: 'Bearer identity connects the real page routes without development headers', assertion: 'Bearer identity supplies permissions and unauthorized access is denied', actualValue: 'context HTTP 200; unauthorized HTTP 403', evidence: ['tests/backend/g4-05-integration.test.mjs'] },
-  'AC-G2-FR-028-03': { suite: 'integration-backend', layer: 'MODULE_INTEGRATION_WITH_SIMULATED_EXTERNAL_PORTS', testCase: 'G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands', assertion: 'unauthorized, timeout and failure fixtures fail closed with manual degradation', actualValue: 'manualDegradation=true for every simulated boundary', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
-  'AC-G2-FR-029-02': { suite: 'integration-backend', layer: 'MODULE_INTEGRATION_WITH_SIMULATED_ACCESS_PORT', testCase: 'G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands', assertion: 'access OPEN without explicit confirmation is rejected', actualValue: 'error.code=CONTROL_CONFIRMATION_REQUIRED', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
-  'AC-G2-FR-029-03': { suite: 'integration-backend', layer: 'MODULE_INTEGRATION_WITH_SIMULATED_ACCESS_PORT', testCase: 'G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands', assertion: 'timed-out access command is not replayed and enters manual degradation', actualValue: 'attempts=1; manualDegradation=true; automaticReplay=false', evidence: ['tests/backend/g4-08-sprint2.test.mjs'] },
+  'AC-G2-FR-013-01': { suite: 'system-web-h5-http-postgresql', layer: 'SYSTEM_WEB_H5_HTTP_POSTGRESQL', testCase: 'core positive and negative system flow', assertion: 'mounted Web form creates a PostgreSQL incident with a traceable incident number', actualValue: 'status=PENDING_VERIFICATION; created_by=commander; incident_no matches INC-*', evidence: systemEvidence },
+  'AC-G2-FR-013-02': { suite: 'system-web-h5-http-postgresql', layer: 'SYSTEM_WEB_H5_HTTP_POSTGRESQL', testCase: 'core positive and negative system flow', assertion: 'combined time, status, type and keyword query returns only the matching PostgreSQL incident', actualValue: 'total=1; returned incident id equals created incident id', evidence: systemEvidence },
+  'AC-G2-FR-013-03': { suite: 'system-web-h5-http-postgresql', layer: 'SYSTEM_WEB_H5_HTTP_POSTGRESQL', testCase: 'core positive and negative system flow', assertion: 'invalid Bearer identity is rejected with reason, creates no incident and records denied audit', actualValue: 'HTTP 403 AUTH_FORBIDDEN; incident count unchanged; denied audit count=1', evidence: systemEvidence },
+  'AC-G2-FR-014-01': { suite: 'system-web-h5-http-postgresql', layer: 'SYSTEM_WEB_H5_HTTP_POSTGRESQL', testCase: 'core positive and negative system flow', assertion: 'verification stores decision, reason, actor, time and changes incident state', actualValue: 'decision=VERIFIED; reason and actor persisted; occurred_at present', evidence: systemEvidence },
+  'AC-G2-FR-014-02': { suite: 'system-web-h5-http-postgresql', layer: 'SYSTEM_WEB_H5_HTTP_POSTGRESQL_WITH_SIMULATED_MESSAGE', testCase: 'core positive and negative system flow', assertion: 'verified incident enters responding state and links the published plan and generated task', actualValue: 'incident.status=RESPONDING; plan_version_id=plan-system-v1; task persisted', evidence: systemEvidence },
+  'AC-G2-FR-015-01': { suite: 'system-web-h5-http-postgresql', layer: 'SYSTEM_WEB_H5_HTTP_POSTGRESQL_WITH_SIMULATED_MESSAGE', testCase: 'core positive and negative system flow', assertion: 'generated task persists event, assignee, deadline, status and delivery receipt', actualValue: 'incident_id, assignee_ref, deadline_at, PENDING and ACCEPTED persisted', evidence: systemEvidence },
+  'AC-G2-FR-015-02': { suite: 'system-web-h5-http-postgresql', layer: 'SYSTEM_WEB_H5_HTTP_POSTGRESQL', testCase: 'core positive and negative system flow', assertion: 'accepted task feedback persists content, attachment, time and processing status', actualValue: 'content, file-system-1, occurred_at and IN_PROGRESS persisted', evidence: systemEvidence },
+  'AC-G2-FR-022-01': { suite: 'system-web-h5-http-postgresql', layer: 'SYSTEM_WEB_H5_HTTP_POSTGRESQL', testCase: 'core positive and negative system flow', assertion: 'mounted H5 page acknowledges the task and PostgreSQL records state and audit trail', actualValue: 'task.status=ACKNOWLEDGED; TASK_ACKNOWLEDGED allowed audit persisted', evidence: systemEvidence },
+  'AC-G2-FR-022-02': { suite: 'system-web-h5-http-postgresql', layer: 'SYSTEM_WEB_H5_HTTP_POSTGRESQL', testCase: 'core positive and negative system flow', assertion: 'formal H5 workflow feedback associates task, upload result and time in PostgreSQL', actualValue: 'task_id, attachment_file_ids=[file-system-1] and occurred_at persisted', evidence: systemEvidence },
+  'AC-G2-FR-028-01': { suite: 'system-web-h5-http-postgresql', layer: 'SYSTEM_WEB_H5_HTTP_POSTGRESQL_WITH_IDENTITY_SEAM', testCase: 'core positive and negative system flow', assertion: 'platform context grants configured permissions while invalid identity is denied and audited', actualValue: 'authenticated context; invalid token HTTP 403; denied audit persisted', evidence: systemEvidence },
+  'AC-G2-FR-029-02': { suite: 'system-web-h5-http-postgresql', layer: 'SYSTEM_WEB_HTTP_POSTGRESQL_WITH_SIMULATED_ACCESS_INTERLOCK', testCase: 'remaining MVP workbenches and confirmed access control', assertion: 'no command is sent before confirmation; confirmed UI action dispatches once and waits for interlock receipt before accepting', actualValue: 'pre-confirm calls=0; post-confirm calls=1; interlock=ALLOWED; command.status=ACCEPTED persisted', evidence: systemEvidence },
 }
 
 const partialAc = {

@@ -1704,3 +1704,12 @@
 - 004：PARTIALLY_REMEDIATED / OPEN。旧测试层级夸大表述已纠正，45项明示混合组件/Mock与单条内存HTTP E2E；完整Web/H5→API→PostgreSQL系统包仍未补齐，原关闭条件未满足。
 - 005：CLOSED / VERIFIED_BY_A。独立查看新390×844事件图和正式未登录边界图，旧右裁切消失；CSS/新增回归与图像一致。A本轮前端11文件45/45 PASS；未重新运行Edge或真实宿主，不外推全兼容通过。
 - 用户“上一轮问题全部解决则通过”的条件未成立，G5-01仍BLOCKED；不增加需求、不修改原始产物来代替C整改。001/002范围资源门禁继续保留。
+
+### C第二轮整改回填（2026-10-09）｜仅 ISSUE-G5-01-003/004
+
+- 003：逐项重审上一轮 24 条 PASS；仅证明局部条件的 13 条全部降为 `NOT_RUN/BLOCKED`，当前为 11 PASS / 59 NOT_RUN / 47 BLOCKED，★FR 仍为 1 PASS / 33 BLOCKED。`AC-G2-FR-015-03` 不再以 Mock 调用判 PASS，`AC-G2-FR-016-01` 不再以单一 CLOSED 状态判 PASS。`AC-G2-FR-029-02` 新增系统级正向证据：界面确认前适配器调用与数据库指令均为 0；确认后只下发 1 次，并等待 `interlock=ALLOWED` 回执后把 `status=ACCEPTED` 与完整回执写入 PostgreSQL。
+- 004：新增隔离、可复跑的 `frontend/tests/postgresql-system-e2e.test.ts`，专用门禁 `system-web-h5-http-postgresql` 独立执行 2/2 PASS。系统包在同一链路覆盖挂载 Web/H5 页面/正式客户端、真实 HTTP 服务与 PostgreSQL；核心正/反流程包括事件上报、组合检索、无权拒绝且不落脏数据、核实、预案启动、任务生成、H5 接收、含附件反馈；其余 MVP 的预案/资源/演练/值班/知识/态势正式工作台逐页读取 PostgreSQL 数据。身份、消息、门禁联锁适配器仍明确为测试缝/`SIMULATED_EVIDENCE`，不冒充甲方真实接口联调。
+- 首次直接执行系统包时，隔离库缺少 `003_sprint2_mvp` 表并真实失败；使用项目既有迁移脚本应用 003 后重跑 2/2 PASS。完整 G5-01 功能门禁随后 PASS（各套件均绿），但 AC 总结仍为 BLOCKED。
+- 005：保持 `CLOSED / VERIFIED_BY_A`；本轮未修改其 CSS、截图、兼容矩阵或缺陷记录。
+- 当前状态：003/004 为 `PENDING_A_REREVIEW_2`，不得由 C 自行标 CLOSED；G5-01 保持 BLOCKED，001/002 与其余缺证/资源门禁继续阻断 DONE。
+- 证据：`frontend/tests/postgresql-system-e2e.test.ts`、`scripts/g5/run-functional-gate.mjs`、`evidence/g5/G5-01/functional-gate-raw.json`、`ac-117-matrix.md`、`execution-summary.md`、`review-request.md`、`docs/work/C_REQ/rtm_g5_increment.md`。

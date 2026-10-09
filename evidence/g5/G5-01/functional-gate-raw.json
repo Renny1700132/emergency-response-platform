@@ -1,24 +1,20 @@
 {
   "schemaVersion": 2,
   "taskId": "G5-01",
-  "generatedAt": "2026-10-09T05:58:23.852Z",
-  "commit": "b9c35ac80f9fa55ec9209d24d8e6fc9ddd76fc2f",
-  "testedSource": "b9c35ac80f9fa55ec9209d24d8e6fc9ddd76fc2f + controlled G5-01 worktree changes",
+  "generatedAt": "2026-10-09T07:46:50.653Z",
+  "commit": "97153c1a5a8a22044fee642db80c6e106042b844",
+  "testedSource": "97153c1a5a8a22044fee642db80c6e106042b844 + controlled G5-01 worktree changes",
   "workingTreeChanges": [
-    "M evidence/g5/G5-01/ac-117-matrix.md",
-    " M evidence/g5/G5-01/compatibility-matrix.md",
-    " M evidence/g5/G5-01/defect-register.md",
+    "M control/issues.md",
+    " M docs/work/C_REQ/rtm_g5_increment.md",
+    " M evidence/g5/G5-01/ac-117-matrix.md",
     " M evidence/g5/G5-01/execution-summary.md",
     " M evidence/g5/G5-01/functional-gate-raw.json",
     " M evidence/g5/G5-01/review-request.md",
-    " M frontend/src/styles/base.css",
-    " M logs/prompts/2026-10-08-C.md",
+    " M logs/prompts/2026-10-09-C.md",
     " M scripts/g5/run-functional-gate.mjs",
-    "?? evidence/g5/G5-01/edge-154-formal-auth-required-390x844.png",
-    "?? evidence/g5/G5-01/edge-154-h5-events-fixed-390x844.png",
-    "?? frontend/tests/h5-responsive-layout.test.ts",
-    "?? logs/prompts/2026-10-09-C.md",
-    "?? scripts/g5/capture-edge-viewport.mjs"
+    " M tasks.md",
+    "?? frontend/tests/postgresql-system-e2e.test.ts"
   ],
   "environment": {
     "node": "v24.21.0",
@@ -41,78 +37,88 @@
     {
       "id": "unit-domain-and-guards",
       "command": "D:\\tool\\source\\nodejs\\node.exe --test tests/backend/event-workflow.test.mjs tests/g4/selfcheck.test.mjs tests/g4/secret-scan.test.mjs tests/g4/integration-simulator.test.mjs",
-      "startedAt": "2026-10-09T05:58:12.297Z",
-      "finishedAt": "2026-10-09T05:58:12.485Z",
+      "startedAt": "2026-10-09T07:46:35.992Z",
+      "finishedAt": "2026-10-09T07:46:36.178Z",
       "exitCode": 0,
       "status": "PASS",
-      "stdout": "✔ event workflow enforces verify, idempotent start, task feedback and closure rules (2.2511ms)\n✔ message failure keeps business tasks and marks manual review (2.2454ms)\n✔ registry exposes eight distinct EXT ports plus GIS and H5 (7.2884ms)\n✔ every adapter has deterministic marked normal, unauthorized, timeout and failure fixtures (3.1545ms)\n✔ unknown adapters and scenarios fail closed with simulated markers (2.4562ms)\n✔ GIS and H5 fixtures retain frozen responsibility boundaries (3.0187ms)\n✔ HTTP simulator returns fixture status, body and evidence header (30.6643ms)\n✔ scan target collection includes implementation files and skips tests (9.9312ms)\n✔ secret scan accepts ordinary configuration (7.7987ms)\n✔ secret scan blocks assigned credentials without disclosing the value (6.7219ms)\n✔ selfcheck accepts complete evidence (0.8805ms)\n✔ selfcheck blocks a missing check and empty traceability (0.1339ms)\n✔ selfcheck permits an evidenced not-applicable result (0.1089ms)\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 137.164",
+      "stdout": "✔ event workflow enforces verify, idempotent start, task feedback and closure rules (2.0348ms)\n✔ message failure keeps business tasks and marks manual review (1.7671ms)\n✔ registry exposes eight distinct EXT ports plus GIS and H5 (6.6824ms)\n✔ every adapter has deterministic marked normal, unauthorized, timeout and failure fixtures (3.2867ms)\n✔ unknown adapters and scenarios fail closed with simulated markers (2.3124ms)\n✔ GIS and H5 fixtures retain frozen responsibility boundaries (2.7315ms)\n✔ HTTP simulator returns fixture status, body and evidence header (29.7736ms)\n✔ scan target collection includes implementation files and skips tests (9.3518ms)\n✔ secret scan accepts ordinary configuration (2.4353ms)\n✔ secret scan blocks assigned credentials without disclosing the value (2.031ms)\n✔ selfcheck accepts complete evidence (0.8363ms)\n✔ selfcheck blocks a missing check and empty traceability (0.1344ms)\n✔ selfcheck permits an evidenced not-applicable result (0.1049ms)\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 136.6632",
       "stderr": ""
     },
     {
       "id": "integration-backend",
       "command": "D:\\tool\\source\\nodejs\\node.exe --test tests/backend/foundation.test.mjs tests/backend/g4-05-integration.test.mjs tests/backend/g4-05-recovery.test.mjs tests/backend/g4-08-sprint2.test.mjs",
-      "startedAt": "2026-10-09T05:58:12.485Z",
-      "finishedAt": "2026-10-09T05:58:12.708Z",
+      "startedAt": "2026-10-09T07:46:36.178Z",
+      "finishedAt": "2026-10-09T07:46:36.396Z",
       "exitCode": 0,
       "status": "PASS",
-      "stdout": "✔ production configuration requires database and middle-platform endpoints (0.7647ms)\n✔ audit redacts credentials and keeps traceability fields (1.2846ms)\n✔ identity and database adapters retain their infrastructure boundary (0.6884ms)\n✔ middle-platform bearer adapter validates identity and forwards file requests (2.2733ms)\n✔ health, readiness and minimal authorization return controlled responses (22.7542ms)\n✔ readiness and application bootstrap cover available and unavailable database states (11.1391ms)\n✔ foundation migration has an auditable paired rollback and compose keeps credentials external (4.1937ms)\n✔ database transaction commits success and rolls back failure (0.7224ms)\n✔ HTTP core incident path covers authorization, idempotency, tasks and closure (42.0504ms)\n✔ Bearer identity connects the real page routes without development headers (22.5014ms)\n✔ persistence uses parameterized SQL and message port maps failure and timeout (9.25ms)\n✔ database-backed aggregate survives service recreation through the full closure path (3.9907ms)\n✔ business fact, outbox and audit roll back together on injected failure (0.5952ms)\n✔ message dispatch occurs after commit and failure remains recoverable (0.6158ms)\n✔ G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands (14.7032ms)\n✔ G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths (7.7657ms)\n✔ G4-08 persistence parameterizes values and HTTP routes enforce authorization/idempotency (26.3981ms)\n✔ G4-08 migration is paired and persisted Sprint 2 records recover after service recreation (4.0234ms)\nℹ tests 18\nℹ suites 0\nℹ pass 18\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 175.7152",
+      "stdout": "✔ production configuration requires database and middle-platform endpoints (0.7546ms)\n✔ audit redacts credentials and keeps traceability fields (1.1434ms)\n✔ identity and database adapters retain their infrastructure boundary (0.6816ms)\n✔ middle-platform bearer adapter validates identity and forwards file requests (2.2008ms)\n✔ health, readiness and minimal authorization return controlled responses (24.7405ms)\n✔ readiness and application bootstrap cover available and unavailable database states (9.8505ms)\n✔ foundation migration has an auditable paired rollback and compose keeps credentials external (3.7027ms)\n✔ database transaction commits success and rolls back failure (0.8616ms)\n✔ HTTP core incident path covers authorization, idempotency, tasks and closure (38.8542ms)\n✔ Bearer identity connects the real page routes without development headers (22.3157ms)\n✔ persistence uses parameterized SQL and message port maps failure and timeout (8.5817ms)\n✔ database-backed aggregate survives service recreation through the full closure path (4.1199ms)\n✔ business fact, outbox and audit roll back together on injected failure (0.5658ms)\n✔ message dispatch occurs after commit and failure remains recoverable (0.5184ms)\n✔ G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands (13.7814ms)\n✔ G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths (6.4783ms)\n✔ G4-08 persistence parameterizes values and HTTP routes enforce authorization/idempotency (27.8869ms)\n✔ G4-08 migration is paired and persisted Sprint 2 records recover after service recreation (4.4523ms)\nℹ tests 18\nℹ suites 0\nℹ pass 18\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 172.8688",
       "stderr": ""
     },
     {
       "id": "frontend-mixed-unit-component-contract-and-one-http-e2e",
       "command": "npm run test --prefix frontend -- --reporter=verbose",
-      "startedAt": "2026-10-09T05:58:12.708Z",
-      "finishedAt": "2026-10-09T05:58:14.802Z",
+      "startedAt": "2026-10-09T07:46:36.396Z",
+      "finishedAt": "2026-10-09T07:46:38.589Z",
       "exitCode": 0,
       "status": "PASS",
-      "stdout": "> museum-emergency-response-frontend@0.1.0 test\n> vitest run --reporter=verbose\n\n\n RUN  v5.0.1 D:/project/emergency-response-platform/frontend\n\n ✓ tests/h5-responsive-layout.test.ts > H5 narrow viewport layout guard > allows phone content and record cards to shrink without horizontal clipping 2ms\n ✓ tests/presentation-state.test.ts > presentation session synchronization > broadcasts role and workflow changes as cloneable plain snapshots 69ms\n ✓ tests/presentation-state.test.ts > presentation session synchronization > applies a remote workflow snapshot to the live session state 1ms\n ✓ tests/presentation-api.test.ts > presentation API adapter > provides an explicit demo identity and mutable incident workflow 4ms\n ✓ tests/presentation-api.test.ts > presentation API adapter > supports task actions and a safe generic acknowledgement 1ms\n ✓ tests/presentation-api.test.ts > presentation API adapter > shares role actions and workflow changes with the live presentation state 1ms\n ✓ tests/module-traceability.test.ts > frozen module traceability > matches every controlled MOD-* to its frozen G2-FR set 1ms\n ✓ tests/module-traceability.test.ts > frozen module traceability > keeps the MOD-MOBILE channel boundary and the invoked domain on every H5 route 0ms\n ✓ tests/api-client.test.ts > API Client > adds authentication, request id and query parameters 4ms\n ✓ tests/api-client.test.ts > API Client > normalizes contract errors and preserves traceId 1ms\n ✓ tests/api-client.test.ts > API Client > reports network failures without leaking request details 0ms\n ✓ tests/api-client.test.ts > API Client > sends JSON bodies and idempotency keys for writes 1ms\n ✓ tests/api-client.test.ts > API Client > replaces required path parameters with encoded values 1ms\n ✓ tests/api-client.test.ts > API Client > notifies the authentication boundary on a 401 response 1ms\n ✓ tests/api-client.test.ts > API Client > normalizes an already-aborted caller signal 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-PLAN without presentation fallback 2ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-RESOURCE without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-DRILL without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-DUTY without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-KNOWLEDGE without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-SITUATION without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-INTEGRATION without presentation fallback 0ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > maps generic contract entities into visible incident and task state 2ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > loads lists through the formal client and preserves empty data 1ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > submits incident report, verification and response start with typed paths and idempotency 1ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > submits task acknowledgement and feedback with attachments and resource version 0ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > keeps forbidden, failure and trace states visible 0ms\n ✓ tests/auth-context.test.ts > authentication context > stays anonymous when the host provides no access token 2ms\n ✓ tests/auth-context.test.ts > authentication context > loads identity and evaluates permissions without persisting the token 1ms\n ✓ tests/auth-context.test.ts > authentication context > enters a controlled error state when identity loading fails 0ms\n ✓ tests/auth-context.test.ts > authentication context > reads a short-lived token from the host bridge without persistence 1ms\n ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > renders Dashboard only from formal responses and omits presentation facts 32ms\n ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > omits situation presentation facts and sends a typed formal access command with visible receipt 15ms\n ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > does not fall back to presentation facts when formal Dashboard APIs fail 4ms\n ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > shows formal control failure and explicit manual degradation without a success claim 6ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > renders loading then empty state from the real incident component 12ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > renders dedicated 403 and ordinary failure states with traceId and retry 10ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > keeps unauthorized actions visible and disabled 6ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > submits an incident report through the mounted form and refreshes server state 10ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > submits verification and response start from the mounted incident card 7ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > executes acknowledge, feedback, remind and complete from the mounted task page 10ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > creates a temporary task from the mounted Web task form 3ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > uses the same controlled views for Web and H5 routes 6ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > shows H5 upload failure and retries the same selected file 4ms\n ✓ tests/real-stack-e2e.test.ts > G4-07 real frontend/backend E2E > runs the core incident closure through the formal client, Bearer identity, HTTP server and mounted pages 229ms\n\n Test Files  11 passed (11)\n      Tests  45 passed (45)\n   Start at  13:58:13\n   Duration  1.38s (environment 66%, transform 20%, import 9%, tests 6%, worker 1%)",
+      "stdout": "> museum-emergency-response-frontend@0.1.0 test\n> vitest run --reporter=verbose\n\n\n RUN  v5.0.1 D:/project/emergency-response-platform/frontend\n\n ✓ tests/h5-responsive-layout.test.ts > H5 narrow viewport layout guard > allows phone content and record cards to shrink without horizontal clipping 2ms\n ✓ tests/presentation-state.test.ts > presentation session synchronization > broadcasts role and workflow changes as cloneable plain snapshots 92ms\n ✓ tests/presentation-state.test.ts > presentation session synchronization > applies a remote workflow snapshot to the live session state 1ms\n ✓ tests/api-client.test.ts > API Client > adds authentication, request id and query parameters 5ms\n ✓ tests/api-client.test.ts > API Client > normalizes contract errors and preserves traceId 2ms\n ✓ tests/api-client.test.ts > API Client > reports network failures without leaking request details 1ms\n ✓ tests/api-client.test.ts > API Client > sends JSON bodies and idempotency keys for writes 1ms\n ✓ tests/api-client.test.ts > API Client > replaces required path parameters with encoded values 0ms\n ✓ tests/api-client.test.ts > API Client > notifies the authentication boundary on a 401 response 1ms\n ✓ tests/api-client.test.ts > API Client > normalizes an already-aborted caller signal 1ms\n ✓ tests/module-traceability.test.ts > frozen module traceability > matches every controlled MOD-* to its frozen G2-FR set 1ms\n ✓ tests/module-traceability.test.ts > frozen module traceability > keeps the MOD-MOBILE channel boundary and the invoked domain on every H5 route 1ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-PLAN without presentation fallback 2ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-RESOURCE without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-DRILL without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-DUTY without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-KNOWLEDGE without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-SITUATION without presentation fallback 0ms\n ✓ tests/formal-module-workbench.test.ts > formal module workbench > loads MOD-INTEGRATION without presentation fallback 0ms\n ✓ tests/presentation-api.test.ts > presentation API adapter > provides an explicit demo identity and mutable incident workflow 4ms\n ✓ tests/presentation-api.test.ts > presentation API adapter > supports task actions and a safe generic acknowledgement 1ms\n ✓ tests/presentation-api.test.ts > presentation API adapter > shares role actions and workflow changes with the live presentation state 1ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > maps generic contract entities into visible incident and task state 2ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > loads lists through the formal client and preserves empty data 1ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > submits incident report, verification and response start with typed paths and idempotency 1ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > submits task acknowledgement and feedback with attachments and resource version 0ms\n ✓ tests/workflow.test.ts > Sprint 1 response workflow > keeps forbidden, failure and trace states visible 0ms\n ✓ tests/auth-context.test.ts > authentication context > stays anonymous when the host provides no access token 2ms\n ✓ tests/auth-context.test.ts > authentication context > loads identity and evaluates permissions without persisting the token 1ms\n ✓ tests/auth-context.test.ts > authentication context > enters a controlled error state when identity loading fails 0ms\n ✓ tests/auth-context.test.ts > authentication context > reads a short-lived token from the host bridge without persistence 1ms\n ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > renders Dashboard only from formal responses and omits presentation facts 34ms\n ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > omits situation presentation facts and sends a typed formal access command with visible receipt 16ms\n ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > does not fall back to presentation facts when formal Dashboard APIs fail 4ms\n ✓ tests/formal-page-isolation.test.ts > formal page isolation and control receipt > shows formal control failure and explicit manual degradation without a success claim 5ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > renders loading then empty state from the real incident component 13ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > renders dedicated 403 and ordinary failure states with traceId and retry 10ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > keeps unauthorized actions visible and disabled 6ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > submits an incident report through the mounted form and refreshes server state 9ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > submits verification and response start from the mounted incident card 8ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > executes acknowledge, feedback, remind and complete from the mounted task page 11ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > creates a temporary task from the mounted Web task form 3ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > uses the same controlled views for Web and H5 routes 7ms\n ✓ tests/page-interactions.test.ts > G4-06 mounted page interactions > shows H5 upload failure and retries the same selected file 4ms\n ↓ tests/postgresql-system-e2e.test.ts > G5-01 Web/H5 to HTTP to PostgreSQL system package > proves the core positive and negative flow through mounted Web/H5 pages, HTTP and PostgreSQL\n ↓ tests/postgresql-system-e2e.test.ts > G5-01 Web/H5 to HTTP to PostgreSQL system package > renders all remaining MVP formal workbenches from PostgreSQL and completes confirmed access control after interlock receipt\n ✓ tests/real-stack-e2e.test.ts > G4-07 real frontend/backend E2E > runs the core incident closure through the formal client, Bearer identity, HTTP server and mounted pages 254ms\n\n Test Files  11 passed | 1 skipped (12)\n      Tests  45 passed | 2 skipped (47)\n   Start at  15:46:37\n   Duration  1.48s (environment 62%, transform 23%, import 10%, tests 5%, worker 1%)",
       "stderr": ""
     },
     {
       "id": "coverage-frontend",
       "command": "npm run test:frontend:coverage",
-      "startedAt": "2026-10-09T05:58:14.802Z",
-      "finishedAt": "2026-10-09T05:58:17.364Z",
+      "startedAt": "2026-10-09T07:46:38.589Z",
+      "finishedAt": "2026-10-09T07:46:41.121Z",
       "exitCode": 0,
       "status": "PASS",
-      "stdout": "> museum-emergency-response-quality-gates@0.1.0 test:frontend:coverage\n> npm run test:coverage --prefix frontend\n\n\n> museum-emergency-response-frontend@0.1.0 test:coverage\n> vitest run --coverage\n\n\n RUN  v5.0.1 D:/project/emergency-response-platform/frontend\n      Coverage enabled with v8\n\n\n Test Files  11 passed (11)\n      Tests  45 passed (45)\n   Start at  13:58:15\n   Duration  1.55s (environment 63%, transform 18%, import 10%, tests 6%, worker 4%)\n\n % Coverage report from v8\n-------------------|---------|----------|---------|---------|-------------------\nFile               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s \n-------------------|---------|----------|---------|---------|-------------------\nAll files          |   95.57 |    77.73 |   97.36 |     100 |                   \n features/formal   |     100 |    78.94 |     100 |     100 |                   \n  ...-workbench.ts |     100 |    78.94 |     100 |     100 | 14-15,17-18,89-98 \n features/response |   94.28 |    74.24 |     100 |     100 |                   \n  workflow.ts      |   94.28 |    74.24 |     100 |     100 | ...,48-71,101-109 \n shared/auth       |   96.96 |    66.66 |     100 |     100 |                   \n  auth-context.ts  |   96.96 |    66.66 |     100 |     100 | 16-17,35-39,57    \n shared/demo       |   93.87 |     77.5 |     100 |     100 |                   \n  ...tation-api.ts |     100 |       90 |     100 |     100 | 11,22,26,29       \n  ...tion-state.ts |    87.5 |    56.66 |     100 |     100 | 32-65             \n shared/http       |   95.23 |    85.96 |   85.71 |     100 |                   \n  api-client.ts    |   96.15 |    87.27 |   83.33 |     100 | 87,95,106,108,140 \n  api-context.ts   |      80 |       50 |     100 |     100 | 9                 \n-------------------|---------|----------|---------|---------|-------------------\n\n=============================== Coverage summary ===============================\nStatements   : 95.57% ( 259/271 )\nBranches     : 77.73% ( 206/265 )\nFunctions    : 97.36% ( 74/76 )\nLines        : 100% ( 200/200 )\n================================================================================",
+      "stdout": "> museum-emergency-response-quality-gates@0.1.0 test:frontend:coverage\n> npm run test:coverage --prefix frontend\n\n\n> museum-emergency-response-frontend@0.1.0 test:coverage\n> vitest run --coverage\n\n\n RUN  v5.0.1 D:/project/emergency-response-platform/frontend\n      Coverage enabled with v8\n\n\n Test Files  11 passed | 1 skipped (12)\n      Tests  45 passed | 2 skipped (47)\n   Start at  15:46:39\n   Duration  1.54s (environment 61%, transform 21%, import 10%, tests 5%, worker 3%)\n\n % Coverage report from v8\n-------------------|---------|----------|---------|---------|-------------------\nFile               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s \n-------------------|---------|----------|---------|---------|-------------------\nAll files          |   95.57 |    77.73 |   97.36 |     100 |                   \n features/formal   |     100 |    78.94 |     100 |     100 |                   \n  ...-workbench.ts |     100 |    78.94 |     100 |     100 | 14-15,17-18,89-98 \n features/response |   94.28 |    74.24 |     100 |     100 |                   \n  workflow.ts      |   94.28 |    74.24 |     100 |     100 | ...,48-71,101-109 \n shared/auth       |   96.96 |    66.66 |     100 |     100 |                   \n  auth-context.ts  |   96.96 |    66.66 |     100 |     100 | 16-17,35-39,57    \n shared/demo       |   93.87 |     77.5 |     100 |     100 |                   \n  ...tation-api.ts |     100 |       90 |     100 |     100 | 11,22,26,29       \n  ...tion-state.ts |    87.5 |    56.66 |     100 |     100 | 32-65             \n shared/http       |   95.23 |    85.96 |   85.71 |     100 |                   \n  api-client.ts    |   96.15 |    87.27 |   83.33 |     100 | 87,95,106,108,140 \n  api-context.ts   |      80 |       50 |     100 |     100 | 9                 \n-------------------|---------|----------|---------|---------|-------------------\n\n=============================== Coverage summary ===============================\nStatements   : 95.57% ( 259/271 )\nBranches     : 77.73% ( 206/265 )\nFunctions    : 97.36% ( 74/76 )\nLines        : 100% ( 200/200 )\n================================================================================",
       "stderr": ""
     },
     {
       "id": "coverage-backend",
       "command": "npm run test:backend:coverage",
-      "startedAt": "2026-10-09T05:58:17.364Z",
-      "finishedAt": "2026-10-09T05:58:18.285Z",
+      "startedAt": "2026-10-09T07:46:41.121Z",
+      "finishedAt": "2026-10-09T07:46:42.064Z",
       "exitCode": 0,
       "status": "PASS",
-      "stdout": "> museum-emergency-response-quality-gates@0.1.0 test:backend:coverage\n> c8 --all --include=backend/src/*.mjs --check-coverage --lines 70 --functions 70 --branches 70 --statements 70 node --test tests/backend/*.test.mjs\n\n✔ event workflow enforces verify, idempotent start, task feedback and closure rules (3.6944ms)\n✔ message failure keeps business tasks and marks manual review (1.3418ms)\n✔ production configuration requires database and middle-platform endpoints (1.1117ms)\n✔ audit redacts credentials and keeps traceability fields (2.1774ms)\n✔ identity and database adapters retain their infrastructure boundary (1.3291ms)\n✔ middle-platform bearer adapter validates identity and forwards file requests (2.9322ms)\n✔ health, readiness and minimal authorization return controlled responses (25.1077ms)\n✔ readiness and application bootstrap cover available and unavailable database states (11.1607ms)\n✔ foundation migration has an auditable paired rollback and compose keeps credentials external (3.9003ms)\n✔ database transaction commits success and rolls back failure (0.5603ms)\n✔ HTTP core incident path covers authorization, idempotency, tasks and closure (44.2331ms)\n✔ Bearer identity connects the real page routes without development headers (23.7039ms)\n✔ persistence uses parameterized SQL and message port maps failure and timeout (15.4019ms)\n✔ database-backed aggregate survives service recreation through the full closure path (4.5276ms)\n✔ business fact, outbox and audit roll back together on injected failure (0.5686ms)\n✔ message dispatch occurs after commit and failure remains recoverable (0.5184ms)\n✔ G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands (16.3397ms)\n✔ G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths (8.5349ms)\n✔ G4-08 persistence parameterizes values and HTTP routes enforce authorization/idempotency (30.577ms)\n✔ G4-08 migration is paired and persisted Sprint 2 records recover after service recreation (5.0945ms)\nℹ tests 20\nℹ suites 0\nℹ pass 20\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 206.5351\n--------------------------|---------|----------|---------|---------|--------------------------------\nFile                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              \n--------------------------|---------|----------|---------|---------|--------------------------------\nAll files                 |   87.69 |    77.74 |   85.24 |   87.69 |                                \n audit.mjs                |     100 |    92.85 |     100 |     100 | 4                              \n config.mjs               |     100 |      100 |     100 |     100 |                                \n database.mjs             |     100 |     90.9 |     100 |     100 | 20                             \n event-persistence.mjs    |   35.78 |    63.63 |   17.64 |   35.78 | ...166,169-173,176-180,183-188 \n event-workflow.mjs       |   97.47 |    87.87 |     100 |   97.47 | 89-92,112-115                  \n external-adapters.mjs    |     100 |    70.27 |     100 |     100 | 14,26-35,45-53,62              \n idempotency.mjs          |     100 |    88.23 |     100 |     100 | 12-13                          \n identity.mjs             |     100 |    71.87 |     100 |     100 | 5,11-13,16-20,27               \n main.mjs                 |   70.17 |       50 |      50 |   70.17 | 19-23,28-31,50-57              \n message-port.mjs         |     100 |    54.54 |     100 |     100 | 4,15-16,20                     \n middle-platform-port.mjs |   92.75 |    34.78 |   83.33 |   92.75 | 1-3,24-25                      \n server.mjs               |   97.81 |    79.01 |     100 |   97.81 | 28-29,63-64,149                \n sprint2-persistence.mjs  |   74.46 |    72.72 |     100 |   74.46 | 20-28,40-42                    \n sprint2-service.mjs      |   96.74 |    77.58 |   96.66 |   96.74 | 53-54,135-136,211-213,242      \n--------------------------|---------|----------|---------|---------|--------------------------------",
+      "stdout": "> museum-emergency-response-quality-gates@0.1.0 test:backend:coverage\n> c8 --all --include=backend/src/*.mjs --check-coverage --lines 70 --functions 70 --branches 70 --statements 70 node --test tests/backend/*.test.mjs\n\n✔ event workflow enforces verify, idempotent start, task feedback and closure rules (3.3419ms)\n✔ message failure keeps business tasks and marks manual review (1.258ms)\n✔ production configuration requires database and middle-platform endpoints (0.9652ms)\n✔ audit redacts credentials and keeps traceability fields (1.2966ms)\n✔ identity and database adapters retain their infrastructure boundary (0.8697ms)\n✔ middle-platform bearer adapter validates identity and forwards file requests (2.8644ms)\n✔ health, readiness and minimal authorization return controlled responses (26.1091ms)\n✔ readiness and application bootstrap cover available and unavailable database states (11.0135ms)\n✔ foundation migration has an auditable paired rollback and compose keeps credentials external (3.5985ms)\n✔ database transaction commits success and rolls back failure (0.9371ms)\n✔ HTTP core incident path covers authorization, idempotency, tasks and closure (42.404ms)\n✔ Bearer identity connects the real page routes without development headers (22.8715ms)\n✔ persistence uses parameterized SQL and message port maps failure and timeout (19.0594ms)\n✔ database-backed aggregate survives service recreation through the full closure path (4.6457ms)\n✔ business fact, outbox and audit roll back together on injected failure (0.7701ms)\n✔ message dispatch occurs after commit and failure remains recoverable (0.6104ms)\n✔ G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands (16.957ms)\n✔ G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths (7.6674ms)\n✔ G4-08 persistence parameterizes values and HTTP routes enforce authorization/idempotency (28.5293ms)\n✔ G4-08 migration is paired and persisted Sprint 2 records recover after service recreation (4.8176ms)\nℹ tests 20\nℹ suites 0\nℹ pass 20\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 214.0363\n--------------------------|---------|----------|---------|---------|--------------------------------\nFile                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              \n--------------------------|---------|----------|---------|---------|--------------------------------\nAll files                 |   87.69 |    77.74 |   85.24 |   87.69 |                                \n audit.mjs                |     100 |    92.85 |     100 |     100 | 4                              \n config.mjs               |     100 |      100 |     100 |     100 |                                \n database.mjs             |     100 |     90.9 |     100 |     100 | 20                             \n event-persistence.mjs    |   35.78 |    63.63 |   17.64 |   35.78 | ...166,169-173,176-180,183-188 \n event-workflow.mjs       |   97.47 |    87.87 |     100 |   97.47 | 89-92,112-115                  \n external-adapters.mjs    |     100 |    70.27 |     100 |     100 | 14,26-35,45-53,62              \n idempotency.mjs          |     100 |    88.23 |     100 |     100 | 12-13                          \n identity.mjs             |     100 |    71.87 |     100 |     100 | 5,11-13,16-20,27               \n main.mjs                 |   70.17 |       50 |      50 |   70.17 | 19-23,28-31,50-57              \n message-port.mjs         |     100 |    54.54 |     100 |     100 | 4,15-16,20                     \n middle-platform-port.mjs |   92.75 |    34.78 |   83.33 |   92.75 | 1-3,24-25                      \n server.mjs               |   97.81 |    79.01 |     100 |   97.81 | 28-29,63-64,149                \n sprint2-persistence.mjs  |   74.46 |    72.72 |     100 |   74.46 | 20-28,40-42                    \n sprint2-service.mjs      |   96.74 |    77.58 |   96.66 |   96.74 | 53-54,135-136,211-213,242      \n--------------------------|---------|----------|---------|---------|--------------------------------",
       "stderr": ""
     },
     {
       "id": "frontend-typecheck",
       "command": "npm run typecheck --prefix frontend",
-      "startedAt": "2026-10-09T05:58:18.285Z",
-      "finishedAt": "2026-10-09T05:58:22.588Z",
+      "startedAt": "2026-10-09T07:46:42.064Z",
+      "finishedAt": "2026-10-09T07:46:46.421Z",
       "exitCode": 0,
       "status": "PASS",
-      "stdout": "> museum-emergency-response-frontend@0.1.0 typecheck\n> npm run generate:api && vue-tsc --noEmit\n\n\n> museum-emergency-response-frontend@0.1.0 generate:api\n> openapi-typescript ../docs/work/B_TECH/openapi_v1.yaml -o src/api/generated/schema.d.ts\n\n✨ openapi-typescript 7.9.1\n🚀 ../docs/work/B_TECH/openapi_v1.yaml → src/api/generated/schema.d.ts [70.6ms]",
+      "stdout": "> museum-emergency-response-frontend@0.1.0 typecheck\n> npm run generate:api && vue-tsc --noEmit\n\n\n> museum-emergency-response-frontend@0.1.0 generate:api\n> openapi-typescript ../docs/work/B_TECH/openapi_v1.yaml -o src/api/generated/schema.d.ts\n\n✨ openapi-typescript 7.9.1\n🚀 ../docs/work/B_TECH/openapi_v1.yaml → src/api/generated/schema.d.ts [71ms]",
       "stderr": ""
     },
     {
       "id": "integration-postgresql",
       "command": "npm run test:g4-05:postgres (protected local test database)",
-      "startedAt": "2026-10-09T05:58:22.588Z",
-      "finishedAt": "2026-10-09T05:58:23.424Z",
+      "startedAt": "2026-10-09T07:46:46.421Z",
+      "finishedAt": "2026-10-09T07:46:47.261Z",
       "exitCode": 0,
       "status": "PASS",
-      "stdout": "> museum-emergency-response-quality-gates@0.1.0 test:g4-05:postgres\n> node --test tests/backend/g4-05-postgres.integration.mjs\n\n✔ PostgreSQL remains the fact source across service restarts and commits domain evidence atomically (343.906ms)\n✔ PostgreSQL transaction rolls back business fact and outbox when audit persistence fails (69.5327ms)\nℹ tests 2\nℹ suites 0\nℹ pass 2\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 516.713",
+      "stdout": "> museum-emergency-response-quality-gates@0.1.0 test:g4-05:postgres\n> node --test tests/backend/g4-05-postgres.integration.mjs\n\n✔ PostgreSQL remains the fact source across service restarts and commits domain evidence atomically (344.1814ms)\n✔ PostgreSQL transaction rolls back business fact and outbox when audit persistence fails (71.0266ms)\nℹ tests 2\nℹ suites 0\nℹ pass 2\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 520.4133",
+      "stderr": ""
+    },
+    {
+      "id": "system-web-h5-http-postgresql",
+      "command": "npm run test --prefix frontend -- --run tests/postgresql-system-e2e.test.ts --reporter=verbose (protected local test database)",
+      "startedAt": "2026-10-09T07:46:47.261Z",
+      "finishedAt": "2026-10-09T07:46:50.248Z",
+      "exitCode": 0,
+      "status": "PASS",
+      "stdout": "> museum-emergency-response-frontend@0.1.0 test\n> vitest run --run tests/postgresql-system-e2e.test.ts --reporter=verbose\n\n\n RUN  v5.0.1 D:/project/emergency-response-platform/frontend\n\n ✓ tests/postgresql-system-e2e.test.ts > G5-01 Web/H5 to HTTP to PostgreSQL system package > proves the core positive and negative flow through mounted Web/H5 pages, HTTP and PostgreSQL 351ms\n ✓ tests/postgresql-system-e2e.test.ts > G5-01 Web/H5 to HTTP to PostgreSQL system package > renders all remaining MVP formal workbenches from PostgreSQL and completes confirmed access control after interlock receipt 415ms\n\n Test Files  1 passed (1)\n      Tests  2 passed (2)\n   Start at  15:46:47\n   Duration  2.26s (tests 57%, transform 17%, environment 13%, import 12%)",
       "stderr": ""
     }
   ],
   "resultSummary": {
-    "NOT_RUN": 47,
-    "PASS": 24,
-    "BLOCKED": 46
+    "NOT_RUN": 59,
+    "BLOCKED": 47,
+    "PASS": 11
   },
   "starSummary": {
     "BLOCKED": 33,
@@ -180,15 +186,13 @@
       "frId": "G2-FR-002",
       "frNumber": 2,
       "expected": "**Given** 管理员编辑预案，**When** 增加流程节点、任务和责任人，**Then** 系统保存顺序、责任和依赖关系。",
-      "result": "PASS",
-      "executionKind": "MODULE_INTEGRATION",
-      "testCase": "G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths",
-      "assertion": "publish returns PUBLISHED and an unknown dependency is rejected",
-      "actualValue": "status=PUBLISHED; invalid dependency rejected",
-      "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-002-02",
@@ -234,15 +238,13 @@
       "frId": "G2-FR-003",
       "frNumber": 3,
       "expected": "**Given** 已核实事件并选择有效预案，**When** 授权人员启动预案，**Then** 系统自动创建对应处置任务并向移动端发送通知。",
-      "result": "PASS",
-      "executionKind": "DOMAIN_UNIT_WITH_SIMULATED_MESSAGE",
-      "testCase": "event workflow enforces verify, idempotent start, task feedback and closure rules",
-      "assertion": "verified incident start creates a task and emits RESPONSE_STARTED once",
-      "actualValue": "tasks.length=1; RESPONSE_STARTED count=1",
-      "evidence": [
-        "tests/backend/event-workflow.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-003-03",
@@ -333,15 +335,13 @@
       "frId": "G2-FR-005",
       "frNumber": 5,
       "expected": "**Given** 位置过期或源不可用，**When** 用户查看地图，**Then** 系统标识新鲜度/不可用状态，并禁止将其作为自动邻近调派结论。",
-      "result": "PASS",
-      "executionKind": "MODULE_INTEGRATION",
-      "testCase": "G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths",
-      "assertion": "stale position is labelled and excluded from dispatch",
-      "actualValue": "freshness=STALE; usableForDispatch=false",
-      "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-006-01",
@@ -480,15 +480,13 @@
       "frId": "G2-FR-009",
       "frNumber": 9,
       "expected": "**Given** 现场人员打开计划，**When** 提交移动盘点数量，**Then** 系统将结果与计划快照自动比对并标识差异。",
-      "result": "PASS",
-      "executionKind": "MODULE_INTEGRATION",
-      "testCase": "G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths",
-      "assertion": "counted quantity 8 is compared with ledger quantity 10",
-      "actualValue": "difference=-2",
-      "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-009-03",
@@ -626,12 +624,13 @@
       "frNumber": 13,
       "expected": "**Given** 授权用户在 Web 或 H5 端，**When** 提交事件基本信息，**Then** 系统创建事件并生成可追踪编号。",
       "result": "PASS",
-      "executionKind": "SYSTEM_HTTP_WITH_IN_MEMORY_PERSISTENCE",
-      "testCase": "runs the core incident closure through the formal client, Bearer identity, HTTP server and mounted pages",
-      "assertion": "mounted Web form creates an incident and renders its title through the real HTTP API",
-      "actualValue": "title=展厅烟雾 rendered after HTTP create",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "mounted Web form creates a PostgreSQL incident with a traceable incident number",
+      "actualValue": "status=PENDING_VERIFICATION; created_by=commander; incident_no matches INC-*",
       "evidence": [
-        "frontend/tests/real-stack-e2e.test.ts"
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
       ],
       "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
     },
@@ -641,12 +640,13 @@
       "frNumber": 13,
       "expected": "**Given** 存在多个事件，**When** 用户按时间、状态、类型或关键字组合检索，**Then** 系统返回符合条件的事件列表。",
       "result": "PASS",
-      "executionKind": "HTTP_MODULE_INTEGRATION",
-      "testCase": "G4-08 persistence parameterizes values and HTTP routes enforce authorization/idempotency",
-      "assertion": "type, keyword and occurredFrom filter returns the seeded incident only",
-      "actualValue": "total=1",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "combined time, status, type and keyword query returns only the matching PostgreSQL incident",
+      "actualValue": "total=1; returned incident id equals created incident id",
       "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
       ],
       "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
     },
@@ -656,12 +656,13 @@
       "frNumber": 13,
       "expected": "**Given** 必填字段缺失或用户无权限，**When** 提交事件，**Then** 系统拒绝提交并提示原因，不生成不完整事件。",
       "result": "PASS",
-      "executionKind": "HTTP_MODULE_INTEGRATION",
-      "testCase": "HTTP core incident path covers authorization, idempotency, tasks and closure",
-      "assertion": "unauthenticated incident submission is rejected",
-      "actualValue": "HTTP 403",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "invalid Bearer identity is rejected with reason, creates no incident and records denied audit",
+      "actualValue": "HTTP 403 AUTH_FORBIDDEN; incident count unchanged; denied audit count=1",
       "evidence": [
-        "tests/backend/g4-05-integration.test.mjs"
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
       ],
       "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
     },
@@ -670,13 +671,16 @@
       "frId": "G2-FR-014",
       "frNumber": 14,
       "expected": "**Given** 新事件等待核实，**When** 核实人提交通过或驳回意见，**Then** 系统记录意见、处理人、时间和状态变更。",
-      "result": "NOT_RUN",
-      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
-      "testCase": "N/A",
-      "assertion": "N/A",
-      "actualValue": "N/A",
-      "evidence": [],
-      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "verification stores decision, reason, actor, time and changes incident state",
+      "actualValue": "decision=VERIFIED; reason and actor persisted; occurred_at present",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
     },
     {
       "acId": "AC-G2-FR-014-02",
@@ -684,12 +688,13 @@
       "frNumber": 14,
       "expected": "**Given** 事件已核实且预案可用，**When** 授权人员启动预案，**Then** 系统进入处置生命周期并关联预案与任务。",
       "result": "PASS",
-      "executionKind": "SYSTEM_HTTP_WITH_IN_MEMORY_PERSISTENCE",
-      "testCase": "runs the core incident closure through the formal client, Bearer identity, HTTP server and mounted pages",
-      "assertion": "verified incident starts the selected plan and enters response lifecycle",
-      "actualValue": "incident.status=RESPONDING; task=现场疏散",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL_WITH_SIMULATED_MESSAGE",
+      "testCase": "core positive and negative system flow",
+      "assertion": "verified incident enters responding state and links the published plan and generated task",
+      "actualValue": "incident.status=RESPONDING; plan_version_id=plan-system-v1; task persisted",
       "evidence": [
-        "frontend/tests/real-stack-e2e.test.ts"
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
       ],
       "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
     },
@@ -714,6 +719,38 @@
       "frId": "G2-FR-015",
       "frNumber": 15,
       "expected": "**Given** 预案启动，**When** 系统生成处置任务，**Then** 任务自动关联事件、责任人、时限和状态。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL_WITH_SIMULATED_MESSAGE",
+      "testCase": "core positive and negative system flow",
+      "assertion": "generated task persists event, assignee, deadline, status and delivery receipt",
+      "actualValue": "incident_id, assignee_ref, deadline_at, PENDING and ACCEPTED persisted",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+    },
+    {
+      "acId": "AC-G2-FR-015-02",
+      "frId": "G2-FR-015",
+      "frNumber": 15,
+      "expected": "**Given** 任务已接收，**When** 执行人提交反馈，**Then** 系统记录反馈内容、附件引用、时间和处理状态。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "accepted task feedback persists content, attachment, time and processing status",
+      "actualValue": "content, file-system-1, occurred_at and IN_PROGRESS persisted",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+    },
+    {
+      "acId": "AC-G2-FR-015-03",
+      "frId": "G2-FR-015",
+      "frNumber": 15,
+      "expected": "**Given** 任务逾期或指挥人员需追加任务，**When** 触发催办或创建临时任务，**Then** 系统记录触发原因和后续处置。",
       "result": "NOT_RUN",
       "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
       "testCase": "N/A",
@@ -723,49 +760,17 @@
       "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
-      "acId": "AC-G2-FR-015-02",
-      "frId": "G2-FR-015",
-      "frNumber": 15,
-      "expected": "**Given** 任务已接收，**When** 执行人提交反馈，**Then** 系统记录反馈内容、附件引用、时间和处理状态。",
-      "result": "PASS",
-      "executionKind": "HTTP_MODULE_INTEGRATION",
-      "testCase": "HTTP core incident path covers authorization, idempotency, tasks and closure",
-      "assertion": "task feedback keeps the attachment reference",
-      "actualValue": "HTTP 200; attachmentFileIds=[file-ref-1]",
-      "evidence": [
-        "tests/backend/g4-05-integration.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
-    },
-    {
-      "acId": "AC-G2-FR-015-03",
-      "frId": "G2-FR-015",
-      "frNumber": 15,
-      "expected": "**Given** 任务逾期或指挥人员需追加任务，**When** 触发催办或创建临时任务，**Then** 系统记录触发原因和后续处置。",
-      "result": "PASS",
-      "executionKind": "COMPONENT_WITH_MOCK_API",
-      "testCase": "executes acknowledge, feedback, remind and complete / creates a temporary task",
-      "assertion": "mounted task page calls remind and temporary-task API paths",
-      "actualValue": "remind and task-create calls observed",
-      "evidence": [
-        "frontend/tests/page-interactions.test.ts"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
-    },
-    {
       "acId": "AC-G2-FR-016-01",
       "frId": "G2-FR-016",
       "frNumber": 16,
       "expected": "**Given** 事件满足关闭条件，**When** 关闭人提交评估，**Then** 系统记录评估结论和关闭状态。",
-      "result": "PASS",
-      "executionKind": "SYSTEM_HTTP_WITH_IN_MEMORY_PERSISTENCE",
-      "testCase": "runs the core incident closure through the formal client, Bearer identity, HTTP server and mounted pages",
-      "assertion": "completed response task permits incident closure",
-      "actualValue": "incident.status=CLOSED",
-      "evidence": [
-        "frontend/tests/real-stack-e2e.test.ts"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-016-02",
@@ -837,15 +842,13 @@
       "frId": "G2-FR-018",
       "frNumber": 18,
       "expected": "**Given** 管理员在地图选择位置，**When** 保存打卡点，**Then** 系统保存坐标、楼层和点位属性。",
-      "result": "PASS",
-      "executionKind": "MODULE_INTEGRATION",
-      "testCase": "G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths",
-      "assertion": "saved check point retains coordinates and floor for subsequent check-in",
-      "actualValue": "x=0; y=0; floor=1F",
-      "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-018-02",
@@ -917,15 +920,13 @@
       "frId": "G2-FR-020",
       "frNumber": 20,
       "expected": "**Given** 已到打卡截止时间且无有效记录，**When** 规则引擎检查，**Then** 系统创建缺卡或超时告警。",
-      "result": "PASS",
-      "executionKind": "MODULE_INTEGRATION_WITH_SIMULATED_MESSAGE",
-      "testCase": "G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths",
-      "assertion": "missing attendance after deadline creates an alert and exposes degradation",
-      "actualValue": "delivery.status=MANUAL_DEGRADATION",
-      "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-020-02",
@@ -987,15 +988,13 @@
       "frId": "G2-FR-021",
       "frNumber": 21,
       "expected": "**Given** 相机或网络不可用，**When** 用户提交事件，**Then** H5 明确提示可恢复状态并防止把未上传附件标记为已上传。",
-      "result": "PASS",
-      "executionKind": "COMPONENT_WITH_MOCK_FILE_PORT",
-      "testCase": "shows H5 upload failure and retries the same selected file",
-      "assertion": "first upload failure remains visible and retry uses the same File object",
-      "actualValue": "post calls=2; fileRef=file-1",
-      "evidence": [
-        "frontend/tests/page-interactions.test.ts"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-022-01",
@@ -1003,12 +1002,13 @@
       "frNumber": 22,
       "expected": "**Given** 用户收到任务通知，**When** 在 H5 确认任务，**Then** 系统更新任务接收状态并留痕。",
       "result": "PASS",
-      "executionKind": "SYSTEM_HTTP_WITH_IN_MEMORY_PERSISTENCE",
-      "testCase": "runs the core incident closure through the formal client, Bearer identity, HTTP server and mounted pages",
-      "assertion": "mounted H5 task flow acknowledges the generated task",
-      "actualValue": "acknowledge completed before feedback",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "mounted H5 page acknowledges the task and PostgreSQL records state and audit trail",
+      "actualValue": "task.status=ACKNOWLEDGED; TASK_ACKNOWLEDGED allowed audit persisted",
       "evidence": [
-        "frontend/tests/real-stack-e2e.test.ts"
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
       ],
       "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
     },
@@ -1018,12 +1018,13 @@
       "frNumber": 22,
       "expected": "**Given** 任务执行中，**When** 用户提交反馈和附件，**Then** 系统关联任务、上传结果和时间。",
       "result": "PASS",
-      "executionKind": "HTTP_MODULE_INTEGRATION",
-      "testCase": "HTTP core incident path covers authorization, idempotency, tasks and closure",
-      "assertion": "feedback content, progress and attachment reference are accepted",
-      "actualValue": "HTTP 200; attachmentFileIds=[file-ref-1]",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "formal H5 workflow feedback associates task, upload result and time in PostgreSQL",
+      "actualValue": "task_id, attachment_file_ids=[file-system-1] and occurred_at persisted",
       "evidence": [
-        "tests/backend/g4-05-integration.test.mjs"
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
       ],
       "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
     },
@@ -1087,30 +1088,26 @@
       "frId": "G2-FR-024",
       "frNumber": 24,
       "expected": "**Given** 用户扫描有效点位二维码，**When** 身份、时段和范围均符合规则，**Then** 系统写入有效打卡记录。",
-      "result": "PASS",
-      "executionKind": "MODULE_INTEGRATION",
-      "testCase": "G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths",
-      "assertion": "valid QR/time/radius check-in is idempotent",
-      "actualValue": "replay.id equals first.id",
-      "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-024-02",
       "frId": "G2-FR-024",
       "frNumber": 24,
       "expected": "**Given** 用户不在有效半径、时段或小组内，**When** 扫码，**Then** 系统拒绝打卡并说明失败维度。",
-      "result": "PASS",
-      "executionKind": "MODULE_INTEGRATION",
-      "testCase": "G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths",
-      "assertion": "position outside configured radius is rejected",
-      "actualValue": "error contains outside the allowed radius",
-      "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-024-03",
@@ -1146,15 +1143,13 @@
       "frId": "G2-FR-025",
       "frNumber": 25,
       "expected": "**Given** 用户提交盘点，**When** 系统校验计划快照，**Then** 自动标识与快照的数量差异。",
-      "result": "PASS",
-      "executionKind": "MODULE_INTEGRATION",
-      "testCase": "G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths",
-      "assertion": "submitted quantity is compared with the inventory-plan basis",
-      "actualValue": "difference=-2",
-      "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-025-03",
@@ -1241,15 +1236,13 @@
       "frId": "G2-FR-027",
       "frNumber": 27,
       "expected": "**Given** 不可识别的告警或客流数据，**When** 接收处理，**Then** 系统不自动生成错误事件，并输出可审计的异常记录。",
-      "result": "PASS",
-      "executionKind": "MODULE_INTEGRATION_WITH_SIMULATED_EXTERNAL_PORT",
-      "testCase": "G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths",
-      "assertion": "unrecognized fire alert is not auto-accepted",
-      "actualValue": "status=MANUAL_REVIEW",
-      "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-028-01",
@@ -1257,12 +1250,13 @@
       "frNumber": 28,
       "expected": "**Given** 中台返回用户、组织或权限信息，**When** 用户访问应急业务，**Then** 系统按中台授权执行业务访问控制。",
       "result": "PASS",
-      "executionKind": "HTTP_MODULE_INTEGRATION_WITH_SIMULATED_IDENTITY",
-      "testCase": "Bearer identity connects the real page routes without development headers",
-      "assertion": "Bearer identity supplies permissions and unauthorized access is denied",
-      "actualValue": "context HTTP 200; unauthorized HTTP 403",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL_WITH_IDENTITY_SEAM",
+      "testCase": "core positive and negative system flow",
+      "assertion": "platform context grants configured permissions while invalid identity is denied and audited",
+      "actualValue": "authenticated context; invalid token HTTP 403; denied audit persisted",
       "evidence": [
-        "tests/backend/g4-05-integration.test.mjs"
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
       ],
       "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
     },
@@ -1284,15 +1278,13 @@
       "frId": "G2-FR-028",
       "frNumber": 28,
       "expected": "**Given** 中台接口不可用，**When** 业务访问受影响，**Then** 系统展示可观察错误并记录降级/人工处置，不以本地重复建设替代中台通用能力。",
-      "result": "PASS",
-      "executionKind": "MODULE_INTEGRATION_WITH_SIMULATED_EXTERNAL_PORTS",
-      "testCase": "G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands",
-      "assertion": "unauthorized, timeout and failure fixtures fail closed with manual degradation",
-      "actualValue": "manualDegradation=true for every simulated boundary",
-      "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "BLOCKED",
+      "executionKind": "BLOCKED_TARGET_OR_SPECIALTY_EVIDENCE",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件没有满足该AC所需的目标环境、真实外部通道或专项测量证据；等待G5-02或外部资源。"
     },
     {
       "acId": "AC-G2-FR-029-01",
@@ -1313,12 +1305,13 @@
       "frNumber": 29,
       "expected": "**Given** 疏散场景满足业务条件，**When** 授权人员确认开启门禁，**Then** 系统向既有门禁发送指令并等待安全联锁结果，不绕过联锁。",
       "result": "PASS",
-      "executionKind": "MODULE_INTEGRATION_WITH_SIMULATED_ACCESS_PORT",
-      "testCase": "G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands",
-      "assertion": "access OPEN without explicit confirmation is rejected",
-      "actualValue": "error.code=CONTROL_CONFIRMATION_REQUIRED",
+      "executionKind": "SYSTEM_WEB_HTTP_POSTGRESQL_WITH_SIMULATED_ACCESS_INTERLOCK",
+      "testCase": "remaining MVP workbenches and confirmed access control",
+      "assertion": "no command is sent before confirmation; confirmed UI action dispatches once and waits for interlock receipt before accepting",
+      "actualValue": "pre-confirm calls=0; post-confirm calls=1; interlock=ALLOWED; command.status=ACCEPTED persisted",
       "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
       ],
       "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
     },
@@ -1327,15 +1320,13 @@
       "frId": "G2-FR-029",
       "frNumber": 29,
       "expected": "**Given** 门禁拒绝、超时或联锁失败，**When** 接收失败回执，**Then** 系统产生告警、保留回执并转入人工降级处置。",
-      "result": "PASS",
-      "executionKind": "MODULE_INTEGRATION_WITH_SIMULATED_ACCESS_PORT",
-      "testCase": "G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands",
-      "assertion": "timed-out access command is not replayed and enters manual degradation",
-      "actualValue": "attempts=1; manualDegradation=true; automaticReplay=false",
-      "evidence": [
-        "tests/backend/g4-08-sprint2.test.mjs"
-      ],
-      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。"
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。"
     },
     {
       "acId": "AC-G2-FR-030-01",

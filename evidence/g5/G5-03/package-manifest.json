@@ -1,5 +1,5 @@
 {
-  "snapshot": "A final precommit snapshot; no self hash; mutable backfill files excluded from final identity claim",
+  "snapshot": "A backfill snapshot; no self hash; text hashes over physical workspace bytes; native document hashes independently recorded",
   "files": [
     {
       "file": "ai-audit.json",
@@ -40,6 +40,11 @@
       "file": "functional-validation.json",
       "bytes": 346,
       "sha256PhysicalBytes": "9aa27e7cc830f9c156de78284eca146585d496f15ea8da18d478f51f6670be01"
+    },
+    {
+      "file": "git-closeout.json",
+      "bytes": 702,
+      "sha256PhysicalBytes": "05244e101eb27cf8a649dd224111b86150e1bb7a517204e2eeaee524006702d7"
     },
     {
       "file": "input-index.json",
@@ -88,8 +93,8 @@
     },
     {
       "file": "three-audits.md",
-      "bytes": 5041,
-      "sha256PhysicalBytes": "db127f4072c02410061b414f09017db8239bcf4cda54357a6a515d6074582cc5"
+      "bytes": 5434,
+      "sha256PhysicalBytes": "0cfbed292157a435cdf4a2f02c9531b4a1ab42c12c8c5809460b34c9f6a9d6be"
     },
     {
       "file": "version-impact.json",

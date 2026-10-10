@@ -1,0 +1,17 @@
+{
+  "task": "G5-03",
+  "role": "A",
+  "contentCommit": "034d97d144a0b4313db620287b4902bea3debc5e",
+  "branch": "master",
+  "remote": "origin",
+  "pushResult": "SUCCESS NON_FORCE dad5e8b..034d97d",
+  "verifiedRemoteRef": "034d97d144a0b4313db620287b4902bea3debc5e",
+  "backfilledAt": "2026-10-11T01:19:09.002121+08:00",
+  "taskStatus": "REVIEW",
+  "CFinalReview": "PENDING",
+  "courseDecision": "COURSE_CONDITIONAL_ACCEPTANCE_CANDIDATE",
+  "realWorldStatus": "IMPLEMENTATION_AND_REAL_WORLD_DEFERRED",
+  "unconditionalRealWorldPass": false,
+  "CRequest": "evidence/g5/G5-03/review-request.md",
+  "backfillCommit": "this independent backfill intentionally does not contain its own hash"
+}

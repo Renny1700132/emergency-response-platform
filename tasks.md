@@ -196,3 +196,5 @@
 | WBS-26 | MOD-PLATFORM、MOD-TASK |
 | WBS-27 | MOD-PLATFORM、MOD-INTEGRATION |
 | WBS-28 | MOD-PLATFORM、MOD-TASK |
+
+G5-03 A提交记录：内容commit `034d97d144a0b4313db620287b4902bea3debc5e` 已安全非force push `origin/master`；四正式DOCX/RTM v5/八特性/三审/本地quality和全页QA齐套。当前 **REVIEW / C_FINAL_REVIEW_PENDING**；课程条件候选，真实实现/环境延期继续；日志回填提交不记录自身hash。

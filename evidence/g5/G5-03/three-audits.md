@@ -40,3 +40,6 @@ Task G5-03；执行A何思源（用户授权AI代理）；2026-10-11；C独立�
 可移植性证据审计：PASS_WITH_REAL_WORLD_DEFERRED；历史本地17秒部署/隔离PG恢复可回指；甲方环境及真实非乙方部署仍未执行。
 AI使用审计：PASS_FOR_COURSE_REVIEW；跨日LOG-G5-01-002明确CONTINUED_IN_LOG-G5-01-003，最终输出/commit/push位于2026-10-09-C，不判原条缺失为造假；本轮final-output/commit/push必须实际回填。
 A未发现OVR-034/035授权课程候选范围内新增BLOCKER；真实验收BLOCKER继续保留；008仍开放非阻断。C最终复核仍PENDING，不形成DONE或无条件生产验收。
+
+### Git与最终输出审计实际收口
+内容commit034d97d已普通push master成功，远程引用真实核对一致；完整最终用户可见输出已于回填提交前逐字写入同一A日志。此处为实际过程回填，原ai-audit/input-index的read-time快照不反写为不存在的历史会话。G5-03仍REVIEW，C独立复核待执行。回填小提交不记录自身hash。

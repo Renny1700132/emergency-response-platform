@@ -16,7 +16,7 @@
 
 - 相关模拟器与 Sprint 2 后端测试：9/9 PASS，exit 0；原始控制台输出见 `2026-10-10_G5-02-B-course-conditional-tests.log`。
 - 默认技术证据校验：`PASS_WITH_COURSE_WAIVERS`，manifest 23/23、JSON/CSV 1160/1160、八组指标一致、`unconditionalRealWorldPass=false`；输出见 `2026-10-10_G5-02-B-course-conditional-validation-default.log`。
-- `--git-ref=HEAD`：须在内容提交后执行并由 B 在本请求中回填实际结果；未执行前不得预填 PASS。
+- `--git-ref=HEAD`：内容提交 `1ff546484b1140e80e431b78c4e82028fbb2c347` 后实际执行，`PASS_WITH_COURSE_WAIVERS`、Git blob manifest 23/23、exit 0；输出见 `2026-10-10_G5-02-B-course-conditional-validation-git-ref.log`。
 - `git diff --check`：PASS。
 
 ## 3 请 C 明确检查
@@ -26,3 +26,9 @@
 3. KN-065 是否没有虚构真实第三方身份、时间、退出码或签字；
 4. 校验器是否只输出 `PASS_WITH_COURSE_WAIVERS`，并保留 `realWorldDeferred=[owner-external-systems, independent-deployer]` 与 `unconditionalRealWorldPass=false`；
 5. 如全部接受，方可把 G5-02 改为 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / REAL_WORLD_DEFERRED）`。C 若不接受，应列出具体缺口并保持 REVIEW，不得把课程证据误写成真实环境验收。
+
+## 4 提交与推送
+
+- 内容提交：`1ff546484b1140e80e431b78c4e82028fbb2c347`。
+- 推送：2026-10-10 19:17 +08:00 非 force 推送 `origin/master`，远程返回 `f991adb..1ff5464 master -> master`。
+- B 当前只提交最终复核请求，不代替 C 给出接受结论。

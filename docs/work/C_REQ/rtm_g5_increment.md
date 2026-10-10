@@ -32,3 +32,5 @@
 ## 门禁结论
 
 全量分母保持 39 FR / 117 AC / 34 个★FR；当前为 11 PASS / 59 NOT_RUN / 47 BLOCKED，只有 G2-FR-013 的三条 AC 全部 PASS，因此★FR 为 1 PASS / 33 BLOCKED。RTM 编号无断链，但大量 AC 缺完整执行证据；旧版 87 PASS / 28★PASS 与上一轮 24 PASS 均不再作为当前事实。`ISSUE-G5-00-001` 及兼容/资源阻断继续 OPEN。
+
+依据 OVR-035，课程阶段新增条件验收候选，但不改变上述真实结果：G2-FR-030—039 为 `COURSE_DEFERRED / IMPLEMENTATION_DEFERRED`，其余 NOT_RUN/BLOCKED 为 `COURSE_DEFERRED / EVIDENCE_DEFERRED`，兼容/宿主/真实用户及目标环境依赖为 `REAL_WORLD_DEFERRED`。当前为 `PENDING_A_FINAL_REVIEW`，不得写成 117/117、34/34 或无条件真实 PASS。

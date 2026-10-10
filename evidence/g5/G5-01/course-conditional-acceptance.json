@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G5-01",
+  "decisionId": "OVR-035",
+  "decidedAt": "2026-10-10T19:54:00+08:00",
+  "status": "COURSE_CONDITIONAL_ACCEPTANCE_PENDING_A",
+  "classification": "CONDITIONAL_ACCEPTANCE_RECORD",
+  "userAuthorization": "现在完成01的后续任务，采用单独的课程条件验收裁决即可",
+  "truthSnapshot": {
+    "requirements": 39,
+    "acceptanceCriteria": 117,
+    "starRequirements": 34,
+    "acResults": {
+      "PASS": 11,
+      "NOT_RUN": 59,
+      "BLOCKED": 47
+    },
+    "starResults": {
+      "PASS": 1,
+      "BLOCKED": 33
+    },
+    "source": "functional-gate-raw.json",
+    "sourceOverall": "BLOCKED"
+  },
+  "deferredScope": {
+    "implementationDeferred": {
+      "requirements": [
+        "G2-FR-030",
+        "G2-FR-031",
+        "G2-FR-032",
+        "G2-FR-033",
+        "G2-FR-034",
+        "G2-FR-035",
+        "G2-FR-036",
+        "G2-FR-037",
+        "G2-FR-038",
+        "G2-FR-039"
+      ],
+      "acceptanceCriteria": 30,
+      "courseStatus": "COURSE_DEFERRED",
+      "realStatus": "IMPLEMENTATION_DEFERRED",
+      "reason": "These preserved backlog requirements have no executable implementation, and G5 scope forbids adding new functionality."
+    },
+    "evidenceDeferred": {
+      "notRunAcceptanceCriteria": 59,
+      "otherBlockedAcceptanceCriteria": 17,
+      "courseStatus": "COURSE_DEFERRED",
+      "realStatus": "EVIDENCE_DEFERRED",
+      "reason": "No complete AC-level execution evidence exists; partial assertions are not promoted to PASS."
+    },
+    "realWorldDeferred": {
+      "items": [
+        "Chrome latest two stable versions",
+        "Edge second stable version",
+        "Android H5 host/device matrix",
+        "iOS H5 host/device matrix",
+        "KN-039 real new-user learning-time observation",
+        "owner-system and target-environment dependent AC verification"
+      ],
+      "courseStatus": "COURSE_DEFERRED",
+      "realStatus": "REAL_WORLD_DEFERRED"
+    }
+  },
+  "acceptedFor": [
+    "G5-01 course conditional acceptance candidate",
+    "G5-03 course report completion after A review",
+    "course demonstration and evidence assembly"
+  ],
+  "notAcceptedFor": [
+    "claiming 117/117 acceptance criteria PASS",
+    "claiming 34/34 star requirements PASS",
+    "claiming G2-FR-030 through G2-FR-039 are implemented",
+    "claiming the missing browser and mobile-host matrix was executed",
+    "claiming KN-039 was observed with a real new user",
+    "claiming unconditional production or real-world acceptance",
+    "marking G5-01 DONE before A final review"
+  ],
+  "review": {
+    "requiredReviewer": "A",
+    "status": "PENDING_A_FINAL_REVIEW"
+  },
+  "unconditionalRealWorldPass": false,
+  "statement": "No NOT_RUN or BLOCKED result was rewritten as PASS. This record changes only the course-stage progression decision and preserves all implementation, evidence and real-world follow-up obligations."
+}

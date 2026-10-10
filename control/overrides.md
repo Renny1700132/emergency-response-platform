@@ -463,3 +463,14 @@
 - 事实与责任边界：不改变 39 FR、34★、117 AC、PE/KN、甲乙责任、真实项目履约义务或后续补测责任；原 BLOCKED 历史、0/6 真实环境和 0 名真实非乙方操作者事实全部保留。
 - 评分/审计影响：以显著的课程/真实世界双状态换取课程阶段收口，不产生姓名、账号、响应、时间、退出码或签字伪证；最终进入 G6 的课程准出仍由 C 复核本 Override 边界。
 - 状态：ACTIVE_FOR_G5_COURSE_CONDITIONAL_ACCEPTANCE。
+
+## OVR-035｜G5-01课程条件验收裁决
+
+- 时间：2026-10-10（北京时间）；主责 C；P0 当前用户完整原文见 `LOG-G5-01-007`。
+- 用户授权原文：`现在完成01的后续任务，采用单独的课程条件验收裁决即可`。
+- 被调整规则：G5-01 原 DoD 要求 117 AC 全量核验、每需求至少一条真实 PASS、34 个★FR 全部核验、Chrome/Edge 最新两个稳定版及 Android/iOS 宿主矩阵、KN-039 真实新用户计时全部满足后才可进入最终 Review。
+- 实际执行规则：保留当前真实结果 11 PASS / 59 NOT_RUN / 47 BLOCKED、★FR 1 PASS / 33 BLOCKED；将 G2-FR-030—039 未实现范围登记为 `COURSE_DEFERRED / IMPLEMENTATION_DEFERRED`，将其余缺测 AC 登记为 `COURSE_DEFERRED / EVIDENCE_DEFERRED`，将兼容设备、宿主、真实用户及依赖目标环境的验证登记为 `REAL_WORLD_DEFERRED`。这些状态只构成课程条件验收候选，任何 NOT_RUN/BLOCKED 均不得改写为真实 PASS。
+- 状态规则：C 完成后只可把 G5-01 置为 `REVIEW（COURSE_CONDITIONAL_ACCEPTANCE_PENDING_A）`；A 作为指定 Review 接受后才可置 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / IMPLEMENTATION_AND_REAL_WORLD_DEFERRED）`。
+- 不变项：不改变 39 FR、34★、117 AC、关键数字、需求边界或真实履约义务；不实现 G2-FR-030—039，不删除历史失败/阻断，不冒充 Chrome/Edge 双版本、Android/iOS 宿主、真实用户或未执行 AC 已通过。
+- 评分/审计影响：以显著的课程准出与实现/真实世界延期双轨状态推进 G5-03；最终报告必须同时列出真实 PASS、NOT_RUN、BLOCKED 和延期范围，不得给出 117/117 或 34/34 真实 PASS 表述。
+- 状态：ACTIVE_FOR_G5_01_COURSE_CONDITIONAL_ACCEPTANCE。

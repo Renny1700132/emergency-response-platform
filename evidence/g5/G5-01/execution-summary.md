@@ -42,3 +42,12 @@
 ## 结论
 
 A 第三轮仅要求处理的 003 最后缺口已完成主责整改并提交复验：`AC-G2-FR-013-02` 现在以 1 条全匹配和 4 条单条件近似反例证明组合过滤的保留与排除结果。004、005 保持 `CLOSED / VERIFIED_BY_A`，本轮未修改其已关闭范围。G5-01 仍为 `BLOCKED / PENDING_A_REREVIEW_3`：等待 A 复验 003，且多数 AC 尚无完整执行证据、FR-030—039 未实现、兼容版本/Android/iOS/KN-039 等资源门禁仍未满足。不得置 `DONE`，不得进入 G6。
+
+## OVR-035 课程条件验收候选（2026-10-10）
+
+A 已于第三轮复验关闭 003，004/005 继续保持关闭。用户随后明确授权 G5-01 采用单独课程条件验收裁决。真实结果仍为 11 PASS / 59 NOT_RUN / 47 BLOCKED、★FR 1 PASS / 33 BLOCKED，原结论与历史不删除、不改写。
+
+- G2-FR-030—039：`COURSE_DEFERRED / IMPLEMENTATION_DEFERRED`；30 个 AC 未实现，不称 PASS。
+- 其余未执行/阻断 AC：`COURSE_DEFERRED / EVIDENCE_DEFERRED`；不以套件整体 PASS 外推 AC。
+- Chrome/Edge 双版本、Android/iOS 宿主、KN-039 真实用户及目标环境依赖：`REAL_WORLD_DEFERRED`。
+- 当前任务状态：`REVIEW（COURSE_CONDITIONAL_ACCEPTANCE_PENDING_A）`；只有指定 Review A 接受后方可条件 DONE。

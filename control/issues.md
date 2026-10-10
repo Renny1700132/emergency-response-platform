@@ -1921,3 +1921,13 @@
 - 003：CLOSED / VERIFIED_BY_A。新增1条全匹配+4条单条件近似反例，SQL核对5条记录，组合查询仅保留目标ID并排除四反例ID；忽略任一过滤条件不再能够通过。原始归档专用系统包exit0、2/2PASS，矩阵/RTM/摘要/白名单同步，关闭最后缺口。
 - 004/005维持CLOSED；本轮整改复审PASS，不新增其他问题。2/2为C实际归档结果，A本轮审查源码/原始输出，不宣称独立重跑。
 - G5-01完整质量门禁仍BLOCKED：11PASS/59NOT_RUN/47BLOCKED、兼容/KN-039及backlog等既有门禁未满足；Review PASS不改写这些实际结果，不等于进入G6。
+
+### C课程条件验收整改（2026-10-10）｜ISSUE-G5-00-001 / ISSUE-G5-01-002
+
+- 授权：用户通过 OVR-035 明确要求 G5-01 采用单独课程条件验收裁决；完整原文见 `LOG-G5-01-007`。
+- 真实结果不变：117 AC 为 11 PASS / 59 NOT_RUN / 47 BLOCKED，34 个★FR 为 1 PASS / 33 BLOCKED；`functional-gate-raw.json` 继续保持 `overall=BLOCKED`。
+- ISSUE-G5-00-001 课程阶段候选：`CLOSED_FOR_COURSE_STAGE / IMPLEMENTATION_AND_EVIDENCE_DEFERRED / PENDING_A_FINAL_REVIEW`。其中 G2-FR-030—039 的 30 AC 为 `IMPLEMENTATION_DEFERRED`，其余 59 NOT_RUN / 17 BLOCKED 为 `EVIDENCE_DEFERRED`；真实项目关闭条件仍未满足。
+- ISSUE-G5-01-002 课程阶段候选：`CLOSED_FOR_COURSE_STAGE / REAL_WORLD_DEFERRED / PENDING_A_FINAL_REVIEW`。Chrome 最新两个稳定版、Edge 第二稳定版、Android/iOS 宿主矩阵及 KN-039 真实新用户计时仍未执行。
+- 003/004/005 保持既有 `CLOSED / VERIFIED_BY_A`，本轮不重写其 Review 历史。
+- 复核门禁：C 只把 G5-01 置为 `REVIEW（COURSE_CONDITIONAL_ACCEPTANCE_PENDING_A）`；A 接受 OVR-035 边界后，才可置 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / IMPLEMENTATION_AND_REAL_WORLD_DEFERRED）`。
+- 证据：`evidence/g5/G5-01/course-conditional-acceptance.json`、`course-conditional-review-request.md`、`scripts/g5/validate-functional-course-acceptance.mjs`。

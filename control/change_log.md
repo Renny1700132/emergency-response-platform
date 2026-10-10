@@ -71,4 +71,4 @@
 - 新证据：`course-conditional-external-systems.json`、`course-conditional-kn065-witness.json`、既有 G4 fixture/测试证据及 G5 Docker 17 秒原始证据。
 - 状态迁移：`BLOCKED -> REVIEW（COURSE_CONDITIONAL_ACCEPTANCE_PENDING_C） -> DONE（COURSE_CONDITIONAL_ACCEPTANCE / REAL_WORLD_DEFERRED）`；C 于 2026-10-10 最终复核接受，真实世界补测义务不变。
 - 影响分析：G5-03 可依据 C 的课程条件验收结论进行最终课程收口；正式材料必须显著显示 `COURSE_ACCEPTED` 与 `REAL_WORLD_NOT_RUN`，不得生成或暗示真实甲方/第三方 PASS。
-- Commit / PR：B 内容提交 `1ff546484b1140e80e431b78c4e82028fbb2c347`；PR N/A（OVR-032）；C 最终复核证据见 `logs/reviews/2026-10-10_G5-02-C-final-course-acceptance.md`，收口提交待回填。
+- Commit / PR：B 内容提交 `1ff546484b1140e80e431b78c4e82028fbb2c347`；C 收口提交 `ef444ef9531be7723debbae9884af0a46cc840e2` 已非强制推送至 `origin/master`；PR N/A（OVR-032）；最终复核证据见 `logs/reviews/2026-10-10_G5-02-C-final-course-acceptance.md`。

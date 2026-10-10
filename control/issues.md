@@ -1931,3 +1931,8 @@
 - 003/004/005 保持既有 `CLOSED / VERIFIED_BY_A`，本轮不重写其 Review 历史。
 - 复核门禁：C 只把 G5-01 置为 `REVIEW（COURSE_CONDITIONAL_ACCEPTANCE_PENDING_A）`；A 接受 OVR-035 边界后，才可置 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / IMPLEMENTATION_AND_REAL_WORLD_DEFERRED）`。
 - 证据：`evidence/g5/G5-01/course-conditional-acceptance.json`、`course-conditional-review-request.md`、`scripts/g5/validate-functional-course-acceptance.mjs`。
+
+### A 最终课程验收（2026-10-11）｜既有 G5-01 问题收口
+
+- 依据OVR-035，接受C课程条件验收候选；ISSUE-G5-00-001为CLOSED_FOR_COURSE_STAGE / IMPLEMENTATION_AND_EVIDENCE_DEFERRED / VERIFIED_BY_A，ISSUE-G5-01-002为CLOSED_FOR_COURSE_STAGE / REAL_WORLD_DEFERRED / VERIFIED_BY_A。真实关闭条件仍未满足，延期义务保留。
+- 003/004/005维持CLOSED / VERIFIED_BY_A；未发现授权课程验收范围内较大新问题，不新增ISSUE。G5-01条件DONE；详细依据见logs/reviews/2026-10-11_G5-01-A-final-review.md。

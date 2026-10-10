@@ -2,7 +2,7 @@
 
 状态只允许：`TODO`、`DOING`、`REVIEW`、`DONE`、`BLOCKED`。
 
-当前进展：第一关已冻结，第二关已通过M2，第三关已通过M3且 `BASELINE-G3-M3-R1.0` 冻结；G4-00—G4-11已全部DONE并收口进入master。第五关质量门禁于2026-10-08启动，G5-00启动自检完成。依据 OVR-035，G5-01 已形成课程条件验收候选并进入 A 最终复核，真实结果保持 11 PASS / 59 NOT_RUN / 47 BLOCKED、★FR 1 PASS / 33 BLOCKED；依据 OVR-034，G5-02 已由 C 完成课程条件验收并置为 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / REAL_WORLD_DEFERRED）`。G5-03 可继续草拟，最终课程收口等待 A 接受 G5-01；所有实现/证据/真实世界延期必须显著披露，不得虚报 PASS。
+当前进展：第一关已冻结，第二关已通过M2，第三关已通过M3且 `BASELINE-G3-M3-R1.0` 冻结；G4-00—G4-11已全部DONE并收口进入master。第五关质量门禁于2026-10-08启动，G5-00启动自检完成。依据 OVR-035，G5-01 已由 A 完成课程条件验收 Review 并置为 DONE，真实结果保持 11 PASS / 59 NOT_RUN / 47 BLOCKED、★FR 1 PASS / 33 BLOCKED；依据 OVR-034，G5-02 已由 C 完成课程条件验收并置为 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / REAL_WORLD_DEFERRED）`。G5-03 的课程收口前置已满足，可由 A 开始报告与最终复核准备；所有实现/证据/真实世界延期必须显著披露，不得虚报 PASS。
 
 | Task ID | 任务 | 主责 | 复核 | 前置任务 | 输入 | 输出 | 状态 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -106,9 +106,9 @@
 | Task ID | 任务 | 主责 | Review | 前置 | 输入 | 输出 | DoD | 状态 |
 |---|---|---|---|---|---|---|---|---|
 | G5-00 | 启动、治理切换与长任务规划 | A（何思源 / @WhiteApricot） | A启动自检关闭；C后续抽查不冒充已完成 | G4-00—11 DONE/master；G3冻结 | G5任务书、公共指导书、测试计划、SRS/spec/RTM v4、G4 evidence、当前P0 | G5输入索引、OVR-032、完整治理切换、范围/适用性、三个长任务、总checklist、自检证据 | 原始输入归档；当前规则无G5强制PR冲突；四项任务/角色/依赖/DoD齐全；硬门禁与简化/N/A透明；历史G4 evidence/基线未改；启动自检通过；commit及安全push留痕 | DONE |
-| G5-01 | 三级测试、功能正确性、兼容性与缺陷闭环 | C | A | G5-00 | 测试计划117TC、SRS/spec/RTM v4、冻结★/AC、G4测试与缺陷 | 最终用例集/三级实际数据、兼容矩阵、错误语义走查、FR/AC/TC结果挂接、缺陷看板/修复复测记录 | 单元/集成/系统实际执行；集成最终100%PASS；★全部核验；每需求≥1真实PASS且RTM无断链；最小有效兼容矩阵实测；缺陷分级/修复/复测闭环；严重清零；整体A Review留痕；未实现backlog/外部缺证据如实BLOCKED，不能以MVP覆盖冒充全量完成 | REVIEW（COURSE_CONDITIONAL_ACCEPTANCE_PENDING_A；OVR-035；真实结果保持11 PASS / 59 NOT_RUN / 47 BLOCKED，★FR 1 PASS / 33 BLOCKED；A接受后方可条件DONE） |
+| G5-01 | 三级测试、功能正确性、兼容性与缺陷闭环 | C | A | G5-00 | 测试计划117TC、SRS/spec/RTM v4、冻结★/AC、G4测试与缺陷 | 最终用例集/三级实际数据、兼容矩阵、错误语义走查、FR/AC/TC结果挂接、缺陷看板/修复复测记录 | 单元/集成/系统实际执行；集成最终100%PASS；★全部核验；每需求≥1真实PASS且RTM无断链；最小有效兼容矩阵实测；缺陷分级/修复/复测闭环；严重清零；整体A Review留痕；未实现backlog/外部缺证据如实BLOCKED，不能以MVP覆盖冒充全量完成 | DONE（COURSE_CONDITIONAL_ACCEPTANCE / IMPLEMENTATION_AND_REAL_WORLD_DEFERRED；A Review 2026-10-11 ACCEPTED，OVR-035；真实AC 11/59/47、★FR 1/33保持不变） |
 | G5-02 | 性能、可靠性、维护性、可移植性与故障演练 | B | C | G5-00 | 冻结PE/KN/NFR、设计/部署契约、G4专项原始数据与环境 | 性能原始数据/报告输入、P50/P95/P99、恢复/故障演练、静态/安全/coverage/OpenAPI/secret/dependency audit、Docker干净部署证据、技术缺陷修复复测 | 可测PE/KN逐项真实执行；并发/主要接口与P99；外部超时失败/消息失败/数据库服务恢复；至少一轮故障或破坏性演练；静态无阻断；核心coverage≥70%、高危0、OpenAPI零schema error；Docker/Compose干净部署；技术缺陷整改复测；整体C Review；目标环境缺失保留BLOCKED不代造PASS | DONE（COURSE_CONDITIONAL_ACCEPTANCE / REAL_WORLD_DEFERRED；C 于 2026-10-10 接受 OVR-034 课程条件验收；真实甲方系统 0/6、真实非乙方操作者 0，后续补测） |
-| G5-03 | 正式测试报告、RTM闭环与第五关最终收口 | A | C最终复核 | 草拟：G5-01/G5-02 本地候选及Review可用；课程最终收口：C 接受 OVR-034 且 G5-01 完成对应收口 | 两项真实完整数据与Review、缺陷、RTM、正式文档Skill/唯一Reference | 正式《测试报告》、性能压测报告、《缺陷看板与修复记录》、RTM闭环核验记录、八特性自评、三审、最终一致性/阶段结论 | 四成果齐套含用例/coverage/数据/遗留、性能环境规模并发P50/P95/P99失败率原始数据与边界；每需求≥1PASS/★全核验/RTM无断链；八特性有证据；三审无BLOCKER、严重缺陷0；DOCX Reference物理复制+渲染QA；tasks/README/RTM/Git一致；C最终复核必须分列COURSE_ACCEPTED与REAL_WORLD_NOT_RUN，课程准出不消除后续补测责任 | TODO（草拟可继续；G5-02已条件DONE，等待 A 接受 OVR-035 后完成 G5-01 条件收口，再进行最终准出） |
+| G5-03 | 正式测试报告、RTM闭环与第五关最终收口 | A | C最终复核 | 草拟：G5-01/G5-02 本地候选及Review可用；课程最终收口：C 接受 OVR-034 且 G5-01 完成对应收口 | 两项真实完整数据与Review、缺陷、RTM、正式文档Skill/唯一Reference | 正式《测试报告》、性能压测报告、《缺陷看板与修复记录》、RTM闭环核验记录、八特性自评、三审、最终一致性/阶段结论 | 四成果齐套含用例/coverage/数据/遗留、性能环境规模并发P50/P95/P99失败率原始数据与边界；每需求≥1PASS/★全核验/RTM无断链；八特性有证据；三审无BLOCKER、严重缺陷0；DOCX Reference物理复制+渲染QA；tasks/README/RTM/Git一致；C最终复核必须分列COURSE_ACCEPTED与REAL_WORLD_NOT_RUN，课程准出不消除后续补测责任 | TODO（G5-01/G5-02已课程条件DONE；由A启动正式报告与最终收口，C最终复核；延期范围必须披露） |
 
 角色链：A `G5-00 → G5-03`；B `G5-02`；C `G5-01 → G5-03最终复核`。G5-01与G5-02尽量并行；共享master提交/push串行协调，不能同时写同一工作树。
 

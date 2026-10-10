@@ -10,6 +10,8 @@ const performance = await readJson('performance-raw.json')
 const fault = await readJson('fault-drill-raw.json')
 const quality = await readJson('quality-summary.json')
 const environment = await readJson('environment-readiness.json')
+const externalReadiness = await readJson('external-resource-readiness.json')
+const independentReadiness = await readJson('kn065-independent-deployer-readiness.json')
 const dockerCleanDeploy = await readJson('docker-clean-deploy.json')
 const postgresRecovery = await readJson('postgres-recovery-drill.json')
 const manifest = await readJson('manifest.json')
@@ -46,7 +48,7 @@ for (const entry of manifest.files) {
   }
 }
 assert.equal(manifestResults.length, manifest.files.length)
-assert.ok(manifestResults.length >= 18)
+assert.ok(manifestResults.length >= 20)
 
 function parseCsvLine(line) {
   const fields = []
@@ -131,8 +133,25 @@ assert.equal(environment.docker.cleanDeploy, 'PASS')
 assert.equal(environment.postgresql.recoveryDrill, 'PASS')
 assert.equal(environment.independentDeployer.status, 'BLOCKED')
 assert.equal(environment.ownerExternalSystems.status, 'BLOCKED')
+assert.equal(environment.independentDeployer.evidence, 'kn065-independent-deployer-readiness.json')
+assert.equal(environment.ownerExternalSystems.evidence, 'external-resource-readiness.json')
+assert.equal(independentReadiness.controlId, 'KN-065')
+assert.equal(independentReadiness.status, 'BLOCKED')
+assert.equal(independentReadiness.operator.auditableIdentity, null)
+assert.equal(independentReadiness.execution.exitCode, null)
+assert.equal(externalReadiness.status, 'BLOCKED')
+assert.equal(externalReadiness.summary.expectedSystems, 6)
+assert.equal(externalReadiness.summary.availableSystems, 0)
+assert.equal(externalReadiness.summary.testedSystems, 0)
+assert.deepEqual(externalReadiness.systems.map((item) => item.id), ['VIDEO', 'MESSAGE', 'LOCATION', 'GIS', 'SECURITY', 'PUBLISH'])
+for (const system of externalReadiness.systems) {
+  assert.equal(system.status, 'BLOCKED')
+  assert.equal(system.verification, 'NOT_RUN')
+  assert.ok(system.missingInputs.length > 0)
+}
 assert.equal(dockerCleanDeploy.status, 'PASS')
 assert.equal(dockerCleanDeploy.withinTwoHours, true)
+assert.ok(dockerCleanDeploy.durationSeconds <= 7200)
 assert.equal(dockerCleanDeploy.healthStatus, 200)
 assert.equal(dockerCleanDeploy.readyStatus, 200)
 assert.equal(dockerCleanDeploy.readyAfterRestartStatus, 200)

@@ -55,3 +55,10 @@
 - 本次 17 秒 Docker build/up/迁移/health/ready/重启及 EXIT trap 清理结果接受；008 降为 `MINOR / NON_BLOCKING_IMPROVEMENT`，只保留门禁健壮性建议。
 - 002 现仅剩 KN-065 非乙方独立部署；001 甲方真实外部系统仍缺。两项外部阻断未被放宽，G5-02 仍不得置 DONE。
 - 记录：`logs/reviews/2026-10-10_G5-02-C-standard-calibration.md`。
+
+## B 两项外部硬门禁推进（2026-10-10）
+
+- 甲方环境：按视频、消息、定位、GIS、安防、信息发布六类核查，本轮 `0/6 available`、`0/6 tested`；每类 endpoint、受控凭据、合法数据/对象和测试窗口缺口已写入 `external-resource-readiness.json`，未把模拟证据升级为 PASS。
+- KN-065：本轮没有真实非乙方操作者，身份、关系、时间、退出码和日志均保持空值；新增 `run-kn065-independent-deploy.sh`，只有提供身份边界声明且 `G5_B_ASSISTED=false` 才允许进入统一干净部署脚本。准备入口不等于独立部署已执行。
+- 008：仅顺手完成非阻断脚本强化候选，改为真实计算≤2h，并在 PASS 前校验清理及残留；没有重跑或覆盖 C 已接受的历史 Docker 证据。
+- 请求 C 后续只在真实外部资源到位后复验 001/002；008 可一并核对，不应反向阻断当前资源取得主线。G5-02 继续 `BLOCKED / EXTERNAL_RESOURCES_REQUIRED`，不请求 DONE。

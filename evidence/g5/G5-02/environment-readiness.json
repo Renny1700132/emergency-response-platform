@@ -1,6 +1,6 @@
 {
   "taskId": "G5-02",
-  "generatedAt": "2026-10-09T14:52:04.958Z",
+  "generatedAt": "2026-10-10T17:30:00+08:00",
   "docker": {
     "status": "PASS",
     "engine": "WSL2 Docker Engine 28.1.1",
@@ -31,10 +31,18 @@
   },
   "independentDeployer": {
     "status": "BLOCKED",
-    "reason": "No non-contractor human operator participated in this execution."
+    "controlId": "KN-065",
+    "availableOperatorCount": 0,
+    "reason": "No real non-contractor human operator and clean host were supplied for this execution.",
+    "evidence": "kn065-independent-deployer-readiness.json",
+    "executionEntry": "scripts/g5/run-kn065-independent-deploy.sh"
   },
   "ownerExternalSystems": {
     "status": "BLOCKED",
-    "reason": "Owner video, message, location, GIS and other target endpoints/accounts are unavailable; local adapter results remain SIMULATED_EVIDENCE."
+    "expectedSystems": 6,
+    "availableSystems": 0,
+    "testedSystems": 0,
+    "reason": "Owner video, message, location, GIS, security and information-publishing endpoints/accounts/data/windows are unavailable; local adapter results remain SIMULATED_EVIDENCE.",
+    "evidence": "external-resource-readiness.json"
   }
 }

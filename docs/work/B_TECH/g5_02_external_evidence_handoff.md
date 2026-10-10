@@ -28,9 +28,20 @@
 ```bash
 git clone <仓库地址>
 cd emergency-response-platform
-bash scripts/g5/run-docker-clean-deploy.sh
+G5_OPERATOR_ID='<可审计身份>' \
+G5_OPERATOR_RELATIONSHIP='<与乙方团队关系>' \
+G5_OPERATOR_ATTESTATION='<本人独立执行且记录真实>' \
+G5_B_ASSISTED=false \
+bash scripts/g5/run-kn065-independent-deploy.sh
 ```
 
-独立操作者须记录：姓名或可审计身份、与项目团队关系、主机/OS、Docker/Compose 版本、开始/结束时间、完整命令、退出码、是否得到 `PASS`、遇到的问题及是否获得 B 的现场干预。验收证据至少包含脚本生成的 JSON/日志和操作者声明；若 B 介入修改环境或命令，本次不得判为“独立一次成功”。
+独立操作者须记录：姓名或可审计身份、与项目团队关系、主机/OS、Docker/Compose 版本、开始/结束时间、上述完整命令、退出码、是否得到 `PASS`、遇到的问题及是否获得 B 的现场干预。脚本生成 `evidence/g5/G5-02/kn065-independent-deploy.json` 与 `.log`；两者和操作者声明一起作为验收证据。若 B 介入修改环境或命令，必须把 `G5_B_ASSISTED` 改为 `true`，脚本会拒绝把该次运行作为 KN-065 候选。
 
 完成后由 C 核对仓库提交、操作者身份边界、≤2 小时、空卷/无缓存构建、迁移、health/ready、重启恢复及退出清理，再决定是否关闭 ISSUE-G5-02-002。
+
+## 3 2026-10-10 取得状态
+
+- 非乙方操作者：`0`；未提供身份、关系声明或独立主机，KN-065 未执行。
+- 甲方系统：视频、消息、定位、GIS、安防、信息发布共 `0/6 available`、`0/6 tested`。
+- 机器可复核记录：`evidence/g5/G5-02/kn065-independent-deployer-readiness.json`、`external-resource-readiness.json`。
+- 当前结论：两项均保持 `BLOCKED`；任何后续取得的单项资源应立即按本交接单执行并单独归档，不必等待六类一次性齐备。

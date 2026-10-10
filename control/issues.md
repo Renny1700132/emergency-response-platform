@@ -1723,6 +1723,12 @@
 - 002 调整为 `OPEN / PARTIALLY_REMEDIATED_BY_B / PARTICIPANT_REQUIRED`，剩余阻断仅为 KN-065 非乙方独立部署；008 降为非阻断改进项。
 - 记录：`logs/reviews/2026-10-10_G5-02-C-standard-calibration.md`。
 
+### B 外部资源取得核查（2026-10-10）｜ISSUE-G5-02-001 / 002
+
+- 001：按视频、消息、定位、GIS、安防、信息发布六类逐项检查仓库配置与本机连接变量存在性；当前 `0/6 available`、`0/6 tested`，没有可用 endpoint、受控账号/令牌、合法测试数据/对象和已确认测试窗口。逐项缺口写入 `evidence/g5/G5-02/external-resource-readiness.json`，状态保持 `OPEN / VERIFIED_BLOCKING_BY_C / ENVIRONMENT_REQUIRED`。
+- 002：本轮没有取得真实非乙方操作者、关系声明和独立干净主机，操作者身份、起止时间、退出码、原始日志均保持空值，见 `kn065-independent-deployer-readiness.json`。新增受控入口 `scripts/g5/run-kn065-independent-deploy.sh`，强制收集身份边界并拒绝 `G5_B_ASSISTED!=false` 的运行；该准备工作不等于 KN-065 已执行，状态保持 `OPEN / PARTIALLY_REMEDIATED_BY_B / PARTICIPANT_REQUIRED`。
+- 边界：没有把本地模拟服务、B 已完成的 Docker 运行或缺失输入代写为甲方/非乙方 PASS。任一真实资源先到位即可逐项实测归档，无须等待其余资源；仍由 C 复验后关闭对应 Issue。
+
 ## ISSUE-G5-02-003｜证据清单哈希与入库字节不一致
 
 - 日期/提出：2026-10-09，C（G5-02 Review）；主责整改：B；复核：C。
@@ -1840,6 +1846,12 @@
 - 影响：本轮 17 秒日志及 EXIT trap 足以在放宽后的标准下接受当前运行；但不能保证后续超过两小时或清理失败的运行被门禁拒绝，审计强度和长期可复跑性仍可提升。
 - 整改要求：从真实时长计算并断言 `durationSeconds <= 7200`；在成功 JSON/结论前显式执行并检查 `down -v --remove-orphans`，保存清理命令结果并验证项目容器、卷、网络无残留；校验器直接核对时长与清理字段。保留现有成功/失败原始日志，不覆盖历史。
 - 标准校准：用户于 2026-10-10 授权适当放宽标准。C 保留问题与整改建议，但撤销对本次 Docker 证据的阻断；008 不再作为 002 的关闭前置。记录：`logs/reviews/2026-10-10_G5-02-C-standard-calibration.md`。
+
+#### B 非阻断改进候选（2026-10-10）
+
+- `run-docker-clean-deploy.sh` 已改为根据 `durationSeconds <= 7200` 计算时限结论，在写入 PASS 前显式执行 `down -v --remove-orphans` 并核对项目容器、卷、网络残留均为 0；失败路径继续保留日志并尽力清理。
+- `validate-technical-gate.mjs` 直接断言历史已接受证据的真实时长不超过 7200 秒，并校验两份外部资源阻断证据；本次没有覆盖或重跑历史 Docker 原始日志。
+- 状态：`B_REMEDIATED / PENDING_C_REREVIEW / NON_BLOCKING_IMPROVEMENT`。本项不影响 001/002 主线，C 可在后续外部资源复验时一并核对。
 
 ### A复审结论追加（2026-10-09）｜ISSUE-G5-01-003/004/005
 

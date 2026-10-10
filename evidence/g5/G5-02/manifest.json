@@ -1,6 +1,6 @@
 {
   "taskId": "G5-02",
-  "generatedAt": "2026-10-09T14:58:03.549Z",
+  "generatedAt": "2026-10-10T09:30:37.884Z",
   "baseline": "e6e12b59fc5749cdf0475ed9631bac7d21d4bb1a",
   "normalization": "Manifest bytes and SHA-256 are calculated over canonical UTF-8 LF content. Git blobs must match exactly; Windows workspace CRLF is canonicalized to LF by the validator before comparison.",
   "files": [
@@ -41,13 +41,23 @@
     },
     {
       "file": "environment-readiness.json",
-      "bytes": 1409,
-      "sha256": "e5ba7c168e2f5ed47d95f7e977f8e626925506e16e4b017f3f4e2fba59d81bae"
+      "bytes": 1783,
+      "sha256": "a95e797231be8115d12aa32109c8a613998a1b814361813242d2f6f78a344a98"
+    },
+    {
+      "file": "external-resource-readiness.json",
+      "bytes": 3109,
+      "sha256": "76abacbefdc20cb45b7fe8f4a1802c9e431bcdca58c59f4d5be0eaba4b8df746"
     },
     {
       "file": "fault-drill-raw.json",
       "bytes": 1417,
       "sha256": "046a610b3235395a49ec9fc5c403cbd84a69d72e1476228b08ff7d19aa99e7ce"
+    },
+    {
+      "file": "kn065-independent-deployer-readiness.json",
+      "bytes": 879,
+      "sha256": "dd74a85442d2990cc175736696572c8da53c760cfe377829a991e2626655a426"
     },
     {
       "file": "openapi-lint.log",

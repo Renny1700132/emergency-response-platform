@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G5-02",
+  "checkedAt": "2026-10-10T17:30:00+08:00",
+  "status": "BLOCKED",
+  "summary": {
+    "expectedSystems": 6,
+    "availableSystems": 0,
+    "testedSystems": 0,
+    "passedSystems": 0
+  },
+  "discovery": {
+    "methods": [
+      "Reviewed repository configuration and controlled evidence for owner-environment connection details.",
+      "Checked presence only, never values, of the documented external-system environment variables."
+    ],
+    "secretValuesRecorded": false,
+    "result": "No usable owner endpoint, credential, lawful test data or confirmed test window was available in this execution environment."
+  },
+  "systems": [
+    {
+      "id": "VIDEO",
+      "name": "甲方视频系统",
+      "status": "BLOCKED",
+      "requiredInputs": ["endpoint", "controlled account/token", "video point", "playback time range", "test window"],
+      "missingInputs": ["endpoint", "controlled account/token", "video point", "playback time range", "test window"],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "MESSAGE",
+      "name": "甲方统一消息通道",
+      "status": "BLOCKED",
+      "requiredInputs": ["endpoint", "controlled account/token", "signature/quota", "20-channel test recipients", "test window"],
+      "missingInputs": ["endpoint", "controlled account/token", "signature/quota", "20-channel test recipients", "test window"],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "LOCATION",
+      "name": "甲方定位源",
+      "status": "BLOCKED",
+      "requiredInputs": ["endpoint", "controlled account/token", "sub-meter source samples", "person mapping", "test window"],
+      "missingInputs": ["endpoint", "controlled account/token", "sub-meter source samples", "person mapping", "test window"],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "GIS",
+      "name": "甲方 GIS 服务",
+      "status": "BLOCKED",
+      "requiredInputs": ["service endpoint", "controlled account/token", "authorized layers", "test points", "test window"],
+      "missingInputs": ["service endpoint", "controlled account/token", "authorized layers", "test points", "test window"],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "SECURITY",
+      "name": "甲方安防系统",
+      "status": "BLOCKED",
+      "requiredInputs": ["endpoint", "controlled account/token", "safe test object", "interlock constraints", "test window"],
+      "missingInputs": ["endpoint", "controlled account/token", "safe test object", "interlock constraints", "test window"],
+      "verification": "NOT_RUN"
+    },
+    {
+      "id": "PUBLISH",
+      "name": "甲方信息发布系统",
+      "status": "BLOCKED",
+      "requiredInputs": ["endpoint", "controlled account/token", "authorized test content/device", "rollback method", "test window"],
+      "missingInputs": ["endpoint", "controlled account/token", "authorized test content/device", "rollback method", "test window"],
+      "verification": "NOT_RUN"
+    }
+  ],
+  "boundary": "Local adapters and fixtures remain SIMULATED_EVIDENCE and are not counted as owner-environment PASS."
+}

@@ -1,9 +1,9 @@
 # G5-02 技术专项验证记录
 
-- Task：G5-02；主责：B；整体 Review：C 第三轮复验已接受（003/004/005 已关闭；001/002 已确认继续阻断）。
+- Task：G5-02；主责：B；整体 Review：C 已校准为 `ACCEPTED_WITH_NOTE / BLOCKED_BY_EXTERNAL_RESOURCES`（003—007 已关闭；008 为非阻断改进；001/002 继续阻断）。
 - 执行基线：`e6e12b59fc5749cdf0475ed9631bac7d21d4bb1a`。
 - 本轮性质：性能、可靠性、维护性、可移植性和故障演练的内部工作记录；不是正式《性能压测报告》。
-- 原始数据：`evidence/g5/G5-02/performance-raw.json`、`performance-samples.csv`、`fault-drill-raw.json`、`postgres-recovery-drill.json`、`docker-clean-deploy.json`、`quality-gate.log`、`environment-readiness.json`。
+- 原始数据：`evidence/g5/G5-02/performance-raw.json`、`performance-samples.csv`、`fault-drill-raw.json`、`postgres-recovery-drill.json`、`docker-clean-deploy.json`、`quality-gate.log`、`environment-readiness.json`、`external-resource-readiness.json`、`kn065-independent-deployer-readiness.json`。
 - 总结论：本地可执行技术门禁、隔离 PostgreSQL 恢复演练和 WSL2 Docker/Compose 干净部署已通过；甲方真实外部系统与非乙方独立部署仍缺少资源，G5-02 保持 `BLOCKED`，不得写成总体 PASS/DONE。
 
 ## 1 环境与方法
@@ -56,6 +56,14 @@ PE-04 在本次归档轮次的模拟正常通道并行 20 路，20/20 接受、1
 | 甲方视频/消息/定位/GIS/安防接口 | BLOCKED | 提供目标环境、账号、合法测试数据和窗口；按 PE-02/04/05/06/08/10 复测 |
 | 7×24、≥99.5% | NOT_RUN | 取得约定试运行观测窗口和维护排除记录 |
 
+### 5.1 2026-10-10 外部资源取得核查
+
+本轮只核查可用于真实执行的输入，不读取或保存任何秘密值。仓库配置和本机环境变量存在性检查均未发现可用的甲方连接资料；视频、消息、定位、GIS、安防和信息发布六类系统为 `0/6 available`、`0/6 tested`。每类仍缺 endpoint、受控账号/令牌、合法测试数据或对象及确认的测试窗口，逐项记录见 `external-resource-readiness.json`。因此 PE-02/04/05/06/08/10 的甲方环境验证均为 `NOT_RUN / BLOCKED`，本地模拟适配器结果不升级为真实验收 PASS。
+
+KN-065 本轮也未取得真实非乙方执行人和独立干净主机。操作者身份、与乙方关系、开始/结束时间、退出码和原始日志均保持空值，见 `kn065-independent-deployer-readiness.json`。为避免后续代签或漏字段，新增 `scripts/g5/run-kn065-independent-deploy.sh`：它强制要求可审计身份、关系说明、声明及 `G5_B_ASSISTED=false`，再调用统一干净部署脚本生成独立文件；实际执行和 C 身份边界复核前，KN-065 继续 `BLOCKED`。
+
+`ISSUE-G5-02-008` 不影响当前主线结论。本轮仅顺手强化未来执行脚本：≤2 小时由真实时长计算，PASS 前显式执行清理并检查项目容器、卷和网络残留；没有重跑或覆盖已经被 C 接受的历史 Docker 证据，也没有把脚本改进写成 KN-065 已执行。
+
 ## 6 任务结论与 C Review 结果
 
-本地可执行范围无 FAIL，质量门禁、受控故障演练、隔离 PostgreSQL 恢复和 Docker/Compose 干净部署均通过。ISSUE-G5-02-003/004/005 继续为 `CLOSED / VERIFIED_BY_C`；本轮新增发现的容器入口和 Node 运行时版本缺陷已修复并复测。G5-02 仍为 `BLOCKED（B_REMEDIATED / PENDING_C_REREVIEW / EXTERNAL_RESOURCES_REQUIRED）`：ISSUE-G5-02-001 的甲方真实外部系统证据仍缺失，ISSUE-G5-02-002 只剩 KN-065 非乙方独立部署尚未执行。上述两类外部资源到位并实测、经 C 复验前，不能置 DONE，也不能进入 G5-03 正式收口。
+本地可执行范围无 FAIL，质量门禁、受控故障演练、隔离 PostgreSQL 恢复和 Docker/Compose 干净部署均通过。ISSUE-G5-02-003—007 继续为 `CLOSED / VERIFIED_BY_C`；ISSUE-G5-02-008 为非阻断改进，本轮已提供后续复验候选。G5-02 仍为 `BLOCKED（C_REREVIEW_ACCEPTED_WITH_NOTE / EXTERNAL_RESOURCES_REQUIRED）`：ISSUE-G5-02-001 的六类甲方真实外部系统当前取得 `0/6`，ISSUE-G5-02-002 仍没有 KN-065 非乙方独立执行人。上述两类外部资源到位并实测、经 C 复验前，不能置 DONE，也不能进入 G5-03 正式收口。

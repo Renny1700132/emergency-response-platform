@@ -1693,8 +1693,8 @@
 - 依据：G5-02 DoD、KN-005/041/065、NFR-REL-02/03、NFR-MNT-02、NFR-PORT-01。
 - 本轮事实：本机 PostgreSQL 15 端口可达，但未提供授权隔离库连接串，迁移演练实际因缺 `DATABASE_URL` 退出；Docker/Compose 命令不存在；没有真实非乙方部署操作者。未猜测凭据、未操作共享数据库、未伪造部署结果。
 - 严重度：`BLOCKING_TO_G5-02_DONE_AND_G5_FINAL_GATE`。
-- 状态：`OPEN / PARTIALLY_REMEDIATED_BY_B / CHANGES_REQUIRED / PARTICIPANT_REQUIRED`。
-- 剩余解除条件：先关闭 ISSUE-G5-02-008，确保 Docker 准出脚本真实校验≤2h和退出清理；再由真实非乙方人员在干净环境独立执行修正后的脚本或等价部署步骤，保留操作者身份边界、命令、时间和结果；C 复核 KN-065 后决定关闭。
+- 状态：`OPEN / PARTIALLY_REMEDIATED_BY_B / PARTICIPANT_REQUIRED`。
+- 剩余解除条件：由真实非乙方人员在干净环境独立执行 `scripts/g5/run-docker-clean-deploy.sh` 或等价部署步骤，保留操作者身份边界、命令、时间和结果；C 复核 KN-065 后决定关闭。ISSUE-G5-02-008 为非阻断工程改进，不再作为 002 的关闭前置。
 - 证据：`evidence/g5/G5-02/environment-readiness.json`、`postgres-migration-attempt.log`、`docker-probe.log`、`postgres-recovery-drill.json`、`docker-clean-deploy.json`、`docker-clean-deploy.log`、`docker-clean-deploy-attempt-1.log`、`docker-clean-deploy-attempt-2.log`。
 
 ### C Review 回填（2026-10-09）｜ISSUE-G5-02-001 / 002
@@ -1716,6 +1716,12 @@
 - 隔离 PostgreSQL 恢复证据接受；Docker build/up/迁移/health/ready/重启核心步骤已有真实成功日志。
 - 不接受“002 只剩 KN-065”的结论：新增 ISSUE-G5-02-008，现有脚本写死≤2h结论，并在无法核验的退出 trap 清理前声明最终清理完成。
 - 002 继续 `OPEN / PARTIALLY_REMEDIATED_BY_B / CHANGES_REQUIRED / PARTICIPANT_REQUIRED`；关闭 008 后仍须补 KN-065 非乙方独立部署。记录：`logs/reviews/2026-10-10_G5-02-C-rereview-4.md`。
+
+### C 复核标准校准（2026-10-10）｜ISSUE-G5-02-002
+
+- 用户授权适当放宽标准后，区分本次真实运行事实与准出脚本长期健壮性；本轮 Docker 核心部署和 EXIT trap 清理结果接受。
+- 002 调整为 `OPEN / PARTIALLY_REMEDIATED_BY_B / PARTICIPANT_REQUIRED`，剩余阻断仅为 KN-065 非乙方独立部署；008 降为非阻断改进项。
+- 记录：`logs/reviews/2026-10-10_G5-02-C-standard-calibration.md`。
 
 ## ISSUE-G5-02-003｜证据清单哈希与入库字节不一致
 
@@ -1827,13 +1833,13 @@
 ## ISSUE-G5-02-008｜Docker 准出脚本未真实校验时限与退出清理
 
 - 日期/提出：2026-10-10，C（G5-02 第五轮复验）；主责整改：B；复核：C。
-- 严重度：`MAJOR / BLOCKING_TO_DOCKER_EVIDENCE_ACCEPTANCE`。
-- 状态：`OPEN / CHANGES_REQUIRED`。
+- 严重度：`MINOR / NON_BLOCKING_EVIDENCE_HARDENING`。
+- 状态：`OPEN / NON_BLOCKING_IMPROVEMENT`。
 - 位置：`scripts/g5/run-docker-clean-deploy.sh:14-22,68-82`、`scripts/g5/validate-technical-gate.mjs:134-139`。
 - 问题：脚本把 `withinTwoHours=true` 与 `status=PASS` 写死，校验器只信任该布尔值而不直接断言 `durationSeconds <= 7200`；成功 JSON 在退出 trap 执行前已声明最终 `down-volume-clean` 完成。trap 对清理命令使用 `|| true`、丢弃输出且不检查残留，因此清理失败仍会保留 PASS。
-- 影响：本轮 17 秒日志能证明 build/up/迁移/health/ready/重启成功，但不能证明退出清理成功，也不能保证后续超过两小时或清理失败的运行被门禁拒绝；技术记录和 B 日志中的“退出清理全部 PASS”证据不足。
+- 影响：本轮 17 秒日志及 EXIT trap 足以在放宽后的标准下接受当前运行；但不能保证后续超过两小时或清理失败的运行被门禁拒绝，审计强度和长期可复跑性仍可提升。
 - 整改要求：从真实时长计算并断言 `durationSeconds <= 7200`；在成功 JSON/结论前显式执行并检查 `down -v --remove-orphans`，保存清理命令结果并验证项目容器、卷、网络无残留；校验器直接核对时长与清理字段。保留现有成功/失败原始日志，不覆盖历史。
-- 关联：ISSUE-G5-02-002 继续 `OPEN / PARTIALLY_REMEDIATED_BY_B`；除 KN-065 非乙方独立部署外，Docker 证据还受本 Issue 阻断。
+- 标准校准：用户于 2026-10-10 授权适当放宽标准。C 保留问题与整改建议，但撤销对本次 Docker 证据的阻断；008 不再作为 002 的关闭前置。记录：`logs/reviews/2026-10-10_G5-02-C-standard-calibration.md`。
 
 ### A复审结论追加（2026-10-09）｜ISSUE-G5-01-003/004/005
 

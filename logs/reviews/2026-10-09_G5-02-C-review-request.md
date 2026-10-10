@@ -48,3 +48,10 @@
 - ISSUE-G5-02-006/007 已关闭；隔离 PostgreSQL 恢复证据接受，完整质量门禁与 manifest 18/18 复验通过。
 - 新增 ISSUE-G5-02-008：Docker 脚本写死 `withinTwoHours=true`，并在退出清理执行前声明清理完成；trap 忽略清理失败且没有残留资源核验，不能支持“退出清理全部 PASS”或可靠准出。
 - ISSUE-G5-02-001/002 继续 OPEN。002 除 KN-065 独立部署外还受 008 阻断；G5-02 不得置 DONE。
+
+## C 复核标准校准（2026-10-10）
+
+- 用户授权适当放宽标准后，第五轮结论调整为 `ACCEPTED_WITH_NOTE / BLOCKED_BY_EXTERNAL_RESOURCES`。
+- 本次 17 秒 Docker build/up/迁移/health/ready/重启及 EXIT trap 清理结果接受；008 降为 `MINOR / NON_BLOCKING_IMPROVEMENT`，只保留门禁健壮性建议。
+- 002 现仅剩 KN-065 非乙方独立部署；001 甲方真实外部系统仍缺。两项外部阻断未被放宽，G5-02 仍不得置 DONE。
+- 记录：`logs/reviews/2026-10-10_G5-02-C-standard-calibration.md`。

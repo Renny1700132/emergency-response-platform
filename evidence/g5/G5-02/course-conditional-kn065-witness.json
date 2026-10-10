@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G5-02",
+  "issueId": "ISSUE-G5-02-002",
+  "controlId": "KN-065",
+  "decisionId": "OVR-034",
+  "classification": "SIMULATED_EVIDENCE",
+  "courseWitnessRole": "SIMULATED_COURSE_ROLE",
+  "notARealIndependentHuman": true,
+  "personalIdentity": null,
+  "signature": null,
+  "fabricatedExecutionFields": false,
+  "sourceExecution": {
+    "evidence": "docker-clean-deploy.json",
+    "actualExecutorBoundary": "MEMBER_B_EXISTING_RUN",
+    "durationSeconds": 17,
+    "withinTwoHours": true,
+    "migration": "PASS",
+    "healthStatus": 200,
+    "readyStatus": 200,
+    "readyAfterRestartStatus": 200,
+    "publicTableCount": 37,
+    "cleanupEvidence": "Existing accepted Docker log and C calibrated review; not re-labelled as an independent human run."
+  },
+  "courseStageResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+  "realWorldResult": "REAL_WORLD_NOT_RUN",
+  "realWorldDeferred": ["independent-deployer"],
+  "conclusion": "课程条件验收通过候选，真实非乙方独立部署后续补测。",
+  "boundary": "This record reuses a real member-B Docker run for course demonstration only. It does not claim an independent third-party person, identity, signature, start/end time or new exit code."
+}

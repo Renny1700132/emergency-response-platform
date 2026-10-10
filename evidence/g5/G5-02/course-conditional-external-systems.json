@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G5-02",
+  "issueId": "ISSUE-G5-02-001",
+  "decisionId": "OVR-034",
+  "classification": "SIMULATED_EVIDENCE",
+  "environment": "NOT_OWNER_ENVIRONMENT",
+  "courseStageStatus": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+  "realWorldStatus": "REAL_WORLD_NOT_RUN",
+  "userAuthorization": "用户已明确授权：对无法取得的甲方六类系统和 KN-065 非乙方独立部署，采用 `SIMULATED_EVIDENCE / COURSE_CONDITIONAL_ACCEPTANCE` 完成本课程阶段验收；真实项目能力继续登记为 `REAL_WORLD_DEFERRED / 后续补测`。不得生成假姓名、假账号、假接口响应、假执行时间、假退出码或冒充真实甲方/第三方人员。",
+  "systems": [
+    {
+      "id": "VIDEO",
+      "name": "视频",
+      "simulatedScenario": "实时/回放引用的正常、无权、超时和不可用路径",
+      "input": "EXT-VIDEO fixture；LIVE/PLAYBACK 查询；synthetic videoReference",
+      "expected": "返回外部视频引用；本系统不存录像；无权拒绝；超时提示转既有平台",
+      "actualResult": "normal=200/SIM-VIDEO-REFERENCE；unauthorized=403；timeout=504 且 USE_EXISTING_VIDEO_PLATFORM；failure=503；自动化 fixture 测试通过",
+      "fixtureEvidence": ["simulated-integrations/fixtures/ext-video.json", "evidence/g4/G4-10/external-four-scenarios.json"],
+      "testEvidence": ["tests/g4/integration-simulator.test.mjs", "tests/backend/g4-08-sprint2.test.mjs"],
+      "classification": "SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT",
+      "courseResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+      "realWorldResult": "REAL_WORLD_NOT_RUN"
+    },
+    {
+      "id": "MESSAGE",
+      "name": "消息",
+      "simulatedScenario": "统一消息发送、无权、超时重试耗尽和失败转人工",
+      "input": "EXT-MESSAGE fixture；20 路模拟正常通道并行请求",
+      "expected": "受理并关联回执；无权拒绝；超时有限重试；失败保留业务状态并人工通知",
+      "actualResult": "fixture normal=202、unauthorized=403、timeout=504、failure=503；20/20 模拟请求接受，归档耗时 0.065ms；真实到达率未测",
+      "fixtureEvidence": ["simulated-integrations/fixtures/ext-message.json", "evidence/g4/G4-10/external-four-scenarios.json"],
+      "testEvidence": ["tests/backend/g4-08-sprint2.test.mjs", "evidence/g5/G5-02/performance-raw.json"],
+      "classification": "SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT",
+      "courseResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+      "realWorldResult": "REAL_WORLD_NOT_RUN"
+    },
+    {
+      "id": "LOCATION",
+      "name": "定位",
+      "simulatedScenario": "有效定位、过期定位、源精度保持和资源地图投影",
+      "input": "synthetic personId/x/y/sourceAt/sourceAccuracyMetres=0.5；40 条本地位置处理样本",
+      "expected": "处理精度不低于源精度；过期位置标记 STALE 且禁止自动调派；刷新处理目标≤2秒",
+      "actualResult": "processedAccuracyMetres=0.5；过期记录 usableForDispatch=false；40/40 本地样本成功，P99=0.181ms；甲方连续定位源未测",
+      "fixtureEvidence": ["tests/backend/g4-08-sprint2.test.mjs"],
+      "testEvidence": ["evidence/g5/G5-02/performance-raw.json", "evidence/g5/G5-02/performance-samples.csv"],
+      "classification": "SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT",
+      "courseResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+      "realWorldResult": "REAL_WORLD_NOT_RUN"
+    },
+    {
+      "id": "GIS",
+      "name": "GIS",
+      "simulatedScenario": "地图图层加载、坐标系边界、无权、超时和降级列表",
+      "input": "GIS fixture；EPSG:4490；CLIENT_EXISTING_MAP_SERVICE 占位提供方",
+      "expected": "加载图层且不降低源精度；异常时降级 NON_MAP_LIST_VIEW",
+      "actualResult": "normal=200/SIM-GIS-LAYER-READY/sourcePrecisionReduced=false；unauthorized=403；timeout=504；failure=503；fixture 自动化测试通过",
+      "fixtureEvidence": ["simulated-integrations/fixtures/gis.json"],
+      "testEvidence": ["tests/g4/integration-simulator.test.mjs", "tests/backend/g4-08-sprint2.test.mjs"],
+      "classification": "SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT",
+      "courseResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+      "realWorldResult": "REAL_WORLD_NOT_RUN"
+    },
+    {
+      "id": "SECURITY",
+      "name": "安防",
+      "simulatedScenario": "门禁、入侵、消防和 IoT 的正常、无权、超时/未知结果及失败降级",
+      "input": "EXT-ACCESS/INTRUSION/FIRE/IOT fixtures；授权确认 token；synthetic alert/device data",
+      "expected": "告警归一化且未知载荷隔离；门禁须授权并服从联锁；超时或失败人工降级；控制命令禁止自动重放",
+      "actualResult": "四端口四场景均有确定 fixture；门禁超时 attempts=1、automaticReplay=false、manualDegradation=true；故障演练通过",
+      "fixtureEvidence": ["simulated-integrations/fixtures/ext-access.json", "simulated-integrations/fixtures/ext-intrusion.json", "simulated-integrations/fixtures/ext-fire.json", "simulated-integrations/fixtures/ext-iot.json"],
+      "testEvidence": ["tests/backend/g4-08-sprint2.test.mjs", "evidence/g5/G5-02/fault-drill-raw.json"],
+      "classification": "SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT",
+      "courseResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+      "realWorldResult": "REAL_WORLD_NOT_RUN"
+    },
+    {
+      "id": "PUBLISH",
+      "name": "信息发布",
+      "simulatedScenario": "授权内容发布的正常受理、无权、超时保留草稿和失败人工发布",
+      "input": "EXT-PUBLISH fixture；synthetic publish command/content summary",
+      "expected": "受理并返回引用；无权拒绝；超时保留草稿；失败提供人工发布入口",
+      "actualResult": "normal=202/SIM-PUBLISH-ACCEPTED；unauthorized=403；timeout=504/draftRetained=true；failure=503/manualPublishAvailable=true；自动化 fixture 测试通过",
+      "fixtureEvidence": ["simulated-integrations/fixtures/ext-publish.json", "evidence/g4/G4-10/external-four-scenarios.json"],
+      "testEvidence": ["tests/g4/integration-simulator.test.mjs", "tests/backend/g4-08-sprint2.test.mjs"],
+      "classification": "SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT",
+      "courseResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+      "realWorldResult": "REAL_WORLD_NOT_RUN"
+    }
+  ],
+  "summary": {
+    "systemsCovered": 6,
+    "courseAcceptedCandidates": 6,
+    "ownerSystemsTested": 0,
+    "ownerSystemsPassed": 0,
+    "realWorldDeferred": ["owner-external-systems"]
+  },
+  "conclusion": "六类系统按课程模拟证据形成条件验收候选；没有甲方真实环境 PASS，真实接口联调与性能验收后续补测。"
+}

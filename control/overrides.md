@@ -449,3 +449,17 @@
 - 评分/审计影响：可并行推进不依赖外部资源的文档和展示工作，同时保留两项真实缺口；不会出现可被误认为真实人员或甲方环境的伪造证据。
 - 是否涉及真实项目事实：不改变；只调整任务启动顺序和草拟范围。
 - 状态：ACTIVE_FOR_CONDITIONAL_G5_DRAFTING。
+
+## OVR-034｜G5-02课程条件验收裁决
+
+- 时间：2026-10-10（北京时间）；主责 B；P0 当前用户完整原文见 `LOG-G5-02-008`。
+- 用户授权原文：
+
+  > 用户已明确授权：对无法取得的甲方六类系统和 KN-065 非乙方独立部署，采用 `SIMULATED_EVIDENCE / COURSE_CONDITIONAL_ACCEPTANCE` 完成本课程阶段验收；真实项目能力继续登记为 `REAL_WORLD_DEFERRED / 后续补测`。不得生成假姓名、假账号、假接口响应、假执行时间、假退出码或冒充真实甲方/第三方人员。
+
+- 被调整规则：G5-02 原 DoD 要求取得甲方六类真实环境证据及 KN-065 真实非乙方独立部署后才可进入最终 Review；OVR-033 只允许下游草拟，不能形成课程阶段验收候选。
+- 实际执行规则：六类甲方系统复用已有 fixture、自动化测试和本地性能数据建立课程模拟验收记录；KN-065 复用已经真实完成的 B 侧 Docker 17 秒部署证据建立 `SIMULATED_COURSE_ROLE` 见证记录。两类记录只产生 `COURSE_ACCEPTED` 候选，真实能力继续为 `REAL_WORLD_NOT_RUN / REAL_WORLD_DEFERRED`。
+- 状态规则：B 完成后只可把 G5-02 置为 `REVIEW（COURSE_CONDITIONAL_ACCEPTANCE_PENDING_C）`；C 接受后才可置 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / REAL_WORLD_DEFERRED）`。任何材料不得宣称甲方真实接口、真实第三方部署或无条件生产验收 PASS。
+- 事实与责任边界：不改变 39 FR、34★、117 AC、PE/KN、甲乙责任、真实项目履约义务或后续补测责任；原 BLOCKED 历史、0/6 真实环境和 0 名真实非乙方操作者事实全部保留。
+- 评分/审计影响：以显著的课程/真实世界双状态换取课程阶段收口，不产生姓名、账号、响应、时间、退出码或签字伪证；最终进入 G6 的课程准出仍由 C 复核本 Override 边界。
+- 状态：ACTIVE_FOR_G5_COURSE_CONDITIONAL_ACCEPTANCE。

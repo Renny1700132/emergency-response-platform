@@ -1,0 +1,18 @@
+✔ G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands (46.7197ms)
+✔ G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths (12.5507ms)
+✔ G4-08 persistence parameterizes values and HTTP routes enforce authorization/idempotency (41.8017ms)
+✔ G4-08 migration is paired and persisted Sprint 2 records recover after service recreation (40.991ms)
+✔ registry exposes eight distinct EXT ports plus GIS and H5 (32.4331ms)
+✔ every adapter has deterministic marked normal, unauthorized, timeout and failure fixtures (4.0932ms)
+✔ unknown adapters and scenarios fail closed with simulated markers (4.8667ms)
+✔ GIS and H5 fixtures retain frozen responsibility boundaries (5.8556ms)
+✔ HTTP simulator returns fixture status, body and evidence header (49.8335ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 289.8432
+TEST_EXIT_CODE=0

@@ -9,7 +9,7 @@
 
 只设 G5-00—03 四项正式 Task，子检查不独立建 Task/分支/Review。A 执行 G5-00→G5-03；C 执行 G5-01（A Review）；B 执行 G5-02（C Review）；C 最终复核 G5-03。G5-01/02 可并行，G5-03 等两项完成。
 
-G5-00 依据本次 P0 在输入归档、治理切换、规划和自动自检完成后置 DONE；这是启动自检关闭，不冒充 C 独立 Review。G5-01/02 每个长任务整体完成后一次 Review；发现阻断必须整改、复测、复核，不因“一次 Review”限制免除必要复验。依 OVR-033，G5-01/02 的本地候选和 Review 已形成但仍有外部资源阻断时，G5-03 可先开展报告草拟和演示准备；G5-03 最终收口仍须 G5-01/02 DONE。G5-03 经 C 最终复核，所有硬门禁满足才允许进入 G6。
+G5-00 依据本次 P0 在输入归档、治理切换、规划和自动自检完成后置 DONE；这是启动自检关闭，不冒充 C 独立 Review。G5-01/02 每个长任务整体完成后一次 Review；发现阻断必须整改、复测、复核，不因“一次 Review”限制免除必要复验。依 OVR-033，G5-01/02 的本地候选和 Review 已形成但仍有外部资源阻断时，G5-03 可先开展报告草拟和演示准备。依 OVR-034，G5-02 可用显著标记的 `SIMULATED_EVIDENCE` 形成 `COURSE_CONDITIONAL_ACCEPTANCE` 候选，但必须把甲方真实环境和真实非乙方部署保留为 `REAL_WORLD_DEFERRED`；B 只置 REVIEW，C 接受后方可课程 DONE。G5-03 经 C 最终复核时必须分列课程准出与真实世界后续补测，不得把条件验收写成无条件生产 PASS。
 
 ## 当前 Git 流程
 
@@ -28,4 +28,4 @@ START → 确认 master / status / remote → fetch origin master → pull --ff-
 
 三项课前审计采用公共指导书 §8.1—8.4、§8.6 的具体三线：文档审计、可移植性批量验证、AI 使用审计。项目执行检查和依据见 g5_quality_gate_plan.md，不以自定义三审冒充教学原文。
 
-完整 checklist、可简化项、适用性、风险、四类报告和原始数据规范见 `docs/work/A_PM/g5_quality_gate_plan.md`。历史 G4 PR、Review、日志、evidence 与冻结文件原样保留；G4 专项治理仅用于解释历史。
+完整 checklist、可简化项、适用性、风险、四类报告和原始数据规范见 `docs/work/A_PM/g5_quality_gate_plan.md`。OVR-034 仅改变课程阶段准出口径，不修改真实项目事实、★条款、PE/KN或后续履约责任。历史 G4 PR、Review、日志、evidence 与冻结文件原样保留；G4 专项治理仅用于解释历史。

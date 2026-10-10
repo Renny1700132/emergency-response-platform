@@ -13,6 +13,8 @@ const environment = await readJson('environment-readiness.json')
 const externalReadiness = await readJson('external-resource-readiness.json')
 const independentReadiness = await readJson('kn065-independent-deployer-readiness.json')
 const courseProgression = await readJson('course-simulation-progression.json')
+const courseExternalSystems = await readJson('course-conditional-external-systems.json')
+const courseKn065Witness = await readJson('course-conditional-kn065-witness.json')
 const dockerCleanDeploy = await readJson('docker-clean-deploy.json')
 const postgresRecovery = await readJson('postgres-recovery-drill.json')
 const manifest = await readJson('manifest.json')
@@ -49,7 +51,7 @@ for (const entry of manifest.files) {
   }
 }
 assert.equal(manifestResults.length, manifest.files.length)
-assert.ok(manifestResults.length >= 21)
+assert.ok(manifestResults.length >= 23)
 
 function parseCsvLine(line) {
   const fields = []
@@ -132,22 +134,27 @@ assert.equal(quality.secretScan.status, 'PASS')
 assert.equal(environment.docker.status, 'PASS')
 assert.equal(environment.docker.cleanDeploy, 'PASS')
 assert.equal(environment.postgresql.recoveryDrill, 'PASS')
-assert.equal(environment.independentDeployer.status, 'BLOCKED')
-assert.equal(environment.ownerExternalSystems.status, 'BLOCKED')
+assert.equal(environment.independentDeployer.status, 'REAL_WORLD_DEFERRED')
+assert.equal(environment.ownerExternalSystems.status, 'REAL_WORLD_DEFERRED')
 assert.equal(environment.independentDeployer.evidence, 'kn065-independent-deployer-readiness.json')
 assert.equal(environment.ownerExternalSystems.evidence, 'external-resource-readiness.json')
-assert.equal(environment.courseProgression.status, 'CONDITIONAL_PROGRESSION')
+assert.equal(environment.courseProgression.status, 'COURSE_CONDITIONAL_ACCEPTANCE_PENDING_C')
 assert.equal(environment.courseProgression.evidenceClassification, 'SIMULATED_EVIDENCE')
-assert.equal(courseProgression.decisionId, 'OVR-033')
-assert.equal(courseProgression.status, 'CONDITIONAL_PROGRESSION')
+assert.deepEqual(environment.courseProgression.realWorldDeferred, ['owner-external-systems', 'independent-deployer'])
+assert.equal(courseProgression.decisionId, 'OVR-034')
+assert.equal(courseProgression.status, 'COURSE_CONDITIONAL_ACCEPTANCE_PENDING_C')
 assert.equal(courseProgression.evidenceClassification, 'SIMULATED_EVIDENCE')
 assert.deepEqual(courseProgression.carriedBlockers, ['owner-external-systems', 'independent-deployer'])
-assert.ok(courseProgression.notAcceptedFor.includes('marking G5-02 DONE'))
+assert.ok(courseProgression.notAcceptedFor.includes('marking G5-02 DONE before C final review'))
+const authorization = '用户已明确授权：对无法取得的甲方六类系统和 KN-065 非乙方独立部署，采用 `SIMULATED_EVIDENCE / COURSE_CONDITIONAL_ACCEPTANCE` 完成本课程阶段验收；真实项目能力继续登记为 `REAL_WORLD_DEFERRED / 后续补测`。不得生成假姓名、假账号、假接口响应、假执行时间、假退出码或冒充真实甲方/第三方人员。'
+assert.equal(courseProgression.userAuthorization, authorization)
 assert.equal(independentReadiness.controlId, 'KN-065')
-assert.equal(independentReadiness.status, 'BLOCKED')
+assert.equal(independentReadiness.status, 'REAL_WORLD_DEFERRED')
+assert.equal(independentReadiness.courseStageStatus, 'COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW')
 assert.equal(independentReadiness.operator.auditableIdentity, null)
 assert.equal(independentReadiness.execution.exitCode, null)
-assert.equal(externalReadiness.status, 'BLOCKED')
+assert.equal(externalReadiness.status, 'REAL_WORLD_DEFERRED')
+assert.equal(externalReadiness.courseStageStatus, 'COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW')
 assert.equal(externalReadiness.summary.expectedSystems, 6)
 assert.equal(externalReadiness.summary.availableSystems, 0)
 assert.equal(externalReadiness.summary.testedSystems, 0)
@@ -157,6 +164,39 @@ for (const system of externalReadiness.systems) {
   assert.equal(system.verification, 'NOT_RUN')
   assert.ok(system.missingInputs.length > 0)
 }
+assert.equal(courseExternalSystems.decisionId, 'OVR-034')
+assert.equal(courseExternalSystems.classification, 'SIMULATED_EVIDENCE')
+assert.equal(courseExternalSystems.environment, 'NOT_OWNER_ENVIRONMENT')
+assert.equal(courseExternalSystems.userAuthorization, authorization)
+assert.deepEqual(courseExternalSystems.systems.map((item) => item.id), ['VIDEO', 'MESSAGE', 'LOCATION', 'GIS', 'SECURITY', 'PUBLISH'])
+for (const system of courseExternalSystems.systems) {
+  assert.equal(system.classification, 'SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT')
+  assert.equal(system.courseResult, 'COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW')
+  assert.equal(system.realWorldResult, 'REAL_WORLD_NOT_RUN')
+  assert.ok(system.simulatedScenario)
+  assert.ok(system.input)
+  assert.ok(system.expected)
+  assert.ok(system.actualResult)
+  assert.ok(system.fixtureEvidence.length > 0)
+  assert.ok(system.testEvidence.length > 0)
+}
+assert.equal(courseExternalSystems.summary.systemsCovered, 6)
+assert.equal(courseExternalSystems.summary.ownerSystemsTested, 0)
+assert.equal(courseExternalSystems.summary.ownerSystemsPassed, 0)
+assert.equal(courseKn065Witness.decisionId, 'OVR-034')
+assert.equal(courseKn065Witness.classification, 'SIMULATED_EVIDENCE')
+assert.equal(courseKn065Witness.courseWitnessRole, 'SIMULATED_COURSE_ROLE')
+assert.equal(courseKn065Witness.notARealIndependentHuman, true)
+assert.equal(courseKn065Witness.personalIdentity, null)
+assert.equal(courseKn065Witness.signature, null)
+assert.equal(courseKn065Witness.fabricatedExecutionFields, false)
+assert.equal(courseKn065Witness.sourceExecution.evidence, 'docker-clean-deploy.json')
+assert.equal(courseKn065Witness.sourceExecution.durationSeconds, dockerCleanDeploy.durationSeconds)
+assert.equal(courseKn065Witness.sourceExecution.healthStatus, dockerCleanDeploy.healthStatus)
+assert.equal(courseKn065Witness.sourceExecution.readyStatus, dockerCleanDeploy.readyStatus)
+assert.equal(courseKn065Witness.sourceExecution.readyAfterRestartStatus, dockerCleanDeploy.readyAfterRestartStatus)
+assert.equal(courseKn065Witness.courseStageResult, 'COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW')
+assert.equal(courseKn065Witness.realWorldResult, 'REAL_WORLD_NOT_RUN')
 assert.equal(dockerCleanDeploy.status, 'PASS')
 assert.equal(dockerCleanDeploy.withinTwoHours, true)
 assert.ok(dockerCleanDeploy.durationSeconds <= 7200)
@@ -168,7 +208,7 @@ for (const value of Object.values(postgresRecovery.assertions)) assert.equal(val
 
 console.info(JSON.stringify({
   taskId: 'G5-02',
-  status: 'PASS_WITH_EXTERNAL_BLOCKERS',
+  status: 'PASS_WITH_COURSE_WAIVERS',
   checkedMetrics: performance.measurements.length,
   rawSamples: rawSampleCount,
   csvRows: csvRows.length,
@@ -177,5 +217,7 @@ console.info(JSON.stringify({
   workspaceRawLineEndingDifferences,
   gitRef,
   gitBlobManifest: gitRef ? gitBlobMatches : null,
-  blockers: ['independent-deployer', 'owner-external-systems'],
+  courseAcceptedPendingReview: ['owner-external-systems', 'independent-deployer'],
+  realWorldDeferred: ['owner-external-systems', 'independent-deployer'],
+  unconditionalRealWorldPass: false,
 }, null, 2))

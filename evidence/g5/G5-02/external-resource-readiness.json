@@ -2,7 +2,9 @@
   "schemaVersion": 1,
   "taskId": "G5-02",
   "checkedAt": "2026-10-10T17:30:00+08:00",
-  "status": "BLOCKED",
+  "status": "REAL_WORLD_DEFERRED",
+  "courseStageStatus": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+  "courseEvidence": "course-conditional-external-systems.json",
   "summary": {
     "expectedSystems": 6,
     "availableSystems": 0,
@@ -67,5 +69,5 @@
       "verification": "NOT_RUN"
     }
   ],
-  "boundary": "Local adapters and fixtures remain SIMULATED_EVIDENCE and are not counted as owner-environment PASS."
+  "boundary": "Local adapters and fixtures remain SIMULATED_EVIDENCE and are accepted only for the course stage under OVR-034; they are not counted as owner-environment PASS."
 }

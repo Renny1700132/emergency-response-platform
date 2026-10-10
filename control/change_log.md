@@ -62,3 +62,13 @@
 - 变化：G5-00起直接安全push master、长任务与Review留痕；当前constitution增加阶段性流程补充，原G3版本在历史commit/M3 manifest保留。
 - 边界：只覆盖工程执行方式；不修改M3基线文件、manifest、正式冻结设计/计划、FR/AC/★/PE/KN或责任验收。不声称重新冻结或替换BASELINE-G3-M3-R1.0。
 - 自检证据：evidence/g5/G5-00/governance-selfcheck.json；内容commit见LOG-G5-00-001回填，PR N/A。
+
+## CHG-G5-02-001｜课程条件验收与真实世界补测分轨
+
+- 日期：2026-10-10；主责 B；复核 C 待执行；批准来源：当前 P0 明确授权 / OVR-034 / `LOG-G5-02-008`。
+- 变更内容：将甲方视频、消息、定位、GIS、安防、信息发布六类环境及 KN-065 非乙方独立部署的当前阶段验收分为 `COURSE_CONDITIONAL_ACCEPTANCE` 与 `REAL_WORLD_DEFERRED` 两条状态；允许课程模拟证据进入 G5-02 最终 Review 候选。
+- 不变项：真实环境仍为 0/6、真实非乙方操作者仍为 0；不改变需求事实、★条款、PE/KN、系统边界、甲乙责任或真实履约/补测义务，不关闭或删除历史阻断证据。
+- 新证据：`course-conditional-external-systems.json`、`course-conditional-kn065-witness.json`、既有 G4 fixture/测试证据及 G5 Docker 17 秒原始证据。
+- 状态迁移：`BLOCKED -> REVIEW（COURSE_CONDITIONAL_ACCEPTANCE_PENDING_C）`；仅 C 最终复核接受后方可进入 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / REAL_WORLD_DEFERRED）`。
+- 影响分析：G5-03 可依据 C 的课程条件验收结论进行最终课程收口；正式材料必须显著显示 `COURSE_ACCEPTED` 与 `REAL_WORLD_NOT_RUN`，不得生成或暗示真实甲方/第三方 PASS。
+- Commit / PR：内容提交待 `LOG-G5-02-008` 回填；PR N/A（OVR-032）。

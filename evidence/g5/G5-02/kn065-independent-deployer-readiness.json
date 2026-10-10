@@ -3,7 +3,9 @@
   "taskId": "G5-02",
   "controlId": "KN-065",
   "checkedAt": "2026-10-10T17:30:00+08:00",
-  "status": "BLOCKED",
+  "status": "REAL_WORLD_DEFERRED",
+  "courseStageStatus": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+  "courseEvidence": "course-conditional-kn065-witness.json",
   "operator": {
     "auditableIdentity": null,
     "relationshipToContractor": null,
@@ -19,5 +21,5 @@
     "resultJson": null
   },
   "reason": "No real non-contractor operator and clean host were supplied for this execution. Member B cannot self-attest or fabricate independent deployment evidence.",
-  "releaseCondition": "A real person outside the contractor team must run the controlled wrapper in a clean Docker environment and return the generated raw log, result JSON and signed identity-boundary statement for C review."
+  "releaseCondition": "The course stage may close after C accepts OVR-034. Real-world closure still requires a real person outside the contractor team to run the controlled wrapper in a clean Docker environment and return the generated raw log, result JSON and identity-boundary statement."
 }

@@ -3,7 +3,8 @@
 ## 当前可执行结论
 
 - 已完成：本地性能原始样本、P50/P95/P99、故障注入、完整质量门禁、隔离 PostgreSQL 迁移/重启/备份恢复、Docker/Compose 空卷无缓存干净部署。
-- 仍阻断：ISSUE-G5-02-001 的甲方真实外部系统实测；ISSUE-G5-02-002 的 KN-065 非乙方人员独立部署。
+- 课程阶段：OVR-034 已形成 `COURSE_CONDITIONAL_ACCEPTANCE_PENDING_C` 候选；六类系统和 KN-065 的课程模拟证据已齐，待 C 最终复核。
+- 真实项目：ISSUE-G5-02-001 的甲方真实外部系统实测、ISSUE-G5-02-002 的 KN-065 非乙方人员独立部署均为 `REAL_WORLD_DEFERRED / 后续补测`。
 - 本文件只列出解除阻断所需输入和执行步骤，不把待执行项预填为 PASS。
 
 ## 1 ISSUE-G5-02-001｜甲方真实外部系统
@@ -44,4 +45,10 @@ bash scripts/g5/run-kn065-independent-deploy.sh
 - 非乙方操作者：`0`；未提供身份、关系声明或独立主机，KN-065 未执行。
 - 甲方系统：视频、消息、定位、GIS、安防、信息发布共 `0/6 available`、`0/6 tested`。
 - 机器可复核记录：`evidence/g5/G5-02/kn065-independent-deployer-readiness.json`、`external-resource-readiness.json`。
-- 当前结论：两项均保持 `BLOCKED`；任何后续取得的单项资源应立即按本交接单执行并单独归档，不必等待六类一次性齐备。
+- 当前结论：课程阶段为 `COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW`，真实世界为 `REAL_WORLD_NOT_RUN`。任何后续取得的单项真实资源应立即按本交接单执行并单独归档，不必等待六类一次性齐备；课程条件验收不得替代真实履约证据。
+
+## 4 课程条件验收证据
+
+- 六类系统：`evidence/g5/G5-02/course-conditional-external-systems.json`，统一标记 `SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT`。
+- KN-065：`evidence/g5/G5-02/course-conditional-kn065-witness.json`，见证角色仅为 `SIMULATED_COURSE_ROLE`，并明确 `notARealIndependentHuman=true`。
+- 裁决：OVR-034 / CHG-G5-02-001；只调整课程阶段验收口径，不改变真实项目接口联调和非乙方部署补测责任。

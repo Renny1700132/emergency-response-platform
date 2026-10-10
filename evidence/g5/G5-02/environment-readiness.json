@@ -30,26 +30,31 @@
     }
   },
   "independentDeployer": {
-    "status": "BLOCKED",
+    "status": "REAL_WORLD_DEFERRED",
+    "courseStageStatus": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
     "controlId": "KN-065",
     "availableOperatorCount": 0,
     "reason": "No real non-contractor human operator and clean host were supplied for this execution.",
     "evidence": "kn065-independent-deployer-readiness.json",
-    "executionEntry": "scripts/g5/run-kn065-independent-deploy.sh"
+    "executionEntry": "scripts/g5/run-kn065-independent-deploy.sh",
+    "courseEvidence": "course-conditional-kn065-witness.json"
   },
   "ownerExternalSystems": {
-    "status": "BLOCKED",
+    "status": "REAL_WORLD_DEFERRED",
+    "courseStageStatus": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
     "expectedSystems": 6,
     "availableSystems": 0,
     "testedSystems": 0,
     "reason": "Owner video, message, location, GIS, security and information-publishing endpoints/accounts/data/windows are unavailable; local adapter results remain SIMULATED_EVIDENCE.",
-    "evidence": "external-resource-readiness.json"
+    "evidence": "external-resource-readiness.json",
+    "courseEvidence": "course-conditional-external-systems.json"
   },
   "courseProgression": {
-    "status": "CONDITIONAL_PROGRESSION",
+    "status": "COURSE_CONDITIONAL_ACCEPTANCE_PENDING_C",
     "evidenceClassification": "SIMULATED_EVIDENCE",
-    "allows": "G5-03 draft preparation only",
-    "doesNotAllow": "G5-02 DONE, final G5 release or entry to G6",
+    "allows": "G5-02 course conditional acceptance review and G5-03 preparation",
+    "doesNotAllow": "G5-02 DONE before C final review or unconditional real-world PASS",
+    "realWorldDeferred": ["owner-external-systems", "independent-deployer"],
     "evidence": "course-simulation-progression.json"
   }
 }

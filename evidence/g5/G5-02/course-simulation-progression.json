@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G5-02",
+  "decisionId": "OVR-033",
+  "decidedAt": "2026-10-10T17:36:00+08:00",
+  "status": "CONDITIONAL_PROGRESSION",
+  "evidenceClassification": "SIMULATED_EVIDENCE",
+  "acceptedFor": [
+    "course progress",
+    "G5-03 draft preparation",
+    "demonstration preparation",
+    "report structure and known-result assembly"
+  ],
+  "notAcceptedFor": [
+    "closing ISSUE-G5-02-001",
+    "closing ISSUE-G5-02-002",
+    "claiming KN-065 independent deployment PASS",
+    "claiming owner external-system PASS",
+    "marking G5-02 DONE",
+    "final G5 release or entry to G6"
+  ],
+  "carriedBlockers": [
+    "owner-external-systems",
+    "independent-deployer"
+  ],
+  "statement": "No identity, command output, timestamp, exit code, endpoint response or owner-system result was fabricated. Existing local adapter results remain explicitly simulated."
+}

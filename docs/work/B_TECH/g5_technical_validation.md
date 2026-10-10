@@ -64,6 +64,8 @@ KN-065 本轮也未取得真实非乙方执行人和独立干净主机。操作�
 
 `ISSUE-G5-02-008` 不影响当前主线结论。本轮仅顺手强化未来执行脚本：≤2 小时由真实时长计算，PASS 前显式执行清理并检查项目容器、卷和网络残留；没有重跑或覆盖已经被 C 接受的历史 Docker 证据，也没有把脚本改进写成 KN-065 已执行。
 
+依 OVR-033，可将现有真实本地结果与明确标记的 `SIMULATED_EVIDENCE` 用于 G5-03 草稿和课程演示准备，以避免不依赖外部资源的工作停滞；该条件推进记录见 `course-simulation-progression.json`。它不关闭 001/002，不把 G5-02 改为 DONE，也不能作为最终 G5 准出或进入 G6 的依据。
+
 ## 6 任务结论与 C Review 结果
 
 本地可执行范围无 FAIL，质量门禁、受控故障演练、隔离 PostgreSQL 恢复和 Docker/Compose 干净部署均通过。ISSUE-G5-02-003—007 继续为 `CLOSED / VERIFIED_BY_C`；ISSUE-G5-02-008 为非阻断改进，本轮已提供后续复验候选。G5-02 仍为 `BLOCKED（C_REREVIEW_ACCEPTED_WITH_NOTE / EXTERNAL_RESOURCES_REQUIRED）`：ISSUE-G5-02-001 的六类甲方真实外部系统当前取得 `0/6`，ISSUE-G5-02-002 仍没有 KN-065 非乙方独立执行人。上述两类外部资源到位并实测、经 C 复验前，不能置 DONE，也不能进入 G5-03 正式收口。

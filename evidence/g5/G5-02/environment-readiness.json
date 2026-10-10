@@ -44,5 +44,12 @@
     "testedSystems": 0,
     "reason": "Owner video, message, location, GIS, security and information-publishing endpoints/accounts/data/windows are unavailable; local adapter results remain SIMULATED_EVIDENCE.",
     "evidence": "external-resource-readiness.json"
+  },
+  "courseProgression": {
+    "status": "CONDITIONAL_PROGRESSION",
+    "evidenceClassification": "SIMULATED_EVIDENCE",
+    "allows": "G5-03 draft preparation only",
+    "doesNotAllow": "G5-02 DONE, final G5 release or entry to G6",
+    "evidence": "course-simulation-progression.json"
   }
 }

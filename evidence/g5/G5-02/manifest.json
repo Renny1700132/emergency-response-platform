@@ -1,9 +1,14 @@
 {
   "taskId": "G5-02",
-  "generatedAt": "2026-10-10T09:30:37.884Z",
+  "generatedAt": "2026-10-10T10:04:06.508Z",
   "baseline": "e6e12b59fc5749cdf0475ed9631bac7d21d4bb1a",
   "normalization": "Manifest bytes and SHA-256 are calculated over canonical UTF-8 LF content. Git blobs must match exactly; Windows workspace CRLF is canonicalized to LF by the validator before comparison.",
   "files": [
+    {
+      "file": "course-simulation-progression.json",
+      "bytes": 884,
+      "sha256": "05aea40ea6aa6cb8fda0997a85826027353d289a515adc22222332c71cbfbc2d"
+    },
     {
       "file": "dependency-audit-frontend.json",
       "bytes": 364,
@@ -41,8 +46,8 @@
     },
     {
       "file": "environment-readiness.json",
-      "bytes": 1783,
-      "sha256": "a95e797231be8115d12aa32109c8a613998a1b814361813242d2f6f78a344a98"
+      "bytes": 2072,
+      "sha256": "c0e799cf8ec6321cfe7911de4ef9b54799e3c14af10e6a3a42140af4ffc983b2"
     },
     {
       "file": "external-resource-readiness.json",

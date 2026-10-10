@@ -12,6 +12,7 @@ const quality = await readJson('quality-summary.json')
 const environment = await readJson('environment-readiness.json')
 const externalReadiness = await readJson('external-resource-readiness.json')
 const independentReadiness = await readJson('kn065-independent-deployer-readiness.json')
+const courseProgression = await readJson('course-simulation-progression.json')
 const dockerCleanDeploy = await readJson('docker-clean-deploy.json')
 const postgresRecovery = await readJson('postgres-recovery-drill.json')
 const manifest = await readJson('manifest.json')
@@ -48,7 +49,7 @@ for (const entry of manifest.files) {
   }
 }
 assert.equal(manifestResults.length, manifest.files.length)
-assert.ok(manifestResults.length >= 20)
+assert.ok(manifestResults.length >= 21)
 
 function parseCsvLine(line) {
   const fields = []
@@ -135,6 +136,13 @@ assert.equal(environment.independentDeployer.status, 'BLOCKED')
 assert.equal(environment.ownerExternalSystems.status, 'BLOCKED')
 assert.equal(environment.independentDeployer.evidence, 'kn065-independent-deployer-readiness.json')
 assert.equal(environment.ownerExternalSystems.evidence, 'external-resource-readiness.json')
+assert.equal(environment.courseProgression.status, 'CONDITIONAL_PROGRESSION')
+assert.equal(environment.courseProgression.evidenceClassification, 'SIMULATED_EVIDENCE')
+assert.equal(courseProgression.decisionId, 'OVR-033')
+assert.equal(courseProgression.status, 'CONDITIONAL_PROGRESSION')
+assert.equal(courseProgression.evidenceClassification, 'SIMULATED_EVIDENCE')
+assert.deepEqual(courseProgression.carriedBlockers, ['owner-external-systems', 'independent-deployer'])
+assert.ok(courseProgression.notAcceptedFor.includes('marking G5-02 DONE'))
 assert.equal(independentReadiness.controlId, 'KN-065')
 assert.equal(independentReadiness.status, 'BLOCKED')
 assert.equal(independentReadiness.operator.auditableIdentity, null)

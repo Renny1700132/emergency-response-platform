@@ -1729,6 +1729,13 @@
 - 002：本轮没有取得真实非乙方操作者、关系声明和独立干净主机，操作者身份、起止时间、退出码、原始日志均保持空值，见 `kn065-independent-deployer-readiness.json`。新增受控入口 `scripts/g5/run-kn065-independent-deploy.sh`，强制收集身份边界并拒绝 `G5_B_ASSISTED!=false` 的运行；该准备工作不等于 KN-065 已执行，状态保持 `OPEN / PARTIALLY_REMEDIATED_BY_B / PARTICIPANT_REQUIRED`。
 - 边界：没有把本地模拟服务、B 已完成的 Docker 运行或缺失输入代写为甲方/非乙方 PASS。任一真实资源先到位即可逐项实测归档，无须等待其余资源；仍由 C 复验后关闭对应 Issue。
 
+### C 第六轮正式复验（2026-10-10）｜ISSUE-G5-02-001 / 002
+
+- 状态：001 继续 `OPEN / VERIFIED_BLOCKING_BY_C / ENVIRONMENT_REQUIRED`；002 继续 `OPEN / PARTIALLY_REMEDIATED_BY_B / PARTICIPANT_REQUIRED`。
+- C 已核对六类甲方系统 `0/6 available`、`0/6 tested` 及 KN-065 全部执行字段为空；未发现假身份、假日志、假接口结果或将准备工作冒充 PASS。
+- OVR-033 条件推进接受，但只允许 G5-03 草拟和演示准备，不关闭两项 Issue，不允许 G5-02 DONE 或进入 G6。
+- 记录：`logs/reviews/2026-10-10_G5-02-C-rereview-5.md`。
+
 ## ISSUE-G5-02-003｜证据清单哈希与入库字节不一致
 
 - 日期/提出：2026-10-09，C（G5-02 Review）；主责整改：B；复核：C。
@@ -1852,6 +1859,13 @@
 - `run-docker-clean-deploy.sh` 已改为根据 `durationSeconds <= 7200` 计算时限结论，在写入 PASS 前显式执行 `down -v --remove-orphans` 并核对项目容器、卷、网络残留均为 0；失败路径继续保留日志并尽力清理。
 - `validate-technical-gate.mjs` 直接断言历史已接受证据的真实时长不超过 7200 秒，并校验两份外部资源阻断证据；本次没有覆盖或重跑历史 Docker 原始日志。
 - 状态：`B_REMEDIATED / PENDING_C_REREVIEW / NON_BLOCKING_IMPROVEMENT`。本项不影响 001/002 主线，C 可在后续外部资源复验时一并核对。
+
+#### C 第六轮静态复验（2026-10-10）
+
+- 状态：`OPEN / NON_BLOCKING_IMPROVEMENT / STATICALLY_VERIFIED_BY_C`。
+- 代码已按真实时长计算≤2h，并在 PASS 前执行受检清理和残留核对；校验器直接检查历史 `durationSeconds <= 7200`，整改方向满足建议。
+- 当前审核机 Windows PATH 无 Bash，WSL 也未安装，未执行正向 Docker 运行；下次 KN-065 或其他真实部署时随运行证据确认，不阻断当前条件推进或 G5-02 本地整改接受结论。
+- 记录：`logs/reviews/2026-10-10_G5-02-C-rereview-5.md`。
 
 ### A复审结论追加（2026-10-09）｜ISSUE-G5-01-003/004/005
 

@@ -41,3 +41,10 @@
 - 新发现 ISSUE-G5-02-006/007：容器入口路径判断错误、Docker Node 20 低于 engines；均已修复，单元测试和干净部署复测通过。
 - 首次 Docker Hub 超时与第二次容器退出/`EBADENGINE` 均保留原始失败日志，不覆盖或美化。
 - 请求 C 复验上述新证据并决定 006/007 是否关闭、002 是否缩减为仅 KN-065 非乙方独立部署阻断。ISSUE-G5-02-001 继续 OPEN；B 不请求 G5-02 DONE。
+
+## C 第五轮复验结论（2026-10-10）
+
+- 结论：`CHANGES_REQUIRED / BLOCKED`；记录：`logs/reviews/2026-10-10_G5-02-C-rereview-4.md`。
+- ISSUE-G5-02-006/007 已关闭；隔离 PostgreSQL 恢复证据接受，完整质量门禁与 manifest 18/18 复验通过。
+- 新增 ISSUE-G5-02-008：Docker 脚本写死 `withinTwoHours=true`，并在退出清理执行前声明清理完成；trap 忽略清理失败且没有残留资源核验，不能支持“退出清理全部 PASS”或可靠准出。
+- ISSUE-G5-02-001/002 继续 OPEN。002 除 KN-065 独立部署外还受 008 阻断；G5-02 不得置 DONE。

@@ -1693,8 +1693,8 @@
 - 依据：G5-02 DoD、KN-005/041/065、NFR-REL-02/03、NFR-MNT-02、NFR-PORT-01。
 - 本轮事实：本机 PostgreSQL 15 端口可达，但未提供授权隔离库连接串，迁移演练实际因缺 `DATABASE_URL` 退出；Docker/Compose 命令不存在；没有真实非乙方部署操作者。未猜测凭据、未操作共享数据库、未伪造部署结果。
 - 严重度：`BLOCKING_TO_G5-02_DONE_AND_G5_FINAL_GATE`。
-- 状态：`OPEN / PARTIALLY_REMEDIATED_BY_B / PENDING_C_REREVIEW / PARTICIPANT_REQUIRED`。
-- 剩余解除条件：由真实非乙方人员在干净环境独立执行 `scripts/g5/run-docker-clean-deploy.sh` 或等价部署步骤，保留操作者身份边界、命令、时间和结果；C 复核 KN-065 后决定关闭。
+- 状态：`OPEN / PARTIALLY_REMEDIATED_BY_B / CHANGES_REQUIRED / PARTICIPANT_REQUIRED`。
+- 剩余解除条件：先关闭 ISSUE-G5-02-008，确保 Docker 准出脚本真实校验≤2h和退出清理；再由真实非乙方人员在干净环境独立执行修正后的脚本或等价部署步骤，保留操作者身份边界、命令、时间和结果；C 复核 KN-065 后决定关闭。
 - 证据：`evidence/g5/G5-02/environment-readiness.json`、`postgres-migration-attempt.log`、`docker-probe.log`、`postgres-recovery-drill.json`、`docker-clean-deploy.json`、`docker-clean-deploy.log`、`docker-clean-deploy-attempt-1.log`、`docker-clean-deploy-attempt-2.log`。
 
 ### C Review 回填（2026-10-09）｜ISSUE-G5-02-001 / 002
@@ -1710,6 +1710,12 @@
 - Docker 部分已真实补齐：启用机器既有 WSL2 Docker Engine 28.1.1 / Compose 2.35.1，从空卷和无缓存应用镜像完成 build、up、迁移、health/ready、后端重启后 ready=200，并在 17 秒内结束；退出时已删除项目容器、卷和网络。
 - 失败未隐去：首次 Docker Hub 拉取超时；第二次部署发现容器入口未启动且 Node 20 不满足项目 engines。对应原始日志保留，入口路径与 Dockerfile 已修复，复测通过。
 - 002 当前只剩 KN-065 非乙方独立部署证据。B 不冒充独立人员，不自行关闭 Issue；提交 C 复验。
+
+### C 第五轮复验（2026-10-10）｜ISSUE-G5-02-002
+
+- 隔离 PostgreSQL 恢复证据接受；Docker build/up/迁移/health/ready/重启核心步骤已有真实成功日志。
+- 不接受“002 只剩 KN-065”的结论：新增 ISSUE-G5-02-008，现有脚本写死≤2h结论，并在无法核验的退出 trap 清理前声明最终清理完成。
+- 002 继续 `OPEN / PARTIALLY_REMEDIATED_BY_B / CHANGES_REQUIRED / PARTICIPANT_REQUIRED`；关闭 008 后仍须补 KN-065 非乙方独立部署。记录：`logs/reviews/2026-10-10_G5-02-C-rereview-4.md`。
 
 ## ISSUE-G5-02-003｜证据清单哈希与入库字节不一致
 
@@ -1802,19 +1808,32 @@
 
 - 日期/提出：2026-10-09，B（G5-02 Docker 干净部署演练）；主责整改：B；复核：C。
 - 严重度：`MAJOR / BLOCKING_TO_DOCKER_CLEAN_DEPLOYMENT`。
-- 状态：`B_REMEDIATED / PENDING_C_REREVIEW`。
+- 状态：`CLOSED / VERIFIED_BY_C`。
 - 问题：`backend/src/main.mjs` 以手工拼接的 `file:///` URL 判断入口；容器内相对参数 `backend/src/main.mjs` 被解析为 `/backend/...`，与真实 `/app/backend/...` 不同，进程以 0 退出且服务未监听。
 - 整改：使用 `pathToFileURL(resolve(cwd, argv1))` 做跨平台入口判断；增加相对容器入口单元测试。Docker 复测中 backend 保持运行，health/ready 均为 200，重启后 ready=200。
 - 证据：`docker-clean-deploy-attempt-2.log`、`docker-clean-deploy.json`、`backend/src/main.mjs`、`tests/backend/foundation.test.mjs`。
+- C 第五轮复验：入口回归测试及完整后端测试通过；最终部署日志中的 backend 健康、ready 与重启后 ready 均成功，原缺陷关闭。记录：`logs/reviews/2026-10-10_G5-02-C-rereview-4.md`。
 
 ## ISSUE-G5-02-007｜Docker 运行时低于项目 engines
 
 - 日期/提出：2026-10-09，B（G5-02 Docker 干净部署演练）；主责整改：B；复核：C。
 - 严重度：`MAJOR / BLOCKING_TO_SUPPORTED_DEPLOYMENT`。
-- 状态：`B_REMEDIATED / PENDING_C_REREVIEW`。
+- 状态：`CLOSED / VERIFIED_BY_C`。
 - 问题：`backend/Dockerfile` 使用 Node 20，但根 `package.json` 声明 `^24.14.0 || >=26.0.0`；构建真实出现 `EBADENGINE`，不能作为受支持运行时准出。
 - 整改：基础镜像更新为 `node:24-alpine`。无缓存构建不再出现 `EBADENGINE`，依赖 0 漏洞，Compose 干净部署通过。
 - 证据：`docker-clean-deploy-attempt-2.log`、`docker-clean-deploy.log`、`docker-clean-deploy.json`、`backend/Dockerfile`。
+- C 第五轮复验：Dockerfile 与无缓存构建日志均确认使用 `node:24-alpine`，完整质量门禁 exit 0，原缺陷关闭。记录：`logs/reviews/2026-10-10_G5-02-C-rereview-4.md`。
+
+## ISSUE-G5-02-008｜Docker 准出脚本未真实校验时限与退出清理
+
+- 日期/提出：2026-10-10，C（G5-02 第五轮复验）；主责整改：B；复核：C。
+- 严重度：`MAJOR / BLOCKING_TO_DOCKER_EVIDENCE_ACCEPTANCE`。
+- 状态：`OPEN / CHANGES_REQUIRED`。
+- 位置：`scripts/g5/run-docker-clean-deploy.sh:14-22,68-82`、`scripts/g5/validate-technical-gate.mjs:134-139`。
+- 问题：脚本把 `withinTwoHours=true` 与 `status=PASS` 写死，校验器只信任该布尔值而不直接断言 `durationSeconds <= 7200`；成功 JSON 在退出 trap 执行前已声明最终 `down-volume-clean` 完成。trap 对清理命令使用 `|| true`、丢弃输出且不检查残留，因此清理失败仍会保留 PASS。
+- 影响：本轮 17 秒日志能证明 build/up/迁移/health/ready/重启成功，但不能证明退出清理成功，也不能保证后续超过两小时或清理失败的运行被门禁拒绝；技术记录和 B 日志中的“退出清理全部 PASS”证据不足。
+- 整改要求：从真实时长计算并断言 `durationSeconds <= 7200`；在成功 JSON/结论前显式执行并检查 `down -v --remove-orphans`，保存清理命令结果并验证项目容器、卷、网络无残留；校验器直接核对时长与清理字段。保留现有成功/失败原始日志，不覆盖历史。
+- 关联：ISSUE-G5-02-002 继续 `OPEN / PARTIALLY_REMEDIATED_BY_B`；除 KN-065 非乙方独立部署外，Docker 证据还受本 Issue 阻断。
 
 ### A复审结论追加（2026-10-09）｜ISSUE-G5-01-003/004/005
 

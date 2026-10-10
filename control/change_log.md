@@ -80,4 +80,4 @@
 - 不变项：39 FR、34★、117 AC 及真实结果 11 PASS / 59 NOT_RUN / 47 BLOCKED、★FR 1 PASS / 33 BLOCKED全部保留；不把 NOT_RUN/BLOCKED 改为 PASS，不修改冻结需求或真实履约义务。
 - 状态迁移：`BLOCKED -> REVIEW（COURSE_CONDITIONAL_ACCEPTANCE_PENDING_A）`；仅 A 最终复核接受后方可进入 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / IMPLEMENTATION_AND_REAL_WORLD_DEFERRED）`。
 - 新证据：`evidence/g5/G5-01/course-conditional-acceptance.json`、`course-conditional-review-request.md` 及 `scripts/g5/validate-functional-course-acceptance.mjs`。
-- Commit / PR：内容提交待回填；PR N/A（OVR-032）；A 最终复核待执行。
+- Commit / PR：C 内容提交 `c739b406e442e01b1deef7c4c8bb8885bdc27a4a` 已非强制推送至 `origin/master`；PR N/A（OVR-032）；A 最终复核待执行。

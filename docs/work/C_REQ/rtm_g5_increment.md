@@ -34,3 +34,9 @@
 全量分母保持 39 FR / 117 AC / 34 个★FR；当前为 11 PASS / 59 NOT_RUN / 47 BLOCKED，只有 G2-FR-013 的三条 AC 全部 PASS，因此★FR 为 1 PASS / 33 BLOCKED。RTM 编号无断链，但大量 AC 缺完整执行证据；旧版 87 PASS / 28★PASS 与上一轮 24 PASS 均不再作为当前事实。`ISSUE-G5-00-001` 及兼容/资源阻断继续 OPEN。
 
 依据 OVR-035，课程阶段新增条件验收候选，但不改变上述真实结果：G2-FR-030—039 为 `COURSE_DEFERRED / IMPLEMENTATION_DEFERRED`，其余 NOT_RUN/BLOCKED 为 `COURSE_DEFERRED / EVIDENCE_DEFERRED`，兼容/宿主/真实用户及目标环境依赖为 `REAL_WORLD_DEFERRED`。当前为 `PENDING_A_FINAL_REVIEW`，不得写成 117/117、34/34 或无条件真实 PASS。
+
+## G5-03 RTM v5 当前挂接（2026-10-11）
+
+G5-01原文/矩阵作为历史执行输入保留；A依据用户授权形成当前RTM v5复核候选：`docs/work/C_REQ/rtm_v5.md`、`evidence/g5/G5-03/rtm-v5.json`（117逐AC全链）、`docs/deliverables/G5/39-RTM闭环核验记录.docx`。
+
+真实11PASS/59NOT_RUN/47BLOCKED、★FR1PASS/33BLOCKED不变。设计/实现/TC/缺证据/延期链齐全不是验收全通过；G5-03 C最终复核仍PENDING，课程阶段只可REVIEW。

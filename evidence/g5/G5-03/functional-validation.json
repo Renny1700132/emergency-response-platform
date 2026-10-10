@@ -1,0 +1,17 @@
+{
+  "taskId": "G5-01",
+  "status": "PASS_WITH_COURSE_WAIVERS_PENDING_A",
+  "realAcResults": {
+    "PASS": 11,
+    "NOT_RUN": 59,
+    "BLOCKED": 47
+  },
+  "realStarResults": {
+    "PASS": 1,
+    "BLOCKED": 33
+  },
+  "implementationDeferredAc": 30,
+  "evidenceDeferredAc": 76,
+  "realWorldDeferredItems": 6,
+  "unconditionalRealWorldPass": false
+}

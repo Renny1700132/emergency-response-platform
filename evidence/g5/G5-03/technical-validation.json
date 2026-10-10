@@ -1,0 +1,21 @@
+{
+  "taskId": "G5-02",
+  "status": "PASS_WITH_COURSE_WAIVERS",
+  "checkedMetrics": 8,
+  "rawSamples": 1160,
+  "csvRows": 1160,
+  "manifestFiles": 23,
+  "workspaceCanonicalManifest": 23,
+  "workspaceRawLineEndingDifferences": 8,
+  "gitRef": "HEAD",
+  "gitBlobManifest": 23,
+  "courseAcceptedByC": [
+    "owner-external-systems",
+    "independent-deployer"
+  ],
+  "realWorldDeferred": [
+    "owner-external-systems",
+    "independent-deployer"
+  ],
+  "unconditionalRealWorldPass": false
+}

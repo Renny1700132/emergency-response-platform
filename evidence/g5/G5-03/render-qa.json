@@ -1,0 +1,509 @@
+{
+  "status": "PASS",
+  "reviewer": "A user-authorized AI visual inspection; not C review",
+  "reference": "docs/reference/36-测试报告（教学样例）.docx",
+  "referencePagesNative": 27,
+  "referencePagesLibreOffice": 29,
+  "referenceAllPagesViewed": true,
+  "finalPagesViewed": 35,
+  "nativeRasterDpi": 100,
+  "nativePairImagesDisplayedAtOriginalSize": true,
+  "firstIteration": "FAIL: stale SDT TOC teaching cache and Markdown table text; repaired and rerendered",
+  "secondaryRtmPagination": "LibreOffice 15 versus Word 14; Word-native actual TOC is correct (chapter5 body page11); no cross-renderer page equality claimed",
+  "fallback": [
+    "performance",
+    "defects",
+    "RTM"
+  ],
+  "fallbackAuthority": "OVR-036; not unique document-type Reference",
+  "documents": [
+    {
+      "file": "docs/deliverables/G5/36-测试报告.docx",
+      "status": "PASS",
+      "nativePages": 7,
+      "secondaryPages": 7,
+      "pageReview": [
+        {
+          "page": 1,
+          "sha256": "522dd56ea34cbd642391f10ef393a672e8e97a93c32c2e728ba0ce68f71f6645",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 2,
+          "sha256": "e9900341996706bebc5abdf32898d580244efa7e3a68e52a1710ebc10595f7e7",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 3,
+          "sha256": "16e44e443c66454fb0e56879541d8413a5477904104e0e89656b4e3703f549f9",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 4,
+          "sha256": "255621cac9d11e992e26d98b3170c702c6033df26a1ced36c4b978a3ccc2e8b0",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 5,
+          "sha256": "abb99ae0287f32685c2d7f813d6de680839e3b035f0ca3d8db0b224d13d6719a",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 6,
+          "sha256": "3b6e0cde2e4143cc5304e450a359e01fb384acf217a75fe7b06497c90396a8f0",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 7,
+          "sha256": "827ec28ce16b4d28a1d2fda7753ca15682f715c4faeb8d0fdfcef3adba716b70",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/deliverables/G5/37-性能压测报告.docx",
+      "status": "PASS",
+      "nativePages": 6,
+      "secondaryPages": 6,
+      "pageReview": [
+        {
+          "page": 1,
+          "sha256": "f907096fd584c3f9d86e888bb81d6c34ae8e7d6e5bc7bfb0911d27cad5dfa42c",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 2,
+          "sha256": "e9900341996706bebc5abdf32898d580244efa7e3a68e52a1710ebc10595f7e7",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 3,
+          "sha256": "632fc0fa4eb5200eca63799c472f5cec57cf5a570e20a4d55bab4b56de3b68f6",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 4,
+          "sha256": "f44eb694c9f79fbe9c685c9355ae31540dea2dcabbd4454b01e0507bcca10baa",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 5,
+          "sha256": "8146baa097ffd08918bd44e62f02537d09aa51cefed105bf59134a30dd10c973",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 6,
+          "sha256": "f733a2633dde1be12d61cdb746997fe3e3e6c72d86eb2a656158f13293f49ea8",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/deliverables/G5/38-缺陷看板与修复记录.docx",
+      "status": "PASS",
+      "nativePages": 8,
+      "secondaryPages": 8,
+      "pageReview": [
+        {
+          "page": 1,
+          "sha256": "723b2c165c1e119511ff7bac55b7328932f43c548a4114a3daffbac53c094ba5",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 2,
+          "sha256": "e9900341996706bebc5abdf32898d580244efa7e3a68e52a1710ebc10595f7e7",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 3,
+          "sha256": "57c270d6af966144de47dd130a3f2473d1d8b0ee33d044126bb467a765c5ecc8",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 4,
+          "sha256": "b43d3c22733707beda96257b29f8631784a1f357834e5ed4811ccdc49d2a3fc6",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 5,
+          "sha256": "8d2db33f0bc419aa8b55fd17dfdd9d03faeb204b20d2b52af2cfa383a6a478ab",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 6,
+          "sha256": "d263a27d0f6a97430052f83b4328e07f7f0ce5b58f8a09682f343c6beab5c2aa",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 7,
+          "sha256": "10da84b6f518920ef63b495191d289d6b9d196f1cccb58fc0976258361f0ee6c",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 8,
+          "sha256": "2cc30483f8237401aeb8ce089568b56f591584f788e183f8bcaf448439064c89",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs/deliverables/G5/39-RTM闭环核验记录.docx",
+      "status": "PASS",
+      "nativePages": 14,
+      "secondaryPages": 15,
+      "pageReview": [
+        {
+          "page": 1,
+          "sha256": "4226881585cb8cd542c15c2fcacbea8dd4026298755aa8fe6e42da385e3cc48e",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 2,
+          "sha256": "e9900341996706bebc5abdf32898d580244efa7e3a68e52a1710ebc10595f7e7",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 3,
+          "sha256": "a37a5e9d52bddd475b3cd7fbf248b4a9656c32924f0f6eca83b126d18ebb3606",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 4,
+          "sha256": "c064af0ca109ae159e81466a80854b77676a774d1431ef20010bcc412c9ec668",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 5,
+          "sha256": "ee82a11f4da5fac27482ea6696c55be5ebfeaa4efb2ec999430e48f88784184d",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 6,
+          "sha256": "2bf263e31374f82770d7630b021df02d3be7d436b1065147eaeb35a278f831c0",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 7,
+          "sha256": "e779676cfdc37bca67a2d8e9e8b999ac614ab5ceb8eecd3c3a90521e04d64566",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 8,
+          "sha256": "66fae63a01797aac21a27ec93cd666d7c537608185e310bc218cd3819185442d",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 9,
+          "sha256": "83383662fe897653d45e61a8404822a5e8251f22fd52e4bdc763db3f0c1f9b6a",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 10,
+          "sha256": "343d3a7858d0e50b14ff7d765d8284bc93ad479b1f3896dec83398be552b0d1f",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 11,
+          "sha256": "3a2ed3c25ddedcafc210cf307afb301720370639fed89651c06ecf7727119861",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 12,
+          "sha256": "bea17b466aa3cccabbcb73960d6424cc31d03e6efe357e058b9f8b8af9d7e510",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 13,
+          "sha256": "91040bde15d28e6c7c01c30fcf8c4bb1773110f9a1da67d6b9af1f60b1e1ae0e",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        },
+        {
+          "page": 14,
+          "sha256": "0e1e924a7dacfdcd6079a76854f2684615f8ed4ab9b0c1475a839765ad5bc9fb",
+          "visualStatus": "PASS",
+          "checks": [
+            "no clipping or overlap",
+            "no unexpected blank page",
+            "black body text readable",
+            "cover/revision/TOC or body roles consistent with cloned Reference",
+            "page numbers and native TOC correct",
+            "captions adjacent and long tables repeat headers without splitting rows"
+          ]
+        }
+      ]
+    }
+  ],
+  "qaCacheRetention": "temporary PDFs/PNGs/contact images deleted after completed QA; preserve these hashes and page results only"
+}

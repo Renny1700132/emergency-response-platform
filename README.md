@@ -10,6 +10,16 @@
 
 G4-00—G4-11 已 DONE 并收口进入 master；第五关“质量门禁（测试与质量特性验证）”已启动。自 G5-00 起在最新 master 上完成长任务，自检/必要 Review 留痕、安全 commit、重新 fetch 后非 force 直接 push master；不要求功能分支、PR/Approve/Merge 或远程 CI。保留真实测试、缺陷、RTM、八大质量特性和验收门禁。当前专项规则为 `governance/g5_quality_workflow.md`，规划为 `docs/work/A_PM/g5_quality_gate_plan.md`。以下 G4 专项表述仅解释历史，不约束 G5。
 
+## G5-03 当前复核候选
+
+G5-01/G5-02 已按 OVR-035/034 课程条件 DONE；G5-03 四类正式 DOCX、RTM v5、八特性与三审完成，当前 **REVIEW，待 C 独立最终复核**。A 未填写 VERIFIED_BY_C 或第五关 DONE。
+
+- 工作稿：`docs/work/A_PM/g5_final/`；正式候选：`docs/deliverables/G5/`；RTM v5：`docs/work/C_REQ/rtm_v5.md` 与 `evidence/g5/G5-03/rtm-v5.json`。
+- 完整分母39FR/117AC/34★FR；真实11 PASS /59 NOT_RUN /47 BLOCKED，★FR1 PASS /33 BLOCKED；30AC未实现、76AC缺完整证据继续延期。
+- 性能8组1160实际样本0失败，普通API P99 35.554ms、100并发P99 39.513ms，限本地内存HTTP与 SIMULATED_EVIDENCE；目标环境/规模继续延期。
+- COURSE_ACCEPTED：A建议条件收口，待C最终确认；IMPLEMENTATION_AND_REAL_WORLD_DEFERRED：六甲方系统实测0/6、真实非乙方部署操作者0，兼容/用户/长期可靠性仍须补测。真实验收门禁仍BLOCKED。
+- 证据与C请求：`evidence/g5/G5-03/README.md`、`review-request.md`；quality为本地实际门禁，不是远程CI。正式件保留Reference/fallback边界，Word全35页QA通过；其他renderer长表分页可能不同。
+
 ## 项目组
 
 | 成员 | 角色 | 唯一主责范围 |

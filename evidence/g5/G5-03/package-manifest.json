@@ -1,0 +1,100 @@
+{
+  "snapshot": "A final precommit snapshot; no self hash; mutable backfill files excluded from final identity claim",
+  "files": [
+    {
+      "file": "ai-audit.json",
+      "bytes": 9525,
+      "sha256PhysicalBytes": "0e7a19a9bd078813789b428ef2617ba99530e622a97d986644ce999238a7f129"
+    },
+    {
+      "file": "defect-ledger.json",
+      "bytes": 8492,
+      "sha256PhysicalBytes": "20eae4c42a18e2a9f4a3a81a67bb74b6d7ceb3e807c51615c4accb246255339b"
+    },
+    {
+      "file": "document-content-check.json",
+      "bytes": 2071,
+      "sha256PhysicalBytes": "6f471f52c5795d1e28eac1117184a0bb0d65f7e32ceaa406133728942396cf1c"
+    },
+    {
+      "file": "document-manifests.json",
+      "bytes": 26307,
+      "sha256PhysicalBytes": "95af6b9168818c907a0c78bb2ef7d99b6b6cf89300c4cd96358289160ddafff3"
+    },
+    {
+      "file": "final-quality-result.json",
+      "bytes": 1082,
+      "sha256PhysicalBytes": "04feb69ea92594dba93013b01d7f1a8dbe6bd3801dd12e0f26970f023f2a6a97"
+    },
+    {
+      "file": "final-quality.log",
+      "bytes": 17714,
+      "sha256PhysicalBytes": "a66c5747faf87c3acf61a9d9259e4cad53e4f56c88aaac2da82063cfc35cb7c2"
+    },
+    {
+      "file": "final-selfcheck.json",
+      "bytes": 893,
+      "sha256PhysicalBytes": "59de1da99753a37a834030a645cb2d1d694a232c6ff825e44a41266620a40454"
+    },
+    {
+      "file": "functional-validation.json",
+      "bytes": 346,
+      "sha256PhysicalBytes": "9aa27e7cc830f9c156de78284eca146585d496f15ea8da18d478f51f6670be01"
+    },
+    {
+      "file": "input-index.json",
+      "bytes": 14607,
+      "sha256PhysicalBytes": "b3c8fb0a9e80c049610315715336edb82da401c592da2d6a21f50187d28b97a4"
+    },
+    {
+      "file": "mechanical-summary.json",
+      "bytes": 2496,
+      "sha256PhysicalBytes": "c2979e5de641018e45b3413a9e1efa5349ae8363fad66c476e11961163d63189"
+    },
+    {
+      "file": "native-render-metadata.json",
+      "bytes": 1955,
+      "sha256PhysicalBytes": "093a1a66676f2e09ea252c9ef745fe11f78ab773620e89743f6ba5ae4e671c76"
+    },
+    {
+      "file": "README.md",
+      "bytes": 1541,
+      "sha256PhysicalBytes": "95c2a44657ed6e83bd240e6224a98729aae4a2c457c5442088f624eb00b2a71a"
+    },
+    {
+      "file": "render-qa.json",
+      "bytes": 20863,
+      "sha256PhysicalBytes": "0a20e26561d55c18d81c04da81c3b9c25fee1051a2b7a8d19509b99b485965c3"
+    },
+    {
+      "file": "review-request.md",
+      "bytes": 2920,
+      "sha256PhysicalBytes": "771f87c44e9c48abc699da1355ed9cfb6e3e652c252ba1d909e325347317ad5a"
+    },
+    {
+      "file": "rtm-v5.json",
+      "bytes": 222952,
+      "sha256PhysicalBytes": "ca80031edf5d19b0a8c90f784719f723c0f91b76cf15eb0be02334c538857ce7"
+    },
+    {
+      "file": "technical-validation.json",
+      "bytes": 487,
+      "sha256PhysicalBytes": "e164474ad4079cd1573071d6c3278e9fde76965da596da71abd6bf3f2ddf3617"
+    },
+    {
+      "file": "template-contract.md",
+      "bytes": 1491,
+      "sha256PhysicalBytes": "b8ea543a52ee2c7ff52b2c43a1b1ac982d8eebad4e2611670a90cfe2b617d6f5"
+    },
+    {
+      "file": "three-audits.md",
+      "bytes": 5041,
+      "sha256PhysicalBytes": "db127f4072c02410061b414f09017db8239bcf4cda54357a6a515d6074582cc5"
+    },
+    {
+      "file": "version-impact.json",
+      "bytes": 868,
+      "sha256PhysicalBytes": "d702c5b569363c0405de4f10444bfe9086ece1299dc52206c70c2b932678a30f"
+    }
+  ]
+}

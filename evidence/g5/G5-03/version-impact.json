@@ -1,0 +1,17 @@
+{
+  "head": "dad5e8b6f84439dec0a12613caa371d3e425845a",
+  "performanceBaseline": "e6e12b59fc5749cdf0475ed9631bac7d21d4bb1a",
+  "unchangedPerformancePathFiles": [
+    "backend/src/server.mjs",
+    "backend/src/sprint2-service.mjs",
+    "backend/src/event-workflow.mjs",
+    "backend/src/external-adapters.mjs",
+    "backend/src/message-port.mjs"
+  ],
+  "pathDiffEmpty": true,
+  "functionalSystemEvidence": "92085e9 + G5-01 controlled test changes; b3db2d5 commits final filtering test",
+  "laterProductChange": "5fc359a main entrypoint + Docker Node24; container recovery and quality independently accepted by C",
+  "currentTaskBusinessChanges": false,
+  "rerunRequired": "no historical destructive tests repeated; final npm run quality executed on current HEAD",
+  "boundaries": "No upgrade of memory performance to PostgreSQL or owner environment"
+}

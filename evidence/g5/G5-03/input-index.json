@@ -1,0 +1,402 @@
+{
+  "head": "dad5e8b6f84439dec0a12613caa371d3e425845a",
+  "files": [
+    {
+      "file": "AGENTS.md",
+      "bytes": 9874,
+      "sha256": "51bf20ad9ba32bfc17e21b79b76b2a7ffb713a3e9e435c4f5a173797e523f6ee"
+    },
+    {
+      "file": "constitution.md",
+      "bytes": 5210,
+      "sha256": "1e6827fa05839e057ded67711eafcae061ebebe07f7e8c5488f4af3ac295f150"
+    },
+    {
+      "file": "control/facts.md",
+      "bytes": 13724,
+      "sha256": "1acfb48a1e8726bc9e217c9ff6a89356c20f1205f4a415c4e63be47807baafa6"
+    },
+    {
+      "file": "control/issues.md",
+      "bytes": 217050,
+      "sha256": "e82521255bc1b1ecfae7eda3daaa65851563e464447dc39adfcaa28b99d599d5"
+    },
+    {
+      "file": "control/key_numbers.md",
+      "bytes": 10344,
+      "sha256": "51ea3986890f9449569a7134bd225b2aa50894892ef583c05df356d474773384"
+    },
+    {
+      "file": "control/overrides.md",
+      "bytes": 45654,
+      "sha256": "e0df6070ee30e3efecff8d1a81a7f254a98755a48d1ab7af97e3b31424ce2d59"
+    },
+    {
+      "file": "docs/work/A_PM/g5_quality_gate_plan.md",
+      "bytes": 16198,
+      "sha256": "02447f0a74822a4365d76f7017fa08723005bf5db19c921e1c58c393507deef1"
+    },
+    {
+      "file": "docs/work/A_PM/software_requirements_specification_v0.1.md",
+      "bytes": 39175,
+      "sha256": "b2a1e9f9f64b88d19c03c2ca589c08ff82318fd8e5466aa7f553f27caa033488"
+    },
+    {
+      "file": "docs/work/B_TECH/g5_technical_validation.md",
+      "bytes": 8903,
+      "sha256": "3ffabe3b2fd31efce32fcb1159e93d6910cd2300059f9ef0252ecd198739acaf"
+    },
+    {
+      "file": "docs/work/B_TECH/spec.md",
+      "bytes": 36182,
+      "sha256": "f08a73a3a4501d8e4060d8b9a57c711d4cc939a3d88b33c8fe577d44339f7362"
+    },
+    {
+      "file": "docs/work/C_REQ/rtm_g5_increment.md",
+      "bytes": 3611,
+      "sha256": "d7fc123cfbf4d63fdb29a91d8105bd18ba2d7dd881535df6aab2e7d413d401d1"
+    },
+    {
+      "file": "docs/work/C_REQ/rtm_v1.md",
+      "bytes": 27482,
+      "sha256": "243f52a31459b0992229c74e9049a82a3f7900563d62e1719d4c00ce4400fb52"
+    },
+    {
+      "file": "docs/work/C_REQ/rtm_v4.md",
+      "bytes": 6018,
+      "sha256": "35e73264901d1296ddd2619bc3820f992f98d80a28eadb7148661086f84991df"
+    },
+    {
+      "file": "docs/work/C_REQ/test_plan.md",
+      "bytes": 30807,
+      "sha256": "0b9150f8b0e0718ef30a031d9aa98664114eda3d6f9f70c04e5aea7f59e57517"
+    },
+    {
+      "file": "evidence/g5/G5-01/ac-117-matrix.md",
+      "bytes": 33024,
+      "sha256": "1ddb773d2c081de85fda738545a013df2b18aac4fb9db61100014b654f62f297"
+    },
+    {
+      "file": "evidence/g5/G5-01/compatibility-matrix.md",
+      "bytes": 2638,
+      "sha256": "b90551ba54e52d88da51d79b4e8db7815444f43dd1f13f882a00134b9b147086"
+    },
+    {
+      "file": "evidence/g5/G5-01/course-conditional-acceptance.json",
+      "bytes": 2992,
+      "sha256": "eec414c0995713f21f945841a8551b716aa1c414ec03790f73b9a1cef53fed54"
+    },
+    {
+      "file": "evidence/g5/G5-01/course-conditional-review-request.md",
+      "bytes": 1391,
+      "sha256": "1f452192935b3418e1c75b14fb67ac4f8e5229e8d90afdd93a86eb76c4439a63"
+    },
+    {
+      "file": "evidence/g5/G5-01/defect-register.md",
+      "bytes": 2925,
+      "sha256": "f4d58a098559efe9ec66253c73facbeae0c833a14fb5a87c1d7877b33cd7470f"
+    },
+    {
+      "file": "evidence/g5/G5-01/edge-154-formal-auth-required-390x844.png",
+      "bytes": 18828,
+      "sha256": "65bd94822055a52308f3309d34afefc5955c9292dfd5284998d921843a954a17"
+    },
+    {
+      "file": "evidence/g5/G5-01/edge-154-h5-events-fixed-390x844.png",
+      "bytes": 96377,
+      "sha256": "b2cd57e093c5b1548b25568435ff1fad11cccc4b8bf973047b5ba80b93b0eb0a"
+    },
+    {
+      "file": "evidence/g5/G5-01/edge-154-h5-events.png",
+      "bytes": 86685,
+      "sha256": "eb77b16b98403463242dfde2854c6c96997d02ce464dafc6e62a85891f1da574"
+    },
+    {
+      "file": "evidence/g5/G5-01/edge-154-web-incidents.png",
+      "bytes": 129941,
+      "sha256": "733e8df7f9b02e98220cf68f6eb577d30055a22afe438951e5977234ba32b6e4"
+    },
+    {
+      "file": "evidence/g5/G5-01/error-semantics-review.md",
+      "bytes": 1658,
+      "sha256": "342adee90ac9152a7c2a1ff72dc2f4a0b32b631fd10d43755048c67c0bd3ec16"
+    },
+    {
+      "file": "evidence/g5/G5-01/execution-summary.md",
+      "bytes": 5901,
+      "sha256": "1bbad2e0ff56b3fdc162a653217bd0c2637178264ff6a67a572eaee4705fd23f"
+    },
+    {
+      "file": "evidence/g5/G5-01/functional-gate-raw.json",
+      "bytes": 98155,
+      "sha256": "7818357b6a09fc5453dbbb48c5c4ca0884892a153bfbc5d5199833e22ce9e5b0"
+    },
+    {
+      "file": "evidence/g5/G5-01/review-request.md",
+      "bytes": 1128,
+      "sha256": "5918274f874d11e65bd4a3c1f6b14c43be5da2992aa52e8e4f0495d825f2865c"
+    },
+    {
+      "file": "evidence/g5/G5-01/superseded-evidence-note.md",
+      "bytes": 711,
+      "sha256": "74a0007d55233b8460bbd083564647c65c29cd2687ad2f709c454823270fe6ca"
+    },
+    {
+      "file": "evidence/g5/G5-02/course-conditional-external-systems.json",
+      "bytes": 6681,
+      "sha256": "367d36a7fea2bce0c8d898c84ead6cce78c55190ac95bab532499db9f2baba78"
+    },
+    {
+      "file": "evidence/g5/G5-02/course-conditional-kn065-witness.json",
+      "bytes": 1222,
+      "sha256": "9e99cfe6f2cf43ce660fa4669dded8ccc708fe146eb2441414615c69087eff6c"
+    },
+    {
+      "file": "evidence/g5/G5-02/course-simulation-progression.json",
+      "bytes": 1639,
+      "sha256": "71c8a7d657d50bbdc7cab25dc72ed8115a567cfc8f7fe211c2249d2287c30fdc"
+    },
+    {
+      "file": "evidence/g5/G5-02/dependency-audit-frontend.json",
+      "bytes": 386,
+      "sha256": "afaa53175a23e2863188fb6b14ca25f2092ca0adde3d342532c3038451c42053"
+    },
+    {
+      "file": "evidence/g5/G5-02/dependency-audit-root.json",
+      "bytes": 383,
+      "sha256": "b9c1bb602a124bbc8d65f112786f6fada91ac85fb8023087e3597104434d087a"
+    },
+    {
+      "file": "evidence/g5/G5-02/docker-clean-deploy-attempt-1.log",
+      "bytes": 1138,
+      "sha256": "86deb07a4b5a9db02d7579305dd65b1cfd59601e4900adc2e203b0bb71ec1803"
+    },
+    {
+      "file": "evidence/g5/G5-02/docker-clean-deploy-attempt-2.log",
+      "bytes": 2651,
+      "sha256": "c6317c35212db78dfd0d2a1d0bec2059933a36c4f96d787c3585832b60f6a764"
+    },
+    {
+      "file": "evidence/g5/G5-02/docker-clean-deploy.json",
+      "bytes": 1338,
+      "sha256": "84855c0c76374e5c80e2cf9e4930f98cf3c5f3a1d4db428e989c01bf577443aa"
+    },
+    {
+      "file": "evidence/g5/G5-02/docker-clean-deploy.log",
+      "bytes": 2890,
+      "sha256": "ce1a371c55d0e0d432fb812f4ed9885dbbeefba4f828c6e0f5692d927991d722"
+    },
+    {
+      "file": "evidence/g5/G5-02/docker-probe.log",
+      "bytes": 97,
+      "sha256": "a9e6bd08cf0775688acbe29cf6dc41fc99b6126063d56eee4ecb325d3f44c857"
+    },
+    {
+      "file": "evidence/g5/G5-02/environment-readiness.json",
+      "bytes": 2478,
+      "sha256": "eb4f1f57bfce1c095487245ebf596cac6f2d42524a2e4952decea3a102e6b5f3"
+    },
+    {
+      "file": "evidence/g5/G5-02/external-resource-readiness.json",
+      "bytes": 3291,
+      "sha256": "20806cae28460b67054e985d3aa47752d3374e19e414c8562b2c20e9b5299020"
+    },
+    {
+      "file": "evidence/g5/G5-02/fault-drill-raw.json",
+      "bytes": 1463,
+      "sha256": "bb0a67a1bca24bae4e00e08d650c4ed68e41a2f3e8090c3527d4967f2ae9808e"
+    },
+    {
+      "file": "evidence/g5/G5-02/kn065-independent-deployer-readiness.json",
+      "bytes": 1063,
+      "sha256": "b3dc7c52b6382191822610c3feed82e678d83572f4160612721b6b6c90ed1e24"
+    },
+    {
+      "file": "evidence/g5/G5-02/manifest.json",
+      "bytes": 4068,
+      "sha256": "daf7c7d6f6b3c92553579f05f03c24bd7d682f555371369f742dba2e5409b2b4"
+    },
+    {
+      "file": "evidence/g5/G5-02/openapi-lint.log",
+      "bytes": 10340,
+      "sha256": "66f22345aece45b258ca88a25084710d213da46593f2258c9dc252f76fe7b7c8"
+    },
+    {
+      "file": "evidence/g5/G5-02/performance-raw.json",
+      "bytes": 3251496,
+      "sha256": "18980a036e85ea8f54fd72b4a38ee8ad67fe67dcf3ca52dd613c8cbe9ccabab7"
+    },
+    {
+      "file": "evidence/g5/G5-02/performance-samples.csv",
+      "bytes": 146116,
+      "sha256": "38a2426dadf625f31247e56b932df028e83809cebedff291380ec0544f488a72"
+    },
+    {
+      "file": "evidence/g5/G5-02/postgres-migration-attempt.log",
+      "bytes": 786,
+      "sha256": "657652efbd4681724333b6d8aa10cbd26ef1b18825ad412bac867f88cc8e9026"
+    },
+    {
+      "file": "evidence/g5/G5-02/postgres-recovery-drill.json",
+      "bytes": 4151,
+      "sha256": "a9cdfb6c004bd47e73615386b806b48e0445e7fa03916b983b2b486f049d36c7"
+    },
+    {
+      "file": "evidence/g5/G5-02/quality-gate.log",
+      "bytes": 16711,
+      "sha256": "d7428e249842b7410997430cc7da5c2f6e75ce18a3be0c87567c7fe2ac163a10"
+    },
+    {
+      "file": "evidence/g5/G5-02/quality-summary.json",
+      "bytes": 1167,
+      "sha256": "aceefd0535487f375f3f9c7723cf8de3732026041cd2add7939cb09b553fb3db"
+    },
+    {
+      "file": "evidence/g5/G5-02/secret-scan.log",
+      "bytes": 70,
+      "sha256": "a4adffee96dc3fc13fdb2cfe54d2211d71121e98507c399efab0567f26c16aa5"
+    },
+    {
+      "file": "evidence/g5/G5-02/technical-gate-validation.log",
+      "bytes": 409,
+      "sha256": "8ec813147759727538d87e5e134b1f6f4b2efecf1bccc9c6c065a210719a733b"
+    },
+    {
+      "file": "governance/ai_logging.md",
+      "bytes": 10699,
+      "sha256": "2ed33da7ba9b8722c2f84bce1b1343aff3cd542b4827f093f9fd79a9d10d5fa4"
+    },
+    {
+      "file": "governance/g5_quality_workflow.md",
+      "bytes": 4676,
+      "sha256": "c7e571de0057045bea035499d097fa708b12989afe3ff09685b15e76e72f4c90"
+    },
+    {
+      "file": "governance/source_priority.md",
+      "bytes": 2372,
+      "sha256": "51b91fd7a3f5f9fbaf749fc19cba5d1f638898dd05c8a949a1bbf6718cac77e4"
+    },
+    {
+      "file": "logs/prompts/2026-10-08-A.md",
+      "bytes": 46740,
+      "sha256": "ea0418b1fad834ff673f79003eccf95e64633ecf434d90177fc934da3acbc2d3"
+    },
+    {
+      "file": "logs/prompts/2026-10-08-C.md",
+      "bytes": 35542,
+      "sha256": "3a4b29b561a6c83800fb1fb288758db2735cdab36fc046b8baf439a21e25167e"
+    },
+    {
+      "file": "logs/prompts/2026-10-09-A.md",
+      "bytes": 9384,
+      "sha256": "3d9936139ea03be0be0cde9f32da6b70ac79567c873e56c17122d0abd9f134cb"
+    },
+    {
+      "file": "logs/prompts/2026-10-09-B.md",
+      "bytes": 24408,
+      "sha256": "56f0e7cc64db9e143818ed23ea44437cd8c39b821c25addc3ad318b86e417052"
+    },
+    {
+      "file": "logs/prompts/2026-10-09-C.md",
+      "bytes": 29127,
+      "sha256": "7adf8e29e464f54feef29057d1d0454d0ac564ea074a71291e072986d4c35418"
+    },
+    {
+      "file": "logs/reviews/2026-10-08_G5-01-A-review.md",
+      "bytes": 8224,
+      "sha256": "ecd8c9dc9a2c990d1302b3851bc0179fb5cdf85ed290365182d42559ea2e8670"
+    },
+    {
+      "file": "logs/reviews/2026-10-09_G5-01-A-rereview-2.md",
+      "bytes": 3350,
+      "sha256": "6d466a431fef9a5698a7e2c9caaadafa1687b7de1e8a42f3a02c13b8abb6cc48"
+    },
+    {
+      "file": "logs/reviews/2026-10-09_G5-01-A-rereview-3.md",
+      "bytes": 2191,
+      "sha256": "b9b539552b7712ddc3350149b4d7df1ac066231903687c958f1873edbf99c40e"
+    },
+    {
+      "file": "logs/reviews/2026-10-09_G5-01-A-rereview.md",
+      "bytes": 3901,
+      "sha256": "5e34df0c13d6e92163d9756a4afb7efce486975f52cc6dc2ae0ef704bd32ccfa"
+    },
+    {
+      "file": "logs/reviews/2026-10-09_G5-02-C-rereview-2.md",
+      "bytes": 2139,
+      "sha256": "316b3fa3f6c16da7123f4560bfdc2c7e1046a091d13a6dac2926d8552a16a80d"
+    },
+    {
+      "file": "logs/reviews/2026-10-09_G5-02-C-rereview-3.md",
+      "bytes": 2122,
+      "sha256": "7682a2787b61bfe24e6a1cd9f9047ebdfbca203a9103716ac94fc9c0c54a1142"
+    },
+    {
+      "file": "logs/reviews/2026-10-09_G5-02-C-rereview.md",
+      "bytes": 2803,
+      "sha256": "e221c0e70fd305a4b31c244caec9eb334d7c3b0b44dba79ef75547754cfedf55"
+    },
+    {
+      "file": "logs/reviews/2026-10-09_G5-02-C-review-request.md",
+      "bytes": 7046,
+      "sha256": "2d20c11ef3c77b33c52660fc85dde7cd59d9b9d56428491b040fd81e5ea15b89"
+    },
+    {
+      "file": "logs/reviews/2026-10-09_G5-02-C-review.md",
+      "bytes": 3698,
+      "sha256": "318dd565db4dd861f8eb6377a59f3db23ebd5db8aa202b3ed74545c07dd121e4"
+    },
+    {
+      "file": "logs/reviews/2026-10-10_G5-02-B-course-conditional-tests.log",
+      "bytes": 981,
+      "sha256": "a12ce9ae73ae465b02ed9dc6a8d15cc515a3e79fba8f08478c6f4cae2933b83d"
+    },
+    {
+      "file": "logs/reviews/2026-10-10_G5-02-B-course-conditional-validation-default.log",
+      "bytes": 542,
+      "sha256": "c6928c7c10449290e0fb2e32bb97d72d073fec5e89683d528ab4cd1b878d5704"
+    },
+    {
+      "file": "logs/reviews/2026-10-10_G5-02-B-course-conditional-validation-git-ref.log",
+      "bytes": 542,
+      "sha256": "7600ce039f4c1032175c4e73869441cc175cd878b6334f6c21be8219a610e2f8"
+    },
+    {
+      "file": "logs/reviews/2026-10-10_G5-02-C-final-course-acceptance-request.md",
+      "bytes": 2891,
+      "sha256": "c7f8d305f17030e5cc5dc63ba94a0ec33a056b6b074bce4e6c3a94e8ae219d5c"
+    },
+    {
+      "file": "logs/reviews/2026-10-10_G5-02-C-final-course-acceptance.md",
+      "bytes": 2276,
+      "sha256": "f97e0fd46090ea198b8c2a26914753e3f76acb61f1c566edadc5bf136d9b3231"
+    },
+    {
+      "file": "logs/reviews/2026-10-10_G5-02-C-rereview-4.md",
+      "bytes": 3400,
+      "sha256": "a004201e7c83e807f42e6b5258878e292a4d95555e6ad153f58a65f286efe52c"
+    },
+    {
+      "file": "logs/reviews/2026-10-10_G5-02-C-rereview-5.md",
+      "bytes": 2823,
+      "sha256": "a4c9d0391277a3fef0c4d1d69446053f8d0f0fadccdae59536bbfad2926597bf"
+    },
+    {
+      "file": "logs/reviews/2026-10-10_G5-02-C-standard-calibration.md",
+      "bytes": 1727,
+      "sha256": "f30be7759361b2f4de7b615137161b53a4558744b1124b0b97a6257363d1ff02"
+    },
+    {
+      "file": "logs/reviews/2026-10-11_G5-01-A-final-review.md",
+      "bytes": 2301,
+      "sha256": "f4c30315c342592b615b4500abe913f8e3e182b46c9a6fa38e87259697ecdd65"
+    },
+    {
+      "file": "tasks.md",
+      "bytes": 29781,
+      "sha256": "c57875e518a15519b894dbc56af73115b98ef96ef352cee20ac65d29f11020b2"
+    }
+  ],
+  "hashBasis": "physical workspace bytes; G5-02 canonical/Git-blob manifest separately validated",
+  "snapshotBoundary": "read-time snapshot before G5-03 status/output/backfill; mutable control/log snapshots are intentionally not claimed final"
+}

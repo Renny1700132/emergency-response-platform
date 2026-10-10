@@ -1,0 +1,116 @@
+{
+  "head": "dad5e8b6f84439dec0a12613caa371d3e425845a",
+  "task": "G5-03",
+  "state": "PENDING_C_FINAL_REVIEW",
+  "acResults": {
+    "NOT_RUN": 59,
+    "BLOCKED": 47,
+    "PASS": 11
+  },
+  "scope": {
+    "fr": 39,
+    "ac": 117,
+    "starFr": 34
+  },
+  "starAc": {
+    "denominator": 102,
+    "NOT_RUN": 56,
+    "BLOCKED": 35,
+    "PASS": 11
+  },
+  "frAllAcPass": 1,
+  "frAtLeastOnePass": 6,
+  "starResults": {
+    "PASS": 1,
+    "BLOCKED": 33
+  },
+  "performance": [
+    {
+      "id": "PE-07-ordinary-api",
+      "samples": 500,
+      "concurrency": 50,
+      "p50Ms": 13.913,
+      "p95Ms": 34.733,
+      "p99Ms": 35.554,
+      "failures": 0,
+      "failureRate": 0.0
+    },
+    {
+      "id": "PE-11-100-concurrent",
+      "samples": 300,
+      "concurrency": 100,
+      "p50Ms": 27.791,
+      "p95Ms": 39.286,
+      "p99Ms": 39.513,
+      "failures": 0,
+      "failureRate": 0.0
+    },
+    {
+      "id": "PE-02-alert-ingest",
+      "samples": 60,
+      "concurrency": 20,
+      "p50Ms": 11.525,
+      "p95Ms": 14.002,
+      "p99Ms": 14.443,
+      "failures": 0,
+      "failureRate": 0.0
+    },
+    {
+      "id": "PE-09-attendance-check-in",
+      "samples": 40,
+      "concurrency": 10,
+      "p50Ms": 3.386,
+      "p95Ms": 3.627,
+      "p99Ms": 3.697,
+      "failures": 0,
+      "failureRate": 0.0
+    },
+    {
+      "id": "PE-05-position-processing",
+      "samples": 40,
+      "concurrency": 1,
+      "p50Ms": 0.012,
+      "p95Ms": 0.03,
+      "p99Ms": 0.181,
+      "failures": 0,
+      "failureRate": 0.0
+    },
+    {
+      "id": "PE-01-PE-03-response-start",
+      "samples": 20,
+      "concurrency": 1,
+      "p50Ms": 0.52,
+      "p95Ms": 1.044,
+      "p99Ms": 2.331,
+      "failures": 0,
+      "failureRate": 0.0
+    },
+    {
+      "id": "PE-08-resource-map-api",
+      "samples": 100,
+      "concurrency": 20,
+      "p50Ms": 7.274,
+      "p95Ms": 8.074,
+      "p99Ms": 8.167,
+      "failures": 0,
+      "failureRate": 0.0
+    },
+    {
+      "id": "PE-12-statistics-api",
+      "samples": 100,
+      "concurrency": 20,
+      "p50Ms": 9.317,
+      "p95Ms": 12.038,
+      "p99Ms": 12.054,
+      "failures": 0,
+      "failureRate": 0.0
+    }
+  ],
+  "rawSamples": 1160,
+  "failureCount": 0,
+  "unconditionalRealWorldPass": false,
+  "courseDecision": "CANDIDATE_PENDING_C",
+  "realWorldSystemsTested": 0,
+  "realWorldSystemsDenominator": 6,
+  "realIndependentOperators": 0
+}

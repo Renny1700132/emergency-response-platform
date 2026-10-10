@@ -3,3 +3,7 @@ logs/prompts/*.md whitespace=-trailing-space
 
 # G5-02 evidence hashes are calculated over repository bytes; keep checkout and blob bytes LF-stable.
 evidence/g5/G5-02/* text eol=lf
+
+# Preserve this raw console capture byte-for-byte, including tool-formatted trailing spaces.
+# This scopes whitespace review only; the evidence remains tracked and fully diffable.
+evidence/g5/G5-03/final-quality.log -text whitespace=-trailing-space

@@ -1936,3 +1936,14 @@
 
 - 依据OVR-035，接受C课程条件验收候选；ISSUE-G5-00-001为CLOSED_FOR_COURSE_STAGE / IMPLEMENTATION_AND_EVIDENCE_DEFERRED / VERIFIED_BY_A，ISSUE-G5-01-002为CLOSED_FOR_COURSE_STAGE / REAL_WORLD_DEFERRED / VERIFIED_BY_A。真实关闭条件仍未满足，延期义务保留。
 - 003/004/005维持CLOSED / VERIFIED_BY_A；未发现授权课程验收范围内较大新问题，不新增ISSUE。G5-01条件DONE；详细依据见logs/reviews/2026-10-11_G5-01-A-final-review.md。
+
+## G5-03 A最终候选收口记录（2026-10-11）
+
+- 主责A何思源；C最终独立复核待执行，不填写VERIFIED_BY_C。
+- 唯一原始结果仍为G5-01 functional-gate-raw.json：39FR/117AC/34★FR；11PASS/59NOT_RUN/47BLOCKED；102★AC为11PASS/56NOT_RUN/35BLOCKED；1FR全部AC通过，6FR至少1PASS；34★FR为1PASS/33BLOCKED。
+- G5-02 performance-raw.json与CSV 1160样本/8指标逐行核对；PE-07 P50/P95/P99=13.913/34.733/35.554ms，100并发=27.791/39.286/39.513ms；总失败0。仅本地内存HTTP与SIMULATED_EVIDENCE，非目标数据库容量/SLA。
+- 一般产品缺陷1已修复且由A既有复审关闭；MAJOR技术部署/证据整改003/006/007已由C既有复审关闭；008仍OPEN/NON_BLOCKING_IMPROVEMENT。缺测范围不得称严重缺陷不存在。
+- 030—039的30AC IMPLEMENTATION_DEFERRED；59NOT_RUN及17其他BLOCKED EVIDENCE_DEFERRED；兼容/KN-039、六甲方系统0/6、真实非乙方操作者0仍REAL_WORLD_DEFERRED。
+- OVR-034/035只关闭课程阶段：当前建议COURSE_ACCEPTED（条件），G5-03须先REVIEW，待C真实独立复核才可DONE。真实验收门禁仍BLOCKED。
+- 工作稿/四正式DOCX/RTM v5/八特性/三审/机器摘要见docs/work/A_PM/g5_final、docs/deliverables/G5、evidence/g5/G5-03。模板缺口按OVR-036透明fallback，不伪称唯一Pair。
+- 原始G4/G5-01/G5-02证据与冻结输入均不改，历史失败/拒绝/错误hash原样保留。本轮不新增功能、不重复破坏性测试；final-quality.log为本轮npm run quality实际exit0，不是远程CI。

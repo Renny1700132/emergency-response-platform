@@ -1,0 +1,4569 @@
+{
+  "version": "V5.0-review",
+  "status": "PENDING_C_FINAL_REVIEW",
+  "scope": {
+    "fr": 39,
+    "ac": 117,
+    "starFr": 34
+  },
+  "results": {
+    "NOT_RUN": 59,
+    "BLOCKED": 47,
+    "PASS": 11
+  },
+  "starResults": {
+    "PASS": 1,
+    "BLOCKED": 33
+  },
+  "identifierTraceability": "117/117 linked; missing execution is explicitly deferred, not evidence PASS",
+  "rows": [
+    {
+      "acId": "AC-G2-FR-001-01",
+      "frId": "G2-FR-001",
+      "frNumber": 1,
+      "expected": "**Given** 管理员进入预案编制，**When** 新建综合预案并关联专项和现场预案，**Then** 系统保存三级关系并可按层级查看。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-001",
+        "DBD-TR-001",
+        "API-TR-001"
+      ],
+      "designMapping": "| G2-FR-001 / ★ | AC-G2-FR-001-01—03 | MOD-PLAN / ARCH-01 / DLD-TR-001；DBD-TR-001 | API-TR-001；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-001-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-001-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/0",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-001-02",
+      "frId": "G2-FR-001",
+      "frNumber": 1,
+      "expected": "**Given** 已有预案，**When** 设置分区、分时或分险适用条件，**Then** 系统保存条件并在检索结果中显示。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-001",
+        "DBD-TR-001",
+        "API-TR-001"
+      ],
+      "designMapping": "| G2-FR-001 / ★ | AC-G2-FR-001-01—03 | MOD-PLAN / ARCH-01 / DLD-TR-001；DBD-TR-001 | API-TR-001；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-001-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-001-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/1",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-001-03",
+      "frId": "G2-FR-001",
+      "frNumber": 1,
+      "expected": "**Given** 无编辑权限的用户，**When** 尝试新增或修改预案，**Then** 系统拒绝操作并留存授权失败审计。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-001",
+        "DBD-TR-001",
+        "API-TR-001"
+      ],
+      "designMapping": "| G2-FR-001 / ★ | AC-G2-FR-001-01—03 | MOD-PLAN / ARCH-01 / DLD-TR-001；DBD-TR-001 | API-TR-001；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-001-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-001-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/2",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-002-01",
+      "frId": "G2-FR-002",
+      "frNumber": 2,
+      "expected": "**Given** 管理员编辑预案，**When** 增加流程节点、任务和责任人，**Then** 系统保存顺序、责任和依赖关系。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-002",
+        "DBD-TR-002",
+        "API-TR-002"
+      ],
+      "designMapping": "| G2-FR-002 / ★ | AC-G2-FR-002-01—03 | MOD-PLAN / ARCH-02 / DLD-TR-002；DBD-TR-002 | API-TR-002；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-002-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-002-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/3",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-002-02",
+      "frId": "G2-FR-002",
+      "frNumber": 2,
+      "expected": "**Given** 预案需要协同，**When** 配置会议群组和通知对象，**Then** 系统在预案版本中保留配置并可供启动时读取。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-002",
+        "DBD-TR-002",
+        "API-TR-002"
+      ],
+      "designMapping": "| G2-FR-002 / ★ | AC-G2-FR-002-01—03 | MOD-PLAN / ARCH-02 / DLD-TR-002；DBD-TR-002 | API-TR-002；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-002-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-002-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/4",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-002-03",
+      "frId": "G2-FR-002",
+      "frNumber": 2,
+      "expected": "**Given** 人员目录不可用或对象失效，**When** 保存编排，**Then** 系统提示不可用项，不将失效对象作为可执行调派对象。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-002",
+        "DBD-TR-002",
+        "API-TR-002"
+      ],
+      "designMapping": "| G2-FR-002 / ★ | AC-G2-FR-002-01—03 | MOD-PLAN / ARCH-02 / DLD-TR-002；DBD-TR-002 | API-TR-002；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-002-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-002-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/5",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-003-01",
+      "frId": "G2-FR-003",
+      "frNumber": 3,
+      "expected": "**Given** 管理员在预案中新增自定义任务，**When** 保存并发布预案，**Then** 任务名称、责任人、时限和执行状态可被读取。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-003",
+        "DBD-TR-003",
+        "API-TR-003"
+      ],
+      "designMapping": "| G2-FR-003 / ★ | AC-G2-FR-003-01—03 | MOD-PLAN、MOD-TASK / ARCH-02 / DLD-TR-003；DBD-TR-003 | API-TR-003；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-003-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-003-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/6",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-003-02",
+      "frId": "G2-FR-003",
+      "frNumber": 3,
+      "expected": "**Given** 已核实事件并选择有效预案，**When** 授权人员启动预案，**Then** 系统自动创建对应处置任务并向移动端发送通知。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-003",
+        "DBD-TR-003",
+        "API-TR-003"
+      ],
+      "designMapping": "| G2-FR-003 / ★ | AC-G2-FR-003-01—03 | MOD-PLAN、MOD-TASK / ARCH-02 / DLD-TR-003；DBD-TR-003 | API-TR-003；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-003-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-003-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/7",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-003-03",
+      "frId": "G2-FR-003",
+      "frNumber": 3,
+      "expected": "**Given** 验收通道和目标设备可用，**When** 启动预案，**Then** 从启动到通知/任务下发满足 KN-003 的 ≤3 秒指标；未满足时记录测量结果与异常，不宣称通过。",
+      "result": "BLOCKED",
+      "executionKind": "PARTIAL_LOCAL_MEASUREMENT_TARGET_EVIDENCE_MISSING",
+      "testCase": "G5-02 PE-01/03 local start-response measurement",
+      "assertion": "target channel remains required even though the local path is fast",
+      "actualValue": "local P99=2.331ms; simulated message port; target channel NOT_RUN",
+      "evidence": [
+        "evidence/g5/G5-02/performance-raw.json",
+        "docs/work/B_TECH/g5_technical_validation.md"
+      ],
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-003",
+        "DBD-TR-003",
+        "API-TR-003"
+      ],
+      "designMapping": "| G2-FR-003 / ★ | AC-G2-FR-003-01—03 | MOD-PLAN、MOD-TASK / ARCH-02 / DLD-TR-003；DBD-TR-003 | API-TR-003；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-003-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-003-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/8",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-004-01",
+      "frId": "G2-FR-004",
+      "frNumber": 4,
+      "expected": "**Given** 已创建事件，**When** 有人提交续报，**Then** 事件时间线按发生/接收时间展示续报及来源。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-004",
+        "DBD-TR-004",
+        "API-TR-004"
+      ],
+      "designMapping": "| G2-FR-004 / ★ | AC-G2-FR-004-01—03 | MOD-EVENT、MOD-SITUATION / ARCH-02 / DLD-TR-004；DBD-TR-004 | API-TR-004；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-004-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-004-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/9",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-004-02",
+      "frId": "G2-FR-004",
+      "frNumber": 4,
+      "expected": "**Given** 事件关联任务，**When** 任务被接收、反馈或完成，**Then** 态势视图显示当前状态和处理人。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-004",
+        "DBD-TR-004",
+        "API-TR-004"
+      ],
+      "designMapping": "| G2-FR-004 / ★ | AC-G2-FR-004-01—03 | MOD-EVENT、MOD-SITUATION / ARCH-02 / DLD-TR-004；DBD-TR-004 | API-TR-004；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-004-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-004-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/10",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-004-03",
+      "frId": "G2-FR-004",
+      "frNumber": 4,
+      "expected": "**Given** 未获事件权限的用户，**When** 访问事件详情，**Then** 系统拒绝展示受限内容并记录访问审计。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-004",
+        "DBD-TR-004",
+        "API-TR-004"
+      ],
+      "designMapping": "| G2-FR-004 / ★ | AC-G2-FR-004-01—03 | MOD-EVENT、MOD-SITUATION / ARCH-02 / DLD-TR-004；DBD-TR-004 | API-TR-004；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-004-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-004-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/11",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-005-01",
+      "frId": "G2-FR-005",
+      "frNumber": 5,
+      "expected": "**Given** 定位源返回有效人员位置，**When** 指挥人员打开事件地图，**Then** 系统叠加人员位置、职责和就位状态。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-005",
+        "DBD-TR-005",
+        "API-TR-005"
+      ],
+      "designMapping": "| G2-FR-005 / ★ | AC-G2-FR-005-01—03 | MOD-RESOURCE、MOD-SITUATION / ARCH-03 / DLD-TR-005；DBD-TR-005 | API-TR-005；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-005-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-005-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/12",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-005-02",
+      "frId": "G2-FR-005",
+      "frNumber": 5,
+      "expected": "**Given** 连续定位数据可用，**When** 执行目标环境性能测试，**Then** 刷新周期满足 KN-008 ≤2 秒/次，且处理后精度不低于 KN-009 的源精度；结果以测试记录判定。",
+      "result": "BLOCKED",
+      "executionKind": "PARTIAL_LOCAL_MEASUREMENT_TARGET_EVIDENCE_MISSING",
+      "testCase": "G5-02 PE-05 direct position-processing measurement",
+      "assertion": "source precision is preserved, but continuous target-source refresh was not executed",
+      "actualValue": "local P99=0.181ms; source accuracy 0.5m preserved; continuous ≤2s refresh NOT_RUN",
+      "evidence": [
+        "evidence/g5/G5-02/performance-raw.json",
+        "docs/work/B_TECH/g5_technical_validation.md"
+      ],
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-005",
+        "DBD-TR-005",
+        "API-TR-005"
+      ],
+      "designMapping": "| G2-FR-005 / ★ | AC-G2-FR-005-01—03 | MOD-RESOURCE、MOD-SITUATION / ARCH-03 / DLD-TR-005；DBD-TR-005 | API-TR-005；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-005-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-005-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/13",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-005-03",
+      "frId": "G2-FR-005",
+      "frNumber": 5,
+      "expected": "**Given** 位置过期或源不可用，**When** 用户查看地图，**Then** 系统标识新鲜度/不可用状态，并禁止将其作为自动邻近调派结论。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-005",
+        "DBD-TR-005",
+        "API-TR-005"
+      ],
+      "designMapping": "| G2-FR-005 / ★ | AC-G2-FR-005-01—03 | MOD-RESOURCE、MOD-SITUATION / ARCH-03 / DLD-TR-005；DBD-TR-005 | API-TR-005；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-005-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-005-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/14",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-006-01",
+      "frId": "G2-FR-006",
+      "frNumber": 6,
+      "expected": "**Given** 用户选择有权限的视频点位，**When** 发起实时调阅，**Then** 系统通过既有接口请求并展示实时画面或明确失败原因。",
+      "result": "BLOCKED",
+      "executionKind": "BLOCKED_TARGET_OR_SPECIALTY_EVIDENCE",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件没有满足该AC所需的目标环境、真实外部通道或专项测量证据；等待G5-02或外部资源。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-006",
+        "DBD-TR-006",
+        "API-TR-006"
+      ],
+      "designMapping": "| G2-FR-006 / ★ | AC-G2-FR-006-01—03 | MOD-SITUATION、MOD-INTEGRATION / ARCH-04 / DLD-TR-006；DBD-TR-006 | API-TR-006；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-006-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-006-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/15",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-006-02",
+      "frId": "G2-FR-006",
+      "frNumber": 6,
+      "expected": "**Given** 既有系统存在指定时段录像，**When** 用户检索并回放，**Then** 系统通过接口完成调阅，不创建或承担录像存储。",
+      "result": "BLOCKED",
+      "executionKind": "BLOCKED_TARGET_OR_SPECIALTY_EVIDENCE",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件没有满足该AC所需的目标环境、真实外部通道或专项测量证据；等待G5-02或外部资源。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-006",
+        "DBD-TR-006",
+        "API-TR-006"
+      ],
+      "designMapping": "| G2-FR-006 / ★ | AC-G2-FR-006-01—03 | MOD-SITUATION、MOD-INTEGRATION / ARCH-04 / DLD-TR-006；DBD-TR-006 | API-TR-006；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-006-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-006-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/16",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-006-03",
+      "frId": "G2-FR-006",
+      "frNumber": 6,
+      "expected": "**Given** 目标视频环境可用，**When** 执行首帧与保存条件验证，**Then** 首帧按 KN-010 ≤3 秒测量，保存条件按 KN-060 ≥30 天由既有系统证据确认。",
+      "result": "BLOCKED",
+      "executionKind": "PARTIAL_LOCAL_MEASUREMENT_TARGET_EVIDENCE_MISSING",
+      "testCase": "G5-02 PE-06 target video check",
+      "assertion": "first-frame and retention evidence require the existing video system",
+      "actualValue": "NOT_RUN; target video system and ≥30-day retention evidence unavailable",
+      "evidence": [
+        "docs/work/B_TECH/g5_technical_validation.md"
+      ],
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-006",
+        "DBD-TR-006",
+        "API-TR-006"
+      ],
+      "designMapping": "| G2-FR-006 / ★ | AC-G2-FR-006-01—03 | MOD-SITUATION、MOD-INTEGRATION / ARCH-04 / DLD-TR-006；DBD-TR-006 | API-TR-006；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-006-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-006-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/17",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-007-01",
+      "frId": "G2-FR-007",
+      "frNumber": 7,
+      "expected": "**Given** 已配置物资站点坐标，**When** 打开态势地图，**Then** 系统展示站点图层。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": false,
+      "designIds": [
+        "DLD-TR-007",
+        "DBD-TR-007",
+        "API-TR-007"
+      ],
+      "designMapping": "| G2-FR-007 / 非★ | AC-G2-FR-007-01—03 | MOD-RESOURCE、MOD-SITUATION / ARCH-03 / DLD-TR-007；DBD-TR-007 | API-TR-007；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-007-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-007-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/18",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-007-02",
+      "frId": "G2-FR-007",
+      "frNumber": 7,
+      "expected": "**Given** 用户选择一个站点，**When** 打开站点详情，**Then** 系统展示该站点的物资清单、数量和配置。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": false,
+      "designIds": [
+        "DLD-TR-007",
+        "DBD-TR-007",
+        "API-TR-007"
+      ],
+      "designMapping": "| G2-FR-007 / 非★ | AC-G2-FR-007-01—03 | MOD-RESOURCE、MOD-SITUATION / ARCH-03 / DLD-TR-007；DBD-TR-007 | API-TR-007；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-007-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-007-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/19",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-007-03",
+      "frId": "G2-FR-007",
+      "frNumber": 7,
+      "expected": "**Given** 站点无有效台账关联，**When** 用户钻取详情，**Then** 系统提示数据缺失并保留异常记录，不展示虚构数量。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": false,
+      "designIds": [
+        "DLD-TR-007",
+        "DBD-TR-007",
+        "API-TR-007"
+      ],
+      "designMapping": "| G2-FR-007 / 非★ | AC-G2-FR-007-01—03 | MOD-RESOURCE、MOD-SITUATION / ARCH-03 / DLD-TR-007；DBD-TR-007 | API-TR-007；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-007-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-007-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/20",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-008-01",
+      "frId": "G2-FR-008",
+      "frNumber": 8,
+      "expected": "**Given** 管理员录入物资，**When** 保存名称、数量、有效期和站点，**Then** 系统生成可查询台账记录。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-008",
+        "DBD-TR-008",
+        "API-TR-008"
+      ],
+      "designMapping": "| G2-FR-008 / ★ | AC-G2-FR-008-01—03 | MOD-RESOURCE / ARCH-03 / DLD-TR-008；DBD-TR-008 | API-TR-008；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-008-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-008-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/21",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-008-02",
+      "frId": "G2-FR-008",
+      "frNumber": 8,
+      "expected": "**Given** 台账物资临近有效期，**When** 执行提醒规则，**Then** 系统生成临期提醒并记录触发时间。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-008",
+        "DBD-TR-008",
+        "API-TR-008"
+      ],
+      "designMapping": "| G2-FR-008 / ★ | AC-G2-FR-008-01—03 | MOD-RESOURCE / ARCH-03 / DLD-TR-008；DBD-TR-008 | API-TR-008；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-008-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-008-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/22",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-008-03",
+      "frId": "G2-FR-008",
+      "frNumber": 8,
+      "expected": "**Given** 验收数据规模达到约定基线，**When** 导入台账和站点，**Then** 系统可承载 KN-023 ≥30 站点、KN-024 ≥1000 项的验证数据，结果以导入与查询证据判定。",
+      "result": "BLOCKED",
+      "executionKind": "BLOCKED_TARGET_OR_SPECIALTY_EVIDENCE",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件没有满足该AC所需的目标环境、真实外部通道或专项测量证据；等待G5-02或外部资源。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-008",
+        "DBD-TR-008",
+        "API-TR-008"
+      ],
+      "designMapping": "| G2-FR-008 / ★ | AC-G2-FR-008-01—03 | MOD-RESOURCE / ARCH-03 / DLD-TR-008；DBD-TR-008 | API-TR-008；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-008-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-008-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/23",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-009-01",
+      "frId": "G2-FR-009",
+      "frNumber": 9,
+      "expected": "**Given** 管理员选择站点和物资，**When** 创建盘点计划，**Then** 系统保存计划范围和台账快照。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-009",
+        "DBD-TR-009",
+        "API-TR-009"
+      ],
+      "designMapping": "| G2-FR-009 / ★ | AC-G2-FR-009-01—03 | MOD-RESOURCE / ARCH-03 / DLD-TR-009；DBD-TR-009 | API-TR-009；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-009-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-009-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/24",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-009-02",
+      "frId": "G2-FR-009",
+      "frNumber": 9,
+      "expected": "**Given** 现场人员打开计划，**When** 提交移动盘点数量，**Then** 系统将结果与计划快照自动比对并标识差异。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-009",
+        "DBD-TR-009",
+        "API-TR-009"
+      ],
+      "designMapping": "| G2-FR-009 / ★ | AC-G2-FR-009-01—03 | MOD-RESOURCE / ARCH-03 / DLD-TR-009；DBD-TR-009 | API-TR-009；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-009-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-009-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/25",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-009-03",
+      "frId": "G2-FR-009",
+      "frNumber": 9,
+      "expected": "**Given** 出现盘点差异，**When** 管理员复核处理，**Then** 系统保留原快照、盘点值、复核人和处理结果。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-009",
+        "DBD-TR-009",
+        "API-TR-009"
+      ],
+      "designMapping": "| G2-FR-009 / ★ | AC-G2-FR-009-01—03 | MOD-RESOURCE / ARCH-03 / DLD-TR-009；DBD-TR-009 | API-TR-009；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-009-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-009-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/26",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-010-01",
+      "frId": "G2-FR-010",
+      "frNumber": 10,
+      "expected": "**Given** 管理员新建演练计划，**When** 选择月、季或年周期及场所，**Then** 系统保存计划、责任人和目标时间。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-010",
+        "DBD-TR-010",
+        "API-TR-010"
+      ],
+      "designMapping": "| G2-FR-010 / ★ | AC-G2-FR-010-01—03 | MOD-DRILL / ARCH-02 / DLD-TR-010；DBD-TR-010 | API-TR-010；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-010-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-010-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/27",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-010-02",
+      "frId": "G2-FR-010",
+      "frNumber": 10,
+      "expected": "**Given** 人员密集场所被纳入监管，**When** 检查任一滚动六个月，**Then** 系统可验证每半年至少一次演练安排（KN-013）。",
+      "result": "BLOCKED",
+      "executionKind": "BLOCKED_TARGET_OR_SPECIALTY_EVIDENCE",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件没有满足该AC所需的目标环境、真实外部通道或专项测量证据；等待G5-02或外部资源。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-010",
+        "DBD-TR-010",
+        "API-TR-010"
+      ],
+      "designMapping": "| G2-FR-010 / ★ | AC-G2-FR-010-01—03 | MOD-DRILL / ARCH-02 / DLD-TR-010；DBD-TR-010 | API-TR-010；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-010-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-010-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/28",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-010-03",
+      "frId": "G2-FR-010",
+      "frNumber": 10,
+      "expected": "**Given** 计划冲突或缺少责任人，**When** 发布计划，**Then** 系统阻止发布或给出可追溯的校验提示。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-010",
+        "DBD-TR-010",
+        "API-TR-010"
+      ],
+      "designMapping": "| G2-FR-010 / ★ | AC-G2-FR-010-01—03 | MOD-DRILL / ARCH-02 / DLD-TR-010；DBD-TR-010 | API-TR-010；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-010-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-010-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/29",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-011-01",
+      "frId": "G2-FR-011",
+      "frNumber": 11,
+      "expected": "**Given** 到达计划触发时间，**When** 系统执行计划调度，**Then** 自动创建对应演练任务。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-011",
+        "DBD-TR-011",
+        "API-TR-011"
+      ],
+      "designMapping": "| G2-FR-011 / ★ | AC-G2-FR-011-01—03 | MOD-DRILL、MOD-TASK / ARCH-02 / DLD-TR-011；DBD-TR-011 | API-TR-011；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-011-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-011-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/30",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-011-02",
+      "frId": "G2-FR-011",
+      "frNumber": 11,
+      "expected": "**Given** 演练任务已创建，**When** 通知下发，**Then** 系统记录接收对象、下发时间、回执或失败状态。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-011",
+        "DBD-TR-011",
+        "API-TR-011"
+      ],
+      "designMapping": "| G2-FR-011 / ★ | AC-G2-FR-011-01—03 | MOD-DRILL、MOD-TASK / ARCH-02 / DLD-TR-011；DBD-TR-011 | API-TR-011；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-011-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-011-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/31",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-011-03",
+      "frId": "G2-FR-011",
+      "frNumber": 11,
+      "expected": "**Given** 消息通道不可用，**When** 下发失败，**Then** 系统进入重试/告警或人工处置流程并留痕。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-011",
+        "DBD-TR-011",
+        "API-TR-011"
+      ],
+      "designMapping": "| G2-FR-011 / ★ | AC-G2-FR-011-01—03 | MOD-DRILL、MOD-TASK / ARCH-02 / DLD-TR-011；DBD-TR-011 | API-TR-011；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-011-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-011-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/32",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-012-01",
+      "frId": "G2-FR-012",
+      "frNumber": 12,
+      "expected": "**Given** 演练正在执行，**When** 人员提交执行记录，**Then** 系统关联计划、任务、人员和时间。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-012",
+        "DBD-TR-012",
+        "API-TR-012"
+      ],
+      "designMapping": "| G2-FR-012 / ★ | AC-G2-FR-012-01—03 | MOD-DRILL / ARCH-02 / DLD-TR-012；DBD-TR-012 | API-TR-012；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-012-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-012-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/33",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-012-02",
+      "frId": "G2-FR-012",
+      "frNumber": 12,
+      "expected": "**Given** 执行记录完成，**When** 评估人按模板评分，**Then** 系统保存评估条目、结论和附件引用。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-012",
+        "DBD-TR-012",
+        "API-TR-012"
+      ],
+      "designMapping": "| G2-FR-012 / ★ | AC-G2-FR-012-01—03 | MOD-DRILL / ARCH-02 / DLD-TR-012；DBD-TR-012 | API-TR-012；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-012-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-012-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/34",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-012-03",
+      "frId": "G2-FR-012",
+      "frNumber": 12,
+      "expected": "**Given** 评估发现整改项，**When** 创建改进措施，**Then** 系统可追踪整改状态并在报告中关联展示。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-012",
+        "DBD-TR-012",
+        "API-TR-012"
+      ],
+      "designMapping": "| G2-FR-012 / ★ | AC-G2-FR-012-01—03 | MOD-DRILL / ARCH-02 / DLD-TR-012；DBD-TR-012 | API-TR-012；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-012-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-012-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/35",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-013-01",
+      "frId": "G2-FR-013",
+      "frNumber": 13,
+      "expected": "**Given** 授权用户在 Web 或 H5 端，**When** 提交事件基本信息，**Then** 系统创建事件并生成可追踪编号。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "mounted Web form creates a PostgreSQL incident with a traceable incident number",
+      "actualValue": "status=PENDING_VERIFICATION; created_by=commander; incident_no matches INC-*",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-013",
+        "DBD-TR-013",
+        "API-TR-013"
+      ],
+      "designMapping": "| G2-FR-013 / ★ | AC-G2-FR-013-01—03 | MOD-EVENT、MOD-MOBILE / ARCH-02 / DLD-TR-013；DBD-TR-013 | API-TR-013；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-013-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-013-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/36",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "issue": "NONE",
+      "followup": "保留真实PASS及模拟身份/消息/联锁边界",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-013-02",
+      "frId": "G2-FR-013",
+      "frNumber": 13,
+      "expected": "**Given** 存在多个事件，**When** 用户按时间、状态、类型或关键字组合检索，**Then** 系统返回符合条件的事件列表。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "among five PostgreSQL incidents, combined time, status, type and keyword filters retain the one full match and exclude four single-condition near misses",
+      "actualValue": "database total=5; filtered total=1; matching id returned; status/type/keyword/time near-miss ids all excluded",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-013",
+        "DBD-TR-013",
+        "API-TR-013"
+      ],
+      "designMapping": "| G2-FR-013 / ★ | AC-G2-FR-013-01—03 | MOD-EVENT、MOD-MOBILE / ARCH-02 / DLD-TR-013；DBD-TR-013 | API-TR-013；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-013-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-013-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/37",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "issue": "NONE",
+      "followup": "保留真实PASS及模拟身份/消息/联锁边界",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-013-03",
+      "frId": "G2-FR-013",
+      "frNumber": 13,
+      "expected": "**Given** 必填字段缺失或用户无权限，**When** 提交事件，**Then** 系统拒绝提交并提示原因，不生成不完整事件。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "invalid Bearer identity is rejected with reason, creates no incident and records denied audit",
+      "actualValue": "HTTP 403 AUTH_FORBIDDEN; incident count unchanged; denied audit count=1",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-013",
+        "DBD-TR-013",
+        "API-TR-013"
+      ],
+      "designMapping": "| G2-FR-013 / ★ | AC-G2-FR-013-01—03 | MOD-EVENT、MOD-MOBILE / ARCH-02 / DLD-TR-013；DBD-TR-013 | API-TR-013；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-013-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-013-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/38",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "issue": "NONE",
+      "followup": "保留真实PASS及模拟身份/消息/联锁边界",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-014-01",
+      "frId": "G2-FR-014",
+      "frNumber": 14,
+      "expected": "**Given** 新事件等待核实，**When** 核实人提交通过或驳回意见，**Then** 系统记录意见、处理人、时间和状态变更。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "verification stores decision, reason, actor, time and changes incident state",
+      "actualValue": "decision=VERIFIED; reason and actor persisted; occurred_at present",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-014",
+        "DBD-TR-014",
+        "API-TR-014"
+      ],
+      "designMapping": "| G2-FR-014 / ★ | AC-G2-FR-014-01—03 | MOD-EVENT、MOD-PLAN / ARCH-02 / DLD-TR-014；DBD-TR-014 | API-TR-014；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-014-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-014-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/39",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "issue": "NONE",
+      "followup": "保留真实PASS及模拟身份/消息/联锁边界",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-014-02",
+      "frId": "G2-FR-014",
+      "frNumber": 14,
+      "expected": "**Given** 事件已核实且预案可用，**When** 授权人员启动预案，**Then** 系统进入处置生命周期并关联预案与任务。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL_WITH_SIMULATED_MESSAGE",
+      "testCase": "core positive and negative system flow",
+      "assertion": "verified incident enters responding state and links the published plan and generated task",
+      "actualValue": "incident.status=RESPONDING; plan_version_id=plan-system-v1; task persisted",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-014",
+        "DBD-TR-014",
+        "API-TR-014"
+      ],
+      "designMapping": "| G2-FR-014 / ★ | AC-G2-FR-014-01—03 | MOD-EVENT、MOD-PLAN / ARCH-02 / DLD-TR-014；DBD-TR-014 | API-TR-014；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-014-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-014-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/40",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "issue": "NONE",
+      "followup": "保留真实PASS及模拟身份/消息/联锁边界",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-014-03",
+      "frId": "G2-FR-014",
+      "frNumber": 14,
+      "expected": "**Given** 目标验收环境可用，**When** 测量告警接入和任务下达，**Then** 分别按 KN-011 ≤2 秒、KN-012 ≤3 分钟形成测试记录。",
+      "result": "BLOCKED",
+      "executionKind": "PARTIAL_LOCAL_MEASUREMENT_TARGET_EVIDENCE_MISSING",
+      "testCase": "G5-02 PE-02 and PE-01/03 local measurements",
+      "assertion": "local routes were measured but target alert/task channels were simulated",
+      "actualValue": "alert P99=14.443ms; start-response P99=2.331ms; target channels NOT_RUN",
+      "evidence": [
+        "evidence/g5/G5-02/performance-raw.json",
+        "docs/work/B_TECH/g5_technical_validation.md"
+      ],
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-014",
+        "DBD-TR-014",
+        "API-TR-014"
+      ],
+      "designMapping": "| G2-FR-014 / ★ | AC-G2-FR-014-01—03 | MOD-EVENT、MOD-PLAN / ARCH-02 / DLD-TR-014；DBD-TR-014 | API-TR-014；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-014-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-014-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/41",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-015-01",
+      "frId": "G2-FR-015",
+      "frNumber": 15,
+      "expected": "**Given** 预案启动，**When** 系统生成处置任务，**Then** 任务自动关联事件、责任人、时限和状态。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL_WITH_SIMULATED_MESSAGE",
+      "testCase": "core positive and negative system flow",
+      "assertion": "generated task persists event, assignee, deadline, status and delivery receipt",
+      "actualValue": "incident_id, assignee_ref, deadline_at, PENDING and ACCEPTED persisted",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-015",
+        "DBD-TR-015",
+        "API-TR-015"
+      ],
+      "designMapping": "| G2-FR-015 / ★ | AC-G2-FR-015-01—03 | MOD-TASK / ARCH-02 / DLD-TR-015；DBD-TR-015 | API-TR-015；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-015-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-015-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/42",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "issue": "NONE",
+      "followup": "保留真实PASS及模拟身份/消息/联锁边界",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-015-02",
+      "frId": "G2-FR-015",
+      "frNumber": 15,
+      "expected": "**Given** 任务已接收，**When** 执行人提交反馈，**Then** 系统记录反馈内容、附件引用、时间和处理状态。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "accepted task feedback persists content, attachment, time and processing status",
+      "actualValue": "content, file-system-1, occurred_at and IN_PROGRESS persisted",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-015",
+        "DBD-TR-015",
+        "API-TR-015"
+      ],
+      "designMapping": "| G2-FR-015 / ★ | AC-G2-FR-015-01—03 | MOD-TASK / ARCH-02 / DLD-TR-015；DBD-TR-015 | API-TR-015；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-015-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-015-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/43",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "issue": "NONE",
+      "followup": "保留真实PASS及模拟身份/消息/联锁边界",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-015-03",
+      "frId": "G2-FR-015",
+      "frNumber": 15,
+      "expected": "**Given** 任务逾期或指挥人员需追加任务，**When** 触发催办或创建临时任务，**Then** 系统记录触发原因和后续处置。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-015",
+        "DBD-TR-015",
+        "API-TR-015"
+      ],
+      "designMapping": "| G2-FR-015 / ★ | AC-G2-FR-015-01—03 | MOD-TASK / ARCH-02 / DLD-TR-015；DBD-TR-015 | API-TR-015；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-015-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-015-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/44",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-016-01",
+      "frId": "G2-FR-016",
+      "frNumber": 16,
+      "expected": "**Given** 事件满足关闭条件，**When** 关闭人提交评估，**Then** 系统记录评估结论和关闭状态。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-016",
+        "DBD-TR-016",
+        "API-TR-016"
+      ],
+      "designMapping": "| G2-FR-016 / ★ | AC-G2-FR-016-01—03 | MOD-EVENT、MOD-KNOWLEDGE / ARCH-02 / DLD-TR-016；DBD-TR-016 | API-TR-016；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-016-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-016-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/45",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-016-02",
+      "frId": "G2-FR-016",
+      "frNumber": 16,
+      "expected": "**Given** 需要事故调查，**When** 填写调查记录并生成报告，**Then** 系统关联事件证据、调查结论和报告版本。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-016",
+        "DBD-TR-016",
+        "API-TR-016"
+      ],
+      "designMapping": "| G2-FR-016 / ★ | AC-G2-FR-016-01—03 | MOD-EVENT、MOD-KNOWLEDGE / ARCH-02 / DLD-TR-016；DBD-TR-016 | API-TR-016；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-016-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-016-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/46",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-016-03",
+      "frId": "G2-FR-016",
+      "frNumber": 16,
+      "expected": "**Given** 事件已关闭，**When** 用户检索历史处置，**Then** 系统可在授权范围内查询其时间线、报告和知识条目。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-016",
+        "DBD-TR-016",
+        "API-TR-016"
+      ],
+      "designMapping": "| G2-FR-016 / ★ | AC-G2-FR-016-01—03 | MOD-EVENT、MOD-KNOWLEDGE / ARCH-02 / DLD-TR-016；DBD-TR-016 | API-TR-016；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-016-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-016-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/47",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-017-01",
+      "frId": "G2-FR-017",
+      "frNumber": 17,
+      "expected": "**Given** 管理员设置值班规则，**When** 选择小组、时段和点位，**Then** 系统保存可执行的打卡配置。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-017",
+        "DBD-TR-017",
+        "API-TR-017"
+      ],
+      "designMapping": "| G2-FR-017 / ★ | AC-G2-FR-017-01—03 | MOD-DUTY / ARCH-03 / DLD-TR-017；DBD-TR-017 | API-TR-017；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-017-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-017-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/48",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-017-02",
+      "frId": "G2-FR-017",
+      "frNumber": 17,
+      "expected": "**Given** 需要代执行，**When** 管理员按授权指定代执行人，**Then** 系统记录授权关系、操作者和时间。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-017",
+        "DBD-TR-017",
+        "API-TR-017"
+      ],
+      "designMapping": "| G2-FR-017 / ★ | AC-G2-FR-017-01—03 | MOD-DUTY / ARCH-03 / DLD-TR-017；DBD-TR-017 | API-TR-017；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-017-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-017-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/49",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-017-03",
+      "frId": "G2-FR-017",
+      "frNumber": 17,
+      "expected": "**Given** 配置存在无效人员或点位，**When** 发布规则，**Then** 系统提示并阻止无效配置生效。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-017",
+        "DBD-TR-017",
+        "API-TR-017"
+      ],
+      "designMapping": "| G2-FR-017 / ★ | AC-G2-FR-017-01—03 | MOD-DUTY / ARCH-03 / DLD-TR-017；DBD-TR-017 | API-TR-017；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-017-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-017-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/50",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-018-01",
+      "frId": "G2-FR-018",
+      "frNumber": 18,
+      "expected": "**Given** 管理员在地图选择位置，**When** 保存打卡点，**Then** 系统保存坐标、楼层和点位属性。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-018",
+        "DBD-TR-018",
+        "API-TR-018"
+      ],
+      "designMapping": "| G2-FR-018 / ★ | AC-G2-FR-018-01—03 | MOD-DUTY / ARCH-03 / DLD-TR-018；DBD-TR-018 | API-TR-018；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-018-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-018-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/51",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-018-02",
+      "frId": "G2-FR-018",
+      "frNumber": 18,
+      "expected": "**Given** 已保存点位，**When** 生成或更新二维码和有效半径，**Then** 系统将其与点位关联并保留版本记录。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-018",
+        "DBD-TR-018",
+        "API-TR-018"
+      ],
+      "designMapping": "| G2-FR-018 / ★ | AC-G2-FR-018-01—03 | MOD-DUTY / ARCH-03 / DLD-TR-018；DBD-TR-018 | API-TR-018；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-018-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-018-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/52",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-018-03",
+      "frId": "G2-FR-018",
+      "frNumber": 18,
+      "expected": "**Given** 地图服务或坐标不合法，**When** 保存点位，**Then** 系统提示失败原因且不产生无效点位。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-018",
+        "DBD-TR-018",
+        "API-TR-018"
+      ],
+      "designMapping": "| G2-FR-018 / ★ | AC-G2-FR-018-01—03 | MOD-DUTY / ARCH-03 / DLD-TR-018；DBD-TR-018 | API-TR-018；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-018-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-018-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/53",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-019-01",
+      "frId": "G2-FR-019",
+      "frNumber": 19,
+      "expected": "**Given** 已产生打卡记录，**When** 用户选择统计周期，**Then** 系统按点位、小组、人员三个维度汇总（KN-014）。",
+      "result": "BLOCKED",
+      "executionKind": "BLOCKED_TARGET_OR_SPECIALTY_EVIDENCE",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件没有满足该AC所需的目标环境、真实外部通道或专项测量证据；等待G5-02或外部资源。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-019",
+        "DBD-TR-019",
+        "API-TR-019"
+      ],
+      "designMapping": "| G2-FR-019 / ★ | AC-G2-FR-019-01—03 | MOD-DUTY / ARCH-03 / DLD-TR-019；DBD-TR-019 | API-TR-019；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-019-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-019-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/54",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-019-02",
+      "frId": "G2-FR-019",
+      "frNumber": 19,
+      "expected": "**Given** 用户筛选统计条件，**When** 导出明细，**Then** 导出内容与当前权限和筛选范围一致。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-019",
+        "DBD-TR-019",
+        "API-TR-019"
+      ],
+      "designMapping": "| G2-FR-019 / ★ | AC-G2-FR-019-01—03 | MOD-DUTY / ARCH-03 / DLD-TR-019；DBD-TR-019 | API-TR-019；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-019-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-019-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/55",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-019-03",
+      "frId": "G2-FR-019",
+      "frNumber": 19,
+      "expected": "**Given** 无权限用户尝试导出，**When** 发起导出，**Then** 系统拒绝并记录审计。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-019",
+        "DBD-TR-019",
+        "API-TR-019"
+      ],
+      "designMapping": "| G2-FR-019 / ★ | AC-G2-FR-019-01—03 | MOD-DUTY / ARCH-03 / DLD-TR-019；DBD-TR-019 | API-TR-019；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-019-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-019-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/56",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-020-01",
+      "frId": "G2-FR-020",
+      "frNumber": 20,
+      "expected": "**Given** 已到打卡截止时间且无有效记录，**When** 规则引擎检查，**Then** 系统创建缺卡或超时告警。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-020",
+        "DBD-TR-020",
+        "API-TR-020"
+      ],
+      "designMapping": "| G2-FR-020 / ★ | AC-G2-FR-020-01—03 | MOD-DUTY、MOD-TASK / ARCH-05 / DLD-TR-020；DBD-TR-020 | API-TR-020；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-020-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-020-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/57",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-020-02",
+      "frId": "G2-FR-020",
+      "frNumber": 20,
+      "expected": "**Given** 告警需要通知，**When** 调用统一消息通道，**Then** 系统记录请求、重试、回执或失败结果。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-020",
+        "DBD-TR-020",
+        "API-TR-020"
+      ],
+      "designMapping": "| G2-FR-020 / ★ | AC-G2-FR-020-01—03 | MOD-DUTY、MOD-TASK / ARCH-05 / DLD-TR-020；DBD-TR-020 | API-TR-020；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-020-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-020-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/58",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-020-03",
+      "frId": "G2-FR-020",
+      "frNumber": 20,
+      "expected": "**Given** 正常验收通道可用，**When** 执行并发测试，**Then** ≥20 路、≥99% 到达率按 KN-006、KN-007 实测并保留结果；未通过时进入异常处置。",
+      "result": "BLOCKED",
+      "executionKind": "PARTIAL_LOCAL_MEASUREMENT_TARGET_EVIDENCE_MISSING",
+      "testCase": "G5-02 PE-04 simulated message concurrency",
+      "assertion": "20-way simulated channel result cannot replace the normal acceptance channel",
+      "actualValue": "20/20 accepted; 100%; 0.065ms; acceptance channel NOT_RUN",
+      "evidence": [
+        "evidence/g5/G5-02/performance-raw.json",
+        "docs/work/B_TECH/g5_technical_validation.md"
+      ],
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-020",
+        "DBD-TR-020",
+        "API-TR-020"
+      ],
+      "designMapping": "| G2-FR-020 / ★ | AC-G2-FR-020-01—03 | MOD-DUTY、MOD-TASK / ARCH-05 / DLD-TR-020；DBD-TR-020 | API-TR-020；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-020-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-020-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/59",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-021-01",
+      "frId": "G2-FR-021",
+      "frNumber": 21,
+      "expected": "**Given** 授权用户打开 H5，**When** 发起事件并拍照上传，**Then** 系统保存事件、图片引用和提交人。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-021",
+        "DBD-TR-021",
+        "API-TR-021"
+      ],
+      "designMapping": "| G2-FR-021 / ★ | AC-G2-FR-021-01—03 | MOD-MOBILE、MOD-EVENT / ARCH-02 / DLD-TR-021；DBD-TR-021 | API-TR-021；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-021-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-021-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/60",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-021-02",
+      "frId": "G2-FR-021",
+      "frNumber": 21,
+      "expected": "**Given** 用户已有本人发起或参与的事件，**When** 打开个人事件，**Then** 系统仅展示其授权范围内的事件。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-021",
+        "DBD-TR-021",
+        "API-TR-021"
+      ],
+      "designMapping": "| G2-FR-021 / ★ | AC-G2-FR-021-01—03 | MOD-MOBILE、MOD-EVENT / ARCH-02 / DLD-TR-021；DBD-TR-021 | API-TR-021；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-021-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-021-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/61",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-021-03",
+      "frId": "G2-FR-021",
+      "frNumber": 21,
+      "expected": "**Given** 相机或网络不可用，**When** 用户提交事件，**Then** H5 明确提示可恢复状态并防止把未上传附件标记为已上传。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-021",
+        "DBD-TR-021",
+        "API-TR-021"
+      ],
+      "designMapping": "| G2-FR-021 / ★ | AC-G2-FR-021-01—03 | MOD-MOBILE、MOD-EVENT / ARCH-02 / DLD-TR-021；DBD-TR-021 | API-TR-021；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-021-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-021-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/62",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-022-01",
+      "frId": "G2-FR-022",
+      "frNumber": 22,
+      "expected": "**Given** 用户收到任务通知，**When** 在 H5 确认任务，**Then** 系统更新任务接收状态并留痕。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "mounted H5 page acknowledges the task and PostgreSQL records state and audit trail",
+      "actualValue": "task.status=ACKNOWLEDGED; TASK_ACKNOWLEDGED allowed audit persisted",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-022",
+        "DBD-TR-022",
+        "API-TR-022"
+      ],
+      "designMapping": "| G2-FR-022 / ★ | AC-G2-FR-022-01—03 | MOD-MOBILE、MOD-TASK / ARCH-02 / DLD-TR-022；DBD-TR-022 | API-TR-022；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-022-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-022-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/63",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "issue": "NONE",
+      "followup": "保留真实PASS及模拟身份/消息/联锁边界",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-022-02",
+      "frId": "G2-FR-022",
+      "frNumber": 22,
+      "expected": "**Given** 任务执行中，**When** 用户提交反馈和附件，**Then** 系统关联任务、上传结果和时间。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL",
+      "testCase": "core positive and negative system flow",
+      "assertion": "formal H5 workflow feedback associates task, upload result and time in PostgreSQL",
+      "actualValue": "task_id, attachment_file_ids=[file-system-1] and occurred_at persisted",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-022",
+        "DBD-TR-022",
+        "API-TR-022"
+      ],
+      "designMapping": "| G2-FR-022 / ★ | AC-G2-FR-022-01—03 | MOD-MOBILE、MOD-TASK / ARCH-02 / DLD-TR-022；DBD-TR-022 | API-TR-022；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-022-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-022-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/64",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "issue": "NONE",
+      "followup": "保留真实PASS及模拟身份/消息/联锁边界",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-022-03",
+      "frId": "G2-FR-022",
+      "frNumber": 22,
+      "expected": "**Given** 任务条件满足，**When** 用户提交完成，**Then** 系统更新任务状态；消息并发与到达率按 KN-006、KN-007 在正常验收通道验证。",
+      "result": "BLOCKED",
+      "executionKind": "PARTIAL_LOCAL_MEASUREMENT_TARGET_EVIDENCE_MISSING",
+      "testCase": "G5-02 PE-04 simulated message concurrency",
+      "assertion": "task completion passed locally, while delivery-rate acceptance remains external",
+      "actualValue": "20/20 accepted on simulated channel; acceptance channel NOT_RUN",
+      "evidence": [
+        "evidence/g5/G5-02/performance-raw.json",
+        "docs/work/B_TECH/g5_technical_validation.md"
+      ],
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-022",
+        "DBD-TR-022",
+        "API-TR-022"
+      ],
+      "designMapping": "| G2-FR-022 / ★ | AC-G2-FR-022-01—03 | MOD-MOBILE、MOD-TASK / ARCH-02 / DLD-TR-022；DBD-TR-022 | API-TR-022；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-022-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/event-workflow.mjs",
+        "backend/src/event-persistence.mjs",
+        "frontend/src/features/response/workflow.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-022-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/65",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-023-01",
+      "frId": "G2-FR-023",
+      "frNumber": 23,
+      "expected": "**Given** 用户有待执行演练，**When** 打开 H5 演练列表，**Then** 系统展示本人授权任务及状态。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-023",
+        "DBD-TR-023",
+        "API-TR-023"
+      ],
+      "designMapping": "| G2-FR-023 / ★ | AC-G2-FR-023-01—03 | MOD-MOBILE、MOD-DRILL / ARCH-02 / DLD-TR-023；DBD-TR-023 | API-TR-023；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-023-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-023-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/66",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-023-02",
+      "frId": "G2-FR-023",
+      "frNumber": 23,
+      "expected": "**Given** 用户进入演练任务，**When** 提交执行结果，**Then** 系统记录结果、时间和关联任务。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-023",
+        "DBD-TR-023",
+        "API-TR-023"
+      ],
+      "designMapping": "| G2-FR-023 / ★ | AC-G2-FR-023-01—03 | MOD-MOBILE、MOD-DRILL / ARCH-02 / DLD-TR-023；DBD-TR-023 | API-TR-023；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-023-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-023-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/67",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-023-03",
+      "frId": "G2-FR-023",
+      "frNumber": 23,
+      "expected": "**Given** 任务已关闭或用户无权限，**When** 尝试提交，**Then** 系统拒绝并保留可追溯提示。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-023",
+        "DBD-TR-023",
+        "API-TR-023"
+      ],
+      "designMapping": "| G2-FR-023 / ★ | AC-G2-FR-023-01—03 | MOD-MOBILE、MOD-DRILL / ARCH-02 / DLD-TR-023；DBD-TR-023 | API-TR-023；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-023-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-023-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/68",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-024-01",
+      "frId": "G2-FR-024",
+      "frNumber": 24,
+      "expected": "**Given** 用户扫描有效点位二维码，**When** 身份、时段和范围均符合规则，**Then** 系统写入有效打卡记录。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-024",
+        "DBD-TR-024",
+        "API-TR-024"
+      ],
+      "designMapping": "| G2-FR-024 / ★ | AC-G2-FR-024-01—03 | MOD-MOBILE、MOD-DUTY / ARCH-03 / DLD-TR-024；DBD-TR-024 | API-TR-024；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-024-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-024-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/69",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-024-02",
+      "frId": "G2-FR-024",
+      "frNumber": 24,
+      "expected": "**Given** 用户不在有效半径、时段或小组内，**When** 扫码，**Then** 系统拒绝打卡并说明失败维度。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-024",
+        "DBD-TR-024",
+        "API-TR-024"
+      ],
+      "designMapping": "| G2-FR-024 / ★ | AC-G2-FR-024-01—03 | MOD-MOBILE、MOD-DUTY / ARCH-03 / DLD-TR-024；DBD-TR-024 | API-TR-024；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-024-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-024-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/70",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-024-03",
+      "frId": "G2-FR-024",
+      "frNumber": 24,
+      "expected": "**Given** 目标环境可用，**When** 执行扫码写入测试，**Then** 按 KN-036 ≤1 秒记录性能结果。",
+      "result": "BLOCKED",
+      "executionKind": "PARTIAL_LOCAL_MEASUREMENT_TARGET_EVIDENCE_MISSING",
+      "testCase": "G5-02 PE-09 local check-in API measurement",
+      "assertion": "local API is below one second but real QR/location/H5 host was not executed",
+      "actualValue": "local API P99=3.697ms; real scan/H5 host NOT_RUN",
+      "evidence": [
+        "evidence/g5/G5-02/performance-raw.json",
+        "docs/work/B_TECH/g5_technical_validation.md"
+      ],
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-024",
+        "DBD-TR-024",
+        "API-TR-024"
+      ],
+      "designMapping": "| G2-FR-024 / ★ | AC-G2-FR-024-01—03 | MOD-MOBILE、MOD-DUTY / ARCH-03 / DLD-TR-024；DBD-TR-024 | API-TR-024；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-024-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-024-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/71",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-025-01",
+      "frId": "G2-FR-025",
+      "frNumber": 25,
+      "expected": "**Given** 用户打开本人盘点计划，**When** 录入或扫描物资盘点数量，**Then** 系统关联计划、物资和现场记录。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-025",
+        "DBD-TR-025",
+        "API-TR-025"
+      ],
+      "designMapping": "| G2-FR-025 / ★ | AC-G2-FR-025-01—03 | MOD-MOBILE、MOD-RESOURCE / ARCH-03 / DLD-TR-025；DBD-TR-025 | API-TR-025；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-025-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-025-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/72",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-025-02",
+      "frId": "G2-FR-025",
+      "frNumber": 25,
+      "expected": "**Given** 用户提交盘点，**When** 系统校验计划快照，**Then** 自动标识与快照的数量差异。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-025",
+        "DBD-TR-025",
+        "API-TR-025"
+      ],
+      "designMapping": "| G2-FR-025 / ★ | AC-G2-FR-025-01—03 | MOD-MOBILE、MOD-RESOURCE / ARCH-03 / DLD-TR-025；DBD-TR-025 | API-TR-025；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-025-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-025-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/73",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-025-03",
+      "frId": "G2-FR-025",
+      "frNumber": 25,
+      "expected": "**Given** 盘点结果经授权复核，**When** 确认更新，**Then** 系统更新现有数量并保留盘点和复核证据。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-025",
+        "DBD-TR-025",
+        "API-TR-025"
+      ],
+      "designMapping": "| G2-FR-025 / ★ | AC-G2-FR-025-01—03 | MOD-MOBILE、MOD-RESOURCE / ARCH-03 / DLD-TR-025；DBD-TR-025 | API-TR-025；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-025-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-025-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/74",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-026-01",
+      "frId": "G2-FR-026",
+      "frNumber": 26,
+      "expected": "**Given** 接入终端在线状态和告警数据，**When** 打开综合安防视图，**Then** 系统展示在线状态、告警统计和空间定位。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-026",
+        "DBD-TR-026",
+        "API-TR-026"
+      ],
+      "designMapping": "| G2-FR-026 / ★ | AC-G2-FR-026-01—03 | MOD-SITUATION、MOD-INTEGRATION / ARCH-04 / DLD-TR-026；DBD-TR-026 | API-TR-026；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-026-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-026-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/75",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-026-02",
+      "frId": "G2-FR-026",
+      "frNumber": 26,
+      "expected": "**Given** 用户选择终端或告警，**When** 发起业务跳转，**Then** 系统跳转至关联业务上下文或明确记录失败原因。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-026",
+        "DBD-TR-026",
+        "API-TR-026"
+      ],
+      "designMapping": "| G2-FR-026 / ★ | AC-G2-FR-026-01—03 | MOD-SITUATION、MOD-INTEGRATION / ARCH-04 / DLD-TR-026；DBD-TR-026 | API-TR-026；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-026-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-026-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/76",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-026-03",
+      "frId": "G2-FR-026",
+      "frNumber": 26,
+      "expected": "**Given** 目标环境具备验收数据，**When** 测量视图刷新，**Then** 按 KN-016 ≤30 秒形成测试证据。",
+      "result": "BLOCKED",
+      "executionKind": "PARTIAL_LOCAL_MEASUREMENT_TARGET_EVIDENCE_MISSING",
+      "testCase": "G5-02 PE-10 target security refresh check",
+      "assertion": "refresh timing requires the target security/information-publishing chain",
+      "actualValue": "NOT_RUN; target security refresh chain unavailable",
+      "evidence": [
+        "docs/work/B_TECH/g5_technical_validation.md"
+      ],
+      "note": "保留本地实测值但不提升为PASS；G5-02本地证据整改已由C复验接受，但目标环境/真实通道仍缺失。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-026",
+        "DBD-TR-026",
+        "API-TR-026"
+      ],
+      "designMapping": "| G2-FR-026 / ★ | AC-G2-FR-026-01—03 | MOD-SITUATION、MOD-INTEGRATION / ARCH-04 / DLD-TR-026；DBD-TR-026 | API-TR-026；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-026-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-026-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/77",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-027-01",
+      "frId": "G2-FR-027",
+      "frNumber": 27,
+      "expected": "**Given** 物联网接口推送有效告警，**When** 系统接收并匹配规则，**Then** 创建或关联应急事件并保留原始关联信息。",
+      "result": "BLOCKED",
+      "executionKind": "BLOCKED_TARGET_OR_SPECIALTY_EVIDENCE",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件没有满足该AC所需的目标环境、真实外部通道或专项测量证据；等待G5-02或外部资源。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-027",
+        "DBD-TR-027",
+        "API-TR-027"
+      ],
+      "designMapping": "| G2-FR-027 / ★ | AC-G2-FR-027-01—03 | MOD-INTEGRATION、MOD-EVENT / ARCH-04 / DLD-TR-027；DBD-TR-027 | API-TR-027；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-027-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-027-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/78",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-027-02",
+      "frId": "G2-FR-027",
+      "frNumber": 27,
+      "expected": "**Given** 接口暂时断连，**When** 连接恢复，**Then** 系统按重试/补传策略处理并记录成功、失败或待人工处置状态。",
+      "result": "BLOCKED",
+      "executionKind": "BLOCKED_TARGET_OR_SPECIALTY_EVIDENCE",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件没有满足该AC所需的目标环境、真实外部通道或专项测量证据；等待G5-02或外部资源。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-027",
+        "DBD-TR-027",
+        "API-TR-027"
+      ],
+      "designMapping": "| G2-FR-027 / ★ | AC-G2-FR-027-01—03 | MOD-INTEGRATION、MOD-EVENT / ARCH-04 / DLD-TR-027；DBD-TR-027 | API-TR-027；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-027-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-027-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/79",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-027-03",
+      "frId": "G2-FR-027",
+      "frNumber": 27,
+      "expected": "**Given** 不可识别的告警或客流数据，**When** 接收处理，**Then** 系统不自动生成错误事件，并输出可审计的异常记录。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-027",
+        "DBD-TR-027",
+        "API-TR-027"
+      ],
+      "designMapping": "| G2-FR-027 / ★ | AC-G2-FR-027-01—03 | MOD-INTEGRATION、MOD-EVENT / ARCH-04 / DLD-TR-027；DBD-TR-027 | API-TR-027；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-027-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-027-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/80",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-028-01",
+      "frId": "G2-FR-028",
+      "frNumber": 28,
+      "expected": "**Given** 中台返回用户、组织或权限信息，**When** 用户访问应急业务，**Then** 系统按中台授权执行业务访问控制。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_H5_HTTP_POSTGRESQL_WITH_IDENTITY_SEAM",
+      "testCase": "core positive and negative system flow",
+      "assertion": "platform context grants configured permissions while invalid identity is denied and audited",
+      "actualValue": "authenticated context; invalid token HTTP 403; denied audit persisted",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-028",
+        "DBD-TR-028",
+        "API-TR-028"
+      ],
+      "designMapping": "| G2-FR-028 / ★ | AC-G2-FR-028-01—03 | MOD-PLATFORM、MOD-INTEGRATION / ARCH-01 / DLD-TR-028；DBD-TR-028 | API-TR-028；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-028-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-028-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/81",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "issue": "NONE",
+      "followup": "保留真实PASS及模拟身份/消息/联锁边界",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/identity.mjs",
+        "backend/src/middle-platform-port.mjs",
+        "frontend/src/shared/auth/auth-context.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-028-02",
+      "frId": "G2-FR-028",
+      "frNumber": 28,
+      "expected": "**Given** 应急业务需要消息、流程或文件能力，**When** 发起相应调用，**Then** 系统通过中台适配层调用并记录关联结果。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-028",
+        "DBD-TR-028",
+        "API-TR-028"
+      ],
+      "designMapping": "| G2-FR-028 / ★ | AC-G2-FR-028-01—03 | MOD-PLATFORM、MOD-INTEGRATION / ARCH-01 / DLD-TR-028；DBD-TR-028 | API-TR-028；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-028-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-028-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/82",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/identity.mjs",
+        "backend/src/middle-platform-port.mjs",
+        "frontend/src/shared/auth/auth-context.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-028-03",
+      "frId": "G2-FR-028",
+      "frNumber": 28,
+      "expected": "**Given** 中台接口不可用，**When** 业务访问受影响，**Then** 系统展示可观察错误并记录降级/人工处置，不以本地重复建设替代中台通用能力。",
+      "result": "BLOCKED",
+      "executionKind": "BLOCKED_TARGET_OR_SPECIALTY_EVIDENCE",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件没有满足该AC所需的目标环境、真实外部通道或专项测量证据；等待G5-02或外部资源。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-028",
+        "DBD-TR-028",
+        "API-TR-028"
+      ],
+      "designMapping": "| G2-FR-028 / ★ | AC-G2-FR-028-01—03 | MOD-PLATFORM、MOD-INTEGRATION / ARCH-01 / DLD-TR-028；DBD-TR-028 | API-TR-028；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-028-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-028-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/83",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/identity.mjs",
+        "backend/src/middle-platform-port.mjs",
+        "frontend/src/shared/auth/auth-context.ts"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-029-01",
+      "frId": "G2-FR-029",
+      "frNumber": 29,
+      "expected": "**Given** 用户具有视频权限且既有录像可用，**When** 发起调阅或历史回放，**Then** 系统通过既有接口完成请求、记录结果并遵循既有系统保存责任。",
+      "result": "BLOCKED",
+      "executionKind": "BLOCKED_TARGET_OR_SPECIALTY_EVIDENCE",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件没有满足该AC所需的目标环境、真实外部通道或专项测量证据；等待G5-02或外部资源。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-029",
+        "DBD-TR-029",
+        "API-TR-029"
+      ],
+      "designMapping": "| G2-FR-029 / ★ | AC-G2-FR-029-01—03 | MOD-INTEGRATION、MOD-EVENT / ARCH-04 / DLD-TR-029；DBD-TR-029 | API-TR-029；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-029-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-029-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/84",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-029-02",
+      "frId": "G2-FR-029",
+      "frNumber": 29,
+      "expected": "**Given** 疏散场景满足业务条件，**When** 授权人员确认开启门禁，**Then** 系统向既有门禁发送指令并等待安全联锁结果，不绕过联锁。",
+      "result": "PASS",
+      "executionKind": "SYSTEM_WEB_HTTP_POSTGRESQL_WITH_SIMULATED_ACCESS_INTERLOCK",
+      "testCase": "remaining MVP workbenches and confirmed access control",
+      "assertion": "no command is sent before confirmation; confirmed UI action dispatches once and waits for interlock receipt before accepting",
+      "actualValue": "pre-confirm calls=0; post-confirm calls=1; interlock=ALLOWED; command.status=ACCEPTED persisted",
+      "evidence": [
+        "frontend/tests/postgresql-system-e2e.test.ts",
+        "evidence/g5/G5-01/functional-gate-raw.json"
+      ],
+      "note": "判定仅覆盖所列断言；模拟端口或内存持久化边界不外推为真实甲方环境/数据库验收。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-029",
+        "DBD-TR-029",
+        "API-TR-029"
+      ],
+      "designMapping": "| G2-FR-029 / ★ | AC-G2-FR-029-01—03 | MOD-INTEGRATION、MOD-EVENT / ARCH-04 / DLD-TR-029；DBD-TR-029 | API-TR-029；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-029-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-029-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/85",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "issue": "NONE",
+      "followup": "保留真实PASS及模拟身份/消息/联锁边界",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-029-03",
+      "frId": "G2-FR-029",
+      "frNumber": 29,
+      "expected": "**Given** 门禁拒绝、超时或联锁失败，**When** 接收失败回执，**Then** 系统产生告警、保留回执并转入人工降级处置。",
+      "result": "NOT_RUN",
+      "executionKind": "NOT_RUN_NO_AC_LEVEL_ASSERTION",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "现有套件存在相关代码覆盖或局部路径，但没有足以判定本AC完整通过的逐项断言；不得由套件总绿推导PASS。",
+      "star": true,
+      "designIds": [
+        "DLD-TR-029",
+        "DBD-TR-029",
+        "API-TR-029"
+      ],
+      "designMapping": "| G2-FR-029 / ★ | AC-G2-FR-029-01—03 | MOD-INTEGRATION、MOD-EVENT / ARCH-04 / DLD-TR-029；DBD-TR-029 | API-TR-029；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-029-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [
+        "backend/src/sprint2-service.mjs",
+        "backend/src/sprint2-persistence.mjs",
+        "frontend/src/features/formal/module-workbench.ts"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "plannedTC": "TC-G2-FR-029-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/86",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-01-002",
+      "followup": "补齐完整AC断言与环境，重跑并交指定复核人",
+      "supportingImplementationFiles": [
+        "backend/src/server.mjs",
+        "frontend/src/shared/http/api-client.ts",
+        "backend/src/external-adapters.mjs"
+      ]
+    },
+    {
+      "acId": "AC-G2-FR-030-01",
+      "frId": "G2-FR-030",
+      "frNumber": 30,
+      "expected": "**Given** 授权用户选择预案，**When** 上传附件，**Then** 系统保存附件与预案、版本和上传审计的关联。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": false,
+      "designIds": [
+        "DLD-TR-030",
+        "DBD-TR-030",
+        "API-TR-030"
+      ],
+      "designMapping": "| G2-FR-030 / 非★ | AC-G2-FR-030-01—03 | MOD-PLAN、MOD-PLATFORM / ARCH-01 / DLD-TR-030；DBD-TR-030 | API-TR-030；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-030-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-030-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/87",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-030-02",
+      "frId": "G2-FR-030",
+      "frNumber": 30,
+      "expected": "**Given** 已有附件版本，**When** 提交修订，**Then** 系统保留历史版本并能按权限检索。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": false,
+      "designIds": [
+        "DLD-TR-030",
+        "DBD-TR-030",
+        "API-TR-030"
+      ],
+      "designMapping": "| G2-FR-030 / 非★ | AC-G2-FR-030-01—03 | MOD-PLAN、MOD-PLATFORM / ARCH-01 / DLD-TR-030；DBD-TR-030 | API-TR-030；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-030-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-030-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/88",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-030-03",
+      "frId": "G2-FR-030",
+      "frNumber": 30,
+      "expected": "**Given** 用户无附件权限，**When** 尝试下载或修订，**Then** 系统拒绝并记录访问审计。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": false,
+      "designIds": [
+        "DLD-TR-030",
+        "DBD-TR-030",
+        "API-TR-030"
+      ],
+      "designMapping": "| G2-FR-030 / 非★ | AC-G2-FR-030-01—03 | MOD-PLAN、MOD-PLATFORM / ARCH-01 / DLD-TR-030；DBD-TR-030 | API-TR-030；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-030-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-030-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/89",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-031-01",
+      "frId": "G2-FR-031",
+      "frNumber": 31,
+      "expected": "**Given** 管理员具有权限，**When** 维护人员档案、职责和小组，**Then** 系统保存可追溯的组织关联。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-031",
+        "DBD-TR-031",
+        "API-TR-031"
+      ],
+      "designMapping": "| G2-FR-031 / ★ | AC-G2-FR-031-01—03 | MOD-RESOURCE、MOD-PLATFORM / ARCH-03 / DLD-TR-031；DBD-TR-031 | API-TR-031；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-031-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-031-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/90",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-031-02",
+      "frId": "G2-FR-031",
+      "frNumber": 31,
+      "expected": "**Given** 人员已加入有效小组，**When** 触发调派通知，**Then** 系统记录接收对象、时间和回执或失败状态。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-031",
+        "DBD-TR-031",
+        "API-TR-031"
+      ],
+      "designMapping": "| G2-FR-031 / ★ | AC-G2-FR-031-01—03 | MOD-RESOURCE、MOD-PLATFORM / ARCH-03 / DLD-TR-031；DBD-TR-031 | API-TR-031；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-031-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-031-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/91",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-031-03",
+      "frId": "G2-FR-031",
+      "frNumber": 31,
+      "expected": "**Given** 人员已失效或无调派权限，**When** 被选作调派对象，**Then** 系统提示并阻止无效下发。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-031",
+        "DBD-TR-031",
+        "API-TR-031"
+      ],
+      "designMapping": "| G2-FR-031 / ★ | AC-G2-FR-031-01—03 | MOD-RESOURCE、MOD-PLATFORM / ARCH-03 / DLD-TR-031；DBD-TR-031 | API-TR-031；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-031-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-031-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/92",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-032-01",
+      "frId": "G2-FR-032",
+      "frNumber": 32,
+      "expected": "**Given** 管理员选择人员和时段，**When** 发布值班计划，**Then** 系统生成对应可执行的打卡关联。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": false,
+      "designIds": [
+        "DLD-TR-032",
+        "DBD-TR-032",
+        "API-TR-032"
+      ],
+      "designMapping": "| G2-FR-032 / 非★ | AC-G2-FR-032-01—03 | MOD-DUTY / ARCH-03 / DLD-TR-032；DBD-TR-032 | API-TR-032；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-032-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-032-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/93",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-032-02",
+      "frId": "G2-FR-032",
+      "frNumber": 32,
+      "expected": "**Given** 已发布计划，**When** 调整人员或时段，**Then** 系统保存调整前后内容、操作者和时间。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": false,
+      "designIds": [
+        "DLD-TR-032",
+        "DBD-TR-032",
+        "API-TR-032"
+      ],
+      "designMapping": "| G2-FR-032 / 非★ | AC-G2-FR-032-01—03 | MOD-DUTY / ARCH-03 / DLD-TR-032；DBD-TR-032 | API-TR-032；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-032-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-032-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/94",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-032-03",
+      "frId": "G2-FR-032",
+      "frNumber": 32,
+      "expected": "**Given** 调整与现有打卡规则冲突，**When** 提交变更，**Then** 系统提示冲突并阻止无效规则生效。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": false,
+      "designIds": [
+        "DLD-TR-032",
+        "DBD-TR-032",
+        "API-TR-032"
+      ],
+      "designMapping": "| G2-FR-032 / 非★ | AC-G2-FR-032-01—03 | MOD-DUTY / ARCH-03 / DLD-TR-032；DBD-TR-032 | API-TR-032；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-032-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-032-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/95",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-033-01",
+      "frId": "G2-FR-033",
+      "frNumber": 33,
+      "expected": "**Given** 管理员具有配置权限，**When** 新增或修改预案类型，**Then** 系统保存类型和变更审计。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": false,
+      "designIds": [
+        "DLD-TR-033",
+        "DBD-TR-033",
+        "API-TR-033"
+      ],
+      "designMapping": "| G2-FR-033 / 非★ | AC-G2-FR-033-01—03 | MOD-PLAN / ARCH-01 / DLD-TR-033；DBD-TR-033 | API-TR-033；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-033-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-033-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/96",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-033-02",
+      "frId": "G2-FR-033",
+      "frNumber": 33,
+      "expected": "**Given** 类型已被预案引用，**When** 管理员停用该类型，**Then** 历史预案保留原类型，新建预案不能再选择该类型。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": false,
+      "designIds": [
+        "DLD-TR-033",
+        "DBD-TR-033",
+        "API-TR-033"
+      ],
+      "designMapping": "| G2-FR-033 / 非★ | AC-G2-FR-033-01—03 | MOD-PLAN / ARCH-01 / DLD-TR-033；DBD-TR-033 | API-TR-033；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-033-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-033-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/97",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-033-03",
+      "frId": "G2-FR-033",
+      "frNumber": 33,
+      "expected": "**Given** 无权限用户，**When** 尝试维护类型，**Then** 系统拒绝操作并记录审计。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": false,
+      "designIds": [
+        "DLD-TR-033",
+        "DBD-TR-033",
+        "API-TR-033"
+      ],
+      "designMapping": "| G2-FR-033 / 非★ | AC-G2-FR-033-01—03 | MOD-PLAN / ARCH-01 / DLD-TR-033；DBD-TR-033 | API-TR-033；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-033-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-033-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/98",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-034-01",
+      "frId": "G2-FR-034",
+      "frNumber": 34,
+      "expected": "**Given** 管理员具有配置权限，**When** 新增、修改或停用事件类型，**Then** 系统保存类型和变更审计。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-034",
+        "DBD-TR-034",
+        "API-TR-034"
+      ],
+      "designMapping": "| G2-FR-034 / ★ | AC-G2-FR-034-01—03 | MOD-EVENT / ARCH-02 / DLD-TR-034；DBD-TR-034 | API-TR-034；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-034-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-034-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/99",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-034-02",
+      "frId": "G2-FR-034",
+      "frNumber": 34,
+      "expected": "**Given** 已配置预置类别，**When** 管理员维护类别，**Then** 系统允许按权限调整，不将预置类别误写为新增强制范围。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-034",
+        "DBD-TR-034",
+        "API-TR-034"
+      ],
+      "designMapping": "| G2-FR-034 / ★ | AC-G2-FR-034-01—03 | MOD-EVENT / ARCH-02 / DLD-TR-034；DBD-TR-034 | API-TR-034；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-034-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-034-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/100",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-034-03",
+      "frId": "G2-FR-034",
+      "frNumber": 34,
+      "expected": "**Given** 类型已被事件引用，**When** 停用类型，**Then** 历史事件保留可查，新建事件不能选择该类型。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-034",
+        "DBD-TR-034",
+        "API-TR-034"
+      ],
+      "designMapping": "| G2-FR-034 / ★ | AC-G2-FR-034-01—03 | MOD-EVENT / ARCH-02 / DLD-TR-034；DBD-TR-034 | API-TR-034；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-034-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-034-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/101",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-035-01",
+      "frId": "G2-FR-035",
+      "frNumber": 35,
+      "expected": "**Given** 甲方地图服务可用，**When** 管理员配置物资站点位置，**Then** 系统保存站点、坐标/楼层和版本。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-035",
+        "DBD-TR-035",
+        "API-TR-035"
+      ],
+      "designMapping": "| G2-FR-035 / ★ | AC-G2-FR-035-01—03 | MOD-RESOURCE、MOD-SITUATION / ARCH-03 / DLD-TR-035；DBD-TR-035 | API-TR-035；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-035-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-035-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/102",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-035-02",
+      "frId": "G2-FR-035",
+      "frNumber": 35,
+      "expected": "**Given** 站点位置有效，**When** 打开物资地图，**Then** 系统加载配置的位置并支持关联台账钻取。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-035",
+        "DBD-TR-035",
+        "API-TR-035"
+      ],
+      "designMapping": "| G2-FR-035 / ★ | AC-G2-FR-035-01—03 | MOD-RESOURCE、MOD-SITUATION / ARCH-03 / DLD-TR-035；DBD-TR-035 | API-TR-035；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-035-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-035-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/103",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-035-03",
+      "frId": "G2-FR-035",
+      "frNumber": 35,
+      "expected": "**Given** 坐标或楼层映射无效，**When** 保存站点，**Then** 系统提示并拒绝保存无效空间配置。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-035",
+        "DBD-TR-035",
+        "API-TR-035"
+      ],
+      "designMapping": "| G2-FR-035 / ★ | AC-G2-FR-035-01—03 | MOD-RESOURCE、MOD-SITUATION / ARCH-03 / DLD-TR-035；DBD-TR-035 | API-TR-035；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-035-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-035-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/104",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-036-01",
+      "frId": "G2-FR-036",
+      "frNumber": 36,
+      "expected": "**Given** 管理员创建模板，**When** 增加、排序或修改评估条目，**Then** 系统保存模板及版本。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-036",
+        "DBD-TR-036",
+        "API-TR-036"
+      ],
+      "designMapping": "| G2-FR-036 / ★ | AC-G2-FR-036-01—03 | MOD-DRILL / ARCH-02 / DLD-TR-036；DBD-TR-036 | API-TR-036；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-036-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-036-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/105",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-036-02",
+      "frId": "G2-FR-036",
+      "frNumber": 36,
+      "expected": "**Given** 模板已发布，**When** 演练或事件评估引用模板，**Then** 系统关联使用的模板版本。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-036",
+        "DBD-TR-036",
+        "API-TR-036"
+      ],
+      "designMapping": "| G2-FR-036 / ★ | AC-G2-FR-036-01—03 | MOD-DRILL / ARCH-02 / DLD-TR-036；DBD-TR-036 | API-TR-036；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-036-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-036-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/106",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-036-03",
+      "frId": "G2-FR-036",
+      "frNumber": 36,
+      "expected": "**Given** 模板被历史评估引用，**When** 修改或停用模板，**Then** 历史评估仍保留原版本可追溯。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-036",
+        "DBD-TR-036",
+        "API-TR-036"
+      ],
+      "designMapping": "| G2-FR-036 / ★ | AC-G2-FR-036-01—03 | MOD-DRILL / ARCH-02 / DLD-TR-036；DBD-TR-036 | API-TR-036；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-036-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-036-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/107",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-037-01",
+      "frId": "G2-FR-037",
+      "frNumber": 37,
+      "expected": "**Given** 管理员配置核实流程，**When** 定义环节、处理人和时限并发布，**Then** 系统保存生效配置和审计。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-037",
+        "DBD-TR-037",
+        "API-TR-037"
+      ],
+      "designMapping": "| G2-FR-037 / ★ | AC-G2-FR-037-01—03 | MOD-PLAN、MOD-EVENT / ARCH-02 / DLD-TR-037；DBD-TR-037 | API-TR-037；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-037-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-037-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/108",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-037-02",
+      "frId": "G2-FR-037",
+      "frNumber": 37,
+      "expected": "**Given** 事件进入核实，**When** 流程实例化，**Then** 系统按当前有效配置路由审批事项。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-037",
+        "DBD-TR-037",
+        "API-TR-037"
+      ],
+      "designMapping": "| G2-FR-037 / ★ | AC-G2-FR-037-01—03 | MOD-PLAN、MOD-EVENT / ARCH-02 / DLD-TR-037；DBD-TR-037 | API-TR-037；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-037-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-037-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/109",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-037-03",
+      "frId": "G2-FR-037",
+      "frNumber": 37,
+      "expected": "**Given** 配置存在缺少处理人或非法时限，**When** 发布，**Then** 系统阻止生效并提示校验原因。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-037",
+        "DBD-TR-037",
+        "API-TR-037"
+      ],
+      "designMapping": "| G2-FR-037 / ★ | AC-G2-FR-037-01—03 | MOD-PLAN、MOD-EVENT / ARCH-02 / DLD-TR-037；DBD-TR-037 | API-TR-037；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-037-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-037-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/110",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-038-01",
+      "frId": "G2-FR-038",
+      "frNumber": 38,
+      "expected": "**Given** 已发布知识条目，**When** 用户在 H5 按分类浏览，**Then** 系统返回其授权范围内的条目。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": false,
+      "designIds": [
+        "DLD-TR-038",
+        "DBD-TR-038",
+        "API-TR-038"
+      ],
+      "designMapping": "| G2-FR-038 / 非★ | AC-G2-FR-038-01—03 | MOD-KNOWLEDGE、MOD-MOBILE / ARCH-02 / DLD-TR-038；DBD-TR-038 | API-TR-038；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-038-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-038-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/111",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-038-02",
+      "frId": "G2-FR-038",
+      "frNumber": 38,
+      "expected": "**Given** 用户输入关键字，**When** 执行检索，**Then** 系统返回匹配条目或明确无结果提示。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": false,
+      "designIds": [
+        "DLD-TR-038",
+        "DBD-TR-038",
+        "API-TR-038"
+      ],
+      "designMapping": "| G2-FR-038 / 非★ | AC-G2-FR-038-01—03 | MOD-KNOWLEDGE、MOD-MOBILE / ARCH-02 / DLD-TR-038；DBD-TR-038 | API-TR-038；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-038-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-038-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/112",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-038-03",
+      "frId": "G2-FR-038",
+      "frNumber": 38,
+      "expected": "**Given** 条目未发布或用户无权限，**When** 检索，**Then** 系统不返回受限内容并记录必要审计。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": false,
+      "designIds": [
+        "DLD-TR-038",
+        "DBD-TR-038",
+        "API-TR-038"
+      ],
+      "designMapping": "| G2-FR-038 / 非★ | AC-G2-FR-038-01—03 | MOD-KNOWLEDGE、MOD-MOBILE / ARCH-02 / DLD-TR-038；DBD-TR-038 | API-TR-038；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-038-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-038-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/113",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-039-01",
+      "frId": "G2-FR-039",
+      "frNumber": 39,
+      "expected": "**Given** 存在授权范围内的业务数据，**When** 用户选择统计条件，**Then** 系统展示事件、监控和流程统计结果。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-039",
+        "DBD-TR-039",
+        "API-TR-039"
+      ],
+      "designMapping": "| G2-FR-039 / ★ | AC-G2-FR-039-01—03 | MOD-SITUATION / ARCH-03 / DLD-TR-039；DBD-TR-039 | API-TR-039；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-039-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-039-01",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/114",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-039-02",
+      "frId": "G2-FR-039",
+      "frNumber": 39,
+      "expected": "**Given** 统计结果存在明细，**When** 用户钻取指标，**Then** 系统展示与指标一致的授权范围内明细。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-039",
+        "DBD-TR-039",
+        "API-TR-039"
+      ],
+      "designMapping": "| G2-FR-039 / ★ | AC-G2-FR-039-01—03 | MOD-SITUATION / ARCH-03 / DLD-TR-039；DBD-TR-039 | API-TR-039；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-039-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-039-02",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/115",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    },
+    {
+      "acId": "AC-G2-FR-039-03",
+      "frId": "G2-FR-039",
+      "frNumber": 39,
+      "expected": "**Given** 目标环境可用，**When** 测量默认刷新，**Then** 按 KN-017 ≤60 秒形成性能验证记录。",
+      "result": "BLOCKED",
+      "executionKind": "NOT_RUN_NOT_IMPLEMENTED",
+      "testCase": "N/A",
+      "assertion": "N/A",
+      "actualValue": "N/A",
+      "evidence": [],
+      "note": "G5 scope preserves G2-FR-030—039 as backlog and forbids adding implementation; no executable path exists.",
+      "star": true,
+      "designIds": [
+        "DLD-TR-039",
+        "DBD-TR-039",
+        "API-TR-039"
+      ],
+      "designMapping": "| G2-FR-039 / ★ | AC-G2-FR-039-01—03 | MOD-SITUATION / ARCH-03 / DLD-TR-039；DBD-TR-039 | API-TR-039；OpenAPI 契约共 57 项操作 | ADR-002；NFR-MNT-01、ENG-015/17/20 | TC-G2-FR-039-01—03（G3-09） | COVERED_DESIGN_PENDING_TEST_EVIDENCE |",
+      "designSource": "docs/work/C_REQ/rtm_v1.md",
+      "implementationFiles": [],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "plannedTC": "TC-G2-FR-039-03",
+      "testExecutionVersion": "92085e963a4fc130c2293cb8439f289d562782c4 + controlled G5-01 worktree changes",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/116",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "issue": "ISSUE-G5-00-001",
+      "followup": "实现并执行完整AC；独立复核后才能修改真实结果",
+      "supportingImplementationFiles": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "pdf": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master\\tmp\\g5-03\\native-reference\\document.pdf",
+    "pages": 27,
+    "renderer": "Microsoft Word 16.0",
+    "file": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master\\docs\\reference\\36-测试报告（教学样例）.docx",
+    "temporaryPdfRemovedAfterQA": true
+  },
+  {
+    "pdf": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master\\tmp\\g5-03\\native-36\\document.pdf",
+    "pages": 7,
+    "renderer": "Microsoft Word 16.0",
+    "file": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master\\docs\\deliverables\\G5\\36-测试报告.docx",
+    "temporaryPdfRemovedAfterQA": true
+  },
+  {
+    "pdf": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master\\tmp\\g5-03\\native-37\\document.pdf",
+    "pages": 6,
+    "renderer": "Microsoft Word 16.0",
+    "file": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master\\docs\\deliverables\\G5\\37-性能压测报告.docx",
+    "temporaryPdfRemovedAfterQA": true
+  },
+  {
+    "pdf": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master\\tmp\\g5-03\\native-38\\document.pdf",
+    "pages": 8,
+    "renderer": "Microsoft Word 16.0",
+    "file": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master\\docs\\deliverables\\G5\\38-缺陷看板与修复记录.docx",
+    "temporaryPdfRemovedAfterQA": true
+  },
+  {
+    "pdf": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master\\tmp\\g5-03\\native-39\\document.pdf",
+    "pages": 14,
+    "renderer": "Microsoft Word 16.0",
+    "file": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master\\docs\\deliverables\\G5\\39-RTM闭环核验记录.docx",
+    "temporaryPdfRemovedAfterQA": true
+  }
+]

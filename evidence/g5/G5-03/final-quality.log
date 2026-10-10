@@ -1,0 +1,457 @@
+
+> museum-emergency-response-quality-gates@0.1.0 quality
+> npm run typecheck && npm run test:frontend:coverage && npm run build && npm run test:coverage && npm run test:backend:coverage && npm run contract && npm run security && npm run selfcheck
+
+
+> museum-emergency-response-quality-gates@0.1.0 typecheck
+> npm run typecheck --prefix frontend
+
+
+> museum-emergency-response-frontend@0.1.0 typecheck
+> npm run generate:api && vue-tsc --noEmit
+
+
+> museum-emergency-response-frontend@0.1.0 generate:api
+> openapi-typescript ../docs/work/B_TECH/openapi_v1.yaml -o src/api/generated/schema.d.ts
+
+✨ openapi-typescript 7.9.1
+🚀 ../docs/work/B_TECH/openapi_v1.yaml → src/api/generated/schema.d.ts [92.3ms]
+
+> museum-emergency-response-quality-gates@0.1.0 test:frontend:coverage
+> npm run test:coverage --prefix frontend
+
+
+> museum-emergency-response-frontend@0.1.0 test:coverage
+> vitest run --coverage
+
+
+ RUN  v5.0.1 E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend
+      Coverage enabled with v8
+
+
+ Test Files  11 passed | 1 skipped (12)
+      Tests  45 passed | 2 skipped (47)
+   Start at  00:35:20
+   Duration  18.97s (environment 95%, import 2%, transform 2%, worker 1%)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   95.57 |    77.73 |   97.36 |     100 |                   
+ features/formal   |     100 |    78.94 |     100 |     100 |                   
+  ...-workbench.ts |     100 |    78.94 |     100 |     100 | 14-15,17-18,89-98 
+ features/response |   94.28 |    74.24 |     100 |     100 |                   
+  workflow.ts      |   94.28 |    74.24 |     100 |     100 | ...,48-71,101-109 
+ shared/auth       |   96.96 |    66.66 |     100 |     100 |                   
+  auth-context.ts  |   96.96 |    66.66 |     100 |     100 | 16-17,35-39,57    
+ shared/demo       |   93.87 |     77.5 |     100 |     100 |                   
+  ...tation-api.ts |     100 |       90 |     100 |     100 | 11,22,26,29       
+  ...tion-state.ts |    87.5 |    56.66 |     100 |     100 | 32-65             
+ shared/http       |   95.23 |    85.96 |   85.71 |     100 |                   
+  api-client.ts    |   96.15 |    87.27 |   83.33 |     100 | 87,95,106,108,140 
+  api-context.ts   |      80 |       50 |     100 |     100 | 9                 
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 95.57% ( 259/271 )
+Branches     : 77.73% ( 206/265 )
+Functions    : 97.36% ( 74/76 )
+Lines        : 100% ( 200/200 )
+================================================================================
+
+> museum-emergency-response-quality-gates@0.1.0 build
+> npm run build --prefix frontend
+
+
+> museum-emergency-response-frontend@0.1.0 prebuild
+> npm run generate:api
+
+
+> museum-emergency-response-frontend@0.1.0 generate:api
+> openapi-typescript ../docs/work/B_TECH/openapi_v1.yaml -o src/api/generated/schema.d.ts
+
+✨ openapi-typescript 7.9.1
+🚀 ../docs/work/B_TECH/openapi_v1.yaml → src/api/generated/schema.d.ts [89.1ms]
+
+> museum-emergency-response-frontend@0.1.0 build
+> vue-tsc --noEmit && vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 55 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.49 kB │ gzip:  0.36 kB
+dist/assets/index-DjX3_uKF.css   21.04 kB │ gzip:  5.50 kB
+dist/assets/index-CnAbj0Fp.js   139.22 kB │ gzip: 52.37 kB │ map: 905.54 kB
+✓ built in 1.33s
+
+> museum-emergency-response-quality-gates@0.1.0 test:coverage
+> c8 --all --include=scripts/g4/lib/*.mjs --check-coverage --lines 70 --functions 70 --branches 70 --statements 70 node --test tests/g4/*.test.mjs
+
+✔ registry exposes eight distinct EXT ports plus GIS and H5 (205.2662ms)
+✔ every adapter has deterministic marked normal, unauthorized, timeout and failure fixtures (3.5199ms)
+✔ unknown adapters and scenarios fail closed with simulated markers (2.2082ms)
+✔ GIS and H5 fixtures retain frozen responsibility boundaries (2.6577ms)
+✔ HTTP simulator returns fixture status, body and evidence header (33.4219ms)
+✔ scan target collection includes implementation files and skips tests (11.2921ms)
+✔ secret scan accepts ordinary configuration (18.7737ms)
+✔ secret scan blocks assigned credentials without disclosing the value (32.9652ms)
+✔ selfcheck accepts complete evidence (1.7788ms)
+✔ selfcheck blocks a missing check and empty traceability (0.167ms)
+✔ selfcheck permits an evidenced not-applicable result (0.0873ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 559.6651
+---------------------------|---------|----------|---------|---------|-------------------
+File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------|---------|----------|---------|---------|-------------------
+All files                  |   96.75 |    81.63 |      90 |   96.75 |                   
+ integration-simulator.mjs |   89.65 |    63.15 |      75 |   89.65 | 24-25,27-28,57-58 
+ secret-scan.mjs           |     100 |    94.44 |     100 |     100 | 58                
+ selfcheck.mjs             |     100 |    91.66 |     100 |     100 | 16                
+---------------------------|---------|----------|---------|---------|-------------------
+
+> museum-emergency-response-quality-gates@0.1.0 test:backend:coverage
+> c8 --all --include=backend/src/*.mjs --check-coverage --lines 70 --functions 70 --branches 70 --statements 70 node --test tests/backend/*.test.mjs
+
+✔ event workflow enforces verify, idempotent start, task feedback and closure rules (3.0434ms)
+✔ message failure keeps business tasks and marks manual review (1.8618ms)
+✔ production configuration requires database and middle-platform endpoints (1.2382ms)
+✔ main module detection resolves relative container entrypoints against the working directory (0.2356ms)
+✔ audit redacts credentials and keeps traceability fields (1.4166ms)
+✔ identity and database adapters retain their infrastructure boundary (1.2056ms)
+✔ middle-platform bearer adapter validates identity and forwards file requests (3.6214ms)
+✔ health, readiness and minimal authorization return controlled responses (32.0445ms)
+✔ readiness and application bootstrap cover available and unavailable database states (14.9491ms)
+✔ foundation migration has an auditable paired rollback and compose keeps credentials external (59.5742ms)
+✔ database transaction commits success and rolls back failure (0.6722ms)
+✔ HTTP core incident path covers authorization, idempotency, tasks and closure (51.7497ms)
+✔ Bearer identity connects the real page routes without development headers (31.2395ms)
+✔ persistence uses parameterized SQL and message port maps failure and timeout (12.244ms)
+✔ database-backed aggregate survives service recreation through the full closure path (4.9021ms)
+✔ business fact, outbox and audit roll back together on injected failure (0.748ms)
+✔ message dispatch occurs after commit and failure remains recoverable (0.6605ms)
+✔ G4-08 adapters exercise all eight ports plus GIS/H5 and never replay access commands (19.8256ms)
+✔ G4-08 service closes plan, resource, inventory, drill, attendance and integration AC paths (8.7073ms)
+✔ G4-08 persistence parameterizes values and HTTP routes enforce authorization/idempotency (39.157ms)
+✔ G4-08 migration is paired and persisted Sprint 2 records recover after service recreation (18.1332ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 425.8254
+--------------------------|---------|----------|---------|---------|--------------------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+--------------------------|---------|----------|---------|---------|--------------------------------
+All files                 |   87.75 |    77.77 |   85.36 |   87.75 |                                
+ audit.mjs                |     100 |    92.85 |     100 |     100 | 4                              
+ config.mjs               |     100 |      100 |     100 |     100 |                                
+ database.mjs             |     100 |     90.9 |     100 |     100 | 20                             
+ event-persistence.mjs    |   35.78 |    63.63 |   17.64 |   35.78 | ...166,169-173,176-180,183-188 
+ event-workflow.mjs       |   97.47 |    87.87 |     100 |   97.47 | 89-92,112-115                  
+ external-adapters.mjs    |     100 |    70.27 |     100 |     100 | 14,26-35,45-53,62              
+ idempotency.mjs          |     100 |    88.23 |     100 |     100 | 12-13                          
+ identity.mjs             |     100 |    71.87 |     100 |     100 | 5,11-13,16-20,27               
+ main.mjs                 |   73.01 |    55.55 |      60 |   73.01 | 21-25,30-33,56-63              
+ message-port.mjs         |     100 |    54.54 |     100 |     100 | 4,15-16,20                     
+ middle-platform-port.mjs |   92.75 |    34.78 |   83.33 |   92.75 | 1-3,24-25                      
+ server.mjs               |   97.81 |    79.01 |     100 |   97.81 | 28-29,63-64,149                
+ sprint2-persistence.mjs  |   74.46 |    72.72 |     100 |   74.46 | 20-28,40-42                    
+ sprint2-service.mjs      |   96.74 |    77.58 |   96.66 |   96.74 | 53-54,135-136,211-213,242      
+--------------------------|---------|----------|---------|---------|--------------------------------
+
+> museum-emergency-response-quality-gates@0.1.0 contract
+> redocly lint docs/work/B_TECH/openapi_v1.yaml --config quality/openapi/redocly.yaml
+
+
+    ╔═══════════════════════════════════════════════════════╗
+    ║                                                       ║
+    ║  A new version of Redocly CLI (2.60.0) is available.  ║
+    ║  Update now: `npm i -g @redocly/cli@latest`.          ║
+    ║  Changelog: https://redocly.com/docs/cli/changelog/   ║
+    ║                                                       ║
+    ╚═══════════════════════════════════════════════════════╝
+
+validating docs\work\B_TECH\openapi_v1.yaml...
+[1] docs\work\B_TECH\openapi_v1.yaml:11:5 at #/servers/0/variables/environment
+
+The `environment` variable is not used in the server's `url` field.
+
+ 9 | description: 课程模拟环境（SIMULATED_OWNER_CONFIRMATION）；域名使用 .example 保留域
+10 | variables:
+11 |   environment:
+   |   ^^^^^^^^^^^
+12 |     default: uat
+13 |     enum: [dev, uat, acc]
+
+referenced from docs\work\B_TECH\openapi_v1.yaml:8:8 at #/servers/0/url 
+
+Warning was generated by the no-undefined-server-variable rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/no-undefined-server-variable
+
+
+[2] docs\work\B_TECH\openapi_v1.yaml:18:3 at #/tags/0/description
+
+Tag object should contain `description` field.
+
+16 | - middlePlatformBearer: []
+17 | tags:
+18 | - name: 预案
+   |   ^^^^^^^^
+19 | - name: 事件
+20 | - name: 任务
+
+Warning was generated by the tag-description rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/tag-description
+
+
+[3] docs\work\B_TECH\openapi_v1.yaml:19:3 at #/tags/1/description
+
+Tag object should contain `description` field.
+
+17 | tags:
+18 | - name: 预案
+19 | - name: 事件
+   |   ^^^^^^^^
+20 | - name: 任务
+21 | - name: 态势
+
+Warning was generated by the tag-description rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/tag-description
+
+
+[4] docs\work\B_TECH\openapi_v1.yaml:20:3 at #/tags/2/description
+
+Tag object should contain `description` field.
+
+18 | - name: 预案
+19 | - name: 事件
+20 | - name: 任务
+   |   ^^^^^^^^
+21 | - name: 态势
+22 | - name: 资源
+
+Warning was generated by the tag-description rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/tag-description
+
+
+[5] docs\work\B_TECH\openapi_v1.yaml:21:3 at #/tags/3/description
+
+Tag object should contain `description` field.
+
+19 | - name: 事件
+20 | - name: 任务
+21 | - name: 态势
+   |   ^^^^^^^^
+22 | - name: 资源
+23 | - name: 物资
+
+Warning was generated by the tag-description rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/tag-description
+
+
+[6] docs\work\B_TECH\openapi_v1.yaml:22:3 at #/tags/4/description
+
+Tag object should contain `description` field.
+
+20 | - name: 任务
+21 | - name: 态势
+22 | - name: 资源
+   |   ^^^^^^^^
+23 | - name: 物资
+24 | - name: 演练
+
+Warning was generated by the tag-description rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/tag-description
+
+
+[7] docs\work\B_TECH\openapi_v1.yaml:23:3 at #/tags/5/description
+
+Tag object should contain `description` field.
+
+21 | - name: 态势
+22 | - name: 资源
+23 | - name: 物资
+   |   ^^^^^^^^
+24 | - name: 演练
+25 | - name: 值班
+
+Warning was generated by the tag-description rule.
+
+docs\work\B_TECH\openapi_v1.yaml: validated in 75ms
+
+Reference: https://redocly.com/docs/cli/rules/oas/tag-description
+
+
+[8] docs\work\B_TECH\openapi_v1.yaml:24:3 at #/tags/6/description
+
+Tag object should contain `description` field.
+
+22 | - name: 资源
+23 | - name: 物资
+24 | - name: 演练
+   |   ^^^^^^^^
+25 | - name: 值班
+26 | - name: 知识
+
+Warning was generated by the tag-description rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/tag-description
+
+
+[9] docs\work\B_TECH\openapi_v1.yaml:25:3 at #/tags/7/description
+
+Tag object should contain `description` field.
+
+23 | - name: 物资
+24 | - name: 演练
+25 | - name: 值班
+   |   ^^^^^^^^
+26 | - name: 知识
+27 | - name: 配置
+
+Warning was generated by the tag-description rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/tag-description
+
+
+[10] docs\work\B_TECH\openapi_v1.yaml:26:3 at #/tags/8/description
+
+Tag object should contain `description` field.
+
+24 | - name: 演练
+25 | - name: 值班
+26 | - name: 知识
+   |   ^^^^^^^^
+27 | - name: 配置
+28 | - name: 中台
+
+Warning was generated by the tag-description rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/tag-description
+
+
+[11] docs\work\B_TECH\openapi_v1.yaml:27:3 at #/tags/9/description
+
+Tag object should contain `description` field.
+
+25 | - name: 值班
+26 | - name: 知识
+27 | - name: 配置
+   |   ^^^^^^^^
+28 | - name: 中台
+29 | - name: 集成
+
+Warning was generated by the tag-description rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/tag-description
+
+
+[12] docs\work\B_TECH\openapi_v1.yaml:28:3 at #/tags/10/description
+
+Tag object should contain `description` field.
+
+26 | - name: 知识
+27 | - name: 配置
+28 | - name: 中台
+   |   ^^^^^^^^
+29 | - name: 集成
+30 | paths:
+
+Warning was generated by the tag-description rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/tag-description
+
+
+[13] docs\work\B_TECH\openapi_v1.yaml:29:3 at #/tags/11/description
+
+Tag object should contain `description` field.
+Woohoo! Your API description is valid. 🎉
+You have 14 warnings.
+
+
+27 | - name: 配置
+28 | - name: 中台
+29 | - name: 集成
+   |   ^^^^^^^^
+30 | paths:
+31 |   /api/v1/plan-types:
+
+Warning was generated by the tag-description rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/tag-description
+
+
+[14] docs\work\B_TECH\openapi_v1.yaml:3035:21 at #/components/schemas/ApiResponse/properties/data/nullable
+
+The `type` field must be defined when the `nullable` field is used.
+
+3033 |   example: success
+3034 | data:
+3035 |   nullable: true
+     |             ^^^^
+3036 | traceId:
+3037 |   type: string
+
+Warning was generated by the nullable-type-sibling rule.
+
+Reference: https://redocly.com/docs/cli/rules/oas/nullable-type-sibling
+
+
+
+> museum-emergency-response-quality-gates@0.1.0 security
+> npm run security:secrets && npm run security:dependencies
+
+
+> museum-emergency-response-quality-gates@0.1.0 security:secrets
+> node scripts/g4/scan-secrets.mjs
+
+{
+  "gate": "secret-scan",
+  "status": "PASS",
+  "filesScanned": 67
+}
+
+> museum-emergency-response-quality-gates@0.1.0 security:dependencies
+> npm audit --registry=https://registry.npmjs.org --audit-level=high && npm audit --prefix frontend --registry=https://registry.npmjs.org --audit-level=high
+
+found 0 vulnerabilities
+found 0 vulnerabilities
+
+> museum-emergency-response-quality-gates@0.1.0 selfcheck
+> node scripts/g4/validate-selfchecks.mjs quality/selfcheck
+
+{
+  "gate": "selfcheck",
+  "status": "PASS",
+  "targets": [
+    "quality/selfcheck/G4-01.json",
+    "quality/selfcheck/G4-02.json",
+    "quality/selfcheck/G4-03.json",
+    "quality/selfcheck/G4-04.json",
+    "quality/selfcheck/G4-05.json",
+    "quality/selfcheck/G4-06.json",
+    "quality/selfcheck/G4-07.json",
+    "quality/selfcheck/G4-08.json",
+    "quality/selfcheck/G4-09.json",
+    "quality/selfcheck/G4-10.json",
+    "quality/selfcheck/G4-11.json"
+  ],
+  "failures": []
+}

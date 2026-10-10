@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "documents": [
+    {
+      "file": "docs/deliverables/G5/36-测试报告.docx",
+      "contentConsistency": "PASS",
+      "sectionGeometry": "MATCH",
+      "caseVisibleTextAbsent": true,
+      "tableCaptions": 4,
+      "businessTables": 4,
+      "coverRevisionExemptTables": 1,
+      "TOC": "native Word updated",
+      "bodyBlack": true,
+      "referenceSha256Unchanged": true,
+      "nativeFieldUpdate": "Word 16.0 serialisation recorded; cached TOC text/page numbers intentionally changed"
+    },
+    {
+      "file": "docs/deliverables/G5/37-性能压测报告.docx",
+      "contentConsistency": "PASS",
+      "sectionGeometry": "MATCH",
+      "caseVisibleTextAbsent": true,
+      "tableCaptions": 1,
+      "businessTables": 1,
+      "coverRevisionExemptTables": 1,
+      "TOC": "native Word updated",
+      "bodyBlack": true,
+      "referenceSha256Unchanged": true,
+      "nativeFieldUpdate": "Word 16.0 serialisation recorded; cached TOC text/page numbers intentionally changed"
+    },
+    {
+      "file": "docs/deliverables/G5/38-缺陷看板与修复记录.docx",
+      "contentConsistency": "PASS",
+      "sectionGeometry": "MATCH",
+      "caseVisibleTextAbsent": true,
+      "tableCaptions": 0,
+      "businessTables": 0,
+      "coverRevisionExemptTables": 1,
+      "TOC": "native Word updated",
+      "bodyBlack": true,
+      "referenceSha256Unchanged": true,
+      "nativeFieldUpdate": "Word 16.0 serialisation recorded; cached TOC text/page numbers intentionally changed"
+    },
+    {
+      "file": "docs/deliverables/G5/39-RTM闭环核验记录.docx",
+      "contentConsistency": "PASS",
+      "sectionGeometry": "MATCH",
+      "caseVisibleTextAbsent": true,
+      "tableCaptions": 2,
+      "businessTables": 2,
+      "coverRevisionExemptTables": 1,
+      "TOC": "native Word updated",
+      "bodyBlack": true,
+      "referenceSha256Unchanged": true,
+      "nativeFieldUpdate": "Word 16.0 serialisation recorded; cached TOC text/page numbers intentionally changed"
+    }
+  ]
+}

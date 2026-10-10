@@ -1,0 +1,45 @@
+{
+  "task": "G5-03",
+  "command": "npm run quality",
+  "exitCode": 0,
+  "status": "PASS",
+  "executionSource": "actual command completion QUALITY_EXIT=0; full stdout/stderr archived final-quality.log",
+  "logLastWriteTime": "2026-10-11T00:36:16.005343+08:00",
+  "frontend": {
+    "pass": 45,
+    "skipped": 2,
+    "coverage": {
+      "statements": 95.57,
+      "branches": 77.73,
+      "functions": 97.36,
+      "lines": 100
+    }
+  },
+  "engineeringGuards": {
+    "pass": 11
+  },
+  "backend": {
+    "pass": 21,
+    "coverage": {
+      "statements": 87.75,
+      "branches": 77.77,
+      "functions": 85.36,
+      "lines": 87.75
+    }
+  },
+  "openapi": {
+    "errors": 0,
+    "warnings": 14
+  },
+  "dependencyVulnerabilities": {
+    "root": 0,
+    "frontend": 0,
+    "highOrCritical": 0
+  },
+  "secretScan": {
+    "status": "PASS",
+    "filesScanned": 67
+  },
+  "selfcheckTargets": 11,
+  "boundary": "local gate, not remote CI; PostgreSQL protected system package default skipped; historical dedicated 2/2 remains separately reported"
+}

@@ -1,0 +1,320 @@
+{
+  "logs": [
+    {
+      "file": "logs/prompts/2026-10-08-A.md",
+      "sha256": "ea0418b1fad834ff673f79003eccf95e64633ecf434d90177fc934da3acbc2d3",
+      "userPromptBlocks": 6,
+      "finalOutputBlocks": 7,
+      "entries": [
+        {
+          "id": "LOG-G5-00-001",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-01-A-REVIEW-001",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        }
+      ],
+      "currentTaskPendingOutput": false
+    },
+    {
+      "file": "logs/prompts/2026-10-08-C.md",
+      "sha256": "3a4b29b561a6c83800fb1fb288758db2735cdab36fc046b8baf439a21e25167e",
+      "userPromptBlocks": 7,
+      "finalOutputBlocks": 12,
+      "entries": [
+        {
+          "id": "LOG-G5-01-001",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-01-002",
+          "userPromptRaw": true,
+          "finalOutputRaw": false,
+          "continuedIn": "LOG-G5-01-003",
+          "gitMarkers": true
+        }
+      ],
+      "currentTaskPendingOutput": false
+    },
+    {
+      "file": "logs/prompts/2026-10-09-A.md",
+      "sha256": "3d9936139ea03be0be0cde9f32da6b70ac79567c873e56c17122d0abd9f134cb",
+      "userPromptBlocks": 3,
+      "finalOutputBlocks": 9,
+      "entries": [
+        {
+          "id": "LOG-G5-01-A-REREVIEW-001",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-01-A-REREVIEW-002",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-01-A-REREVIEW-003",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        }
+      ],
+      "currentTaskPendingOutput": false
+    },
+    {
+      "file": "logs/prompts/2026-10-09-B.md",
+      "sha256": "56f0e7cc64db9e143818ed23ea44437cd8c39b821c25addc3ad318b86e417052",
+      "userPromptBlocks": 5,
+      "finalOutputBlocks": 5,
+      "entries": [
+        {
+          "id": "LOG-G5-02-001",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-002",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-003",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-004",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-005",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        }
+      ],
+      "currentTaskPendingOutput": false
+    },
+    {
+      "file": "logs/prompts/2026-10-09-C.md",
+      "sha256": "7adf8e29e464f54feef29057d1d0454d0ac564ea074a71291e072986d4c35418",
+      "userPromptBlocks": 8,
+      "finalOutputBlocks": 7,
+      "entries": [
+        {
+          "id": "LOG-G5-01-003",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-01-004",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-001",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-01-005",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-002",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-003",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-004",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        }
+      ],
+      "currentTaskPendingOutput": false
+    },
+    {
+      "file": "logs/prompts/2026-10-10-B.md",
+      "sha256": "5bdf74fc4dcfbf2c0b95ca71edf161238d182fb0753a90bb6f555104c1ffa9ca",
+      "userPromptBlocks": 3,
+      "finalOutputBlocks": 3,
+      "entries": [
+        {
+          "id": "LOG-G5-02-006",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-007",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-008",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        }
+      ],
+      "currentTaskPendingOutput": false
+    },
+    {
+      "file": "logs/prompts/2026-10-10-C.md",
+      "sha256": "e09c7c8d9dfa67ae58efd8ec118419ed9e959c4e96e435428017519f6ea35102",
+      "userPromptBlocks": 8,
+      "finalOutputBlocks": 8,
+      "entries": [
+        {
+          "id": "LOG-G5-02-001",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-002",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-003",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-02-004",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-03-001",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-01-006",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-03-002",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-01-007",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        }
+      ],
+      "currentTaskPendingOutput": false
+    },
+    {
+      "file": "logs/prompts/2026-10-11-A.md",
+      "sha256": "df7f05d0f4a71b85c636ba61a89157df6809cd7535a633004a6d73f13e131f41",
+      "userPromptBlocks": 4,
+      "finalOutputBlocks": 4,
+      "entries": [
+        {
+          "id": "LOG-G5-01-A-REVIEW-004",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        },
+        {
+          "id": "LOG-G5-03-002",
+          "userPromptRaw": true,
+          "finalOutputRaw": true,
+          "continuedIn": null,
+          "gitMarkers": true
+        }
+      ],
+      "currentTaskPendingOutput": false
+    }
+  ],
+  "validCommitObjects": {
+    "124419f": "124419f40356a05d0fe3e6dcdedf9fc7a4e54842",
+    "930894c": "930894cd5f9b7b39ec30e3121616673889af1e42",
+    "b3db2d5": "b3db2d59e23d0802ed90a4731b182bbc700352fc",
+    "279976c": "279976c54bd9b77fc2ee78fb5997d09100608628",
+    "6946645": "6946645428fca33b953316ce92a96a437e1df5c4",
+    "5fc359a": "5fc359aea5e08118d17f2e076e6f669b04adf9b4",
+    "7b86b8c": "7b86b8c99c28ea5baa7bd355e177775163b056fe",
+    "1ff5464": "1ff546484b1140e80e431b78c4e82028fbb2c347",
+    "c739b40": "c739b406e442e01b1deef7c4c8bb8885bdc27a4a",
+    "c69ea8b": "c69ea8b6c2fb2fc23ecab12ecd5338b388f98456"
+  },
+  "finalReviews": [
+    "logs/reviews/2026-10-11_G5-01-A-final-review.md",
+    "logs/reviews/2026-10-10_G5-02-C-final-course-acceptance.md"
+  ],
+  "historicWrongHash": "279976c338c0a60971a92e94f02bb24ae88f75e1 retained only as explicitly corrected historical error",
+  "currentRole": "A user-authorized AI proxy; no C final signoff generated",
+  "rawDialogueAvailable": false,
+  "conclusion": "existing original prompts/failures/review/commit chains checked; current final-output and push backfill pending actual completion; no reconstructed conversations"
+}

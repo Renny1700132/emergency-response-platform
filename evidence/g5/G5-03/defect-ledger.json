@@ -1,0 +1,210 @@
+{
+  "records": [
+    {
+      "id": "DEF-G5-01-001",
+      "severity": "一般产品缺陷",
+      "symptom": "H5窄屏卡片和状态裁切",
+      "expectedActual": "390px应完整显示 / 旧截图右侧裁切",
+      "commit": "124419f",
+      "retest": "H5布局回归及Edge390/scrollWidth390；A复审005",
+      "finalStatus": "CLOSED / VERIFIED_BY_A",
+      "frAc": "相关移动FR；全部宿主验收仍延期",
+      "evidenceFiles": [
+        "evidence/g5/G5-01/functional-gate-raw.json",
+        "evidence/g5/G5-01/defect-register.md",
+        "frontend/tests/h5-responsive-layout.test.ts",
+        "evidence/g5/G5-01/edge-154-h5-events-fixed-390x844.png"
+      ],
+      "reviewFile": "logs/reviews/2026-10-09_G5-01-A-rereview.md"
+    },
+    {
+      "id": "ISSUE-G5-01-003",
+      "severity": "P1证据阻断",
+      "symptom": "套件总绿被批量派生AC PASS",
+      "expectedActual": "逐AC完整条件 / 87及24PASS被否决",
+      "commit": "124419f / 930894c / b3db2d5",
+      "retest": "5事件组合排除断言；系统2/2；A第三轮复验",
+      "finalStatus": "CLOSED / VERIFIED_BY_A",
+      "frAc": "117AC；最后缺口013-02",
+      "evidenceFiles": [
+        "evidence/g5/G5-01/functional-gate-raw.json",
+        "evidence/g5/G5-01/defect-register.md"
+      ],
+      "reviewFile": "logs/reviews/2026-10-09_G5-01-A-rereview-3.md"
+    },
+    {
+      "id": "ISSUE-G5-01-004",
+      "severity": "P1证据阻断",
+      "symptom": "45项混合前端被称完整系统测试",
+      "expectedActual": "同链路系统包 / Mock与内存E2E不能覆盖全部AC",
+      "commit": "930894c",
+      "retest": "Web/H5→HTTP→PostgreSQL2/2；A第二轮复验",
+      "finalStatus": "CLOSED / VERIFIED_BY_A",
+      "frAc": "MVP87AC系统层级",
+      "evidenceFiles": [
+        "evidence/g5/G5-01/functional-gate-raw.json",
+        "evidence/g5/G5-01/defect-register.md"
+      ],
+      "reviewFile": "logs/reviews/2026-10-09_G5-01-A-rereview-2.md"
+    },
+    {
+      "id": "ISSUE-G5-02-003",
+      "severity": "MAJOR证据阻断",
+      "symptom": "manifest换行与Git字节不一致",
+      "expectedActual": "hash逐文件可复核 / 旧8/13或12/13不一致",
+      "commit": "279976c / 6946645",
+      "retest": "canonical+Git blob23/23；C第三轮复验",
+      "finalStatus": "CLOSED / VERIFIED_BY_C",
+      "frAc": "全技术证据包",
+      "evidenceFiles": [
+        "evidence/g5/G5-02/manifest.json",
+        "evidence/g5/G5-02/performance-raw.json",
+        "evidence/g5/G5-02/performance-samples.csv"
+      ],
+      "reviewFile": "logs/reviews/2026-10-09_G5-02-C-rereview-2.md"
+    },
+    {
+      "id": "ISSUE-G5-02-004",
+      "severity": "MINOR证据问题",
+      "symptom": "模拟消息耗时报告0.037与原始0.065不一致",
+      "expectedActual": "同轮次回指 / 原报告值漂移",
+      "commit": "279976c",
+      "retest": "原JSON0.065；C第二轮复验",
+      "finalStatus": "CLOSED / VERIFIED_BY_C",
+      "frAc": "PE-04 / AC-G2-FR-022-03局部",
+      "evidenceFiles": [
+        "evidence/g5/G5-02/performance-raw.json"
+      ],
+      "reviewFile": "logs/reviews/2026-10-09_G5-02-C-rereview.md"
+    },
+    {
+      "id": "ISSUE-G5-02-005",
+      "severity": "MINOR审计问题",
+      "symptom": "日志完整hash错误",
+      "expectedActual": "有效对象 / 原对象不存在",
+      "commit": "6946645",
+      "retest": "保留错误追加更正；C第三轮对象检查",
+      "finalStatus": "CLOSED / VERIFIED_BY_C",
+      "frAc": "AI审计；非功能AC N/A",
+      "evidenceFiles": [
+        "evidence/g5/G5-02/manifest.json"
+      ],
+      "reviewFile": "logs/reviews/2026-10-09_G5-02-C-rereview-2.md"
+    },
+    {
+      "id": "ISSUE-G5-02-006",
+      "severity": "MAJOR部署缺陷",
+      "symptom": "相对容器入口未启动服务",
+      "expectedActual": "服务监听 / 进程0退出但未监听",
+      "commit": "5fc359a",
+      "retest": "入口回归、Docker health/ready/重启；C第五轮",
+      "finalStatus": "CLOSED / VERIFIED_BY_C",
+      "frAc": "KN-005 / ENG部署",
+      "evidenceFiles": [
+        "evidence/g5/G5-02/docker-clean-deploy-attempt-2.log",
+        "evidence/g5/G5-02/docker-clean-deploy.json"
+      ],
+      "reviewFile": "logs/reviews/2026-10-10_G5-02-C-rereview-4.md"
+    },
+    {
+      "id": "ISSUE-G5-02-007",
+      "severity": "MAJOR部署问题",
+      "symptom": "Node20镜像低于engines",
+      "expectedActual": "Node24 / Node20 EBADENGINE",
+      "commit": "5fc359a",
+      "retest": "Node24无缓存构建和quality；C第五轮",
+      "finalStatus": "CLOSED / VERIFIED_BY_C",
+      "frAc": "KN-005 / runtime",
+      "evidenceFiles": [
+        "evidence/g5/G5-02/docker-clean-deploy-attempt-2.log",
+        "evidence/g5/G5-02/docker-clean-deploy.log"
+      ],
+      "reviewFile": "logs/reviews/2026-10-10_G5-02-C-rereview-4.md"
+    },
+    {
+      "id": "ISSUE-G5-02-008",
+      "severity": "MINOR非阻断改进",
+      "symptom": "未来部署门禁写死时限且退出清理审计不足",
+      "expectedActual": "真实时限/显式清理 / 原脚本不足",
+      "commit": "7b86b8c",
+      "retest": "静态整改；C第六轮接受边界；新Bash正向NOT_RUN",
+      "finalStatus": "OPEN / NON_BLOCKING_IMPROVEMENT",
+      "frAc": "KN-005/065；下次真实部署随验",
+      "evidenceFiles": [
+        "evidence/g5/G5-02/docker-clean-deploy.json"
+      ],
+      "reviewFile": "logs/reviews/2026-10-10_G5-02-C-rereview-5.md"
+    },
+    {
+      "id": "ISSUE-G5-00-001",
+      "severity": "真实全量门禁阻断",
+      "symptom": "030—039缺实现",
+      "expectedActual": "全需求验收 / 30AC无实现",
+      "commit": "N/A未实现",
+      "retest": "无复测；OVR-035课程关闭接受",
+      "finalStatus": "CLOSED_FOR_COURSE_STAGE / IMPLEMENTATION_DEFERRED",
+      "frAc": "30AC / 6★FR",
+      "evidenceFiles": [
+        "evidence/g5/G5-01/course-conditional-acceptance.json"
+      ],
+      "reviewFile": "logs/reviews/2026-10-11_G5-01-A-final-review.md"
+    },
+    {
+      "id": "ISSUE-G5-01-002",
+      "severity": "真实资源/证据阻断",
+      "symptom": "兼容宿主/新用户/逐AC证据不足",
+      "expectedActual": "完整验收 / 59NOT_RUN及17非backlog BLOCKED",
+      "commit": "N/A延期",
+      "retest": "无新增实跑；A最终接受OVR-035",
+      "finalStatus": "CLOSED_FOR_COURSE_STAGE / EVIDENCE_AND_REAL_WORLD_DEFERRED",
+      "frAc": "未执行AC及KN-038/039",
+      "evidenceFiles": [
+        "evidence/g5/G5-01/functional-gate-raw.json",
+        "evidence/g5/G5-01/defect-register.md"
+      ],
+      "reviewFile": "logs/reviews/2026-10-11_G5-01-A-final-review.md"
+    },
+    {
+      "id": "ISSUE-G5-02-001",
+      "severity": "真实环境阻断",
+      "symptom": "甲方六类系统未取得",
+      "expectedActual": "真实联调 / 0/6实测",
+      "commit": "1ff5464（仅课程记录）",
+      "retest": "SIMULATED_EVIDENCE6/6；C最终接受OVR-034",
+      "finalStatus": "CLOSED_FOR_COURSE_STAGE / REAL_WORLD_DEFERRED",
+      "frAc": "PE-02/04/05/06/08/10",
+      "evidenceFiles": [
+        "evidence/g5/G5-02/external-resource-readiness.json",
+        "evidence/g5/G5-02/course-conditional-external-systems.json"
+      ],
+      "reviewFile": "logs/reviews/2026-10-10_G5-02-C-final-course-acceptance.md"
+    },
+    {
+      "id": "ISSUE-G5-02-002",
+      "severity": "真实独立部署阻断",
+      "symptom": "非乙方真实操作者缺失",
+      "expectedActual": "独立执行一次 / 真实操作者0",
+      "commit": "1ff5464（仅课程见证）",
+      "retest": "B17秒部署+SIMULATED_COURSE_ROLE；C最终接受",
+      "finalStatus": "CLOSED_FOR_COURSE_STAGE / REAL_WORLD_DEFERRED",
+      "frAc": "KN-065；数据库/Docker局部已接受",
+      "evidenceFiles": [
+        "evidence/g5/G5-02/kn065-independent-deployer-readiness.json",
+        "evidence/g5/G5-02/course-conditional-kn065-witness.json",
+        "evidence/g5/G5-02/docker-clean-deploy.json"
+      ],
+      "reviewFile": "logs/reviews/2026-10-10_G5-02-C-final-course-acceptance.md"
+    }
+  ],
+  "productCountsG501": {
+    "fatal": 0,
+    "major": 0,
+    "normal": 1,
+    "minor": 0,
+    "closedNormal": 1
+  },
+  "openNonBlocking": [
+    "ISSUE-G5-02-008"
+  ],
+  "realWorldBlockersPreserved": true
+}

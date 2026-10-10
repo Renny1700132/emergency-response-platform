@@ -1,0 +1,27 @@
+{
+  "task": "G5-03",
+  "checkedAt": "2026-10-11T01:14:50.826264+08:00",
+  "status": "PASS_A_AUTOMATED_CONTENT_CHECK",
+  "checks": {
+    "fullRtm": true,
+    "117RowsMatchRaw": true,
+    "39Fr34Star": true,
+    "deferredNotPromoted": true,
+    "historicalAndBusinessFilesUnchanged": true,
+    "docxMarkdownContent": true,
+    "priorIndependentReviewsExist": true
+  },
+  "unconditionalRealWorldPass": false,
+  "CFinalReview": "PENDING",
+  "visualQA": "PASS native Word35 pages",
+  "finalQualityLog": "evidence/g5/G5-03/final-quality.log",
+  "qualityStatus": "PASS actual exit0",
+  "audits": {
+    "document": "PASS_FOR_COURSE_REVIEW",
+    "portability": "PASS_WITH_REAL_WORLD_DEFERRED",
+    "AI": "PASS_FOR_COURSE_REVIEW"
+  },
+  "courseBlockersA": "none newly found within OVR-034/035 candidate scope",
+  "realWorldBlockersPreserved": true,
+  "taskStatus": "REVIEW"
+}

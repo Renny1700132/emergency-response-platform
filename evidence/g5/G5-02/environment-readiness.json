@@ -31,7 +31,7 @@
   },
   "independentDeployer": {
     "status": "REAL_WORLD_DEFERRED",
-    "courseStageStatus": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+    "courseStageStatus": "COURSE_ACCEPTED_BY_C",
     "controlId": "KN-065",
     "availableOperatorCount": 0,
     "reason": "No real non-contractor human operator and clean host were supplied for this execution.",
@@ -41,7 +41,7 @@
   },
   "ownerExternalSystems": {
     "status": "REAL_WORLD_DEFERRED",
-    "courseStageStatus": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+    "courseStageStatus": "COURSE_ACCEPTED_BY_C",
     "expectedSystems": 6,
     "availableSystems": 0,
     "testedSystems": 0,
@@ -50,10 +50,10 @@
     "courseEvidence": "course-conditional-external-systems.json"
   },
   "courseProgression": {
-    "status": "COURSE_CONDITIONAL_ACCEPTANCE_PENDING_C",
+    "status": "COURSE_CONDITIONAL_ACCEPTED_BY_C",
     "evidenceClassification": "SIMULATED_EVIDENCE",
     "allows": "G5-02 course conditional acceptance review and G5-03 preparation",
-    "doesNotAllow": "G5-02 DONE before C final review or unconditional real-world PASS",
+    "doesNotAllow": "unconditional real-world PASS or removal of deferred real-world verification",
     "realWorldDeferred": ["owner-external-systems", "independent-deployer"],
     "evidence": "course-simulation-progression.json"
   }

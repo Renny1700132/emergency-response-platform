@@ -1,23 +1,23 @@
 {
   "taskId": "G5-02",
-  "generatedAt": "2026-10-10T11:16:09.291Z",
+  "generatedAt": "2026-10-10T11:38:22.101Z",
   "baseline": "e6e12b59fc5749cdf0475ed9631bac7d21d4bb1a",
   "normalization": "Manifest bytes and SHA-256 are calculated over canonical UTF-8 LF content. Git blobs must match exactly; Windows workspace CRLF is canonicalized to LF by the validator before comparison.",
   "files": [
     {
       "file": "course-conditional-external-systems.json",
-      "bytes": 6807,
-      "sha256": "0cf9cb5af0a9252784f1f444f609e3a017082225173eb33b77599c58dee4b4d8"
+      "bytes": 6681,
+      "sha256": "367d36a7fea2bce0c8d898c84ead6cce78c55190ac95bab532499db9f2baba78"
     },
     {
       "file": "course-conditional-kn065-witness.json",
-      "bytes": 1240,
-      "sha256": "55333800d755ae03cdd31051ab2e01bedcda7d68e892c0e0a2113a1842d86d7d"
+      "bytes": 1222,
+      "sha256": "9e99cfe6f2cf43ce660fa4669dded8ccc708fe146eb2441414615c69087eff6c"
     },
     {
       "file": "course-simulation-progression.json",
-      "bytes": 1660,
-      "sha256": "cee262ec2894579eac12e0a81e901b9925c8795393b28f84f6457d50115520d6"
+      "bytes": 1639,
+      "sha256": "71c8a7d657d50bbdc7cab25dc72ed8115a567cfc8f7fe211c2249d2287c30fdc"
     },
     {
       "file": "dependency-audit-frontend.json",
@@ -56,13 +56,13 @@
     },
     {
       "file": "environment-readiness.json",
-      "bytes": 2510,
-      "sha256": "66c56130b52e8a743782c64302e130e07acd1ed60588f0d81b9c7773990706bb"
+      "bytes": 2478,
+      "sha256": "eb4f1f57bfce1c095487245ebf596cac6f2d42524a2e4952decea3a102e6b5f3"
     },
     {
       "file": "external-resource-readiness.json",
-      "bytes": 3309,
-      "sha256": "c37fa746cb32aa30bf2a64f720e87198d876591d6651f332afa8dae5227a2a83"
+      "bytes": 3291,
+      "sha256": "20806cae28460b67054e985d3aa47752d3374e19e414c8562b2c20e9b5299020"
     },
     {
       "file": "fault-drill-raw.json",
@@ -71,8 +71,8 @@
     },
     {
       "file": "kn065-independent-deployer-readiness.json",
-      "bytes": 1081,
-      "sha256": "387db10d450713d1964fa6c56716c96bf1b2a5c96a65217e945356ae4c90b36a"
+      "bytes": 1063,
+      "sha256": "b3dc7c52b6382191822610c3feed82e678d83572f4160612721b6b6c90ed1e24"
     },
     {
       "file": "openapi-lint.log",

@@ -1683,7 +1683,7 @@
 - 依据：G5-02 DoD、PE-02/04/05/06/08/10、KN-006—010、016—017、040—041。
 - 本轮事实：本地真实 HTTP 与模拟外部适配器专项无 FAIL；没有甲方视频、正常消息通道、定位源、GIS、安防/信息发布环境、账号与合法测试数据。PE-06 未执行；其余相关本地测量均明确为 PARTIAL 或 SIMULATED_EVIDENCE。
 - 严重度：`BLOCKING_TO_G5-02_DONE_AND_G5_FINAL_GATE`。
-- 当前课程阶段状态：`CLOSED_FOR_COURSE_STAGE / REAL_WORLD_DEFERRED / PENDING_C_FINAL_REVIEW`（OVR-034；原 `OPEN / VERIFIED_BLOCKING_BY_C / ENVIRONMENT_REQUIRED` 历史保留于下方 Review 记录）。
+- 当前课程阶段状态：`CLOSED_FOR_COURSE_STAGE / REAL_WORLD_DEFERRED / VERIFIED_BY_C`（OVR-034；原 `OPEN / VERIFIED_BLOCKING_BY_C / ENVIRONMENT_REQUIRED` 历史保留于下方 Review 记录）。
 - 解除条件：甲方提供对应环境、账号、数据和窗口，B 按受控 PE/KN 重跑并保留逐请求/逐回执/首帧/刷新/精度原始数据，C 整体复核。
 - 证据：`docs/work/B_TECH/g5_technical_validation.md`、`evidence/g5/G5-02/performance-raw.json`、`performance-samples.csv`、`fault-drill-raw.json`。
 
@@ -1693,7 +1693,7 @@
 - 依据：G5-02 DoD、KN-005/041/065、NFR-REL-02/03、NFR-MNT-02、NFR-PORT-01。
 - 本轮事实：本机 PostgreSQL 15 端口可达，但未提供授权隔离库连接串，迁移演练实际因缺 `DATABASE_URL` 退出；Docker/Compose 命令不存在；没有真实非乙方部署操作者。未猜测凭据、未操作共享数据库、未伪造部署结果。
 - 严重度：`BLOCKING_TO_G5-02_DONE_AND_G5_FINAL_GATE`。
-- 当前课程阶段状态：`CLOSED_FOR_COURSE_STAGE / REAL_WORLD_DEFERRED / PENDING_C_FINAL_REVIEW`（OVR-034；原 `OPEN / PARTIALLY_REMEDIATED_BY_B / PARTICIPANT_REQUIRED` 历史保留于下方 Review 记录）。
+- 当前课程阶段状态：`CLOSED_FOR_COURSE_STAGE / REAL_WORLD_DEFERRED / VERIFIED_BY_C`（OVR-034；原 `OPEN / PARTIALLY_REMEDIATED_BY_B / PARTICIPANT_REQUIRED` 历史保留于下方 Review 记录）。
 - 剩余解除条件：由真实非乙方人员在干净环境独立执行 `scripts/g5/run-docker-clean-deploy.sh` 或等价部署步骤，保留操作者身份边界、命令、时间和结果；C 复核 KN-065 后决定关闭。ISSUE-G5-02-008 为非阻断工程改进，不再作为 002 的关闭前置。
 - 证据：`evidence/g5/G5-02/environment-readiness.json`、`postgres-migration-attempt.log`、`docker-probe.log`、`postgres-recovery-drill.json`、`docker-clean-deploy.json`、`docker-clean-deploy.log`、`docker-clean-deploy-attempt-1.log`、`docker-clean-deploy-attempt-2.log`。
 
@@ -1743,6 +1743,13 @@
 - 002 课程证据：`course-conditional-kn065-witness.json` 只复用已经真实完成的 B 侧 Docker 17 秒部署、迁移、health/ready、重启和既有清理证据；见证角色为 `SIMULATED_COURSE_ROLE`，`notARealIndependentHuman=true`，个人身份与签字均为 null。课程结论为“课程条件验收通过候选，真实非乙方独立部署后续补测”。
 - 状态候选：001/002 均调整为 `CLOSED_FOR_COURSE_STAGE / REAL_WORLD_DEFERRED / PENDING_C_FINAL_REVIEW`。该状态不删除前六轮 BLOCKED/OPEN 历史，也不等于真实世界 Issue 已关闭。
 - 复核门禁：B 不自行标 DONE；提交 C 最终复核。C 接受 OVR-034 边界后，才可把 G5-02 置为 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / REAL_WORLD_DEFERRED）`。
+
+### 2026-10-10 C 最终课程条件验收
+
+- C 独立复核确认 OVR-034 与 CHG-G5-02-001 授权链完整；六类系统模拟证据均明确标记 `SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT`，KN-065 课程见证明确 `SIMULATED_COURSE_ROLE` 与 `notARealIndependentHuman=true`，未发现冒充真实甲方、第三方或伪造身份/执行结果。
+- 独立复验：相关测试 9/9 PASS；默认及 `--git-ref=HEAD` 技术校验均为 `PASS_WITH_COURSE_WAIVERS`；manifest 23/23、JSON/CSV 1160/1160、8 组指标一致，且 `unconditionalRealWorldPass=false`。
+- 结论：001/002 按课程阶段关闭为 `CLOSED_FOR_COURSE_STAGE / REAL_WORLD_DEFERRED / VERIFIED_BY_C`，G5-02 可置 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / REAL_WORLD_DEFERRED）`。真实甲方系统仍为 0/6、真实非乙方操作者仍为 0，后续取得资源时必须补测；本结论不得改写为真实环境 PASS。
+- Review 证据：`logs/reviews/2026-10-10_G5-02-C-final-course-acceptance.md`。
 
 ## ISSUE-G5-02-003｜证据清单哈希与入库字节不一致
 

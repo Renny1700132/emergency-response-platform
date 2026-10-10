@@ -5,7 +5,7 @@
   "decisionId": "OVR-034",
   "classification": "SIMULATED_EVIDENCE",
   "environment": "NOT_OWNER_ENVIRONMENT",
-  "courseStageStatus": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+  "courseStageStatus": "COURSE_ACCEPTED_BY_C",
   "realWorldStatus": "REAL_WORLD_NOT_RUN",
   "userAuthorization": "用户已明确授权：对无法取得的甲方六类系统和 KN-065 非乙方独立部署，采用 `SIMULATED_EVIDENCE / COURSE_CONDITIONAL_ACCEPTANCE` 完成本课程阶段验收；真实项目能力继续登记为 `REAL_WORLD_DEFERRED / 后续补测`。不得生成假姓名、假账号、假接口响应、假执行时间、假退出码或冒充真实甲方/第三方人员。",
   "systems": [
@@ -19,7 +19,7 @@
       "fixtureEvidence": ["simulated-integrations/fixtures/ext-video.json", "evidence/g4/G4-10/external-four-scenarios.json"],
       "testEvidence": ["tests/g4/integration-simulator.test.mjs", "tests/backend/g4-08-sprint2.test.mjs"],
       "classification": "SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT",
-      "courseResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+      "courseResult": "COURSE_ACCEPTED_BY_C",
       "realWorldResult": "REAL_WORLD_NOT_RUN"
     },
     {
@@ -32,7 +32,7 @@
       "fixtureEvidence": ["simulated-integrations/fixtures/ext-message.json", "evidence/g4/G4-10/external-four-scenarios.json"],
       "testEvidence": ["tests/backend/g4-08-sprint2.test.mjs", "evidence/g5/G5-02/performance-raw.json"],
       "classification": "SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT",
-      "courseResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+      "courseResult": "COURSE_ACCEPTED_BY_C",
       "realWorldResult": "REAL_WORLD_NOT_RUN"
     },
     {
@@ -45,7 +45,7 @@
       "fixtureEvidence": ["tests/backend/g4-08-sprint2.test.mjs"],
       "testEvidence": ["evidence/g5/G5-02/performance-raw.json", "evidence/g5/G5-02/performance-samples.csv"],
       "classification": "SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT",
-      "courseResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+      "courseResult": "COURSE_ACCEPTED_BY_C",
       "realWorldResult": "REAL_WORLD_NOT_RUN"
     },
     {
@@ -58,7 +58,7 @@
       "fixtureEvidence": ["simulated-integrations/fixtures/gis.json"],
       "testEvidence": ["tests/g4/integration-simulator.test.mjs", "tests/backend/g4-08-sprint2.test.mjs"],
       "classification": "SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT",
-      "courseResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+      "courseResult": "COURSE_ACCEPTED_BY_C",
       "realWorldResult": "REAL_WORLD_NOT_RUN"
     },
     {
@@ -71,7 +71,7 @@
       "fixtureEvidence": ["simulated-integrations/fixtures/ext-access.json", "simulated-integrations/fixtures/ext-intrusion.json", "simulated-integrations/fixtures/ext-fire.json", "simulated-integrations/fixtures/ext-iot.json"],
       "testEvidence": ["tests/backend/g4-08-sprint2.test.mjs", "evidence/g5/G5-02/fault-drill-raw.json"],
       "classification": "SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT",
-      "courseResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+      "courseResult": "COURSE_ACCEPTED_BY_C",
       "realWorldResult": "REAL_WORLD_NOT_RUN"
     },
     {
@@ -84,7 +84,7 @@
       "fixtureEvidence": ["simulated-integrations/fixtures/ext-publish.json", "evidence/g4/G4-10/external-four-scenarios.json"],
       "testEvidence": ["tests/g4/integration-simulator.test.mjs", "tests/backend/g4-08-sprint2.test.mjs"],
       "classification": "SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT",
-      "courseResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+      "courseResult": "COURSE_ACCEPTED_BY_C",
       "realWorldResult": "REAL_WORLD_NOT_RUN"
     }
   ],

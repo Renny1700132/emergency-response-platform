@@ -65,10 +65,10 @@
 
 ## CHG-G5-02-001｜课程条件验收与真实世界补测分轨
 
-- 日期：2026-10-10；主责 B；复核 C 待执行；批准来源：当前 P0 明确授权 / OVR-034 / `LOG-G5-02-008`。
+- 日期：2026-10-10；主责 B；复核 C 已接受；批准来源：当前 P0 明确授权 / OVR-034 / `LOG-G5-02-008`。
 - 变更内容：将甲方视频、消息、定位、GIS、安防、信息发布六类环境及 KN-065 非乙方独立部署的当前阶段验收分为 `COURSE_CONDITIONAL_ACCEPTANCE` 与 `REAL_WORLD_DEFERRED` 两条状态；允许课程模拟证据进入 G5-02 最终 Review 候选。
 - 不变项：真实环境仍为 0/6、真实非乙方操作者仍为 0；不改变需求事实、★条款、PE/KN、系统边界、甲乙责任或真实履约/补测义务，不关闭或删除历史阻断证据。
 - 新证据：`course-conditional-external-systems.json`、`course-conditional-kn065-witness.json`、既有 G4 fixture/测试证据及 G5 Docker 17 秒原始证据。
-- 状态迁移：`BLOCKED -> REVIEW（COURSE_CONDITIONAL_ACCEPTANCE_PENDING_C）`；仅 C 最终复核接受后方可进入 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / REAL_WORLD_DEFERRED）`。
+- 状态迁移：`BLOCKED -> REVIEW（COURSE_CONDITIONAL_ACCEPTANCE_PENDING_C） -> DONE（COURSE_CONDITIONAL_ACCEPTANCE / REAL_WORLD_DEFERRED）`；C 于 2026-10-10 最终复核接受，真实世界补测义务不变。
 - 影响分析：G5-03 可依据 C 的课程条件验收结论进行最终课程收口；正式材料必须显著显示 `COURSE_ACCEPTED` 与 `REAL_WORLD_NOT_RUN`，不得生成或暗示真实甲方/第三方 PASS。
-- Commit / PR：内容提交 `1ff546484b1140e80e431b78c4e82028fbb2c347`；PR N/A（OVR-032）；C 最终复核待执行。
+- Commit / PR：B 内容提交 `1ff546484b1140e80e431b78c4e82028fbb2c347`；PR N/A（OVR-032）；C 最终复核证据见 `logs/reviews/2026-10-10_G5-02-C-final-course-acceptance.md`，收口提交待回填。

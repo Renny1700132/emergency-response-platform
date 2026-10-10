@@ -3,7 +3,7 @@
   "taskId": "G5-02",
   "checkedAt": "2026-10-10T17:30:00+08:00",
   "status": "REAL_WORLD_DEFERRED",
-  "courseStageStatus": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+  "courseStageStatus": "COURSE_ACCEPTED_BY_C",
   "courseEvidence": "course-conditional-external-systems.json",
   "summary": {
     "expectedSystems": 6,

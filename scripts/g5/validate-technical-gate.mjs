@@ -138,23 +138,23 @@ assert.equal(environment.independentDeployer.status, 'REAL_WORLD_DEFERRED')
 assert.equal(environment.ownerExternalSystems.status, 'REAL_WORLD_DEFERRED')
 assert.equal(environment.independentDeployer.evidence, 'kn065-independent-deployer-readiness.json')
 assert.equal(environment.ownerExternalSystems.evidence, 'external-resource-readiness.json')
-assert.equal(environment.courseProgression.status, 'COURSE_CONDITIONAL_ACCEPTANCE_PENDING_C')
+assert.equal(environment.courseProgression.status, 'COURSE_CONDITIONAL_ACCEPTED_BY_C')
 assert.equal(environment.courseProgression.evidenceClassification, 'SIMULATED_EVIDENCE')
 assert.deepEqual(environment.courseProgression.realWorldDeferred, ['owner-external-systems', 'independent-deployer'])
 assert.equal(courseProgression.decisionId, 'OVR-034')
-assert.equal(courseProgression.status, 'COURSE_CONDITIONAL_ACCEPTANCE_PENDING_C')
+assert.equal(courseProgression.status, 'COURSE_CONDITIONAL_ACCEPTED_BY_C')
 assert.equal(courseProgression.evidenceClassification, 'SIMULATED_EVIDENCE')
 assert.deepEqual(courseProgression.carriedBlockers, ['owner-external-systems', 'independent-deployer'])
-assert.ok(courseProgression.notAcceptedFor.includes('marking G5-02 DONE before C final review'))
+assert.ok(courseProgression.notAcceptedFor.includes('claiming G5-02 has unconditional real-world acceptance'))
 const authorization = '用户已明确授权：对无法取得的甲方六类系统和 KN-065 非乙方独立部署，采用 `SIMULATED_EVIDENCE / COURSE_CONDITIONAL_ACCEPTANCE` 完成本课程阶段验收；真实项目能力继续登记为 `REAL_WORLD_DEFERRED / 后续补测`。不得生成假姓名、假账号、假接口响应、假执行时间、假退出码或冒充真实甲方/第三方人员。'
 assert.equal(courseProgression.userAuthorization, authorization)
 assert.equal(independentReadiness.controlId, 'KN-065')
 assert.equal(independentReadiness.status, 'REAL_WORLD_DEFERRED')
-assert.equal(independentReadiness.courseStageStatus, 'COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW')
+assert.equal(independentReadiness.courseStageStatus, 'COURSE_ACCEPTED_BY_C')
 assert.equal(independentReadiness.operator.auditableIdentity, null)
 assert.equal(independentReadiness.execution.exitCode, null)
 assert.equal(externalReadiness.status, 'REAL_WORLD_DEFERRED')
-assert.equal(externalReadiness.courseStageStatus, 'COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW')
+assert.equal(externalReadiness.courseStageStatus, 'COURSE_ACCEPTED_BY_C')
 assert.equal(externalReadiness.summary.expectedSystems, 6)
 assert.equal(externalReadiness.summary.availableSystems, 0)
 assert.equal(externalReadiness.summary.testedSystems, 0)
@@ -171,7 +171,7 @@ assert.equal(courseExternalSystems.userAuthorization, authorization)
 assert.deepEqual(courseExternalSystems.systems.map((item) => item.id), ['VIDEO', 'MESSAGE', 'LOCATION', 'GIS', 'SECURITY', 'PUBLISH'])
 for (const system of courseExternalSystems.systems) {
   assert.equal(system.classification, 'SIMULATED_EVIDENCE / NOT_OWNER_ENVIRONMENT')
-  assert.equal(system.courseResult, 'COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW')
+  assert.equal(system.courseResult, 'COURSE_ACCEPTED_BY_C')
   assert.equal(system.realWorldResult, 'REAL_WORLD_NOT_RUN')
   assert.ok(system.simulatedScenario)
   assert.ok(system.input)
@@ -195,7 +195,7 @@ assert.equal(courseKn065Witness.sourceExecution.durationSeconds, dockerCleanDepl
 assert.equal(courseKn065Witness.sourceExecution.healthStatus, dockerCleanDeploy.healthStatus)
 assert.equal(courseKn065Witness.sourceExecution.readyStatus, dockerCleanDeploy.readyStatus)
 assert.equal(courseKn065Witness.sourceExecution.readyAfterRestartStatus, dockerCleanDeploy.readyAfterRestartStatus)
-assert.equal(courseKn065Witness.courseStageResult, 'COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW')
+assert.equal(courseKn065Witness.courseStageResult, 'COURSE_ACCEPTED_BY_C')
 assert.equal(courseKn065Witness.realWorldResult, 'REAL_WORLD_NOT_RUN')
 assert.equal(dockerCleanDeploy.status, 'PASS')
 assert.equal(dockerCleanDeploy.withinTwoHours, true)
@@ -217,7 +217,7 @@ console.info(JSON.stringify({
   workspaceRawLineEndingDifferences,
   gitRef,
   gitBlobManifest: gitRef ? gitBlobMatches : null,
-  courseAcceptedPendingReview: ['owner-external-systems', 'independent-deployer'],
+  courseAcceptedByC: ['owner-external-systems', 'independent-deployer'],
   realWorldDeferred: ['owner-external-systems', 'independent-deployer'],
   unconditionalRealWorldPass: false,
 }, null, 2))

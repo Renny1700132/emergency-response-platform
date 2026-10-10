@@ -22,7 +22,7 @@
     "publicTableCount": 37,
     "cleanupEvidence": "Existing accepted Docker log and C calibrated review; not re-labelled as an independent human run."
   },
-  "courseStageResult": "COURSE_ACCEPTED_PENDING_C_FINAL_REVIEW",
+  "courseStageResult": "COURSE_ACCEPTED_BY_C",
   "realWorldResult": "REAL_WORLD_NOT_RUN",
   "realWorldDeferred": ["independent-deployer"],
   "conclusion": "课程条件验收通过候选，真实非乙方独立部署后续补测。",

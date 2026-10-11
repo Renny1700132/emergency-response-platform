@@ -1,0 +1,1782 @@
+{
+  "schemaVersion": 1,
+  "task": "G6-02",
+  "state": "REVIEW_INITIAL_CANDIDATE_PENDING_B",
+  "inputSnapshotCommit": "beb605f83e738a39dfe388ed4bc25b5b724eddcf",
+  "scope": {
+    "fr": 39,
+    "ac": 117,
+    "starFr": 34
+  },
+  "results": {
+    "NOT_RUN": 59,
+    "BLOCKED": 47,
+    "PASS": 11
+  },
+  "starResults": {
+    "PASS": 1,
+    "BLOCKED": 33
+  },
+  "unconditionalRealWorldPass": false,
+  "rows": [
+    {
+      "acId": "AC-G2-FR-001-01",
+      "frId": "G2-FR-001",
+      "star": true,
+      "plannedTC": "TC-G2-FR-001-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/0",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-001-02",
+      "frId": "G2-FR-001",
+      "star": true,
+      "plannedTC": "TC-G2-FR-001-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/1",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-001-03",
+      "frId": "G2-FR-001",
+      "star": true,
+      "plannedTC": "TC-G2-FR-001-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/2",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-002-01",
+      "frId": "G2-FR-002",
+      "star": true,
+      "plannedTC": "TC-G2-FR-002-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/3",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-002-02",
+      "frId": "G2-FR-002",
+      "star": true,
+      "plannedTC": "TC-G2-FR-002-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/4",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-002-03",
+      "frId": "G2-FR-002",
+      "star": true,
+      "plannedTC": "TC-G2-FR-002-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/5",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-003-01",
+      "frId": "G2-FR-003",
+      "star": true,
+      "plannedTC": "TC-G2-FR-003-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/6",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-003-02",
+      "frId": "G2-FR-003",
+      "star": true,
+      "plannedTC": "TC-G2-FR-003-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/7",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-003-03",
+      "frId": "G2-FR-003",
+      "star": true,
+      "plannedTC": "TC-G2-FR-003-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/8",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-004-01",
+      "frId": "G2-FR-004",
+      "star": true,
+      "plannedTC": "TC-G2-FR-004-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/9",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-004-02",
+      "frId": "G2-FR-004",
+      "star": true,
+      "plannedTC": "TC-G2-FR-004-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/10",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-004-03",
+      "frId": "G2-FR-004",
+      "star": true,
+      "plannedTC": "TC-G2-FR-004-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/11",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-005-01",
+      "frId": "G2-FR-005",
+      "star": true,
+      "plannedTC": "TC-G2-FR-005-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/12",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-005-02",
+      "frId": "G2-FR-005",
+      "star": true,
+      "plannedTC": "TC-G2-FR-005-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/13",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-005-03",
+      "frId": "G2-FR-005",
+      "star": true,
+      "plannedTC": "TC-G2-FR-005-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/14",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-006-01",
+      "frId": "G2-FR-006",
+      "star": true,
+      "plannedTC": "TC-G2-FR-006-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/15",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-006-02",
+      "frId": "G2-FR-006",
+      "star": true,
+      "plannedTC": "TC-G2-FR-006-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/16",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-006-03",
+      "frId": "G2-FR-006",
+      "star": true,
+      "plannedTC": "TC-G2-FR-006-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/17",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-007-01",
+      "frId": "G2-FR-007",
+      "star": false,
+      "plannedTC": "TC-G2-FR-007-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/18",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-007-02",
+      "frId": "G2-FR-007",
+      "star": false,
+      "plannedTC": "TC-G2-FR-007-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/19",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-007-03",
+      "frId": "G2-FR-007",
+      "star": false,
+      "plannedTC": "TC-G2-FR-007-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/20",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-008-01",
+      "frId": "G2-FR-008",
+      "star": true,
+      "plannedTC": "TC-G2-FR-008-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/21",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-008-02",
+      "frId": "G2-FR-008",
+      "star": true,
+      "plannedTC": "TC-G2-FR-008-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/22",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-008-03",
+      "frId": "G2-FR-008",
+      "star": true,
+      "plannedTC": "TC-G2-FR-008-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/23",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-009-01",
+      "frId": "G2-FR-009",
+      "star": true,
+      "plannedTC": "TC-G2-FR-009-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/24",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-009-02",
+      "frId": "G2-FR-009",
+      "star": true,
+      "plannedTC": "TC-G2-FR-009-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/25",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-009-03",
+      "frId": "G2-FR-009",
+      "star": true,
+      "plannedTC": "TC-G2-FR-009-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/26",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-010-01",
+      "frId": "G2-FR-010",
+      "star": true,
+      "plannedTC": "TC-G2-FR-010-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/27",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-010-02",
+      "frId": "G2-FR-010",
+      "star": true,
+      "plannedTC": "TC-G2-FR-010-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/28",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-010-03",
+      "frId": "G2-FR-010",
+      "star": true,
+      "plannedTC": "TC-G2-FR-010-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/29",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-011-01",
+      "frId": "G2-FR-011",
+      "star": true,
+      "plannedTC": "TC-G2-FR-011-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/30",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-011-02",
+      "frId": "G2-FR-011",
+      "star": true,
+      "plannedTC": "TC-G2-FR-011-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/31",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-011-03",
+      "frId": "G2-FR-011",
+      "star": true,
+      "plannedTC": "TC-G2-FR-011-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/32",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-012-01",
+      "frId": "G2-FR-012",
+      "star": true,
+      "plannedTC": "TC-G2-FR-012-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/33",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-012-02",
+      "frId": "G2-FR-012",
+      "star": true,
+      "plannedTC": "TC-G2-FR-012-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/34",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-012-03",
+      "frId": "G2-FR-012",
+      "star": true,
+      "plannedTC": "TC-G2-FR-012-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/35",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-013-01",
+      "frId": "G2-FR-013",
+      "star": true,
+      "plannedTC": "TC-G2-FR-013-01",
+      "actualResult": "PASS",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/36",
+      "g6AcceptanceStatus": "EVIDENCED_PASS_INPUT",
+      "g6EvidenceRequired": "Retain source/version and spot-check in G6"
+    },
+    {
+      "acId": "AC-G2-FR-013-02",
+      "frId": "G2-FR-013",
+      "star": true,
+      "plannedTC": "TC-G2-FR-013-02",
+      "actualResult": "PASS",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/37",
+      "g6AcceptanceStatus": "EVIDENCED_PASS_INPUT",
+      "g6EvidenceRequired": "Retain source/version and spot-check in G6"
+    },
+    {
+      "acId": "AC-G2-FR-013-03",
+      "frId": "G2-FR-013",
+      "star": true,
+      "plannedTC": "TC-G2-FR-013-03",
+      "actualResult": "PASS",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/38",
+      "g6AcceptanceStatus": "EVIDENCED_PASS_INPUT",
+      "g6EvidenceRequired": "Retain source/version and spot-check in G6"
+    },
+    {
+      "acId": "AC-G2-FR-014-01",
+      "frId": "G2-FR-014",
+      "star": true,
+      "plannedTC": "TC-G2-FR-014-01",
+      "actualResult": "PASS",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/39",
+      "g6AcceptanceStatus": "EVIDENCED_PASS_INPUT",
+      "g6EvidenceRequired": "Retain source/version and spot-check in G6"
+    },
+    {
+      "acId": "AC-G2-FR-014-02",
+      "frId": "G2-FR-014",
+      "star": true,
+      "plannedTC": "TC-G2-FR-014-02",
+      "actualResult": "PASS",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/40",
+      "g6AcceptanceStatus": "EVIDENCED_PASS_INPUT",
+      "g6EvidenceRequired": "Retain source/version and spot-check in G6"
+    },
+    {
+      "acId": "AC-G2-FR-014-03",
+      "frId": "G2-FR-014",
+      "star": true,
+      "plannedTC": "TC-G2-FR-014-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/41",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-015-01",
+      "frId": "G2-FR-015",
+      "star": true,
+      "plannedTC": "TC-G2-FR-015-01",
+      "actualResult": "PASS",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/42",
+      "g6AcceptanceStatus": "EVIDENCED_PASS_INPUT",
+      "g6EvidenceRequired": "Retain source/version and spot-check in G6"
+    },
+    {
+      "acId": "AC-G2-FR-015-02",
+      "frId": "G2-FR-015",
+      "star": true,
+      "plannedTC": "TC-G2-FR-015-02",
+      "actualResult": "PASS",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/43",
+      "g6AcceptanceStatus": "EVIDENCED_PASS_INPUT",
+      "g6EvidenceRequired": "Retain source/version and spot-check in G6"
+    },
+    {
+      "acId": "AC-G2-FR-015-03",
+      "frId": "G2-FR-015",
+      "star": true,
+      "plannedTC": "TC-G2-FR-015-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/44",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-016-01",
+      "frId": "G2-FR-016",
+      "star": true,
+      "plannedTC": "TC-G2-FR-016-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/45",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-016-02",
+      "frId": "G2-FR-016",
+      "star": true,
+      "plannedTC": "TC-G2-FR-016-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/46",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-016-03",
+      "frId": "G2-FR-016",
+      "star": true,
+      "plannedTC": "TC-G2-FR-016-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/47",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-017-01",
+      "frId": "G2-FR-017",
+      "star": true,
+      "plannedTC": "TC-G2-FR-017-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/48",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-017-02",
+      "frId": "G2-FR-017",
+      "star": true,
+      "plannedTC": "TC-G2-FR-017-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/49",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-017-03",
+      "frId": "G2-FR-017",
+      "star": true,
+      "plannedTC": "TC-G2-FR-017-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/50",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-018-01",
+      "frId": "G2-FR-018",
+      "star": true,
+      "plannedTC": "TC-G2-FR-018-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/51",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-018-02",
+      "frId": "G2-FR-018",
+      "star": true,
+      "plannedTC": "TC-G2-FR-018-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/52",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-018-03",
+      "frId": "G2-FR-018",
+      "star": true,
+      "plannedTC": "TC-G2-FR-018-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/53",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-019-01",
+      "frId": "G2-FR-019",
+      "star": true,
+      "plannedTC": "TC-G2-FR-019-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/54",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-019-02",
+      "frId": "G2-FR-019",
+      "star": true,
+      "plannedTC": "TC-G2-FR-019-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/55",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-019-03",
+      "frId": "G2-FR-019",
+      "star": true,
+      "plannedTC": "TC-G2-FR-019-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/56",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-020-01",
+      "frId": "G2-FR-020",
+      "star": true,
+      "plannedTC": "TC-G2-FR-020-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/57",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-020-02",
+      "frId": "G2-FR-020",
+      "star": true,
+      "plannedTC": "TC-G2-FR-020-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/58",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-020-03",
+      "frId": "G2-FR-020",
+      "star": true,
+      "plannedTC": "TC-G2-FR-020-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/59",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-021-01",
+      "frId": "G2-FR-021",
+      "star": true,
+      "plannedTC": "TC-G2-FR-021-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/60",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-021-02",
+      "frId": "G2-FR-021",
+      "star": true,
+      "plannedTC": "TC-G2-FR-021-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/61",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-021-03",
+      "frId": "G2-FR-021",
+      "star": true,
+      "plannedTC": "TC-G2-FR-021-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/62",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-022-01",
+      "frId": "G2-FR-022",
+      "star": true,
+      "plannedTC": "TC-G2-FR-022-01",
+      "actualResult": "PASS",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/63",
+      "g6AcceptanceStatus": "EVIDENCED_PASS_INPUT",
+      "g6EvidenceRequired": "Retain source/version and spot-check in G6"
+    },
+    {
+      "acId": "AC-G2-FR-022-02",
+      "frId": "G2-FR-022",
+      "star": true,
+      "plannedTC": "TC-G2-FR-022-02",
+      "actualResult": "PASS",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/64",
+      "g6AcceptanceStatus": "EVIDENCED_PASS_INPUT",
+      "g6EvidenceRequired": "Retain source/version and spot-check in G6"
+    },
+    {
+      "acId": "AC-G2-FR-022-03",
+      "frId": "G2-FR-022",
+      "star": true,
+      "plannedTC": "TC-G2-FR-022-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/65",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-023-01",
+      "frId": "G2-FR-023",
+      "star": true,
+      "plannedTC": "TC-G2-FR-023-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/66",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-023-02",
+      "frId": "G2-FR-023",
+      "star": true,
+      "plannedTC": "TC-G2-FR-023-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/67",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-023-03",
+      "frId": "G2-FR-023",
+      "star": true,
+      "plannedTC": "TC-G2-FR-023-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/68",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-024-01",
+      "frId": "G2-FR-024",
+      "star": true,
+      "plannedTC": "TC-G2-FR-024-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/69",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-024-02",
+      "frId": "G2-FR-024",
+      "star": true,
+      "plannedTC": "TC-G2-FR-024-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/70",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-024-03",
+      "frId": "G2-FR-024",
+      "star": true,
+      "plannedTC": "TC-G2-FR-024-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/71",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-025-01",
+      "frId": "G2-FR-025",
+      "star": true,
+      "plannedTC": "TC-G2-FR-025-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/72",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-025-02",
+      "frId": "G2-FR-025",
+      "star": true,
+      "plannedTC": "TC-G2-FR-025-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/73",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-025-03",
+      "frId": "G2-FR-025",
+      "star": true,
+      "plannedTC": "TC-G2-FR-025-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/74",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-026-01",
+      "frId": "G2-FR-026",
+      "star": true,
+      "plannedTC": "TC-G2-FR-026-01",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/75",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-026-02",
+      "frId": "G2-FR-026",
+      "star": true,
+      "plannedTC": "TC-G2-FR-026-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/76",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-026-03",
+      "frId": "G2-FR-026",
+      "star": true,
+      "plannedTC": "TC-G2-FR-026-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/77",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-027-01",
+      "frId": "G2-FR-027",
+      "star": true,
+      "plannedTC": "TC-G2-FR-027-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/78",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-027-02",
+      "frId": "G2-FR-027",
+      "star": true,
+      "plannedTC": "TC-G2-FR-027-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/79",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-027-03",
+      "frId": "G2-FR-027",
+      "star": true,
+      "plannedTC": "TC-G2-FR-027-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/80",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-028-01",
+      "frId": "G2-FR-028",
+      "star": true,
+      "plannedTC": "TC-G2-FR-028-01",
+      "actualResult": "PASS",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/81",
+      "g6AcceptanceStatus": "EVIDENCED_PASS_INPUT",
+      "g6EvidenceRequired": "Retain source/version and spot-check in G6"
+    },
+    {
+      "acId": "AC-G2-FR-028-02",
+      "frId": "G2-FR-028",
+      "star": true,
+      "plannedTC": "TC-G2-FR-028-02",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/82",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-028-03",
+      "frId": "G2-FR-028",
+      "star": true,
+      "plannedTC": "TC-G2-FR-028-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/83",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-029-01",
+      "frId": "G2-FR-029",
+      "star": true,
+      "plannedTC": "TC-G2-FR-029-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/84",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-029-02",
+      "frId": "G2-FR-029",
+      "star": true,
+      "plannedTC": "TC-G2-FR-029-02",
+      "actualResult": "PASS",
+      "courseStatus": "COURSE_ACCEPTED_EVIDENCE",
+      "deferredStatuses": [],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/85",
+      "g6AcceptanceStatus": "EVIDENCED_PASS_INPUT",
+      "g6EvidenceRequired": "Retain source/version and spot-check in G6"
+    },
+    {
+      "acId": "AC-G2-FR-029-03",
+      "frId": "G2-FR-029",
+      "star": true,
+      "plannedTC": "TC-G2-FR-029-03",
+      "actualResult": "NOT_RUN",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "EVIDENCE_DEFERRED"
+      ],
+      "implementationStatus": "EXISTS_NOT_FULLY_VERIFIED",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/86",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "补齐完整AC断言与环境，重跑并交指定复核人"
+    },
+    {
+      "acId": "AC-G2-FR-030-01",
+      "frId": "G2-FR-030",
+      "star": false,
+      "plannedTC": "TC-G2-FR-030-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/87",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-030-02",
+      "frId": "G2-FR-030",
+      "star": false,
+      "plannedTC": "TC-G2-FR-030-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/88",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-030-03",
+      "frId": "G2-FR-030",
+      "star": false,
+      "plannedTC": "TC-G2-FR-030-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/89",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-031-01",
+      "frId": "G2-FR-031",
+      "star": true,
+      "plannedTC": "TC-G2-FR-031-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/90",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-031-02",
+      "frId": "G2-FR-031",
+      "star": true,
+      "plannedTC": "TC-G2-FR-031-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/91",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-031-03",
+      "frId": "G2-FR-031",
+      "star": true,
+      "plannedTC": "TC-G2-FR-031-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/92",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-032-01",
+      "frId": "G2-FR-032",
+      "star": false,
+      "plannedTC": "TC-G2-FR-032-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/93",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-032-02",
+      "frId": "G2-FR-032",
+      "star": false,
+      "plannedTC": "TC-G2-FR-032-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/94",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-032-03",
+      "frId": "G2-FR-032",
+      "star": false,
+      "plannedTC": "TC-G2-FR-032-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/95",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-033-01",
+      "frId": "G2-FR-033",
+      "star": false,
+      "plannedTC": "TC-G2-FR-033-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/96",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-033-02",
+      "frId": "G2-FR-033",
+      "star": false,
+      "plannedTC": "TC-G2-FR-033-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/97",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-033-03",
+      "frId": "G2-FR-033",
+      "star": false,
+      "plannedTC": "TC-G2-FR-033-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/98",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-034-01",
+      "frId": "G2-FR-034",
+      "star": true,
+      "plannedTC": "TC-G2-FR-034-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/99",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-034-02",
+      "frId": "G2-FR-034",
+      "star": true,
+      "plannedTC": "TC-G2-FR-034-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/100",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-034-03",
+      "frId": "G2-FR-034",
+      "star": true,
+      "plannedTC": "TC-G2-FR-034-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/101",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-035-01",
+      "frId": "G2-FR-035",
+      "star": true,
+      "plannedTC": "TC-G2-FR-035-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/102",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-035-02",
+      "frId": "G2-FR-035",
+      "star": true,
+      "plannedTC": "TC-G2-FR-035-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED",
+        "REAL_WORLD_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/103",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-035-03",
+      "frId": "G2-FR-035",
+      "star": true,
+      "plannedTC": "TC-G2-FR-035-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/104",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-036-01",
+      "frId": "G2-FR-036",
+      "star": true,
+      "plannedTC": "TC-G2-FR-036-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/105",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-036-02",
+      "frId": "G2-FR-036",
+      "star": true,
+      "plannedTC": "TC-G2-FR-036-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/106",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-036-03",
+      "frId": "G2-FR-036",
+      "star": true,
+      "plannedTC": "TC-G2-FR-036-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/107",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-037-01",
+      "frId": "G2-FR-037",
+      "star": true,
+      "plannedTC": "TC-G2-FR-037-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/108",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-037-02",
+      "frId": "G2-FR-037",
+      "star": true,
+      "plannedTC": "TC-G2-FR-037-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/109",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-037-03",
+      "frId": "G2-FR-037",
+      "star": true,
+      "plannedTC": "TC-G2-FR-037-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/110",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-038-01",
+      "frId": "G2-FR-038",
+      "star": false,
+      "plannedTC": "TC-G2-FR-038-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/111",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-038-02",
+      "frId": "G2-FR-038",
+      "star": false,
+      "plannedTC": "TC-G2-FR-038-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/112",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-038-03",
+      "frId": "G2-FR-038",
+      "star": false,
+      "plannedTC": "TC-G2-FR-038-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/113",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-039-01",
+      "frId": "G2-FR-039",
+      "star": true,
+      "plannedTC": "TC-G2-FR-039-01",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/114",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-039-02",
+      "frId": "G2-FR-039",
+      "star": true,
+      "plannedTC": "TC-G2-FR-039-02",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/115",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    },
+    {
+      "acId": "AC-G2-FR-039-03",
+      "frId": "G2-FR-039",
+      "star": true,
+      "plannedTC": "TC-G2-FR-039-03",
+      "actualResult": "BLOCKED",
+      "courseStatus": "COURSE_DEFERRED",
+      "deferredStatuses": [
+        "IMPLEMENTATION_DEFERRED"
+      ],
+      "implementationStatus": "UNIMPLEMENTED_BACKLOG",
+      "rawLocator": "evidence/g5/G5-01/functional-gate-raw.json#acResults/116",
+      "g6AcceptanceStatus": "DEFERRED_NOT_ACCEPTED",
+      "g6EvidenceRequired": "实现并执行完整AC；独立复核后才能修改真实结果"
+    }
+  ],
+  "boundaries": {
+    "implementationDeferredAc": 30,
+    "evidenceDeferredAc": 76,
+    "ownerSystemsReal": "0/6",
+    "independentRealOperator": 0,
+    "manualsAvailable": false,
+    "liveRunAvailable": false
+  }
+}

@@ -189,4 +189,12 @@
 - FR：39/39；★FR：34/34；非 FR ★：5
 - FULLY_COMPLIANT：18；PENDING_EVIDENCE：150；POSITIVE_DEVIATION：0；NEGATIVE_DEVIATION：0；NOT_APPLICABLE：0
 - `PENDING_EVIDENCE` 不表示负偏离：表示设计响应或责任映射已建立，但接口、环境、测试、验收或后续整合证据尚未形成。
+
+## G6-02交付验收证据增量（2026-10-11，首版候选）
+
+- CM-150—156 已挂接 `evidence/g6/G6-02/delivery-index.md` 与 `standards-crosswalk.md`，形成29项唯一配置索引：20项当前可定位、9项真实缺项；缺项不记N/A或PASS。
+- CM-150/151：计划、需求、设计、接口、测试和G5正式报告可定位；G5材料仅为课程条件接受，真实AC仍为11 PASS / 59 NOT_RUN / 47 BLOCKED。
+- CM-152/156：用户手册、部署运维手册和G6命令台账尚未形成，继续 `PENDING_EVIDENCE / PLANNED_G6_01`；第三方独立部署真实操作者仍为0。
+- CM-153—155：培训、试运行、总结、真实签署、基础数据双方确认及G6现场记录尚未形成，分别保留资源/后续任务门禁，不代造记录。
+- 当前为C首版候选、B整体复核PENDING；不将矩阵原有 `PENDING_EVIDENCE` 改为FULLY_COMPLIANT。最终状态须在G6-01手册候选、G6-03试演/现场记录和G6-04移交材料到位后增量复核。
 - B 已完成逐条人工复核，结果见 `logs/reviews/2026-09-10_G1-05-B-final-review.md`。本矩阵证明第一关文档覆盖与验证设计已经闭环，不作为已完成现场实施或通过竣工验收的证明；150 行 `PENDING_EVIDENCE` 在后续实施、联调、测试和验收阶段逐项补证。

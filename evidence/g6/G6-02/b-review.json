@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "task": "G6-02_B_REVIEW",
+  "reviewConclusion": "ACCEPTED_FOR_INITIAL_G6_02_CANDIDATE",
+  "finalTaskStatus": "REVIEW_PENDING_G6_01_AND_G6_03_INCREMENT",
+  "issueSummary": {
+    "blocker": 0,
+    "major": 0,
+    "minorClosed": 1,
+    "observation": 1
+  },
+  "deliveryItems": 29,
+  "availability": {
+    "AVAILABLE": 20,
+    "NOT_AVAILABLE": 9
+  },
+  "rtmRows": 117,
+  "fr": 39,
+  "starFr": 34,
+  "results": {
+    "NOT_RUN": 59,
+    "BLOCKED": 47,
+    "PASS": 11
+  },
+  "fullPassFr": 1,
+  "starFullPass": 1,
+  "deferred": {
+    "implementation": 30,
+    "evidence": 76
+  },
+  "snapshotHashes": "PASS_WITH_CANDIDATE_EOL_NORMALIZATION",
+  "rowByRowMapping": "PASS",
+  "performance": {
+    "metrics": 8,
+    "rawSamples": 1160,
+    "csvSamples": 1160,
+    "failures": 0
+  },
+  "realWorld": {
+    "ownerSystems": "0/6",
+    "independentOperator": 0
+  }
+}

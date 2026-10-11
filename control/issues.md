@@ -1979,3 +1979,12 @@
 - 原始口径保持39 FR / 117 AC / 34★FR、真实11 PASS / 59 NOT_RUN / 47 BLOCKED、★FR 1 PASS / 33 BLOCKED；30 AC实现延期、76 AC证据延期、甲方系统0/6及真实非乙方操作者0均未改写。
 - G6-01两本手册/命令台账、G6-03试演/现场记录、G6-04总结/移交尚未形成；因此本轮只能为 `REVIEW_INITIAL_CANDIDATE_PENDING_B`，不置DONE，不声称P1交付齐套。
 - 指定B整体复核技术范围与证据挂接；首版接受后可供G6-01/G6-03并行使用，最终审计仍须后续增量收口。现有ISSUE-G6-00-001与ISSUE-G5-02-008继续保留。
+
+## ISSUE-G6-02-001｜首版哈希校验受 Windows 行尾转换影响
+
+- 日期：2026-10-11；发现/复核 B；主责 C；级别 MINOR；状态 `CLOSED_FOR_INITIAL_CANDIDATE / VERIFIED_BY_B`。
+- 现象：原 `validate-g6-02.mjs` 在 Windows 工作区对部分文本配置项报告 SHA-256 不一致；同一候选中既有记录 Git blob（LF）的条目，也有记录工作区（CRLF）字节的条目。
+- 原因：首版候选在提交前按工作区字节建立指纹，提交/检出后 Git 行尾转换改变了物理字节；校验器只比较当前工作区，无法复现候选记录时的字节形态。
+- 整改：校验器同时读取当前工作区与条目记录的 `inputSnapshotCommit` Git blob，并仅接受记录字节数和 SHA-256 同时匹配的原始或 LF/CRLF 规范化变体；新增 B 独立复核脚本逐项复验 29 项索引、117 行 RTM、1160 条性能样本和真实边界。
+- 结论：首版候选的证据内容未被篡改，跨平台误报已消除；问题对本轮关闭。最终 G6-02 增量仍须以锁定提交的 canonical Git blob 重新生成指纹，不能沿用首版工作区哈希作为最终冻结值。
+- 证据：`logs/reviews/2026-10-11_G6-02-B-review.md`、`scripts/g6/validate-g6-02.mjs`、`scripts/g6/review-g6-02-b.mjs`、`evidence/g6/G6-02/b-review.json`。

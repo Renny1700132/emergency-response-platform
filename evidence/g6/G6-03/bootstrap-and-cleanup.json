@@ -1,0 +1,53 @@
+{
+  "taskId": "G6-03",
+  "capturedAt": "2026-10-11T21:59:56.207963+08:00",
+  "repositoryRoot": "E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master",
+  "executionWorktree": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master",
+  "branch": "master",
+  "bootstrapHead": "deaddc6e454dcd1064db2e2271838b5ef19ad87c",
+  "bootstrapStatus": "CLEAN (observed before raw prompt logging)",
+  "currentStatusDuringTask": "## master...origin/master\n M control/overrides.md\n M logs/prompts/2026-10-11-A.md\n M tasks.md\n?? docs/work/G6/\n?? scripts/g6/collect-g6-03-baseline.py\n?? scripts/g6/run-g6-03-rehearsal.mjs",
+  "recentCommits": [
+    "deaddc6 review(G6-02): accept initial audit candidate",
+    "ad4febe chore(G6-01): backfill delivery log",
+    "f9eec53 docs(G6-01): build user and operations manuals",
+    "e194cdb chore(G6-02): backfill candidate push evidence",
+    "56e9da9 docs(G6-02): build delivery audit candidate",
+    "beb605f chore(G6-00): backfill remediation push evidence",
+    "0b56623 fix(G6-00): correct task-book pagination and close review",
+    "d893a53 chore(G6-00): backfill review push evidence",
+    "c7cd54f review(G6-00): request source pagination correction",
+    "b164351 docs(G6-00): backfill authorized master push evidence"
+  ],
+  "registeredWorktrees": [
+    "E:\\ZongHeShiXi\\emergency-response-platform",
+    "C:\\Users\\15801\\.codex\\visualizations\\2026\\09\\23\\01a0cd3a-9cb7-7fc1-a2e9-694b8e0ec816\\g4-02-closeout",
+    "C:\\Users\\15801\\.codex\\visualizations\\2026\\09\\24\\01a0d216-9371-7cc1-9db4-9e2ca5e939b0\\g4-single-pr",
+    "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-05-audit",
+    "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-06-work",
+    "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-09-work",
+    "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-acceptance-ppt",
+    "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-final-closeout",
+    "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master"
+  ],
+  "suspectedWrongOutputNames": [
+    "g6_03_fact_baseline.md",
+    "g6_03_ai_collaboration_analysis.md",
+    "g6_03_technical_debt.md",
+    "project_development_summary_report.md"
+  ],
+  "wrongOutputMatches": [],
+  "deletedFiles": [],
+  "historicalG6_03Commits": [],
+  "originalCwdPreexistingChanges": [
+    "docs/work/C_REQ/rtm_g4_evidence.md",
+    "frontend/src/api/generated/schema.d.ts",
+    "tasks.md",
+    ".worktrees/",
+    "docs/inputs/G5/",
+    "docs/inputs/G6/",
+    "logs/prompts/2026-09-24-A.md"
+  ],
+  "originalCwdDisposition": "Preserved. These existed before the interrupted incorrect task and are not confirmed pollution. Original raw materials, prior logs and registered worktrees must not be deleted.",
+  "cleanupConclusion": "NO_CONFIRMED_POLLUTION_FILES"
+}

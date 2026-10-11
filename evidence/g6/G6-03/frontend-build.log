@@ -1,0 +1,23 @@
+
+> museum-emergency-response-frontend@0.1.0 prebuild
+> npm run generate:api
+
+
+> museum-emergency-response-frontend@0.1.0 generate:api
+> openapi-typescript ../docs/work/B_TECH/openapi_v1.yaml -o src/api/generated/schema.d.ts
+
+✨ openapi-typescript 7.9.1
+🚀 ../docs/work/B_TECH/openapi_v1.yaml → src/api/generated/schema.d.ts [82.7ms]
+
+> museum-emergency-response-frontend@0.1.0 build
+> vue-tsc --noEmit && vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 55 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.49 kB │ gzip:  0.36 kB
+dist/assets/index-DjX3_uKF.css   21.04 kB │ gzip:  5.50 kB
+dist/assets/index-CnAbj0Fp.js   139.22 kB │ gzip: 52.37 kB │ map: 905.54 kB
+✓ built in 1.40s

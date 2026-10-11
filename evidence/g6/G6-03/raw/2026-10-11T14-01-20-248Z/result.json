@@ -1,0 +1,131 @@
+{
+  "taskId": "G6-03",
+  "runId": "2026-10-11T14-01-20-248Z",
+  "status": "FAIL",
+  "startedAt": "2026-10-11T14:01:20.249Z",
+  "finishedAt": "2026-10-11T14:01:22.417Z",
+  "elapsedSeconds": 2.169,
+  "evidenceKind": "COURSE_SIMULATED_REHEARSAL",
+  "actualExecution": true,
+  "marker": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL",
+  "applicationImplementationChanged": false,
+  "storage": "IN_MEMORY",
+  "syntheticPorts": [
+    "IDENTITY",
+    "MESSAGE",
+    "PUBLISHED_PLAN"
+  ],
+  "backendOrigin": "http://127.0.0.1:2036",
+  "frontendOrigin": "http://127.0.0.1:2037",
+  "environment": {
+    "node": "v24.14.0",
+    "platform": "win32",
+    "browser": "Microsoft Edge headless CDP"
+  },
+  "checks": [
+    {
+      "id": "health-process",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "c40c67ba-bebb-4046-ba46-05bb06820a20",
+      "at": "2026-10-11T14:01:20.277Z"
+    },
+    {
+      "id": "readiness-without-database-boundary",
+      "expectedHttp": 503,
+      "actualHttp": 503,
+      "status": "PASS",
+      "traceId": "d8553c69-52e6-4a1d-baf5-1e41f1eda629",
+      "at": "2026-10-11T14:01:20.279Z"
+    },
+    {
+      "id": "read-created-incident",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "c8fe2f4d-eebd-40ff-be04-69f755d02c78",
+      "at": "2026-10-11T14:01:21.227Z"
+    },
+    {
+      "id": "verify-incident",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "d29191e9-c7a3-46e1-9196-1ab4d99d3a43",
+      "at": "2026-10-11T14:01:21.230Z"
+    },
+    {
+      "id": "stale-start-rejected",
+      "expectedHttp": 409,
+      "actualHttp": 409,
+      "status": "PASS",
+      "traceId": "34895e15-5baf-490b-8a8e-ec812604e2ea",
+      "at": "2026-10-11T14:01:21.231Z"
+    },
+    {
+      "id": "reload-verified-incident",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "9f806214-459f-44e0-9ea7-748dcbcfef90",
+      "at": "2026-10-11T14:01:21.232Z"
+    },
+    {
+      "id": "start-response",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "0bdd6bb6-2dc6-41e3-8a98-d0ce6aed0c1b",
+      "at": "2026-10-11T14:01:21.234Z"
+    },
+    {
+      "id": "read-h5-progress",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "c91efede-304c-431f-912d-a432cd0cc22b",
+      "at": "2026-10-11T14:01:22.119Z"
+    }
+  ],
+  "uiActions": [
+    "web-open-report",
+    "web-fill-and-submit",
+    "h5-acknowledge",
+    "h5-fill-feedback",
+    "h5-submit-feedback"
+  ],
+  "screenshots": [
+    {
+      "id": "01-web-response",
+      "path": "evidence/g6/G6-03/screenshots/2026-10-11T14-01-20-248Z/01-web-response.png",
+      "route": "/web/incidents",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "capturedAt": "2026-10-11T14:01:21.634Z",
+      "marker": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL",
+      "softwareMode": "production frontend build, real HTTP, in-memory backend, synthetic identity/message ports"
+    }
+  ],
+  "rawDirectory": "evidence/g6/G6-03/raw/2026-10-11T14-01-20-248Z",
+  "failure": {
+    "name": "AssertionError",
+    "message": "Expected values to be strictly equal:\n\nundefined !== 60\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nundefined !== 60\n\n    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/scripts/g6/run-g6-03-rehearsal.mjs:172:56\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+  },
+  "realWorldStatus": "REAL_WORLD_DEFERRED",
+  "cOverallReview": "PENDING_REVIEW",
+  "boundaries": [
+    "Not PostgreSQL persistence or crash recovery evidence.",
+    "Not owner real identity/message/video/GIS/access/position systems.",
+    "Not real mobile host or KN-065 independent deployment.",
+    "Not现场验收or a recalculation of historical G5 AC results."
+  ],
+  "cleanup": {
+    "backendClosed": true,
+    "frontendClosed": true,
+    "browserProfileRemoved": true
+  }
+}

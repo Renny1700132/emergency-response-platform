@@ -1,0 +1,38 @@
+[
+  {
+    "id": "web-open-report",
+    "at": "2026-10-11T14:02:14.861Z",
+    "result": true,
+    "mode": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL"
+  },
+  {
+    "id": "web-fill-and-submit",
+    "at": "2026-10-11T14:02:14.864Z",
+    "result": true,
+    "mode": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL"
+  },
+  {
+    "id": "h5-acknowledge",
+    "at": "2026-10-11T14:02:15.515Z",
+    "result": "e7b53341-8c11-4c8a-99ed-d0aa0cb95355",
+    "mode": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL"
+  },
+  {
+    "id": "h5-fill-feedback",
+    "at": "2026-10-11T14:02:15.622Z",
+    "result": true,
+    "mode": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL"
+  },
+  {
+    "id": "h5-submit-feedback",
+    "at": "2026-10-11T14:02:15.730Z",
+    "result": true,
+    "mode": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL"
+  },
+  {
+    "id": "h5-stale-acknowledgment",
+    "at": "2026-10-11T14:02:16.116Z",
+    "result": true,
+    "mode": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL"
+  }
+]

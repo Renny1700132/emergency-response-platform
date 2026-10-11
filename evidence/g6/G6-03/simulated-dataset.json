@@ -1,0 +1,35 @@
+{
+  "marker": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL",
+  "synthetic": true,
+  "createdAt": "2026-10-11T14:10:55.530Z",
+  "source": "User authorization in LOG-G6-03-001 USER_STEERING_RAW. These are invented rehearsal inputs, not project facts.",
+  "plan": {
+    "id": "g603-simulated-plan-v1",
+    "name": "【模拟】展厅烟雾处置预案",
+    "templates": [
+      {
+        "name": "【模拟】疏散通道检查",
+        "assigneeRef": "sim-executor",
+        "deadlineAt": "2026-10-11T14:40:55.530Z"
+      },
+      {
+        "name": "【模拟】展厅人员清点",
+        "assigneeRef": "sim-executor",
+        "deadlineAt": "2026-10-11T14:55:55.530Z"
+      }
+    ]
+  },
+  "incident": {
+    "incidentTypeCode": "FIRE",
+    "title": "【模拟】一层展厅烟雾核实",
+    "description": "模拟项目试演：值班人员发现烟雾提示。无真实灾情、人员或甲方数据。",
+    "occurredAt": "2026-10-11T14:09:55.530Z"
+  },
+  "roles": [
+    "sim-commander",
+    "sim-executor",
+    "sim-reader"
+  ],
+  "feedback": "【模拟】执行员已检查通道，正在复核疏散指示。",
+  "boundary": "No owner identity/message system, real mobile host, PostgreSQL persistence, KN-065 operator or现场验收 is exercised."
+}

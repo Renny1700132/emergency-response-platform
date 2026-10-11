@@ -1,0 +1,400 @@
+{
+  "taskId": "G6-03",
+  "checkedAt": "2026-10-11T15:17:24.048256+00:00",
+  "scope": "A selfcheck only; B technical confirmation and C overall review pending",
+  "status": "PASS_FOR_CANDIDATE_SELF_CHECK",
+  "checks": [
+    {
+      "check": "latest actual simulated run has 23 passing checks",
+      "status": "PASS"
+    },
+    {
+      "check": "expected database readiness boundary remains 503",
+      "status": "PASS"
+    },
+    {
+      "check": "actual 409 and 403 exceptions retained",
+      "status": "PASS"
+    },
+    {
+      "check": "failed attempts and original display defect retained",
+      "status": "PASS"
+    },
+    {
+      "check": "application bytes match run lock",
+      "status": "PASS"
+    },
+    {
+      "check": "only two application files corrected",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: tasks.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: docs/work/G6/g6_03_execution_baseline.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: control/overrides.md#OVR-039",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: tasks.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: control/baselines/BASELINE-G3-M3-R1.0.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g5/G5-03/c-final-acceptance.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-02/b-review.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: control/facts.md#F-005",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: control/facts.md#F-008",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: control/facts.md#F-009",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: control/key_numbers.md#KN-063",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-02/metrics-ledger.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-01/release-lock.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/input-manifest.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/rehearsal-release-lock.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: backend/src/server.mjs",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: frontend/src/main.ts",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: docs/work/B_TECH/adr/ADR-001-应用拆分与部署单元.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: docs/work/B_TECH/adr/ADR-002-事务Outbox与持久任务.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-02/metrics-ledger.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-02/b-review.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g5/G5-03/c-final-acceptance.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-02/delivery-index.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-02/b-review.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: tasks.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-01/command-execution-ledger.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/simulated-dataset.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: control/overrides.md#OVR-039",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/simulated-dataset.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: scripts/g6/run-g6-03-rehearsal.mjs",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/quality-gate.log",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: frontend/src/features/response/workflow.ts",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: backend/src/event-workflow.mjs",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: control/issues.md#ISSUE-G6-03-001",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: scripts/g6/run-g6-03-rehearsal.mjs",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: docs/work/B_TECH/g6_user_manual.md#7",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: backend/src/identity.mjs",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: frontend/src/router/index.ts",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: docs/work/B_TECH/g6_user_manual.md#3",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/raw/",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: control/issues.md#ISSUE-G6-03-001",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: control/issues.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-02/gaps-deferrals.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-02/metrics-ledger.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: docs/work/G6/g6_03_demo_and_qna.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: docs/work/B_TECH/g6_user_manual.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: docs/work/B_TECH/adr/ADR-002-事务Outbox与持久任务.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source exists: tasks.md",
+      "status": "PASS"
+    },
+    {
+      "check": "14 native slides and 14 notes",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 1",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 1",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 2",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 2",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 3",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 3",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 4",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 4",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 5",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 5",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 6",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 6",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 7",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 7",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 8",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 8",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 9",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 9",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 10",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 10",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 11",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 11",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 12",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 12",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 13",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 13",
+      "status": "PASS"
+    },
+    {
+      "check": "slide title 14",
+      "status": "PASS"
+    },
+    {
+      "check": "speaker notes 14",
+      "status": "PASS"
+    },
+    {
+      "check": "PDF has 14 pages",
+      "status": "PASS"
+    },
+    {
+      "check": "task remains REVIEW with reviewer pending",
+      "status": "PASS"
+    },
+    {
+      "check": "no frozen baseline or G5 historical evidence rewritten",
+      "status": "PASS"
+    },
+    {
+      "check": "wrong retrospective outputs absent",
+      "status": "PASS"
+    }
+  ],
+  "historyStatuses": [
+    "FAIL",
+    "FAIL",
+    "PASS_WITH_KNOWN_DISPLAY_DEFECT",
+    "PASS"
+  ],
+  "outputs": [
+    {
+      "path": "docs/deliverables/G6/G6-03-验收答辩候选.pptx",
+      "sha256": "83eeff87ca1b761a995eb60dc44207d634d5f593a1bbea7d70ca5d4b9e5dad51"
+    },
+    {
+      "path": "docs/deliverables/G6/G6-03-验收答辩候选.pdf",
+      "sha256": "5db7eb5dcf46b69126027dd1a92fa4421eb56b8d3c38e5e5bd4486bf2c2e79cd"
+    }
+  ]
+}

@@ -16,6 +16,20 @@ describe('Sprint 1 response workflow', () => {
     expect(client.get).toHaveBeenCalledWith('/api/v1/incidents', { query: { page: 1, size: 50 } })
   })
 
+  it('shows the latest saved feedback progress from the actual backend task response and preserves explicit zero', async () => {
+    const task = { id: 't-feedback', status: 'IN_PROGRESS', version: 4, feedback: [
+      { content: '开始检查', progressPercent: 20 },
+      { content: '检查进行中', progressPercent: 60 },
+      { content: '追加说明，不改变进度' },
+    ] }
+    const client = api({ get: vi.fn().mockResolvedValue({ data: { items: [task], total: 1 } }) })
+    await expect(createResponseWorkflow(client).listTasks()).resolves.toEqual([expect.objectContaining({ id: task.id, progressPercent: 60 })])
+    expect(toWorkflowItem({ ...task, progressPercent: 0 }).progressPercent).toBe(0)
+    expect(toWorkflowItem({ ...task, attributes: { progressPercent: 0 } }).progressPercent).toBe(0)
+    expect(toWorkflowItem({ ...task, feedback: [...task.feedback, { progressPercent: 0 }] }).progressPercent).toBe(0)
+    expect(toWorkflowItem({ id: 't-empty', feedback: [] }).progressPercent).toBe(0)
+  })
+
   it('submits incident report, verification and response start with typed paths and idempotency', async () => {
     const post = vi.fn().mockResolvedValue({ data: { id: 'i-1' } })
     const workflow = createResponseWorkflow(api({ post }))

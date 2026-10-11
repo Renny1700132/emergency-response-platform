@@ -1,0 +1,258 @@
+{
+  "taskId": "G6-03",
+  "snapshot": "deaddc6e454dcd1064db2e2271838b5ef19ad87c",
+  "releaseSnapshot": "beb605f83e738a39dfe388ed4bc25b5b724eddcf",
+  "latestCodeAffectingCommit": "5fc359aea5e08118d17f2e076e6f669b04adf9b4",
+  "codeScope": [
+    "frontend",
+    "backend",
+    "compose.yaml",
+    "docs/work/B_TECH/openapi_v1.yaml"
+  ],
+  "codeScopeDiffExitCode": 0,
+  "codeMatchesG6_01": true,
+  "capturedAt": "2026-10-11T21:59:56.207963+08:00",
+  "sources": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 10559,
+      "sha256": "d4d840ef87db3ec03c1ca4b8969eb6a4cb9c9492e72663164fd0bbc7f0f91638",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "tasks.md",
+      "bytes": 37268,
+      "sha256": "23f2ef858b7ac87b618bfb9fbe1253e398aa62e258d0f027cfb969ceeb55cf5a",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 7033,
+      "sha256": "15d3af71f4208fca5d32b9bc7c09dd0d31401a954d59d810a21cecbe0ed3316f",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "governance/ai_logging.md",
+      "bytes": 11384,
+      "sha256": "fe190b914e0c0dcb089cdac42568beae5d9017b515ef604cc99daad3ae2163b1",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "governance/git_workflow.md",
+      "bytes": 9306,
+      "sha256": "793c77feda8dd201b24ad58cca2e767768e528d28063d9862e253511dde2aa70",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "governance/source_priority.md",
+      "bytes": 2372,
+      "sha256": "51b91fd7a3f5f9fbaf749fc19cba5d1f638898dd05c8a949a1bbf6718cac77e4",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "governance/review_workflow.md",
+      "bytes": 3633,
+      "sha256": "04f7a3e1316ebca32ea8e9312c2045fc7565aadb8fd67520376a7338245e5aec",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "control/facts.md",
+      "bytes": 13724,
+      "sha256": "1acfb48a1e8726bc9e217c9ff6a89356c20f1205f4a415c4e63be47807baafa6",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "control/key_numbers.md",
+      "bytes": 10344,
+      "sha256": "51ea3986890f9449569a7134bd225b2aa50894892ef583c05df356d474773384",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "control/issues.md",
+      "bytes": 224583,
+      "sha256": "53a07255d3ff158793cbaecf2401efae9c88e1eb7cdccad3355f53a3796c9ce6",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "control/overrides.md",
+      "bytes": 50134,
+      "sha256": "a1ad82ade7ef6dfb4b1a84501adf8bc3b4b29beace25ce0118605f377a9415f4",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "control/change_log.md",
+      "bytes": 10442,
+      "sha256": "0f70774e7d2dd948fcd9f3cc3c734f8579a7643ffd30881cd9201cab1d2b7e48",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "control/compliance_matrix.md",
+      "bytes": 93504,
+      "sha256": "032e24fc69676dae601c3925db57ec1245e56d82cf53cf433aab8960100d174b",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "control/baselines/BASELINE-G3-M3-R1.0.md",
+      "bytes": 1821,
+      "sha256": "05536ca5547ee8ec39ebbc5dcfefc84c447fae938c1b8e806da42b96ec1c6c3d",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "evidence/g5/G5-03/c-final-acceptance.json",
+      "bytes": 910,
+      "sha256": "36ac8f0861c2a1a83f3fc572bca4a775d51e01c29265e14ffb13fd2592b594a1",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "logs/reviews/2026-10-11_G5-03-C-final-review.md",
+      "bytes": 2313,
+      "sha256": "2520e43e286099f96b98b5534d07ab184b25b92782398164167d1fe2421b7e95",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "evidence/g6/G6-01/release-lock.json",
+      "bytes": 557,
+      "sha256": "194b6f02679b36464c26073dd83327ab69ecb1f77a96bbcf4461d7581e7d9379",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "evidence/g6/G6-01/command-execution-ledger.md",
+      "bytes": 2196,
+      "sha256": "b412be0955afd4353c574160c44cb59afdffb52db255f0b65b4618c9f5571255",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "evidence/g6/G6-01/deployment-check.json",
+      "bytes": 1152,
+      "sha256": "75cad93c891ae97cc282bc21823a8e2c2d5a50e8ba905d5307f1af9b519a31df",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "evidence/g6/G6-01/quality-check.json",
+      "bytes": 502,
+      "sha256": "6a470cfac4141db797db0a32fade6da77a4fc9e78156a31f53fe789e88ff83dd",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "evidence/g6/G6-01/document-pair-manifest.json",
+      "bytes": 2374,
+      "sha256": "4fce86855c263f6a732c857ee484a08bf41daed9b0183f4ebc0e7908e2626273",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "evidence/g6/G6-01/document-render-qa.md",
+      "bytes": 2471,
+      "sha256": "6aca4ea983b829b1b5049d6e59c101d1709b591bdb8b0a794d53b1551fcf38d6",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "docs/work/B_TECH/g6_user_manual.md",
+      "bytes": 11736,
+      "sha256": "613de17014317f7fab8daf04d3085fc83885a49bf0f627443223cdce3355dea4",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "docs/work/B_TECH/g6_deployment_operations_manual.md",
+      "bytes": 12546,
+      "sha256": "a604b88e1184f9fe710a0809286f79c16c0362ecc6fd6ef40de33944d3bab4aa",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "docs/work/B_TECH/g6_deployment_handoff_and_known_limits.md",
+      "bytes": 1832,
+      "sha256": "f7cd285ca9874452e2ea51cb8b264dbd6d7abd23d60b2052d302e0a7b53c7d24",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "docs/deliverables/G6/34-用户手册.docx",
+      "bytes": 243033,
+      "sha256": "755e94ef675751cd222803b93580fcd1a48ea5db7235cd789416e962d0a7bd65",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "docs/deliverables/G6/34-用户手册.pdf",
+      "bytes": 651539,
+      "sha256": "ad13e62436ee2473192fc7a1a1b0982cc91c608a206399c3203bc983459cb77d",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "docs/deliverables/G6/45-部署与运维手册.docx",
+      "bytes": 31955,
+      "sha256": "c6a47f76462aa58514be83f49ec832775914a147ffff68105afde66f41e6b4cf",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "docs/deliverables/G6/45-部署与运维手册.pdf",
+      "bytes": 489567,
+      "sha256": "aa95c5ee60f4943495a32a545deaaeca942cee2bbf6aab971a7627993b93a65f",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "evidence/g6/G6-02/metrics-ledger.md",
+      "bytes": 2679,
+      "sha256": "f5b4bef8188105b2e43d215dceaad3fe5fe158037c40c51bd91a4e7b70ae5fde",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "evidence/g6/G6-02/gaps-deferrals.md",
+      "bytes": 3357,
+      "sha256": "e71d39f010f75083dbe37bb77ee94e00ba23c6eb106a5423a7e9522c8ebd26d8",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "evidence/g6/G6-02/delivery-index.json",
+      "bytes": 16084,
+      "sha256": "34c84b9932eb6286cdde8ab70dfc9d67f387d9a2683bd85d3ccf73091f9a83f0",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "evidence/g6/G6-02/rtm-acceptance-increment.json",
+      "bytes": 67178,
+      "sha256": "631bb3d7f6f59760f45260354fac6566344f5f2a7afe25241c5a0f9fdedf4793",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "evidence/g6/G6-02/b-review.json",
+      "bytes": 916,
+      "sha256": "db0ccc60797df26efc2ce90c703365898f5b1c05e9c9e40cf68213d8b1cee497",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "logs/reviews/2026-10-11_G6-02-B-review.md",
+      "bytes": 3199,
+      "sha256": "1073c901f18e62ab9e9b4f5db9901d312d0a5cf66186d3213f536011343499e2",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "docs/work/B_TECH/adr/ADR-001-应用拆分与部署单元.md",
+      "bytes": 7191,
+      "sha256": "83ddad1d47ae8fa5641574d7da03f741a70595e0cefa9ccb70e365e1436aae0a",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "docs/work/B_TECH/adr/ADR-002-事务Outbox与持久任务.md",
+      "bytes": 6622,
+      "sha256": "42a7669999e799242ce2f0e2a526f8b18532631bb8f16f2ddaf993852c0c8ab3",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "docs/work/B_TECH/openapi_v1.yaml",
+      "bytes": 107956,
+      "sha256": "5ae2a78e73b2021ffed2b071f2d69376b6bb4bc6a5a5d5200f505c3d93a6a9ba",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "frontend/src/main.ts",
+      "bytes": 1097,
+      "sha256": "113dd60257e951eb0b455472130fc7f6774c726f1bb9f7812f800c8cd1218d9f",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    },
+    {
+      "path": "backend/src/server.mjs",
+      "bytes": 13306,
+      "sha256": "2830ef2a7d71d7c1416ed5c1364ae311a9035d0bac04d68dbb883d55cb0e99ca",
+      "snapshotKind": "CURRENT_CONTROLLED_INPUT_AT_CAPTURE"
+    }
+  ],
+  "boundary": "Input hashes are a dated capture. Subsequent tasks/status/review changes require an increment, not retroactive editing of historical test results."
+}

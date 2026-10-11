@@ -1,0 +1,287 @@
+{
+  "taskId": "G6-03",
+  "runId": "2026-10-11T14-02-13-947Z",
+  "status": "PASS_WITH_KNOWN_DISPLAY_DEFECT",
+  "startedAt": "2026-10-11T14:02:13.996Z",
+  "finishedAt": "2026-10-11T14:02:18.714Z",
+  "elapsedSeconds": 4.718,
+  "evidenceKind": "COURSE_SIMULATED_REHEARSAL",
+  "actualExecution": true,
+  "marker": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL",
+  "applicationImplementationChanged": false,
+  "storage": "IN_MEMORY",
+  "syntheticPorts": [
+    "IDENTITY",
+    "MESSAGE",
+    "PUBLISHED_PLAN"
+  ],
+  "backendOrigin": "http://127.0.0.1:1379",
+  "frontendOrigin": "http://127.0.0.1:1380",
+  "environment": {
+    "node": "v24.14.0",
+    "platform": "win32",
+    "browser": "Microsoft Edge headless CDP"
+  },
+  "checks": [
+    {
+      "id": "health-process",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "8d10ee17-bd24-4ccc-9f6a-d838fc4d6c14",
+      "at": "2026-10-11T14:02:14.031Z"
+    },
+    {
+      "id": "readiness-without-database-boundary",
+      "expectedHttp": 503,
+      "actualHttp": 503,
+      "status": "PASS",
+      "traceId": "74317e41-d400-42a6-8e7e-8990382c7225",
+      "at": "2026-10-11T14:02:14.033Z"
+    },
+    {
+      "id": "read-created-incident",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "3bada8c3-6a38-4434-a3c6-dec89d6dd22c",
+      "at": "2026-10-11T14:02:14.986Z"
+    },
+    {
+      "id": "verify-incident",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "e4cdd292-016e-4cf6-b507-8166cbc4d811",
+      "at": "2026-10-11T14:02:14.988Z"
+    },
+    {
+      "id": "stale-start-rejected",
+      "expectedHttp": 409,
+      "actualHttp": 409,
+      "status": "PASS",
+      "traceId": "967e9fb8-a89c-4019-864f-98f3b00268f8",
+      "at": "2026-10-11T14:02:14.989Z"
+    },
+    {
+      "id": "reload-verified-incident",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "80c2d593-34c0-4131-90b2-f9e0b466923a",
+      "at": "2026-10-11T14:02:14.990Z"
+    },
+    {
+      "id": "start-response",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "4f7fcbd2-d5bd-4b14-910c-576661bae86e",
+      "at": "2026-10-11T14:02:14.991Z"
+    },
+    {
+      "id": "read-h5-progress",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "e8eb1639-f2c0-4412-bd82-398b78a27720",
+      "at": "2026-10-11T14:02:15.841Z"
+    },
+    {
+      "id": "h5-progress-display",
+      "status": "FAIL",
+      "expected": "60",
+      "actual": "0",
+      "issue": "ISSUE-G6-03-001",
+      "boundary": "Backend feedback saved 60; current frontend mapping does not derive it from feedback."
+    },
+    {
+      "id": "concurrent-task-acknowledgment",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "9024ef41-0568-46b5-9bb9-3948b56bb4a8",
+      "at": "2026-10-11T14:02:16.116Z"
+    },
+    {
+      "id": "before-reader-denial",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "1a547ad7-17bc-4a23-8486-5cb7cea00fdd",
+      "at": "2026-10-11T14:02:16.378Z"
+    },
+    {
+      "id": "readonly-write-denied",
+      "expectedHttp": 403,
+      "actualHttp": 403,
+      "status": "PASS",
+      "traceId": "1fbf9a2d-8485-4b57-8684-d79e80f48f0e",
+      "at": "2026-10-11T14:02:16.379Z"
+    },
+    {
+      "id": "after-reader-denial",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "f880ce1a-5d02-4bca-8fca-d6e4c186352a",
+      "at": "2026-10-11T14:02:16.379Z"
+    },
+    {
+      "id": "reload-task-e7b53341-8c11-4c8a-99ed-d0aa0cb95355",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "0472f32c-aafe-4962-b7ab-bfe3e28e036a",
+      "at": "2026-10-11T14:02:16.764Z"
+    },
+    {
+      "id": "complete-task-e7b53341-8c11-4c8a-99ed-d0aa0cb95355",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "a9eec18c-9959-4d8e-89ca-8e1fa215d9ed",
+      "at": "2026-10-11T14:02:16.765Z"
+    },
+    {
+      "id": "reload-task-12e4b262-e45b-4373-aef4-cc4e979fe0e5",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "75c53e78-0427-485b-bc2b-2ad57b1d66c1",
+      "at": "2026-10-11T14:02:16.766Z"
+    },
+    {
+      "id": "complete-task-12e4b262-e45b-4373-aef4-cc4e979fe0e5",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "77281589-cf1e-413d-9536-dffb8cb7d578",
+      "at": "2026-10-11T14:02:16.768Z"
+    },
+    {
+      "id": "reload-before-close",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "15ce9edb-499a-4b77-ad02-b215b2668508",
+      "at": "2026-10-11T14:02:16.768Z"
+    },
+    {
+      "id": "close-incident",
+      "expectedHttp": 200,
+      "actualHttp": 200,
+      "status": "PASS",
+      "traceId": "9eb5391e-82ee-43ac-885d-d6bbaeb6aa2d",
+      "at": "2026-10-11T14:02:16.769Z"
+    },
+    {
+      "id": "normal-workflow-closed",
+      "status": "PASS",
+      "actual": "CLOSED"
+    },
+    {
+      "id": "h5-ui-feedback-persisted-in-memory",
+      "status": "PASS",
+      "actual": 60
+    },
+    {
+      "id": "readonly-no-side-effect",
+      "status": "PASS",
+      "actual": {
+        "before": 1,
+        "after": 1
+      }
+    },
+    {
+      "id": "actual-ui-version-conflict",
+      "status": "PASS",
+      "traceId": "3907347c-5172-4875-b737-8a5213a1e0fd"
+    }
+  ],
+  "uiActions": [
+    "web-open-report",
+    "web-fill-and-submit",
+    "h5-acknowledge",
+    "h5-fill-feedback",
+    "h5-submit-feedback",
+    "h5-stale-acknowledgment"
+  ],
+  "screenshots": [
+    {
+      "id": "01-web-response",
+      "path": "evidence/g6/G6-03/screenshots/2026-10-11T14-02-13-947Z/01-web-response.png",
+      "route": "/web/incidents",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "capturedAt": "2026-10-11T14:02:15.382Z",
+      "marker": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL",
+      "softwareMode": "production frontend build, real HTTP, in-memory backend, synthetic identity/message ports"
+    },
+    {
+      "id": "02-h5-feedback",
+      "path": "evidence/g6/G6-03/screenshots/2026-10-11T14-02-13-947Z/02-h5-feedback.png",
+      "route": "/h5/tasks",
+      "viewport": {
+        "width": 480,
+        "height": 1000
+      },
+      "capturedAt": "2026-10-11T14:02:16.115Z",
+      "marker": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL",
+      "softwareMode": "production frontend build, real HTTP, in-memory backend, synthetic identity/message ports"
+    },
+    {
+      "id": "03-h5-version-conflict",
+      "path": "evidence/g6/G6-03/screenshots/2026-10-11T14-02-13-947Z/03-h5-version-conflict.png",
+      "route": "/h5/tasks",
+      "viewport": {
+        "width": 480,
+        "height": 1000
+      },
+      "capturedAt": "2026-10-11T14:02:16.377Z",
+      "marker": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL",
+      "softwareMode": "production frontend build, real HTTP, in-memory backend, synthetic identity/message ports"
+    },
+    {
+      "id": "04-web-permission-denied",
+      "path": "evidence/g6/G6-03/screenshots/2026-10-11T14-02-13-947Z/04-web-permission-denied.png",
+      "route": "/forbidden",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "capturedAt": "2026-10-11T14:02:16.763Z",
+      "marker": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL",
+      "softwareMode": "production frontend build, real HTTP, in-memory backend, synthetic identity/message ports"
+    },
+    {
+      "id": "05-web-closed",
+      "path": "evidence/g6/G6-03/screenshots/2026-10-11T14-02-13-947Z/05-web-closed.png",
+      "route": "/web/incidents",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "capturedAt": "2026-10-11T14:02:17.148Z",
+      "marker": "SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION / IN_MEMORY_REHEARSAL",
+      "softwareMode": "production frontend build, real HTTP, in-memory backend, synthetic identity/message ports"
+    }
+  ],
+  "rawDirectory": "evidence/g6/G6-03/raw/2026-10-11T14-02-13-947Z",
+  "failure": null,
+  "realWorldStatus": "REAL_WORLD_DEFERRED",
+  "cOverallReview": "PENDING_REVIEW",
+  "boundaries": [
+    "Not PostgreSQL persistence or crash recovery evidence.",
+    "Not owner real identity/message/video/GIS/access/position systems.",
+    "Not real mobile host or KN-065 independent deployment.",
+    "Not现场验收or a recalculation of historical G5 AC results."
+  ],
+  "cleanup": {
+    "backendClosed": true,
+    "frontendClosed": true,
+    "browserProfileRemoved": true
+  }
+}

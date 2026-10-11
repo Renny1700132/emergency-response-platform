@@ -22,6 +22,10 @@ const strings = (value: unknown) => Array.isArray(value) ? value.map(String) : [
 export function toWorkflowItem(value: unknown): WorkflowItem {
   const item = record(value)
   const attributes = record(item.attributes)
+  const feedback = item.feedback ?? attributes.feedback
+  const latestProgress = Array.isArray(feedback)
+    ? [...feedback].reverse().map(record).find((entry) => entry.progressPercent != null)?.progressPercent
+    : undefined
   return {
     id: String(item.id ?? attributes.id ?? ''),
     title: String(item.title ?? item.name ?? attributes.title ?? attributes.name ?? '未命名'),
@@ -31,7 +35,7 @@ export function toWorkflowItem(value: unknown): WorkflowItem {
     occurredAt: String(item.occurredAt ?? attributes.occurredAt ?? ''),
     assignee: String(item.assigneeRef ?? attributes.assigneeRef ?? ''),
     deadlineAt: String(item.deadlineAt ?? attributes.deadlineAt ?? ''),
-    progressPercent: Number(item.progressPercent ?? attributes.progressPercent ?? 0),
+    progressPercent: Number(item.progressPercent ?? attributes.progressPercent ?? latestProgress ?? 0),
     attachmentFileIds: strings(item.attachmentFileIds ?? attributes.attachmentFileIds),
   }
 }

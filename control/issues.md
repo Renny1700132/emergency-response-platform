@@ -1980,6 +1980,17 @@
 - G6-01两本手册/命令台账、G6-03试演/现场记录、G6-04总结/移交尚未形成；因此本轮只能为 `REVIEW_INITIAL_CANDIDATE_PENDING_B`，不置DONE，不声称P1交付齐套。
 - 指定B整体复核技术范围与证据挂接；首版接受后可供G6-01/G6-03并行使用，最终审计仍须后续增量收口。现有ISSUE-G6-00-001与ISSUE-G5-02-008继续保留。
 
+## ISSUE-G6-03-001｜H5反馈进度显示与后端记录不一致
+
+- 提出日期：2026-10-11；提出/整改协调A；技术归属B；G6-03整体复核C。
+- 来源：本轮模拟项目实际Web/H5→HTTP试演；`evidence/g6/G6-03/raw/2026-10-11T14-01-20-248Z/`及`2026-10-11T14-02-13-947Z/`，不是历史G5结果变更。
+- 级别：MAJOR（显示与已保存反馈不一致）；状态：REMEDIATED_PENDING_B_TECHNICAL_CONFIRMATION_AND_C_REVIEW，指定复核未执行。整改后实际H5显示60%，23项试演及本地质量门禁通过；证据：`evidence/g6/G6-03/rehearsal-result.json`、`quality-gate.log`；旧失败保留。
+- 复现：模拟执行员通过H5提交progressPercent=60，后端任务feedback数组保存60且status=IN_PROGRESS；前端`toWorkflowItem`仅读顶层或attributes.progressPercent，页面显示0%。
+- 影响：H5任务状态闭环仍能执行，但显示进度误导；禁止将该轮结果表述为无缺陷PASS。没有修改G5的11/59/47或★1/33。
+- 整改：在本轮长任务中仅修正前端映射，缺顶层/attributes值时取最新具有进度值的反馈；显式0优先保留。A公开登记实施范围，B技术确认及C整体复核仍待执行，不维护另一套应用源码。
+- 发布控制：不修改冻结G3成果；更新G6-03试演代码文件哈希/版本，质量门禁与整个正常/异常试演重跑，旧失败与截图原样保留；不把修正后的证据挂回旧发布快照。
+- 关闭条件：回归断言与H5实际60%显示复验通过，B技术确认/C整体复核留下实际结论后关闭。整改者不得自称指定复核已通过。
+
 ## ISSUE-G6-02-001｜首版哈希校验受 Windows 行尾转换影响
 
 - 日期：2026-10-11；发现/复核 B；主责 C；级别 MINOR；状态 `CLOSED_FOR_INITIAL_CANDIDATE / VERIFIED_BY_B`。

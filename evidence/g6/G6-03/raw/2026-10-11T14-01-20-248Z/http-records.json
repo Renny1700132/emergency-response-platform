@@ -1,0 +1,882 @@
+[
+  {
+    "id": "health-process",
+    "route": "/healthz",
+    "request": null,
+    "role": "sim-commander",
+    "response": {
+      "status": "ok",
+      "service": "emergency-backend",
+      "traceId": "c40c67ba-bebb-4046-ba46-05bb06820a20"
+    },
+    "httpStatus": 200
+  },
+  {
+    "id": "readiness-without-database-boundary",
+    "route": "/readyz",
+    "request": null,
+    "role": "sim-commander",
+    "response": {
+      "status": "not-ready",
+      "reason": "database-not-configured",
+      "traceId": "d8553c69-52e6-4a1d-baf5-1e41f1eda629"
+    },
+    "httpStatus": 503
+  },
+  {
+    "id": "browser-http-3",
+    "requestedAt": "2026-10-11T14:01:20.983Z",
+    "method": "GET",
+    "route": "/api/v1/platform/context",
+    "request": null,
+    "httpStatus": 200,
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "userId": "sim-commander",
+        "displayName": "【模拟】指挥员",
+        "roles": [
+          "emergency.read",
+          "emergency.write"
+        ],
+        "permissions": [
+          "incident:read",
+          "incident:create",
+          "incident:verify",
+          "incident:start-response",
+          "task:read",
+          "task:create",
+          "task:acknowledge",
+          "task:feedback",
+          "task:complete",
+          "task:remind",
+          "situation:read"
+        ],
+        "organizationId": "sim-museum",
+        "dataScopes": [
+          "simulated-rehearsal"
+        ]
+      },
+      "traceId": "adb2ce18-50da-4406-b915-21f0f8cbfdab",
+      "timestamp": "2026-10-11T14:01:20.985Z"
+    },
+    "elapsedMs": 2
+  },
+  {
+    "id": "browser-http-4",
+    "requestedAt": "2026-10-11T14:01:20.995Z",
+    "method": "GET",
+    "route": "/api/v1/incidents?page=1&size=50",
+    "request": null,
+    "httpStatus": 200,
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "items": [],
+        "page": 1,
+        "size": 50,
+        "total": 0
+      },
+      "traceId": "a6e19943-0e63-4543-a59a-f798b9235f74",
+      "timestamp": "2026-10-11T14:01:20.996Z"
+    },
+    "elapsedMs": 2
+  },
+  {
+    "id": "browser-http-5",
+    "requestedAt": "2026-10-11T14:01:21.106Z",
+    "method": "POST",
+    "route": "/api/v1/incidents",
+    "request": {
+      "incidentTypeCode": "FIRE",
+      "title": "【模拟】一层展厅烟雾核实",
+      "description": "模拟项目试演：值班人员发现烟雾提示。无真实灾情、人员或甲方数据。",
+      "occurredAt": "2026-10-11T06:01:00.000Z",
+      "attachmentFileIds": []
+    },
+    "httpStatus": 200,
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "id": "183eaa02-37f5-4224-ada7-185f93d272e6",
+        "incidentNo": "INC-20261011140121-4db9cf7e",
+        "incidentTypeCode": "FIRE",
+        "title": "【模拟】一层展厅烟雾核实",
+        "description": "模拟项目试演：值班人员发现烟雾提示。无真实灾情、人员或甲方数据。",
+        "occurredAt": "2026-10-11T06:01:00.000Z",
+        "attachmentFileIds": [],
+        "sourceSystem": "MANUAL",
+        "receivedAt": "2026-10-11T14:01:21.110Z",
+        "recordedAt": "2026-10-11T14:01:21.110Z",
+        "createdBy": "sim-commander",
+        "status": "PENDING_VERIFICATION",
+        "version": 1,
+        "createdAt": "2026-10-11T14:01:21.110Z",
+        "updatedAt": "2026-10-11T14:01:21.110Z",
+        "timeline": [
+          {
+            "id": "14887572-b218-46f9-ac27-531c8ad6dd4f",
+            "type": "INCIDENT_CREATED",
+            "actorId": "sim-commander",
+            "occurredAt": "2026-10-11T14:01:21.110Z",
+            "receivedAt": "2026-10-11T14:01:21.110Z",
+            "details": {
+              "sourceSystem": "MANUAL"
+            }
+          }
+        ]
+      },
+      "traceId": "550f4cd4-27e3-4e56-8829-f238c08c3b8d",
+      "timestamp": "2026-10-11T14:01:21.110Z"
+    },
+    "elapsedMs": 5
+  },
+  {
+    "id": "browser-http-6",
+    "requestedAt": "2026-10-11T14:01:21.115Z",
+    "method": "GET",
+    "route": "/api/v1/incidents?page=1&size=50",
+    "request": null,
+    "httpStatus": 200,
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "items": [
+          {
+            "id": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "incidentNo": "INC-20261011140121-4db9cf7e",
+            "incidentTypeCode": "FIRE",
+            "title": "【模拟】一层展厅烟雾核实",
+            "description": "模拟项目试演：值班人员发现烟雾提示。无真实灾情、人员或甲方数据。",
+            "occurredAt": "2026-10-11T06:01:00.000Z",
+            "attachmentFileIds": [],
+            "sourceSystem": "MANUAL",
+            "receivedAt": "2026-10-11T14:01:21.110Z",
+            "recordedAt": "2026-10-11T14:01:21.110Z",
+            "createdBy": "sim-commander",
+            "status": "PENDING_VERIFICATION",
+            "version": 1,
+            "createdAt": "2026-10-11T14:01:21.110Z",
+            "updatedAt": "2026-10-11T14:01:21.110Z",
+            "timeline": [
+              {
+                "id": "14887572-b218-46f9-ac27-531c8ad6dd4f",
+                "type": "INCIDENT_CREATED",
+                "actorId": "sim-commander",
+                "occurredAt": "2026-10-11T14:01:21.110Z",
+                "receivedAt": "2026-10-11T14:01:21.110Z",
+                "details": {
+                  "sourceSystem": "MANUAL"
+                }
+              }
+            ]
+          }
+        ],
+        "page": 1,
+        "size": 50,
+        "total": 1
+      },
+      "traceId": "be762f23-58b1-4813-9b49-72d4784bbb5d",
+      "timestamp": "2026-10-11T14:01:21.116Z"
+    },
+    "elapsedMs": 1
+  },
+  {
+    "id": "read-created-incident",
+    "route": "/api/v1/incidents?page=1&size=50",
+    "request": null,
+    "role": "sim-commander",
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "items": [
+          {
+            "id": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "incidentNo": "INC-20261011140121-4db9cf7e",
+            "incidentTypeCode": "FIRE",
+            "title": "【模拟】一层展厅烟雾核实",
+            "description": "模拟项目试演：值班人员发现烟雾提示。无真实灾情、人员或甲方数据。",
+            "occurredAt": "2026-10-11T06:01:00.000Z",
+            "attachmentFileIds": [],
+            "sourceSystem": "MANUAL",
+            "receivedAt": "2026-10-11T14:01:21.110Z",
+            "recordedAt": "2026-10-11T14:01:21.110Z",
+            "createdBy": "sim-commander",
+            "status": "PENDING_VERIFICATION",
+            "version": 1,
+            "createdAt": "2026-10-11T14:01:21.110Z",
+            "updatedAt": "2026-10-11T14:01:21.110Z",
+            "timeline": [
+              {
+                "id": "14887572-b218-46f9-ac27-531c8ad6dd4f",
+                "type": "INCIDENT_CREATED",
+                "actorId": "sim-commander",
+                "occurredAt": "2026-10-11T14:01:21.110Z",
+                "receivedAt": "2026-10-11T14:01:21.110Z",
+                "details": {
+                  "sourceSystem": "MANUAL"
+                }
+              }
+            ]
+          }
+        ],
+        "page": 1,
+        "size": 50,
+        "total": 1
+      },
+      "traceId": "c8fe2f4d-eebd-40ff-be04-69f755d02c78",
+      "timestamp": "2026-10-11T14:01:21.226Z"
+    },
+    "httpStatus": 200
+  },
+  {
+    "id": "verify-incident",
+    "route": "/api/v1/incidents/183eaa02-37f5-4224-ada7-185f93d272e6/verify",
+    "request": {
+      "decision": "CONFIRMED",
+      "reason": "【模拟】指挥员核实烟雾提示",
+      "resourceVersion": 1
+    },
+    "role": "sim-commander",
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "id": "183eaa02-37f5-4224-ada7-185f93d272e6",
+        "incidentNo": "INC-20261011140121-4db9cf7e",
+        "incidentTypeCode": "FIRE",
+        "title": "【模拟】一层展厅烟雾核实",
+        "description": "模拟项目试演：值班人员发现烟雾提示。无真实灾情、人员或甲方数据。",
+        "occurredAt": "2026-10-11T06:01:00.000Z",
+        "attachmentFileIds": [],
+        "sourceSystem": "MANUAL",
+        "receivedAt": "2026-10-11T14:01:21.110Z",
+        "recordedAt": "2026-10-11T14:01:21.110Z",
+        "createdBy": "sim-commander",
+        "status": "VERIFIED",
+        "version": 2,
+        "createdAt": "2026-10-11T14:01:21.110Z",
+        "updatedAt": "2026-10-11T14:01:21.229Z",
+        "timeline": [
+          {
+            "id": "14887572-b218-46f9-ac27-531c8ad6dd4f",
+            "type": "INCIDENT_CREATED",
+            "actorId": "sim-commander",
+            "occurredAt": "2026-10-11T14:01:21.110Z",
+            "receivedAt": "2026-10-11T14:01:21.110Z",
+            "details": {
+              "sourceSystem": "MANUAL"
+            }
+          },
+          {
+            "id": "6f41c2a5-1409-404f-b009-537e6939d6ea",
+            "type": "INCIDENT_VERIFIED",
+            "actorId": "sim-commander",
+            "occurredAt": "2026-10-11T14:01:21.229Z",
+            "receivedAt": "2026-10-11T14:01:21.229Z",
+            "details": {
+              "reason": "【模拟】指挥员核实烟雾提示"
+            }
+          }
+        ]
+      },
+      "traceId": "d29191e9-c7a3-46e1-9196-1ab4d99d3a43",
+      "timestamp": "2026-10-11T14:01:21.229Z"
+    },
+    "httpStatus": 200
+  },
+  {
+    "id": "stale-start-rejected",
+    "route": "/api/v1/incidents/183eaa02-37f5-4224-ada7-185f93d272e6/start-response",
+    "request": {
+      "planVersionId": "g603-simulated-plan-v1",
+      "resourceVersion": 1
+    },
+    "role": "sim-commander",
+    "response": {
+      "code": "VERSION_CONFLICT",
+      "message": "incident resource version conflict",
+      "traceId": "34895e15-5baf-490b-8a8e-ec812604e2ea",
+      "timestamp": "2026-10-11T14:01:21.231Z",
+      "retryable": false
+    },
+    "httpStatus": 409
+  },
+  {
+    "id": "reload-verified-incident",
+    "route": "/api/v1/incidents/183eaa02-37f5-4224-ada7-185f93d272e6",
+    "request": null,
+    "role": "sim-commander",
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "id": "183eaa02-37f5-4224-ada7-185f93d272e6",
+        "incidentNo": "INC-20261011140121-4db9cf7e",
+        "incidentTypeCode": "FIRE",
+        "title": "【模拟】一层展厅烟雾核实",
+        "description": "模拟项目试演：值班人员发现烟雾提示。无真实灾情、人员或甲方数据。",
+        "occurredAt": "2026-10-11T06:01:00.000Z",
+        "attachmentFileIds": [],
+        "sourceSystem": "MANUAL",
+        "receivedAt": "2026-10-11T14:01:21.110Z",
+        "recordedAt": "2026-10-11T14:01:21.110Z",
+        "createdBy": "sim-commander",
+        "status": "VERIFIED",
+        "version": 2,
+        "createdAt": "2026-10-11T14:01:21.110Z",
+        "updatedAt": "2026-10-11T14:01:21.229Z",
+        "timeline": [
+          {
+            "id": "14887572-b218-46f9-ac27-531c8ad6dd4f",
+            "type": "INCIDENT_CREATED",
+            "actorId": "sim-commander",
+            "occurredAt": "2026-10-11T14:01:21.110Z",
+            "receivedAt": "2026-10-11T14:01:21.110Z",
+            "details": {
+              "sourceSystem": "MANUAL"
+            }
+          },
+          {
+            "id": "6f41c2a5-1409-404f-b009-537e6939d6ea",
+            "type": "INCIDENT_VERIFIED",
+            "actorId": "sim-commander",
+            "occurredAt": "2026-10-11T14:01:21.229Z",
+            "receivedAt": "2026-10-11T14:01:21.229Z",
+            "details": {
+              "reason": "【模拟】指挥员核实烟雾提示"
+            }
+          }
+        ]
+      },
+      "traceId": "9f806214-459f-44e0-9ea7-748dcbcfef90",
+      "timestamp": "2026-10-11T14:01:21.232Z"
+    },
+    "httpStatus": 200
+  },
+  {
+    "id": "start-response",
+    "route": "/api/v1/incidents/183eaa02-37f5-4224-ada7-185f93d272e6/start-response",
+    "request": {
+      "planVersionId": "g603-simulated-plan-v1",
+      "reason": "【模拟】启动展厅处置",
+      "resourceVersion": 2
+    },
+    "role": "sim-commander",
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "incident": {
+          "id": "183eaa02-37f5-4224-ada7-185f93d272e6",
+          "incidentNo": "INC-20261011140121-4db9cf7e",
+          "incidentTypeCode": "FIRE",
+          "title": "【模拟】一层展厅烟雾核实",
+          "description": "模拟项目试演：值班人员发现烟雾提示。无真实灾情、人员或甲方数据。",
+          "occurredAt": "2026-10-11T06:01:00.000Z",
+          "attachmentFileIds": [],
+          "sourceSystem": "MANUAL",
+          "receivedAt": "2026-10-11T14:01:21.110Z",
+          "recordedAt": "2026-10-11T14:01:21.110Z",
+          "createdBy": "sim-commander",
+          "status": "RESPONDING",
+          "version": 3,
+          "createdAt": "2026-10-11T14:01:21.110Z",
+          "updatedAt": "2026-10-11T14:01:21.233Z",
+          "timeline": [
+            {
+              "id": "14887572-b218-46f9-ac27-531c8ad6dd4f",
+              "type": "INCIDENT_CREATED",
+              "actorId": "sim-commander",
+              "occurredAt": "2026-10-11T14:01:21.110Z",
+              "receivedAt": "2026-10-11T14:01:21.110Z",
+              "details": {
+                "sourceSystem": "MANUAL"
+              }
+            },
+            {
+              "id": "6f41c2a5-1409-404f-b009-537e6939d6ea",
+              "type": "INCIDENT_VERIFIED",
+              "actorId": "sim-commander",
+              "occurredAt": "2026-10-11T14:01:21.229Z",
+              "receivedAt": "2026-10-11T14:01:21.229Z",
+              "details": {
+                "reason": "【模拟】指挥员核实烟雾提示"
+              }
+            },
+            {
+              "id": "3d57e454-c07c-4c41-a17c-312e5a61b2f4",
+              "type": "RESPONSE_STARTED",
+              "actorId": "sim-commander",
+              "occurredAt": "2026-10-11T14:01:21.233Z",
+              "receivedAt": "2026-10-11T14:01:21.233Z",
+              "details": {
+                "planVersionId": "g603-simulated-plan-v1",
+                "taskCount": 2
+              }
+            }
+          ],
+          "planVersionId": "g603-simulated-plan-v1"
+        },
+        "tasks": [
+          {
+            "id": "8e10af58-ec83-4eb8-a9ff-0daa235ec78f",
+            "incidentId": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "name": "【模拟】疏散通道检查",
+            "assigneeRef": "sim-executor",
+            "deadlineAt": "2026-10-11T14:31:20.249Z",
+            "status": "PENDING",
+            "deliveryStatus": "ACCEPTED",
+            "version": 1,
+            "feedback": [],
+            "deliveryError": null
+          },
+          {
+            "id": "75e475d9-be14-49ed-ad87-3452db140e90",
+            "incidentId": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "name": "【模拟】展厅人员清点",
+            "assigneeRef": "sim-executor",
+            "deadlineAt": "2026-10-11T14:46:20.249Z",
+            "status": "PENDING",
+            "deliveryStatus": "ACCEPTED",
+            "version": 1,
+            "feedback": [],
+            "deliveryError": null
+          }
+        ]
+      },
+      "traceId": "0bdd6bb6-2dc6-41e3-8a98-d0ce6aed0c1b",
+      "timestamp": "2026-10-11T14:01:21.234Z"
+    },
+    "httpStatus": 200
+  },
+  {
+    "id": "browser-http-12",
+    "requestedAt": "2026-10-11T14:01:21.260Z",
+    "method": "GET",
+    "route": "/api/v1/platform/context",
+    "request": null,
+    "httpStatus": 200,
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "userId": "sim-commander",
+        "displayName": "【模拟】指挥员",
+        "roles": [
+          "emergency.read",
+          "emergency.write"
+        ],
+        "permissions": [
+          "incident:read",
+          "incident:create",
+          "incident:verify",
+          "incident:start-response",
+          "task:read",
+          "task:create",
+          "task:acknowledge",
+          "task:feedback",
+          "task:complete",
+          "task:remind",
+          "situation:read"
+        ],
+        "organizationId": "sim-museum",
+        "dataScopes": [
+          "simulated-rehearsal"
+        ]
+      },
+      "traceId": "cd4b4541-bac4-4ce3-985f-be29f568585c",
+      "timestamp": "2026-10-11T14:01:21.261Z"
+    },
+    "elapsedMs": 1
+  },
+  {
+    "id": "browser-http-13",
+    "requestedAt": "2026-10-11T14:01:21.265Z",
+    "method": "GET",
+    "route": "/api/v1/incidents?page=1&size=50",
+    "request": null,
+    "httpStatus": 200,
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "items": [
+          {
+            "id": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "incidentNo": "INC-20261011140121-4db9cf7e",
+            "incidentTypeCode": "FIRE",
+            "title": "【模拟】一层展厅烟雾核实",
+            "description": "模拟项目试演：值班人员发现烟雾提示。无真实灾情、人员或甲方数据。",
+            "occurredAt": "2026-10-11T06:01:00.000Z",
+            "attachmentFileIds": [],
+            "sourceSystem": "MANUAL",
+            "receivedAt": "2026-10-11T14:01:21.110Z",
+            "recordedAt": "2026-10-11T14:01:21.110Z",
+            "createdBy": "sim-commander",
+            "status": "RESPONDING",
+            "version": 3,
+            "createdAt": "2026-10-11T14:01:21.110Z",
+            "updatedAt": "2026-10-11T14:01:21.233Z",
+            "timeline": [
+              {
+                "id": "14887572-b218-46f9-ac27-531c8ad6dd4f",
+                "type": "INCIDENT_CREATED",
+                "actorId": "sim-commander",
+                "occurredAt": "2026-10-11T14:01:21.110Z",
+                "receivedAt": "2026-10-11T14:01:21.110Z",
+                "details": {
+                  "sourceSystem": "MANUAL"
+                }
+              },
+              {
+                "id": "6f41c2a5-1409-404f-b009-537e6939d6ea",
+                "type": "INCIDENT_VERIFIED",
+                "actorId": "sim-commander",
+                "occurredAt": "2026-10-11T14:01:21.229Z",
+                "receivedAt": "2026-10-11T14:01:21.229Z",
+                "details": {
+                  "reason": "【模拟】指挥员核实烟雾提示"
+                }
+              },
+              {
+                "id": "3d57e454-c07c-4c41-a17c-312e5a61b2f4",
+                "type": "RESPONSE_STARTED",
+                "actorId": "sim-commander",
+                "occurredAt": "2026-10-11T14:01:21.233Z",
+                "receivedAt": "2026-10-11T14:01:21.233Z",
+                "details": {
+                  "planVersionId": "g603-simulated-plan-v1",
+                  "taskCount": 2
+                }
+              }
+            ],
+            "planVersionId": "g603-simulated-plan-v1"
+          }
+        ],
+        "page": 1,
+        "size": 50,
+        "total": 1
+      },
+      "traceId": "781aba5f-d943-4a07-a765-80007b0a9cc5",
+      "timestamp": "2026-10-11T14:01:21.266Z"
+    },
+    "elapsedMs": 2
+  },
+  {
+    "id": "browser-http-14",
+    "requestedAt": "2026-10-11T14:01:21.658Z",
+    "method": "GET",
+    "route": "/api/v1/platform/context",
+    "request": null,
+    "httpStatus": 200,
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "userId": "sim-executor",
+        "displayName": "【模拟】执行员",
+        "roles": [
+          "emergency.read",
+          "emergency.write"
+        ],
+        "permissions": [
+          "incident:read",
+          "incident:create",
+          "incident:verify",
+          "incident:start-response",
+          "task:read",
+          "task:create",
+          "task:acknowledge",
+          "task:feedback",
+          "task:complete",
+          "task:remind",
+          "situation:read"
+        ],
+        "organizationId": "sim-museum",
+        "dataScopes": [
+          "simulated-rehearsal"
+        ]
+      },
+      "traceId": "178ccc49-3487-4cf2-bd8f-6ebf39dd85f0",
+      "timestamp": "2026-10-11T14:01:21.658Z"
+    },
+    "elapsedMs": 1
+  },
+  {
+    "id": "browser-http-15",
+    "requestedAt": "2026-10-11T14:01:21.662Z",
+    "method": "GET",
+    "route": "/api/v1/tasks?page=1&size=50",
+    "request": null,
+    "httpStatus": 200,
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "items": [
+          {
+            "id": "8e10af58-ec83-4eb8-a9ff-0daa235ec78f",
+            "incidentId": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "name": "【模拟】疏散通道检查",
+            "assigneeRef": "sim-executor",
+            "deadlineAt": "2026-10-11T14:31:20.249Z",
+            "status": "PENDING",
+            "deliveryStatus": "ACCEPTED",
+            "version": 1,
+            "feedback": [],
+            "deliveryError": null
+          },
+          {
+            "id": "75e475d9-be14-49ed-ad87-3452db140e90",
+            "incidentId": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "name": "【模拟】展厅人员清点",
+            "assigneeRef": "sim-executor",
+            "deadlineAt": "2026-10-11T14:46:20.249Z",
+            "status": "PENDING",
+            "deliveryStatus": "ACCEPTED",
+            "version": 1,
+            "feedback": [],
+            "deliveryError": null
+          }
+        ],
+        "page": 1,
+        "size": 50,
+        "total": 2
+      },
+      "traceId": "9e3cfe62-4c54-4677-9d72-d16e0a4e1435",
+      "timestamp": "2026-10-11T14:01:21.669Z"
+    },
+    "elapsedMs": 8
+  },
+  {
+    "id": "browser-http-16",
+    "requestedAt": "2026-10-11T14:01:21.770Z",
+    "method": "POST",
+    "route": "/api/v1/tasks/8e10af58-ec83-4eb8-a9ff-0daa235ec78f/acknowledge",
+    "request": {
+      "reason": "移动端接收任务",
+      "resourceVersion": 1
+    },
+    "httpStatus": 200,
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "id": "8e10af58-ec83-4eb8-a9ff-0daa235ec78f",
+        "incidentId": "183eaa02-37f5-4224-ada7-185f93d272e6",
+        "name": "【模拟】疏散通道检查",
+        "assigneeRef": "sim-executor",
+        "deadlineAt": "2026-10-11T14:31:20.249Z",
+        "status": "ACKNOWLEDGED",
+        "deliveryStatus": "ACCEPTED",
+        "version": 2,
+        "feedback": [],
+        "deliveryError": null
+      },
+      "traceId": "c705da29-6652-40e2-bfa8-2018d50865e9",
+      "timestamp": "2026-10-11T14:01:21.772Z"
+    },
+    "elapsedMs": 2
+  },
+  {
+    "id": "browser-http-17",
+    "requestedAt": "2026-10-11T14:01:21.778Z",
+    "method": "GET",
+    "route": "/api/v1/tasks?page=1&size=50",
+    "request": null,
+    "httpStatus": 200,
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "items": [
+          {
+            "id": "8e10af58-ec83-4eb8-a9ff-0daa235ec78f",
+            "incidentId": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "name": "【模拟】疏散通道检查",
+            "assigneeRef": "sim-executor",
+            "deadlineAt": "2026-10-11T14:31:20.249Z",
+            "status": "ACKNOWLEDGED",
+            "deliveryStatus": "ACCEPTED",
+            "version": 2,
+            "feedback": [],
+            "deliveryError": null
+          },
+          {
+            "id": "75e475d9-be14-49ed-ad87-3452db140e90",
+            "incidentId": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "name": "【模拟】展厅人员清点",
+            "assigneeRef": "sim-executor",
+            "deadlineAt": "2026-10-11T14:46:20.249Z",
+            "status": "PENDING",
+            "deliveryStatus": "ACCEPTED",
+            "version": 1,
+            "feedback": [],
+            "deliveryError": null
+          }
+        ],
+        "page": 1,
+        "size": 50,
+        "total": 2
+      },
+      "traceId": "c2307be5-b7f0-4ecd-9133-815061529eb2",
+      "timestamp": "2026-10-11T14:01:21.779Z"
+    },
+    "elapsedMs": 1
+  },
+  {
+    "id": "browser-http-18",
+    "requestedAt": "2026-10-11T14:01:21.989Z",
+    "method": "POST",
+    "route": "/api/v1/tasks/8e10af58-ec83-4eb8-a9ff-0daa235ec78f/feedback",
+    "request": {
+      "content": "【模拟】执行员已检查通道，正在复核疏散指示。",
+      "progressPercent": 60,
+      "attachmentFileIds": [],
+      "resourceVersion": 2
+    },
+    "httpStatus": 200,
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "id": "8e10af58-ec83-4eb8-a9ff-0daa235ec78f",
+        "incidentId": "183eaa02-37f5-4224-ada7-185f93d272e6",
+        "name": "【模拟】疏散通道检查",
+        "assigneeRef": "sim-executor",
+        "deadlineAt": "2026-10-11T14:31:20.249Z",
+        "status": "IN_PROGRESS",
+        "deliveryStatus": "ACCEPTED",
+        "version": 3,
+        "feedback": [
+          {
+            "id": "afcbfd5e-190f-40b0-b9b6-bda9070b90d1",
+            "content": "【模拟】执行员已检查通道，正在复核疏散指示。",
+            "progressPercent": 60,
+            "attachmentFileIds": [],
+            "actorId": "sim-executor",
+            "occurredAt": "2026-10-11T14:01:21.991Z"
+          }
+        ],
+        "deliveryError": null
+      },
+      "traceId": "f9bde24c-4217-4a2c-9366-e28e9da15f16",
+      "timestamp": "2026-10-11T14:01:21.991Z"
+    },
+    "elapsedMs": 3
+  },
+  {
+    "id": "browser-http-19",
+    "requestedAt": "2026-10-11T14:01:21.995Z",
+    "method": "GET",
+    "route": "/api/v1/tasks?page=1&size=50",
+    "request": null,
+    "httpStatus": 200,
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "items": [
+          {
+            "id": "8e10af58-ec83-4eb8-a9ff-0daa235ec78f",
+            "incidentId": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "name": "【模拟】疏散通道检查",
+            "assigneeRef": "sim-executor",
+            "deadlineAt": "2026-10-11T14:31:20.249Z",
+            "status": "IN_PROGRESS",
+            "deliveryStatus": "ACCEPTED",
+            "version": 3,
+            "feedback": [
+              {
+                "id": "afcbfd5e-190f-40b0-b9b6-bda9070b90d1",
+                "content": "【模拟】执行员已检查通道，正在复核疏散指示。",
+                "progressPercent": 60,
+                "attachmentFileIds": [],
+                "actorId": "sim-executor",
+                "occurredAt": "2026-10-11T14:01:21.991Z"
+              }
+            ],
+            "deliveryError": null
+          },
+          {
+            "id": "75e475d9-be14-49ed-ad87-3452db140e90",
+            "incidentId": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "name": "【模拟】展厅人员清点",
+            "assigneeRef": "sim-executor",
+            "deadlineAt": "2026-10-11T14:46:20.249Z",
+            "status": "PENDING",
+            "deliveryStatus": "ACCEPTED",
+            "version": 1,
+            "feedback": [],
+            "deliveryError": null
+          }
+        ],
+        "page": 1,
+        "size": 50,
+        "total": 2
+      },
+      "traceId": "aff93fb4-1da0-406b-819e-e517cffd4e50",
+      "timestamp": "2026-10-11T14:01:21.995Z"
+    },
+    "elapsedMs": 1
+  },
+  {
+    "id": "read-h5-progress",
+    "route": "/api/v1/tasks?page=1&size=50",
+    "request": null,
+    "role": "sim-commander",
+    "response": {
+      "code": "OK",
+      "message": "success",
+      "data": {
+        "items": [
+          {
+            "id": "8e10af58-ec83-4eb8-a9ff-0daa235ec78f",
+            "incidentId": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "name": "【模拟】疏散通道检查",
+            "assigneeRef": "sim-executor",
+            "deadlineAt": "2026-10-11T14:31:20.249Z",
+            "status": "IN_PROGRESS",
+            "deliveryStatus": "ACCEPTED",
+            "version": 3,
+            "feedback": [
+              {
+                "id": "afcbfd5e-190f-40b0-b9b6-bda9070b90d1",
+                "content": "【模拟】执行员已检查通道，正在复核疏散指示。",
+                "progressPercent": 60,
+                "attachmentFileIds": [],
+                "actorId": "sim-executor",
+                "occurredAt": "2026-10-11T14:01:21.991Z"
+              }
+            ],
+            "deliveryError": null
+          },
+          {
+            "id": "75e475d9-be14-49ed-ad87-3452db140e90",
+            "incidentId": "183eaa02-37f5-4224-ada7-185f93d272e6",
+            "name": "【模拟】展厅人员清点",
+            "assigneeRef": "sim-executor",
+            "deadlineAt": "2026-10-11T14:46:20.249Z",
+            "status": "PENDING",
+            "deliveryStatus": "ACCEPTED",
+            "version": 1,
+            "feedback": [],
+            "deliveryError": null
+          }
+        ],
+        "page": 1,
+        "size": 50,
+        "total": 2
+      },
+      "traceId": "c91efede-304c-431f-912d-a432cd0cc22b",
+      "timestamp": "2026-10-11T14:01:22.118Z"
+    },
+    "httpStatus": 200
+  }
+]

@@ -500,3 +500,13 @@
 - 审计/评分：减少分支与PR流转，保留Prompt/commit/Review和本地验证；新任务PR=N/A，不冒充PR或远程CI。G6-00仍REVIEW待C，此授权不替代业务复核。
 - 不改变：冻结需求/设计、39FR/34★/117AC、关键数字、G5真实11/59/47及★1/33、真实资源与验收义务；不新增G6课程豁免或PASS。
 - 状态：ACTIVE_FOR_G6；解除此前BLOCKED_AT_PUSH授权问题，推送结果仍按实际记录。
+
+## OVR-039｜G6-03模拟项目试演与编号纠偏
+
+- 日期：2026-10-11；主责A；当前P0见 LOG-G6-03-001 及 USER_STEERING_RAW。
+- PFC-G6-03-001：此前Prompt将复盘归入G6-03；最新P0要求以远端tasks真实边界执行。采用tasks的验收答辩/演示/质询定义，不制作G6-04复盘，不改写旧事实或历史证据。
+- PFC-G6-03-002：tasks要求真实环境/数据/异常演示，当前用户明确“这是一个模拟项目，不需要这些数据，请你生成合理的模拟数据”。本轮生成SIMULATED_DATA并在当前软件本地实际执行，形成COURSE_SIMULATED_REHEARSAL候选。所有成功/失败只能来自实际运行；甲方真实系统、真实现场、独立部署和签署仍REAL_WORLD_DEFERRED。本授权不把G5 NOT_RUN/BLOCKED改成PASS，不代C复核，也不自动使G6-03 DONE。
+- PFC-G6-03-003：用户要求“不需记录这些信息”，适用先前询问的D18日期、课程指定答辩时长和复核安排；本轮不将其设为产出阻断。机器实际执行时间/耗时和真正发生的Review仍按治理留证，不能编造安排或结论。
+- 工具适配：演示文稿Skill要求artifact-tool与load_workspace_dependencies，但当前工具目录无该加载工具，本地node_modules也无artifact-tool。不安装替代依赖；使用仓库已有的原生PowerPoint COM路径新建可编辑PPTX并原生导出PDF/逐页图，再检查包结构、文字/来源、每页渲染。PPTX无唯一对应Reference，旧G4 PPT只提供历史结构参考，不复用其旧状态或截图；本轮不新建DOCX，故不以无关DOCX假装唯一Pair。
+- 评分/审计影响：演示证明模拟数据下的本地路径，真实履约门禁不满足；C须审查课程适用性和来源。模板/运行时适配透明，不声称artifact-tool生成或真实现场验收通过。
+- 状态：ACTIVE_FOR_G6_03_SIMULATED_REHEARSAL；整体业务接受PENDING_C。

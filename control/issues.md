@@ -1955,3 +1955,11 @@
 - 结论：`ACCEPTED / CLOSED_FOR_COURSE_STAGE / VERIFIED_BY_C`，G5-03 可置 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / IMPLEMENTATION_AND_REAL_WORLD_DEFERRED）`；未发现新的实现缺陷，不新增 Issue。
 - 真实状态不变：AC 11 PASS / 59 NOT_RUN / 47 BLOCKED，★FR 1 PASS / 33 BLOCKED，甲方六类系统 0/6，真实非乙方操作者 0。真实项目门禁和后续补测责任未关闭；ISSUE-G5-02-008 继续为非阻断改进项。
 - 详细证据：`logs/reviews/2026-10-11_G5-03-C-final-review.md`、`evidence/g5/G5-03/c-final-acceptance.json`。
+
+## ISSUE-G6-00-001｜G6真实演示门禁与G5条件准出边界
+
+- 日期：2026-10-11；提出/统筹A；技术输入B；复核C；状态OPEN / G6_ACCEPTANCE_RISK。
+- 依据：G6任务书第2页要求真实环境、真实数据及异常分支；G5-03最终C Review接受的是COURSE_CONDITIONAL_ACCEPTANCE，真实AC 11/59/47、★FR1/33、甲方六系统0/6、真实非乙方操作者0均未变。
+- 风险：无法凭现有G5课程结论或旧演示模式证明G6现场门禁已满足；不能扩写已有豁免或以模拟冒充真实。D18公历日期及现场真实环境/数据可用性【待人工确认】。
+- 处置：G6-00规划可完成；A提前落实现场环境/合法数据/窗口，B确认实际路径与异常运行，C核对证据类型。缺资源时G6-03准备可继续，最终现场验收保持BLOCKED；新增课程裁决须书面单独授权及复核。
+- 关闭：真实运行证据、版本/数据来源/环境/正常异常记录到位且C复核；或明确G6课程条件裁决获接受，但真实项目缺口仍单独保留。未到位不写PASS。

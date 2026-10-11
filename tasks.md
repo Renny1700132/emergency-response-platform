@@ -198,3 +198,5 @@
 | WBS-28 | MOD-PLATFORM、MOD-TASK |
 
 G5-03 A提交记录：内容commit `034d97d144a0b4313db620287b4902bea3debc5e` 已安全非force push `origin/master`；四正式DOCX/RTM v5/八特性/三审/本地quality和全页QA齐套。C 于 2026-10-11 独立最终复核 **ACCEPTED**，G5-03 为课程条件 DONE；真实实现/环境延期继续，复核证据见 `logs/reviews/2026-10-11_G5-03-C-final-review.md`。
+
+G5-03 C最终复核提交：`474c91f396cc4c618cb747fa662074656483fae2` 已安全非force push `origin/master`，远程引用核验一致；回填小提交不记录自身hash。

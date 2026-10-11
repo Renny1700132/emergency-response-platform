@@ -1,5 +1,10 @@
 # Git 与配置管理工作流
 
+## 当前执行：G6规划与交付（OVR-038，2026-10-11）
+
+用户明确授权“允许master授权至G6，将本地工作内容推送到远程”。G6长任务在最新master执行，保留原文Prompt、自检、指定Review、commit与推送留痕；重新fetch并安全同步后非force push origin master，日志独立小提交回填。不要求新建功能分支或PR；历史G4 PR证据原样保留，既有G5课程条件接受不自动变为G6或真实项目验收PASS。共享master提交串行；禁止force/历史重写，语义不确定冲突停止。下方G5/G4阶段描述为历史，当前G6流程优先用本节；详细授权见control/overrides.md的OVR-038。
+
+
 ## 当前执行：G5（OVR-032，2026-10-08）
 
 G4-00—G4-11 已 DONE 并收口进入 master；第五关“质量门禁（测试与质量特性验证）”已启动。自 G5-00 起在最新 master 上完成长任务，自检/必要 Review 留痕、安全 commit、重新 fetch 后非 force 直接 push master；不要求功能分支、PR/Approve/Merge 或远程 CI。保留真实测试、缺陷、RTM、八大质量特性和验收门禁。当前专项规则为 `g5_quality_workflow.md`，规划为 `docs/work/A_PM/g5_quality_gate_plan.md`。以下 G4 专项表述仅解释历史，不约束 G5。

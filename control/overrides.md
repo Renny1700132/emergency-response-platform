@@ -491,3 +491,12 @@
 - PFC-G6-00-003为准入风险而非事实Override：G5课程条件接受不自动豁免G6真实环境/数据/异常演示；只允许本轮规划，缺口见ISSUE-G6-00-001，不新增验收豁免或PASS。
 - 原目录未提交证据按用户授权原样归档到logs/history；旧tasks的DONE已在master承接，不覆盖新版；同日期日志不同内容分别保留；原始G5/G6文件不丢失、注册工作树不删除。
 - 本轮仅内部规划，不触发正式交付文档生成；后续两手册/复盘先读正式文档Skill并物理复制对应Reference。不改39FR/34★/117AC、PE/KN、责任、真实验收与冻结基线。
+
+## OVR-038｜G6 master持续授权与安全推送
+
+- 日期：2026-10-11；主责A；当前P0完整原文见LOG-G6-00-002：“允许master授权至G6，将本地工作内容推送到远程”。
+- 覆盖：OVR-037仅G6-00本轮授权/后续默认PR的限制；G6可直接在最新master执行并非force推送。G4历史PR规则与证据不改变。
+- 流程：开工master/status/fetch/pull --ff-only→原文日志→长任务→自检/指定整体Review→tasks/RTM/evidence→staged diff/commit→重新fetch/安全同步→非force push origin master→独立日志回填。共享master提交串行；语义不确定冲突停止，不force、不改写历史。
+- 审计/评分：减少分支与PR流转，保留Prompt/commit/Review和本地验证；新任务PR=N/A，不冒充PR或远程CI。G6-00仍REVIEW待C，此授权不替代业务复核。
+- 不改变：冻结需求/设计、39FR/34★/117AC、关键数字、G5真实11/59/47及★1/33、真实资源与验收义务；不新增G6课程豁免或PASS。
+- 状态：ACTIVE_FOR_G6；解除此前BLOCKED_AT_PUSH授权问题，推送结果仍按实际记录。

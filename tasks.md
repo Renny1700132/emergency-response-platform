@@ -217,4 +217,4 @@ G5-03 C最终复核提交：`474c91f396cc4c618cb747fa662074656483fae2` 已安全
 
 统一DoD：原文日志 → 受控输入/版本 → 长任务清单 → 真实验证与缺项 → 整体Review/必要复验 → tasks/RTM/索引/日志一致 → staged diff/commit → 安全同步及非force push → 独立日志回填。自检不替代指定复核；PENDING_REVIEW不可写DONE。沿用原有历史PR审计；新任务按已登记流程产生commit，未使用PR明确N/A，不能伪造PR或远程CI。
 
-G6-00本轮按用户明确授权在现有master工作树安全提交/同步。后续G6默认从最新master建功能分支并走PR/指定复核后合并；OVR-032只适用于G5，不自动扩大。长任务只建一个对应分支/PR，内部清单不另流转；若用户另行授权G6直接master，先登记方法Override再执行。两种流程都须保留原文日志、Review、commit、同步和推送证据。
+G6当前流程：用户已明确将master授权扩展至G6（OVR-038）。每个长任务在最新master执行，内部清单不另建Task/分支/PR；保留原文日志、自检、指定整体Review/必要复验、commit、重新fetch/安全同步、非force push及独立日志回填。共享master提交串行；历史G4 PR证据保留，新任务PR为N/A。授权不免除C复核或改变真实验收条件。

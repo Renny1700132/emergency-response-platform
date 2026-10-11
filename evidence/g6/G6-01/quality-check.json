@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G6-01",
+  "releaseCommit": "beb605f83e738a39dfe388ed4bc25b5b724eddcf",
+  "command": "npm run quality",
+  "environment": {
+    "platform": "Microsoft Windows NT 10.0.22631.0",
+    "node": "v24.14.0",
+    "npm": "11.9.0"
+  },
+  "startedAt": "2026-10-11T21:17:50.3097295+08:00",
+  "finishedAt": "2026-10-11T21:18:20.9895853+08:00",
+  "durationSeconds": 30.68,
+  "exitCode": 0,
+  "status": "PASS",
+  "rawLog": "evidence/g6/G6-01/raw/npm-quality.log"
+}

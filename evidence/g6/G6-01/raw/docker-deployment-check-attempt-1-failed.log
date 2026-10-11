@@ -1,0 +1,155 @@
+++ cat /proc/sys/kernel/random/uuid
++ export POSTGRES_PASSWORD=[REDACTED_EPHEMERAL_SECRET]
++ POSTGRES_PASSWORD=[REDACTED_EPHEMERAL_SECRET]
++ export MIDDLE_PLATFORM_BASE_URL=http://host.docker.internal:43104
++ MIDDLE_PLATFORM_BASE_URL=http://host.docker.internal:43104
++ trap cleanup EXIT
++ docker info
+WARNING: No blkio throttle.read_bps_device support
+WARNING: No blkio throttle.write_bps_device support
+WARNING: No blkio throttle.read_iops_device support
+WARNING: No blkio throttle.write_iops_device support
++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual down -v --remove-orphans
++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual build --no-cache backend
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "default" instance using docker driver
+
+#1 [backend internal] load build definition from Dockerfile
+#1 transferring dockerfile: 212B 0.0s done
+#1 DONE 0.0s
+
+#2 [backend internal] load metadata for docker.io/library/node:24-alpine
+#2 DONE 0.0s
+
+#3 [backend internal] load .dockerignore
+#3 transferring context: 2B 0.0s done
+#3 DONE 0.0s
+
+#4 [backend 1/5] FROM docker.io/library/node:24-alpine
+#4 DONE 0.0s
+
+#5 [backend 2/5] WORKDIR /app
+#5 CACHED
+
+#6 [backend internal] load build context
+#6 transferring context: 1.46kB 0.1s done
+#6 DONE 0.1s
+
+#7 [backend 3/5] COPY package.json package-lock.json ./
+#7 DONE 0.0s
+
+#8 [backend 4/5] RUN npm ci --omit=dev
+#8 1.476
+#8 1.476 added 14 packages, and audited 15 packages in 976ms
+#8 1.477
+#8 1.477 found 0 vulnerabilities
+#8 DONE 1.5s
+
+#9 [backend 5/5] COPY backend ./backend
+#9 DONE 0.0s
+
+#10 [backend] exporting to image
+#10 exporting layers 0.1s done
+#10 writing image sha256:176cfe2fbbb11573151b716b0f25ff02f6430ec63eb41b2158f53c2d8ca94cb8 done
+#10 naming to docker.io/library/g601manual-backend done
+#10 DONE 0.1s
+
+#11 [backend] resolving provenance for metadata file
+#11 DONE 0.0s
+ backend  Built
++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual up -d --wait
+ Network g601manual_default  Creating
+ Network g601manual_default  Created
+ Volume "g601manual_emergency-postgres"  Creating
+ Volume "g601manual_emergency-postgres"  Created
+ Container g601manual-database-1  Creating
+ Container g601manual-database-1  Created
+ Container g601manual-backend-1  Creating
+ Container g601manual-backend-1  Created
+ Container g601manual-database-1  Starting
+ Container g601manual-database-1  Started
+ Container g601manual-database-1  Waiting
+ Container g601manual-database-1  Healthy
+ Container g601manual-backend-1  Starting
+ Container g601manual-backend-1  Started
+ Container g601manual-database-1  Waiting
+ Container g601manual-backend-1  Waiting
+ Container g601manual-backend-1  Healthy
+ Container g601manual-database-1  Healthy
++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual exec -T backend node backend/scripts/migrate.mjs up
+{"migration":"001_foundation.up.sql","direction":"up","status":"applied"}
+{"migration":"002_event_workflow.up.sql","direction":"up","status":"applied"}
+{"migration":"003_sprint2_mvp.up.sql","direction":"up","status":"applied"}
+++ curl -sS -o /mnt/e/26shixi/emergency-response-platform-g5-02/evidence/g6/G6-01/raw/healthz.json -w '%{http_code}' http://127.0.0.1:3000/healthz
++ HEALTH_STATUS=200
+++ curl -sS -o /mnt/e/26shixi/emergency-response-platform-g5-02/evidence/g6/G6-01/raw/readyz.json -w '%{http_code}' http://127.0.0.1:3000/readyz
++ READY_STATUS=200
++ test 200 = 200
++ test 200 = 200
++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual exec -T database psql -U emergency -d emergency -v ON_ERROR_STOP=1 -c 'INSERT INTO em_audit_log(trace_id, actor_id, action, outcome, details) VALUES ('\''g6-manual-sentinel'\'', '\''member-b'\'', '\''G6_MANUAL_VERIFY'\'', '\''allowed'\'', '\''{"scope":"G6-01"}'\''::jsonb);'
+INSERT 0 1
+++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual exec -T database psql -U emergency -d emergency -Atqc 'SELECT count(*) FROM pg_tables WHERE schemaname='\''public'\'';'
++ TABLES_BEFORE=37
+++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual exec -T database psql -U emergency -d emergency -Atqc 'SELECT count(*) FROM em_audit_log WHERE trace_id='\''g6-manual-sentinel'\'';'
++ SENTINEL_BEFORE=1
++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual exec -T database sh -lc 'pg_dump -U emergency -d emergency -Fc -f /tmp/g6-backup.dump && sha256sum /tmp/g6-backup.dump'
++ tee /mnt/e/26shixi/emergency-response-platform-g5-02/evidence/g6/G6-01/raw/backup-sha256.txt
+1431016b498c375e2e33cc6fcd460c369ea0129d4bf2f669d2d03b5e674eb207  /tmp/g6-backup.dump
++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual exec -T database createdb -U emergency emergency_restore
++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual exec -T database pg_restore -U emergency -d emergency_restore --exit-on-error /tmp/g6-backup.dump
+++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual exec -T database psql -U emergency -d emergency_restore -Atqc 'SELECT count(*) FROM pg_tables WHERE schemaname='\''public'\'';'
++ TABLES_AFTER=37
+++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual exec -T database psql -U emergency -d emergency_restore -Atqc 'SELECT count(*) FROM em_audit_log WHERE trace_id='\''g6-manual-sentinel'\'';'
++ SENTINEL_AFTER=1
++ test 37 = 37
++ test 1 = 1
++ test 1 = 1
++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual restart backend
+ Container g601manual-backend-1  Restarting
+ Container g601manual-backend-1  Started
+++ seq 1 30
++ for _ in $(seq 1 30)
+++ curl -sS -o /mnt/e/26shixi/emergency-response-platform-g5-02/evidence/g6/G6-01/raw/readyz-after-restart.json -w '%{http_code}' http://127.0.0.1:3000/readyz
+++ true
++ RESTART_READY_STATUS=000
++ test 000 = 200
++ sleep 1
++ for _ in $(seq 1 30)
+++ curl -sS -o /mnt/e/26shixi/emergency-response-platform-g5-02/evidence/g6/G6-01/raw/readyz-after-restart.json -w '%{http_code}' http://127.0.0.1:3000/readyz
++ RESTART_READY_STATUS=200
++ test 200 = 200
++ break
++ test 200 = 200
+++ date --iso-8601=seconds
++ FINISHED_AT=2026-10-11T21:03:32+08:00
+++ date +%s
++ DURATION_SECONDS=20
+++ docker version --format '{{.Server.Version}}'
++ DOCKER_VERSION=28.1.1
+++ docker compose version --short
++ COMPOSE_VERSION=2.35.1
+++ uname -srmo
++ PLATFORM='Linux 5.10.16.3-microsoft-standard-WSL2 x86_64 GNU/Linux'
++ export RESULT_FILE STARTED_AT FINISHED_AT DURATION_SECONDS HEALTH_STATUS READY_STATUS RESTART_READY_STATUS
++ export TABLES_BEFORE TABLES_AFTER SENTINEL_BEFORE SENTINEL_AFTER DOCKER_VERSION COMPOSE_VERSION PLATFORM
++ node --input-type=module
+scripts/g6/run-g6-01-deployment-check.sh: line 71: node: command not found
++ cleanup
++ local exit_code=127
++ set +e
++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual logs --no-color
++ docker compose -f /mnt/e/26shixi/emergency-response-platform-g5-02/compose.yaml -p g601manual down -v --remove-orphans
+ Container g601manual-backend-1  Stopping
+ Container g601manual-backend-1  Stopped
+ Container g601manual-backend-1  Removing
+ Container g601manual-backend-1  Removed
+ Container g601manual-database-1  Stopping
+ Container g601manual-database-1  Stopped
+ Container g601manual-database-1  Removing
+ Container g601manual-database-1  Removed
+ Volume g601manual_emergency-postgres  Removing
+ Network g601manual_default  Removing
+ Volume g601manual_emergency-postgres  Removed
+ Network g601manual_default  Removed
++ return 127

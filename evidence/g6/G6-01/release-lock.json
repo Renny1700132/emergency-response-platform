@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G6-01",
+  "lockedAt": "2026-10-11T20:56:00+08:00",
+  "repositorySnapshot": "beb605f83e738a39dfe388ed4bc25b5b724eddcf",
+  "latestCodeAffectingCommit": "5fc359aea5e08118d17f2e076e6f669b04adf9b4",
+  "branch": "master",
+  "scope": [
+    "frontend",
+    "backend",
+    "compose.yaml",
+    "docs/work/B_TECH/openapi_v1.yaml"
+  ],
+  "boundary": "The G6-01 documents and command evidence describe this locked candidate. Later documentation commits do not silently change the tested application implementation."
+}

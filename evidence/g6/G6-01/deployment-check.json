@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G6-01",
+  "releaseCommit": "beb605f83e738a39dfe388ed4bc25b5b724eddcf",
+  "evidenceKind": "MEMBER_B_ISOLATED_DOCKER_DEPLOYMENT_AND_RECOVERY",
+  "startedAt": "2026-10-11T21:04:06+08:00",
+  "finishedAt": "2026-10-11T21:04:25+08:00",
+  "durationSeconds": 19,
+  "environment": {
+    "docker": "28.1.1",
+    "compose": "2.35.1",
+    "platform": "Linux 5.10.16.3-microsoft-standard-WSL2 x86_64 GNU/Linux"
+  },
+  "checks": {
+    "healthStatus": 200,
+    "readyStatus": 200,
+    "readyAfterRestartStatus": 200,
+    "publicTablesBeforeRestore": 37,
+    "publicTablesAfterRestore": 37,
+    "sentinelBeforeRestore": 1,
+    "sentinelAfterRestore": 1
+  },
+  "status": "PASS",
+  "evidenceClassification": "MEMBER_B_LOCAL_ISOLATED_RUN",
+  "boundaries": [
+    "This run verifies the documented Docker deployment, migration, health, readiness, restart, backup and restore commands in an isolated local project.",
+    "The owner middle platform and six owner external systems were not connected.",
+    "The executor was member B; this is not KN-065 independent non-contractor deployment evidence."
+  ]
+}

@@ -1,0 +1,240 @@
+# 某自然博物馆智能运营中心建设项目——应急管理子系统 部署与运维手册
+
+- 文档编号：YJGL-G6-45
+- 版本：V0.1
+- 状态：REVIEW
+- 主责：严宇（B，技术负责人）
+- 复核：何思源（A，项目负责人，待复核）
+- 发布快照：`beb605f83e738a39dfe388ed4bc25b5b724eddcf`
+- 代码快照：`5fc359aea5e08118d17f2e076e6f669b04adf9b4`
+- 编制日期：2026-10-11
+
+## 1 引言
+
+本手册规定系统的容器部署、配置、迁移、健康检查、监控、日志、备份恢复、升级回退和交接要求。生产部署必须使用批准的制品、私有配置和甲方提供的中台/网络资源。文中 2026-10-11 的实际运行由成员 B 在隔离 WSL2 Docker 环境完成，只证明命令可运行；真实非乙方独立部署仍为 `REAL_WORLD_DEFERRED`，不能据此写成 KN-065 已真实通过。
+
+## 2 发布对象与环境要求
+
+### 2.1 发布对象
+
+表 2-1 发布对象与版本锁定
+
+| 配置项 | 锁定值 |
+| --- | --- |
+| 仓库快照 | `beb605f83e738a39dfe388ed4bc25b5b724eddcf` |
+| 最近代码快照 | `5fc359aea5e08118d17f2e076e6f669b04adf9b4` |
+| 后端运行时 | Node.js 24，容器镜像 `node:24-alpine` |
+| 数据库 | PostgreSQL 16 Alpine（Compose）；历史隔离恢复演练为 PostgreSQL 15.14 |
+| 后端端口 | 3000 |
+| 数据迁移 | `001_foundation`、`002_event_workflow`、`003_sprint2_mvp`，均有 up/down 脚本 |
+| 前端 | Vue 3 + Vite；正式构建产物在 `frontend/dist` |
+
+### 2.2 最低资源与依赖
+
+表 2-2 最低资源与运行依赖
+
+| 项目 | 最低要求/当前建议 | 说明 |
+| --- | --- | --- |
+| 操作系统 | 64 位 Linux，或 Windows 11 + WSL2 | 正式环境由甲方提供并确认 |
+| Docker | Engine 28.x；Compose 2.35.x 已实跑 | 低版本适配需另行验证 |
+| 应用节点 | 2 台，每台 8 vCPU、16 GB、100 GB SSD（方案建议） | 最终按目标容量复核 |
+| 数据库节点 | 1 主 1 备，每台 8 vCPU、32 GB、500 GB SSD（方案建议） | 不是已采购事实 |
+| 备份介质 | 与生产存储隔离，可用容量不少于 4 TB（方案建议） | 由甲方提供和管理 |
+| 网络 | 可访问 PostgreSQL、中台及批准的外部系统 | 外部地址与窗口须由甲方提供 |
+
+## 3 安全配置
+
+以下值只能放入私有部署环境或密钥设施，禁止写入 Git、截图和日志：`POSTGRES_PASSWORD`、`DATABASE_URL` 中的口令、Bearer 令牌、接口账号、证书私钥。
+
+表 3-1 受控环境变量
+
+| 环境变量 | 必填 | 说明 |
+| --- | --- | --- |
+| `POSTGRES_PASSWORD` | 是 | Compose 数据库口令，部署前注入 |
+| `MIDDLE_PLATFORM_BASE_URL` | 是 | 甲方统一中台地址；生产不得使用 `.example` 或本地模拟地址 |
+| `MIDDLE_PLATFORM_IDENTITY_PATH` | 否 | 默认 `/api/v1/platform/context` |
+| `MIDDLE_PLATFORM_FILE_PRESIGN_PATH` | 否 | 默认 `/api/v1/platform/files/presign` |
+| `REQUEST_TIMEOUT_MS` | 否 | 默认 3000 ms；调整需与接口策略一致 |
+| `SIMULATED_INTEGRATION_BASE_URL` | 生产禁用 | 仅测试/课程模拟端口 |
+| `ALLOW_DEVELOPMENT_IDENTITY_HEADERS` | 生产禁用 | 只有 `NODE_ENV=development` 且显式 true 才生效 |
+
+## 4 容器部署
+
+### 4.1 部署步骤
+
+在仓库根目录执行。以下命令已由 `scripts/g6/run-g6-01-deployment-check.sh` 在隔离项目中逐条运行并保存原始日志。
+
+```bash
+export POSTGRES_PASSWORD='<从密钥设施注入>'
+export MIDDLE_PLATFORM_BASE_URL='https://<甲方中台地址>'
+docker compose build backend
+docker compose up -d --wait
+docker compose exec -T backend node backend/scripts/migrate.mjs up
+curl -fsS http://127.0.0.1:3000/healthz
+curl -fsS http://127.0.0.1:3000/readyz
+```
+
+`/healthz` 验证进程存活；`/readyz` 同时验证数据库可用。只有两者均为 200 才可进入业务冒烟。中台不可用时，受保护 API 会默认拒绝身份，但不能因此伪造中台健康结论。
+
+### 4.2 本轮实际结果
+
+表 4-1 部署与恢复实际结果
+
+| 检查 | 实际结果 | 证据 |
+| --- | --- | --- |
+| 无缓存后端构建 | PASS；Node 24 Alpine，依赖漏洞 0 | `raw/docker-deployment-check.log` |
+| Compose 启动 | PASS | `raw/docker-deployment-check.log` |
+| 三组迁移 up | PASS | `raw/docker-deployment-check.log` |
+| health/ready | 200/200 | `raw/healthz.json`、`raw/readyz.json` |
+| 数据表 | 37 张 | `deployment-check.json` |
+| 备份恢复 | 37→37，哨兵 1→1 | `deployment-check.json` |
+| 后端重启 | ready=200 | `raw/readyz-after-restart.json` |
+| 总时长 | 19 秒 | 2026-10-11 21:04:06—21:04:25 +08:00 |
+| 清理 | 容器/卷/网络残留 0/0/0 | `raw/docker-deployment-check.log` |
+
+## 5 源码构建与质量门禁
+
+源码方式用于开发和验证，生产优先使用批准容器制品。Node.js 必须满足根 `package.json` 的 `^24.14.0 || >=26.0.0`。
+
+```powershell
+npm ci
+npm ci --prefix frontend
+npm run quality
+```
+
+本轮 `npm run quality` 在 Windows 11、Node v24.14.0、npm 11.9.0 上 exit 0：前端 45 项通过/2 项跳过，G4 11/11，后端 21/21；前端、G4 和后端覆盖率均高于 70%；OpenAPI 0 error、14 个既有非阻断 warning；秘密扫描 PASS；根与前端依赖高危漏洞 0；selfcheck PASS。完整输出在 `evidence/g6/G6-01/raw/npm-quality.log`。
+
+## 6 部署后冒烟检查
+
+表 6-1 部署后冒烟检查项
+
+| 序号 | 命令/动作 | 通过判据 |
+| --- | --- | --- |
+| 1 | `docker compose ps` | database healthy、backend healthy/running |
+| 2 | `GET /healthz` | HTTP 200，`status=ok` |
+| 3 | `GET /readyz` | HTTP 200，数据库检查通过 |
+| 4 | `GET /api/v1/platform/context` | 使用有效 Bearer 返回身份；无效 Bearer 返回受控 403 |
+| 5 | Web/H5 核心页面 | 页面可加载，正式模式不显示“演示数据” |
+| 6 | 日志检查 | 有 server.started、traceId；无口令、令牌和高危堆栈泄漏 |
+
+## 7 监控与日志
+
+表 7-1 监控项与处置要求
+
+| 监控项 | 方法 | 告警/处置 |
+| --- | --- | --- |
+| 进程存活 | `/healthz` | 连续失败告警，先查容器日志，再按批准流程重启 |
+| 服务就绪 | `/readyz` | 非 200 表示数据库不可用，不接收业务流量 |
+| 数据库 | 连接数、容量、慢查询、复制/备份状态 | 超阈值先限流和定位，禁止直接删除业务数据 |
+| API | HTTP 状态、P95/P99、traceId、5xx/503 | 按端点和外部依赖分组；保留原始窗口与版本 |
+| Outbox | 待发送、失败、重试与人工复核 | 门禁控制禁止自动重放；消息失败进入人工复核 |
+| 磁盘 | 数据卷、日志、备份介质 | 达到甲方阈值前告警；清理前核对保留策略 |
+| 外部端口 | 视频、消息、定位、GIS、安防、信息发布 | 区分未授权、超时和失败；不得用模拟端口写真实在线 |
+
+查看日志：
+
+```bash
+docker compose logs --no-color --since=30m backend
+docker compose logs --no-color --since=30m database
+```
+
+日志对外发送前应移除口令、Bearer、个人信息和附件内容，但保留时间、版本、traceId、端点和错误码。
+
+## 8 备份与恢复
+
+### 8.1 备份
+
+建议执行每日增量、每周全量，最终制度由甲方确认。执行前确认备份介质、保留期、加密和访问权限。
+
+```bash
+docker compose exec -T database sh -lc \
+  'pg_dump -U emergency -d emergency -Fc -f /tmp/emergency.dump && sha256sum /tmp/emergency.dump'
+docker compose cp database:/tmp/emergency.dump ./backup/emergency.dump
+```
+
+### 8.2 恢复演练
+
+不得直接覆盖生产库。先恢复到隔离数据库，核对表数、关键哨兵、迁移版本和业务抽样，再由有权人员批准切换。
+
+```bash
+docker compose exec -T database createdb -U emergency emergency_restore
+docker compose exec -T database pg_restore -U emergency -d emergency_restore \
+  --exit-on-error /tmp/emergency.dump
+docker compose exec -T database psql -U emergency -d emergency_restore \
+  -Atqc "SELECT count(*) FROM pg_tables WHERE schemaname='public';"
+```
+
+本轮在隔离 Compose 项目实跑后，恢复前后均为 37 张表，审计哨兵均为 1；这不证明甲方生产备份介质、主备切换或 RPO/RTO 已验收。
+
+## 9 升级与回退
+
+### 9.1 升级前
+
+锁定 commit/镜像摘要，运行质量门禁，保存当前配置差异，完成备份和恢复抽检，核对 migration up/down，确认维护窗口、通知人和回退责任。任何真实接口或账号未到位时标记阻断，不临时改成模拟地址。
+
+### 9.2 升级
+
+```bash
+docker compose pull
+docker compose build backend
+docker compose up -d --wait
+docker compose exec -T backend node backend/scripts/migrate.mjs up
+curl -fsS http://127.0.0.1:3000/healthz
+curl -fsS http://127.0.0.1:3000/readyz
+```
+
+### 9.3 回退
+
+触发条件包括核心接口持续失败、迁移错误、数据完整性异常、严重安全问题或批准 AC 失败。停止扩散，保留日志和 traceId，切回上一已知良好镜像/commit；数据库只使用已验证的 down 脚本或恢复点。不可逆变更必须走前向修复和 CCB，不得直接删除数据。
+
+```bash
+docker compose exec -T backend node backend/scripts/migrate.mjs down
+git checkout <上一批准发布标签>
+docker compose build backend
+docker compose up -d --wait
+```
+
+`migrate down` 只能在变更评估确认不会丢失有效业务数据后执行；本手册不授权对生产库直接运行。
+
+## 10 故障处理
+
+表 10-1 常见故障与处置方法
+
+| 现象 | 可能原因 | 排查与处置 |
+| --- | --- | --- |
+| backend 启动后退出 | 必填配置缺失、运行时不满足 | 查容器日志；确认 `DATABASE_URL`/中台地址和 Node 24；不得硬编码秘密 |
+| health 200、ready 非 200 | 数据库不可连接或迁移未完成 | 查 database 健康、连接串和迁移；恢复前保持流量隔离 |
+| 受保护接口全部 403 | 中台不可达、Bearer 无效或角色映射为空 | 检查中台地址、身份路径和响应；生产不得启用开发身份头 |
+| 文件上传 503 | 中台文件预签名端口不可用 | 进入人工留存，恢复后重试；保留 traceId |
+| 消息发送失败 | 消息适配器超时/失败 | 业务任务保留，Outbox 标记失败并人工复核；不得静默写成功 |
+| 门禁控制失败 | 联锁拒绝、超时或端口故障 | 立即告警和人工降级；禁止自动重放控制指令 |
+| 数据库容量告警 | 日志/业务增长、备份未转移 | 停止非必要写入，核对增长来源和备份后扩容；禁止随意删表 |
+| 外部端口状态未知 | 甲方账号、数据或窗口缺失 | 保持 `REAL_WORLD_DEFERRED`，不把 fixture 写成真实 PASS |
+
+## 11 停止与清理
+
+```bash
+docker compose down
+# 仅在确认数据已备份且允许删除当前数据卷时：
+docker compose down -v --remove-orphans
+```
+
+`-v` 会删除 Compose 数据卷，生产操作必须取得明确批准。课程隔离演练使用唯一项目名并在结束时检查容器、卷和网络残留均为 0。
+
+## 12 独立部署交接与已知限制
+
+### 12.1 交接包
+
+交给下一位运维人员：本手册、用户手册、锁定 commit/镜像摘要、`compose.yaml`、迁移脚本、OpenAPI、私有配置清单（不含秘密值）、质量门禁结果、备份恢复证据、开放 Issue 和 G6 唯一交付索引行。
+
+### 12.2 KN-065 执行边界
+
+真实 KN-065 要求非乙方人员在干净环境独立且一次成功完成部署。当前真实非乙方操作者为 0，本轮执行人为成员 B；因此只能记为 `MEMBER_B_LOCAL_ISOLATED_RUN`。后续独立人员到位后，应从干净主机按本手册执行，记录身份边界、起止时间、完整命令、退出码和原始日志，并由 C 复核；作者不得旁站替代独立性。
+
+### 12.3 已知限制
+
+- 六类甲方真实外部系统 0/6 实测，本地适配器结果均为模拟证据；
+- 真实 Android/iOS 宿主、Chrome/Edge 双稳定版本和新用户计时仍待补测；
+- 39 FR/117 AC 的 G5 真实结果仍为 11 PASS、59 NOT_RUN、47 BLOCKED，课程条件接受不改变真实分母；
+- `ISSUE-G5-02-008` 为非阻断证据强化项，脚本已静态整改，本轮 G6 隔离执行清理残留为 0，但仍需随真实独立部署复核；
+- 生产容量、主备、RPO/RTO、备份介质和维护窗口须由甲方环境确认。

@@ -4,7 +4,7 @@
   "baseRepositoryCommit": "deaddc6e454dcd1064db2e2271838b5ef19ad87c",
   "baseG6_01CodeCommit": "5fc359aea5e08118d17f2e076e6f669b04adf9b4",
   "candidateVersion": "V0.1+ISSUE-G6-03-001",
-  "candidateState": "WORKTREE_HASH_LOCK_PENDING_CONTENT_COMMIT",
+  "candidateState": "CONTENT_COMMITTED_PENDING_B_TECHNICAL_CONFIRMATION_AND_C_REVIEW",
   "applicationChangeIssue": "ISSUE-G6-03-001",
   "changedFilesFromBase": [
     "frontend/src/features/response/workflow.ts",
@@ -310,5 +310,300 @@
   "externalPorts": "SIMULATED_IDENTITY_MESSAGE_AND_PLAN",
   "bTechnicalConfirmation": "PENDING_REVIEW",
   "cOverallReview": "PENDING_REVIEW",
-  "boundary": "This is a dated file-hash lock after the recorded UI correction, not a claim that the old G6-01 release commit contains this correction."
+  "boundary": "This is a dated file-hash lock after the recorded UI correction, not a claim that the old G6-01 release commit contains this correction.",
+  "contentCommit": "8dbfbabf6ab494a9ca3ad4f7ff27bb1bb05e453a",
+  "canonicalGitBlobFiles": [
+    {
+      "path": "backend/.env.example",
+      "sha256": "dd475b469c680d9ef04d72eb9b9169b0a6114ce3de113f1f24932a42cebef28d"
+    },
+    {
+      "path": "backend/Dockerfile",
+      "sha256": "7482a62b81390e02ef001910700fb30e441d883fcd79744842677c0354667fc6"
+    },
+    {
+      "path": "backend/README.md",
+      "sha256": "010a6085e75e697a905561c1e9803a6fbc0f0fe92a02a3b430f51ab741e40593"
+    },
+    {
+      "path": "backend/migrations/001_foundation.down.sql",
+      "sha256": "f231808a52982adbbd40dac302e08bd057c3eece99815431dc27cb2a67806ffd"
+    },
+    {
+      "path": "backend/migrations/001_foundation.up.sql",
+      "sha256": "fd89cfa89e2afd9583e0dcc517dbd03c602d3bd6aba8ea67990bc00cab37e7a5"
+    },
+    {
+      "path": "backend/migrations/002_event_workflow.down.sql",
+      "sha256": "9b7d60d9198f1e8caf785cd6b05c3e5f5c7a3bd5ee678c854b811c76c634834d"
+    },
+    {
+      "path": "backend/migrations/002_event_workflow.up.sql",
+      "sha256": "49164769f51d88bcd2f6b48b548815ed866717fe1afd1fa181aa3644271bed3f"
+    },
+    {
+      "path": "backend/migrations/003_sprint2_mvp.down.sql",
+      "sha256": "5e357c6aa7fb13a789086ee2f034286d07e269ff3e635d62747baa741a7b7314"
+    },
+    {
+      "path": "backend/migrations/003_sprint2_mvp.up.sql",
+      "sha256": "e882556d34452d22b49031cb5d096d388e23b60f8480ff1bf987fccb664b4678"
+    },
+    {
+      "path": "backend/scripts/migrate.mjs",
+      "sha256": "db720975e2cba83a1f78c6617448c3b48fe3b65e2367d7339e0d029b4c2b6363"
+    },
+    {
+      "path": "backend/scripts/verify-migration.mjs",
+      "sha256": "afc68591b3df1cba6ea6bd077cc6fc8763449293e1e1e5df6653db566bc56e60"
+    },
+    {
+      "path": "backend/src/audit.mjs",
+      "sha256": "bd90915326c695216fb62160f88403f1510a588a621007d63daefc82060f0228"
+    },
+    {
+      "path": "backend/src/config.mjs",
+      "sha256": "73cb717438d4b82794ca78b49f3525bfeef82fc01d37d567300d549ce4e614b7"
+    },
+    {
+      "path": "backend/src/database.mjs",
+      "sha256": "07589b8882e532c1239268fbd52eac250bc07378bc24561743f53caca05d7a8f"
+    },
+    {
+      "path": "backend/src/event-persistence.mjs",
+      "sha256": "175ff8b8862a547506b75ed77e8d65f3aba7740b0cce24f04b4a7f76ecd36536"
+    },
+    {
+      "path": "backend/src/event-workflow.mjs",
+      "sha256": "fb4810dfd1a8fe6dc9851e3609795922b5ebd26b7612f200599efd831ba1b0ee"
+    },
+    {
+      "path": "backend/src/external-adapters.mjs",
+      "sha256": "449f9933546b87ae4dda80b897b8287c09e1e4ef3838c746187a622a791ea6a2"
+    },
+    {
+      "path": "backend/src/idempotency.mjs",
+      "sha256": "e655106939746488ab7d303ba8b6b3119f3efe56b36ae51fb9fd637197cb9344"
+    },
+    {
+      "path": "backend/src/identity.mjs",
+      "sha256": "6de9dc3bbbde04c117ad19bf64b7ac535f319a8c509682692e34497af330288c"
+    },
+    {
+      "path": "backend/src/main.mjs",
+      "sha256": "80a2e5b12a8430e4ea64004b056d2b4f4beadb3eb83e34bde57fd0a346fd7df3"
+    },
+    {
+      "path": "backend/src/message-port.mjs",
+      "sha256": "0c3b8ba5b7c72b7beb5e287cbf9388c868c8b223d0bc5e77d15546552d363419"
+    },
+    {
+      "path": "backend/src/middle-platform-port.mjs",
+      "sha256": "5dc8e1fab83ae4d2997d84b3196dba0879b9685e190cdc22b87779bfc0f570be"
+    },
+    {
+      "path": "backend/src/server.mjs",
+      "sha256": "9bd7d24834fb5dcea0dc2c617f0583ecd9aacb556d8b486e4dbf208070443a0d"
+    },
+    {
+      "path": "backend/src/sprint2-persistence.mjs",
+      "sha256": "a122ba79d42598a4a0e8b1f59d71589706d8915db9b1fa3c0f39d6dd445133d1"
+    },
+    {
+      "path": "backend/src/sprint2-service.mjs",
+      "sha256": "6915ea795f311ff342298b07d218f660c1dc139bb787a79a3107fec97f2dfeb2"
+    },
+    {
+      "path": "compose.yaml",
+      "sha256": "e67375d1ba6c3528aef4a7a328cac474fba71d84c37fb8701fe22c64db4b1cd9"
+    },
+    {
+      "path": "docs/work/B_TECH/openapi_v1.yaml",
+      "sha256": "a11ec11a77027981b827066aa10905ffeb2d926be7214b2bc8903cdb302bbc64"
+    },
+    {
+      "path": "frontend/.env.example",
+      "sha256": "1dba9279e170814e5046668cce4412dea743a7fdc36a0cf47a03108415c46755"
+    },
+    {
+      "path": "frontend/README.md",
+      "sha256": "f54b6ad904a886d01c6f7a68ee1894e11687eb96baf4199ffe56852a50bd0438"
+    },
+    {
+      "path": "frontend/index.html",
+      "sha256": "3f9b5d541b52b2ddb9ae835481b25efe49ce67171b13389026be7c3d263f0d4e"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "6094e30fefda790ad5eda53592dc8310fc76b1afc15c513fede8528bbedc302a"
+    },
+    {
+      "path": "frontend/package.json",
+      "sha256": "60438385f06be5ba8a24294101cfa28c02ae4f7ee004b4d33f5b4c0059048f4a"
+    },
+    {
+      "path": "frontend/src/App.vue",
+      "sha256": "5db64736e5c033e34b881f859f29f3dabdd89b1d97c6049809034f1a065ce753"
+    },
+    {
+      "path": "frontend/src/api/generated/schema.d.ts",
+      "sha256": "76c0084d069500633bd961a770db42568052948c7e02d0f1881719886bbe987d"
+    },
+    {
+      "path": "frontend/src/components/AsyncState.vue",
+      "sha256": "f834852ca0f2d23333a2ef654ea9b1c77d6bfa779dfe424b5d8d60ad1bacf1d5"
+    },
+    {
+      "path": "frontend/src/components/AttachmentRefsField.vue",
+      "sha256": "af73fcd15a62aae1d4bd81488f35a20e56c4c3921fa33c4508434aae515036ff"
+    },
+    {
+      "path": "frontend/src/components/PlatformAttachmentField.vue",
+      "sha256": "a107cde1f272988e1a77b8a4854d052354b941c26daf305f179e7d89437171d7"
+    },
+    {
+      "path": "frontend/src/env.d.ts",
+      "sha256": "8662cf6dbdc43fdb71a83d71eb7b0c3f914c3603c3aa7d85ed4d2b3ebcec7d80"
+    },
+    {
+      "path": "frontend/src/features/formal/module-workbench.ts",
+      "sha256": "65178598436629e6e192a066a19e8cbb6e973fb863349622da69c5eb01408a9f"
+    },
+    {
+      "path": "frontend/src/features/response/workflow.ts",
+      "sha256": "b3004246f8838ab8e37755aa84f6dd799c3dcae789502895424b2add4ef78ff0"
+    },
+    {
+      "path": "frontend/src/layouts/H5Layout.vue",
+      "sha256": "3099f237300fbf93c7a28934d6d7d6cc9f40796522e8a3e48cb957d916f23311"
+    },
+    {
+      "path": "frontend/src/layouts/WebLayout.vue",
+      "sha256": "7a0ca83fd19db08dc585d021e7c9693f248684ded6061767f4cd3d8f0b361144"
+    },
+    {
+      "path": "frontend/src/main.ts",
+      "sha256": "4832f2f1ea99248bf5a611871f28b2b5cfa94325c7eb425447f0b19b6b9e02c2"
+    },
+    {
+      "path": "frontend/src/router/index.ts",
+      "sha256": "533f8924bf23f8d04fb0e832419b7e2c3c0a6aa181772fe6a55d25e0dfd6bd06"
+    },
+    {
+      "path": "frontend/src/router/modules.ts",
+      "sha256": "084e85725732648fcc2ae70df55811a1192f7cc8d07a504cecebd75bee6e6f1a"
+    },
+    {
+      "path": "frontend/src/shared/auth/auth-context.ts",
+      "sha256": "634a651216e226f11645a13a02616cc8c70cfa97eb821ef1267517991682f207"
+    },
+    {
+      "path": "frontend/src/shared/demo/presentation-api.ts",
+      "sha256": "c355605efee32e562bea5e71558d1d3534154777f0635fa62869928f64c45725"
+    },
+    {
+      "path": "frontend/src/shared/demo/presentation-state.ts",
+      "sha256": "e9c17f0da57feb23f6d32579837462576a2c6cf06759a70a034cb68fd96cebbe"
+    },
+    {
+      "path": "frontend/src/shared/http/api-client.ts",
+      "sha256": "572f405d537967a1a2fa3fe39399c835911ce62e2f72e28a9235e783c91b7219"
+    },
+    {
+      "path": "frontend/src/shared/http/api-context.ts",
+      "sha256": "0e9cf19ce18b6b102a274b961b2901548baecbf7eed616853b6bd748774fd74b"
+    },
+    {
+      "path": "frontend/src/shared/http/api-error.ts",
+      "sha256": "a0f7c469a720d9346bc2ab56f62baa159fe7e885bc11f20bfa7d850f1878ddb5"
+    },
+    {
+      "path": "frontend/src/styles/base.css",
+      "sha256": "2693fcfdc24839728033d41d6acd14469af2b07f7f5f618953a05440f1d47a95"
+    },
+    {
+      "path": "frontend/src/views/AccessStateView.vue",
+      "sha256": "54eb4b4d87a5b853c73c453559c083c6e58129ce35f2943051461578020fd79d"
+    },
+    {
+      "path": "frontend/src/views/DashboardView.vue",
+      "sha256": "626d7008f4dec64b879849d93052643ce1f4333ad15f200713ba7937c6e5d687"
+    },
+    {
+      "path": "frontend/src/views/IncidentFlowView.vue",
+      "sha256": "0fa21d075ae105b8a2cc18ccfa8a95bf3c5b81cd47175b12bbc342293481eefb"
+    },
+    {
+      "path": "frontend/src/views/ModuleBoundaryView.vue",
+      "sha256": "b0f0179b0178cf05a8cbd8c33de9e9a7f41e6c62ebfea592ddf73da88d86d6e3"
+    },
+    {
+      "path": "frontend/src/views/OperationsModuleView.vue",
+      "sha256": "05480b015158f5e306ebfc35ce8b8326eb56be2e2b268c4c19854f84db357f62"
+    },
+    {
+      "path": "frontend/src/views/TaskFlowView.vue",
+      "sha256": "40aa4a4c9e78516c5e27bcbdb0ef5b89ccd00c182f7525e78a8f8263c84bf301"
+    },
+    {
+      "path": "frontend/tests/api-client.test.ts",
+      "sha256": "ac41af92c5663363f24d0d324dbf4746e652ef57bbd980007430f18e83895394"
+    },
+    {
+      "path": "frontend/tests/api-client.types.ts",
+      "sha256": "6396eabc064b4f2bbed1163bc34962da5669ffbfc4a0d5a63c306ebc44919fc5"
+    },
+    {
+      "path": "frontend/tests/auth-context.test.ts",
+      "sha256": "09cd44912a349de7c33786107e85b986977ffc5689016bbf216da225253d7b03"
+    },
+    {
+      "path": "frontend/tests/formal-module-workbench.test.ts",
+      "sha256": "f997d80b3a35d52b5dadcfba4b01dc09109ba7fb75b6776fc334d1e3c87f1c00"
+    },
+    {
+      "path": "frontend/tests/formal-page-isolation.test.ts",
+      "sha256": "cd1797f41783c7f0dd55d87ba14bed1650b13223266784c7734d528a5c72b276"
+    },
+    {
+      "path": "frontend/tests/h5-responsive-layout.test.ts",
+      "sha256": "64f9bebd025f8d5049ffc69f72a5682660809972db702cbc8aaeef56fe612d44"
+    },
+    {
+      "path": "frontend/tests/module-traceability.test.ts",
+      "sha256": "b23d8ff324cbaf10e454f547cc5e5fb1d70d2c4793a203eaea9b8adb6fb0bd2c"
+    },
+    {
+      "path": "frontend/tests/page-interactions.test.ts",
+      "sha256": "01852ba19cc942276c972a4b65ff54c73078b0f128de85cfda9435f31c765147"
+    },
+    {
+      "path": "frontend/tests/postgresql-system-e2e.test.ts",
+      "sha256": "b9511c1a96622c77ec152d77681fabccd6d041cb8bf8dbb8551e5a4d4867cf85"
+    },
+    {
+      "path": "frontend/tests/presentation-api.test.ts",
+      "sha256": "bc067c99ee75818d909c488f786045379130b3345525623cee94e2480f501517"
+    },
+    {
+      "path": "frontend/tests/presentation-state.test.ts",
+      "sha256": "b68594071b14cdde74153728a7b256ee84f507ee9de8ac7754b7a65a08fc7b3b"
+    },
+    {
+      "path": "frontend/tests/real-stack-e2e.test.ts",
+      "sha256": "14d23e03212b1cf6d28027117a2eef154825bbed014d6b9455c433c8d0097956"
+    },
+    {
+      "path": "frontend/tests/workflow.test.ts",
+      "sha256": "9f26667e2496b420191038d7c0143ec538a32d781b85f1fd743fc7131fe1e927"
+    },
+    {
+      "path": "frontend/tsconfig.json",
+      "sha256": "d93d15306367420a4d758d895788657fcbf22fb0bc99d72044cf69c30959496b"
+    },
+    {
+      "path": "frontend/vite.config.ts",
+      "sha256": "9d2e10668b67b5e0dadff2d93565d578b00a9741bbce41346d9fa705d7a9a4fe"
+    }
+  ]
 }

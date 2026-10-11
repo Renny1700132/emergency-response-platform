@@ -1947,3 +1947,11 @@
 - OVR-034/035只关闭课程阶段：当前建议COURSE_ACCEPTED（条件），G5-03须先REVIEW，待C真实独立复核才可DONE。真实验收门禁仍BLOCKED。
 - 工作稿/四正式DOCX/RTM v5/八特性/三审/机器摘要见docs/work/A_PM/g5_final、docs/deliverables/G5、evidence/g5/G5-03。模板缺口按OVR-036透明fallback，不伪称唯一Pair。
 - 原始G4/G5-01/G5-02证据与冻结输入均不改，历史失败/拒绝/错误hash原样保留。本轮不新增功能、不重复破坏性测试；final-quality.log为本轮npm run quality实际exit0，不是远程CI。
+
+### G5-03 C独立最终复核（2026-10-11）
+
+- C 对 A 内容提交 `034d97d144a0b4313db620287b4902bea3debc5e` 及回填提交 `749ae2a` 完成独立复核；四份正式 DOCX 全页渲染检查可读，无截断、重叠或新的交付阻断。
+- 独立机械核验通过：117 AC、39 FR、34★FR及四份正式件一致；功能课程验收脚本保持 `PASS_WITH_COURSE_WAIVERS_PENDING_A` 的历史输出，但 A 的后续独立接受记录已存在；技术门禁为 `PASS_WITH_COURSE_WAIVERS`；整库 `npm run quality` 在正常权限环境 exit 0。首次受限环境运行因 EPERM 中止，未伪称业务失败或成功。
+- 结论：`ACCEPTED / CLOSED_FOR_COURSE_STAGE / VERIFIED_BY_C`，G5-03 可置 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / IMPLEMENTATION_AND_REAL_WORLD_DEFERRED）`；未发现新的实现缺陷，不新增 Issue。
+- 真实状态不变：AC 11 PASS / 59 NOT_RUN / 47 BLOCKED，★FR 1 PASS / 33 BLOCKED，甲方六类系统 0/6，真实非乙方操作者 0。真实项目门禁和后续补测责任未关闭；ISSUE-G5-02-008 继续为非阻断改进项。
+- 详细证据：`logs/reviews/2026-10-11_G5-03-C-final-review.md`、`evidence/g5/G5-03/c-final-acceptance.json`。

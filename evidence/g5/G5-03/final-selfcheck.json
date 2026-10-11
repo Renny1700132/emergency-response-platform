@@ -1,7 +1,7 @@
 {
   "task": "G5-03",
-  "checkedAt": "2026-10-11T01:14:50.826264+08:00",
-  "status": "PASS_A_AUTOMATED_CONTENT_CHECK",
+  "checkedAt": "2026-10-11T12:31:46.746096+08:00",
+  "status": "PASS_COURSE_CONDITIONAL_ACCEPTED_BY_C",
   "checks": {
     "fullRtm": true,
     "117RowsMatchRaw": true,
@@ -12,16 +12,13 @@
     "priorIndependentReviewsExist": true
   },
   "unconditionalRealWorldPass": false,
-  "CFinalReview": "PENDING",
-  "visualQA": "PASS native Word35 pages",
+  "CFinalReview": "ACCEPTED",
+  "visualQA": "PASS native Word 35 pages by A; PASS LibreOffice 36 pages independently inspected by C",
   "finalQualityLog": "evidence/g5/G5-03/final-quality.log",
-  "qualityStatus": "PASS actual exit0",
-  "audits": {
-    "document": "PASS_FOR_COURSE_REVIEW",
-    "portability": "PASS_WITH_REAL_WORLD_DEFERRED",
-    "AI": "PASS_FOR_COURSE_REVIEW"
-  },
-  "courseBlockersA": "none newly found within OVR-034/035 candidate scope",
+  "qualityStatus": "PASS actual exit0 independently rerun by C under normal permissions",
+  "courseDecision": "COURSE_CONDITIONAL_ACCEPTANCE",
+  "realWorldStatus": "IMPLEMENTATION_AND_REAL_WORLD_DEFERRED",
   "realWorldBlockersPreserved": true,
-  "taskStatus": "REVIEW"
+  "taskStatus": "DONE",
+  "CReviewRecord": "logs/reviews/2026-10-11_G5-03-C-final-review.md"
 }

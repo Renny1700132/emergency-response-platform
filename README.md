@@ -10,9 +10,9 @@
 
 G4-00—G4-11 已 DONE 并收口进入 master；第五关“质量门禁（测试与质量特性验证）”已启动。自 G5-00 起在最新 master 上完成长任务，自检/必要 Review 留痕、安全 commit、重新 fetch 后非 force 直接 push master；不要求功能分支、PR/Approve/Merge 或远程 CI。保留真实测试、缺陷、RTM、八大质量特性和验收门禁。当前专项规则为 `governance/g5_quality_workflow.md`，规划为 `docs/work/A_PM/g5_quality_gate_plan.md`。以下 G4 专项表述仅解释历史，不约束 G5。
 
-## G5-03 当前复核候选
+## G5-03 课程阶段收口
 
-G5-01/G5-02 已按 OVR-035/034 课程条件 DONE；G5-03 四类正式 DOCX、RTM v5、八特性与三审完成，当前 **REVIEW，待 C 独立最终复核**。A 未填写 VERIFIED_BY_C 或第五关 DONE。
+G5-01/G5-02 已按 OVR-035/034 课程条件 DONE；G5-03 四类正式 DOCX、RTM v5、八特性与三审已由 C 于 2026-10-11 独立最终复核接受，当前为 **DONE（COURSE_CONDITIONAL_ACCEPTANCE / IMPLEMENTATION_AND_REAL_WORLD_DEFERRED）**。这只关闭课程阶段，不表示甲方生产验收完成。
 
 - 工作稿：`docs/work/A_PM/g5_final/`；正式候选：`docs/deliverables/G5/`；RTM v5：`docs/work/C_REQ/rtm_v5.md` 与 `evidence/g5/G5-03/rtm-v5.json`。
 - 完整分母39FR/117AC/34★FR；真实11 PASS /59 NOT_RUN /47 BLOCKED，★FR1 PASS /33 BLOCKED；30AC未实现、76AC缺完整证据继续延期。

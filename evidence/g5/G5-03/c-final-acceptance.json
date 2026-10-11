@@ -1,0 +1,24 @@
+{
+  "task": "G5-03",
+  "reviewer": "C",
+  "reviewedAt": "2026-10-11T12:31:00+08:00",
+  "reviewedContentCommit": "034d97d144a0b4313db620287b4902bea3debc5e",
+  "reviewedBackfillCommit": "749ae2a",
+  "decision": "ACCEPTED",
+  "taskStatus": "DONE",
+  "courseDecision": "COURSE_CONDITIONAL_ACCEPTANCE",
+  "realWorldStatus": "IMPLEMENTATION_AND_REAL_WORLD_DEFERRED",
+  "unconditionalRealWorldPass": false,
+  "newImplementationDefects": 0,
+  "checks": {
+    "finalReportValidation": "PASS",
+    "functionalBoundary": "11_PASS_59_NOT_RUN_47_BLOCKED",
+    "starFrBoundary": "1_PASS_33_BLOCKED",
+    "technicalGate": "PASS_WITH_COURSE_WAIVERS",
+    "qualityGateNormalPermissions": "PASS_EXIT_0",
+    "visualQa": "PASS_ALL_36_LIBREOFFICE_RENDERED_PAGES",
+    "ownerSystemsReal": "0_OF_6",
+    "independentRealOperator": 0
+  },
+  "reviewRecord": "logs/reviews/2026-10-11_G5-03-C-final-review.md"
+}

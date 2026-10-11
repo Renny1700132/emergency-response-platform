@@ -81,3 +81,11 @@
 - 状态迁移：`BLOCKED -> REVIEW（COURSE_CONDITIONAL_ACCEPTANCE_PENDING_A）`；仅 A 最终复核接受后方可进入 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / IMPLEMENTATION_AND_REAL_WORLD_DEFERRED）`。
 - 新证据：`evidence/g5/G5-01/course-conditional-acceptance.json`、`course-conditional-review-request.md` 及 `scripts/g5/validate-functional-course-acceptance.mjs`。
 - Commit / PR：C 内容提交 `c739b406e442e01b1deef7c4c8bb8885bdc27a4a` 已非强制推送至 `origin/master`；PR N/A（OVR-032）；A 最终复核待执行。
+
+## CHG-G5-03-001｜第五关课程条件最终收口
+
+- 日期：2026-10-11；主责 A；最终复核 C 已接受；批准来源：OVR-034 / OVR-035 及 G5-01、G5-02 已接受的课程条件验收。
+- 变更内容：四份正式报告、RTM v5、八特性与三审在 C 独立复核后，将 G5-03 从 `REVIEW` 迁移为 `DONE（COURSE_CONDITIONAL_ACCEPTANCE / IMPLEMENTATION_AND_REAL_WORLD_DEFERRED）`。
+- 不变项：117 AC、39 FR、34★FR、真实 AC 11/59/47、★FR 1/33、甲方系统 0/6、真实非乙方操作者 0 均不变；不修改冻结需求、责任、真实履约门禁或补测义务。
+- 复核证据：`logs/reviews/2026-10-11_G5-03-C-final-review.md`、`evidence/g5/G5-03/c-final-acceptance.json`；A 内容提交 `034d97d144a0b4313db620287b4902bea3debc5e`。
+- 影响分析：第五关课程阶段完成，可按课程条件结论继续后续阶段；任何真实生产/甲方验收声明仍须先补齐延期项并重新审核。

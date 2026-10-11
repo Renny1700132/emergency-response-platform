@@ -99,5 +99,5 @@
 
 - `inputs/G6/README.md`：第六关任务书归档/哈希/读取状态及准入边界。
 - `inputs/G6/通关实验任务书6-交付验收与复盘.pdf`：交付、两手册、答辩、现场演示、质询、复盘与D18门禁。
-- `work/A_PM/g6_delivery_acceptance_plan.md`：A内部长任务规划及执行说明；REVIEW待C，未开始正式交付制作。
+- `work/A_PM/g6_delivery_acceptance_plan.md`：A内部长任务规划及执行说明；2026-10-11 C 定向修正页码后复验接受，G6-00 DONE，尚未开始正式交付制作。
 - `../logs/history/2026-10-11-g4-03-preserved/README.md`：旧收口差异与独立历史日志的原样保留/对账，不覆盖现有正式记录。

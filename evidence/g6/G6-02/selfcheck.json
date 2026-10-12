@@ -1,11 +1,23 @@
 {
   "task": "G6-02",
-  "status": "PASS_INITIAL_CANDIDATE_PENDING_B",
-  "generatedAt": "2026-10-11T12:57:20.532Z",
+  "status": "PASS_C_INCREMENT_PENDING_B_FINAL_REVIEW",
+  "generatedAt": "2026-10-12T16:08:34+08:00",
   "deliveryItems": 29,
   "availability": {
     "AVAILABLE": 20,
     "NOT_AVAILABLE": 9
+  },
+  "historicalSnapshotLocked": true,
+  "currentIncrement": {
+    "inputCommit": "cfdb6f5f4f75bdcce04754f513668796da62326c",
+    "items": 21,
+    "available": 21,
+    "canonicalGitBlobFingerprints": 21,
+    "realWorldAccepted": 0,
+    "initialPathsNowExisting": 22,
+    "manualPdfPagesReviewedByA": 22,
+    "simulatedRehearsalChecksPass": 23,
+    "acPassAddedFromRehearsal": 0
   },
   "rtmRows": 117,
   "frGroups": 39,
@@ -22,13 +34,20 @@
     "fr39": true,
     "ac117": true,
     "starFr34": true,
-    "noMissingFileClaimedAvailable": true
+    "noMissingFileClaimedAvailable": true,
+    "initialSnapshotUnchanged": true,
+    "incrementCanonicalHashesMatch": true,
+    "plannedAndCandidateDefensePathsSeparated": true,
+    "simulatedAndRealWorldSeparated": true,
+    "auditChainCurrentThroughARejection": true
   },
   "blockers": [
-    "G6-01 manuals/command ledger not yet available",
-    "G6-03 rehearsal/live-run evidence not yet available",
-    "real owner systems and independent deployer remain unavailable"
+    "G6-01 candidates exist but A review remains NEED_FIX on four major issues",
+    "G6-03 simulated candidate exists but B technical/C overall review and ISSUE-G6-03-001 closure remain pending",
+    "B final G6-02 overall review and subsequent A consistency rereview have not occurred",
+    "real owner systems, independent deployer, site/training/trial/data/signature remain unavailable"
   ],
   "reviewer": "B",
-  "reviewStatus": "PENDING"
+  "reviewStatus": "PENDING_FINAL_OVERALL_REVIEW",
+  "aReviewStatus": "NEED_FIX_INPUT_INCORPORATED_REREVIEW_PENDING"
 }

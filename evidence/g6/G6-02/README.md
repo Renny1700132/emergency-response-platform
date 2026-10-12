@@ -1,6 +1,6 @@
 # G6-02 交付清单、RTM验收挂接与审计数据包
 
-状态：`REVIEW（ACCEPTED_FOR_INITIAL_G6_02_CANDIDATE；PENDING_G6_01_AND_G6_03_INCREMENT）`。
+状态：`REVIEW（C_INCREMENT_REMEDIATED；PENDING_B_FINAL_REVIEW；THEN_A_CONSISTENCY_REREVIEW）`。
 
 本包是可与 G6-01 并行使用的首版证据账，不是第六关最终归档。G6-01 两本手册/命令台账、G6-03 试演/现场记录及 G6-04 总结/移交尚未形成，因此缺项均显式标为 `NOT_AVAILABLE / PLANNED / REAL_WORLD_DEFERRED`。
 
@@ -14,6 +14,8 @@
 - `review-request.md`：B 整体复核请求及后续增量边界。
 - `b-review.json`：B 对索引、RTM、性能分母和真实边界的独立机械复验结果。
 
-B 已接受本包作为首版并行输入；正式记录见 `logs/reviews/2026-10-11_G6-02-B-review.md`。该接受不自动迁移为最终 DONE。
+B 已接受本包作为首版并行输入；正式记录见 `logs/reviews/2026-10-11_G6-02-B-review.md`。该接受不自动迁移为最终 DONE。2026-10-12已在同一`delivery-index.md/json`追加21项当前增量，纳入G6-01候选、G6-03模拟候选、A四份审核文档及机械/视觉证据；首版29项与20/9统计不倒改。
+
+本轮C仅声明“整改材料已就绪，待B最终整体复核”。G6-01仍由B整改并待A复验；G6-03的B技术/C整体复核与ISSUE-G6-03-001仍未完成。真实现场、培训、数据、试运行、签署、六类甲方系统和独立部署均未被课程模拟证据替代。
 
 真实边界：11 PASS / 59 NOT_RUN / 47 BLOCKED；★FR 1 PASS / 33 BLOCKED；甲方系统真实0/6；真实非乙方独立部署操作者0。课程条件收口不等于真实生产验收。

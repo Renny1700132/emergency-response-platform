@@ -1,6 +1,8 @@
-# G6唯一交付/证据索引（首版候选）
+# G6唯一交付/证据索引（首版快照 + 当前增量）
 
 > 状态：REVIEW_INITIAL_CANDIDATE_PENDING_B。无文件不写齐套；`NOT_AVAILABLE` 是真实缺项，不是 N/A 或 PASS。SHA-256 针对当前工作区字节，内容提交后以 Git 对象/最终清单复核。
+
+> 2026-10-12 增量状态：`REVIEW_INCREMENT_PENDING_B_FINAL_REVIEW`。下方29行是 2026-10-11 冻结首版快照（56e9da9；日志回填e194cdb；B首版接受deaddc6），故不倒改CI-015/016等历史行。当前事实追加在本文末，canonical Git blob取自 `cfdb6f5f4f75bdcce04754f513668796da62326c`。
 
 | ID | 文种/配置项 | 路径 | 主责/复核 | P1/任务书映射 | 可用性 | 当前状态 | SHA-256 | FR/AC/TC | 下游使用 |
 |---|---|---|---|---|---|---|---|---|---|
@@ -33,3 +35,30 @@
 | CI-027 | AI使用审计 | `evidence/g5/G5-03/ai-audit.json` | A/C | G6任务书过程证据 | AVAILABLE | HISTORICAL_AUDIT_INPUT | `98b6929c0ea336b451ca843c7f73e5d3c8e04fb5f37ea91d11f12425cfd53521` | N/A or indexed downstream | G6-02/G6-03/G6-04 |
 | CI-028 | G6答辩PPT与讲稿 | `docs/deliverables/G6/G6-验收答辩.pptx` | A/C | G6任务书 | NOT_AVAILABLE | PLANNED_G6_03 | — | N/A or indexed downstream | G6-02/G6-03/G6-04 |
 | CI-029 | G6试演/现场运行记录 | `evidence/g6/G6-03/live-run-record.md` | A/C | G6任务书真实演示 | NOT_AVAILABLE | REAL_WORLD_RESOURCE_REQUIRED | — | N/A or indexed downstream | G6-02/G6-03/G6-04 |
+
+## 2026-10-12 当前增量
+
+| ID | 交付/证据 | 路径 | 版本 | 状态与证据类型 | 真实边界 | canonical SHA-256 |
+|---|---|---|---|---|---|---|
+| GI-001 | 用户手册源文件候选 | `docs/deliverables/G6/34-用户手册.docx` | G6-01@f9eec53 | AVAILABLE / A NEED_FIX / DOCUMENT_SOURCE | 课程候选，非真实验收 | `755e94ef675751cd222803b93580fcd1a48ea5db7235cd789416e962d0a7bd65` |
+| GI-002 | 用户手册PDF候选 | `docs/deliverables/G6/34-用户手册.pdf` | G6-01@f9eec53 | AVAILABLE / A NEED_FIX / DOCUMENT_PDF | 课程候选，非真实验收 | `ad13e62436ee2473192fc7a1a1b0982cc91c608a206399c3203bc983459cb77d` |
+| GI-003 | 部署与运维手册源文件候选 | `docs/deliverables/G6/45-部署与运维手册.docx` | G6-01@f9eec53 | AVAILABLE / A NEED_FIX / DOCUMENT_SOURCE | 课程候选，非真实验收 | `c6a47f76462aa58514be83f49ec832775914a147ffff68105afde66f41e6b4cf` |
+| GI-004 | 部署与运维手册PDF候选 | `docs/deliverables/G6/45-部署与运维手册.pdf` | G6-01@f9eec53 | AVAILABLE / A NEED_FIX / DOCUMENT_PDF | 课程候选，非真实验收 | `aa95c5ee60f4943495a32a545deaaeca942cee2bbf6aab971a7627993b93a65f` |
+| GI-005 | 命令执行台账 | `evidence/g6/G6-01/command-execution-ledger.md` | G6-01@f9eec53 | AVAILABLE / A NEED_FIX / COMMAND_LEDGER | 作者侧本地证据 | `ffedae206ea4ca590219a735612bda387058cc84cbaf0f72b6e9deb0cd6edbf0` |
+| GI-006 | 部署交接与已知限制 | `docs/work/B_TECH/g6_deployment_handoff_and_known_limits.md` | G6-01@f9eec53 | AVAILABLE / A NEED_FIX / HANDOFF | 真实独立部署仍延期 | `3522725e4fb32cf4c2edd780bcfb26f007c6f35106a1ce6e9cf9019158853247` |
+| GI-007 | 截图登记 | `evidence/g6/G6-01/screenshot-register.md` | G6-01@f9eec53 | AVAILABLE / SCREENSHOT_REGISTER | 课程展示证据 | `76f777735242a0f98ba7c606dd434ebc87953626cc12b287cbbd10ec50a9a507` |
+| GI-008—010 | 三张Web/H5截图 | `evidence/g6/G6-01/screenshots/`（JSON逐文件列示） | G6-01@f9eec53 | AVAILABLE / SCREENSHOT | 课程展示证据 | 见JSON逐文件canonical指纹 |
+| GI-011 | 验收答辩候选PPTX | `docs/deliverables/G6/G6-03-验收答辩候选.pptx` | G6-03@8dbfbab | AVAILABLE / PENDING B+C REVIEW | 候选，不是正式交付 | `83eeff87ca1b761a995eb60dc44207d634d5f593a1bbea7d70ca5d4b9e5dad51` |
+| GI-012 | 验收答辩候选PDF | `docs/deliverables/G6/G6-03-验收答辩候选.pdf` | G6-03@8dbfbab | AVAILABLE / PENDING B+C REVIEW | 候选，不是正式交付 | `5db7eb5dcf46b69126027dd1a92fa4421eb56b8d3c38e5e5bd4486bf2c2e79cd` |
+| GI-013 | 模拟试演结果 | `evidence/g6/G6-03/rehearsal-result.json` | G6-03@8dbfbab | AVAILABLE / 23 SIMULATED CHECKS PASS | 不增加AC PASS | `cc72b302482d759eb70aa45fe5bff693dd3816db3bc81b1060072635db92ee34` |
+| GI-014 | 模拟试演版本锁 | `evidence/g6/G6-03/rehearsal-release-lock.json` | G6-03@8dbfbab | AVAILABLE / ISSUE-G6-03-001 | 本地模拟版本证据 | `1760b1ddbbd7f7495ccaa86692e5f93c888dea38d1875862473d448d6f43878b` |
+| GI-015 | 模拟试演交接 | `evidence/g6/G6-03/handoff.md` | G6-03@8dbfbab | AVAILABLE / PENDING B+C REVIEW | 真实现场仍延期 | `ca937f5f0fcd671a040e8ca0c2383122c0f9aa8f459362a9370a59222921fd9b` |
+| GI-016—019 | A的G6-01/G6-02 Review、汇总及审核基线 | `docs/work/G6/`（JSON逐文件列示） | A-review@72aadc1 | AVAILABLE / NEED_FIX / REVIEW_RECORD | 审核证据，不是验收通过 | 见JSON逐文件canonical指纹 |
+| GI-020—021 | A机械审核与22页视觉审核记录 | `evidence/g6/G6-A-review/`（JSON逐文件列示） | A-review@72aadc1 | AVAILABLE / REVIEW_EVIDENCE | 视觉/机械复核不等于内容接受 | 见JSON逐文件canonical指纹 |
+
+### 历史路径与实际候选路径
+
+- CI-028规划路径 `docs/deliverables/G6/G6-验收答辩.pptx` 仍不存在，不将其伪记为可用。
+- 实际候选路径为 GI-011/012；候选待B技术确认与C整体复核，不替代正式路径。
+- CI-029要求的真实现场记录仍不存在；GI-013—015仅为本地内存、模拟数据的实际试演证据。
+- 本次增量21项均可定位，但真实世界验收接受数仍为0；30项实现延期、76项证据延期、六类甲方系统0/6、真实独立操作者0保持不变。

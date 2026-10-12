@@ -1,7 +1,7 @@
-# G6-02 B整体复核请求（首版候选）
+# G6-02 B最终整体复核请求（2026-10-12增量）
 
 - 主责：C；指定复核：B。
-- 当前状态：`REVIEW（INITIAL_CANDIDATE_PENDING_B）`。
+- 当前状态：`REVIEW（C_INCREMENT_REMEDIATED_PENDING_B_FINAL_REVIEW）`。
 - 复核对象：唯一交付索引、117行RTM验收增量、三线审计、指标账、缺项/延期台账及自检。
 
 请 B 重点核验：
@@ -21,3 +21,16 @@
 - 问题：`ISSUE-G6-02-001` Windows行尾导致的哈希校验误报已修复并由B复验关闭。
 - 状态：G6-02继续保持`REVIEW`；待G6-01 A复核结果与G6-03试演/现场记录完成增量后再做最终B复核。
 - 记录：`logs/reviews/2026-10-11_G6-02-B-review.md`、`evidence/g6/G6-02/b-review.json`。
+
+## 当前增量复核请求
+
+请B在本轮C提交后进行**最终整体复核**，重点核验：
+
+1. 首版29项、20/9和B首版接受是否保持历史原值，未被当前事实倒改；
+2. GI-001—021是否逐文件匹配`cfdb6f5` canonical Git blob，版本、Review状态及模拟/真实分类是否准确；
+3. CI-015/016“候选已提交但A NEED_FIX”、CI-028规划路径与实际候选路径、CI-029真实现场与模拟试演是否严格分列；
+4. 日期化Prompt→产物→commit→PR N/A→Review链是否覆盖G6-01、G6-02首版、G6-03和A退回；
+5. 39FR/117AC/34★、11/59/47、30/76、0/6和独立操作者0是否未漂移，23项模拟检查是否没有派生AC PASS；
+6. AI代码占比、Prompt复用次数、返工工时是否继续保持UNKNOWN，而非推测值。
+
+若通过，请形成新的、可定位的B最终Review记录；不要覆盖`b-review.json`中的首版历史接受。B结论形成后再交A做目录/计划/一致性增量复验。在B实际复核前，本任务保持`REVIEW / PENDING_B_FINAL_REVIEW`。

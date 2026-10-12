@@ -2024,3 +2024,14 @@
 - `003`：新增前端 Node 静态宿主与 `/api/` 同源代理、前后端及数据库 healthcheck、Compose 变量透传和宿主 Bearer 注入说明；迁移支持 `down --steps=N`/`down --to=ID`。实际执行停止写入、单步回退、重应用和恢复，得到迁移 3→2→3、表 37→13→37、审计哨兵 1→1、隔离恢复 37/1、残留 0/0/0。状态为 `REMEDIATED_BY_B / PENDING_A_REREVIEW`。
 - `004`：V0.2 统一锁定 `75f01c3`，且 `git merge-base --is-ancestor 8dbfbab 75f01c3` exit 0；B 的 H5 进度映射目标测试和全量门禁通过。旧 `beb605f` 与 2026-10-11 图片只作历史证据，不回挂当前结论。状态为 `B_TECH_CONFIRMED / PENDING_C_G6_03_REVIEW_AND_A_REREVIEW`。
 - 证据：`docs/work/G6/G6-01_B_remediation.md`、`evidence/g6/G6-01/remediation-deployment-check.json`、`remediation-command-ledger.json`、`remediation-selfcheck.json`、`raw/remediation/steps/*`。B 不自行关闭 A 问题；真实 KN-065 与甲方六类接口仍 `REAL_WORLD_DEFERRED`。
+
+## G6-02 B最终整体复核退回（2026-10-12）
+
+复核基线：C 内容整改 `0de6884`、日志回填后基线 `6f56ab6`；B 在当前 `e4116ce` 独立复算。首版29项20/9、21项增量canonical blob、117 AC、39 FR、34★、11/59/47、30/76、0/6和独立操作者0均无漂移；但最终收口仍有2项MAJOR。
+
+| Issue | 级别/状态 | 事实与影响 | 主责/复核 | 关闭条件 |
+|---|---|---|---|---|
+| ISSUE-G6-02-004 | MAJOR / OPEN / CHANGES_REQUESTED | 唯一索引当前增量停在`cfdb6f5`，GI-001—006仍指向G6-01 V0.1/A NEED_FIX；后续V0.2及26步部署回退证据已在`6255f94/a8f8134`形成但未挂入。历史哈希本身正确，缺的是后续日期化增量 | C / B再复验；A一致性复验 | 保留GI-001—021，新增V0.2 DOCX/PDF、命令/交接、版本锁、部署/渲染、B整改和当前状态的canonical指纹；写`B_REMEDIATED_PENDING_A_REREVIEW`，不得预写A通过 |
+| ISSUE-G6-02-005 | MAJOR / OPEN / CHANGES_REQUESTED | C日志已有最终输出和push回填但顶层仍`PROMPT_LOGGED`；当前审计行仍写本轮commit待回填，README仍称G6-01手册/台账尚未形成，AI状态机与当前概览未闭环 | C / B再复验；A一致性复验 | 日志状态同步为真实已推送待复核；审计链落定`0de6884`和已发生回填/PR N/A；修正README当前概览，保留明确标为历史的旧段落 |
+
+B本轮结论：`CHANGES_REQUIRED / FINAL_REVIEW_NOT_ACCEPTED`；G6-02保持REVIEW。证据：`logs/reviews/2026-10-12_G6-02-B-final-review.md`、`evidence/g6/G6-02/b-final-review.json`。

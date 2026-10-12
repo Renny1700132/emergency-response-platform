@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "task": "G6-02",
+  "reviewer": "B",
+  "reviewedContentCommit": "0de68849c9307083e2989161cb178111fea2be99",
+  "reviewedBackfillBaseline": "6f56ab648433bb5673d4e8fcd5a8c8755dad02be",
+  "reviewWorkspaceHead": "e4116cedd9c2d820a88f7ba6c0dff839bc2c4e08",
+  "conclusion": "CHANGES_REQUIRED",
+  "accepted": false,
+  "checks": {
+    "initialSnapshot": {"items": 29, "available": 20, "notAvailable": 9, "result": "PASS"},
+    "recordedIncrement": {"inputCommit": "cfdb6f5f4f75bdcce04754f513668796da62326c", "items": 21, "canonicalGitBlobVerified": 21, "result": "PASS_FOR_RECORDED_SNAPSHOT"},
+    "rtm": {"rows": 117, "fr": 39, "starFr": 34, "pass": 11, "notRun": 59, "blocked": 47, "result": "PASS"},
+    "deferred": {"implementationAc": 30, "evidenceAc": 76, "ownerSystems": "0/6", "independentOperator": 0, "result": "PASS"},
+    "simulatedRehearsalAddedAcPass": 0,
+    "realWorldAccepted": 0
+  },
+  "findings": [
+    {"id": "ISSUE-G6-02-004", "severity": "MAJOR", "status": "OPEN", "summary": "The unique index stops at cfdb6f5 and does not include the subsequent G6-01 V0.2 remediation and evidence."},
+    {"id": "ISSUE-G6-02-005", "severity": "MAJOR", "status": "OPEN", "summary": "The C prompt log and current audit/package overview retain stale pre-commit or not-formed state semantics."}
+  ],
+  "issueCounts": {"blocker": 0, "major": 2, "minor": 0, "observation": 0},
+  "next": "C_REMEDIATION_THEN_B_REREVIEW_THEN_A_CONSISTENCY_REREVIEW",
+  "realWorldDeferred": ["owner-external-systems", "independent-deployer", "site-training-trial-data-signature"]
+}

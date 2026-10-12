@@ -2035,3 +2035,9 @@
 | ISSUE-G6-02-005 | MAJOR / OPEN / CHANGES_REQUESTED | C日志已有最终输出和push回填但顶层仍`PROMPT_LOGGED`；当前审计行仍写本轮commit待回填，README仍称G6-01手册/台账尚未形成，AI状态机与当前概览未闭环 | C / B再复验；A一致性复验 | 日志状态同步为真实已推送待复核；审计链落定`0de6884`和已发生回填/PR N/A；修正README当前概览，保留明确标为历史的旧段落 |
 
 B本轮结论：`CHANGES_REQUIRED / FINAL_REVIEW_NOT_ACCEPTED`；G6-02保持REVIEW。证据：`logs/reviews/2026-10-12_G6-02-B-final-review.md`、`evidence/g6/G6-02/b-final-review.json`。
+
+### A 整改复验裁决（2026-10-12）｜G6-01当前状态
+
+原表及B整改响应为历史过程记录；当前001/002/003=CLOSED / VERIFIED_BY_A，004=CLOSED_FOR_G6_01 / VERIFIED_BY_A（版本/手册映射已闭环）。ISSUE-G6-03-001的B技术确认由G6-01_B_remediation.md提供，C G6-03整体复核仍PENDING，不关闭该跨任务Issue。G6-01允许DONE，非真实履约完成。
+
+新增ISSUE-G6-01-005：MINOR / FIXED_VERIFIED_BY_A；用户手册§4.3把内存HTTP测试写成PostgreSQL，按用户授权修正工作稿/DOCX/PDF，更新Pair指纹。35项机械证据断言及A本地quality exit0、全页用户手册视觉检查通过。详见docs/work/G6/G6-01_A_rereview.md。原失败/延期保留；G6-02-004/005及G6-00-001不关闭。

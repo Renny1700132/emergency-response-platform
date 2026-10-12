@@ -13,12 +13,15 @@
     "bodyMapping": "PAIR_ROLE_PARAGRAPH_AND_TABLE_PROPERTIES_CLONED",
     "businessStructureDeviation": "Project-specific manual chapters replace teaching-case business chapters by design.",
     "caseContaminationCheck": "PASS",
-    "renderStatus": "PASS_WORD_COM_POPPLER_ALL_PAGES",
-    "deliverableSha256": "ebc7de0b2183474e5689ea1236696f20c0c14a1a2b851cedbac83985c5e69e50",
+    "renderStatus": "PASS_WORD_COM_POPPLER_A_ALL_10_PAGES",
+    "deliverableSha256": "d9b6555a834126f341bc759e07ae70528c966b22eb4f820a0c4e4a5580b4046d",
     "pdf": "docs/deliverables/G6/34-用户手册.pdf",
-    "pdfSha256": "057e2ea7eb4761a4b3cbb3160214f1248802c8e0410fa045ce99e39dca6a7e4a",
+    "pdfSha256": "b0bffb8cac011ba39f9d71e1a98f1061c34167db8eb35bda874735e41c0bb332",
     "visualQaDate": "2026-10-12",
-    "renderDocxAttempt": "FAILED_NO_SOFFICE_RECORDED"
+    "renderDocxAttempt": "FAILED_NO_SOFFICE_RECORDED",
+    "previousDeliverableSha256": "ebc7de0b2183474e5689ea1236696f20c0c14a1a2b851cedbac83985c5e69e50",
+    "previousPdfSha256": "057e2ea7eb4761a4b3cbb3160214f1248802c8e0410fa045ce99e39dca6a7e4a",
+    "aRereviewCorrection": "2026-10-12 A authorized minor correction: HTTP test uses in-memory storage and synthetic providers; PostgreSQL deployment evidence separate."
   },
   {
     "mode": "CONTENT EDIT",

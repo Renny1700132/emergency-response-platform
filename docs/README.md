@@ -111,3 +111,5 @@
 - `work/G6/G6-01_A_review.md`、`work/G6/G6-02_A_review.md`：逐项Review、命令核对、责任与复验；A不代B最终整体Review。
 - `work/G6/G6_A_review_summary.md`：跨任务一致性、6项MAJOR、准出清单；不允许G6最终准出。
 - `../evidence/g6/G6-A-review/`：A机械追溯与22页独立PDF渲染、原始校验/质量结果；不替代唯一C交付索引。
+
+G6-01当前状态（2026-10-12）：A整改复验PASS，tasks置DONE；[复验记录](work/G6/G6-01_A_rereview.md)。用户手册§4.3证据介质小错已同步正式件；G6-02索引增量与G6-03 C整体复核、真实履约延期继续挂账。

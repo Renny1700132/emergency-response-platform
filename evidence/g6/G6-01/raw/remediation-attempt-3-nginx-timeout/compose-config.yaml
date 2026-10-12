@@ -1,0 +1,89 @@
+name: g601remediation
+services:
+  backend:
+    build:
+      context: /mnt/e/26shixi/emergency-response-platform-g5-02
+      dockerfile: backend/Dockerfile
+    depends_on:
+      database:
+        condition: service_healthy
+        required: true
+    environment:
+      DATABASE_URL: postgres://emergency:g6-52657697-4f73-44ce-9f2b-7e227252bfd6@database:5432/emergency
+      MIDDLE_PLATFORM_BASE_URL: http://host.docker.internal:43104
+      MIDDLE_PLATFORM_FILE_PRESIGN_PATH: /api/v1/platform/files/presign
+      MIDDLE_PLATFORM_IDENTITY_PATH: /api/v1/platform/context
+      NODE_ENV: production
+      PORT: "3000"
+      REQUEST_TIMEOUT_MS: "3000"
+      SIMULATED_INTEGRATION_BASE_URL: ""
+    extra_hosts:
+      - host.docker.internal=host-gateway
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:3000/readyz').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))
+      timeout: 3s
+      interval: 5s
+      retries: 20
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 3000
+        published: "3000"
+        protocol: tcp
+  database:
+    environment:
+      POSTGRES_DB: emergency
+      POSTGRES_PASSWORD: g6-52657697-4f73-44ce-9f2b-7e227252bfd6
+      POSTGRES_USER: emergency
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U emergency -d emergency
+      timeout: 3s
+      interval: 5s
+      retries: 20
+    image: postgres:16-alpine
+    networks:
+      default: null
+    volumes:
+      - type: volume
+        source: emergency-postgres
+        target: /var/lib/postgresql/data
+        volume: {}
+  frontend:
+    build:
+      context: /mnt/e/26shixi/emergency-response-platform-g5-02
+      dockerfile: frontend/Dockerfile
+      args:
+        VITE_API_BASE_URL: ""
+        VITE_APP_TITLE: 博物馆智能运营中心
+        VITE_REQUEST_TIMEOUT_MS: "10000"
+    depends_on:
+      backend:
+        condition: service_healthy
+        required: true
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget -qO- http://127.0.0.1/ >/dev/null || exit 1
+      timeout: 3s
+      interval: 5s
+      retries: 20
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "18080"
+        protocol: tcp
+networks:
+  default:
+    name: g601remediation_default
+volumes:
+  emergency-postgres:
+    name: g601remediation_emergency-postgres

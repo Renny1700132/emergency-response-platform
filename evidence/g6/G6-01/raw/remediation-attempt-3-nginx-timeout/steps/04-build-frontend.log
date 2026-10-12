@@ -1,0 +1,17 @@
+Compose can now delegate builds to bake for better performance.
+ To do so, set COMPOSE_BAKE=true.
+#0 building with "default" instance using docker driver
+
+#1 [frontend internal] load build definition from Dockerfile
+#1 transferring dockerfile: 767B 0.0s done
+#1 DONE 0.0s
+
+#2 [frontend internal] load metadata for docker.io/library/node:24-alpine
+#2 DONE 0.0s
+
+#3 [frontend internal] load metadata for docker.io/library/nginx:1.27-alpine
+#3 ERROR: failed to do request: Head "https://registry-1.docker.io/v2/library/nginx/manifests/1.27-alpine": dial tcp 65.22.160.17:443: i/o timeout
+------
+ > [frontend internal] load metadata for docker.io/library/nginx:1.27-alpine:
+------
+failed to solve: DeadlineExceeded: DeadlineExceeded: DeadlineExceeded: nginx:1.27-alpine: failed to resolve source metadata for docker.io/library/nginx:1.27-alpine: failed to do request: Head "https://registry-1.docker.io/v2/library/nginx/manifests/1.27-alpine": dial tcp 65.22.160.17:443: i/o timeout

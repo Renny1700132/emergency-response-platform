@@ -100,4 +100,4 @@ docker compose up --build -d --wait
 docker compose exec backend node backend/scripts/migrate.mjs up
 ```
 
-Compose 同时构建 Web/H5 静态站点、Nginx `/api/` 反向代理、后端与 PostgreSQL；默认 Web/H5 入口为 `http://<host>:8080/web/overview` 和 `/h5/events`。正式身份令牌仍由门户或宿主 APP 通过 `window.MuseumHostBridge` / `window.__MUSEUM_AUTH__` 注入，容器不生成或保存甲方令牌。视频、信息发布、入侵、门禁、消防、IoT、统一中台、统一消息、地图及定位端口不由本容器替代，课程 Fixture 也不得写成甲方真实接口。
+Compose 同时构建 Web/H5 静态站点、同源 `/api/` 反向代理、后端与 PostgreSQL；默认 Web/H5 入口为 `http://<host>:8080/web/overview` 和 `/h5/events`。静态站点与代理由最小 Node 24 运行容器提供，避免引入未锁定的额外运行依赖。正式身份令牌仍由门户或宿主 APP 通过 `window.MuseumHostBridge` / `window.__MUSEUM_AUTH__` 注入，容器不生成或保存甲方令牌。视频、信息发布、入侵、门禁、消防、IoT、统一中台、统一消息、地图及定位端口不由本容器替代，课程 Fixture 也不得写成甲方真实接口。

@@ -12,8 +12,11 @@ ENV VITE_API_BASE_URL=${VITE_API_BASE_URL} \
     VITE_APP_TITLE=${VITE_APP_TITLE}
 RUN npm run build
 
-FROM nginx:1.27-alpine
-COPY frontend/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/frontend/dist /usr/share/nginx/html
+FROM node:24-alpine
+WORKDIR /app
+COPY frontend/runtime-server.mjs ./runtime-server.mjs
+COPY --from=build /app/frontend/dist ./dist
+USER node
 EXPOSE 80
-HEALTHCHECK --interval=5s --timeout=3s --retries=20 CMD wget -qO- http://127.0.0.1/ >/dev/null || exit 1
+HEALTHCHECK --interval=5s --timeout=3s --retries=20 CMD node -e "fetch('http://127.0.0.1/').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
+CMD ["node", "runtime-server.mjs"]

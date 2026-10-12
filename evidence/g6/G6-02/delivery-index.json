@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "task": "G6-02",
-  "state": "REVIEW_G6_01_A_ACCEPTED_PENDING_B_REREVIEW",
+  "state": "DONE_A_CONSISTENCY_ACCEPTED_REAL_WORLD_DEFERRED",
   "initialSnapshot": {
     "locked": true,
     "contentCommit": "56e9da9",
@@ -604,5 +604,16 @@
       "frAcTc": "N/A or indexed downstream",
       "downstream": "G6-02/G6-03/G6-04"
     }
-  ]
+  ],
+  "currentAcceptance": {
+    "asOf": "2026-10-12",
+    "conclusion": "ACCEPTED_BY_A",
+    "taskState": "DONE_A_CONSISTENCY_ACCEPTED_REAL_WORLD_DEFERRED",
+    "bReviewCommit": "6fad770",
+    "bReviewRecord": "logs/reviews/2026-10-12_G6-02-B-final-rereview.md",
+    "aReviewRecord": "docs/work/G6/G6-02_A_rereview.md",
+    "reviewedInputCommit": "b8f729dbb48aaafa9ed5cdf93f0f8afbf6a0e5ba",
+    "realWorldAccepted": 0,
+    "note": "Current dated acceptance supplements locked historical snapshots; no FR/AC/TC results changed; AI assisted role reviews, not natural person signatures."
+  }
 }

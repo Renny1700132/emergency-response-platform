@@ -1,0 +1,797 @@
+{
+  "status": "PASS",
+  "inputHead": "b8f729dbb48aaafa9ed5cdf93f0f8afbf6a0e5ba",
+  "assertions": 197,
+  "checks": [
+    {
+      "check": "B final overall acceptance exists",
+      "passed": true
+    },
+    {
+      "check": "B review source unchanged",
+      "passed": true
+    },
+    {
+      "check": "historical initial items unchanged",
+      "passed": true
+    },
+    {
+      "check": "historical 21 item increment unchanged",
+      "passed": true
+    },
+    {
+      "check": "GI-001 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-002 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-003 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-004 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-005 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-006 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-007 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-008 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-009 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-010 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-011 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-012 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-013 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-014 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-015 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-016 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-017 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-018 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-019 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-020 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-021 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-022 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-023 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-024 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-025 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-026 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-027 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-028 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-029 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-030 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-031 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-032 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-033 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-034 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-035 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-036 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-037 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-038 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-039 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-040 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-041 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-042 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-043 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-044 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-045 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-046 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-047 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-048 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-049 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "GI-050 canonical bytes/hash",
+      "passed": true
+    },
+    {
+      "check": "docs/deliverables/G6/34-用户手册.docx latest bytes match current",
+      "passed": true
+    },
+    {
+      "check": "docs/deliverables/G6/34-用户手册.pdf latest bytes match current",
+      "passed": true
+    },
+    {
+      "check": "docs/deliverables/G6/45-部署与运维手册.docx latest bytes match current",
+      "passed": true
+    },
+    {
+      "check": "docs/deliverables/G6/45-部署与运维手册.pdf latest bytes match current",
+      "passed": true
+    },
+    {
+      "check": "117 AC unique",
+      "passed": true
+    },
+    {
+      "check": "39 FR / 34 star FR",
+      "passed": true
+    },
+    {
+      "check": "AC 11/59/47",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-001-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-001-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-001-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-002-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-002-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-002-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-003-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-003-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-003-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-004-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-004-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-004-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-005-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-005-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-005-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-006-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-006-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-006-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-007-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-007-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-007-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-008-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-008-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-008-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-009-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-009-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-009-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-010-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-010-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-010-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-011-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-011-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-011-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-012-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-012-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-012-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-013-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-013-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-013-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-014-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-014-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-014-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-015-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-015-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-015-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-016-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-016-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-016-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-017-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-017-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-017-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-018-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-018-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-018-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-019-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-019-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-019-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-020-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-020-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-020-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-021-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-021-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-021-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-022-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-022-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-022-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-023-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-023-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-023-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-024-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-024-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-024-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-025-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-025-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-025-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-026-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-026-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-026-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-027-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-027-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-027-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-028-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-028-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-028-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-029-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-029-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-029-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-030-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-030-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-030-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-031-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-031-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-031-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-032-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-032-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-032-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-033-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-033-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-033-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-034-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-034-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-034-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-035-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-035-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-035-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-036-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-036-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-036-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-037-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-037-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-037-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-038-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-038-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-038-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-039-01 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-039-02 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "AC-G2-FR-039-03 FR/TC/raw/result chain",
+      "passed": true
+    },
+    {
+      "check": "real world remains unaccepted",
+      "passed": true
+    },
+    {
+      "check": "56e9da9 audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "e194cdb audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "deaddc6 audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "0de6884 audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "6f56ab6 audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "6f5d86e audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "858f1f0 audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "81fc5a4 audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "ca5b916 audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "56dbeff audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "6fad770 audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "41b8180 audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "e223f6d audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "d322c64 audit ancestor",
+      "passed": true
+    },
+    {
+      "check": "AI代码占比 honestly unknown",
+      "passed": true
+    },
+    {
+      "check": "评审打回率 honestly unknown",
+      "passed": true
+    },
+    {
+      "check": "Prompt复用次数 honestly unknown",
+      "passed": true
+    },
+    {
+      "check": "返工成本 honestly unknown",
+      "passed": true
+    }
+  ],
+  "scope": "A_DIRECTORY_PLAN_CONSISTENCY_REVIEW",
+  "realWorldAccepted": 0
+}

@@ -76,5 +76,17 @@
   "reviewer": "B",
   "reviewStatus": "PENDING_B_REREVIEW_AFTER_C_REMEDIATION",
   "bFirstFinalReviewStatus": "CHANGES_REQUIRED",
-  "aReviewStatus": "G6_01_ACCEPTED_G6_02_CONSISTENCY_REREVIEW_PENDING"
+  "aReviewStatus": "G6_01_ACCEPTED_G6_02_CONSISTENCY_REREVIEW_PENDING",
+  "snapshotNote": "Existing status/checks/blockers are C validation snapshot at generatedAt, not current task state. Current actual review follows currentAcceptance.",
+  "currentAcceptance": {
+    "asOf": "2026-10-12",
+    "conclusion": "ACCEPTED_BY_A",
+    "taskState": "DONE_A_CONSISTENCY_ACCEPTED_REAL_WORLD_DEFERRED",
+    "bReviewCommit": "6fad770",
+    "bReviewRecord": "logs/reviews/2026-10-12_G6-02-B-final-rereview.md",
+    "aReviewRecord": "docs/work/G6/G6-02_A_rereview.md",
+    "reviewedInputCommit": "b8f729dbb48aaafa9ed5cdf93f0f8afbf6a0e5ba",
+    "realWorldAccepted": 0,
+    "note": "Current dated acceptance supplements locked historical snapshots; no FR/AC/TC results changed; AI assisted role reviews, not natural person signatures."
+  }
 }

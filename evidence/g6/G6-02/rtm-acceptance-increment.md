@@ -48,3 +48,5 @@
 | G2-FR-037 | 是 | 3 | 0 | 0 | 3 | DEFERRED_NOT_ACCEPTED |
 | G2-FR-038 | 否 | 3 | 0 | 0 | 3 | DEFERRED_NOT_ACCEPTED |
 | G2-FR-039 | 是 | 3 | 0 | 0 | 3 | DEFERRED_NOT_ACCEPTED |
+
+2026-10-12当前审计包已由B整体及A一致性复验接受。机器明细state和manualsAvailable:false为beb605f首版快照字段；当前手册已由GI增量挂接并经A接受。本次不更新117条真实结果，不将课程文档DONE迁移成AC/真实验收PASS。

@@ -63,3 +63,15 @@ AI审计结论：`PASS_FOR_TRACEABILITY / METRICS_PARTIAL`。最终指标须由 
 - 指标线：AI代码占比、Prompt复用次数、返工工时仍无可靠人工样本或工时账，继续`UNKNOWN / 【待人工确认】`；不由Git作者、日志数量或时间戳推断。
 
 当前审计结论：`C_V0_2_INCREMENT_TRACEABLE / PENDING_B_REREVIEW`。B第一轮结论保留为`CHANGES_REQUIRED`；只有B实际再复验并形成新记录后，才能更新结论，随后再由A复验目录、计划和一致性。
+
+## 5 2026-10-12 B与A最终复验接受增量
+
+第1—3节为2026-10-11首版审计，第4节为C整改提交时点；其中“尚未形成/待B”不表示当前事实。
+
+| 对象 | Prompt | 产物/内容commit | 日志回填/PR | 当前结论 |
+|---|---|---|---|---|
+| C第二轮整改形成链 | 2026-10-12-C.md LOG-G6-02-002 | 6f5d86e；并发A接受普通merge 858f1f0/81fc5a4；审计补记ca5b916 | 56dbeff；PR=N/A OVR-038 | 内容与安全push回填可定位 |
+| B最终整体再复验 | 2026-10-12-B.md对应G6-02再复验原文 | 6fad770；b-final-rereview.json及正式Review | 41b8180；PR=N/A OVR-038 | ACCEPTED_FOR_G6_02_FINAL_OVERALL_REVIEW |
+| A一致性整改复验 | 2026-10-12-A.md LOG-G6-02-A-REREVIEW-003 | G6-02_A_rereview.md与A-rereview独立证据；本轮commit随后在同一A日志真实回填 | PR=N/A OVR-038 | ACCEPTED_BY_A / TASK_DONE（非自然人签署） |
+
+当前审计结论：DONE_FOR_G6_02_AUDIT_PACKAGE / REAL_WORLD_DEFERRED；AI代码占比、打回率、Prompt复用、返工工时仍UNKNOWN，不新增假比例。G6-03 B技术确认已定位，C整体复核仍待；真实接口0/6、独立操作者0、现场/培训/试运行/数据/签署延期不关闭。

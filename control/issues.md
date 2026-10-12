@@ -2050,3 +2050,9 @@ B本轮结论：`CHANGES_REQUIRED / FINAL_REVIEW_NOT_ACCEPTED`；G6-02保持REVI
 原表及B整改响应为历史过程记录；当前001/002/003=CLOSED / VERIFIED_BY_A，004=CLOSED_FOR_G6_01 / VERIFIED_BY_A（版本/手册映射已闭环）。ISSUE-G6-03-001的B技术确认由G6-01_B_remediation.md提供，C G6-03整体复核仍PENDING，不关闭该跨任务Issue。G6-01允许DONE，非真实履约完成。
 
 新增ISSUE-G6-01-005：MINOR / FIXED_VERIFIED_BY_A；用户手册§4.3把内存HTTP测试写成PostgreSQL，按用户授权修正工作稿/DOCX/PDF，更新Pair指纹。35项机械证据断言及A本地quality exit0、全页用户手册视觉检查通过。详见docs/work/G6/G6-01_A_rereview.md。原失败/延期保留；G6-02-004/005及G6-00-001不关闭。
+
+## G6-02 A整改复验当前裁决（2026-10-12）
+
+A以master@b8f729d、B实际再复验6fad770/41b8180为输入，197项独立断言及专用校验通过。ISSUE-G6-02-002/003=CLOSED / VERIFIED_BY_A_WITH_B_FINAL_ACCEPTANCE；004/005=CLOSED / VERIFIED_BY_B_AND_A。旧退回与C整改段落为历史，不改写。
+
+ISSUE-G6-02-006：MINOR / FIXED_VERIFIED_BY_A；当前README/索引顶层/缺项016/审计概览仍“待B”，按用户授权补实际B/A接受，明确历史快照、V0.1的22页及当前V0.2的20页。未改历史hash/117行结果；validator增加DONE的真实Review依据检查。详细G6-02_A_rereview.md。G6-02置DONE仅审计包接受，真实0/6接口、0独立操作者及现场/培训/试运行/数据/签署继续延期。

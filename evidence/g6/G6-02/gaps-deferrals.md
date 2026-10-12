@@ -17,6 +17,6 @@
 | GAP-G6-013 | ISSUE-G5-02-008部署脚本改进 | OPEN / NON_BLOCKING_IMPROVEMENT | B | 下次真实部署或脚本迭代 | 动态时限、清理与残留审计实跑复验 | 【待人工确认】 |
 | GAP-G6-014 | D18公历日期、时长、现场条件 | OPEN / PLANNING_INPUT | A协调 | 教师/课程安排确认 | 日期、时长、网络和现场规则有可定位记录 | 【待人工确认】 |
 | GAP-G6-015 | 答辩候选与正式路径 | CANDIDATE_AVAILABLE / FINAL_NOT_AVAILABLE | A主责，B技术/C整体复核 | ISSUE-G6-03-001关闭及复核完成 | `G6-03-验收答辩候选.pptx/.pdf`可定位；不得冒充规划正式路径`G6-验收答辩.pptx` | 【待人工确认】 |
-| GAP-G6-016 | G6-02增量最终复核 | B_FIRST_REVIEW_CHANGES_REQUIRED / C_REMEDIATED_PENDING_B_REREVIEW | C主责，B再复验，A一致性复验 | V0.2后续增量与审计状态提交并推送 | B形成实际再复验结论；其后A复验目录/计划/一致性；不得预写通过 | 【待人工确认】 |
+| GAP-G6-016 | G6-02增量最终复核 | CLOSED_FOR_G6_02 / B_AND_A_ACCEPTED | C主责，B整体复核，A一致性复验 | 已实际触发 | B记录6fad770及A的G6-02_A_rereview.md已存在；真实验收仍由其他延期项单列 | 2026-10-12课程审计复验完成 |
 
 本表中的课程关闭项不等于真实项目关闭。任何资源阻断只能在真实证据到位或另有书面课程裁决后迁移状态，且真实世界状态继续单列。

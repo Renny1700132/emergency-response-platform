@@ -33,7 +33,16 @@ const available = delivery.items.filter((x) => x.availability === 'AVAILABLE');
 const missing = delivery.items.filter((x) => x.availability === 'NOT_AVAILABLE');
 if (available.length !== 20 || missing.length !== 9) fail(`availability ${available.length}/${missing.length} != 20/9`);
 if (delivery.schemaVersion !== 3) fail(`delivery schema ${delivery.schemaVersion} != 3`);
-if (delivery.state !== 'REVIEW_G6_01_A_ACCEPTED_PENDING_B_REREVIEW') fail(`unexpected delivery state: ${delivery.state}`);
+const acceptedState = 'DONE_A_CONSISTENCY_ACCEPTED_REAL_WORLD_DEFERRED';
+if (![acceptedState, 'REVIEW_G6_01_A_ACCEPTED_PENDING_B_REREVIEW'].includes(delivery.state)) fail(`unexpected delivery state: ${delivery.state}`);
+if (delivery.state === acceptedState) {
+  const acceptance = delivery.currentAcceptance;
+  const bFinal = readJson('b-final-rereview.json');
+  if (bFinal.accepted !== true || acceptance?.bReviewCommit !== '6fad770') fail('DONE without actual B final acceptance');
+  if (acceptance?.aReviewRecord !== 'docs/work/G6/G6-02_A_rereview.md' || !fs.existsSync(path.join(root, acceptance.aReviewRecord))) fail('DONE without A review record');
+  const aEvidence = readJson('A-rereview/independent-check.json');
+  if (aEvidence.status !== 'PASS' || acceptance?.realWorldAccepted !== 0 || acceptance?.conclusion !== 'ACCEPTED_BY_A') fail('DONE review or real-world boundary drift');
+}
 if (delivery.initialSnapshot?.locked !== true) fail('initial snapshot is not locked');
 if (delivery.initialSnapshot?.counts?.items !== 29 || delivery.initialSnapshot?.counts?.available !== 20 || delivery.initialSnapshot?.counts?.notAvailable !== 9) fail('initial snapshot counts drift');
 for (const item of available) {

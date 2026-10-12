@@ -100,3 +100,7 @@ V0.2后续增量共18项，18项均可定位；26步部署/回退为成员B本�
 | GI-048—050 | A审核汇总及输入时tasks/issues状态 | `docs/work/G6/G6_A_review_summary.md`、`tasks.md`、`control/issues.md` | G6-01 DONE；G6-02仍待C/B | 见JSON逐文件canonical指纹 |
 
 A复验增量共11项，11/11 canonical Git blob取自`e223f6d`并可核验。此增量将G6-01当前状态更新为`DONE（MANUALS_AND_LOCAL_DELIVERY_REVIEW_ACCEPTED / REAL_WORLD_DEFERRED）`，不改变G6-02待B再复验状态。
+
+## 2026-10-12当前接受状态
+
+B最终整体再复验`6fad770`已接受；A目录/计划/一致性复验接受，任务DONE（真实履约延期）。机器索引顶层state及currentAcceptance为当前状态；首版29项20/9、cfdb6f5的21项、d17847d的18项、e223f6d的11项保持锁定，不倒改各时点Review状态。当前手册新指纹GI-040—043优先于V0.1/V0.2早期条目；G6-03候选与真实现场分列。

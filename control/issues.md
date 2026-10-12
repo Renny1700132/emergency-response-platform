@@ -2010,8 +2010,8 @@
 | ISSUE-G6-01-002 | MAJOR / OPEN / CHANGES_REQUESTED | 台账部署子命令无逐条时间/退出码；cp、升级/回退等手册命令无对应本轮实跑记录，Vite截图exit0缺原始执行日志 | B / A | 受控隔离环境按每条命令记录环境/版本/起止/输出/退出码/raw，区分精确与等价/未跑；失败保留；A复验，不在生产为凑证据回退 |
 | ISSUE-G6-01-003 | MAJOR / OPEN / CHANGES_REQUESTED | 手册仅完整描述后端，缺前端构建/托管/代理/API地址/身份注入；可配环境变量未Compose透传；migrate down会全量逆序删表，未给可执行的目标恢复与数据保持验证 | B / A | 补完整部署/配置步骤、健康判据与备份复制验证；明确down全量影响/恢复点/停止写入/迁移集合；非作者可照文档在隔离环境执行留证；真实KN-065仍另验 |
 | ISSUE-G6-01-004 | MAJOR / OPEN / VERSION_RECONCILIATION_REQUIRED | 手册beb605f旧锁与8dbfbab新版H5进度修复不同，ISSUE-G6-03-001待B技术/C整体复核；已知限制未挂本缺陷 | B技术/手册；C G6-03复核；A一致性复验 | 明确旧/新代码与截图/验证适用范围，挂接已知缺陷；实际B技术/C整体结论与A版本复验；不得把新版证据挂回旧commit |
-| ISSUE-G6-02-002 | MAJOR / OPEN / INCREMENT_REQUIRED | 首版CI015/016仍未形成，当前实际存在；PDF/台账/交接/截图/答辩候选/模拟试演/A Review增量未入唯一索引，延期与自检未同步 | C / B最终整体复核；A目录/一致性 | 保留首版快照，追加当前commit canonical指纹、版本、状态、模拟/真实分类与延期；实际候选PPT路径与计划正式路径分列；B最终复核/A增量复验 |
-| ISSUE-G6-02-003 | MAJOR / OPEN / AUDIT_INCREMENT_REQUIRED | 审计账仍写待内容commit/待B首审，但实际56e9da9/e194cdb和deaddc6已存在；G6-01/03及A退回未纳入当前链 | C / B最终整体复核；A一致性 | 追加日期化Prompt—产物—commit—PR N/A—Review链，保留历史候选状态；未知AI比例/复用/工时不造数，B最终复核留实际结论 |
+| ISSUE-G6-02-002 | MAJOR / C_REMEDIATED_PENDING_B_FINAL_REVIEW | 2026-10-12 C已保留首版29项20/9快照，并在同一索引追加GI-001—021：两手册DOCX/PDF、命令/交接/截图、实际答辩候选、模拟试演、A四份审核文档及机械/视觉证据；逐文件登记`cfdb6f5` canonical Git blob、版本、状态和模拟/真实边界；CI-028规划路径与实际候选路径、CI-029真实现场与模拟试演分列 | C / B最终整体复核；A目录/一致性 | C机械校验通过不等于关闭；待B形成最终整体Review，再由A增量复验后关闭 |
+| ISSUE-G6-02-003 | MAJOR / C_REMEDIATED_PENDING_B_FINAL_REVIEW | 2026-10-12 C已追加G6-01、G6-02首版、G6-03、A退回和本轮整改的日期化Prompt—产物—commit—PR N/A—Review链；保留56e9da9/e194cdb与deaddc6历史结论，未知AI比例/复用/工时继续UNKNOWN | C / B最终整体复核；A一致性 | 本轮自身内容commit按不可自引用边界在同一C日志独立回填；待B实际最终复核，不预写接受结论 |
 
 资源延期继续独立保留：30 AC实现、76 AC证据、六类甲方真实系统0/6、真实非乙方操作者0、真实宿主/现场/培训/试运行/数据初始化/签署。新问题不是已关闭项；A不静默维护B/C正式产物。本轮完整审查的退回结论不等于作者整改已完成。
 

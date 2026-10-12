@@ -13,6 +13,10 @@
 | 性能失败 | 0 | 上述1160样本中的请求失败 | 不覆盖真实甲方通道/目标规模 | performance-raw | VERIFIED_WITH_BOUNDARY |
 | 交付索引配置项 | 29 | 本轮唯一索引行 | 首版快照；后续增量不重复编号 | delivery-index.json | VERIFIED |
 | 当前可用/缺项 | 20/9 | AVAILABLE/NOT_AVAILABLE，分母29 | 仅存在性，不代表全部验收通过 | delivery-index.json | VERIFIED |
+| 当前增量配置项 | 21 | 2026-10-12在同一索引追加的GI-001—021 | 不并入或改写首版29项分母 | delivery-index.json currentIncrement | VERIFIED |
+| 首版路径当前存在 | 22/29 | 首版29条路径在`cfdb6f5`的存在性 | CI-015/016现已存在；存在不等于验收通过 | A Review + delivery-index transitions | VERIFIED_WITH_BOUNDARY |
+| 手册渲染复核页数 | 22 | 用户手册与部署运维手册PDF的A视觉复核总页数 | 仅视觉/版式核验；内容仍NEED_FIX | G6-01 A Review | VERIFIED_WITH_BOUNDARY |
+| G6-03模拟试演检查 | 23 PASS | 本地内存、模拟数据的实际试演检查 | 不映射为23个AC PASS，不改变11/59/47 | rehearsal-result.json | VERIFIED_WITH_BOUNDARY |
 | 甲方系统真实联调 | 0/6 | 视频、消息、定位、GIS、安防、发布 | 模拟6/6另列，不混计 | G5-02条件证据 | VERIFIED |
 | 真实非乙方部署操作者 | 0 | 实际独立人员数 | 模拟课程角色不计 | KN-065见证记录 | VERIFIED |
 | AI代码占比 | 【待人工确认】 | 需人工确认的代码归因样本/纳入样本 | Git作者与AI日志不直接等于代码归因 | 尚无可靠样本账 | UNKNOWN |
@@ -21,3 +25,5 @@
 | 返工成本 | 【待人工确认】 | 有证据的实际返工工时 | Git时间不等于工时；未知不写0 | Issue/Review与人工工时 | UNKNOWN |
 
 本账只提供单一取数口径。A制作PPT/总结时不得重新手算或选择更好看的分母；B复核技术范围后再进入发布材料。
+
+2026-10-12增量说明：29、20/9是首版历史快照；21是日期化增量条目；22/29仅是原索引路径当前存在数。三个分母属于不同时间与统计对象，禁止相加或互相替代。真实项目验收接受仍为0。

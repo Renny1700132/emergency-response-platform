@@ -1,7 +1,90 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "task": "G6-02",
-  "state": "REVIEW_INITIAL_CANDIDATE_PENDING_B",
+  "state": "REVIEW_INCREMENT_PENDING_B_FINAL_REVIEW",
+  "initialSnapshot": {
+    "locked": true,
+    "contentCommit": "56e9da9",
+    "logBackfillCommit": "e194cdb",
+    "bInitialReviewCommit": "deaddc6",
+    "state": "ACCEPTED_FOR_INITIAL_G6_02_CANDIDATE",
+    "counts": {
+      "items": 29,
+      "available": 20,
+      "notAvailable": 9
+    },
+    "note": "items数组保持2026-10-11首版快照原值；后续事实只写currentIncrement，不回写历史可用性。"
+  },
+  "currentIncrement": {
+    "asOf": "2026-10-12",
+    "inputCommit": "cfdb6f5f4f75bdcce04754f513668796da62326c",
+    "state": "C_REMEDIATED_PENDING_B_FINAL_REVIEW_AND_A_CONSISTENCY_REREVIEW",
+    "reviewStatus": "A_NEED_FIX_INPUT_INCORPORATED_B_FINAL_REVIEW_PENDING",
+    "historicalTransitions": [
+      {
+        "initialId": "CI-015",
+        "from": "NOT_AVAILABLE/PLANNED_G6_01",
+        "to": "AVAILABLE_CANDIDATE/A_NEED_FIX",
+        "incrementIds": ["GI-001", "GI-002"]
+      },
+      {
+        "initialId": "CI-016",
+        "from": "NOT_AVAILABLE/PLANNED_G6_01",
+        "to": "AVAILABLE_CANDIDATE/A_NEED_FIX",
+        "incrementIds": ["GI-003", "GI-004"]
+      },
+      {
+        "initialId": "CI-028",
+        "from": "PLANNED_PATH_NOT_AVAILABLE",
+        "to": "SEPARATE_CANDIDATE_PATH_AVAILABLE/NOT_FINAL",
+        "incrementIds": ["GI-011", "GI-012"],
+        "plannedPath": "docs/deliverables/G6/G6-验收答辩.pptx",
+        "actualCandidatePath": "docs/deliverables/G6/G6-03-验收答辩候选.pptx"
+      },
+      {
+        "initialId": "CI-029",
+        "from": "REAL_WORLD_RESOURCE_REQUIRED",
+        "to": "REAL_WORLD_RESOURCE_REQUIRED_WITH_SEPARATE_SIMULATED_REHEARSAL",
+        "incrementIds": ["GI-013", "GI-014", "GI-015"]
+      }
+    ],
+    "items": [
+      {"id":"GI-001","name":"用户手册源文件候选","file":"docs/deliverables/G6/34-用户手册.docx","version":"G6-01@f9eec53","availability":"AVAILABLE","status":"COURSE_CANDIDATE_A_NEED_FIX","evidenceType":"DOCUMENT_SOURCE","reality":"COURSE_CANDIDATE_NOT_REAL_ACCEPTANCE","bytes":243033,"sha256":"755e94ef675751cd222803b93580fcd1a48ea5db7235cd789416e962d0a7bd65"},
+      {"id":"GI-002","name":"用户手册PDF候选","file":"docs/deliverables/G6/34-用户手册.pdf","version":"G6-01@f9eec53","availability":"AVAILABLE","status":"COURSE_CANDIDATE_A_NEED_FIX","evidenceType":"DOCUMENT_PDF","reality":"COURSE_CANDIDATE_NOT_REAL_ACCEPTANCE","bytes":651539,"sha256":"ad13e62436ee2473192fc7a1a1b0982cc91c608a206399c3203bc983459cb77d"},
+      {"id":"GI-003","name":"部署与运维手册源文件候选","file":"docs/deliverables/G6/45-部署与运维手册.docx","version":"G6-01@f9eec53","availability":"AVAILABLE","status":"COURSE_CANDIDATE_A_NEED_FIX","evidenceType":"DOCUMENT_SOURCE","reality":"COURSE_CANDIDATE_NOT_REAL_ACCEPTANCE","bytes":31955,"sha256":"c6a47f76462aa58514be83f49ec832775914a147ffff68105afde66f41e6b4cf"},
+      {"id":"GI-004","name":"部署与运维手册PDF候选","file":"docs/deliverables/G6/45-部署与运维手册.pdf","version":"G6-01@f9eec53","availability":"AVAILABLE","status":"COURSE_CANDIDATE_A_NEED_FIX","evidenceType":"DOCUMENT_PDF","reality":"COURSE_CANDIDATE_NOT_REAL_ACCEPTANCE","bytes":489567,"sha256":"aa95c5ee60f4943495a32a545deaaeca942cee2bbf6aab971a7627993b93a65f"},
+      {"id":"GI-005","name":"G6-01命令执行台账","file":"evidence/g6/G6-01/command-execution-ledger.md","version":"G6-01@f9eec53","availability":"AVAILABLE","status":"A_NEED_FIX_COMMAND_EVIDENCE","evidenceType":"COMMAND_LEDGER","reality":"AUTHOR_SIDE_LOCAL_EVIDENCE","bytes":2173,"sha256":"ffedae206ea4ca590219a735612bda387058cc84cbaf0f72b6e9deb0cd6edbf0"},
+      {"id":"GI-006","name":"部署交接与已知限制","file":"docs/work/B_TECH/g6_deployment_handoff_and_known_limits.md","version":"G6-01@f9eec53","availability":"AVAILABLE","status":"A_NEED_FIX_HANDOFF_INPUT","evidenceType":"HANDOFF","reality":"COURSE_HANDOFF_REAL_DEPLOYMENT_DEFERRED","bytes":1802,"sha256":"3522725e4fb32cf4c2edd780bcfb26f007c6f35106a1ce6e9cf9019158853247"},
+      {"id":"GI-007","name":"G6-01截图登记","file":"evidence/g6/G6-01/screenshot-register.md","version":"G6-01@f9eec53","availability":"AVAILABLE","status":"A_REVIEWED_SCREENSHOT_REGISTER","evidenceType":"SCREENSHOT_REGISTER","reality":"COURSE_PRESENTATION_EVIDENCE","bytes":1111,"sha256":"76f777735242a0f98ba7c606dd434ebc87953626cc12b287cbbd10ec50a9a507"},
+      {"id":"GI-008","name":"Web总览截图","file":"evidence/g6/G6-01/screenshots/01-web-overview-presentation.png","version":"G6-01@f9eec53","availability":"AVAILABLE","status":"A_REVIEWED_PRESENTATION_SCREENSHOT","evidenceType":"SCREENSHOT","reality":"COURSE_PRESENTATION_EVIDENCE","bytes":79928,"sha256":"1bfa25ed1a875275ce0eae5a131d50d93e1a078ff9b18e947da0a0320c1832e8"},
+      {"id":"GI-009","name":"Web事件截图","file":"evidence/g6/G6-01/screenshots/02-web-incidents-presentation.png","version":"G6-01@f9eec53","availability":"AVAILABLE","status":"A_REVIEWED_PRESENTATION_SCREENSHOT","evidenceType":"SCREENSHOT","reality":"COURSE_PRESENTATION_EVIDENCE","bytes":82827,"sha256":"d52a67a444f5c068c47316e06d49ccbfd6389e7ce4283efee48c7e4f20e560a8"},
+      {"id":"GI-010","name":"H5任务截图","file":"evidence/g6/G6-01/screenshots/03-h5-tasks-presentation.png","version":"G6-01@f9eec53","availability":"AVAILABLE","status":"A_REVIEWED_PRESENTATION_SCREENSHOT","evidenceType":"SCREENSHOT","reality":"COURSE_PRESENTATION_EVIDENCE","bytes":45345,"sha256":"939574797f59c419e5ac26037a8e33174c03e9df7b14759e5c63e6d1e81ba9e1"},
+      {"id":"GI-011","name":"验收答辩候选PPTX","file":"docs/deliverables/G6/G6-03-验收答辩候选.pptx","version":"G6-03@8dbfbab","availability":"AVAILABLE","status":"CANDIDATE_PENDING_B_TECH_AND_C_OVERALL_REVIEW","evidenceType":"DEFENSE_CANDIDATE_SOURCE","reality":"COURSE_CANDIDATE_NOT_FINAL_DELIVERY","bytes":556850,"sha256":"83eeff87ca1b761a995eb60dc44207d634d5f593a1bbea7d70ca5d4b9e5dad51"},
+      {"id":"GI-012","name":"验收答辩候选PDF","file":"docs/deliverables/G6/G6-03-验收答辩候选.pdf","version":"G6-03@8dbfbab","availability":"AVAILABLE","status":"CANDIDATE_PENDING_B_TECH_AND_C_OVERALL_REVIEW","evidenceType":"DEFENSE_CANDIDATE_PDF","reality":"COURSE_CANDIDATE_NOT_FINAL_DELIVERY","bytes":624675,"sha256":"5db7eb5dcf46b69126027dd1a92fa4421eb56b8d3c38e5e5bd4486bf2c2e79cd"},
+      {"id":"GI-013","name":"G6-03模拟试演结果","file":"evidence/g6/G6-03/rehearsal-result.json","version":"G6-03@8dbfbab","availability":"AVAILABLE","status":"23_SIMULATED_CHECKS_PASS_NOT_AC_PASS","evidenceType":"SIMULATED_REHEARSAL_RESULT","reality":"LOCAL_IN_MEMORY_SIMULATED","bytes":9014,"sha256":"cc72b302482d759eb70aa45fe5bff693dd3816db3bc81b1060072635db92ee34"},
+      {"id":"GI-014","name":"G6-03模拟试演版本锁","file":"evidence/g6/G6-03/rehearsal-release-lock.json","version":"G6-03@8dbfbab","availability":"AVAILABLE","status":"VERSION_LOCK_WITH_ISSUE_G6_03_001","evidenceType":"REHEARSAL_RELEASE_LOCK","reality":"LOCAL_SIMULATED_VERSION_EVIDENCE","bytes":22622,"sha256":"1760b1ddbbd7f7495ccaa86692e5f93c888dea38d1875862473d448d6f43878b"},
+      {"id":"GI-015","name":"G6-03试演交接","file":"evidence/g6/G6-03/handoff.md","version":"G6-03@8dbfbab","availability":"AVAILABLE","status":"PENDING_B_TECH_AND_C_OVERALL_REVIEW","evidenceType":"REHEARSAL_HANDOFF","reality":"COURSE_SIMULATED_REAL_SITE_DEFERRED","bytes":1108,"sha256":"ca937f5f0fcd671a040e8ca0c2383122c0f9aa8f459362a9370a59222921fd9b"},
+      {"id":"GI-016","name":"A对G6-01正式Review","file":"docs/work/G6/G6-01_A_review.md","version":"A-review@72aadc1","availability":"AVAILABLE","status":"NEED_FIX","evidenceType":"REVIEW_RECORD","reality":"COURSE_REVIEW_NOT_ACCEPTANCE","bytes":8498,"sha256":"4ecb1e604066247cf93b95ebbeb9ea7198de5893f151202fcd7f151ae84e2811"},
+      {"id":"GI-017","name":"A对G6-02正式Review","file":"docs/work/G6/G6-02_A_review.md","version":"A-review@72aadc1","availability":"AVAILABLE","status":"NEED_FIX_ISSUE_G6_02_002_003","evidenceType":"REVIEW_RECORD","reality":"COURSE_REVIEW_NOT_ACCEPTANCE","bytes":4960,"sha256":"89892f6cc5782504ff4a495c191c890070b59c55790b30ffbcd6dc9cc9b1646a"},
+      {"id":"GI-018","name":"A审核汇总","file":"docs/work/G6/G6_A_review_summary.md","version":"A-review@72aadc1","availability":"AVAILABLE","status":"G6_NOT_RELEASED","evidenceType":"REVIEW_SUMMARY","reality":"COURSE_REVIEW_NOT_ACCEPTANCE","bytes":4886,"sha256":"518546f7b3defd0caf68620450ac5f371b50881b0dcaa41e8c3bdd061063cee6"},
+      {"id":"GI-019","name":"A审核基线","file":"docs/work/G6/G6_A_review_baseline.md","version":"A-review@72aadc1","availability":"AVAILABLE","status":"REVIEW_BASELINE","evidenceType":"REVIEW_BASELINE","reality":"COURSE_REVIEW_INPUT","bytes":2586,"sha256":"cf7764219fa5aec790b74b1714d7b8fda443d4b442877a87766733eb67c8b2c5"},
+      {"id":"GI-020","name":"A机械审核结果","file":"evidence/g6/G6-A-review/mechanical-review.json","version":"A-review@72aadc1","availability":"AVAILABLE","status":"MECHANICAL_REVIEW_EVIDENCE","evidenceType":"REVIEW_MECHANICAL_EVIDENCE","reality":"COURSE_REVIEW_EVIDENCE","bytes":4101,"sha256":"0a129542fa7a228e7732b7a64d2258ce9804c6863b01e4faebef986dc278e1a5"},
+      {"id":"GI-021","name":"A视觉审核记录","file":"evidence/g6/G6-A-review/visual-review.md","version":"A-review@72aadc1","availability":"AVAILABLE","status":"22_PAGES_VISUALLY_REVIEWED","evidenceType":"REVIEW_VISUAL_EVIDENCE","reality":"VISUAL_REVIEW_NOT_CONTENT_ACCEPTANCE","bytes":1064,"sha256":"fd713f425417f601f148515ff0fe5181b026af0cec6825ac525a666261b2a277"}
+    ],
+    "counts": {
+      "incrementItems": 21,
+      "available": 21,
+      "courseCandidateOrEvidence": 21,
+      "realWorldAccepted": 0
+    },
+    "deferred": {
+      "implementationAc": 30,
+      "evidenceAc": 76,
+      "realOwnerSystems": "0/6",
+      "independentRealDeployer": 0,
+      "realSiteTrainingTrialDataSignature": "DEFERRED"
+    }
+  },
   "items": [
     {
       "id": "CI-001",

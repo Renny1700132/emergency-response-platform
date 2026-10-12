@@ -1,0 +1,41 @@
+{
+  "taskId": "G6-03",
+  "reviewRole": "C",
+  "reviewType": "TARGETED_REREVIEW_AFTER_A_REMEDIATION",
+  "reviewedCommit": "120c4aa665c2e5077ee961849723fd026235064e",
+  "conclusion": "ACCEPTED",
+  "accepted": true,
+  "taskStatus": "DONE_COURSE_SIMULATED_REHEARSAL_ACCEPTED_REAL_WORLD_DEFERRED",
+  "issue001": "CLOSED_VERIFIED_BY_B_AND_C",
+  "issue002": "CLOSED_VERIFIED_BY_C",
+  "findingCounts": {
+    "blocker": 0,
+    "major": 0,
+    "minor": 0
+  },
+  "checks": {
+    "aRemediationAssertions": {"passed": 148, "total": 148},
+    "staleCurrentStatePhrases": 0,
+    "renderedPages": {"passed": 14, "total": 14},
+    "pptxSha256": "857c09c31f0af9f22f7426e8fa603afafb28dace814dd559c0cea363aca8b17b",
+    "pdfSha256": "cf3574eaea71ace03f05148a07eb6a53289b92e80d57bf7963cec6bee3fd0f08",
+    "applicationCodeChangedSincePriorCReview": false,
+    "priorCurrentCodeRehearsal": {"passed": 23, "total": 23},
+    "controlledNumbers": {
+      "fr": 39,
+      "starFr": 34,
+      "ac": 117,
+      "acPass": 11,
+      "acNotRun": 59,
+      "acBlocked": 47,
+      "starPass": 1,
+      "starBlocked": 33,
+      "ownerSystemsAvailable": 0,
+      "ownerSystemsTotal": 6,
+      "realIndependentOperator": 0
+    }
+  },
+  "realWorldStatus": "REAL_WORLD_DEFERRED",
+  "openExternalIssue": "ISSUE-G6-00-001",
+  "reviewRecord": "logs/reviews/2026-10-12_G6-03-C-rereview.md"
+}

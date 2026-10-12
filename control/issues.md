@@ -2067,3 +2067,13 @@ ISSUE-G6-02-006：MINOR / FIXED_VERIFIED_BY_A；当前README/索引顶层/缺项
 ## G6-03 A状态与来源整改（2026-10-12）
 
 ISSUE-G6-03-002：MAJOR / REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。依据C整体Review，14页结构与受控数字不变，讲稿/备注/页脚同步CHANGES_REQUIRED及待定向复验；G6-01/02更新DONE与实际Review来源；001已B/C关闭。V0.2重新生成PPTX/PDF并更新当前自检，V0.1归档不改历史GI指纹。A不自行关闭002；真实延期继续。证据：evidence/g6/G6-03/remediation-selfcheck.json。
+
+### G6-03 C定向复验与关闭裁决（2026-10-12）
+
+- 复验基线：`master@120c4aa665c2e5077ee961849723fd026235064e`；复核人 C（用户授权 Codex 辅助，不冒充其他自然人）。
+- `ISSUE-G6-03-002`：`CLOSED / VERIFIED_BY_C`。A 已清除上轮列出的旧状态语义，G6-01/02 的 DONE、001 的 B/C 关闭结论、最终 Review 来源、讲稿/备注/页脚、handoff/consistency/selfcheck 均完成同步；专项校验 148/148 PASS。
+- 交付复验：PPTX/PDF 均为 14 页，哈希分别为 `857c09c31f0af9f22f7426e8fa603afafb28dace814dd559c0cea363aca8b17b`、`cf3574eaea71ace03f05148a07eb6a53289b92e80d57bf7963cec6bee3fd0f08`；C 对 14 页重新渲染并逐页检查，未见裁切、重叠或明显不可读内容。
+- 不变量：39 FR、34★FR、117 AC、11 PASS / 59 NOT_RUN / 47 BLOCKED、★FR 1 PASS / 33 BLOCKED、甲方真实系统 0/6、真实独立操作者 0 均未漂移；模拟试演 23/23 不折算新增 AC PASS。
+- 技术证据沿用条件成立：A 的 `b03de12..120c4aa` 整改未修改 `backend/` 或 `frontend/`，因此 C 上轮基于相同已接受应用代码完成的 23/23 复演和完整 `npm run quality` 结果继续有效，不重复执行无风险增量测试。
+- 结论：0 BLOCKER、0 MAJOR、0 MINOR；`ACCEPTED / COURSE_SIMULATED_REHEARSAL_ACCEPTED / REAL_WORLD_DEFERRED`。G6-03 可置 DONE；`ISSUE-G6-00-001` 继续 OPEN，真实甲方环境、真实现场、KN-065、签署及现场意见仍须后续补测/补录。
+- 证据：`logs/reviews/2026-10-12_G6-03-C-rereview.md`、`evidence/g6/G6-03/C-rereview/review-result.json`及逐页渲染件。

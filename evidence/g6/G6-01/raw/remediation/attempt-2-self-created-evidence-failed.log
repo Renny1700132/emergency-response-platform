@@ -1,0 +1,9 @@
+2026-10-12 G6-01 remediation deployment recorder attempt 2
+exitCode: 65
+command: wsl.exe bash -lc "cd /mnt/e/26shixi/emergency-response-platform-g5-02 && bash scripts/g6/run-g6-01-remediation-check.sh"
+stderr:
+refusing to run against a dirty worktree
+?? evidence/g6/G6-01/raw/remediation/git-status.txt
+?? evidence/g6/G6-01/raw/remediation/steps.jsonl
+
+Disposition: retained as a real failed attempt. The recorder created its own audit files before checking repository cleanliness and therefore rejected itself. The preflight was moved before evidence-directory creation. No Docker deployment step had started.

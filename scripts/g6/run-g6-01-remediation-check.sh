@@ -9,8 +9,6 @@ RESULT_FILE="$EVIDENCE_DIR/remediation-deployment-check.json"
 LEDGER_FILE="$EVIDENCE_DIR/remediation-command-ledger.json"
 PROJECT_NAME="${G6_PROJECT_NAME:-g601remediation}"
 COMPOSE=(docker compose -f "$ROOT/compose.yaml" -p "$PROJECT_NAME")
-mkdir -p "$STEP_DIR"
-: > "$RAW_DIR/steps.jsonl"
 
 STARTED_AT="$(date --iso-8601=seconds)"
 START_EPOCH="$(date +%s)"
@@ -60,8 +58,6 @@ cleanup_failure() {
   "${COMPOSE[@]}" down -v --remove-orphans >> "$RAW_DIR/compose-final-on-failure.log" 2>&1
   exit "$exit_code"
 }
-trap cleanup_failure EXIT
-set -e
 
 cd "$ROOT"
 WINDOWS_ROOT="$(wslpath -w "$ROOT")"
@@ -72,18 +68,23 @@ else
 fi
 GIT_HEAD="$("${GIT[@]}" rev-parse HEAD)"
 GIT_BRANCH="$("${GIT[@]}" branch --show-current)"
-"${GIT[@]}" status --porcelain=v1 > "$RAW_DIR/git-status.txt"
-if [[ -s "$RAW_DIR/git-status.txt" && "${G6_ALLOW_DIRTY:-false}" != "true" ]]; then
+GIT_STATUS="$("${GIT[@]}" status --porcelain=v1)"
+if [[ -n "$GIT_STATUS" && "${G6_ALLOW_DIRTY:-false}" != "true" ]]; then
   echo "refusing to run against a dirty worktree" >&2
-  cat "$RAW_DIR/git-status.txt" >&2
+  printf '%s\n' "$GIT_STATUS" >&2
   exit 65
 fi
+mkdir -p "$STEP_DIR"
+: > "$RAW_DIR/steps.jsonl"
+printf '%s' "$GIT_STATUS" > "$RAW_DIR/git-status.txt"
 "${GIT[@]}" diff --stat > "$RAW_DIR/git-diff-stat.txt"
 "${COMPOSE[@]}" config > "$RAW_DIR/compose-config.yaml"
 COMPOSE_SHA256="$(sha256sum "$RAW_DIR/compose-config.yaml" | awk '{print $1}')"
 DOCKERFILE_BACKEND_SHA256="$(sha256sum "$ROOT/backend/Dockerfile" | awk '{print $1}')"
 DOCKERFILE_FRONTEND_SHA256="$(sha256sum "$ROOT/frontend/Dockerfile" | awk '{print $1}')"
 export GIT_HEAD GIT_BRANCH COMPOSE_SHA256 DOCKERFILE_BACKEND_SHA256 DOCKERFILE_FRONTEND_SHA256
+trap cleanup_failure EXIT
+set -e
 
 run_step 01-docker-info docker info
 run_step 02-clean-before "${COMPOSE[@]}" down -v --remove-orphans

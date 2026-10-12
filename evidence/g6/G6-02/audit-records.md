@@ -52,7 +52,7 @@ AI审计结论：`PASS_FOR_TRACEABILITY / METRICS_PARTIAL`。最终指标须由 
 | G6-01 V0.2整改输入 | `logs/prompts/2026-10-12-B.md`对应G6-01整改原文 | V0.2正式件、26步部署/回退、版本锁、交接、渲染与B整改记录 | 应用锁`75f01c3`；文档/证据`6255f94`；合并交付点`a8f8134`；日志回填`77f7a71/e4116ce` | N/A（OVR-038） | `B_REMEDIATED_PENDING_A_REREVIEW`；不得预写A通过 |
 | B最终整体复核第一轮 | `logs/prompts/2026-10-12-B.md`对应G6-02复核原文 | `b-final-review.json`与Review记录 | Review`f9dfc20`；日志回填`d17847d` | N/A（OVR-038） | `CHANGES_REQUIRED`，ISSUE-G6-02-004/005由C整改后待B再复验 |
 | C第二轮增量整改 | `logs/prompts/2026-10-12-C.md#LOG-G6-02-002` | 保留GI-001—021，追加GI-022—039并修正日志/审计/README状态 | 本轮内容commit在提交后由同一日志独立回填 | N/A（OVR-038） | `C_REMEDIATED_PENDING_B_REREVIEW`；不预写B或A通过 |
-| G6-01 A复验并发输入 | `logs/prompts/2026-10-12-A.md`对应复验原文 | 更正后用户手册、Pair清单、A复验记录及机械/渲染/质量证据 | `e223f6d`；在C首次push前到达并以普通merge保留 | N/A（OVR-038） | G6-01 `PASS / ACCEPTED_BY_A`；真实义务延期；G6-02仍待B再复验 |
+| G6-01 A复验并发输入 | `logs/prompts/2026-10-12-A.md`对应复验原文 | 更正后用户手册、Pair清单、A复验记录及机械/渲染/质量证据 | 内容`e223f6d`；日志回填`d322c64`；均在C push前以普通merge保留 | N/A（OVR-038） | G6-01 `PASS / ACCEPTED_BY_A`；真实义务延期；G6-02仍待B再复验 |
 
 ### 当前三线结论
 

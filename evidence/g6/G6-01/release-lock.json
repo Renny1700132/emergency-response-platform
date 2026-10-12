@@ -1,15 +1,19 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "taskId": "G6-01",
-  "lockedAt": "2026-10-11T20:56:00+08:00",
-  "repositorySnapshot": "beb605f83e738a39dfe388ed4bc25b5b724eddcf",
-  "latestCodeAffectingCommit": "5fc359aea5e08118d17f2e076e6f669b04adf9b4",
+  "lockedAt": "2026-10-12T16:23:39+08:00",
+  "repositorySnapshot": "75f01c3bb33369d3785acf69a3a00eb983aa188b",
+  "latestCodeAffectingCommit": "75f01c3bb33369d3785acf69a3a00eb983aa188b",
+  "includesCommit": ["8dbfbab"],
   "branch": "master",
-  "scope": [
-    "frontend",
-    "backend",
-    "compose.yaml",
-    "docs/work/B_TECH/openapi_v1.yaml"
-  ],
-  "boundary": "The G6-01 documents and command evidence describe this locked candidate. Later documentation commits do not silently change the tested application implementation."
+  "dirtyAtRunStart": false,
+  "scope": ["frontend", "backend", "compose.yaml", "docs/work/B_TECH/openapi_v1.yaml"],
+  "fingerprints": {
+    "composeConfigSha256": "06c156e58e3bf6c43c0fbcd82f929d50134d7309431985d470d41e0ba7aa0129",
+    "backendDockerfileSha256": "3c4fb9d109542a807f7b0205b8472c3db690debac58971796e8c0bbbc8a6601b",
+    "frontendDockerfileSha256": "5830a4aa791eb33c3217979e67c5d287c221829adff4e315fd42ec8e59c6dd4a",
+    "backendImageId": "sha256:d7bfc5a5f8ffb377c0611f9aece4252f9c5c368c2ed52b6767c4138da7bef81b",
+    "frontendImageId": "sha256:323a21f0e91871f178922aa7970e4177649b48885acc0aa1c6a75ea90b33f00e"
+  },
+  "boundary": "The V0.2 manuals and remediation evidence describe this exact candidate. Historical V0.1 screenshots remain presentation-mode evidence only. Owner systems and KN-065 remain REAL_WORLD_DEFERRED."
 }

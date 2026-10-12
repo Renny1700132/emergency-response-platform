@@ -20,30 +20,30 @@ Compose can now delegate builds to bake for better performance.
 #5 CACHED
 
 #6 [backend internal] load build context
-#6 transferring context: 8.75kB 0.1s done
-#6 DONE 0.1s
+#6 transferring context: 140.56kB 0.2s done
+#6 DONE 0.2s
 
 #7 [backend 3/5] COPY package.json package-lock.json ./
 #7 DONE 0.0s
 
 #8 [backend 4/5] RUN npm ci --omit=dev
-#8 2.720 
-#8 2.720 added 14 packages, and audited 15 packages in 2s
-#8 2.721 
-#8 2.721 found 0 vulnerabilities
-#8 2.723 npm notice
-#8 2.723 npm notice New major version of npm available! 11.19.0 -> 12.2.0
-#8 2.723 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
-#8 2.723 npm notice To update run: npm install -g npm@12.2.0
-#8 2.723 npm notice
-#8 DONE 2.8s
+#8 2.973
+#8 2.973 added 14 packages, and audited 15 packages in 3s
+#8 2.974
+#8 2.974 found 0 vulnerabilities
+#8 2.976 npm notice
+#8 2.976 npm notice New major version of npm available! 11.19.0 -> 12.2.0
+#8 2.976 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+#8 2.976 npm notice To update run: npm install -g npm@12.2.0
+#8 2.976 npm notice
+#8 DONE 3.0s
 
 #9 [backend 5/5] COPY backend ./backend
 #9 DONE 0.0s
 
 #10 [backend] exporting to image
 #10 exporting layers 0.1s done
-#10 writing image sha256:ec0ee2d75c3eb0737f6d74bcdd2eabde0f120993a62a2a0b4653133bf8d84ae0 done
+#10 writing image sha256:d7bfc5a5f8ffb377c0611f9aece4252f9c5c368c2ed52b6767c4138da7bef81b done
 #10 naming to docker.io/library/g601remediation-backend done
 #10 DONE 0.1s
 

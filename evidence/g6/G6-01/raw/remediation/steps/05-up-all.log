@@ -18,9 +18,9 @@
  Container g601remediation-backend-1  Healthy
  Container g601remediation-frontend-1  Starting
  Container g601remediation-frontend-1  Started
+ Container g601remediation-backend-1  Waiting
  Container g601remediation-frontend-1  Waiting
  Container g601remediation-database-1  Waiting
- Container g601remediation-backend-1  Waiting
  Container g601remediation-backend-1  Healthy
  Container g601remediation-database-1  Healthy
  Container g601remediation-frontend-1  Healthy

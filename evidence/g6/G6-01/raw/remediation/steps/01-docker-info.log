@@ -15,7 +15,7 @@ Server:
   Running: 0
   Paused: 0
   Stopped: 0
- Images: 8
+ Images: 10
  Server Version: 28.1.1
  Storage Driver: overlay2
   Backing Filesystem: extfs

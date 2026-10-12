@@ -174,23 +174,29 @@ def build(pair: dict) -> dict:
     }
     first_table = original.tables[1]
     replacements = {
-        0: f"文档编号：{pair['number']}　　版本号：V0.1",
+        0: f"文档编号：{pair['number']}　　版本号：V0.2",
         1: "密　　级：内部 · 课程交付",
         7: "编制单位：020202项目组",
         8: "编　　制：严宇（技术负责人）",
         9: "审　　核：何思源（项目负责人，待复核）",
         10: "批　　准：课程负责人（待验收评审）",
-        11: "编制日期：2026 年 10 月 11 日",
+        11: "编制日期：2026 年 10 月 12 日",
         **pair["cover"],
     }
     for index, value in replacements.items():
         set_text(doc.paragraphs[index], value)
     revision = doc.tables[0]
-    while len(revision.rows) > 2:
+    while len(revision.rows) > 3:
         revision._tbl.remove(revision.rows[-1]._tr)
-    values = ["V0.1", "2026-10-11", "全部", "G6-01 首版候选；命令逐条实跑并保留真实边界，待 A 复核", "严宇"]
-    for cell, value in zip(revision.rows[1].cells, values):
-        set_text(cell.paragraphs[0], value)
+    while len(revision.rows) < 3:
+        revision._tbl.append(deepcopy(revision.rows[-1]._tr))
+    revision_values = [
+        ["V0.1", "2026-10-11", "全部", "G6-01 首版候选；保留为历史审计", "严宇"],
+        ["V0.2", "2026-10-12", "全部", "按 A Review 补齐业务闭环、命令证据、完整部署回退和版本一致性；待 A 复验", "严宇"],
+    ]
+    for row, values in zip(revision.rows[1:3], revision_values):
+        for cell, value in zip(row.cells, values):
+            set_text(cell.paragraphs[0], value)
     cut_element = doc.paragraphs[pair["body_start"]]._p
     body_children = list(doc._element.body)
     cut_index = body_children.index(cut_element)
@@ -252,10 +258,12 @@ def build(pair: dict) -> dict:
     assert pair["title"] in visible and "严宇" in visible
     source_sha = hashlib.sha256(pair["reference"].read_bytes()).hexdigest()
     return {
-        "mode": "NEW DOCUMENT",
+        "mode": "CONTENT EDIT",
         "target": pair["target"].relative_to(ROOT).as_posix(),
         "reference": pair["reference"].relative_to(ROOT).as_posix(),
         "referenceSha256": source_sha,
+        "contentEditSource": pair["source"].relative_to(ROOT).as_posix(),
+        "releaseCommit": "75f01c3bb33369d3785acf69a3a00eb983aa188b",
         "physicalCopy": True,
         "sectionGeometry": "INHERITED_FROM_PAIR",
         "cover": "REFERENCE_COVER_CLONE_PROJECT_FIELDS_REPLACED",
@@ -263,7 +271,7 @@ def build(pair: dict) -> dict:
         "bodyMapping": "PAIR_ROLE_PARAGRAPH_AND_TABLE_PROPERTIES_CLONED",
         "businessStructureDeviation": "Project-specific manual chapters replace teaching-case business chapters by design.",
         "caseContaminationCheck": "PASS",
-        "renderStatus": "PENDING",
+        "renderStatus": "PENDING_V0_2_QA",
     }
 
 

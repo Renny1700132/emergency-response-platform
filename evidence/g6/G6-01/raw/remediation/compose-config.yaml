@@ -9,7 +9,7 @@ services:
         condition: service_healthy
         required: true
     environment:
-      DATABASE_URL: postgres://emergency:g6-ba2ff0e3-c0cd-4659-a7a5-1f6d5f9d9ee6@database:5432/emergency
+      DATABASE_URL: postgres://emergency:g6-10b588b0-8cad-4b3d-adb8-8b7e22998c81@database:5432/emergency
       MIDDLE_PLATFORM_BASE_URL: http://host.docker.internal:43104
       MIDDLE_PLATFORM_FILE_PRESIGN_PATH: /api/v1/platform/files/presign
       MIDDLE_PLATFORM_IDENTITY_PATH: /api/v1/platform/context
@@ -38,7 +38,7 @@ services:
   database:
     environment:
       POSTGRES_DB: emergency
-      POSTGRES_PASSWORD: g6-ba2ff0e3-c0cd-4659-a7a5-1f6d5f9d9ee6
+      POSTGRES_PASSWORD: g6-10b588b0-8cad-4b3d-adb8-8b7e22998c81
       POSTGRES_USER: emergency
     healthcheck:
       test:

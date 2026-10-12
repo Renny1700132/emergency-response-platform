@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "taskId": "G6-01",
+  "reviewedCommit": "75f01c3bb33369d3785acf69a3a00eb983aa188b",
+  "result": "REMEDIATED_BY_B_PENDING_A_REREVIEW",
+  "issues": {
+    "ISSUE-G6-01-001": "REMEDIATED_BY_B_PENDING_A",
+    "ISSUE-G6-01-002": "REMEDIATED_BY_B_PENDING_A",
+    "ISSUE-G6-01-003": "REMEDIATED_BY_B_PENDING_A",
+    "ISSUE-G6-01-004": "B_TECH_CONFIRMED_PENDING_C_AND_A"
+  },
+  "deployment": {"steps": 26, "failures": 0, "durationSeconds": 111, "cleanup": [0, 0, 0]},
+  "realWorldDeferred": ["owner-external-systems", "independent-deployer", "owner-mobile-host", "production-capacity-and-dr"],
+  "mayMarkDone": false
+}

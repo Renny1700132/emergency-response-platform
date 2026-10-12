@@ -2016,3 +2016,11 @@
 资源延期继续独立保留：30 AC实现、76 AC证据、六类甲方真实系统0/6、真实非乙方操作者0、真实宿主/现场/培训/试运行/数据初始化/签署。新问题不是已关闭项；A不静默维护B/C正式产物。本轮完整审查的退回结论不等于作者整改已完成。
 
 - ISSUE-G6-01-002追加版本溯源：部署raw引用外部WSL g5-02目录且出现backend Healthy；锁定beb605f compose/Dockerfile无后端healthcheck。releaseCommit在脚本中硬编码，缺实跑目录HEAD/diff/compose config指纹；B须解释差异并提交实际配置/制品映射，【待人工确认】，不直接认定伪造。
+
+### B 整改响应（2026-10-12）｜ISSUE-G6-01-001—004
+
+- `001`：增加正式事件关闭页面入口、`incident:close` 权限、任务完成前置条件、关闭结论/报告引用/时间核对；正式其他工作台隐藏缺少真实后端写入口的按钮并明确查询边界。组件与真实 HTTP/PostgreSQL 链路测试通过。状态为 `REMEDIATED_BY_B / PENDING_A_REREVIEW`。
+- `002`：隔离运行锁定 `75f01c3bb33369d3785acf69a3a00eb983aa188b`，运行前 dirty=false；26/26 命令均有 command、起止、exitCode、rawLog；另记录 Compose/Dockerfile/镜像/备份指纹。三次失败尝试和错误测试过滤失败均保留。状态为 `REMEDIATED_BY_B / PENDING_A_REREVIEW`。
+- `003`：新增前端 Node 静态宿主与 `/api/` 同源代理、前后端及数据库 healthcheck、Compose 变量透传和宿主 Bearer 注入说明；迁移支持 `down --steps=N`/`down --to=ID`。实际执行停止写入、单步回退、重应用和恢复，得到迁移 3→2→3、表 37→13→37、审计哨兵 1→1、隔离恢复 37/1、残留 0/0/0。状态为 `REMEDIATED_BY_B / PENDING_A_REREVIEW`。
+- `004`：V0.2 统一锁定 `75f01c3`，且 `git merge-base --is-ancestor 8dbfbab 75f01c3` exit 0；B 的 H5 进度映射目标测试和全量门禁通过。旧 `beb605f` 与 2026-10-11 图片只作历史证据，不回挂当前结论。状态为 `B_TECH_CONFIRMED / PENDING_C_G6_03_REVIEW_AND_A_REREVIEW`。
+- 证据：`docs/work/G6/G6-01_B_remediation.md`、`evidence/g6/G6-01/remediation-deployment-check.json`、`remediation-command-ledger.json`、`remediation-selfcheck.json`、`raw/remediation/steps/*`。B 不自行关闭 A 问题；真实 KN-065 与甲方六类接口仍 `REAL_WORLD_DEFERRED`。

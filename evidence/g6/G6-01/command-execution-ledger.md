@@ -1,23 +1,34 @@
-# G6-01 命令执行台账
+# G6-01 V0.2 命令执行台账
 
-- 发布快照：`beb605f83e738a39dfe388ed4bc25b5b724eddcf`
+- 发布快照：`75f01c3bb33369d3785acf69a3a00eb983aa188b`
 - 执行人：严宇（B；由用户授权 Codex 辅助执行）
-- 日期：2026-10-11（UTC+8）
-- 环境：Windows 11 / Node v24.14.0 / npm 11.9.0；WSL2 Linux 5.10.16.3 / Docker 28.1.1 / Compose 2.35.1
+- 执行区间：2026-10-12 16:23:39—16:25:30（UTC+8）
+- 环境：WSL2 Linux 5.10.16.3 / Docker 28.1.1 / Compose 2.35.1
+- 机器可读总账：`remediation-command-ledger.json`；每条均含 command、startedAt、finishedAt、exitCode、rawLog。
 
-| 序号 | 命令/步骤 | 起止时间 | 退出码 | 结果 | 原始记录与边界 |
-| --- | --- | --- | --- | --- | --- |
-| 1 | `npm run quality` | 21:17:50.309—21:18:20.989 | 0 | PASS | `quality-check.json`、`raw/npm-quality.log`；0 schema error/14 既有 warning；首轮 PowerShell 流重定向噪声另存但不作为最终结果 |
-| 2 | G6 Docker 受控部署脚本 | 21:04:06—21:04:25 | 0 | PASS | `deployment-check.json`、`raw/docker-deployment-check.log`；B 隔离运行，非 KN-065 独立人员证据 |
-| 2.1 | `docker compose build --no-cache backend` | 见步骤 2 日志 | 0 | PASS | Node 24 Alpine，npm audit 0 |
-| 2.2 | `docker compose up -d --wait` | 见步骤 2 日志 | 0 | PASS | database/backend healthy |
-| 2.3 | `node backend/scripts/migrate.mjs up` | 见步骤 2 日志 | 0 | PASS | 001/002/003 applied |
-| 2.4 | `/healthz`、`/readyz` | 见步骤 2 日志 | 0 | 200/200 | `raw/healthz.json`、`raw/readyz.json` |
-| 2.5 | `pg_dump` + SHA-256 | 见步骤 2 日志 | 0 | PASS | `raw/backup-sha256.txt` |
-| 2.6 | 创建隔离恢复库 + `pg_restore` | 见步骤 2 日志 | 0 | PASS | 37 表→37 表，哨兵 1→1 |
-| 2.7 | 后端重启 + `/readyz` | 见步骤 2 日志 | 0 | 200 | `raw/readyz-after-restart.json` |
-| 2.8 | `docker compose down -v --remove-orphans` | 见步骤 2 日志 | 0 | PASS | 容器/卷/网络残留 0/0/0 |
-| 3 | 首轮 Docker 记录器尝试 | 21:03 左右 | 127 | FAIL（保留） | `raw/docker-deployment-check-attempt-1-failed.log`；部署/恢复已完成，写 JSON 时 WSL 无 node；改为 Python 后重跑成功 |
-| 4 | Vite 演示模式截图 | 21:04—21:05 | 0 | PASS | 三张截图；显著标记“演示数据”，不作为甲方真实系统证据 |
+## 1 最终隔离运行
 
-台账只证明上述环境和命令。真实甲方接口、生产数据、目标容量、真实移动宿主和非乙方独立部署仍需后续执行。
+| 分组 | 步骤 | 结果 | 关键事实 |
+| --- | --- | --- | --- |
+| 环境与清理 | 01—02 | 2/2 PASS | Docker 可用，运行前隔离项目清理 |
+| 构建与启动 | 03—06 | 4/4 PASS | backend/frontend 无缓存构建；database/backend/frontend healthy |
+| 迁移与健康 | 07—10 | 4/4 PASS | 3 次迁移；health/ready/frontend 均 200 |
+| 数据与备份 | 11—13 | 3/3 PASS | 审计哨兵写入；备份 SHA-256；复制到宿主 |
+| 目标回退 | 14—18 | 5/5 PASS | 停止写入；`down --steps=1`；3→2→3、37→13→37、哨兵 1→1；ready=200 |
+| 恢复与日志 | 19—23 | 5/5 PASS | 隔离恢复 37 表/哨兵 1；三服务日志分别采集 |
+| 重启与清理 | 24—26 | 3/3 PASS | 后端重启 ready=200；容器/卷/网络 0/0/0 |
+
+最终结果：26/26 步骤 exit 0，111 秒。应用快照、dirty 状态、Compose 展开配置、Dockerfile 指纹、镜像 ID 和备份哈希见 `remediation-deployment-check.json` 与 `release-lock.json`。
+
+## 2 失败尝试保留
+
+| 尝试 | 结果 | 原始记录 | 纠正 |
+| --- | --- | --- | --- |
+| 管理工作树 Git 路径 | FAIL | `raw/remediation/attempt-1-git-worktree-path-failed.log` | 记录器改用 Windows `git.exe -C` 回读真实 HEAD |
+| 记录器自建证据影响 clean 检查 | FAIL | `raw/remediation/attempt-2-self-created-evidence-failed.log` | clean 检查移到创建证据之前 |
+| Nginx 镜像元数据网络超时 | FAIL | `raw/remediation-attempt-3-nginx-timeout/` | 静态宿主改用项目已锁定 Node 镜像，保持 `/api/` 代理能力 |
+| 错误测试过滤条件 | FAIL | Prompt 日志任务事件 | 改用存在的测试文件，随后目标测试和全量 `npm run quality` 通过 |
+
+## 3 边界
+
+本台账证明成员 B 在指定隔离环境对锁定代码完成全栈部署、目标回退、恢复、日志和清理。真实甲方六类系统、生产数据、真实移动宿主、生产容量以及真实非乙方独立部署均未执行，继续 `REAL_WORLD_DEFERRED`。

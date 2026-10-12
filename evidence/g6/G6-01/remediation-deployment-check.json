@@ -2,22 +2,22 @@
   "schemaVersion": 2,
   "taskId": "G6-01",
   "evidenceKind": "MEMBER_B_ISOLATED_FULL_STACK_DEPLOYMENT_ROLLBACK_AND_RECOVERY",
-  "startedAt": "2026-10-12T16:19:33+08:00",
-  "finishedAt": "2026-10-12T16:21:26+08:00",
-  "durationSeconds": 113,
-  "releaseCommit": "17636b7f3ce8cfea0b219108d3124dc1c511bfce",
+  "startedAt": "2026-10-12T16:23:39+08:00",
+  "finishedAt": "2026-10-12T16:25:30+08:00",
+  "durationSeconds": 111,
+  "releaseCommit": "75f01c3bb33369d3785acf69a3a00eb983aa188b",
   "git": {
     "branch": "master",
     "dirty": false,
     "statusFile": "evidence/g6/G6-01/raw/remediation/git-status.txt"
   },
   "fingerprints": {
-    "composeConfigSha256": "4d0ba5e5812b49f22a72c85a4841003826baf9609efb86c96e61eb589d959faa",
+    "composeConfigSha256": "06c156e58e3bf6c43c0fbcd82f929d50134d7309431985d470d41e0ba7aa0129",
     "backendDockerfileSha256": "3c4fb9d109542a807f7b0205b8472c3db690debac58971796e8c0bbbc8a6601b",
     "frontendDockerfileSha256": "5830a4aa791eb33c3217979e67c5d287c221829adff4e315fd42ec8e59c6dd4a",
-    "backendImageId": "",
-    "frontendImageId": "",
-    "backupSha256": "90db9354f0d52b9505a7165239c332b749add820f96ce50b93bbb05ab3a10270"
+    "backendImageId": "sha256:d7bfc5a5f8ffb377c0611f9aece4252f9c5c368c2ed52b6767c4138da7bef81b",
+    "frontendImageId": "sha256:323a21f0e91871f178922aa7970e4177649b48885acc0aa1c6a75ea90b33f00e",
+    "backupSha256": "6f0c646917fa32d460c70997f90f61918350d9f7a71bb83682cf0d6aabea169e"
   },
   "environment": {
     "docker": "28.1.1",

@@ -84,7 +84,7 @@
 
 ### 4.3 关闭验证证据
 
-V0.2 在正式 API Client 组件路径和真实 HTTP/PostgreSQL 路径验证了关闭操作：页面校验权限和两项输入；服务校验事件状态及任务完成情况；成功返回 `CLOSED`、`closureConclusion`、`closureReportRef` 和 `closedAt`。自动化证据为 `frontend/tests/page-interactions.test.ts` 与 `frontend/tests/real-stack-e2e.test.ts`，但不等同甲方现场验收。
+V0.2 在正式 API Client 组件路径和本地实际 HTTP 路径验证了关闭操作：页面校验权限和两项输入；服务校验事件状态及任务完成情况；成功返回 `CLOSED`、`closureConclusion`、`closureReportRef` 和 `closedAt`。自动化证据为 `frontend/tests/page-interactions.test.ts` 与 `frontend/tests/real-stack-e2e.test.ts`；后者使用内存存储及模拟外部提供方，不构成 PostgreSQL 事件关闭验证或甲方现场验收。PostgreSQL 部署、目标回退和备份恢复证据单独见命令执行台账。
 
 ## 5 任务接收、反馈与完成
 

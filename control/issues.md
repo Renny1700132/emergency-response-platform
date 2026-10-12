@@ -2031,7 +2031,13 @@
 
 | Issue | 级别/状态 | 事实与影响 | 主责/复核 | 关闭条件 |
 |---|---|---|---|---|
-| ISSUE-G6-02-004 | MAJOR / C_REMEDIATED_PENDING_B_REREVIEW | 2026-10-12 C保留GI-001—021及`cfdb6f5`历史指纹，追加GI-022—039；以`d17847d`逐文件登记V0.2 DOCX/PDF、26步命令/目标回退、交接、发布锁、部署/渲染、自检、B整改及第一轮Review，形成链明确为`75f01c3 → 6255f94 → a8f8134` | C / B再复验；A一致性复验 | C机械校验通过不等于关闭；状态保持`B_REMEDIATED_PENDING_A_REREVIEW`，待B再复验后关闭本Issue并转A复验 |
+| ISSUE-G6-02-004 | MAJOR / C_REMEDIATED_PENDING_B_REREVIEW | 2026-10-12 C保留GI-001—021及`cfdb6f5`历史指纹，追加GI-022—039登记V0.2与26步证据；执行期间并发A复验`e223f6d`已接受G6-01并更正用户手册，继续追加GI-040—050记录新指纹、A Review及机械/渲染证据 | C / B再复验；A一致性复验 | 18/18 B整改时点与11/11 A复验时点canonical指纹均须由B再复验；G6-01课程状态DONE，真实世界仍延期；G6-02不预写通过 |
 | ISSUE-G6-02-005 | MAJOR / C_REMEDIATED_PENDING_B_REREVIEW | 2026-10-12 C已将LOG-G6-02-001顶层状态修正为`PUSHED / PENDING_B_FINAL_REVIEW`；当前审计行落定`0de6884/6f56ab6`、PR N/A和B第一轮`f9dfc20/d17847d`；README改为V0.2已形成、待A复验 | C / B再复验；A一致性复验 | 保留第1—3节历史快照措辞；本轮LOG-G6-02-002内容commit仍按不可自引用规则独立回填，待B再复验 |
 
 B本轮结论：`CHANGES_REQUIRED / FINAL_REVIEW_NOT_ACCEPTED`；G6-02保持REVIEW。证据：`logs/reviews/2026-10-12_G6-02-B-final-review.md`、`evidence/g6/G6-02/b-final-review.json`。
+
+### A 整改复验裁决（2026-10-12）｜G6-01当前状态
+
+原表及B整改响应为历史过程记录；当前001/002/003=CLOSED / VERIFIED_BY_A，004=CLOSED_FOR_G6_01 / VERIFIED_BY_A（版本/手册映射已闭环）。ISSUE-G6-03-001的B技术确认由G6-01_B_remediation.md提供，C G6-03整体复核仍PENDING，不关闭该跨任务Issue。G6-01允许DONE，非真实履约完成。
+
+新增ISSUE-G6-01-005：MINOR / FIXED_VERIFIED_BY_A；用户手册§4.3把内存HTTP测试写成PostgreSQL，按用户授权修正工作稿/DOCX/PDF，更新Pair指纹。35项机械证据断言及A本地quality exit0、全页用户手册视觉检查通过。详见docs/work/G6/G6-01_A_rereview.md。原失败/延期保留；G6-02-004/005及G6-00-001不关闭。

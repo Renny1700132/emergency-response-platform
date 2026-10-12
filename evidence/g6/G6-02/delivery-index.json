@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "task": "G6-02",
-  "state": "REVIEW_V0_2_INCREMENT_PENDING_B_REREVIEW",
+  "state": "REVIEW_G6_01_A_ACCEPTED_PENDING_B_REREVIEW",
   "initialSnapshot": {
     "locked": true,
     "contentCommit": "56e9da9",
@@ -130,6 +130,40 @@
         "ownerSystems": "0/6",
         "independentRealDeployer": 0,
         "aRereview": "PENDING",
+        "g6_02BRereview": "PENDING"
+      }
+    },
+    {
+      "asOf": "2026-10-12",
+      "reason": "A_G6_01_REREVIEW_ARRIVED_DURING_G6_02_REMEDIATION",
+      "inputCommit": "e223f6d40b90c2f910297afc380e270819e31132",
+      "state": "G6_01_ACCEPTED_BY_A_G6_02_PENDING_B_REREVIEW",
+      "g6_01ReviewState": "DONE_MANUALS_AND_LOCAL_DELIVERY_REVIEW_ACCEPTED_REAL_WORLD_DEFERRED",
+      "items": [
+        {"id":"GI-040","name":"A复验更正后的用户手册V0.2源文件","file":"docs/deliverables/G6/34-用户手册.docx","version":"G6-01 A-rereview@e223f6d","availability":"AVAILABLE","status":"ACCEPTED_BY_A_FOR_G6_01","evidenceType":"DOCUMENT_SOURCE","reality":"COURSE_ACCEPTED_REAL_WORLD_DEFERRED","bytes":241911,"sha256":"d9b6555a834126f341bc759e07ae70528c966b22eb4f820a0c4e4a5580b4046d"},
+        {"id":"GI-041","name":"A复验更正后的用户手册V0.2 PDF","file":"docs/deliverables/G6/34-用户手册.pdf","version":"G6-01 A-rereview@e223f6d","availability":"AVAILABLE","status":"ACCEPTED_BY_A_FOR_G6_01","evidenceType":"DOCUMENT_PDF","reality":"COURSE_ACCEPTED_REAL_WORLD_DEFERRED","bytes":573467,"sha256":"b0bffb8cac011ba39f9d71e1a98f1061c34167db8eb35bda874735e41c0bb332"},
+        {"id":"GI-042","name":"A复验更正后的用户手册工作稿","file":"docs/work/B_TECH/g6_user_manual.md","version":"G6-01 A-rereview@e223f6d","availability":"AVAILABLE","status":"ACCEPTED_BY_A_FOR_G6_01","evidenceType":"DOCUMENT_WORKING_SOURCE","reality":"COURSE_ACCEPTED_REAL_WORLD_DEFERRED","bytes":9958,"sha256":"c4d1eabc22617719b25adf9777800f50baa97865134232774dbc59523c6a0c26"},
+        {"id":"GI-043","name":"A复验后的文档对清单","file":"evidence/g6/G6-01/document-pair-manifest.json","version":"G6-01 A-rereview@e223f6d","availability":"AVAILABLE","status":"PAIR_UPDATED_AFTER_MINOR_FIX","evidenceType":"DOCUMENT_PAIR_MANIFEST","reality":"COURSE_CONFIGURATION_EVIDENCE","bytes":2775,"sha256":"1fd61e4ffddd1ab2ad27e53a4dd2b0a49c29e92917eea9d973f93709a46be164"},
+        {"id":"GI-044","name":"G6-01 A整改复验记录","file":"docs/work/G6/G6-01_A_rereview.md","version":"A-rereview@e223f6d","availability":"AVAILABLE","status":"PASS_ACCEPTED_BY_A","evidenceType":"REVIEW_RECORD","reality":"COURSE_REVIEW_REAL_WORLD_DEFERRED","bytes":5438,"sha256":"ff6b8800a73b5d3185fec37184c96fe9b74a84624ce38788bcb9731e69728d21"},
+        {"id":"GI-045","name":"A复验机械证据","file":"evidence/g6/G6-01/A-rereview/evidence-validation.json","version":"A-rereview@e223f6d","availability":"AVAILABLE","status":"35_ASSERTIONS_PASS","evidenceType":"REVIEW_MECHANICAL_EVIDENCE","reality":"COURSE_REVIEW_EVIDENCE","bytes":15507,"sha256":"bcc3190996645f51e7081c1b4b2f837a65ba73fb43c7412a6fad4ccc6e689e3e"},
+        {"id":"GI-046","name":"A复验Word渲染记录","file":"evidence/g6/G6-01/A-rereview/word-render.json","version":"A-rereview@e223f6d","availability":"AVAILABLE","status":"WORD_RENDER_REVIEWED","evidenceType":"RENDER_EVIDENCE","reality":"VISUAL_REVIEW_NOT_REAL_WORLD_ACCEPTANCE","bytes":183,"sha256":"9b5ee73cd9a7119cfcaa54206399b0231b68d698d772a529008d39fa87ead90f"},
+        {"id":"GI-047","name":"A复验质量门禁退出码","file":"evidence/g6/G6-01/A-rereview/quality-exit-code.txt","version":"A-rereview@e223f6d","availability":"AVAILABLE","status":"EXIT_0","evidenceType":"QUALITY_GATE_EXIT","reality":"LOCAL_QUALITY_GATE_NOT_REMOTE_CI","bytes":2,"sha256":"9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"},
+        {"id":"GI-048","name":"A审核汇总当前结论","file":"docs/work/G6/G6_A_review_summary.md","version":"A-rereview@e223f6d","availability":"AVAILABLE","status":"G6_01_ACCEPTED_G6_02_PENDING","evidenceType":"REVIEW_SUMMARY","reality":"COURSE_REVIEW_NOT_G6_FINAL_ACCEPTANCE","bytes":5707,"sha256":"ea770554362c6a90afa4f87a2cc8ea4633470fea74ca6eca49930849468f1813"},
+        {"id":"GI-049","name":"A复验输入任务状态","file":"tasks.md","version":"A-rereview@e223f6d","availability":"AVAILABLE","status":"G6_01_DONE_G6_02_PRE_C_REMEDIATION","evidenceType":"TASK_STATUS","reality":"PROCESS_RECORD_AT_INPUT","bytes":37397,"sha256":"055f89d834e11d9db9d36651e12fc69316803ac18a991aa7f51578b93a34689b"},
+        {"id":"GI-050","name":"A复验输入问题状态","file":"control/issues.md","version":"A-rereview@e223f6d","availability":"AVAILABLE","status":"G6_01_ISSUES_CLOSED_G6_02_PRE_C_REMEDIATION","evidenceType":"ISSUE_STATUS","reality":"PROCESS_RECORD_AT_INPUT","bytes":232069,"sha256":"7415698cb9aec624ed674bac94eb14e5da03775bd9ee7653b6e1caebd07f57fb"}
+      ],
+      "counts": {
+        "items": 11,
+        "available": 11,
+        "aMechanicalAssertions": 35,
+        "g6_01AcceptedByA": true,
+        "realWorldAccepted": 0
+      },
+      "boundaries": {
+        "ownerSystems": "0/6",
+        "independentRealDeployer": 0,
+        "kn065": "DEFERRED",
+        "g6_03CReview": "PENDING",
         "g6_02BRereview": "PENDING"
       }
     }

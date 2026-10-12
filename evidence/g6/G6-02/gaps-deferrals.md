@@ -2,8 +2,8 @@
 
 | ID | 缺项/延期 | 当前状态 | 责任 | 触发器 | 验证/关闭条件 | 计划日期 |
 |---|---|---|---|---|---|---|
-| GAP-G6-001 | 用户手册 | V0.2_B_REMEDIATED / PENDING_A_REREVIEW | B主责，A复核 | A执行G6-01复验 | V0.2 DOCX/PDF、业务关闭闭环、真实入口与正常/异常证据经A复验 | 【待人工确认】 |
-| GAP-G6-002 | 部署与运维手册及命令台账 | V0.2_26_STEPS_PASS_BY_B / PENDING_A_REREVIEW | B主责，A复核 | A执行G6-01复验；ISSUE-G6-01-004另待C的G6-03复核 | 命令证据、目标回退、版本一致性经A复验；真实KN-065仍另验 | 【待人工确认】 |
+| GAP-G6-001 | 用户手册 | G6_01_DONE / ACCEPTED_BY_A | B主责，A复核 | 已触发并完成 | V0.2及小错更正后的DOCX/PDF、业务闭环与异常证据已由A复验；真实项目接受仍另列 | 已完成课程复验 |
+| GAP-G6-002 | 部署与运维手册及命令台账 | G6_01_DONE_LOCAL_DELIVERY_ACCEPTED / REAL_KN_065_DEFERRED | B主责，A复核 | 真实独立人员与现场环境到位 | 26步、目标回退与版本一致性已由A复验；真实KN-065仍须独立人员实跑 | 【待人工确认】 |
 | GAP-G6-003 | 培训材料、签到、考核 | NOT_AVAILABLE / RESOURCE_REQUIRED | A统筹，B技术支持 | 甲方/课程培训窗口与参与人 | 真实课件、录屏/签到/考核记录；无窗口不得代造 | 【待人工确认】 |
 | GAP-G6-004 | 真实试演/现场运行 | SIMULATED_REHEARSAL_AVAILABLE / REAL_WORLD_DEFERRED | A统筹，B环境，C复核 | 合法数据、账号、网络、窗口 | 当前23项本地内存模拟检查单列；真实正常及至少一条异常分支实跑可追溯后才关闭 | 【待人工确认】 |
 | GAP-G6-005 | G2-FR-030—039共30 AC未实现 | IMPLEMENTATION_DEFERRED | 后续项目负责人裁决 | 明确后续实现授权与资源 | 实现、逐AC测试、Review；不得沿用课程豁免作真实PASS | 【待人工确认】 |

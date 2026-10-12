@@ -85,3 +85,18 @@
 | GI-038—039 | B最终整体复核第一轮 | `evidence/g6/G6-02/b-final-review.json`、`logs/reviews/2026-10-12_G6-02-B-final-review.md` | CHANGES_REQUIRED；不是接受 | 见JSON逐文件canonical指纹 |
 
 V0.2后续增量共18项，18项均可定位；26步部署/回退为成员B本地隔离运行，不能迁移成甲方现场或真实非乙方独立部署。G6-02仍待B再复验，之后才可交A做目录、计划和一致性复验。
+
+## 2026-10-12 A复验并发增量
+
+> C内容提交后、首次push前，远端新增`e223f6d`（G6-01 A复验）。本轮以普通merge保留双方工作，并追加该受控输入；不覆盖GI-022—039。A已接受G6-01手册与本地交付证据，但真实KN-065、甲方六类接口及G6整体验收仍延期。
+
+| ID | A复验输入 | 路径 | 当前结论 | canonical SHA-256 |
+|---|---|---|---|---|
+| GI-040 | 更正后的用户手册V0.2源文件 | `docs/deliverables/G6/34-用户手册.docx` | ACCEPTED_BY_A_FOR_G6_01 | `d9b6555a834126f341bc759e07ae70528c966b22eb4f820a0c4e4a5580b4046d` |
+| GI-041 | 更正后的用户手册V0.2 PDF | `docs/deliverables/G6/34-用户手册.pdf` | ACCEPTED_BY_A_FOR_G6_01 | `b0bffb8cac011ba39f9d71e1a98f1061c34167db8eb35bda874735e41c0bb332` |
+| GI-042—043 | 用户手册工作稿与更新后Pair清单 | `docs/work/B_TECH/g6_user_manual.md`、`evidence/g6/G6-01/document-pair-manifest.json` | 小错已同步 | 见JSON逐文件canonical指纹 |
+| GI-044 | G6-01 A复验记录 | `docs/work/G6/G6-01_A_rereview.md` | PASS / ACCEPTED_BY_A | `ff6b8800a73b5d3185fec37184c96fe9b74a84624ce38788bcb9731e69728d21` |
+| GI-045—047 | A机械、渲染与质量门禁证据 | `evidence/g6/G6-01/A-rereview/`（JSON逐文件列示） | 35项断言PASS；本地quality exit 0 | 见JSON逐文件canonical指纹 |
+| GI-048—050 | A审核汇总及输入时tasks/issues状态 | `docs/work/G6/G6_A_review_summary.md`、`tasks.md`、`control/issues.md` | G6-01 DONE；G6-02仍待C/B | 见JSON逐文件canonical指纹 |
+
+A复验增量共11项，11/11 canonical Git blob取自`e223f6d`并可核验。此增量将G6-01当前状态更新为`DONE（MANUALS_AND_LOCAL_DELIVERY_REVIEW_ACCEPTED / REAL_WORLD_DEFERRED）`，不改变G6-02待B再复验状态。

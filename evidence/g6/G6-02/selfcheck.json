@@ -1,7 +1,7 @@
 {
   "task": "G6-02",
-  "status": "PASS_C_V0_2_INCREMENT_PENDING_B_REREVIEW",
-  "generatedAt": "2026-10-12T17:44:22+08:00",
+  "status": "PASS_C_V0_2_AND_A_REREVIEW_INCREMENT_PENDING_B_REREVIEW",
+  "generatedAt": "2026-10-12T17:50:21+08:00",
   "deliveryItems": 29,
   "availability": {
     "AVAILABLE": 20,
@@ -31,6 +31,16 @@
     "deploymentStepFailures": 0,
     "realWorldAccepted": 0
   },
+  "aRereviewIncrement": {
+    "inputCommit": "e223f6d40b90c2f910297afc380e270819e31132",
+    "items": 11,
+    "available": 11,
+    "canonicalGitBlobFingerprints": 11,
+    "aMechanicalAssertions": 35,
+    "g6_01AcceptedByA": true,
+    "g6_01State": "DONE_MANUALS_AND_LOCAL_DELIVERY_REVIEW_ACCEPTED_REAL_WORLD_DEFERRED",
+    "realWorldAccepted": 0
+  },
   "rtmRows": 117,
   "frGroups": 39,
   "results": {
@@ -54,10 +64,11 @@
     "auditChainCurrentThroughARejection": true,
     "v0_2CanonicalHashesMatch": true,
     "cFirstRemediationCommitAndBackfillResolved": true,
-    "readmeCurrentStateReconciled": true
+    "readmeCurrentStateReconciled": true,
+    "aRereviewCanonicalHashesMatch": true
   },
   "blockers": [
-    "G6-01 V0.2 is remediated by B but A rereview has not occurred",
+    "G6-01 V0.2 is accepted by A for course manuals/local delivery, while real-world obligations remain deferred",
     "G6-03 simulated candidate exists but B technical/C overall review and ISSUE-G6-03-001 closure remain pending",
     "B G6-02 final overall review first round was CHANGES_REQUIRED; B rereview and subsequent A consistency rereview have not occurred",
     "real owner systems, independent deployer, site/training/trial/data/signature remain unavailable"
@@ -65,5 +76,5 @@
   "reviewer": "B",
   "reviewStatus": "PENDING_B_REREVIEW_AFTER_C_REMEDIATION",
   "bFirstFinalReviewStatus": "CHANGES_REQUIRED",
-  "aReviewStatus": "G6_01_V0_2_REREVIEW_PENDING_AND_G6_02_CONSISTENCY_REREVIEW_PENDING"
+  "aReviewStatus": "G6_01_ACCEPTED_G6_02_CONSISTENCY_REREVIEW_PENDING"
 }

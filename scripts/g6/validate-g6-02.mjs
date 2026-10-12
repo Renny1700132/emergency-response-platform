@@ -32,8 +32,8 @@ if (delivery.items.length !== 29) fail(`delivery items ${delivery.items.length} 
 const available = delivery.items.filter((x) => x.availability === 'AVAILABLE');
 const missing = delivery.items.filter((x) => x.availability === 'NOT_AVAILABLE');
 if (available.length !== 20 || missing.length !== 9) fail(`availability ${available.length}/${missing.length} != 20/9`);
-if (delivery.schemaVersion !== 2) fail(`delivery schema ${delivery.schemaVersion} != 2`);
-if (delivery.state !== 'REVIEW_INCREMENT_PENDING_B_FINAL_REVIEW') fail(`unexpected delivery state: ${delivery.state}`);
+if (delivery.schemaVersion !== 3) fail(`delivery schema ${delivery.schemaVersion} != 3`);
+if (delivery.state !== 'REVIEW_V0_2_INCREMENT_PENDING_B_REREVIEW') fail(`unexpected delivery state: ${delivery.state}`);
 if (delivery.initialSnapshot?.locked !== true) fail('initial snapshot is not locked');
 if (delivery.initialSnapshot?.counts?.items !== 29 || delivery.initialSnapshot?.counts?.available !== 20 || delivery.initialSnapshot?.counts?.notAvailable !== 9) fail('initial snapshot counts drift');
 for (const item of available) {
@@ -64,6 +64,25 @@ for (const id of ['GI-001','GI-002','GI-003','GI-004','GI-011','GI-012','GI-013'
 }
 if (!increment.historicalTransitions.some((x) => x.initialId === 'CI-028' && x.plannedPath !== x.actualCandidatePath)) fail('planned/candidate defense paths are not separated');
 
+const followups = delivery.subsequentIncrements;
+if (!Array.isArray(followups) || followups.length !== 1) fail('expected one subsequent increment');
+const v02 = followups[0];
+if (v02.inputCommit !== 'd17847d10ab0009f2b7c1468cf5540d90a3c0694') fail('unexpected V0.2 increment input commit');
+if (v02.formationChain?.applicationLock !== '75f01c3bb33369d3785acf69a3a00eb983aa188b' || v02.formationChain?.mergedDeliveryPoint !== 'a8f8134') fail('V0.2 formation chain drift');
+if (v02.g6_01ReviewState !== 'B_REMEDIATED_PENDING_A_REREVIEW') fail('G6-01 V0.2 review state drift');
+if (v02.items?.length !== 18 || new Set(v02.items.map((x) => x.id)).size !== 18) fail('V0.2 increment item count or IDs drift');
+for (const item of v02.items) {
+  if (item.availability !== 'AVAILABLE') fail(`V0.2 increment item not available: ${item.id}`);
+  const bytes = gitBlob(v02.inputCommit, item.file);
+  const sha256 = crypto.createHash('sha256').update(bytes).digest('hex');
+  if (bytes.length !== item.bytes || sha256 !== item.sha256) fail(`V0.2 canonical git blob mismatch: ${item.file}`);
+}
+for (let n = 22; n <= 39; n += 1) {
+  const id = `GI-${String(n).padStart(3, '0')}`;
+  if (!v02.items.some((x) => x.id === id)) fail(`missing V0.2 increment ID: ${id}`);
+}
+if (v02.counts?.deploymentSteps !== 26 || v02.counts?.deploymentStepFailures !== 0 || v02.counts?.realWorldAccepted !== 0) fail('V0.2 deployment or real-world boundary drift');
+
 if (rtm.rows.length !== 117) fail(`RTM rows ${rtm.rows.length} != 117`);
 if (new Set(rtm.rows.map((x) => x.acId)).size !== 117) fail('RTM AC IDs are not unique');
 if (new Set(rtm.rows.map((x) => x.frId)).size !== 39) fail('RTM FR count is not 39');
@@ -73,6 +92,7 @@ if (counts.PASS !== 11 || counts.NOT_RUN !== 59 || counts.BLOCKED !== 47) fail(`
 if (rtm.unconditionalRealWorldPass !== false) fail('unconditionalRealWorldPass must be false');
 if (!selfcheck.invariants.fr39 || !selfcheck.invariants.ac117 || !selfcheck.invariants.starFr34) fail('selfcheck invariant false');
 if (!selfcheck.historicalSnapshotLocked || !selfcheck.invariants.incrementCanonicalHashesMatch || selfcheck.currentIncrement?.acPassAddedFromRehearsal !== 0) fail('increment selfcheck boundary false');
+if (!selfcheck.subsequentIncrement?.historicalGi001To021Preserved || !selfcheck.invariants.v0_2CanonicalHashesMatch || selfcheck.subsequentIncrement?.deploymentSteps !== 26 || selfcheck.subsequentIncrement?.realWorldAccepted !== 0) fail('V0.2 selfcheck boundary false');
 
 const required = ['README.md','delivery-index.md','standards-crosswalk.md','rtm-acceptance-increment.md','audit-records.md','metrics-ledger.md','gaps-deferrals.md','review-request.md','b-review.json'];
 for (const name of required) if (!fs.existsSync(path.join(dir,name))) fail(`missing artifact: ${name}`);
@@ -83,11 +103,15 @@ for (const forbidden of ['117/117 PASS','34/34 PASS','真实甲方系统6/6 PASS
   if (combined.includes(forbidden)) fail(`forbidden claim: ${forbidden}`);
 }
 
-for (const requiredTrace of ['56e9da9','e194cdb','deaddc6','f9eec53','ad4febe','8dbfbab','40f2002','72aadc1','cfdb6f5','PENDING_B_FINAL_REVIEW']) {
+for (const requiredTrace of ['56e9da9','e194cdb','deaddc6','f9eec53','ad4febe','8dbfbab','40f2002','72aadc1','cfdb6f5','0de6884','6f56ab6','75f01c3','6255f94','a8f8134','f9dfc20','d17847d','PENDING_B_REREVIEW']) {
   if (!combined.includes(requiredTrace)) fail(`missing current audit trace: ${requiredTrace}`);
 }
+
+const cLog = fs.readFileSync(path.join(root, 'logs', 'prompts', '2026-10-12-C.md'), 'utf8');
+if (!cLog.includes('status: PUSHED / PENDING_B_FINAL_REVIEW')) fail('C first remediation log top-level status is stale');
+if (combined.includes('G6-01 两本手册/命令台账、G6-03 试演/现场记录及 G6-04 总结/移交尚未形成')) fail('README current overview retains stale G6-01 not-formed statement');
 
 const initialPathsNowExisting = delivery.items.filter((x) => fs.existsSync(path.join(root, x.file))).length;
 if (initialPathsNowExisting !== 22 || selfcheck.currentIncrement?.initialPathsNowExisting !== 22) fail(`current initial-path existence ${initialPathsNowExisting} != 22`);
 
-console.log(JSON.stringify({status:'PASS',initialSnapshot:{deliveryItems:29,available:20,notAvailable:9},currentIncrement:{items:21,available:21,canonicalGitBlobVerified:21,initialPathsNowExisting,realWorldAccepted:0},rtmRows:117,fr:39,starFr:34,results:counts,candidateState:delivery.state,historicalBReviewStatus:bReview.finalTaskStatus,currentReviewStatus:selfcheck.reviewStatus,hashValidation:'INITIAL_WORKTREE_OR_RECORDED_GIT_BLOB_WITH_EOL_NORMALIZATION_PLUS_EXACT_INCREMENT_CANONICAL_GIT_BLOB'}));
+console.log(JSON.stringify({status:'PASS',initialSnapshot:{deliveryItems:29,available:20,notAvailable:9},currentIncrement:{items:21,available:21,canonicalGitBlobVerified:21,initialPathsNowExisting,realWorldAccepted:0},v02SubsequentIncrement:{items:18,available:18,canonicalGitBlobVerified:18,deploymentSteps:26,deploymentStepFailures:0,realWorldAccepted:0,g6_01ReviewState:v02.g6_01ReviewState},rtmRows:117,fr:39,starFr:34,results:counts,candidateState:delivery.state,historicalBReviewStatus:bReview.finalTaskStatus,currentReviewStatus:selfcheck.reviewStatus,hashValidation:'INITIAL_WORKTREE_OR_RECORDED_GIT_BLOB_WITH_EOL_NORMALIZATION_PLUS_EXACT_INCREMENT_CANONICAL_GIT_BLOB'}));

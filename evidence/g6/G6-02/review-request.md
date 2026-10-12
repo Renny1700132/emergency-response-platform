@@ -1,7 +1,7 @@
-# G6-02 B最终整体复核请求（2026-10-12增量）
+# G6-02 B最终整体再复验请求（2026-10-12 V0.2增量）
 
 - 主责：C；指定复核：B。
-- 当前状态：`REVIEW（C_INCREMENT_REMEDIATED_PENDING_B_FINAL_REVIEW）`。
+- 当前状态：`REVIEW（C_V0_2_INCREMENT_REMEDIATED_PENDING_B_REREVIEW）`。
 - 复核对象：唯一交付索引、117行RTM验收增量、三线审计、指标账、缺项/延期台账及自检。
 
 请 B 重点核验：
@@ -33,4 +33,15 @@
 5. 39FR/117AC/34★、11/59/47、30/76、0/6和独立操作者0是否未漂移，23项模拟检查是否没有派生AC PASS；
 6. AI代码占比、Prompt复用次数、返工工时是否继续保持UNKNOWN，而非推测值。
 
-若通过，请形成新的、可定位的B最终Review记录；不要覆盖`b-review.json`中的首版历史接受。B结论形成后再交A做目录/计划/一致性增量复验。在B实际复核前，本任务保持`REVIEW / PENDING_B_FINAL_REVIEW`。
+若通过，请形成新的、可定位的B最终Review记录；不要覆盖`b-review.json`中的首版历史接受。B结论形成后再交A做目录/计划/一致性增量复验。在B实际复核前，本任务保持`REVIEW / PENDING_B_REREVIEW`。
+
+## 第一轮CHANGES_REQUIRED后的再复验范围
+
+B第一轮最终整体复核记录`f9dfc20/d17847d`及ISSUE-G6-02-004/005原样保留。本次请只复验：
+
+1. GI-001—021历史是否完全保留；GI-022—039是否按`d17847d`逐文件匹配canonical Git blob；
+2. G6-01 V0.2的`75f01c3 → 6255f94 → a8f8134`形成链、26步部署/目标回退证据及`B_REMEDIATED_PENDING_A_REREVIEW`边界是否准确；
+3. `logs/prompts/2026-10-12-C.md`首轮状态、`audit-records.md`的`0de6884/6f56ab6`落定状态、README当前概览是否已消除旧语义；
+4. 首版29项20/9、RTM 117与11/59/47、30/76、0/6、独立操作者0和模拟试演不增加AC PASS是否继续不漂移。
+
+若再复验通过，请形成新的B Review记录；随后交A做目录、计划和一致性复验。本请求不预写B或A通过。

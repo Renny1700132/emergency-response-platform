@@ -48,14 +48,17 @@ AI审计结论：`PASS_FOR_TRACEABILITY / METRICS_PARTIAL`。最终指标须由 
 | G6-02首版 | `logs/prompts/2026-10-11-C.md#LOG-G6-02-001` | 29项首版索引、117行RTM、审计/指标/延期账 | `56e9da9` / `e194cdb` | N/A（OVR-038） | B于`deaddc6`仅接受首版候选；该历史结论保留，不等于最终PASS |
 | G6-03增量输入 | `logs/prompts/2026-10-11-A.md#LOG-G6-03-001`及同日志steering原文 | 答辩候选PPTX/PDF、讲稿/Q&A、23项本地模拟试演、版本锁 | `8dbfbab` / `40f2002` | N/A（OVR-038） | B技术确认与C整体复核仍待；ISSUE-G6-03-001未关闭；不增加AC PASS |
 | A正式审核 | `logs/prompts/2026-10-12-A.md` | G6-01/G6-02 Review、审核汇总、机械证据 | `72aadc1` / `cfdb6f5` | N/A（OVR-038） | G6-01与G6-02均`NEED_FIX`；其中G6-02为ISSUE-G6-02-002/003 |
-| C本轮增量整改 | `logs/prompts/2026-10-12-C.md#LOG-G6-02-001` | 同一索引内的21项增量、当前三线审计、指标/延期/自检、B最终复核请求 | 本轮内容commit在提交后由同一日志独立回填 | N/A（OVR-038） | `C_REMEDIATED_PENDING_B_FINAL_REVIEW`；不得预写B接受或A复验通过 |
+| C首轮增量整改 | `logs/prompts/2026-10-12-C.md#LOG-G6-02-001` | 同一索引内的21项增量、当前三线审计、指标/延期/自检、B最终复核请求 | 内容`0de6884`；日志回填已于`6f56ab6`发生 | N/A（OVR-038） | B第一轮最终整体复核于`f9dfc20`判定`CHANGES_REQUIRED`；不等于接受 |
+| G6-01 V0.2整改输入 | `logs/prompts/2026-10-12-B.md`对应G6-01整改原文 | V0.2正式件、26步部署/回退、版本锁、交接、渲染与B整改记录 | 应用锁`75f01c3`；文档/证据`6255f94`；合并交付点`a8f8134`；日志回填`77f7a71/e4116ce` | N/A（OVR-038） | `B_REMEDIATED_PENDING_A_REREVIEW`；不得预写A通过 |
+| B最终整体复核第一轮 | `logs/prompts/2026-10-12-B.md`对应G6-02复核原文 | `b-final-review.json`与Review记录 | Review`f9dfc20`；日志回填`d17847d` | N/A（OVR-038） | `CHANGES_REQUIRED`，ISSUE-G6-02-004/005由C整改后待B再复验 |
+| C第二轮增量整改 | `logs/prompts/2026-10-12-C.md#LOG-G6-02-002` | 保留GI-001—021，追加GI-022—039并修正日志/审计/README状态 | 本轮内容commit在提交后由同一日志独立回填 | N/A（OVR-038） | `C_REMEDIATED_PENDING_B_REREVIEW`；不预写B或A通过 |
 
 ### 当前三线结论
 
 - 文档线：CI-015/016从历史“未形成”迁移为“候选已提交但A退回”，DOCX/PDF均按`cfdb6f5` canonical Git blob登记。A已渲染复核22页；页数复核不等于内容通过。
-- 部署线：命令台账、交接和截图已入增量，但G6-01仍有业务闭环、命令证据、部署回退、版本一致性四项重大问题；真实非乙方部署操作者仍为0。
+- 部署线：G6-01 V0.2正式件、命令台账、交接、发布锁、26步部署/目标回退与渲染证据已入后续增量；四项问题由B标记为已整改，但仍待A复验，真实非乙方部署操作者仍为0。
 - 试演线：G6-03有23项本地内存模拟检查通过；它不替代CI-029真实现场记录，不把RTM的11/59/47改成新增PASS。
-- AI线：首版G6-02的Prompt→内容commit→日志回填→B首版Review已完整定位；G6-01、G6-03和A退回也已挂入当前链。本轮自身commit因提交哈希不可自引用，由同一C日志在提交后独立小提交回填。
+- AI线：首版G6-02、C首轮整改`0de6884/6f56ab6`、G6-01 V0.2形成链、B第一轮最终整体复核`f9dfc20/d17847d`均已定位；C第二轮自身commit因提交哈希不可自引用，将由同一C日志在提交后独立小提交回填。
 - 指标线：AI代码占比、Prompt复用次数、返工工时仍无可靠人工样本或工时账，继续`UNKNOWN / 【待人工确认】`；不由Git作者、日志数量或时间戳推断。
 
-当前审计结论：`C_INCREMENT_TRACEABLE / PENDING_B_FINAL_REVIEW`。只有B实际完成最终整体复核并形成记录后，才能更新其Review结论；A随后仅复验目录/计划/一致性。
+当前审计结论：`C_V0_2_INCREMENT_TRACEABLE / PENDING_B_REREVIEW`。B第一轮结论保留为`CHANGES_REQUIRED`；只有B实际再复验并形成新记录后，才能更新结论，随后再由A复验目录、计划和一致性。

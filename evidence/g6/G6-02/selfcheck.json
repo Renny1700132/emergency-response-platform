@@ -1,7 +1,7 @@
 {
   "task": "G6-02",
-  "status": "PASS_C_INCREMENT_PENDING_B_FINAL_REVIEW",
-  "generatedAt": "2026-10-12T16:08:34+08:00",
+  "status": "PASS_C_V0_2_INCREMENT_PENDING_B_REREVIEW",
+  "generatedAt": "2026-10-12T17:44:22+08:00",
   "deliveryItems": 29,
   "availability": {
     "AVAILABLE": 20,
@@ -18,6 +18,18 @@
     "manualPdfPagesReviewedByA": 22,
     "simulatedRehearsalChecksPass": 23,
     "acPassAddedFromRehearsal": 0
+  },
+  "subsequentIncrement": {
+    "inputCommit": "d17847d10ab0009f2b7c1468cf5540d90a3c0694",
+    "items": 18,
+    "available": 18,
+    "canonicalGitBlobFingerprints": 18,
+    "historicalGi001To021Preserved": true,
+    "g6_01Version": "V0.2",
+    "g6_01State": "B_REMEDIATED_PENDING_A_REREVIEW",
+    "deploymentSteps": 26,
+    "deploymentStepFailures": 0,
+    "realWorldAccepted": 0
   },
   "rtmRows": 117,
   "frGroups": 39,
@@ -39,15 +51,19 @@
     "incrementCanonicalHashesMatch": true,
     "plannedAndCandidateDefensePathsSeparated": true,
     "simulatedAndRealWorldSeparated": true,
-    "auditChainCurrentThroughARejection": true
+    "auditChainCurrentThroughARejection": true,
+    "v0_2CanonicalHashesMatch": true,
+    "cFirstRemediationCommitAndBackfillResolved": true,
+    "readmeCurrentStateReconciled": true
   },
   "blockers": [
-    "G6-01 candidates exist but A review remains NEED_FIX on four major issues",
+    "G6-01 V0.2 is remediated by B but A rereview has not occurred",
     "G6-03 simulated candidate exists but B technical/C overall review and ISSUE-G6-03-001 closure remain pending",
-    "B final G6-02 overall review and subsequent A consistency rereview have not occurred",
+    "B G6-02 final overall review first round was CHANGES_REQUIRED; B rereview and subsequent A consistency rereview have not occurred",
     "real owner systems, independent deployer, site/training/trial/data/signature remain unavailable"
   ],
   "reviewer": "B",
-  "reviewStatus": "PENDING_FINAL_OVERALL_REVIEW",
-  "aReviewStatus": "NEED_FIX_INPUT_INCORPORATED_REREVIEW_PENDING"
+  "reviewStatus": "PENDING_B_REREVIEW_AFTER_C_REMEDIATION",
+  "bFirstFinalReviewStatus": "CHANGES_REQUIRED",
+  "aReviewStatus": "G6_01_V0_2_REREVIEW_PENDING_AND_G6_02_CONSISTENCY_REREVIEW_PENDING"
 }

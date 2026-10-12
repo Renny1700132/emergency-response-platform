@@ -62,3 +62,26 @@
 - 实际候选路径为 GI-011/012；候选待B技术确认与C整体复核，不替代正式路径。
 - CI-029要求的真实现场记录仍不存在；GI-013—015仅为本地内存、模拟数据的实际试演证据。
 - 本次增量21项均可定位，但真实世界验收接受数仍为0；30项实现延期、76项证据延期、六类甲方系统0/6、真实独立操作者0保持不变。
+
+## 2026-10-12 G6-01 V0.2 后续增量
+
+> 本节为ISSUE-G6-02-004追加，保留GI-001—021及其`cfdb6f5`历史指纹不变。V0.2形成链为应用锁`75f01c3`、文档/证据`6255f94`、合并交付点`a8f8134`；以下canonical Git blob统一取自B复核回填后的输入基线`d17847d10ab0009f2b7c1468cf5540d90a3c0694`。当前状态仅为`B_REMEDIATED_PENDING_A_REREVIEW`，未预写A通过。
+
+| ID | V0.2交付/证据 | 路径 | 状态/边界 | canonical SHA-256 |
+|---|---|---|---|---|
+| GI-022 | 用户手册V0.2源文件 | `docs/deliverables/G6/34-用户手册.docx` | B已整改，待A复验；课程候选 | `ebc7de0b2183474e5689ea1236696f20c0c14a1a2b851cedbac83985c5e69e50` |
+| GI-023 | 用户手册V0.2 PDF | `docs/deliverables/G6/34-用户手册.pdf` | B已整改，待A复验；课程候选 | `057e2ea7eb4761a4b3cbb3160214f1248802c8e0410fa045ce99e39dca6a7e4a` |
+| GI-024 | 部署与运维手册V0.2源文件 | `docs/deliverables/G6/45-部署与运维手册.docx` | B已整改，待A复验；课程候选 | `bafa269526b1ae936a9fcba6b913eef07b202afdab77f51329b40ffe84f2c0c3` |
+| GI-025 | 部署与运维手册V0.2 PDF | `docs/deliverables/G6/45-部署与运维手册.pdf` | B已整改，待A复验；课程候选 | `abbfac95db9897f9d9ab55cafac675005bec044b1f756a930a53e63133c15ece` |
+| GI-026 | 命令台账摘要 | `evidence/g6/G6-01/command-execution-ledger.md` | 26步摘要；B本地隔离执行 | `42182043c5fdbaddab0c6f93b80f1e8232414d4a54ac419034b6989aab681d27` |
+| GI-027 | 逐命令机器台账 | `evidence/g6/G6-01/remediation-command-ledger.json` | 26/26 exit 0；非KN-065 | `e58eb05340493002c7c11a125296ce859eec1e68f065b2865d3098c2866c6d83` |
+| GI-028 | 部署交接与已知限制 | `docs/work/B_TECH/g6_deployment_handoff_and_known_limits.md` | B已整改，真实独立部署仍延期 | `9e194fd079e965f0dd96f7fddd75c01e348f88e4770082783912e24c5f5af05b` |
+| GI-029 | V0.2发布锁 | `evidence/g6/G6-01/release-lock.json` | 应用锁`75f01c3` | `277fee2ee4adef32bdf42767891a8d246d7cb681ce7112254e3e8fdbe87a9b47` |
+| GI-030 | 部署/目标回退检查 | `evidence/g6/G6-01/remediation-deployment-check.json` | 26/26 PASS；B本地隔离执行 | `7b76e977cd61505996489d231f5c77346963c3e591c57e1af199a28c112813ce` |
+| GI-031 | V0.2渲染QA | `evidence/g6/G6-01/document-render-qa.md` | 版式检查完成，待A内容复验 | `842767fa8ff0d942dbdb69f4e473b96dcafcff59bf1f850cac5ab3c656b24a82` |
+| GI-032 | B整改记录 | `docs/work/G6/G6-01_B_remediation.md` | REMEDIATED_BY_B / PENDING_A_REREVIEW | `b19c1510fae632c2b8f228638611b9cb663650572f119f98e65ec96e47c43c78` |
+| GI-033—035 | 文档对清单、整改自检、26步raw索引 | `evidence/g6/G6-01/`（JSON逐文件列示） | 配置/自检/原始定位；不替代A复验 | 见JSON逐文件canonical指纹 |
+| GI-036—037 | 当前任务与Issue输入状态 | `tasks.md`、`control/issues.md` | 输入时G6-01待A、G6-02两项OPEN | 见JSON逐文件canonical指纹 |
+| GI-038—039 | B最终整体复核第一轮 | `evidence/g6/G6-02/b-final-review.json`、`logs/reviews/2026-10-12_G6-02-B-final-review.md` | CHANGES_REQUIRED；不是接受 | 见JSON逐文件canonical指纹 |
+
+V0.2后续增量共18项，18项均可定位；26步部署/回退为成员B本地隔离运行，不能迁移成甲方现场或真实非乙方独立部署。G6-02仍待B再复验，之后才可交A做目录、计划和一致性复验。

@@ -1,0 +1,1 @@
+{"status":"PASS","deliveryItems":29,"available":20,"notAvailable":9,"rtmRows":117,"fr":39,"starFr":34,"results":{"NOT_RUN":59,"BLOCKED":47,"PASS":11},"candidateState":"REVIEW_INITIAL_CANDIDATE_PENDING_B","reviewStatus":"REVIEW_PENDING_G6_01_AND_G6_03_INCREMENT","hashValidation":"WORKTREE_OR_RECORDED_GIT_BLOB_WITH_EOL_NORMALIZATION"}

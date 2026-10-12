@@ -1,0 +1,140 @@
+{
+  "reviewer": "A (Codex-assisted; not B final review)",
+  "head": "40f2002d4556ac2073361759ca15b41066e3cef9",
+  "indexSnapshot": {
+    "rows": 29,
+    "claimed": {
+      "AVAILABLE": 20,
+      "NOT_AVAILABLE": 9
+    },
+    "currentExistingIndexedPaths": 22,
+    "staleMissingClaims": [
+      "CI-015",
+      "CI-016"
+    ],
+    "unindexedNewEvidence": [
+      "evidence/g6/G6-01/command-execution-ledger.md",
+      "evidence/g6/G6-01/document-pair-manifest.json",
+      "evidence/g6/G6-03/rehearsal-result.json",
+      "evidence/g6/G6-03/rehearsal-release-lock.json"
+    ]
+  },
+  "rtm": {
+    "rows": 117,
+    "uniqueAC": 117,
+    "FR": 39,
+    "starFR": 34,
+    "results": {
+      "NOT_RUN": 59,
+      "BLOCKED": 47,
+      "PASS": 11
+    },
+    "rowDrift": [],
+    "rawLocatorErrors": [],
+    "passRowsWithActualTCAndEvidence": 11,
+    "plannedTCIsNotExecutionEvidence": true
+  },
+  "performance": {
+    "groups": 8,
+    "samples": 1160,
+    "failures": 0,
+    "csvRows": 1160,
+    "boundary": "Local HTTP/simulated; not production SLA"
+  },
+  "documents": [
+    {
+      "file": "docs/deliverables/G6/34-用户手册.docx",
+      "referenceHashMatches": true,
+      "docxHashMatches": true,
+      "pdfHashMatches": true,
+      "inheritedPartsEqual": {
+        "word/styles.xml": false,
+        "word/numbering.xml": false,
+        "word/theme/theme1.xml": true
+      },
+      "sectionPropertiesEqual": false,
+      "pageGeometryEqual": true,
+      "tables": 7,
+      "imageRelationships": 3,
+      "captions": [
+        "图 2-1 应急态势总览（课程演示数据，2026-10-11 实际截图）",
+        "表 2-1 页面入口与权限速查",
+        "表 3-1 典型角色与操作边界",
+        "图 4-1 事件处置列表（课程演示数据，2026-10-11 实际截图）",
+        "图 5-1 H5 任务接收与反馈（课程演示数据，2026-10-11 实际截图）",
+        "表 6-1 业务工作台操作与降级路径",
+        "表 7-1 页面状态与用户处置",
+        "表 9-1 常见问题与处理方法",
+        "表 10-1 术语与定义"
+      ],
+      "duplicateCaptionIDs": [],
+      "explicitNonBlackColors": [],
+      "caseNameContamination": false
+    },
+    {
+      "file": "docs/deliverables/G6/45-部署与运维手册.docx",
+      "referenceHashMatches": true,
+      "docxHashMatches": true,
+      "pdfHashMatches": true,
+      "inheritedPartsEqual": {
+        "word/styles.xml": true,
+        "word/numbering.xml": true,
+        "word/theme/theme1.xml": true
+      },
+      "sectionPropertiesEqual": true,
+      "pageGeometryEqual": true,
+      "tables": 8,
+      "imageRelationships": 0,
+      "captions": [
+        "表 2-1 发布对象与版本锁定",
+        "表 2-2 最低资源与运行依赖",
+        "表 3-1 受控环境变量",
+        "表 4-1 部署与恢复实际结果",
+        "表 6-1 部署后冒烟检查项",
+        "表 7-1 监控项与处置要求",
+        "表 10-1 常见故障与处置方法"
+      ],
+      "duplicateCaptionIDs": [],
+      "explicitNonBlackColors": [],
+      "caseNameContamination": false
+    }
+  ],
+  "commands": {
+    "ledgerEntries": [
+      "1",
+      "2",
+      "2.1",
+      "2.2",
+      "2.3",
+      "2.4",
+      "2.5",
+      "2.6",
+      "2.7",
+      "2.8",
+      "3",
+      "4"
+    ],
+    "deploymentPerCommandTimestamps": false,
+    "deploymentPerCommandExitCodes": false,
+    "scriptAggregateSuccessDoesNotReplaceCommandEvidence": true,
+    "unrecordedManualCommands": [
+      "npm ci (host)",
+      "npm ci --prefix frontend (host)",
+      "docker compose ps",
+      "docker compose logs --since=30m backend/database",
+      "docker compose cp",
+      "docker compose pull",
+      "migrate down",
+      "git checkout <approved tag>",
+      "docker compose down (without -v)"
+    ],
+    "backupDumpNamesDiffer": "manual emergency.dump; raw g6-backup.dump"
+  },
+  "applicationChangesSinceManualLock": [
+    "frontend/src/features/response/workflow.ts",
+    "frontend/tests/workflow.test.ts"
+  ],
+  "renderWarnings": [
+    "Poppler: No display font for Symbol/ArialUnicode; visual inspection required"
+  ]
+}

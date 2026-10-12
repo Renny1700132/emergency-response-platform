@@ -1999,3 +1999,20 @@
 - 整改：校验器同时读取当前工作区与条目记录的 `inputSnapshotCommit` Git blob，并仅接受记录字节数和 SHA-256 同时匹配的原始或 LF/CRLF 规范化变体；新增 B 独立复核脚本逐项复验 29 项索引、117 行 RTM、1160 条性能样本和真实边界。
 - 结论：首版候选的证据内容未被篡改，跨平台误报已消除；问题对本轮关闭。最终 G6-02 增量仍须以锁定提交的 canonical Git blob 重新生成指纹，不能沿用首版工作区哈希作为最终冻结值。
 - 证据：`logs/reviews/2026-10-11_G6-02-B-review.md`、`scripts/g6/validate-g6-02.mjs`、`scripts/g6/review-g6-02-b.mjs`、`evidence/g6/G6-02/b-review.json`。
+
+## G6 A正式Review退回整改（2026-10-12）
+
+审核基线master@40f2002；A为用户授权Codex辅助审核，不冒充自然人签署。两项均NEED_FIX，保持REVIEW；不改历史B首版接受及G5课程条件接受。详见docs/work/G6/G6-01_A_review.md、G6-02_A_review.md、G6_A_review_summary.md。
+
+| Issue | 级别/状态 | 事实与影响 | 主责/复核 | 整改与关闭证据 |
+|---|---|---|---|---|
+| ISSUE-G6-01-001 | MAJOR / OPEN / CHANGES_REQUESTED | 用户手册缺事件关闭评估/报告/材料/权限/前置条件/结果核对；正式事件页面无关闭按钮，其他工作台操作说明缺真实入口 | B / A | 逐步骤真实入口与正常/异常证据；无法操作的如实标边界；工作稿/DOCX/PDF同步且A复验，不用后端HTTP关闭代替页面操作 |
+| ISSUE-G6-01-002 | MAJOR / OPEN / CHANGES_REQUESTED | 台账部署子命令无逐条时间/退出码；cp、升级/回退等手册命令无对应本轮实跑记录，Vite截图exit0缺原始执行日志 | B / A | 受控隔离环境按每条命令记录环境/版本/起止/输出/退出码/raw，区分精确与等价/未跑；失败保留；A复验，不在生产为凑证据回退 |
+| ISSUE-G6-01-003 | MAJOR / OPEN / CHANGES_REQUESTED | 手册仅完整描述后端，缺前端构建/托管/代理/API地址/身份注入；可配环境变量未Compose透传；migrate down会全量逆序删表，未给可执行的目标恢复与数据保持验证 | B / A | 补完整部署/配置步骤、健康判据与备份复制验证；明确down全量影响/恢复点/停止写入/迁移集合；非作者可照文档在隔离环境执行留证；真实KN-065仍另验 |
+| ISSUE-G6-01-004 | MAJOR / OPEN / VERSION_RECONCILIATION_REQUIRED | 手册beb605f旧锁与8dbfbab新版H5进度修复不同，ISSUE-G6-03-001待B技术/C整体复核；已知限制未挂本缺陷 | B技术/手册；C G6-03复核；A一致性复验 | 明确旧/新代码与截图/验证适用范围，挂接已知缺陷；实际B技术/C整体结论与A版本复验；不得把新版证据挂回旧commit |
+| ISSUE-G6-02-002 | MAJOR / OPEN / INCREMENT_REQUIRED | 首版CI015/016仍未形成，当前实际存在；PDF/台账/交接/截图/答辩候选/模拟试演/A Review增量未入唯一索引，延期与自检未同步 | C / B最终整体复核；A目录/一致性 | 保留首版快照，追加当前commit canonical指纹、版本、状态、模拟/真实分类与延期；实际候选PPT路径与计划正式路径分列；B最终复核/A增量复验 |
+| ISSUE-G6-02-003 | MAJOR / OPEN / AUDIT_INCREMENT_REQUIRED | 审计账仍写待内容commit/待B首审，但实际56e9da9/e194cdb和deaddc6已存在；G6-01/03及A退回未纳入当前链 | C / B最终整体复核；A一致性 | 追加日期化Prompt—产物—commit—PR N/A—Review链，保留历史候选状态；未知AI比例/复用/工时不造数，B最终复核留实际结论 |
+
+资源延期继续独立保留：30 AC实现、76 AC证据、六类甲方真实系统0/6、真实非乙方操作者0、真实宿主/现场/培训/试运行/数据初始化/签署。新问题不是已关闭项；A不静默维护B/C正式产物。本轮完整审查的退回结论不等于作者整改已完成。
+
+- ISSUE-G6-01-002追加版本溯源：部署raw引用外部WSL g5-02目录且出现backend Healthy；锁定beb605f compose/Dockerfile无后端healthcheck。releaseCommit在脚本中硬编码，缺实跑目录HEAD/diff/compose config指纹；B须解释差异并提交实际配置/制品映射，【待人工确认】，不直接认定伪造。

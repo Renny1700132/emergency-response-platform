@@ -510,3 +510,9 @@
 - 工具适配：演示文稿Skill要求artifact-tool与load_workspace_dependencies，但当前工具目录无该加载工具，本地node_modules也无artifact-tool。不安装替代依赖；使用仓库已有的原生PowerPoint COM路径新建可编辑PPTX并原生导出PDF/逐页图，再检查包结构、文字/来源、每页渲染。PPTX无唯一对应Reference，旧G4 PPT只提供历史结构参考，不复用其旧状态或截图；本轮不新建DOCX，故不以无关DOCX假装唯一Pair。
 - 评分/审计影响：演示证明模拟数据下的本地路径，真实履约门禁不满足；C须审查课程适用性和来源。模板/运行时适配透明，不声称artifact-tool生成或真实现场验收通过。
 - 状态：ACTIVE_FOR_G6_03_SIMULATED_REHEARSAL；整体业务接受PENDING_C。
+
+## G6 A Review Preflight（2026-10-12；无需求事实Override）
+
+- PFC-G6-A-001：入口旧G4 tasks与最新master G6定义冲突；当前P0要求最新tasks为准，采用master@40f2002的G6角色/REVIEW/边界。旧分支修改与历史工作隔离保留，无删除；审计影响为避免旧任务/旧状态污染。
+- PFC-G6-A-002：当前P0指定A整体审核，同时保留G6-02由B整体复核；执行A目录/计划/一致性正式审核，B最终整体复核权不替代，不改变主责。审计影响为保留指定Review链，不能自动产生B最终PASS。
+- Git采用现有OVR-038 G6持续master授权，PR=N/A；不修改G4历史、需求分母、G5结果或任何真实验收义务。无新增课程豁免。

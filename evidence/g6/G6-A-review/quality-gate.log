@@ -1,0 +1,303 @@
+
+> museum-emergency-response-quality-gates@0.1.0 quality
+> npm run typecheck && npm run test:frontend:coverage && npm run build && npm run test:coverage && npm run test:backend:coverage && npm run contract && npm run security && npm run selfcheck
+
+
+> museum-emergency-response-quality-gates@0.1.0 typecheck
+> npm run typecheck --prefix frontend
+
+
+> museum-emergency-response-frontend@0.1.0 typecheck
+> npm run generate:api && vue-tsc --noEmit
+
+
+> museum-emergency-response-frontend@0.1.0 generate:api
+> openapi-typescript ../docs/work/B_TECH/openapi_v1.yaml -o src/api/generated/schema.d.ts
+
+✨ openapi-typescript 7.9.1
+🚀 ../docs/work/B_TECH/openapi_v1.yaml → src/api/generated/schema.d.ts [279.6ms]
+
+> museum-emergency-response-quality-gates@0.1.0 test:frontend:coverage
+> npm run test:coverage --prefix frontend
+
+
+> museum-emergency-response-frontend@0.1.0 test:coverage
+> vitest run --coverage
+
+
+ RUN  v5.0.1 E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend
+      Coverage enabled with v8
+
+ ❯ tests/real-stack-e2e.test.ts (0 test)
+ ❯ tests/formal-module-workbench.test.ts (0 test)
+ ❯ tests/page-interactions.test.ts (0 test)
+ ❯ tests/module-traceability.test.ts (0 test)
+ ❯ tests/formal-page-isolation.test.ts (0 test)
+ ❯ tests/auth-context.test.ts (0 test)
+ ❯ tests/h5-responsive-layout.test.ts (0 test)
+ ❯ tests/api-client.test.ts (0 test)
+ ❯ tests/postgresql-system-e2e.test.ts (0 test)
+ ❯ tests/presentation-state.test.ts (0 test)
+ ❯ tests/workflow.test.ts (0 test)
+ ❯ tests/presentation-api.test.ts (0 test)
+Failed to parse file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/src/shared/demo/presentation-api.ts. Excluding it from coverage.
+ Error [RollupError]: Expected ',', got '{'
+    at getRollupError (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:319:41)
+    at convertProgram (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:1134:26)
+    at parseAstAsync (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:2124:106)
+    at V8CoverageProvider.remapCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:156:10)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:142:23
+    at async Promise.all (index 3)
+    at V8CoverageProvider.getCoverageMapForUncoveredFiles (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:132:4)
+    at V8CoverageProvider.generateCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:78:29)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21068:23
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21081:11 {
+  code: 'PARSE_ERROR',
+  pos: 12
+}
+Failed to parse file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/src/shared/http/api-client.ts. Excluding it from coverage.
+ Error [RollupError]: Expected ',', got '{'
+    at getRollupError (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:319:41)
+    at convertProgram (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:1134:26)
+    at parseAstAsync (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:2124:106)
+    at V8CoverageProvider.remapCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:156:10)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:142:23
+    at async Promise.all (index 5)
+    at V8CoverageProvider.getCoverageMapForUncoveredFiles (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:132:4)
+    at V8CoverageProvider.generateCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:78:29)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21068:23
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21081:11 {
+  code: 'PARSE_ERROR',
+  pos: 12
+}
+Failed to parse file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/src/shared/http/api-context.ts. Excluding it from coverage.
+ Error [RollupError]: Expected ',', got '{'
+    at getRollupError (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:319:41)
+    at convertProgram (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:1134:26)
+    at parseAstAsync (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:2124:106)
+    at V8CoverageProvider.remapCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:156:10)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:142:23
+    at async Promise.all (index 6)
+    at V8CoverageProvider.getCoverageMapForUncoveredFiles (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:132:4)
+    at V8CoverageProvider.generateCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:78:29)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21068:23
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21081:11 {
+  code: 'PARSE_ERROR',
+  pos: 12
+}
+Failed to parse file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/src/shared/auth/auth-context.ts. Excluding it from coverage.
+ Error [RollupError]: Expected ',', got '{'
+    at getRollupError (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:319:41)
+    at convertProgram (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:1134:26)
+    at parseAstAsync (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:2124:106)
+    at V8CoverageProvider.remapCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:156:10)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:142:23
+    at async Promise.all (index 2)
+    at V8CoverageProvider.getCoverageMapForUncoveredFiles (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:132:4)
+    at V8CoverageProvider.generateCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:78:29)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21068:23
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21081:11 {
+  code: 'PARSE_ERROR',
+  pos: 12
+}
+Failed to parse file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/src/features/formal/module-workbench.ts. Excluding it from coverage.
+ Error [RollupError]: Expected ',', got '{'
+    at getRollupError (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:319:41)
+    at convertProgram (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:1134:26)
+    at parseAstAsync (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:2124:106)
+    at V8CoverageProvider.remapCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:156:10)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:142:23
+    at async Promise.all (index 0)
+    at V8CoverageProvider.getCoverageMapForUncoveredFiles (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:132:4)
+    at V8CoverageProvider.generateCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:78:29)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21068:23
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21081:11 {
+  code: 'PARSE_ERROR',
+  pos: 12
+}
+Failed to parse file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/src/features/response/workflow.ts. Excluding it from coverage.
+ Error [RollupError]: Expected ',', got '{'
+    at getRollupError (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:319:41)
+    at convertProgram (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:1134:26)
+    at parseAstAsync (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:2124:106)
+    at V8CoverageProvider.remapCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:156:10)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:142:23
+    at async Promise.all (index 1)
+    at V8CoverageProvider.getCoverageMapForUncoveredFiles (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:132:4)
+    at V8CoverageProvider.generateCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:78:29)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21068:23
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21081:11 {
+  code: 'PARSE_ERROR',
+  pos: 12
+}
+Failed to parse file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/src/shared/demo/presentation-state.ts. Excluding it from coverage.
+ Error [RollupError]: Expected '{', got 'type'
+    at getRollupError (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:319:41)
+    at convertProgram (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:1134:26)
+    at parseAstAsync (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:2124:106)
+    at V8CoverageProvider.remapCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:156:10)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:142:23
+    at async Promise.all (index 4)
+    at V8CoverageProvider.getCoverageMapForUncoveredFiles (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:132:4)
+    at V8CoverageProvider.generateCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:78:29)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21068:23
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21081:11 {
+  code: 'PARSE_ERROR',
+  pos: 41
+}
+Failed to parse file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/src/shared/http/api-error.ts. Excluding it from coverage.
+ Error [RollupError]: Expected ',', got ':'
+    at getRollupError (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:319:41)
+    at convertProgram (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:1134:26)
+    at parseAstAsync (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/rollup/dist/es/shared/parseAst.js:2124:106)
+    at V8CoverageProvider.remapCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:156:10)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:142:23
+    at async Promise.all (index 7)
+    at V8CoverageProvider.getCoverageMapForUncoveredFiles (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:132:4)
+    at V8CoverageProvider.generateCoverage (file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/@vitest/coverage-v8/dist/provider.js:78:29)
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21068:23
+    at file:///E:/ZongHeShiXi/emergency-response-platform/.worktrees/g4-ppt-direct-master/frontend/node_modules/vitest/dist/chunks/index.DzobfTyw.js:21081:11 {
+  code: 'PARSE_ERROR',
+  pos: 66
+}
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 12 ⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/api-client.test.ts [ tests/api-client.test.ts ]
+Error: EPERM: operation not permitted, realpath 'E:\ZongHeShiXi\emergency-response-platform\.worktrees\g4-ppt-direct-master\frontend\tests\api-client.test.ts'
+ ❯ getRealPath node_modules/vite/dist/node/chunks/config.js:33013:36
+ ❯ tryResolveRealFileOrType node_modules/vite/dist/node/chunks/config.js:33007:9
+ ❯ tryCleanFsResolve node_modules/vite/dist/node/chunks/config.js:32731:21
+ ❯ tryFsResolve node_modules/vite/dist/node/chunks/config.js:32724:14
+ ❯ ResolveIdContext.handler node_modules/vite/dist/node/chunks/config.js:32598:16
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/config.js:28797:56
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+ FAIL  tests/auth-context.test.ts [ tests/auth-context.test.ts ]
+Error: EPERM: operation not permitted, realpath 'E:\ZongHeShiXi\emergency-response-platform\.worktrees\g4-ppt-direct-master\frontend\tests\auth-context.test.ts'
+ ❯ getRealPath node_modules/vite/dist/node/chunks/config.js:33013:36
+ ❯ tryResolveRealFileOrType node_modules/vite/dist/node/chunks/config.js:33007:9
+ ❯ tryCleanFsResolve node_modules/vite/dist/node/chunks/config.js:32731:21
+ ❯ tryFsResolve node_modules/vite/dist/node/chunks/config.js:32724:14
+ ❯ ResolveIdContext.handler node_modules/vite/dist/node/chunks/config.js:32598:16
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/config.js:28797:56
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+
+ FAIL  tests/formal-module-workbench.test.ts [ tests/formal-module-workbench.test.ts ]
+Error: EPERM: operation not permitted, realpath 'E:\ZongHeShiXi\emergency-response-platform\.worktrees\g4-ppt-direct-master\frontend\tests\formal-module-workbench.test.ts'
+ ❯ getRealPath node_modules/vite/dist/node/chunks/config.js:33013:36
+ ❯ tryResolveRealFileOrType node_modules/vite/dist/node/chunks/config.js:33007:9
+ ❯ tryCleanFsResolve node_modules/vite/dist/node/chunks/config.js:32731:21
+ ❯ tryFsResolve node_modules/vite/dist/node/chunks/config.js:32724:14
+ ❯ ResolveIdContext.handler node_modules/vite/dist/node/chunks/config.js:32598:16
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/config.js:28797:56
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯
+
+ FAIL  tests/formal-page-isolation.test.ts [ tests/formal-page-isolation.test.ts ]
+Error: EPERM: operation not permitted, realpath 'E:\ZongHeShiXi\emergency-response-platform\.worktrees\g4-ppt-direct-master\frontend\tests\formal-page-isolation.test.ts'
+ ❯ getRealPath node_modules/vite/dist/node/chunks/config.js:33013:36
+ ❯ tryResolveRealFileOrType node_modules/vite/dist/node/chunks/config.js:33007:9
+ ❯ tryCleanFsResolve node_modules/vite/dist/node/chunks/config.js:32731:21
+ ❯ tryFsResolve node_modules/vite/dist/node/chunks/config.js:32724:14
+ ❯ ResolveIdContext.handler node_modules/vite/dist/node/chunks/config.js:32598:16
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/config.js:28797:56
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯
+
+ FAIL  tests/h5-responsive-layout.test.ts [ tests/h5-responsive-layout.test.ts ]
+Error: EPERM: operation not permitted, realpath 'E:\ZongHeShiXi\emergency-response-platform\.worktrees\g4-ppt-direct-master\frontend\tests\h5-responsive-layout.test.ts'
+ ❯ getRealPath node_modules/vite/dist/node/chunks/config.js:33013:36
+ ❯ tryResolveRealFileOrType node_modules/vite/dist/node/chunks/config.js:33007:9
+ ❯ tryCleanFsResolve node_modules/vite/dist/node/chunks/config.js:32731:21
+ ❯ tryFsResolve node_modules/vite/dist/node/chunks/config.js:32724:14
+ ❯ ResolveIdContext.handler node_modules/vite/dist/node/chunks/config.js:32598:16
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/config.js:28797:56
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯
+
+ FAIL  tests/module-traceability.test.ts [ tests/module-traceability.test.ts ]
+Error: EPERM: operation not permitted, realpath 'E:\ZongHeShiXi\emergency-response-platform\.worktrees\g4-ppt-direct-master\frontend\tests\module-traceability.test.ts'
+ ❯ getRealPath node_modules/vite/dist/node/chunks/config.js:33013:36
+ ❯ tryResolveRealFileOrType node_modules/vite/dist/node/chunks/config.js:33007:9
+ ❯ tryCleanFsResolve node_modules/vite/dist/node/chunks/config.js:32731:21
+ ❯ tryFsResolve node_modules/vite/dist/node/chunks/config.js:32724:14
+ ❯ ResolveIdContext.handler node_modules/vite/dist/node/chunks/config.js:32598:16
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/config.js:28797:56
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯
+
+ FAIL  tests/page-interactions.test.ts [ tests/page-interactions.test.ts ]
+Error: EPERM: operation not permitted, realpath 'E:\ZongHeShiXi\emergency-response-platform\.worktrees\g4-ppt-direct-master\frontend\tests\page-interactions.test.ts'
+ ❯ getRealPath node_modules/vite/dist/node/chunks/config.js:33013:36
+ ❯ tryResolveRealFileOrType node_modules/vite/dist/node/chunks/config.js:33007:9
+ ❯ tryCleanFsResolve node_modules/vite/dist/node/chunks/config.js:32731:21
+ ❯ tryFsResolve node_modules/vite/dist/node/chunks/config.js:32724:14
+ ❯ ResolveIdContext.handler node_modules/vite/dist/node/chunks/config.js:32598:16
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/config.js:28797:56
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/12]⎯
+
+ FAIL  tests/postgresql-system-e2e.test.ts [ tests/postgresql-system-e2e.test.ts ]
+Error: EPERM: operation not permitted, realpath 'E:\ZongHeShiXi\emergency-response-platform\.worktrees\g4-ppt-direct-master\frontend\tests\postgresql-system-e2e.test.ts'
+ ❯ getRealPath node_modules/vite/dist/node/chunks/config.js:33013:36
+ ❯ tryResolveRealFileOrType node_modules/vite/dist/node/chunks/config.js:33007:9
+ ❯ tryCleanFsResolve node_modules/vite/dist/node/chunks/config.js:32731:21
+ ❯ tryFsResolve node_modules/vite/dist/node/chunks/config.js:32724:14
+ ❯ ResolveIdContext.handler node_modules/vite/dist/node/chunks/config.js:32598:16
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/config.js:28797:56
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/12]⎯
+
+ FAIL  tests/presentation-api.test.ts [ tests/presentation-api.test.ts ]
+Error: EPERM: operation not permitted, realpath 'E:\ZongHeShiXi\emergency-response-platform\.worktrees\g4-ppt-direct-master\frontend\tests\presentation-api.test.ts'
+ ❯ getRealPath node_modules/vite/dist/node/chunks/config.js:33013:36
+ ❯ tryResolveRealFileOrType node_modules/vite/dist/node/chunks/config.js:33007:9
+ ❯ tryCleanFsResolve node_modules/vite/dist/node/chunks/config.js:32731:21
+ ❯ tryFsResolve node_modules/vite/dist/node/chunks/config.js:32724:14
+ ❯ ResolveIdContext.handler node_modules/vite/dist/node/chunks/config.js:32598:16
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/config.js:28797:56
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/12]⎯
+
+ FAIL  tests/presentation-state.test.ts [ tests/presentation-state.test.ts ]
+Error: EPERM: operation not permitted, realpath 'E:\ZongHeShiXi\emergency-response-platform\.worktrees\g4-ppt-direct-master\frontend\tests\presentation-state.test.ts'
+ ❯ getRealPath node_modules/vite/dist/node/chunks/config.js:33013:36
+ ❯ tryResolveRealFileOrType node_modules/vite/dist/node/chunks/config.js:33007:9
+ ❯ tryCleanFsResolve node_modules/vite/dist/node/chunks/config.js:32731:21
+ ❯ tryFsResolve node_modules/vite/dist/node/chunks/config.js:32724:14
+ ❯ ResolveIdContext.handler node_modules/vite/dist/node/chunks/config.js:32598:16
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/config.js:28797:56
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/12]⎯
+
+ FAIL  tests/real-stack-e2e.test.ts [ tests/real-stack-e2e.test.ts ]
+Error: EPERM: operation not permitted, realpath 'E:\ZongHeShiXi\emergency-response-platform\.worktrees\g4-ppt-direct-master\frontend\tests\real-stack-e2e.test.ts'
+ ❯ getRealPath node_modules/vite/dist/node/chunks/config.js:33013:36
+ ❯ tryResolveRealFileOrType node_modules/vite/dist/node/chunks/config.js:33007:9
+ ❯ tryCleanFsResolve node_modules/vite/dist/node/chunks/config.js:32731:21
+ ❯ tryFsResolve node_modules/vite/dist/node/chunks/config.js:32724:14
+ ❯ ResolveIdContext.handler node_modules/vite/dist/node/chunks/config.js:32598:16
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/config.js:28797:56
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/12]⎯
+
+ FAIL  tests/workflow.test.ts [ tests/workflow.test.ts ]
+Error: EPERM: operation not permitted, realpath 'E:\ZongHeShiXi\emergency-response-platform\.worktrees\g4-ppt-direct-master\frontend\tests\workflow.test.ts'
+ ❯ getRealPath node_modules/vite/dist/node/chunks/config.js:33013:36
+ ❯ tryResolveRealFileOrType node_modules/vite/dist/node/chunks/config.js:33007:9
+ ❯ tryCleanFsResolve node_modules/vite/dist/node/chunks/config.js:32731:21
+ ❯ tryFsResolve node_modules/vite/dist/node/chunks/config.js:32724:14
+ ❯ ResolveIdContext.handler node_modules/vite/dist/node/chunks/config.js:32598:16
+ ❯ EnvironmentPluginContainer.resolveId node_modules/vite/dist/node/chunks/config.js:28797:56
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/12]⎯
+
+
+ Test Files  12 failed (12)
+      Tests  no tests
+   Start at  15:22:56
+   Duration  21.03s (environment 99%, worker 1%)
+

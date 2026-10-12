@@ -102,3 +102,12 @@
 - `work/A_PM/g6_delivery_acceptance_plan.md`：A内部长任务规划及执行说明；2026-10-11 C 定向修正页码后复验接受，G6-00 DONE，尚未开始正式交付制作。
 - `../evidence/g6/G6-02/`：C维护的唯一交付/证据索引、RTM验收增量、标准映射、三线审计、指标及缺项台账；当前首版REVIEW待B，不代表G6最终验收。
 - `../logs/history/2026-10-11-g4-03-preserved/README.md`：旧收口差异与独立历史日志的原样保留/对账，不覆盖现有正式记录。
+
+## G6 A正式Review增量（2026-10-12）
+
+最新两项主责/Review状态以tasks.md为准。G6-01与G6-02本轮A审核均NEED_FIX；B/C候选已经存在，但首版G6-02尚未完成挂接增量，不能沿用“尚未开始交付制作/首版待B”作为当前结论。
+
+- `work/G6/G6_A_review_baseline.md`：审核master/任务/输入与原则。
+- `work/G6/G6-01_A_review.md`、`work/G6/G6-02_A_review.md`：逐项Review、命令核对、责任与复验；A不代B最终整体Review。
+- `work/G6/G6_A_review_summary.md`：跨任务一致性、6项MAJOR、准出清单；不允许G6最终准出。
+- `../evidence/g6/G6-A-review/`：A机械追溯与22页独立PDF渲染、原始校验/质量结果；不替代唯一C交付索引。

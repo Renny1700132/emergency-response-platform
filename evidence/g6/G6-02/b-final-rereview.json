@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "task": "G6-02",
+  "reviewer": "B",
+  "reviewedBaseline": "56dbeffbf0ee74a45d5de5cef8a2df56382ef6f3",
+  "conclusion": "ACCEPTED_FOR_G6_02_FINAL_OVERALL_REVIEW_PENDING_A_CONSISTENCY_REREVIEW",
+  "accepted": true,
+  "checks": {
+    "initialSnapshot": {"items": 29, "available": 20, "notAvailable": 9, "result": "PASS"},
+    "currentIncrement": {"inputCommit": "cfdb6f5f4f75bdcce04754f513668796da62326c", "items": 21, "canonicalGitBlobVerified": 21, "result": "PASS"},
+    "v02Increment": {"inputCommit": "d17847d10ab0009f2b7c1468cf5540d90a3c0694", "items": 18, "canonicalGitBlobVerified": 18, "deploymentSteps": 26, "deploymentStepFailures": 0, "result": "PASS"},
+    "aRereviewIncrement": {"inputCommit": "e223f6d40b90c2f910297afc380e270819e31132", "items": 11, "canonicalGitBlobVerified": 11, "aMechanicalAssertions": 35, "g6_01AcceptedByA": true, "result": "PASS"},
+    "rtm": {"rows": 117, "fr": 39, "starFr": 34, "pass": 11, "notRun": 59, "blocked": 47, "result": "PASS"},
+    "simulation": {"rehearsalChecks": 23, "addedAcPass": 0, "result": "PASS"},
+    "realWorld": {"ownerSystems": "0/6", "independentOperator": 0, "accepted": 0, "result": "DEFERRED_NOT_ACCEPTED"},
+    "auditChain": {"cFirstContent": "0de68849c9307083e2989161cb178111fea2be99", "cFirstBackfill": "6f56ab648433bb5673d4e8fcd5a8c8755dad02be", "bFirstReview": "f9dfc2042c7cb4181b2a5041405d64d6e9d35790", "bFirstReviewBackfill": "d17847d10ab0009f2b7c1468cf5540d90a3c0694", "cSecondContent": "6f5d86e", "aG601Rereview": "e223f6d40b90c2f910297afc380e270819e31132", "cSecondBackfill": "56dbeffbf0ee74a45d5de5cef8a2df56382ef6f3", "result": "PASS"}
+  },
+  "findings": [
+    {"id": "ISSUE-G6-02-004", "severity": "MAJOR", "status": "CLOSED_VERIFIED_BY_B"},
+    {"id": "ISSUE-G6-02-005", "severity": "MAJOR", "status": "CLOSED_VERIFIED_BY_B"}
+  ],
+  "issueCounts": {"blocker": 0, "major": 0, "minor": 0, "observation": 0},
+  "taskState": "REVIEW_PENDING_A_CONSISTENCY_REREVIEW",
+  "next": "A_DIRECTORY_PLAN_AND_CONSISTENCY_REREVIEW_THEN_DONE",
+  "realWorldDeferred": ["owner-external-systems", "independent-deployer", "site-training-trial-data-signature"]
+}

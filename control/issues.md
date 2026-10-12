@@ -2036,6 +2036,15 @@
 
 B本轮结论：`CHANGES_REQUIRED / FINAL_REVIEW_NOT_ACCEPTED`；G6-02保持REVIEW。证据：`logs/reviews/2026-10-12_G6-02-B-final-review.md`、`evidence/g6/G6-02/b-final-review.json`。
 
+## G6-02 B最终整体再复验准出（2026-10-12）
+
+- 复核基线：`master@56dbeffbf0ee74a45d5de5cef8a2df56382ef6f3`；复核人B（用户授权Codex辅助，不冒充其他自然人）。
+- `ISSUE-G6-02-004`：`CLOSED / VERIFIED_BY_B`。GI-001—021、GI-022—039、GI-040—050分别完成21/21、18/18、11/11 canonical Git blob复算；V0.2形成链和A接受时点均可定位。
+- `ISSUE-G6-02-005`：`CLOSED / VERIFIED_BY_B`。C首轮状态、当前README及日期化审计链已修正；C第二轮内容、并发A复验、普通merge及push回填均可定位。
+- 不变量：首版29项20/9；RTM 117 AC、39 FR、34★、11 PASS / 59 NOT_RUN / 47 BLOCKED；23项模拟试演增加AC PASS为0；真实甲方系统0/6、真实独立操作者0、真实接受0。
+- 结论：`ACCEPTED_FOR_G6_02_FINAL_OVERALL_REVIEW / PENDING_A_CONSISTENCY_REREVIEW`。G6-02继续REVIEW，待A目录/计划/一致性复验后才能DONE；真实世界延期不变。
+- 证据：`logs/reviews/2026-10-12_G6-02-B-final-rereview.md`、`evidence/g6/G6-02/b-final-rereview.json`。
+
 ### A 整改复验裁决（2026-10-12）｜G6-01当前状态
 
 原表及B整改响应为历史过程记录；当前001/002/003=CLOSED / VERIFIED_BY_A，004=CLOSED_FOR_G6_01 / VERIFIED_BY_A（版本/手册映射已闭环）。ISSUE-G6-03-001的B技术确认由G6-01_B_remediation.md提供，C G6-03整体复核仍PENDING，不关闭该跨任务Issue。G6-01允许DONE，非真实履约完成。

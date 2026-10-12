@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "task": "G6-03",
+  "reviewer": "C",
+  "reviewedBaseline": "5a4765af609469d3d71f76710ab93c9094be7daf",
+  "conclusion": "CHANGES_REQUIRED",
+  "accepted": false,
+  "checks": {
+    "deck": {"slides": 14, "notes": 14, "pdfPages": 14, "visual": "PASS_NO_CLIPPING_OR_OVERLAP"},
+    "sources": {"missing": 0, "result": "PASS"},
+    "originalRun": {"runId": "2026-10-11T14-10-55-529Z", "checks": 23, "passed": 23, "result": "PASS"},
+    "currentAcceptedCodeRun": {"runId": "2026-10-12T13-17-40-295Z", "checks": 23, "passed": 23, "result": "PASS", "applicationRelease": "75f01c3bb33369d3785acf69a3a00eb983aa188b", "changesAfterRelease": 0},
+    "quality": {"exitCode": 0, "frontendPassed": 47, "frontendSkipped": 2, "g4Passed": 11, "backendPassed": 21, "openapiErrors": 0, "openapiWarnings": 14, "vulnerabilities": 0, "result": "PASS"},
+    "controlledNumbers": {"fr": 39, "starFr": 34, "ac": 117, "pass": 11, "notRun": 59, "blocked": 47, "starPass": 1, "starBlocked": 33, "ownerSystems": "0/6", "independentOperator": 0, "result": "PASS"},
+    "realityBoundary": "COURSE_SIMULATED_REHEARSAL / REAL_WORLD_DEFERRED"
+  },
+  "findings": [
+    {"id": "ISSUE-G6-03-001", "severity": "MAJOR", "status": "CLOSED_VERIFIED_BY_B_AND_C"},
+    {"id": "ISSUE-G6-03-002", "severity": "MAJOR", "status": "OPEN_CHANGES_REQUIRED", "summary": "The deck notes, all-slide review footer, handoff/selfcheck and evidence sources retain superseded G6-01/G6-02 and review states."}
+  ],
+  "issueCounts": {"blocker": 0, "major": 1, "minor": 0, "observation": 0},
+  "taskState": "REVIEW_PENDING_A_STATUS_AND_SOURCE_REMEDIATION_THEN_C_REREVIEW",
+  "realWorldDeferred": ["owner-external-systems", "independent-deployer", "site-demo-and-signature"]
+}

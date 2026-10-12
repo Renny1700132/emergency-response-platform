@@ -1,0 +1,39 @@
+{
+  "slides": 14,
+  "notes": 14,
+  "pdfPages": 14,
+  "sourcesMissing": [],
+  "originalRun": {
+    "runId": "2026-10-11T14-10-55-529Z",
+    "status": "PASS",
+    "checks": 23
+  },
+  "currentRun": {
+    "runId": "2026-10-12T13-17-40-295Z",
+    "status": "PASS",
+    "checks": 23,
+    "elapsedSeconds": 3.469,
+    "realWorldStatus": "REAL_WORLD_DEFERRED"
+  },
+  "g601Done": true,
+  "g602Done": true,
+  "g603Review": true,
+  "bTechnicalConfirmation": true,
+  "acceptedReleaseCommit": "75f01c3bb33369d3785acf69a3a00eb983aa188b",
+  "reviewHead": "5a4765af609469d3d71f76710ab93c9094be7daf",
+  "applicationChangesAfterAcceptedRelease": [],
+  "staleCurrentStatePhrases": [
+    "G6-01手册当前为REVIEW",
+    "G6-02由B接受首版但最终仍REVIEW",
+    "尚无A整体接受记录",
+    "G6-02 B结论明确只接受首版",
+    "G6-01 A复核和G6-02最终增量审计仍待闭环"
+  ],
+  "footerPendingCount": 14,
+  "pptSha256": "83eeff87ca1b761a995eb60dc44207d634d5f593a1bbea7d70ca5d4b9e5dad51",
+  "pdfSha256": "5db7eb5dcf46b69126027dd1a92fa4421eb56b8d3c38e5e5bd4486bf2c2e79cd",
+  "visualPagesReviewed": 14,
+  "visualResult": "PASS_NO_CLIPPING_OR_OVERLAP",
+  "status": "CHANGES_REQUIRED",
+  "generatedAt": "2026-10-12T13:19:14.303427+00:00"
+}

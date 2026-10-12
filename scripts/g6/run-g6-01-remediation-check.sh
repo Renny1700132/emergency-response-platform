@@ -64,15 +64,21 @@ trap cleanup_failure EXIT
 set -e
 
 cd "$ROOT"
-GIT_HEAD="$(git rev-parse HEAD)"
-GIT_BRANCH="$(git branch --show-current)"
-git status --porcelain=v1 > "$RAW_DIR/git-status.txt"
+WINDOWS_ROOT="$(wslpath -w "$ROOT")"
+if git rev-parse --git-dir >/dev/null 2>&1; then
+  GIT=(git)
+else
+  GIT=(git.exe -C "$WINDOWS_ROOT")
+fi
+GIT_HEAD="$("${GIT[@]}" rev-parse HEAD)"
+GIT_BRANCH="$("${GIT[@]}" branch --show-current)"
+"${GIT[@]}" status --porcelain=v1 > "$RAW_DIR/git-status.txt"
 if [[ -s "$RAW_DIR/git-status.txt" && "${G6_ALLOW_DIRTY:-false}" != "true" ]]; then
   echo "refusing to run against a dirty worktree" >&2
   cat "$RAW_DIR/git-status.txt" >&2
   exit 65
 fi
-git diff --stat > "$RAW_DIR/git-diff-stat.txt"
+"${GIT[@]}" diff --stat > "$RAW_DIR/git-diff-stat.txt"
 "${COMPOSE[@]}" config > "$RAW_DIR/compose-config.yaml"
 COMPOSE_SHA256="$(sha256sum "$RAW_DIR/compose-config.yaml" | awk '{print $1}')"
 DOCKERFILE_BACKEND_SHA256="$(sha256sum "$ROOT/backend/Dockerfile" | awk '{print $1}')"

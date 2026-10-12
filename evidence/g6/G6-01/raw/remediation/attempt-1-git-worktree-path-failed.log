@@ -1,0 +1,7 @@
+2026-10-12 G6-01 remediation deployment recorder attempt 1
+exitCode: 128
+command: wsl.exe bash -lc "cd /mnt/e/26shixi/emergency-response-platform-g5-02 && bash scripts/g6/run-g6-01-remediation-check.sh"
+stderr:
+fatal: not a git repository: /mnt/e/26shixi/emergency-response-platform-g5-02/E:/26shixi/emergency-response-platform/.git/worktrees/emergency-response-platform-g5-02
+
+Disposition: retained as a real failed attempt. The managed worktree .git file stores a Windows path that WSL Git cannot resolve. The recorder was changed to query the same checkout with Windows git.exe when native WSL Git cannot resolve the worktree. No deployment step had started.

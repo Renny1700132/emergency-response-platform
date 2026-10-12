@@ -1,5 +1,5 @@
 {
-  "visualInspection": "PASS_BY_A_ALL_14_SLIDES_FINAL_IMAGE_PAGES_8_TO_12_RECHECKED",
+  "visualInspection": "A_FINAL_ALL_14_PAGES_INSPECTED",
   "rendered": [
     {
       "slide": 1,
@@ -82,7 +82,7 @@
       "x": 66,
       "textFits": true,
       "slide": 1,
-      "text": "验收答辩候选 V0.1",
+      "text": "验收答辩候选 V0.2",
       "withinCanvas": true
     },
     {
@@ -94,7 +94,7 @@
       "x": 68,
       "textFits": true,
       "slide": 1,
-      "text": "博物馆智能运营中心\rG6-03  /  A 主责，C 整体复核待执行\r模拟项目试演，当前系统本地实际运行",
+      "text": "博物馆智能运营中心\rG6-03 / A主责；C复核退回，待定向复验\r模拟项目试演，当前系统本地实际运行",
       "withinCanvas": true
     },
     {
@@ -106,7 +106,7 @@
       "x": 48,
       "textFits": true,
       "slide": 1,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -163,7 +163,7 @@
       "x": 48,
       "textFits": true,
       "slide": 2,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -223,7 +223,7 @@
       "x": 48,
       "textFits": true,
       "slide": 3,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -280,7 +280,7 @@
       "x": 48,
       "textFits": true,
       "slide": 4,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -337,7 +337,7 @@
       "x": 48,
       "textFits": true,
       "slide": 5,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -385,7 +385,7 @@
       "x": 64,
       "textFits": true,
       "slide": 6,
-      "text": "G6-01：两本手册、命令台账与已知限制\r\rG6-02：首版索引、RTM增量及B复核\r\rG6-03：逐页来源、实际试演和异常响应\r\r最终状态由指定复核人和后续审计确认",
+      "text": "G6-01：两本手册、命令台账与已知限制\r\rG6-02：最终审计包，B/A复核接受\r\rG6-03：逐页来源、实际试演和异常响应\r\r最终状态由指定复核人和后续审计确认",
       "withinCanvas": true
     },
     {
@@ -397,7 +397,7 @@
       "x": 48,
       "textFits": true,
       "slide": 6,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -457,7 +457,7 @@
       "x": 48,
       "textFits": true,
       "slide": 7,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -538,7 +538,7 @@
       "x": 48,
       "textFits": true,
       "slide": 8,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -607,7 +607,7 @@
       "x": 637,
       "textFits": true,
       "slide": 9,
-      "text": "执行员在实际H5页面接收任务\r\r后台反馈记录保存60%进度\r\r最新页面实际显示60%，状态IN_PROGRESS\r\rISSUE-G6-03-001，待B/C确认关闭",
+      "text": "执行员在实际H5页面接收任务\r\r后台反馈记录保存60%进度\r\r最新页面实际显示60%，状态IN_PROGRESS\r\rISSUE-G6-03-001已由B/C确认关闭",
       "withinCanvas": true
     },
     {
@@ -619,7 +619,7 @@
       "x": 48,
       "textFits": true,
       "slide": 9,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -700,7 +700,7 @@
       "x": 48,
       "textFits": true,
       "slide": 10,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -781,7 +781,7 @@
       "x": 48,
       "textFits": true,
       "slide": 11,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -850,7 +850,7 @@
       "x": 637,
       "textFits": true,
       "slide": 12,
-      "text": "接收与反馈保留任务资源版本\r\r完成任务后提交关闭理由\r\rWeb页面重新加载显示CLOSED\r\r整改后本地试演PASS，整体复核待完成",
+      "text": "接收与反馈保留任务资源版本\r\r完成任务后提交关闭理由\r\rWeb页面重新加载显示CLOSED\r\r本地试演PASS；C要求状态/来源整改",
       "withinCanvas": true
     },
     {
@@ -862,7 +862,7 @@
       "x": 48,
       "textFits": true,
       "slide": 12,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -919,7 +919,7 @@
       "x": 48,
       "textFits": true,
       "slide": 13,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -979,7 +979,7 @@
       "x": 48,
       "textFits": true,
       "slide": 14,
-      "text": "课程模拟试演候选；真实项目验收延期；C整体复核待完成",
+      "text": "模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期",
       "withinCanvas": true
     },
     {
@@ -1007,8 +1007,8 @@
   "source": "docs/work/G6/g6_03_defense_content.json",
   "taskId": "G6-03",
   "authoring": "Microsoft PowerPoint native COM",
-  "mode": "NEW_DOCUMENT",
-  "cOverallReview": "PENDING_REVIEW",
+  "mode": "CONTENT_EDIT",
+  "cOverallReview": "CHANGES_REQUIRED_PENDING_TARGETED_REREVIEW",
   "slideHeightPt": 540,
   "pdf": "docs/deliverables/G6/G6-03-验收答辩候选.pdf",
   "renderCacheRemovedAfterInspection": true

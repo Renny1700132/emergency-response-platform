@@ -1,6 +1,6 @@
 # G6-03 任务执行基线
 
-- 版本：V0.1，A 主责，C 整体复核待执行。
+- 版本：V0.2，A主责；C已复核CHANGES_REQUIRED，002整改待C定向复验。
 - 启动快照：`deaddc6e454dcd1064db2e2271838b5ef19ad87c`；分支 master。
 - 启动代码基线：G6-01 release-lock 所列 `5fc359aea5e08118d17f2e076e6f669b04adf9b4`；首次运行前代码树一致。试演发现 ISSUE-G6-03-001 后仅整改反馈进度映射，新增候选由 `evidence/g6/G6-03/rehearsal-release-lock.json` 记录基底与文件哈希；不把整改后结果挂回旧代码快照。
 - 当前执行授权：2026-10-11 用户最新纠偏 Prompt；追加回复明确允许生成合理模拟数据，并要求不记录 D18 日期/答辩时长安排。
@@ -15,11 +15,11 @@
 
 | 输入 | 用途 | 状态及边界 |
 | --- | --- | --- |
-| [tasks.md](../../../tasks.md) G6 看板 | 任务、主责、依赖、DoD | G6-00 DONE；G6-01 REVIEW；G6-02 首版 B 接受但最终仍 REVIEW；G6-03 启动前 TODO |
+| [tasks.md](../../../tasks.md) G6 看板 | 任务、主责、依赖、DoD | G6-00 DONE；G6-01/02当前DONE，分别A及B/A接受；G6-03当前REVIEW待定向复验（启动TODO为历史） |
 | [G5 C 最终复核](../../../logs/reviews/2026-10-11_G5-03-C-final-review.md) | 课程条件结论与真实边界 | 课程条件接受，不等于真实项目全量通过 |
 | [G6-02 指标账](../../../evidence/g6/G6-02/metrics-ledger.md)及[b-review.json](../../../evidence/g6/G6-02/b-review.json) | 所有展示数字唯一口径 | 39 FR、34★FR、117 AC；11 PASS / 59 NOT_RUN / 47 BLOCKED；★FR 1/33 |
 | [交付索引](../../../evidence/g6/G6-02/delivery-index.json)及[延期账](../../../evidence/g6/G6-02/gaps-deferrals.md) | 证据导航与延期责任 | 首版快照29项20可用/9缺项，不当作本轮增量后的齐套结论 |
-| [G6-01 用户手册](../B_TECH/g6_user_manual.md)及[部署手册](../B_TECH/g6_deployment_operations_manual.md) | 角色、步骤、配置、错误语义 | B 候选；A 整体复核是现场准入依赖 |
+| [G6-01 用户手册](../B_TECH/g6_user_manual.md)及[部署手册](../B_TECH/g6_deployment_operations_manual.md) | 角色、步骤、配置、错误语义 | V0.2已由A接受；真实验收仍延期 |
 | [G6-01 版本锁](../../../evidence/g6/G6-01/release-lock.json)与[命令台账](../../../evidence/g6/G6-01/command-execution-ledger.md) | 锁定软件与既有验证 | B 本地隔离执行；非真实 KN-065 独立部署 |
 | [facts](../../../control/facts.md)、[关键数字](../../../control/key_numbers.md)、[issues](../../../control/issues.md) | 需求、★、责任、问题 | C 主责唯一事实源，本轮引用，不维护影子台账 |
 | [冻结 G3 基线](../../../control/baselines/BASELINE-G3-M3-R1.0.md)、OpenAPI、ADR | 技术回答依据 | 冻结设计不改写；技术答案仍由 B 支持 |
@@ -42,14 +42,14 @@
 | --- | --- | --- |
 | 旧 Prompt 将总结错误归入 G6-03 | 当前纠偏 Prompt、tasks G6-03/04 | 当前 Prompt 覆盖旧定位；核查文件/Git，拒绝继承旧错误内容 |
 | 原 cwd 为旧功能分支且有历史未提交记录 | 本轮 bootstrap | 使用同仓库已有干净 master 工作树；不能把历史证据/注册工作树当临时垃圾删除 |
-| G6-01 未完成 A 整体复核 | tasks G6-01 | 核查步骤与证据并形成真实 A 复核意见；发现问题登记而不代 B 修技术事实 |
+| G6-01已完成A复核；历史快照须分列 | tasks G6-01 | 核查步骤与证据并形成真实 A 复核意见；发现问题登记而不代 B 修技术事实 |
 | 把模拟数据、本地执行当成真实现场验收 | ISSUE-G6-00-001、OVR-034/035/038 | 截图、PPT、原始记录显著注明 SIMULATED_DATA / LOCAL_ACTUAL_EXECUTION；真实延期继续 |
-| C 整体复核与现场意见尚未发生 | tasks G6-03 DoD | 可审候选全部完成后交接；任务不能提前标 DONE |
+| C复核退回状态/来源；真实现场意见未发生 | tasks G6-03 DoD | 可审候选全部完成后交接；任务不能提前标 DONE |
 | AI 数字没有可靠归因 | G6-02 指标账 | 展示 UNKNOWN/【待人工确认】，不自造比例或成本 |
 
 ## 待确认事项
 
-1. C 对 G6-03 整包的实际整体复核结论，尚无记录。
+1. C整体复核已CHANGES_REQUIRED；002整改后待C定向复验，见2026-10-12_G6-03-C-review.md。
 2. 教师/甲方真实现场意见、签署和独立验收尚无记录；本轮模拟项目授权不产生这些事实。
 3. 技术答案中涉及甲方真实接口、终端矩阵、容量及 KN-065 的验证继续延期，责任和触发器沿用 G6-02 缺项账。
 
@@ -60,3 +60,7 @@
 ## 一致性与收口规则
 
 正常/异常实跑证据只描述本轮路径，不重新计算 G5 的 AC 通过分母。逐页来源、截图版本、模拟标识、原始请求/响应、实际耗时、失败留痕、PPT 可编辑性/渲染、引用路径和污染扫描均须检查。整体复核由 C 完成后方可关闭 G6-03；若真实现场仍缺失，按独立课程裁决和实际 Review 决定课程状态，真实状态继续延期。
+
+## 2026-10-12整改输入
+
+G6-01_A_rereview.md与G6-02_A_rereview.md记录前置DONE；C-review/review-result.json记录001关闭及002退回。当前已接受应用发布75f01c3，C在5a4765a复演23/23并quality通过；原2026-10-11截图仍只对应旧运行锁，不迁移版本。

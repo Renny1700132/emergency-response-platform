@@ -10,20 +10,20 @@ run = json.loads((root / 'evidence/g6/G6-03/rehearsal-result.json').read_text(en
 assert review['results'] == {'NOT_RUN': 59, 'BLOCKED': 47, 'PASS': 11}
 assert run['status'] in ['PASS', 'PASS_WITH_KNOWN_DISPLAY_DEFECT']
 screens = {item['id']: item['path'] for item in run['screenshots']}
-common = '本轮采用模拟数据和本地实际执行。C整体复核待完成，真实项目验收继续延期。'
+common = '本轮采用模拟数据和本地实际执行。C复核CHANGES_REQUIRED；状态/来源已整改，待C定向复验；真实项目验收继续延期。'
 slides = []
 def add(title, subtitle, body, notes, sources, layout='text', image=None, table=None):
     slides.append({'number': len(slides)+1, 'title': title, 'subtitle': subtitle, 'body': body, 'notes': notes,
                    'sources': sources, 'layout': layout, 'image': image, 'table': table})
 
-add('应急管理子系统', '验收答辩候选 V0.1', ['博物馆智能运营中心', 'G6-03  /  A 主责，C 整体复核待执行', '模拟项目试演，当前系统本地实际运行'],
+add('应急管理子系统', '验收答辩候选 V0.2', ['博物馆智能运营中心', 'G6-03 / A主责；C复核退回，待定向复验', '模拟项目试演，当前系统本地实际运行'],
     '本次汇报对应tasks中的G6-03验收答辩、现场演示与质询。最新用户纠偏要求以远端master的任务边界执行，并授权生成合理模拟数据。开发总结属于G6-04，本轮不提交总结。请始终把模拟业务输入、本地实际执行和甲方真实验收区分清楚。'+common,
     ['tasks.md', 'docs/work/G6/g6_03_execution_baseline.md', 'control/overrides.md#OVR-039'], 'cover')
 
 add('课程状态与真实验收', 'G5课程条件收口保留全部真实延期', [],
-    '项目先后形成投标、需求、设计与研发成果。G3工程基线冻结为BASELINE-G3-M3-R1.0；G4任务在master收口。G5-03由C独立最终复核接受的是课程条件结论，真实实现、证据和环境延期仍在。G6-01手册当前为REVIEW，G6-02由B接受首版但最终仍REVIEW，本轮G6-03候选也需要C整体复核。不能把课程任务DONE当作117条验收条件全部通过。',
+    '项目先后形成投标、需求、设计与研发成果。G3工程基线冻结为BASELINE-G3-M3-R1.0；G4任务在master收口。G5-03由C独立最终复核接受的是课程条件结论，真实实现、证据和环境延期仍在。G6-01已由A接受并DONE；G6-02已获B最终接受及A一致性接受并DONE。C已整体复核G6-03，结论CHANGES_REQUIRED，仅状态/来源整改待定向复验。不能把课程任务DONE当作117条验收条件全部通过。',
     ['tasks.md', 'control/baselines/BASELINE-G3-M3-R1.0.md', 'evidence/g5/G5-03/c-final-acceptance.json', 'evidence/g6/G6-02/b-review.json'], 'table',
-    table=[['阶段', '已定位的证据', '结论边界'], ['G1—G3', '立项、需求、设计及冻结记录', '冻结范围继续受控'], ['G4', '任务已收口进入master', '研发收口不派生全量验收'], ['G5', 'C最终复核课程条件接受', '实现与真实环境延期'], ['G6', '手册、索引、答辩候选', '整体复核与最终审计待完成']])
+    table=[['阶段', '已定位的证据', '结论边界'], ['G1—G3', '立项、需求、设计及冻结记录', '冻结范围继续受控'], ['G4', '任务已收口进入master', '研发收口不派生全量验收'], ['G5', 'C最终复核课程条件接受', '实现与真实环境延期'], ['G6', '手册、索引、答辩候选', 'G6-01/02 DONE；G6-03待C复验']])
 
 add('冻结范围与责任边界', '39 FR，34项★FR，117 AC', [
     'Web承担事件核实、预案启动和任务统筹', 'H5嵌入既有APP，承担移动上报、接收和反馈',
@@ -42,9 +42,9 @@ add('G5质量结果', '逐AC原始结果保持原分母', [],
     table=[['指标', '真实结果', '含义'], ['AC PASS', str(review['results']['PASS']), '仅这些AC已有对应真实通过证据'], ['AC NOT_RUN', str(review['results']['NOT_RUN']), '仍需执行并归档'], ['AC BLOCKED', str(review['results']['BLOCKED']), '保留实现或资源阻断'], ['★FR', '1 PASS / 33 BLOCKED', '分母34，不以局部套件推导']])
 
 add('交付与证据导航', '沿用唯一索引，当前候选进入增量交接', [
-    'G6-01：两本手册、命令台账与已知限制', 'G6-02：首版索引、RTM增量及B复核',
+    'G6-01：两本手册、命令台账与已知限制', 'G6-02：最终审计包，B/A复核接受',
     'G6-03：逐页来源、实际试演和异常响应', '最终状态由指定复核人和后续审计确认'],
-    '唯一交付索引由C维护，首版为29项，其中20可用、9缺项，这是首版存在性快照，不是当前齐套或验收通过率。本轮不修改C的索引和RTM，提供一份行级增量交接请求。G6-01文档和B本地命令记录可以用于操作依据，但尚无A整体接受记录，不能擅自宣称前置已DONE。G6-02 B结论明确只接受首版。本轮的运行、截图、问题和讲稿将作为其最终审计输入。',
+    '唯一交付索引由C维护，首版为29项，其中20可用、9缺项，这是首版存在性快照，不是当前齐套或验收通过率。本轮不修改C的索引和RTM，提供一份行级增量交接请求。G6-01 V0.2及26步命令证据已由A接受；G6-02最终审计经B再复验与A一致性复验接受。首版29项快照保留，增量GI三段21/18/11分列。此次修订作为后续增量交接，不倒改已锁历史指纹。',
     ['evidence/g6/G6-02/delivery-index.json', 'evidence/g6/G6-02/b-review.json', 'tasks.md', 'evidence/g6/G6-01/command-execution-ledger.md'])
 
 add('模拟试演输入', '全部业务输入显著标记为模拟数据', [
@@ -59,8 +59,8 @@ add('事件核实与预案启动', 'Web页面实际提交，服务端状态为RE
     ['evidence/g6/G6-03/rehearsal-result.json', 'evidence/g6/G6-03/simulated-dataset.json', 'scripts/g6/run-g6-03-rehearsal.mjs'], 'image', screens['01-web-response'])
 
 add('H5接收与反馈', '整改后页面与反馈记录均为60%', [
-    '执行员在实际H5页面接收任务', '后台反馈记录保存60%进度', '最新页面实际显示60%，状态IN_PROGRESS', 'ISSUE-G6-03-001，待B/C确认关闭'],
-    'H5接收和反馈按钮在实际浏览器中执行。旧候选后端反馈保存60，页面显示0，原因是映射漏读反馈数组。本轮登记Issue后仅修正映射，并用回归断言保护显式零值；完整quality及Web/H5正常异常路径重跑。最新截图和原始响应均显示60，任务为IN_PROGRESS。旧FAIL与带问题试演保留，问题状态为整改复验完成、待B技术确认和C整体复核，不能由整改者代签关闭。',
+    '执行员在实际H5页面接收任务', '后台反馈记录保存60%进度', '最新页面实际显示60%，状态IN_PROGRESS', 'ISSUE-G6-03-001已由B/C确认关闭'],
+    'H5接收和反馈按钮在实际浏览器中执行。旧候选后端反馈保存60，页面显示0，原因是映射漏读反馈数组。本轮登记Issue后仅修正映射，并用回归断言保护显式零值；完整quality及Web/H5正常异常路径重跑。最新截图和原始响应均显示60，任务为IN_PROGRESS。旧FAIL与带问题试演保留，B技术确认和C独立复演均有实际记录；问题已CLOSED / VERIFIED_BY_B_AND_C。当前002状态/来源修订仍待C定向复验。',
     ['evidence/g6/G6-03/rehearsal-result.json', 'evidence/g6/G6-03/quality-gate.log', 'frontend/src/features/response/workflow.ts', 'backend/src/event-workflow.mjs', 'control/issues.md#ISSUE-G6-03-001'], 'image', screens['02-h5-feedback'])
 
 add('并发版本冲突', '同一任务的旧页面写入返回409', [
@@ -74,27 +74,30 @@ add('角色权限拒绝', '只读角色写入返回403，事件数保持一致',
     ['evidence/g6/G6-03/rehearsal-result.json', 'backend/src/identity.mjs', 'frontend/src/router/index.ts', 'docs/work/B_TECH/g6_user_manual.md#3'], 'image', screens['04-web-permission-denied'])
 
 add('处置闭环与运行结果', '两条任务完成后，事件实际进入CLOSED', [
-    '接收与反馈保留任务资源版本', '完成任务后提交关闭理由', 'Web页面重新加载显示CLOSED', '整改后本地试演PASS，整体复核待完成'],
+    '接收与反馈保留任务资源版本', '完成任务后提交关闭理由', 'Web页面重新加载显示CLOSED', '本地试演PASS；C要求状态/来源整改'],
     f"当前后端实际完成两条任务，关闭事件并在Web页面显示CLOSED。本轮自动化运行耗时{run['elapsedSeconds']}秒，来自机器计时，不是人的现场讲述时长，也不能说明性能SLA。整改后本轮结果为{run['status']}，H5显示和其他路径实际断言见原始记录。此前记录器404和进度问题失败均保留，没有隐藏或把整个过程写成一次成功。PASS仅描述本轮模拟试演自检，不能替代C整体复核或真实项目验收。",
     ['evidence/g6/G6-03/rehearsal-result.json', 'evidence/g6/G6-03/raw/', 'control/issues.md#ISSUE-G6-03-001'], 'image', screens['05-web-closed'])
 
 add('遗留问题与验收边界', '问题、延期和未知数据继续显著披露', [],
     'H5进度显示问题属于本轮新增技术输入。G5的30条AC实现延期、其余76条AC证据延期继续保留，六类甲方系统真实联调0/6、真实非乙方部署操作者0也未改变。AI代码占比、首审打回率、Prompt复用次数和返工工时尚无可靠归因样本，账本为UNKNOWN，不写零或虚构比例。现场意见和实际签署尚未发生，材料只能作为候选。',
     ['control/issues.md', 'evidence/g6/G6-02/gaps-deferrals.md', 'evidence/g6/G6-02/metrics-ledger.md', 'evidence/g6/G6-03/rehearsal-result.json'], 'table',
-    table=[['事项', '当前状态', '下一步'], ['H5进度显示', '已整改复验，待指定确认', 'B技术确认、C整体复核'], ['功能与证据', '30 AC实现 / 76 AC证据延期', '按RTM逐项补实现和断言'], ['真实联调/独立部署', '0/6系统 / 0真实独立操作者', '资源到位后保留真实证据'], ['AI量化与现场结论', 'UNKNOWN / 尚未发生', '可靠样本、真实复核及意见']])
+    table=[['事项', '当前状态', '下一步'], ['H5进度显示', 'CLOSED / B及C验证', '保留原失败及B/C确认记录'], ['功能与证据', '30 AC实现 / 76 AC证据延期', '按RTM逐项补实现和断言'], ['真实联调/独立部署', '0/6系统 / 0真实独立操作者', '资源到位后保留真实证据'], ['AI量化与现场结论', 'UNKNOWN / 尚未发生', '可靠样本、真实复核及意见']])
 
 add('质询分工与故障预案', '以固定版本、实际证据和问题记录作答', [
     'A：任务范围、交付状态、演示叙事与风险', 'B：端口、事务、数据库、部署和技术问题',
     'C：FR/AC/★分母、审计、延期与符合性', '失败时保留traceId，改用标注版本的证据'],
-    '现场执行前核对版本、前端构建、模拟标识和权限。服务不可用时停止写操作，记录真实失败，不临场升级或改代码；改用本轮已归档截图和原始记录，明确是备用证据而非现场成功。若出现409，刷新并核对版本；403检查权限，不能借用他人账号。消息失败转人工确认，物理门禁控制禁止自动重放。C整体Review、G6-01 A复核和G6-02最终增量审计仍待闭环。真实现场的质询、计时和意见仅在实际发生后追加记录。',
+    '现场执行前核对版本、前端构建、模拟标识和权限。服务不可用时停止写操作，记录真实失败，不临场升级或改代码；改用本轮已归档截图和原始记录，明确是备用证据而非现场成功。若出现409，刷新并核对版本；403检查权限，不能借用他人账号。消息失败转人工确认，物理门禁控制禁止自动重放。G6-01 A接受及G6-02 B/A最终审计已闭环；C整体Review为CHANGES_REQUIRED。此次002整改待C定向复验，不能提前置DONE。真实现场的质询、计时和意见仅在实际发生后追加记录。',
     ['docs/work/G6/g6_03_demo_and_qna.md', 'docs/work/B_TECH/g6_user_manual.md', 'docs/work/B_TECH/adr/ADR-002-事务Outbox与持久任务.md', 'tasks.md'])
 
-content = {'taskId': 'G6-03', 'mode': 'NEW_DOCUMENT', 'version': 'V0.1', 'status': 'CANDIDATE_PENDING_C_REVIEW',
-           'author': 'A', 'reviewer': 'C', 'snapshot': 'deaddc6e454dcd1064db2e2271838b5ef19ad87c',
+for slide in slides:
+    slide['sources'] += ['docs/work/G6/G6-01_A_rereview.md', 'docs/work/G6/G6-02_A_rereview.md', 'logs/reviews/2026-10-12_G6-03-C-review.md', 'evidence/g6/G6-03/C-review/review-result.json']
+
+content = {'taskId': 'G6-03', 'mode': 'CONTENT_EDIT', 'version': 'V0.2', 'status': 'REMEDIATED_PENDING_C_TARGETED_REREVIEW',
+           'author': 'A', 'reviewer': 'C', 'snapshot': '93934c5',
            'evidenceKind': 'COURSE_SIMULATED_REHEARSAL', 'realWorldStatus': 'REAL_WORLD_DEFERRED',
            'rehearsalRunId': run['runId'], 'slides': slides}
 (work / 'g6_03_defense_content.json').write_text(json.dumps(content, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-talk = ['# G6-03 验收答辩讲稿与逐页来源', '', '- V0.1，A主责，C整体复核待执行。', '- 讲稿与PPT来自同一JSON内容源。模拟数据与真实执行边界在正文显著保留。', '- 本轮不填课程D18日期/指定时长；实际自动化运行计时仅描述机器执行。', '']
+talk = ['# G6-03 验收答辩讲稿与逐页来源', '', '- V0.2，A主责；C整体复核CHANGES_REQUIRED，002已整改待定向复验。', '- 讲稿与PPT来自同一JSON内容源。模拟数据与真实执行边界在正文显著保留。', '- 本轮不填课程D18日期/指定时长；实际自动化运行计时仅描述机器执行。', '']
 for slide in slides:
     talk.extend([f"## 第{slide['number']}页 {slide['title']}", '', slide['notes'], '', '来源：', ''])
     for source in slide['sources']:

@@ -2063,3 +2063,7 @@ B本轮结论：`CHANGES_REQUIRED / FINAL_REVIEW_NOT_ACCEPTED`；G6-02保持REVI
 A以master@b8f729d、B实际再复验6fad770/41b8180为输入，197项独立断言及专用校验通过。ISSUE-G6-02-002/003=CLOSED / VERIFIED_BY_A_WITH_B_FINAL_ACCEPTANCE；004/005=CLOSED / VERIFIED_BY_B_AND_A。旧退回与C整改段落为历史，不改写。
 
 ISSUE-G6-02-006：MINOR / FIXED_VERIFIED_BY_A；当前README/索引顶层/缺项016/审计概览仍“待B”，按用户授权补实际B/A接受，明确历史快照、V0.1的22页及当前V0.2的20页。未改历史hash/117行结果；validator增加DONE的真实Review依据检查。详细G6-02_A_rereview.md。G6-02置DONE仅审计包接受，真实0/6接口、0独立操作者及现场/培训/试运行/数据/签署继续延期。
+
+## G6-03 A状态与来源整改（2026-10-12）
+
+ISSUE-G6-03-002：MAJOR / REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。依据C整体Review，14页结构与受控数字不变，讲稿/备注/页脚同步CHANGES_REQUIRED及待定向复验；G6-01/02更新DONE与实际Review来源；001已B/C关闭。V0.2重新生成PPTX/PDF并更新当前自检，V0.1归档不改历史GI指纹。A不自行关闭002；真实延期继续。证据：evidence/g6/G6-03/remediation-selfcheck.json。

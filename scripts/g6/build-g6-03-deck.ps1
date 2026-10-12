@@ -1,4 +1,4 @@
-param([string]$Workspace = (Get-Location).Path)
+﻿param([string]$Workspace = (Get-Location).Path)
 $ErrorActionPreference = 'Stop'
 $Workspace = (Resolve-Path -LiteralPath $Workspace).Path
 $source = Join-Path $Workspace 'docs/work/G6/g6_03_defense_content.json'
@@ -77,9 +77,9 @@ try {
         [void](Text $slide 'body' ($item.body -join "`r`n`r`n") 64 161 832 310 23 $ink)
       }
     }
-    [void](Text $slide 'boundary' '课程模拟试演候选；真实项目验收延期；C整体复核待完成' 48 498 822 22 11 $red)
+    [void](Text $slide 'boundary' '模拟试演候选；C复核退回状态/来源，待定向复验；真实验收延期' 48 498 822 22 11 $red)
     [void](Text $slide 'page-number' ([string]$item.number) 891 496 25 22 12 $muted)
-    $notes=$item.notes+"`r`n`r`n来源：`r`n"+($item.sources -join "`r`n")+"`r`n截图版本："+$content.rehearsalRunId+"`r`n数据和状态：COURSE_SIMULATED_REHEARSAL / REAL_WORLD_DEFERRED / C_PENDING_REVIEW"
+    $notes=$item.notes+"`r`n`r`n来源：`r`n"+($item.sources -join "`r`n")+"`r`n截图版本："+$content.rehearsalRunId+"`r`n数据和状态：COURSE_SIMULATED_REHEARSAL / REAL_WORLD_DEFERRED / C_CHANGES_REQUIRED_PENDING_TARGETED_REREVIEW"
     $slide.NotesPage.Shapes.Placeholders.Item(2).TextFrame.TextRange.Text=$notes
   }
   $deck.SaveAs($pptxPath,24)
@@ -98,7 +98,7 @@ try {
       $geometry+=$item
     }
   }
-  $result=@{taskId='G6-03';mode='NEW_DOCUMENT';authoring='Microsoft PowerPoint native COM';runtimeFallback='artifact-tool/load_workspace_dependencies unavailable';fontPolicy=@{basis='design';families=@($font)};slides=$deck.Slides.Count;slideWidthPt=960;slideHeightPt=540;editableNotes=$true;source='docs/work/G6/g6_03_defense_content.json';pptx='docs/deliverables/G6/G6-03-验收答辩候选.pptx';pdf='docs/deliverables/G6/G6-03-验收答辩候选.pdf';rendered=$rendered;geometry=$geometry;visualInspection='PENDING';cOverallReview='PENDING_REVIEW'}
+  $result=@{taskId='G6-03';mode='CONTENT_EDIT';authoring='Microsoft PowerPoint native COM';runtimeFallback='artifact-tool/load_workspace_dependencies unavailable';fontPolicy=@{basis='design';families=@($font)};slides=$deck.Slides.Count;slideWidthPt=960;slideHeightPt=540;editableNotes=$true;source='docs/work/G6/g6_03_defense_content.json';pptx='docs/deliverables/G6/G6-03-验收答辩候选.pptx';pdf='docs/deliverables/G6/G6-03-验收答辩候选.pdf';rendered=$rendered;geometry=$geometry;visualInspection='PENDING';cOverallReview='CHANGES_REQUIRED_PENDING_TARGETED_REREVIEW'}
   $result | ConvertTo-Json -Depth 20 | Set-Content -LiteralPath (Join-Path $evidenceDir 'deck-generation.json') -Encoding UTF8
   Write-Output ("Created native PPTX/PDF, slides={0}, geometry objects={1}" -f $deck.Slides.Count,$geometry.Count)
 } finally {

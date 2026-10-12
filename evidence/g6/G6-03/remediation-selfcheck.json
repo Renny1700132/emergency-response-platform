@@ -1,0 +1,614 @@
+{
+  "taskId": "G6-03",
+  "version": "V0.2",
+  "scope": "A remediation selfcheck; not C targeted rereview",
+  "status": "REMEDIATED_PENDING_C_TARGETED_REREVIEW",
+  "cOverallReview": "CHANGES_REQUIRED",
+  "issue001": "CLOSED_VERIFIED_BY_B_AND_C",
+  "issue002": "REMEDIATED_PENDING_C_TARGETED_REREVIEW",
+  "realWorldStatus": "REAL_WORLD_DEFERRED",
+  "checks": [
+    {
+      "check": "14 pages maintained",
+      "status": "PASS"
+    },
+    {
+      "check": "actual C review CHANGES_REQUIRED retained",
+      "status": "PASS"
+    },
+    {
+      "check": "C current code run is 23/23",
+      "status": "PASS"
+    },
+    {
+      "check": "G6-01 actual DONE",
+      "status": "PASS"
+    },
+    {
+      "check": "G6-02 actual DONE",
+      "status": "PASS"
+    },
+    {
+      "check": "G6-03 stays REVIEW",
+      "status": "PASS"
+    },
+    {
+      "check": "stale claims absent",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 1",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 1",
+      "status": "PASS"
+    },
+    {
+      "check": "source tasks.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/g6_03_execution_baseline.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source control/overrides.md#OVR-039",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 2",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 2",
+      "status": "PASS"
+    },
+    {
+      "check": "source tasks.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source control/baselines/BASELINE-G3-M3-R1.0.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g5/G5-03/c-final-acceptance.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-02/b-review.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 3",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 3",
+      "status": "PASS"
+    },
+    {
+      "check": "source control/facts.md#F-005",
+      "status": "PASS"
+    },
+    {
+      "check": "source control/facts.md#F-008",
+      "status": "PASS"
+    },
+    {
+      "check": "source control/facts.md#F-009",
+      "status": "PASS"
+    },
+    {
+      "check": "source control/key_numbers.md#KN-063",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-02/metrics-ledger.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 4",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 4",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-01/release-lock.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/input-manifest.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/rehearsal-release-lock.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source backend/src/server.mjs",
+      "status": "PASS"
+    },
+    {
+      "check": "source frontend/src/main.ts",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/B_TECH/adr/ADR-001-应用拆分与部署单元.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/B_TECH/adr/ADR-002-事务Outbox与持久任务.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 5",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 5",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-02/metrics-ledger.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-02/b-review.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g5/G5-03/c-final-acceptance.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 6",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 6",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-02/delivery-index.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-02/b-review.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source tasks.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-01/command-execution-ledger.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 7",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 7",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/simulated-dataset.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source control/overrides.md#OVR-039",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 8",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 8",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/simulated-dataset.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source scripts/g6/run-g6-03-rehearsal.mjs",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 9",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 9",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/quality-gate.log",
+      "status": "PASS"
+    },
+    {
+      "check": "source frontend/src/features/response/workflow.ts",
+      "status": "PASS"
+    },
+    {
+      "check": "source backend/src/event-workflow.mjs",
+      "status": "PASS"
+    },
+    {
+      "check": "source control/issues.md#ISSUE-G6-03-001",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 10",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 10",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source scripts/g6/run-g6-03-rehearsal.mjs",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/B_TECH/g6_user_manual.md#7",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 11",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 11",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source backend/src/identity.mjs",
+      "status": "PASS"
+    },
+    {
+      "check": "source frontend/src/router/index.ts",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/B_TECH/g6_user_manual.md#3",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 12",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 12",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/raw/",
+      "status": "PASS"
+    },
+    {
+      "check": "source control/issues.md#ISSUE-G6-03-001",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 13",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 13",
+      "status": "PASS"
+    },
+    {
+      "check": "source control/issues.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-02/gaps-deferrals.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-02/metrics-ledger.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/rehearsal-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "updated footer 14",
+      "status": "PASS"
+    },
+    {
+      "check": "notes synchronized 14",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/g6_03_demo_and_qna.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/B_TECH/g6_user_manual.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/B_TECH/adr/ADR-002-事务Outbox与持久任务.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source tasks.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-01_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source docs/work/G6/G6-02_A_rereview.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source logs/reviews/2026-10-12_G6-03-C-review.md",
+      "status": "PASS"
+    },
+    {
+      "check": "source evidence/g6/G6-03/C-review/review-result.json",
+      "status": "PASS"
+    },
+    {
+      "check": "PDF 14 pages",
+      "status": "PASS"
+    },
+    {
+      "check": "all geometry fits",
+      "status": "PASS"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs\\deliverables\\G6\\G6-03-验收答辩候选.pptx",
+      "sha256": "857c09c31f0af9f22f7426e8fa603afafb28dace814dd559c0cea363aca8b17b"
+    },
+    {
+      "path": "docs\\deliverables\\G6\\G6-03-验收答辩候选.pdf",
+      "sha256": "cf3574eaea71ace03f05148a07eb6a53289b92e80d57bf7963cec6bee3fd0f08"
+    }
+  ]
+}

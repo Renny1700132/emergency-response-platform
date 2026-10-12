@@ -1,11 +1,11 @@
 {
   "taskId": "G6-03",
-  "mode": "NEW_DOCUMENT",
-  "version": "V0.1",
-  "status": "CANDIDATE_PENDING_C_REVIEW",
+  "mode": "CONTENT_EDIT",
+  "version": "V0.2",
+  "status": "REMEDIATED_PENDING_C_TARGETED_REREVIEW",
   "author": "A",
   "reviewer": "C",
-  "snapshot": "deaddc6e454dcd1064db2e2271838b5ef19ad87c",
+  "snapshot": "93934c5",
   "evidenceKind": "COURSE_SIMULATED_REHEARSAL",
   "realWorldStatus": "REAL_WORLD_DEFERRED",
   "rehearsalRunId": "2026-10-11T14-10-55-529Z",
@@ -13,17 +13,21 @@
     {
       "number": 1,
       "title": "应急管理子系统",
-      "subtitle": "验收答辩候选 V0.1",
+      "subtitle": "验收答辩候选 V0.2",
       "body": [
         "博物馆智能运营中心",
-        "G6-03  /  A 主责，C 整体复核待执行",
+        "G6-03 / A主责；C复核退回，待定向复验",
         "模拟项目试演，当前系统本地实际运行"
       ],
-      "notes": "本次汇报对应tasks中的G6-03验收答辩、现场演示与质询。最新用户纠偏要求以远端master的任务边界执行，并授权生成合理模拟数据。开发总结属于G6-04，本轮不提交总结。请始终把模拟业务输入、本地实际执行和甲方真实验收区分清楚。本轮采用模拟数据和本地实际执行。C整体复核待完成，真实项目验收继续延期。",
+      "notes": "本次汇报对应tasks中的G6-03验收答辩、现场演示与质询。最新用户纠偏要求以远端master的任务边界执行，并授权生成合理模拟数据。开发总结属于G6-04，本轮不提交总结。请始终把模拟业务输入、本地实际执行和甲方真实验收区分清楚。本轮采用模拟数据和本地实际执行。C复核CHANGES_REQUIRED；状态/来源已整改，待C定向复验；真实项目验收继续延期。",
       "sources": [
         "tasks.md",
         "docs/work/G6/g6_03_execution_baseline.md",
-        "control/overrides.md#OVR-039"
+        "control/overrides.md#OVR-039",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "cover",
       "image": null,
@@ -34,12 +38,16 @@
       "title": "课程状态与真实验收",
       "subtitle": "G5课程条件收口保留全部真实延期",
       "body": [],
-      "notes": "项目先后形成投标、需求、设计与研发成果。G3工程基线冻结为BASELINE-G3-M3-R1.0；G4任务在master收口。G5-03由C独立最终复核接受的是课程条件结论，真实实现、证据和环境延期仍在。G6-01手册当前为REVIEW，G6-02由B接受首版但最终仍REVIEW，本轮G6-03候选也需要C整体复核。不能把课程任务DONE当作117条验收条件全部通过。",
+      "notes": "项目先后形成投标、需求、设计与研发成果。G3工程基线冻结为BASELINE-G3-M3-R1.0；G4任务在master收口。G5-03由C独立最终复核接受的是课程条件结论，真实实现、证据和环境延期仍在。G6-01已由A接受并DONE；G6-02已获B最终接受及A一致性接受并DONE。C已整体复核G6-03，结论CHANGES_REQUIRED，仅状态/来源整改待定向复验。不能把课程任务DONE当作117条验收条件全部通过。",
       "sources": [
         "tasks.md",
         "control/baselines/BASELINE-G3-M3-R1.0.md",
         "evidence/g5/G5-03/c-final-acceptance.json",
-        "evidence/g6/G6-02/b-review.json"
+        "evidence/g6/G6-02/b-review.json",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "table",
       "image": null,
@@ -67,7 +75,7 @@
         [
           "G6",
           "手册、索引、答辩候选",
-          "整体复核与最终审计待完成"
+          "G6-01/02 DONE；G6-03待C复验"
         ]
       ]
     },
@@ -87,7 +95,11 @@
         "control/facts.md#F-008",
         "control/facts.md#F-009",
         "control/key_numbers.md#KN-063",
-        "evidence/g6/G6-02/metrics-ledger.md"
+        "evidence/g6/G6-02/metrics-ledger.md",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "text",
       "image": null,
@@ -106,7 +118,11 @@
         "backend/src/server.mjs",
         "frontend/src/main.ts",
         "docs/work/B_TECH/adr/ADR-001-应用拆分与部署单元.md",
-        "docs/work/B_TECH/adr/ADR-002-事务Outbox与持久任务.md"
+        "docs/work/B_TECH/adr/ADR-002-事务Outbox与持久任务.md",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "table",
       "image": null,
@@ -147,7 +163,11 @@
       "sources": [
         "evidence/g6/G6-02/metrics-ledger.md",
         "evidence/g6/G6-02/b-review.json",
-        "evidence/g5/G5-03/c-final-acceptance.json"
+        "evidence/g5/G5-03/c-final-acceptance.json",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "table",
       "image": null,
@@ -185,16 +205,20 @@
       "subtitle": "沿用唯一索引，当前候选进入增量交接",
       "body": [
         "G6-01：两本手册、命令台账与已知限制",
-        "G6-02：首版索引、RTM增量及B复核",
+        "G6-02：最终审计包，B/A复核接受",
         "G6-03：逐页来源、实际试演和异常响应",
         "最终状态由指定复核人和后续审计确认"
       ],
-      "notes": "唯一交付索引由C维护，首版为29项，其中20可用、9缺项，这是首版存在性快照，不是当前齐套或验收通过率。本轮不修改C的索引和RTM，提供一份行级增量交接请求。G6-01文档和B本地命令记录可以用于操作依据，但尚无A整体接受记录，不能擅自宣称前置已DONE。G6-02 B结论明确只接受首版。本轮的运行、截图、问题和讲稿将作为其最终审计输入。",
+      "notes": "唯一交付索引由C维护，首版为29项，其中20可用、9缺项，这是首版存在性快照，不是当前齐套或验收通过率。本轮不修改C的索引和RTM，提供一份行级增量交接请求。G6-01 V0.2及26步命令证据已由A接受；G6-02最终审计经B再复验与A一致性复验接受。首版29项快照保留，增量GI三段21/18/11分列。此次修订作为后续增量交接，不倒改已锁历史指纹。",
       "sources": [
         "evidence/g6/G6-02/delivery-index.json",
         "evidence/g6/G6-02/b-review.json",
         "tasks.md",
-        "evidence/g6/G6-01/command-execution-ledger.md"
+        "evidence/g6/G6-01/command-execution-ledger.md",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "text",
       "image": null,
@@ -214,7 +238,11 @@
       "sources": [
         "evidence/g6/G6-03/simulated-dataset.json",
         "evidence/g6/G6-03/rehearsal-result.json",
-        "control/overrides.md#OVR-039"
+        "control/overrides.md#OVR-039",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "text",
       "image": null,
@@ -234,7 +262,11 @@
       "sources": [
         "evidence/g6/G6-03/rehearsal-result.json",
         "evidence/g6/G6-03/simulated-dataset.json",
-        "scripts/g6/run-g6-03-rehearsal.mjs"
+        "scripts/g6/run-g6-03-rehearsal.mjs",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "image",
       "image": "evidence/g6/G6-03/screenshots/2026-10-11T14-10-55-529Z/01-web-response.png",
@@ -248,15 +280,19 @@
         "执行员在实际H5页面接收任务",
         "后台反馈记录保存60%进度",
         "最新页面实际显示60%，状态IN_PROGRESS",
-        "ISSUE-G6-03-001，待B/C确认关闭"
+        "ISSUE-G6-03-001已由B/C确认关闭"
       ],
-      "notes": "H5接收和反馈按钮在实际浏览器中执行。旧候选后端反馈保存60，页面显示0，原因是映射漏读反馈数组。本轮登记Issue后仅修正映射，并用回归断言保护显式零值；完整quality及Web/H5正常异常路径重跑。最新截图和原始响应均显示60，任务为IN_PROGRESS。旧FAIL与带问题试演保留，问题状态为整改复验完成、待B技术确认和C整体复核，不能由整改者代签关闭。",
+      "notes": "H5接收和反馈按钮在实际浏览器中执行。旧候选后端反馈保存60，页面显示0，原因是映射漏读反馈数组。本轮登记Issue后仅修正映射，并用回归断言保护显式零值；完整quality及Web/H5正常异常路径重跑。最新截图和原始响应均显示60，任务为IN_PROGRESS。旧FAIL与带问题试演保留，B技术确认和C独立复演均有实际记录；问题已CLOSED / VERIFIED_BY_B_AND_C。当前002状态/来源修订仍待C定向复验。",
       "sources": [
         "evidence/g6/G6-03/rehearsal-result.json",
         "evidence/g6/G6-03/quality-gate.log",
         "frontend/src/features/response/workflow.ts",
         "backend/src/event-workflow.mjs",
-        "control/issues.md#ISSUE-G6-03-001"
+        "control/issues.md#ISSUE-G6-03-001",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "image",
       "image": "evidence/g6/G6-03/screenshots/2026-10-11T14-10-55-529Z/02-h5-feedback.png",
@@ -276,7 +312,11 @@
       "sources": [
         "evidence/g6/G6-03/rehearsal-result.json",
         "scripts/g6/run-g6-03-rehearsal.mjs",
-        "docs/work/B_TECH/g6_user_manual.md#7"
+        "docs/work/B_TECH/g6_user_manual.md#7",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "image",
       "image": "evidence/g6/G6-03/screenshots/2026-10-11T14-10-55-529Z/03-h5-version-conflict.png",
@@ -297,7 +337,11 @@
         "evidence/g6/G6-03/rehearsal-result.json",
         "backend/src/identity.mjs",
         "frontend/src/router/index.ts",
-        "docs/work/B_TECH/g6_user_manual.md#3"
+        "docs/work/B_TECH/g6_user_manual.md#3",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "image",
       "image": "evidence/g6/G6-03/screenshots/2026-10-11T14-10-55-529Z/04-web-permission-denied.png",
@@ -311,13 +355,17 @@
         "接收与反馈保留任务资源版本",
         "完成任务后提交关闭理由",
         "Web页面重新加载显示CLOSED",
-        "整改后本地试演PASS，整体复核待完成"
+        "本地试演PASS；C要求状态/来源整改"
       ],
       "notes": "当前后端实际完成两条任务，关闭事件并在Web页面显示CLOSED。本轮自动化运行耗时3.983秒，来自机器计时，不是人的现场讲述时长，也不能说明性能SLA。整改后本轮结果为PASS，H5显示和其他路径实际断言见原始记录。此前记录器404和进度问题失败均保留，没有隐藏或把整个过程写成一次成功。PASS仅描述本轮模拟试演自检，不能替代C整体复核或真实项目验收。",
       "sources": [
         "evidence/g6/G6-03/rehearsal-result.json",
         "evidence/g6/G6-03/raw/",
-        "control/issues.md#ISSUE-G6-03-001"
+        "control/issues.md#ISSUE-G6-03-001",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "image",
       "image": "evidence/g6/G6-03/screenshots/2026-10-11T14-10-55-529Z/05-web-closed.png",
@@ -333,7 +381,11 @@
         "control/issues.md",
         "evidence/g6/G6-02/gaps-deferrals.md",
         "evidence/g6/G6-02/metrics-ledger.md",
-        "evidence/g6/G6-03/rehearsal-result.json"
+        "evidence/g6/G6-03/rehearsal-result.json",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "table",
       "image": null,
@@ -345,8 +397,8 @@
         ],
         [
           "H5进度显示",
-          "已整改复验，待指定确认",
-          "B技术确认、C整体复核"
+          "CLOSED / B及C验证",
+          "保留原失败及B/C确认记录"
         ],
         [
           "功能与证据",
@@ -375,12 +427,16 @@
         "C：FR/AC/★分母、审计、延期与符合性",
         "失败时保留traceId，改用标注版本的证据"
       ],
-      "notes": "现场执行前核对版本、前端构建、模拟标识和权限。服务不可用时停止写操作，记录真实失败，不临场升级或改代码；改用本轮已归档截图和原始记录，明确是备用证据而非现场成功。若出现409，刷新并核对版本；403检查权限，不能借用他人账号。消息失败转人工确认，物理门禁控制禁止自动重放。C整体Review、G6-01 A复核和G6-02最终增量审计仍待闭环。真实现场的质询、计时和意见仅在实际发生后追加记录。",
+      "notes": "现场执行前核对版本、前端构建、模拟标识和权限。服务不可用时停止写操作，记录真实失败，不临场升级或改代码；改用本轮已归档截图和原始记录，明确是备用证据而非现场成功。若出现409，刷新并核对版本；403检查权限，不能借用他人账号。消息失败转人工确认，物理门禁控制禁止自动重放。G6-01 A接受及G6-02 B/A最终审计已闭环；C整体Review为CHANGES_REQUIRED。此次002整改待C定向复验，不能提前置DONE。真实现场的质询、计时和意见仅在实际发生后追加记录。",
       "sources": [
         "docs/work/G6/g6_03_demo_and_qna.md",
         "docs/work/B_TECH/g6_user_manual.md",
         "docs/work/B_TECH/adr/ADR-002-事务Outbox与持久任务.md",
-        "tasks.md"
+        "tasks.md",
+        "docs/work/G6/G6-01_A_rereview.md",
+        "docs/work/G6/G6-02_A_rereview.md",
+        "logs/reviews/2026-10-12_G6-03-C-review.md",
+        "evidence/g6/G6-03/C-review/review-result.json"
       ],
       "layout": "text",
       "image": null,

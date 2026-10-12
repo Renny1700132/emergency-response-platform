@@ -1,0 +1,2 @@
+frontend-1  | {"event":"frontend.started","port":80,"backendOrigin":"http://backend:3000"}
+frontend-1  | {"event":"frontend.started","port":80,"backendOrigin":"http://backend:3000"}

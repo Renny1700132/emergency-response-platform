@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 2,
+  "taskId": "G6-01",
+  "evidenceKind": "MEMBER_B_ISOLATED_FULL_STACK_DEPLOYMENT_ROLLBACK_AND_RECOVERY",
+  "startedAt": "2026-10-12T16:19:33+08:00",
+  "finishedAt": "2026-10-12T16:21:26+08:00",
+  "durationSeconds": 113,
+  "releaseCommit": "17636b7f3ce8cfea0b219108d3124dc1c511bfce",
+  "git": {
+    "branch": "master",
+    "dirty": false,
+    "statusFile": "evidence/g6/G6-01/raw/remediation/git-status.txt"
+  },
+  "fingerprints": {
+    "composeConfigSha256": "4d0ba5e5812b49f22a72c85a4841003826baf9609efb86c96e61eb589d959faa",
+    "backendDockerfileSha256": "3c4fb9d109542a807f7b0205b8472c3db690debac58971796e8c0bbbc8a6601b",
+    "frontendDockerfileSha256": "5830a4aa791eb33c3217979e67c5d287c221829adff4e315fd42ec8e59c6dd4a",
+    "backendImageId": "",
+    "frontendImageId": "",
+    "backupSha256": "90db9354f0d52b9505a7165239c332b749add820f96ce50b93bbb05ab3a10270"
+  },
+  "environment": {
+    "docker": "28.1.1",
+    "compose": "2.35.1",
+    "platform": "Linux 5.10.16.3-microsoft-standard-WSL2 x86_64 GNU/Linux"
+  },
+  "checks": {
+    "steps": 26,
+    "stepFailures": 0,
+    "healthStatus": 200,
+    "readyStatus": 200,
+    "frontendStatus": 200,
+    "readyAfterRollbackStatus": 200,
+    "readyAfterRestartStatus": 200,
+    "migrationsBefore": 3,
+    "migrationsAfterDown": 2,
+    "migrationsAfterUp": 3,
+    "publicTablesBefore": 37,
+    "publicTablesAfterDown": 13,
+    "publicTablesAfterUp": 37,
+    "publicTablesRestored": 37,
+    "sentinelBefore": 1,
+    "sentinelAfterUp": 1,
+    "sentinelRestored": 1,
+    "cleanupResiduals": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0
+    }
+  },
+  "status": "PASS",
+  "evidenceClassification": "MEMBER_B_LOCAL_ISOLATED_RUN",
+  "boundaries": [
+    "This run verifies the documented Web/H5 static host, reverse proxy, backend, PostgreSQL, targeted one-step rollback, re-upgrade, backup copy, restore, logs, restart and cleanup in an isolated local project.",
+    "The owner middle platform and six owner external systems were not connected.",
+    "The executor was member B; this is not KN-065 independent non-contractor deployment evidence."
+  ]
+}

@@ -1,0 +1,3 @@
+backend-1  | {"event":"server.started","port":3000,"mode":"production"}
+backend-1  | {"event":"server.stopping","signal":"SIGTERM"}
+backend-1  | {"event":"server.started","port":3000,"mode":"production"}

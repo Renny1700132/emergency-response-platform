@@ -1,0 +1,4 @@
+NAME                         IMAGE                      COMMAND                  SERVICE    CREATED          STATUS                    PORTS
+g601remediation-backend-1    g601remediation-backend    "docker-entrypoint.s…"   backend    19 seconds ago   Up 12 seconds (healthy)   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+g601remediation-database-1   postgres:16-alpine         "docker-entrypoint.s…"   database   19 seconds ago   Up 19 seconds (healthy)   5432/tcp
+g601remediation-frontend-1   g601remediation-frontend   "docker-entrypoint.s…"   frontend   19 seconds ago   Up 6 seconds (healthy)    0.0.0.0:18080->80/tcp, [::]:18080->80/tcp

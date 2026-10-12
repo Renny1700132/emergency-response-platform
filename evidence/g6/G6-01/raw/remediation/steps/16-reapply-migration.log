@@ -1,0 +1,3 @@
+ Container g601remediation-database-1  Running
+{"direction":"up","steps":null,"target":null,"selected":["003_sprint2_mvp"],"status":"planned"}
+{"migration":"003_sprint2_mvp.up.sql","direction":"up","status":"applied"}

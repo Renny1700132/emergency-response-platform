@@ -93,7 +93,7 @@ async function sendAccessControl() {
 
 <template>
   <section class="operations-page">
-    <header class="module-hero"><div><span class="eyebrow">{{ content.kicker }} · {{ module.id }}</span><h2>{{ module.title }}</h2><p>{{ content.description }}</p><div class="trace-tags"><span v-for="item in module.requirements" :key="item">{{ item }}</span></div></div><div class="module-actions"><button class="secondary" @click="action(content.secondary)">{{ content.secondary }}</button><button class="primary" @click="action(content.primary)">＋ {{ content.primary }}</button></div></header>
+    <header class="module-hero"><div><span class="eyebrow">{{ content.kicker }} · {{ module.id }}</span><h2>{{ module.title }}</h2><p>{{ content.description }}</p><div class="trace-tags"><span v-for="item in module.requirements" :key="item">{{ item }}</span></div></div><div v-if="presentation" class="module-actions"><button class="secondary" @click="action(content.secondary)">{{ content.secondary }}</button><button class="primary" @click="action(content.primary)">＋ {{ content.primary }}</button></div><span v-else class="permission-note">正式模式：当前工作台仅提供查询；写操作未接入页面</span></header>
     <p v-if="notice" class="notice" role="status">{{ notice }}</p>
     <div v-if="!presentation" class="formal-boundary"><strong>正式 API 模式</strong><p>{{ loading ? '正在读取正式服务…' : (formal ? `已接入：${formal.evidence}` : '正式服务暂不可用；未回退到演示数据。') }}</p></div>
     <div class="module-metrics"><article v-for="metric in content.metrics" :key="metric.label"><small>{{ metric.label }}</small><strong>{{ metric.value }}</strong><p>{{ metric.hint }}</p></article></div>

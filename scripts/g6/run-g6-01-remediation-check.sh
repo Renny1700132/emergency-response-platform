@@ -90,8 +90,8 @@ run_step 01-docker-info docker info
 run_step 02-clean-before "${COMPOSE[@]}" down -v --remove-orphans
 run_step 03-build-backend "${COMPOSE[@]}" build --no-cache backend
 run_step 04-build-frontend "${COMPOSE[@]}" build --no-cache frontend
-BACKEND_IMAGE_ID="$("${COMPOSE[@]}" images -q backend | head -n 1)"
-FRONTEND_IMAGE_ID="$("${COMPOSE[@]}" images -q frontend | head -n 1)"
+BACKEND_IMAGE_ID="$(docker image inspect "${PROJECT_NAME}-backend" --format '{{.Id}}')"
+FRONTEND_IMAGE_ID="$(docker image inspect "${PROJECT_NAME}-frontend" --format '{{.Id}}')"
 export BACKEND_IMAGE_ID FRONTEND_IMAGE_ID
 run_step 05-up-all "${COMPOSE[@]}" up -d --wait
 run_step 06-compose-ps "${COMPOSE[@]}" ps

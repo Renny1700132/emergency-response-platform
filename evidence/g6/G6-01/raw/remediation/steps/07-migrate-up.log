@@ -1,0 +1,4 @@
+{"direction":"up","steps":null,"target":null,"selected":["001_foundation","002_event_workflow","003_sprint2_mvp"],"status":"planned"}
+{"migration":"001_foundation.up.sql","direction":"up","status":"applied"}
+{"migration":"002_event_workflow.up.sql","direction":"up","status":"applied"}
+{"migration":"003_sprint2_mvp.up.sql","direction":"up","status":"applied"}

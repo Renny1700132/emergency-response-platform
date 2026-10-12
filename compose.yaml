@@ -22,11 +22,41 @@ services:
       PORT: 3000
       DATABASE_URL: postgres://emergency:${POSTGRES_PASSWORD:?set in the private deployment environment}@database:5432/emergency
       MIDDLE_PLATFORM_BASE_URL: ${MIDDLE_PLATFORM_BASE_URL:?set to the owner-provided middle-platform endpoint}
+      MIDDLE_PLATFORM_IDENTITY_PATH: ${MIDDLE_PLATFORM_IDENTITY_PATH:-/api/v1/platform/context}
+      MIDDLE_PLATFORM_FILE_PRESIGN_PATH: ${MIDDLE_PLATFORM_FILE_PRESIGN_PATH:-/api/v1/platform/files/presign}
+      REQUEST_TIMEOUT_MS: ${REQUEST_TIMEOUT_MS:-3000}
+      SIMULATED_INTEGRATION_BASE_URL: ${SIMULATED_INTEGRATION_BASE_URL:-}
     depends_on:
       database:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/readyz').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     ports:
       - "3000:3000"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-}
+        VITE_REQUEST_TIMEOUT_MS: ${VITE_REQUEST_TIMEOUT_MS:-10000}
+        VITE_APP_TITLE: ${VITE_APP_TITLE:-博物馆智能运营中心}
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1/ >/dev/null || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
 
 volumes:
   emergency-postgres:

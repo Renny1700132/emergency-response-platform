@@ -30,8 +30,11 @@ node backend/src/main.mjs
 ```powershell
 $env:DATABASE_URL='<仅从受控部署配置或密钥设施取得>'
 node backend/scripts/migrate.mjs up
-node backend/scripts/migrate.mjs down
+node backend/scripts/migrate.mjs down --steps=1
+node backend/scripts/migrate.mjs down --to=002_event_workflow
 ```
+
+`down` 不带 `--steps` 或 `--to` 会逆序撤销全部已应用迁移。生产环境回退前必须停止写入、完成并校验备份、明确目标迁移集合和恢复点；存在有效业务数据时优先恢复备份或前向修复，不得为验证命令直接全量删表。
 
 迁移建立冻结 DBD 命名的 `em_audit_log`、`em_idempotency_record` 和 `em_outbox_event` 基础表；后续领域表必须继续遵循“成对迁移、事务提交后派发副作用、控制命令不自动重放”的设计规则。
 
@@ -93,8 +96,8 @@ npm run test:g4-08
 在部署环境的受控密钥设施中提供 `POSTGRES_PASSWORD` 和甲方提供的 `MIDDLE_PLATFORM_BASE_URL` 后运行：
 
 ```powershell
-docker compose up --build -d
+docker compose up --build -d --wait
 docker compose exec backend node backend/scripts/migrate.mjs up
 ```
 
-该 Compose 文件只提供应用和数据库基础设施。视频、信息发布、入侵、门禁、消防、IoT、统一中台、统一消息、地图及定位端口不由本容器替代，后续 G4-04 以独立课程模拟 Fixture 处理。
+Compose 同时构建 Web/H5 静态站点、Nginx `/api/` 反向代理、后端与 PostgreSQL；默认 Web/H5 入口为 `http://<host>:8080/web/overview` 和 `/h5/events`。正式身份令牌仍由门户或宿主 APP 通过 `window.MuseumHostBridge` / `window.__MUSEUM_AUTH__` 注入，容器不生成或保存甲方令牌。视频、信息发布、入侵、门禁、消防、IoT、统一中台、统一消息、地图及定位端口不由本容器替代，课程 Fixture 也不得写成甲方真实接口。

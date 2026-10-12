@@ -17,11 +17,17 @@ export function createPresentationApiClient(): ApiClient {
     const body = (options.body ?? {}) as RecordValue
     const params = (options.path ?? {}) as RecordValue
     const role = activeDemoRole()
-    if (path === '/api/v1/platform/context') return envelope({ userId: `demo-${role.id.toLowerCase()}`, displayName: role.name, roles: [role.id], permissions: ['plan:read', 'incident:read', 'incident:create', 'incident:verify', 'incident:start-response', 'task:read', 'task:create', 'task:acknowledge', 'task:feedback', 'task:remind', 'task:complete', 'situation:read', 'resource:read', 'drill:read', 'duty:read', 'attendance:write', 'inventory:write', 'knowledge:read', 'integration:read'] })
+    if (path === '/api/v1/platform/context') return envelope({ userId: `demo-${role.id.toLowerCase()}`, displayName: role.name, roles: [role.id], permissions: ['plan:read', 'incident:read', 'incident:create', 'incident:verify', 'incident:start-response', 'incident:close', 'task:read', 'task:create', 'task:acknowledge', 'task:feedback', 'task:remind', 'task:complete', 'situation:read', 'resource:read', 'drill:read', 'duty:read', 'attendance:write', 'inventory:write', 'knowledge:read', 'integration:read'] })
     if (path === '/api/v1/incidents' && method === 'get') return envelope({ items: presentationState.incidents })
     if (path === '/api/v1/incidents' && method === 'post') { presentationState.incidents.unshift({ id: `EVT-DEMO-${String(presentationState.incidents.length + 1).padStart(3, '0')}`, version: 1, status: 'PENDING_VERIFY', attributes: { ...body } }); commitPresentationChange(`上报事件：${String(body.title ?? '未命名')}`); return envelope(presentationState.incidents[0]) }
     if (path.includes('/verify')) { update(presentationState.incidents, String(params.incidentId), body.decision === 'REJECTED' ? 'REJECTED' : 'VERIFIED'); commitPresentationChange(`核实事件：${String(params.incidentId)}`) }
     if (path.includes('/start-response')) { update(presentationState.incidents, String(params.incidentId), 'RESPONDING'); commitPresentationChange(`启动处置：${String(params.incidentId)}`) }
+    if (path.includes('/close')) {
+      update(presentationState.incidents, String(params.incidentId), 'CLOSED', {
+        closure: { conclusion: body.reason, reportRef: (body.attributes as RecordValue | undefined)?.reportRef, closedAt: now() },
+      })
+      commitPresentationChange(`关闭事件：${String(params.incidentId)}`)
+    }
     if (path === '/api/v1/tasks' && method === 'get') return envelope({ items: presentationState.tasks })
     if (path === '/api/v1/tasks' && method === 'post') { presentationState.tasks.unshift({ id: `TSK-DEMO-${String(presentationState.tasks.length + 1).padStart(3, '0')}`, version: 1, status: 'PENDING', attributes: { ...body, progressPercent: 0 } }); commitPresentationChange(`创建任务：${String(body.name ?? '未命名')}`); return envelope(presentationState.tasks[0]) }
     const taskId = String(params.taskId ?? '')

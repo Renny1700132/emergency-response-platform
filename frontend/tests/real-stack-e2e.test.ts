@@ -26,7 +26,7 @@ async function startRealStack() {
         displayName: '值班指挥员',
         roles: ['emergency.read', 'emergency.write'],
         permissions: [
-          'incident:create', 'incident:verify', 'incident:start-response',
+          'incident:create', 'incident:verify', 'incident:start-response', 'incident:close',
           'task:create', 'task:acknowledge', 'task:feedback', 'task:complete', 'task:remind',
         ],
       }
@@ -92,13 +92,11 @@ describe('G4-07 real frontend/backend E2E', () => {
     ;[task] = await workflow.listTasks()
     expect(task.status).toBe('COMPLETED')
 
-    await api.post('/api/v1/incidents/{incidentId}/close', {
-      path: { incidentId: incident.id },
-      body: { reason: '现场恢复安全', resourceVersion: incident.version, attributes: { reportRef: 'report-g4-07' } },
-      idempotencyKey: 'g4-07-close-0001',
-    })
+    await workflow.closeIncident(incident, { conclusion: '现场恢复安全', reportRef: 'report-g4-07' })
     const [closed] = await workflow.listIncidents()
     expect(closed.status).toBe('CLOSED')
+    expect(closed.closureConclusion).toBe('现场恢复安全')
+    expect(closed.closureReportRef).toBe('report-g4-07')
 
     const forbidden = createApiClient({
       baseUrl,

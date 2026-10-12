@@ -12,6 +12,9 @@ export interface WorkflowItem {
   deadlineAt?: string
   progressPercent?: number
   attachmentFileIds: string[]
+  closureConclusion?: string
+  closureReportRef?: string
+  closedAt?: string
 }
 
 export interface VisibleError { kind: 'forbidden' | 'failure'; message: string; traceId?: string }
@@ -23,6 +26,7 @@ export function toWorkflowItem(value: unknown): WorkflowItem {
   const item = record(value)
   const attributes = record(item.attributes)
   const feedback = item.feedback ?? attributes.feedback
+  const closure = record(item.closure ?? attributes.closure)
   const latestProgress = Array.isArray(feedback)
     ? [...feedback].reverse().map(record).find((entry) => entry.progressPercent != null)?.progressPercent
     : undefined
@@ -37,6 +41,9 @@ export function toWorkflowItem(value: unknown): WorkflowItem {
     deadlineAt: String(item.deadlineAt ?? attributes.deadlineAt ?? ''),
     progressPercent: Number(item.progressPercent ?? attributes.progressPercent ?? latestProgress ?? 0),
     attachmentFileIds: strings(item.attachmentFileIds ?? attributes.attachmentFileIds),
+    closureConclusion: String(closure.conclusion ?? ''),
+    closureReportRef: String(closure.reportRef ?? ''),
+    closedAt: String(closure.closedAt ?? ''),
   }
 }
 
@@ -68,6 +75,17 @@ export function createResponseWorkflow(api: ApiClient) {
     async startResponse(incident: WorkflowItem, planVersionId: string, reason?: string) {
       return api.post('/api/v1/incidents/{incidentId}/start-response', {
         path: { incidentId: incident.id }, body: { planVersionId, resourceVersion: incident.version, reason }, idempotencyKey: idempotencyKey('response-start'),
+      })
+    },
+    async closeIncident(incident: WorkflowItem, input: { conclusion: string; reportRef: string }) {
+      return api.post('/api/v1/incidents/{incidentId}/close', {
+        path: { incidentId: incident.id },
+        body: {
+          reason: input.conclusion,
+          resourceVersion: incident.version,
+          attributes: { reportRef: input.reportRef },
+        },
+        idempotencyKey: idempotencyKey('incident-close'),
       })
     },
     async listTasks() {

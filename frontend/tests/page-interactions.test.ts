@@ -82,6 +82,30 @@ describe('G4-06 mounted page interactions', () => {
     expect(get).toHaveBeenCalledTimes(3)
   })
 
+  it('submits an authorized closure evaluation with a controlled report reference', async () => {
+    const responding = { ...entity('i-2', '展厅烟雾'), status: 'RESPONDING', version: 7 }
+    const closed = {
+      ...responding, status: 'CLOSED', version: 8,
+      closure: { conclusion: '现场恢复安全', reportRef: 'FILE-REPORT-001', closedAt: '2026-10-12T00:00:00Z' },
+    }
+    const get = vi.fn().mockResolvedValueOnce({ data: { items: [responding] } }).mockResolvedValue({ data: { items: [closed] } })
+    const post = vi.fn().mockResolvedValue({ data: closed })
+    const wrapper = mountPage(IncidentFlowView, client(get, post), ['incident:read', 'incident:close'])
+    await flushPromises()
+    const closureDetails = wrapper.findAll('details').find((item) => item.text().includes('关闭评估'))!
+    await closureDetails.get('summary').trigger('click')
+    await closureDetails.get('textarea').setValue('现场恢复安全')
+    await closureDetails.get('input').setValue('FILE-REPORT-001')
+    await closureDetails.findAll('button').find((button) => button.text() === '提交关闭评估')!.trigger('click')
+    await flushPromises()
+    expect(post).toHaveBeenCalledWith('/api/v1/incidents/{incidentId}/close', expect.objectContaining({
+      path: { incidentId: 'i-2' },
+      body: { reason: '现场恢复安全', resourceVersion: 7, attributes: { reportRef: 'FILE-REPORT-001' } },
+    }))
+    expect(wrapper.text()).toContain('CLOSED')
+    expect(wrapper.text()).toContain('FILE-REPORT-001')
+  })
+
   it('executes acknowledge, feedback, remind and complete from the mounted task page', async () => {
     const task = { ...entity('t-1', '疏散引导'), attributes: { name: '疏散引导', assigneeRef: 'u-1' } }
     const get = vi.fn().mockResolvedValue({ data: { items: [task] } }), post = vi.fn().mockResolvedValue({ data: task })

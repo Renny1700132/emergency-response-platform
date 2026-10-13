@@ -523,3 +523,11 @@
 - PFC-DAILY-ABC-001：每日工作报告Skill §2/§5要求为无记录日生成占位报告；当前P0明确“对于无更新、无记录的日期，日志也直接不要生成”。采用P0：只补截至2026-10-11有可归属证据且缺失的日报，跳过无记录日；已存在历史文件原样保留。
 - 覆盖范围仅本轮日报生成方式；不修改Skill、任务边界、冻结事实、验收分母或Review结果。审计影响：以三角色逐日证据矩阵验证缺口，不补造出勤、会议、人工审批或AI数量。
 - A统筹依据各角色原文及当日成果补录，不代替B/C本人签署或人工确认；原文Prompt见LOG-DAILY-ABC-BACKFILL-004。Git沿用OVR-038，安全非force推送master，PR=N/A。
+
+## G6-04 Preflight（2026-10-13；不改变项目事实）
+- PFC-G6-04-001：入口旧G4分支与当前任务冲突；采用最新master@3b47e8f，用户授权备份后清理，旧差异/日志/输入原样留在logs/history/2026-10-13-g6-04-bootstrap-preserved；不删除历史证据。
+- PFC-G6-04-002：旧AGENTS G4 PR方法与最新master的G6 OVR-038冲突；本任务采用已有G6 master授权，PR=N/A。保持指定C整体复核、B最终技术确认，不因直接提交而豁免Review。
+- PFC-G6-04-003：G6-00历史规划要求真实现场，已接受G6-03 OVR-039仅允许课程模拟；报告引用实际最终Review，课程接受/真实履约/补测分列。现场意见、签署、KN-065不虚构，不将G6-01/02/03 DONE迁移为真实验收PASS。
+- PFC-G6-04-004：全局documents Skill要求workspace依赖加载/容器marker；当前工具目录无load_workspace_dependencies，Windows现有仓库采用python-docx和Word COM。本轮依照项目正式交付Skill的Reference物理继承与逐页核验要求，复用既有确定性OOXML/原生Word渲染路径。未声称执行不可用的容器marker/渲染器；保留实际方法及失败。Reference格式优先于全局通用样式。
+- PFC-G6-04-005：用户路径G6-04_A_self_review\.md按有效Markdown文件G6-04_A_self_review.md落地；无内容/责任变化。
+- 数据权属：G6-02唯一账本及索引由C维护，本任务只读取并创建A最终归档映射与可复现日志数量附件，不回写四项UNKNOWN，不维护第二套验收统计。

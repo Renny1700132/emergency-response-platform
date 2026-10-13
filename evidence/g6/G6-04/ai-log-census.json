@@ -1,0 +1,4282 @@
+{
+  "snapshot": "3b47e8f97caac1fa6dc989fd1ff5279bd1eb5450",
+  "scope": "tracked logs/prompts/*.md and logs/reviews/*.md at snapshot; excludes current G6-04, history backups, quoted headers, JSON duplicate evidence",
+  "counts": {
+    "promptFiles": 69,
+    "archivedRawPromptBlocks": 353,
+    "reviewMarkdownFiles": 230
+  },
+  "unknown": [
+    "total user turns",
+    "AI line attribution",
+    "unique review event count",
+    "review rejection rate",
+    "pattern reuse",
+    "rework hours",
+    "time saved"
+  ],
+  "prompts": [
+    {
+      "path": "logs/prompts/2026-09-09.md",
+      "sha256GitBlob": "075a7a4c6bcb85b7fe009c574e6fa8b6d63ee4259fe3bb294e1247fe35f3c186",
+      "rawPromptBlocks": [
+        {
+          "line": 39,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 278,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 373,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1585,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1647,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1767,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1886,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1964,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 2013,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 2160,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G1-00-001"
+        },
+        {
+          "line": 24,
+          "heading": "## LOG-GOV-001-001"
+        },
+        {
+          "line": 359,
+          "heading": "## LOG-G1-01-A-001"
+        },
+        {
+          "line": 1636,
+          "heading": "## LOG-G1-02-001"
+        },
+        {
+          "line": 1754,
+          "heading": "## LOG-G1-04-001"
+        },
+        {
+          "line": 1873,
+          "heading": "## LOG-G1-04-002"
+        },
+        {
+          "line": 1957,
+          "heading": "## LOG-G1-04-003"
+        },
+        {
+          "line": 2000,
+          "heading": "## LOG-META-C-CLARIFY-PROMPT-001"
+        },
+        {
+          "line": 2305,
+          "heading": "## LOG-G1-01-004 续：执行结果"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-10-A.md",
+      "sha256GitBlob": "c1cade8a97efb39e08548fc33a2506ec7847eadb35164856ef2cc090b1f77264",
+      "rawPromptBlocks": [
+        {
+          "line": 17,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1623,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1732,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 2082,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 2291,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G1-02-001"
+        },
+        {
+          "line": 1613,
+          "heading": "## LOG-G1-03-WORD-001"
+        },
+        {
+          "line": 1721,
+          "heading": "## LOG-G1-03-001"
+        },
+        {
+          "line": 2068,
+          "heading": "## LOG-G1-03-002"
+        },
+        {
+          "line": 2276,
+          "heading": "## LOG-G1-06-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-10-B.md",
+      "sha256GitBlob": "1114fadf4b0fef4733e5faf0732e51db9737249a610c64074f333019bf8e4902",
+      "rawPromptBlocks": [
+        {
+          "line": 15,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 218,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 297,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 380,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G1-04-004"
+        },
+        {
+          "line": 205,
+          "heading": "## LOG-META-B-STATUS-001"
+        },
+        {
+          "line": 284,
+          "heading": "## LOG-G1-04-005"
+        },
+        {
+          "line": 367,
+          "heading": "## LOG-G1-05-BR-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-10-C.md",
+      "sha256GitBlob": "4519b19e8407ca6633aba6866f6d57c1659efdcafa328ea54cf66a6ffc44a7de",
+      "rawPromptBlocks": [
+        {
+          "line": 17,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 88,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 347,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 685,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 747,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1138,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-META-C-STATUS-001"
+        },
+        {
+          "line": 70,
+          "heading": "## LOG-G1-03-C-001"
+        },
+        {
+          "line": 331,
+          "heading": "## LOG-G1-05-C-001"
+        },
+        {
+          "line": 670,
+          "heading": "## LOG-G1-03-C-REVERIFY-001"
+        },
+        {
+          "line": 727,
+          "heading": "## LOG-G1-06-C-001"
+        },
+        {
+          "line": 1119,
+          "heading": "## LOG-G1-06-C-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-10-META.md",
+      "sha256GitBlob": "1cafb87f92206d89e944ab5df496580b2c6a730ed8d414ddac619948a7be6662",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-GOV-TASKS-CLEANUP-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-10.md",
+      "sha256GitBlob": "2dd54f0ac8e917271efb7c40f6d1f6918579d4e84df85786675c579e9e97bf50",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 145,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 337,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "## LOG-G1-01-A-BR-001"
+        },
+        {
+          "line": 132,
+          "heading": "## LOG-META-C-NEXT-PROMPT-001"
+        },
+        {
+          "line": 317,
+          "heading": "## LOG-G1-01-005"
+        },
+        {
+          "line": 491,
+          "heading": "## LOG-G1-01-005 续：执行结果"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-11-A.md",
+      "sha256GitBlob": "8a0c2e2ae2aab74d915c94b564f205ac667b527e9fb8767a35f21e0bc5a7bf0e",
+      "rawPromptBlocks": [
+        {
+          "line": 18,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 54,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 237,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 396,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 461,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 511,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 672,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G1-06-002"
+        },
+        {
+          "line": 39,
+          "heading": "## LOG-G1-06-003"
+        },
+        {
+          "line": 222,
+          "heading": "## LOG-G1-07-001"
+        },
+        {
+          "line": 388,
+          "heading": "## LOG-G1-07-002"
+        },
+        {
+          "line": 453,
+          "heading": "## LOG-G1-06-004"
+        },
+        {
+          "line": 489,
+          "heading": "## LOG-G1-08-001"
+        },
+        {
+          "line": 496,
+          "heading": "## LOG-G1-06-005"
+        },
+        {
+          "line": 662,
+          "heading": "## LOG-G1-08-002"
+        },
+        {
+          "line": 744,
+          "heading": "## LOG-G1-08-A-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-11-B.md",
+      "sha256GitBlob": "a15d707142bc4f72b86c5b1e368b4659eb4318d25ab9f37bd276570275968038",
+      "rawPromptBlocks": [
+        {
+          "line": 21,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": []
+    },
+    {
+      "path": "logs/prompts/2026-09-11-C.md",
+      "sha256GitBlob": "a5361c79ef73c1c01d4461b9c952c75ba471e1c4a6fae10f2a9bb56f1f04cc8d",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 66,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G1-07-C-REVIEW-001"
+        },
+        {
+          "line": 55,
+          "heading": "## LOG-G1-06-C-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-12-A.md",
+      "sha256GitBlob": "a95d0f39e26103b359aac191074685cdc0b318a7561a317dca657254c1cabbec",
+      "rawPromptBlocks": [
+        {
+          "line": 14,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 184,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 276,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 465,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 692,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 758,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 799,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1082,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1179,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1241,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1498,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G1-08-001"
+        },
+        {
+          "line": 173,
+          "heading": "## LOG-G1-10-002"
+        },
+        {
+          "line": 265,
+          "heading": "## LOG-G1-05-BACKFILL-003【补录】"
+        },
+        {
+          "line": 455,
+          "heading": "## LOG-G1-11-004"
+        },
+        {
+          "line": 677,
+          "heading": "## LOG-G1-08-003"
+        },
+        {
+          "line": 746,
+          "heading": "## LOG-G1-13-002"
+        },
+        {
+          "line": 788,
+          "heading": "## LOG-G1-11-005"
+        },
+        {
+          "line": 1071,
+          "heading": "## LOG-G1-12-006"
+        },
+        {
+          "line": 1169,
+          "heading": "## LOG-G1-13-007"
+        },
+        {
+          "line": 1231,
+          "heading": "## LOG-G1-13-008"
+        },
+        {
+          "line": 1487,
+          "heading": "## LOG-G1-14-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-12-B.md",
+      "sha256GitBlob": "431462e7479af659445c48b14b89df02f3ebcbbefb191ecea123beff2c57c596",
+      "rawPromptBlocks": [
+        {
+          "line": 14,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 65,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 122,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 216,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 239,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G1-10-001"
+        },
+        {
+          "line": 54,
+          "heading": "## LOG-G1-10-002"
+        },
+        {
+          "line": 111,
+          "heading": "## LOG-G1-12-B-REVIEW-001"
+        },
+        {
+          "line": 179,
+          "heading": "### LOG-G1-13-B-REVIEW-001 CONTINUED"
+        },
+        {
+          "line": 205,
+          "heading": "## LOG-G1-13-B-REVIEW-001"
+        },
+        {
+          "line": 228,
+          "heading": "## LOG-G1-13-B-RECHECK-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-12-C.md",
+      "sha256GitBlob": "17e1555b242963ee06001e4424904bfff4626207774ae94bade0e3f3d2a511ce",
+      "rawPromptBlocks": [
+        {
+          "line": 14,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 57,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 121,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 165,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 191,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 243,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 287,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 360,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 384,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G1-08-C-001"
+        },
+        {
+          "line": 46,
+          "heading": "## LOG-G1-08-C-002"
+        },
+        {
+          "line": 110,
+          "heading": "## LOG-G1-11-C-001"
+        },
+        {
+          "line": 154,
+          "heading": "## LOG-G1-13-C-REVIEW-001"
+        },
+        {
+          "line": 178,
+          "heading": "## LOG-G1-09-C-001"
+        },
+        {
+          "line": 232,
+          "heading": "## LOG-G1-08-G1-11-C-REVIEW-002"
+        },
+        {
+          "line": 276,
+          "heading": "## LOG-G1-12-C-REVIEW-001"
+        },
+        {
+          "line": 323,
+          "heading": "### LOG-G1-13-C-REVIEW-001 CONTINUED"
+        },
+        {
+          "line": 349,
+          "heading": "## LOG-G1-13-C-RECHECK-002"
+        },
+        {
+          "line": 373,
+          "heading": "## LOG-G1-14-C-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-13-A.md",
+      "sha256GitBlob": "b64a04c55472686a60029f41043906827454e42858e2da9ea6e725d5f2934e36",
+      "rawPromptBlocks": [
+        {
+          "line": 14,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 122,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 892,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1595,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1636,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1697,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1749,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1783,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1821,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G1-15-001"
+        },
+        {
+          "line": 111,
+          "heading": "## LOG-G1-15-002"
+        },
+        {
+          "line": 879,
+          "heading": "## LOG-G1-16-001"
+        },
+        {
+          "line": 1581,
+          "heading": "## LOG-G2-03-001"
+        },
+        {
+          "line": 1625,
+          "heading": "## LOG-G2-04-002"
+        },
+        {
+          "line": 1686,
+          "heading": "## LOG-G2-07-001"
+        },
+        {
+          "line": 1721,
+          "heading": "## LOG-G1-16-001 CONTINUATION"
+        },
+        {
+          "line": 1738,
+          "heading": "## LOG-G2-07-003"
+        },
+        {
+          "line": 1772,
+          "heading": "## LOG-G2-DELIVERY-001"
+        },
+        {
+          "line": 1808,
+          "heading": "## LOG-GOV-002-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-13-B.md",
+      "sha256GitBlob": "47f6e0a0a14ddd13ad70265af32b87125f40ad8bebf20e7f3d9b6be93b5c7a64",
+      "rawPromptBlocks": [
+        {
+          "line": 13,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 49,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 82,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 122,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 162,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 198,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 232,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 269,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 2,
+          "heading": "## LOG-G2-00-B-001"
+        },
+        {
+          "line": 38,
+          "heading": "## LOG-G2-01-B-001"
+        },
+        {
+          "line": 71,
+          "heading": "## LOG-G2-02-B-001"
+        },
+        {
+          "line": 111,
+          "heading": "## LOG-G2-01-B-002"
+        },
+        {
+          "line": 151,
+          "heading": "## LOG-G2-04-001"
+        },
+        {
+          "line": 187,
+          "heading": "## LOG-G2-05-002"
+        },
+        {
+          "line": 221,
+          "heading": "## LOG-G2-06-002"
+        },
+        {
+          "line": 258,
+          "heading": "## LOG-G2-07-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-13-C.md",
+      "sha256GitBlob": "bc7caeb60c0e15d52f1e9964bf2464efab6ea958c842380192829e26f4b0920a",
+      "rawPromptBlocks": [
+        {
+          "line": 12,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 45,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 77,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 135,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 167,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 240,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 313,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 386,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 420,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 455,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 495,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 525,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "## LOG-G2-00-C-001"
+        },
+        {
+          "line": 34,
+          "heading": "## LOG-G2-00-C-002"
+        },
+        {
+          "line": 67,
+          "heading": "## LOG-G2-00-C-003"
+        },
+        {
+          "line": 124,
+          "heading": "## LOG-G2-01-C-001"
+        },
+        {
+          "line": 156,
+          "heading": "## LOG-G2-02-C-001"
+        },
+        {
+          "line": 229,
+          "heading": "## LOG-G2-01-C-002"
+        },
+        {
+          "line": 302,
+          "heading": "## LOG-G2-CROSS-001"
+        },
+        {
+          "line": 375,
+          "heading": "## LOG-G2-05-001"
+        },
+        {
+          "line": 409,
+          "heading": "## LOG-G2-06-001"
+        },
+        {
+          "line": 444,
+          "heading": "## LOG-ISSUE-G2-06-001-001"
+        },
+        {
+          "line": 484,
+          "heading": "## LOG-G2-06-002"
+        },
+        {
+          "line": 514,
+          "heading": "## LOG-G2-07-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-14-A.md",
+      "sha256GitBlob": "ef2f0072466fc59c4f96b1ac4aec17d2f0d6f637b1c768d6179039a1973ee448",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 167,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 352,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 381,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 426,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 491,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 535,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 577,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 630,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 657,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 696,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 727,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 814,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 844,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 912,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 956,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 993,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1027,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G1-18-COVER-040506-001"
+        },
+        {
+          "line": 154,
+          "heading": "## LOG-G1-17-FMT-VISUAL-040506-001"
+        },
+        {
+          "line": 339,
+          "heading": "## LOG-G1-16-FMT-040506-001"
+        },
+        {
+          "line": 370,
+          "heading": "## LOG-G2-DELIVERY-002"
+        },
+        {
+          "line": 415,
+          "heading": "## LOG-G2-DELIVERY-003"
+        },
+        {
+          "line": 478,
+          "heading": "## LOG-G2-08-RECON-001"
+        },
+        {
+          "line": 527,
+          "heading": "## LOG-G2-DELIVERY-004"
+        },
+        {
+          "line": 569,
+          "heading": "## LOG-G2-DELIVERY-005"
+        },
+        {
+          "line": 617,
+          "heading": "## LOG-G2-08-RECON-001"
+        },
+        {
+          "line": 644,
+          "heading": "## LOG-G2-DELIVERY-010-001"
+        },
+        {
+          "line": 683,
+          "heading": "## LOG-G2-DELIVERY-010-FMT-002"
+        },
+        {
+          "line": 716,
+          "heading": "## LOG-G2-DELIVERABLES-CONFIRM-001"
+        },
+        {
+          "line": 803,
+          "heading": "## LOG-DAILY-REPORT-A-20260913-001"
+        },
+        {
+          "line": 833,
+          "heading": "## LOG-G2-P01-001"
+        },
+        {
+          "line": 901,
+          "heading": "## LOG-G2-P02-A-REVIEW-001"
+        },
+        {
+          "line": 945,
+          "heading": "## LOG-G2-P03-A-REVIEW-001"
+        },
+        {
+          "line": 982,
+          "heading": "## LOG-G1-TECHBID-TABLE-CAPTIONS-001"
+        },
+        {
+          "line": 1016,
+          "heading": "## LOG-G2-P04-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-14-B.md",
+      "sha256GitBlob": "bfb3b9510c01a7f91bf0cf74a014c308376fc3b92e10185da5954cb3d04ba56d",
+      "rawPromptBlocks": [
+        {
+          "line": 12,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 69,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 134,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 185,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "## LOG-G2-P02-B-001"
+        },
+        {
+          "line": 58,
+          "heading": "## LOG-G2-P03-B-001"
+        },
+        {
+          "line": 123,
+          "heading": "## LOG-G2-P03-B-002"
+        },
+        {
+          "line": 174,
+          "heading": "## LOG-G2-P04-B-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-14-C.md",
+      "sha256GitBlob": "77f9ecf7b9b907fb178fa8f669482ef28922391843481fc9eaa348c30b0aa2d1",
+      "rawPromptBlocks": [
+        {
+          "line": 13,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 73,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-DAILY-C-20260913-001"
+        },
+        {
+          "line": 63,
+          "heading": "## LOG-G2-P03-C-REVIEW-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-15-A.md",
+      "sha256GitBlob": "c55148f7ce9bdce4797bd42bd8e5d13bb79dd5ab997a73bb2c797878e00987a3",
+      "rawPromptBlocks": [
+        {
+          "line": 14,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 59,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 208,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 245,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 289,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 325,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 367,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 477,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G2-P05-001"
+        },
+        {
+          "line": 48,
+          "heading": "## LOG-G3-00-001"
+        },
+        {
+          "line": 197,
+          "heading": "## LOG-DAILY-2026-09-14-A-001"
+        },
+        {
+          "line": 234,
+          "heading": "## LOG-G2-REWORK-TEACHER-001"
+        },
+        {
+          "line": 278,
+          "heading": "## LOG-G2-REWORK-DECISIONS-002"
+        },
+        {
+          "line": 312,
+          "heading": "## LOG-G2-R02-A-REVIEW-001"
+        },
+        {
+          "line": 356,
+          "heading": "## LOG-G2-R03-002"
+        },
+        {
+          "line": 466,
+          "heading": "## LOG-G2-R03-003"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-15-B.md",
+      "sha256GitBlob": "539a4bee07d850471315ae0f14aab497c2a46aef44db4f4714f01ef50c1f6dd3",
+      "rawPromptBlocks": [
+        {
+          "line": 14,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 63,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 115,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 169,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "## LOG-G3-01-B-001"
+        },
+        {
+          "line": 50,
+          "heading": "## LOG-B-LOG-BACKFILL-20260911-001"
+        },
+        {
+          "line": 102,
+          "heading": "## LOG-G3-01-B-REWORK-002"
+        },
+        {
+          "line": 156,
+          "heading": "## LOG-G2-R02-B-REVIEW-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-15-C.md",
+      "sha256GitBlob": "a5b5c5954a89598df0e06bd160324078e434ea91717bdad85a9fa5462240727e",
+      "rawPromptBlocks": [
+        {
+          "line": 13,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 73,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 131,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 197,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 249,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G2-P04-C-REVIEW-001"
+        },
+        {
+          "line": 63,
+          "heading": "## LOG-DAILY-2026-09-14-C-001"
+        },
+        {
+          "line": 121,
+          "heading": "## LOG-G3-01-C-REVIEW-001"
+        },
+        {
+          "line": 187,
+          "heading": "## LOG-G2-R02-C-001"
+        },
+        {
+          "line": 239,
+          "heading": "## LOG-G2-R03-C-REVIEW-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-16-A.md",
+      "sha256GitBlob": "4c928b24588a33be907b8a4a0915fc7977916bffb9cf75d6d7edbf905bd25dd8",
+      "rawPromptBlocks": [
+        {
+          "line": 14,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 48,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 82,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 118,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 143,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 164,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 212,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 287,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 342,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 393,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 442,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G2-R05-002"
+        },
+        {
+          "line": 37,
+          "heading": "## LOG-G2-R05-001"
+        },
+        {
+          "line": 71,
+          "heading": "## LOG-G2-R04-003"
+        },
+        {
+          "line": 107,
+          "heading": "## LOG-G2-R04-002"
+        },
+        {
+          "line": 132,
+          "heading": "## LOG-G2-R03-005"
+        },
+        {
+          "line": 153,
+          "heading": "## LOG-G2-R04-001"
+        },
+        {
+          "line": 201,
+          "heading": "## LOG-G2-R03-004"
+        },
+        {
+          "line": 276,
+          "heading": "## LOG-G2-R05-003"
+        },
+        {
+          "line": 329,
+          "heading": "## LOG-G2-R06-A-001"
+        },
+        {
+          "line": 380,
+          "heading": "## LOG-G2-R05-ISSUE-002-A-001"
+        },
+        {
+          "line": 429,
+          "heading": "## LOG-G2-R06-A-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-16-B.md",
+      "sha256GitBlob": "28295ce06142f1361aa71e1164f9b2f66449f4a77c02d989e8f68742eb25d920",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 64,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 136,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 187,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 238,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 285,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G2-R05-B-REVIEW-001"
+        },
+        {
+          "line": 53,
+          "heading": "## LOG-G2-R04-B-REREVIEW-002"
+        },
+        {
+          "line": 122,
+          "heading": "## LOG-G2-R06-B-REREVIEW-002"
+        },
+        {
+          "line": 173,
+          "heading": "## LOG-G2-R06-B-REVIEW-001"
+        },
+        {
+          "line": 227,
+          "heading": "## LOG-G2-R05-B-REVIEW-003"
+        },
+        {
+          "line": 274,
+          "heading": "## LOG-G2-R05-B-REREVIEW-004"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-16-C.md",
+      "sha256GitBlob": "8d528a0d06de90c626e7192f7f1d3c02af195bc8eed0a6686ad9e38a13a0336f",
+      "rawPromptBlocks": [
+        {
+          "line": 13,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 51,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 97,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 146,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 190,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 237,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 284,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 353,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 399,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-ROLLBACK-098E488-C-001"
+        },
+        {
+          "line": 40,
+          "heading": "## LOG-G2-R03-C-REVIEW-001"
+        },
+        {
+          "line": 86,
+          "heading": "## LOG-G2-R06-C-REVIEW-005"
+        },
+        {
+          "line": 135,
+          "heading": "## LOG-G2-R06-C-REREVIEW-006"
+        },
+        {
+          "line": 179,
+          "heading": "## LOG-G2-R05-C-REVIEW-003"
+        },
+        {
+          "line": 226,
+          "heading": "## LOG-G2-R05-C-REREVIEW-004"
+        },
+        {
+          "line": 273,
+          "heading": "## LOG-G2-R04-C-REREVIEW-002"
+        },
+        {
+          "line": 342,
+          "heading": "## LOG-G2-R04-C-REVIEW-001"
+        },
+        {
+          "line": 388,
+          "heading": "## LOG-G2-R03-C-REREVIEW-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-17-A.md",
+      "sha256GitBlob": "a0e239f7ef4f6da0fab2d700815dccb4f0a34d911833dfbd44599811a649b943",
+      "rawPromptBlocks": [
+        {
+          "line": 11,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 123,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 180,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 224,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 292,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 337,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 378,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 395,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 412,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 488,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 521,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 566,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 595,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 624,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 653,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 681,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 705,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 733,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 767,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "## LOG-G3-01R-002"
+        },
+        {
+          "line": 112,
+          "heading": "## LOG-G3-02-001"
+        },
+        {
+          "line": 169,
+          "heading": "## LOG-G3-02-002"
+        },
+        {
+          "line": 213,
+          "heading": "## LOG-G3-03-001"
+        },
+        {
+          "line": 281,
+          "heading": "## LOG-G3-03-002"
+        },
+        {
+          "line": 326,
+          "heading": "## LOG-G3-03-003"
+        },
+        {
+          "line": 371,
+          "heading": "## LOG-G3-03-004"
+        },
+        {
+          "line": 388,
+          "heading": "## LOG-G3-03-005"
+        },
+        {
+          "line": 401,
+          "heading": "## LOG-G3-03-006"
+        },
+        {
+          "line": 477,
+          "heading": "## LOG-G3-03-007"
+        },
+        {
+          "line": 510,
+          "heading": "## LOG-G3-03-008"
+        },
+        {
+          "line": 555,
+          "heading": "## LOG-G3-03-009"
+        },
+        {
+          "line": 584,
+          "heading": "## LOG-G3-04-001"
+        },
+        {
+          "line": 613,
+          "heading": "## LOG-G3-04-002"
+        },
+        {
+          "line": 642,
+          "heading": "## LOG-G3-04-003"
+        },
+        {
+          "line": 671,
+          "heading": "## LOG-G3-05-001"
+        },
+        {
+          "line": 695,
+          "heading": "## LOG-G3-05-002"
+        },
+        {
+          "line": 723,
+          "heading": "## LOG-G3-05-003"
+        },
+        {
+          "line": 757,
+          "heading": "## LOG-G3-05-004"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-17-B.md",
+      "sha256GitBlob": "e84ff0b4d0013f93562d29e617a2fbad77203725db7204eac47cdaf32948e4c7",
+      "rawPromptBlocks": [
+        {
+          "line": 11,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 49,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 94,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 145,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 192,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 254,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 308,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "## LOG-G3-01R-001"
+        },
+        {
+          "line": 38,
+          "heading": "## LOG-G3-02-B-REVIEW-002"
+        },
+        {
+          "line": 83,
+          "heading": "## LOG-G3-02-B-REREVIEW-003"
+        },
+        {
+          "line": 132,
+          "heading": "## LOG-G3-04-B-001"
+        },
+        {
+          "line": 179,
+          "heading": "## LOG-G3-04-B-002"
+        },
+        {
+          "line": 241,
+          "heading": "## LOG-G3-05-B-001"
+        },
+        {
+          "line": 295,
+          "heading": "## LOG-G3-05-B-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-17-C.md",
+      "sha256GitBlob": "816bf3656c00cda960ede382d469dc0b0befdd135d9763689d9e784ee7092542",
+      "rawPromptBlocks": [
+        {
+          "line": 14,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 59,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 108,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 157,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 202,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 251,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 297,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G3-02-C-REVIEW-001"
+        },
+        {
+          "line": 48,
+          "heading": "## LOG-G3-02-C-REREVIEW-002"
+        },
+        {
+          "line": 97,
+          "heading": "## LOG-G3-03-C-REVIEW-001"
+        },
+        {
+          "line": 146,
+          "heading": "## LOG-G3-03-C-REREVIEW-002"
+        },
+        {
+          "line": 191,
+          "heading": "## LOG-G3-03-C-BLOCKER-REREVIEW-003"
+        },
+        {
+          "line": 240,
+          "heading": "## LOG-G3-03-C-WAIVER-004"
+        },
+        {
+          "line": 286,
+          "heading": "## LOG-DAILY-C-BACKFILL-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-18-A.md",
+      "sha256GitBlob": "aea0380d87aa9936f8d1877361326cb55ac57d52da10ba8ee2f8aac0151835ab",
+      "rawPromptBlocks": [
+        {
+          "line": 49,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 89,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 128,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 167,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 183,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 2,
+          "heading": "## LOG-G3-06-001"
+        },
+        {
+          "line": 39,
+          "heading": "## LOG-G3-06-002"
+        },
+        {
+          "line": 79,
+          "heading": "## LOG-G3-07-001"
+        },
+        {
+          "line": 118,
+          "heading": "## LOG-G3-07-003"
+        },
+        {
+          "line": 157,
+          "heading": "## LOG-G3-06-003"
+        },
+        {
+          "line": 173,
+          "heading": "## LOG-G3-06-004"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-18-B.md",
+      "sha256GitBlob": "ad63c003d66f789d025b876b97f85b70bc4f9a1078b57bf197971344e42eea3e",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 58,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 96,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 138,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 180,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G3-06-001"
+        },
+        {
+          "line": 45,
+          "heading": "## LOG-G3-07-002"
+        },
+        {
+          "line": 86,
+          "heading": "## LOG-G3-07-002"
+        },
+        {
+          "line": 125,
+          "heading": "## LOG-G3-06-003"
+        },
+        {
+          "line": 167,
+          "heading": "## LOG-G3-07-003"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-18-C.md",
+      "sha256GitBlob": "f4c98b63443a677281033984bcb433b8c77e408fabd493f380fd97e7bc243183",
+      "rawPromptBlocks": [
+        {
+          "line": 17,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 89,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 154,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 237,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G3-07-004"
+        },
+        {
+          "line": 79,
+          "heading": "## LOG-G3-08-001"
+        },
+        {
+          "line": 142,
+          "heading": "## LOG-G3-06-001"
+        },
+        {
+          "line": 225,
+          "heading": "## LOG-G3-08-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-18-META.md",
+      "sha256GitBlob": "7a7054440fd86576eb253c977accc7f0a860bbe7f9b34db432f180a705a43577",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-GOV-LOG-STRUCTURE-REPAIR-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-19-A.md",
+      "sha256GitBlob": "1873d9407be56a244c175d64510e73f1224653c650819fb58b08da966e95c3cb",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 79,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 124,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 182,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 246,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G3-09-001"
+        },
+        {
+          "line": 69,
+          "heading": "## LOG-G3-10-001"
+        },
+        {
+          "line": 111,
+          "heading": "## LOG-G3-11-001"
+        },
+        {
+          "line": 169,
+          "heading": "## LOG-G3-09-003"
+        },
+        {
+          "line": 233,
+          "heading": "## LOG-G3-09-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-19-B.md",
+      "sha256GitBlob": "3cdef9f24e861c332a12ec46fc67d0b3482dc1b618c3aed987c4fe7fd6236151",
+      "rawPromptBlocks": [
+        {
+          "line": 15,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "## LOG-G3-08-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-19-C.md",
+      "sha256GitBlob": "965c77d80e9ac26492fc12b1fbdf94059714e840f06eef79f123cfcd8075c61e",
+      "rawPromptBlocks": [
+        {
+          "line": 15,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 60,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 110,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 161,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "## LOG-G3-08-001"
+        },
+        {
+          "line": 46,
+          "heading": "## LOG-G3-09-001"
+        },
+        {
+          "line": 96,
+          "heading": "## LOG-G3-09-002"
+        },
+        {
+          "line": 147,
+          "heading": "## LOG-G3-09-003"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-20-A.md",
+      "sha256GitBlob": "d737a3545c358fb1067fcb650cb9f3f359234b4f899cad931241ec1df3914390",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 61,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 177,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G3-14-001"
+        },
+        {
+          "line": 48,
+          "heading": "## LOG-G3-13-001"
+        },
+        {
+          "line": 127,
+          "heading": "### LOG-G3-14-001 / EXECUTION_UPDATE"
+        },
+        {
+          "line": 166,
+          "heading": "## LOG-G3-13-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-20-B.md",
+      "sha256GitBlob": "a37708679448030c3331a7967c9253661b98610e390fe51c75d91d320b821f83",
+      "rawPromptBlocks": [
+        {
+          "line": 17,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 55,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G3-12-B-REVIEW-001"
+        },
+        {
+          "line": 41,
+          "heading": "## LOG-G3-14-B-REVIEW-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-20-C.md",
+      "sha256GitBlob": "20bd69c08b4705f798a8a49c6b02ef7f87172f0561238cc2759e0679bab319b2",
+      "rawPromptBlocks": [
+        {
+          "line": 69,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 119,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 164,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 211,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G3-11-001【补录并继续】"
+        },
+        {
+          "line": 55,
+          "heading": "## LOG-G3-12-001"
+        },
+        {
+          "line": 105,
+          "heading": "## LOG-G3-13-001"
+        },
+        {
+          "line": 150,
+          "heading": "## LOG-G3-13-002"
+        },
+        {
+          "line": 197,
+          "heading": "## LOG-G3-11-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-21-A.md",
+      "sha256GitBlob": "ab7fbcf332583c6325cbed5ca0742ca7c5430d9ea81e4dd871e82e2e942b979e",
+      "rawPromptBlocks": [
+        {
+          "line": 12,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 64,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 211,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 272,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 323,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 372,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 481,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "## LOG-DAILY-BACKFILL-001"
+        },
+        {
+          "line": 53,
+          "heading": "## LOG-G3-SIM-CONFIRM-001"
+        },
+        {
+          "line": 200,
+          "heading": "## LOG-G3-14-003"
+        },
+        {
+          "line": 261,
+          "heading": "## LOG-G3-14-002"
+        },
+        {
+          "line": 313,
+          "heading": "## LOG-G3-10-CLOSEOUT-001"
+        },
+        {
+          "line": 361,
+          "heading": "## LOG-G4-00-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-21-B.md",
+      "sha256GitBlob": "509517fe21373cfaaa96d9ee3346fc4c3dc805c1933ad34f181308f4a7c47175",
+      "rawPromptBlocks": [
+        {
+          "line": 17,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 69,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G3-14-B-REREVIEW-001"
+        },
+        {
+          "line": 55,
+          "heading": "## LOG-G3-10-B-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-21-C.md",
+      "sha256GitBlob": "860ef0760ecb7fc10dd5ef852e2c6456d7402fe2ac85ef410049a3f5397eaed2",
+      "rawPromptBlocks": [
+        {
+          "line": 17,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 63,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G3-10-C-001"
+        },
+        {
+          "line": 49,
+          "heading": "## LOG-G4-01-C-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-22-B.md",
+      "sha256GitBlob": "b961e023ced994f4e8d7c23cd058fa2730e257e4cee6860a35b3a3b37bd0fd5d",
+      "rawPromptBlocks": [
+        {
+          "line": 14,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 95,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G4-02-001"
+        },
+        {
+          "line": 79,
+          "heading": "## LOG-G4-04-B-REVIEW-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-22-C.md",
+      "sha256GitBlob": "31a73a90a91b9b7234a301ba2664a23e324306baf441afc1afde2507c196a585",
+      "rawPromptBlocks": [
+        {
+          "line": 11,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 72,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G4-01-C-002"
+        },
+        {
+          "line": 64,
+          "heading": "## LOG-G4-04-C-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-22-META.md",
+      "sha256GitBlob": "bb6de2947413ecb57be1809b03b2706549cec96e475c0ae1db9c9a30fd0992d4",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-META-DAILY-BACKFILL-0921-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-23-A.md",
+      "sha256GitBlob": "a638c0d86a6aedd81211b40169a46185a45d98ec92de1ee8f6cd223770e99f53",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 72,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 123,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 161,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 276,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 342,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 388,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 429,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-GIT-MAINT-20260923-A-001"
+        },
+        {
+          "line": 59,
+          "heading": "## LOG-G4-03-002"
+        },
+        {
+          "line": 110,
+          "heading": "## LOG-G4-03-20260923-A-003"
+        },
+        {
+          "line": 148,
+          "heading": "## LOG-G4-02-A-REVIEW-001"
+        },
+        {
+          "line": 263,
+          "heading": "## LOG-G4-02-20260923-A-001"
+        },
+        {
+          "line": 329,
+          "heading": "## LOG-G4-02-A-CONTINUE-002"
+        },
+        {
+          "line": 375,
+          "heading": "## LOG-G4-03-A-REMEDIATION-001"
+        },
+        {
+          "line": 416,
+          "heading": "## LOG-G4-03-20260923-A-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-23-B.md",
+      "sha256GitBlob": "d7ead98e42af1a0a6bc3316b1a80278532bccc77e81e870a64a06c3134e6ee92",
+      "rawPromptBlocks": [
+        {
+          "line": 15,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 46,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 98,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "## LOG-G4-02-B-PR-PREP-001"
+        },
+        {
+          "line": 32,
+          "heading": "## LOG-G4-02-B-REMEDIATION-001"
+        },
+        {
+          "line": 84,
+          "heading": "## LOG-G4-05-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-23-C.md",
+      "sha256GitBlob": "7b30e23c8db09596b90cb3d0261b0ce88a1e20f9f90b9fab7e7d5f83c5e59956",
+      "rawPromptBlocks": [
+        {
+          "line": 13,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 91,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 132,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 190,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 241,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G4-04-C-002"
+        },
+        {
+          "line": 80,
+          "heading": "## LOG-G4-03-C-REVIEW-001"
+        },
+        {
+          "line": 121,
+          "heading": "## LOG-G4-03-C-REREVIEW-002"
+        },
+        {
+          "line": 179,
+          "heading": "## LOG-G4-03-C-REREVIEW-003"
+        },
+        {
+          "line": 230,
+          "heading": "## LOG-G4-03-C-REREVIEW-004"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-24-A.md",
+      "sha256GitBlob": "9b2634e663b9310a35ef3a558cc27432a332bf9e40459592378eafd8d2d1a17f",
+      "rawPromptBlocks": [
+        {
+          "line": 18,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 98,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 189,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 238,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G4-05-004"
+        },
+        {
+          "line": 85,
+          "heading": "## LOG-G4-06-20260924-A-001"
+        },
+        {
+          "line": 176,
+          "heading": "## LOG-G4-06-REMEDIATION-20260924-A-002"
+        },
+        {
+          "line": 225,
+          "heading": "## LOG-G4-06-DOD-FIX-20260924-A-003"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-24-B.md",
+      "sha256GitBlob": "b8d16c53904b94fc6f85c1e511e1ce263b3d44442bbaaeb036564664b11f0705",
+      "rawPromptBlocks": [
+        {
+          "line": 12,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 58,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "## LOG-G4-05-002"
+        },
+        {
+          "line": 44,
+          "heading": "## LOG-G4-05-003"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-24-C.md",
+      "sha256GitBlob": "7b76f4d5969732ecb5cfa03831353e799812db05af5ef3c685502982990ac9a7",
+      "rawPromptBlocks": [
+        {
+          "line": 10,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 58,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 101,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 142,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": []
+    },
+    {
+      "path": "logs/prompts/2026-09-25-A.md",
+      "sha256GitBlob": "e955193db8db95ff5211d53a888bbb2e7f78c24bfd8911f211cdf3d597cd70fc",
+      "rawPromptBlocks": [
+        {
+          "line": 15,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G4-05-PR13-REREVIEW-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-25-B.md",
+      "sha256GitBlob": "24a69ee192f13d03d7354691d83aa584ad1259ba4db0d3bdcf16750895740be6",
+      "rawPromptBlocks": [
+        {
+          "line": 15,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 59,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "## LOG-G4-05-004"
+        },
+        {
+          "line": 45,
+          "heading": "## LOG-G4-05-005"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-25-C.md",
+      "sha256GitBlob": "06d872ab8eec3c4324bc89690ce56e448a98399b0333fc977c29d6e71c4fd04a",
+      "rawPromptBlocks": [
+        {
+          "line": 19,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 58,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": []
+    },
+    {
+      "path": "logs/prompts/2026-09-26-A.md",
+      "sha256GitBlob": "b88dbd6efd6da9e57f47bbebe2fcb9588cb18fe5cf7bc85baa3a4fb8c2b0f6f1",
+      "rawPromptBlocks": [
+        {
+          "line": 25,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 72,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 150,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 216,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 336,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 398,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 444,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1126,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 9,
+          "heading": "## LOG-G4-05-PR14-ADMIN-REVIEW-001"
+        },
+        {
+          "line": 55,
+          "heading": "## LOG-G4-09-001"
+        },
+        {
+          "line": 137,
+          "heading": "## LOG-G4-09-003 — 接续演示态实时互通"
+        },
+        {
+          "line": 208,
+          "heading": "## LOG-G4-09-004 — 拉取最新演示版本与演示流程清单"
+        },
+        {
+          "line": 324,
+          "heading": "## LOG-G4-09-005 — 演示完整操作流程手册"
+        },
+        {
+          "line": 382,
+          "heading": "## LOG-G4-05-PR14-ADMIN-REVIEW-001"
+        },
+        {
+          "line": 428,
+          "heading": "## LOG-G4-ACCEPTANCE-PPT-01-001"
+        },
+        {
+          "line": 1112,
+          "heading": "## LOG-G4-ACCEPTANCE-PPT-01-DIRECT-PUSH-OVERRIDE"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-26-B.md",
+      "sha256GitBlob": "fc102bbffac3a28f3bf4ff6ec0f7068e7119b9f7f5decdbb2b64e6131d8160f2",
+      "rawPromptBlocks": [
+        {
+          "line": 19,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 62,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G4-07-B-REVIEW-001"
+        },
+        {
+          "line": 46,
+          "heading": "## LOG-G4-07-B-REREVIEW-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-09-26-C.md",
+      "sha256GitBlob": "bee2ca74df6d1fab76122edb4de24c8caf483c4b24b2c000ce8dea3e7af4f8f4",
+      "rawPromptBlocks": [
+        {
+          "line": 18,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 97,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 145,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 196,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 228,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 279,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": []
+    },
+    {
+      "path": "logs/prompts/2026-09-30-B.md",
+      "sha256GitBlob": "7f92f659eaa5071df56c3dc49b9b506a5eaf10246a69947bef89b969abeab9c4",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G4-08-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-08-A.md",
+      "sha256GitBlob": "d372041a90e6bbd658ffad2449e5cf080de6cda983d633a4c87e21a569e99249",
+      "rawPromptBlocks": [
+        {
+          "line": 12,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 518,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 543,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 584,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 1154,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G4-FINAL-SPRINT-001"
+        },
+        {
+          "line": 510,
+          "heading": "## LOG-G4-FINAL-CLOSEOUT-A-001"
+        },
+        {
+          "line": 535,
+          "heading": "## LOG-G4-09-REMEDIATION-002"
+        },
+        {
+          "line": 571,
+          "heading": "## LOG-G5-00-001"
+        },
+        {
+          "line": 1141,
+          "heading": "## LOG-G5-01-A-REVIEW-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-08-C.md",
+      "sha256GitBlob": "629b6ae8cb0f87241d35fef0caafd34aa74fffa7a5e4487b12557d378e0ba206",
+      "rawPromptBlocks": [
+        {
+          "line": 17,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 67,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 110,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 416,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 464,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 551,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 596,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 99,
+          "heading": "## LOG-G4-FINAL-CLOSEOUT-001"
+        },
+        {
+          "line": 404,
+          "heading": "## LOG-G4-FINAL-CLOSEOUT-002"
+        },
+        {
+          "line": 453,
+          "heading": "## LOG-G4-ACCEPTANCE-PPT-01-001"
+        },
+        {
+          "line": 539,
+          "heading": "## LOG-G5-01-001"
+        },
+        {
+          "line": 584,
+          "heading": "## LOG-G5-01-002"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-09-A.md",
+      "sha256GitBlob": "d521c3bf70b20199384ce8d41a5d392d7af189e319333dce1f09867b00e29253",
+      "rawPromptBlocks": [
+        {
+          "line": 15,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 80,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 143,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G5-01-A-REREVIEW-001"
+        },
+        {
+          "line": 68,
+          "heading": "## LOG-G5-01-A-REREVIEW-002"
+        },
+        {
+          "line": 131,
+          "heading": "## LOG-G5-01-A-REREVIEW-003"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-09-B.md",
+      "sha256GitBlob": "9cd15d4261e13c93db6b8cb84f27d1baff124dd5f879e65a16b97a73de011b00",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 64,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 112,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 159,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 209,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G5-02-001"
+        },
+        {
+          "line": 51,
+          "heading": "## LOG-G5-02-002"
+        },
+        {
+          "line": 99,
+          "heading": "## LOG-G5-02-003"
+        },
+        {
+          "line": 146,
+          "heading": "## LOG-G5-02-004"
+        },
+        {
+          "line": 196,
+          "heading": "## LOG-G5-02-005"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-09-C.md",
+      "sha256GitBlob": "1d3c0b740dd889ffe9ee5a16d485951643b15896235ac0090ee2be548bf645f0",
+      "rawPromptBlocks": [
+        {
+          "line": 15,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 86,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 153,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 208,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 280,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 335,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 389,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G5-01-003"
+        },
+        {
+          "line": 74,
+          "heading": "## LOG-G5-01-004"
+        },
+        {
+          "line": 141,
+          "heading": "## LOG-G5-02-001"
+        },
+        {
+          "line": 196,
+          "heading": "## LOG-G5-01-005"
+        },
+        {
+          "line": 268,
+          "heading": "## LOG-G5-02-002"
+        },
+        {
+          "line": 323,
+          "heading": "## LOG-G5-02-003"
+        },
+        {
+          "line": 377,
+          "heading": "## LOG-G5-02-004"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-10-B.md",
+      "sha256GitBlob": "29a8eb4b33364b1971a69740c7230ef9599740e978c5e3a191476b1cca89e6d7",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 80,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 124,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G5-02-006"
+        },
+        {
+          "line": 67,
+          "heading": "## LOG-G5-02-007"
+        },
+        {
+          "line": 111,
+          "heading": "## LOG-G5-02-008"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-10-C.md",
+      "sha256GitBlob": "69584fe7d0c22dd6c1267f81a6b75a254f65f20bfadd8ea14ecb93525c7a363a",
+      "rawPromptBlocks": [
+        {
+          "line": 15,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 72,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 126,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 185,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 236,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 283,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 340,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 388,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G5-02-001"
+        },
+        {
+          "line": 60,
+          "heading": "## LOG-G5-02-002"
+        },
+        {
+          "line": 114,
+          "heading": "## LOG-G5-02-003"
+        },
+        {
+          "line": 173,
+          "heading": "## LOG-G5-02-004"
+        },
+        {
+          "line": 224,
+          "heading": "## LOG-G5-03-001"
+        },
+        {
+          "line": 271,
+          "heading": "## LOG-G5-01-006"
+        },
+        {
+          "line": 328,
+          "heading": "## LOG-G5-03-002"
+        },
+        {
+          "line": 376,
+          "heading": "## LOG-G5-01-007"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-11-A.md",
+      "sha256GitBlob": "f2df944039874ff1452b4244bd014136f28f89da291ed48630607d58f3f71b6a",
+      "rawPromptBlocks": [
+        {
+          "line": 8,
+          "heading": "## USER_PROMPT_RAW"
+        },
+        {
+          "line": 40,
+          "heading": "## USER_PROMPT_RAW"
+        },
+        {
+          "line": 461,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 637,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 679,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "# LOG-G5-01-A-REVIEW-004"
+        },
+        {
+          "line": 30,
+          "heading": "# LOG-G5-03-002"
+        },
+        {
+          "line": 448,
+          "heading": "## LOG-G6-00-001"
+        },
+        {
+          "line": 624,
+          "heading": "## LOG-G6-00-002｜G6 master授权与推送"
+        },
+        {
+          "line": 665,
+          "heading": "## LOG-G6-03-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-11-B.md",
+      "sha256GitBlob": "b7c24f08769bfcb1bf22a6b2e08af71bedeb9cc43027f00b58f686e436570004",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 72,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G6-01-001"
+        },
+        {
+          "line": 59,
+          "heading": "## LOG-G6-02-REVIEW-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-11-C.md",
+      "sha256GitBlob": "23423b864302dc08cc193b15f1c9b39cdc7c5dbad8cce2f3ce890819db7f013d",
+      "rawPromptBlocks": [
+        {
+          "line": 15,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 64,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 119,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 174,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G5-03-001"
+        },
+        {
+          "line": 52,
+          "heading": "## LOG-G6-02-001"
+        },
+        {
+          "line": 107,
+          "heading": "## LOG-G6-00-002"
+        },
+        {
+          "line": 162,
+          "heading": "## LOG-G6-00-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-12-A.md",
+      "sha256GitBlob": "dd92609eade86a285c5ab2573228ead0448aa8514540e99960a9eba9e2d78650",
+      "rawPromptBlocks": [
+        {
+          "line": 15,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 602,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 653,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 703,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 752,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 1,
+          "heading": "# LOG-G6-A-REVIEW-001"
+        },
+        {
+          "line": 590,
+          "heading": "## LOG-G6-01-A-REREVIEW-002"
+        },
+        {
+          "line": 641,
+          "heading": "## LOG-G6-02-A-REREVIEW-003"
+        },
+        {
+          "line": 693,
+          "heading": "## LOG-DAILY-ABC-BACKFILL-004"
+        },
+        {
+          "line": 740,
+          "heading": "## LOG-G6-03-REMEDIATION-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-12-B.md",
+      "sha256GitBlob": "b221f70f0d7eabe66c18c9335c1382160b823cbde92380dfa6137327ce78504e",
+      "rawPromptBlocks": [
+        {
+          "line": 16,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 54,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 96,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G6-02-FINAL-B-REREVIEW-002"
+        },
+        {
+          "line": 41,
+          "heading": "## LOG-G6-02-FINAL-B-REVIEW-001"
+        },
+        {
+          "line": 83,
+          "heading": "## LOG-G6-01-REMEDIATION-001"
+        }
+      ]
+    },
+    {
+      "path": "logs/prompts/2026-10-12-C.md",
+      "sha256GitBlob": "0faf8c9d211c849588cedc88f4c49bd51c29993a14f7f78d7b84d89ed2993369",
+      "rawPromptBlocks": [
+        {
+          "line": 17,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 59,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 107,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 176,
+          "heading": "### USER_PROMPT_RAW"
+        },
+        {
+          "line": 218,
+          "heading": "### USER_PROMPT_RAW"
+        }
+      ],
+      "taskHeaders": [
+        {
+          "line": 3,
+          "heading": "## LOG-G6-03-C-REVIEW-001"
+        },
+        {
+          "line": 47,
+          "heading": "## LOG-G6-02-001"
+        },
+        {
+          "line": 95,
+          "heading": "## LOG-G6-02-002"
+        },
+        {
+          "line": 164,
+          "heading": "## LOG-G6-C-AUDIT-001"
+        },
+        {
+          "line": 206,
+          "heading": "## LOG-G6-03-C-REVIEW-002"
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "path": "logs/reviews/2026-09-09_G1-00_self-check.md",
+      "sha256GitBlob": "54c2fbdb47d1a17ade7b544eb1f272ebe623d5e96964a9a5d1462bbe31832581"
+    },
+    {
+      "path": "logs/reviews/2026-09-09_G1-01-A-self-check.md",
+      "sha256GitBlob": "2da28d819b5460fce72eeec70bb5e4fb4bb23d1fb240d69aa8fe5a8da6ad9700"
+    },
+    {
+      "path": "logs/reviews/2026-09-09_G1-01-C-clarification-self-check.md",
+      "sha256GitBlob": "f9fbf894ed392607fc8406b6fd9bd2b9550f6b6f1c8b9cf2f0b2fb1abf42aa01"
+    },
+    {
+      "path": "logs/reviews/2026-09-09_G1-01-self-check.md",
+      "sha256GitBlob": "1bb5240f85f14cf4ccc0680a2a8ac7fa84fe5cb2ab23e1520c596440643fc354"
+    },
+    {
+      "path": "logs/reviews/2026-09-09_G1-01_B-technical-review.md",
+      "sha256GitBlob": "2c66b100b5b5d3e440bffd3f217f62e73a491f5befd6908981e510adff6f335e"
+    },
+    {
+      "path": "logs/reviews/2026-09-09_G1-02-self-check.md",
+      "sha256GitBlob": "5e85a109651bba45f4d3993869851410a071f50929f568cd947e2b13789186df"
+    },
+    {
+      "path": "logs/reviews/2026-09-09_GOV-001-self-check.md",
+      "sha256GitBlob": "ece518b06ce72f64b946198efa931af1fb7ad22d0bae6e890f1feac6950b1ed6"
+    },
+    {
+      "path": "logs/reviews/2026-09-09_META-C-PROMPT-self-check.md",
+      "sha256GitBlob": "672893f40e6fad9837a39bec639111dc9ed19b1c53c9a35042536b26a60842d3"
+    },
+    {
+      "path": "logs/reviews/2026-09-10_G1-01-B-post-clarification-review-request.md",
+      "sha256GitBlob": "07008a6ac95c6732815b96c9590ea8e237011f15711d42b94688a97b49b580a1"
+    },
+    {
+      "path": "logs/reviews/2026-09-10_G1-01-B-post-clarification-review.md",
+      "sha256GitBlob": "eb4dcad85468f5381ae87de57666af1c9940351280c1bf069225699ee82c6726"
+    },
+    {
+      "path": "logs/reviews/2026-09-10_G1-01-C-clarification-archive-self-check.md",
+      "sha256GitBlob": "b5452db1ee1f35f200b521a95d60d4c3329dcf5d20e1a147969ee416f6e460fc"
+    },
+    {
+      "path": "logs/reviews/2026-09-10_G1-02-baseline-freeze-self-check.md",
+      "sha256GitBlob": "d0ecbd7fdd9dfd74b571c2bf3a4b35ed1bb972686726efb9131311a55ee02f5f"
+    },
+    {
+      "path": "logs/reviews/2026-09-10_G1-03-C-compliance-review.md",
+      "sha256GitBlob": "556060ab220e16bd3dbc4fdf6349e6f056f19809cc4651c95d0e7bcc08673906"
+    },
+    {
+      "path": "logs/reviews/2026-09-10_G1-04-B-self-review.md",
+      "sha256GitBlob": "909ef9418fb1453970a90c62010864fcd923a9bc96d55ea33ed76ce99ac10a22"
+    },
+    {
+      "path": "logs/reviews/2026-09-10_G1-05-B-final-review.md",
+      "sha256GitBlob": "319b3d670a1804fb52eb4826e868e15aa1aee1c8957db85fe1f4bbd6f58ed645"
+    },
+    {
+      "path": "logs/reviews/2026-09-10_G1-05-self-check.md",
+      "sha256GitBlob": "da5aeae590f47cdc8f3f6970315a92bdd562fa55cac3701c6c7b25c57840d1ea"
+    },
+    {
+      "path": "logs/reviews/2026-09-10_G1-05-star-clause-check.md",
+      "sha256GitBlob": "1e2b9f52eb10740962281a12de29f6f8d19ea36b3f06043ac9029c3b847c2041"
+    },
+    {
+      "path": "logs/reviews/2026-09-10_G1-06-C-plan-review.md",
+      "sha256GitBlob": "d8d6c9b8112cfe4c109a0724a7f5e2ab4e71e6cd7caae450cd063ed42a7d336b"
+    },
+    {
+      "path": "logs/reviews/2026-09-11_G1-07-C-review.md",
+      "sha256GitBlob": "67c10aca6bf6b8567439faaa4b105e053556164bea647a354915036aacfb3c3c"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-08-C-final-compliance-review.md",
+      "sha256GitBlob": "0b0d5cbc5707a409eff492b9e150212f16388cd5625a510488f13e3bb807e9c6"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-08-C-human-review-checklist.md",
+      "sha256GitBlob": "40c6f72bdda98a4a56de84b22fa5dc073eb754250d0ec1d9c48a2c153c8aa704"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-08-G1-11-C-final-review.md",
+      "sha256GitBlob": "d16c79c1785ebbbcfd2b74eb87ad587c4fcdb281cb6617f816f1c3ab6a7a7f70"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-09-C-compliance-review.md",
+      "sha256GitBlob": "5a81bdccfc57074e7de60cba0e9ce56413d28ff139e76fe22a900b235c684ca8"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-10_technical_review.md",
+      "sha256GitBlob": "d142074cb1d668e7f8646af813e0c168fb086f8986bc8f462a9813c29128f692"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-11-C-review.md",
+      "sha256GitBlob": "8c58131b360094bea1cb62c495269b5d1a3a00eb35c0304f9f5dfa092c2e33c4"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-11_consistency_remediation_review.md",
+      "sha256GitBlob": "d414cdbc370e53054ff936c283737233c804882e211d75210d188c90d4d1bf69"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-11_consistency_rework_recheck.md",
+      "sha256GitBlob": "b92e0150356eae81f3dd4f7732d19c45aba6004fe2401c44eb8926506451efaa"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-11_cross_document_consistency_review.md",
+      "sha256GitBlob": "d89be85d65dc3c15a8001275d9baedf96937c6eab7abccab8b473176060f8b30"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-12-B-technical-review.md",
+      "sha256GitBlob": "27906f161913f6f3a8a294477298f5d3100fd77985117ad4f624b7a7f24ab12c"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-12-C-compliance-review.md",
+      "sha256GitBlob": "5bff053c3ac4a7fa546453545ae3f76eb0ba2f6d9e2fae739710731e9fa96bc0"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-13-B-technical-review.md",
+      "sha256GitBlob": "dacba5364f3f2d658647332be974f37f8823cb847b35f381487fd7a1ed8e087e"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-13-C-compliance-review.md",
+      "sha256GitBlob": "91844aff2aa0f965d550c9587fb43dc042ba9aae32141447e6e07353bcde3d1a"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-14-A-freeze-self-check.md",
+      "sha256GitBlob": "b3bea4d4b9dd189a0dccce3cce817e61b247687f3593e666488ae16092d28761"
+    },
+    {
+      "path": "logs/reviews/2026-09-12_G1-14-C-final-compliance-review.md",
+      "sha256GitBlob": "5b4b0f026ede0b2a0beb65a2ac8d79d266df3ead8461fccbb4a99f2a1964495b"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-00-B-review-request.md",
+      "sha256GitBlob": "bd5744814eb4f2075c3638cb0af4c067a24dd474a7b331a7fc3d3561dca78071"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-00-B-technical-review.md",
+      "sha256GitBlob": "417186c7fd4b6bf2d68d5b269c8c7949e74269459a0dedba30f1f0ef6e3bf051"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-00-C-self-check.md",
+      "sha256GitBlob": "6f93cc9a49db2ade0b576d83623817baf70f496ca6150682147fe279d8d9b1e8"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-01-B-correction-review-request.md",
+      "sha256GitBlob": "6873d6aa3996514589da8d6bcbb7fa32f45e7e5f49512f268133439ca2bd9fda"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-01-B-correction-review.md",
+      "sha256GitBlob": "25f448cd7b4fa8065aa98ba7ccbac4f49af5e526f655f64a4af4f3a985521a61"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-01-B-technical-review.md",
+      "sha256GitBlob": "d7d88a3362a6584c3cff023e7dfa89fb955539a89e4319659f88bbded3fefca0"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-01-C-correction-self-check.md",
+      "sha256GitBlob": "607f413ee5b36bef757f29111c503efcc3555d1cf4daf72fdbff3150a90ff3a6"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-02-B-review-request.md",
+      "sha256GitBlob": "9f683613cb8201ef22ad8298bf1c16341236240b20ed75ce38d4a7ce18739daf"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-02-B-technical-review.md",
+      "sha256GitBlob": "ec4208578b473a4fde55f2e82f1a4098eef443927d24943e531703ba24cd83af"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-02-C-self-check.md",
+      "sha256GitBlob": "2399655de0e7a63ac2963730b0e2ea1db1a56a2e08c1a46ac5892340aad4d3f0"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-02-G2-03-G2-04-C-integrated-review.md",
+      "sha256GitBlob": "040d5584b705bcbb67bde1ed40f85a851b154b363f975d6e29dbfbab4e85278e"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-03-C-review-request.md",
+      "sha256GitBlob": "4b951e4fa95aa014525239809ef0e50b4f9c43972f7abdca161d6c83a285637e"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-04-A-review.md",
+      "sha256GitBlob": "ea1c5a069113bc1e7206e925648b2eb17dece3d594e43f4d9beff6cf630862e0"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-05-B-review-request.md",
+      "sha256GitBlob": "5dc54d5bb90fdfd9507928d31a9bacb8cc16c37dba52b81150ad8cbfe78ad011"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-05-B-technical-review.md",
+      "sha256GitBlob": "858e537844f9e51808f4ba0277ef78ed4659a40c8c1a228d2ab841436915102f"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-06-B-review-request.md",
+      "sha256GitBlob": "07e23e33561d6d60c5f5adc2376d0e28a9a425b656a12039411e89383e2f2a49"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-06-B-technical-review.md",
+      "sha256GitBlob": "3770a62127a22fb05fe4fc54cb5237c7ecab3f9fac61594d8a2741048a99099e"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-07-B-technical-review.md",
+      "sha256GitBlob": "d693c18a97c6005fe55e2393593ebf7e28e74eddbf97e90c85bc9ef2ea456e90"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_G2-07-C-compliance-review.md",
+      "sha256GitBlob": "634f961a100742d8c13d45dee298e20afb0b0ec99e3089bcff6044992c33edb1"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_ISSUE-G2-06-001-B-technical-review.md",
+      "sha256GitBlob": "66374ffa0b7c9f946f67f5cde872589135d2a47304da378a193f3b5aa0d8141f"
+    },
+    {
+      "path": "logs/reviews/2026-09-13_ISSUE-G2-06-001-C-compliance-check.md",
+      "sha256GitBlob": "99bfd98f81d6164d937402c20a69bb4ffdc593fbabfc633d6fb60212561fc730"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G1-16-FMT-040506-format-only-audit.md",
+      "sha256GitBlob": "51df1d25c3a60f722b030aa431395f01c1979f500227f3254d6a00248e2ef370"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G1-TECHBID-table-caption-audit.md",
+      "sha256GitBlob": "7bdd6de14bdb6169252b74c9fbc2dac3d905cfaa96af6b49d3af791bd2f95660"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-DELIVERY-010-FMT-format-only-audit.md",
+      "sha256GitBlob": "05b0def48684b96155a359a7fab252844397a854c647f7bb8d19e2844fede4d5"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-DELIVERY-010-pair-audit.md",
+      "sha256GitBlob": "0bd2fb88bd5e33a5aeafd89df15cf2a02f0074098c4d83cff267e03a4e14124d"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-DELIVERY-FMT-01-pair-audit.md",
+      "sha256GitBlob": "0b8c7e8402a7313dedca19b852736891bd05489f82727304440a3678b644da4e"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-DELIVERY-FMT-0809-pair-audit.md",
+      "sha256GitBlob": "d139f996ee795ac22f26c2efa5289908251718ad47e4ff41217f3f534f3d6e67"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-DELIVERY-FMT-09-R2-pair-audit.md",
+      "sha256GitBlob": "9ec6ba38debef609402b24abe5432bf4860e928796d80584146af62062f33f9f"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-P01-A-self-check.md",
+      "sha256GitBlob": "4f59aff913d03c2efc0f7c69c8d235edba7943d70c58d7fc91f95300fbaf46d8"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-P02-A-review.md",
+      "sha256GitBlob": "32f4d0c6a2736239afa292cf5c8a693deb2ede24fb44fba28a2ef1102e2294c7"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-P02-B-self-check.md",
+      "sha256GitBlob": "2fa5296c75f4f0054184b94566e06ac011f5b3aaaafa23e4d65c9de352daab42"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-P03-A-review.md",
+      "sha256GitBlob": "c9732a9444c54b797bb47c8e758ce7809453e37c801e5d9cbec71d19cacb7f29"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-P03-B-remediation-recheck.md",
+      "sha256GitBlob": "39c9f0478ef34113799d2c82a35e8bdde5f8ede124ffe96bfbcd7214e88106f7"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-P03-B-self-check.md",
+      "sha256GitBlob": "bb0bf186a89e69a9418f3f0a52748a5fe4f3c80a68fabeaa10f29d2b3a7d6103"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-P03-C-compliance-review.md",
+      "sha256GitBlob": "cfce80cbb56348ab96a9c04153c567762d2d2b12cd7de93ff35e62dc2c7df14e"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-P04-A-self-check.md",
+      "sha256GitBlob": "92ea59765893264daea340dd4ce480fccc1837ff36bd75d44f0724615c6182c3"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_G2-P04-B-technical-review.md",
+      "sha256GitBlob": "8a8e5e97fc4a84b7043a80c0608e355d596c4ca09f588e535c6a72343e6502b0"
+    },
+    {
+      "path": "logs/reviews/2026-09-14_deliverable_confirmation_resolution.md",
+      "sha256GitBlob": "5bf8029492bc631f534d8212f5dd6d8b50485f2e0e0407c87a4e5953e5fef3f7"
+    },
+    {
+      "path": "logs/reviews/2026-09-15_G2-P04-C-compliance-review.md",
+      "sha256GitBlob": "cce6a09056b4296162967f17cc2ed809a749ca40a3c3cdf86fc24dc5afddf748"
+    },
+    {
+      "path": "logs/reviews/2026-09-15_G2-P05-A-final-walkthrough.md",
+      "sha256GitBlob": "86b5fe13ac290d87f45046978848c44b369ff1d9f20bd2d64cfa35fa07b35822"
+    },
+    {
+      "path": "logs/reviews/2026-09-15_G2-R02-A-review.md",
+      "sha256GitBlob": "1c71e57e2404e72753122ed685a9fb41f26f6298aff8ddca3fbd404d280c6dcc"
+    },
+    {
+      "path": "logs/reviews/2026-09-15_G2-R02-B-technical-review.md",
+      "sha256GitBlob": "9af580e7299481aa2c224f5bf4288cd129bf1a78f89487a8f583992adcb61589"
+    },
+    {
+      "path": "logs/reviews/2026-09-15_G2-R02-C-self-check.md",
+      "sha256GitBlob": "2a044a4a1b4804daeee3838ac02a9a2751af54765dfedeff6c04e9aef1c180f0"
+    },
+    {
+      "path": "logs/reviews/2026-09-15_G2-R03-A-review-repair.md",
+      "sha256GitBlob": "28380f71edf474b532ad9dd2b7e78d2d2158e72c06910b20e3807a70012fb37c"
+    },
+    {
+      "path": "logs/reviews/2026-09-15_G2-R03-A-self-check.md",
+      "sha256GitBlob": "f5d5d3de126c6729a5b9ef221f10d036e4bec2c79eafc898e51e25169e1ac9c0"
+    },
+    {
+      "path": "logs/reviews/2026-09-15_G2-R03-C-compliance-review.md",
+      "sha256GitBlob": "ff7a62c30bbee618a319de10f8949d9186fec4b22ccef03d7cfcd6e2c17d04dc"
+    },
+    {
+      "path": "logs/reviews/2026-09-15_G3-00-A-startup-self-check.md",
+      "sha256GitBlob": "a7c8357bb27f90beff25817423cf163bf023c83cb2b848788e10e9d0fb8ed0bb"
+    },
+    {
+      "path": "logs/reviews/2026-09-15_G3-01-B-self-check.md",
+      "sha256GitBlob": "96ea80bfccb11fc24704ddc7bc564bbe028d8e5f456fa9a9c541b27b998555d6"
+    },
+    {
+      "path": "logs/reviews/2026-09-15_G3-01-C-compliance-review.md",
+      "sha256GitBlob": "072e65280d0f7416baed15442f1389fdce76fe2e5fa92819f6d9764b8528bb91"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R03-A-caption-fix.md",
+      "sha256GitBlob": "cb3b0c208a238bba5ed01dd3fb7e34dc980a792c9fd4e0bacb544f9eb2ddcab7"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R03-A-review-repair.md",
+      "sha256GitBlob": "dcb6972ab8f1f93bd32d05839d99f0cba33321c1f2db933ef29f6ced3d113a56"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R03-C-compliance-rereview.md",
+      "sha256GitBlob": "fa72a234f0081ae946922d2d59dc9ad94e87e8af0f698032613fcd5983150dc4"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R03-C-compliance-review.md",
+      "sha256GitBlob": "e7cd5ca7276f0700a2683657f7d341fc20460b0a30248eda3685a7a51e5cfb4c"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R04-A-format-qa.md",
+      "sha256GitBlob": "92ca15adb103db3b487b45144714733f3c2a27a9b5a16dac8e84557c3905ed6c"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R04-A-format-remediation.md",
+      "sha256GitBlob": "224df64960627bf3b274fe65d3528db14b1ad6fb9fe8d34fadfc38b3df50dcbc"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R04-B-final-technical-review.md",
+      "sha256GitBlob": "b039574fb2822e08cf51ffebb9ad83e5aaba75e34353cbf7bf2e61b08586e27e"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R04-B-technical-rereview.md",
+      "sha256GitBlob": "e7e59e0869eb3f71af2662f6850ccfd3af6716439863640f552ac13f37e4cf08"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R04-B-technical-review.md",
+      "sha256GitBlob": "8de3f04387a58554a5aa4a0c85d0b63702af45b010b2b98b14b475f589e85c3b"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R04-C-compliance-rereview.md",
+      "sha256GitBlob": "01aea837336f35710351390f361fd69041e98cdafa44efa75588b703579a8161"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R04-C-compliance-review.md",
+      "sha256GitBlob": "e747d97d05ced554426f016a70b3402268c210d6d6308bc799a29b32e32b27ec"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R04-C-final-compliance-review.md",
+      "sha256GitBlob": "fae15a4ff25cb7ee65b7a1fc88a0398722dba3fdca7312304600279abec60f1c"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R05-002-A-minimal-fix.md",
+      "sha256GitBlob": "93e6cfe25c7823255f6172f3b067ebcebe38d0f3dc93dccbf97e54a6f857864d"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R05-A-consistency-audit.md",
+      "sha256GitBlob": "0cec8b379ab2e09afdfe5b518021fce2e54eaaa9fa685564ebb817293392e115"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R05-A-formal-sync-self-check.md",
+      "sha256GitBlob": "b7b8fb1f2cbb1731d53e0ec1af23f1172a058ae8e13913de2607075bc2ccac92"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R05-B-final-rereview.md",
+      "sha256GitBlob": "c703438625936067ccd4fc4c30619449e79d43810ca57cd8aa1714f31c90763d"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R05-B-final-technical-review.md",
+      "sha256GitBlob": "218a07b868d11b5f638df02c9c9da43b8981eccca39be407421dc7fe2a196169"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R05-B-technical-review.md",
+      "sha256GitBlob": "8f9e75478142ee0d058dde7541e77eb99f65d2b576e24ff95954c1f30c37f9d2"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R05-C-compliance-review.md",
+      "sha256GitBlob": "1f58e34658feff81accb04712cefe355c466b075f830be442a1de35285ab85d5"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R05-C-final-rereview.md",
+      "sha256GitBlob": "2b0980436f70de0261feee5592e3b40bcec776025509c2197bc2779e66fbe387"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R06-A-refreeze-review.md",
+      "sha256GitBlob": "3874c837f7fb07a8d7f1dd5fe13ad2918b6b63c0d32b1e2e81d8fc75bb3c2911"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R06-B-final-rereview.md",
+      "sha256GitBlob": "11d13b4fe7f02b82fa5333bd85b356ab502a76eecb0faf2db99a5069ed1e34bf"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R06-B-technical-review.md",
+      "sha256GitBlob": "f79e5e8e8d19d78a908673290634d8c8b8dd554db1a21d4b4668d7c16861232b"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R06-C-compliance-rereview.md",
+      "sha256GitBlob": "b34625b85998827b62e7ab43d4619164dfc3eadd5b4de1dc2863174d79a17fba"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R06-C-compliance-review.md",
+      "sha256GitBlob": "50f351eefc2ce922c4518837a1439df4a756191b5735b05d871c7dd6ac25bec5"
+    },
+    {
+      "path": "logs/reviews/2026-09-16_G2-R06-preflight.md",
+      "sha256GitBlob": "d5cf5a46050e27a70833d5ffdfbd9738a3f01902001391986452830a5a0020dc"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-01R-A-final-review.md",
+      "sha256GitBlob": "539191c35eef22e55481ab611e4da79fa10cbc13d7f82daf3cffc58c05bae3d4"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-01R-B-self-check.md",
+      "sha256GitBlob": "cec777d370788a4153a4ef449d65d745e99efc166d60ff8ae83102660d34b6d9"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-02-A-remediation-self-check.md",
+      "sha256GitBlob": "3a1d05ef160d1b1cd1e02b2a6c5818ab16a4f4bfb998bdf227a4f53e33db9475"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-02-A-self-check.md",
+      "sha256GitBlob": "8d842263fd88da22fda6450c47c71ba4cf4a94cee0c10d9a562002f808b32fbf"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-02-B-final-rereview.md",
+      "sha256GitBlob": "069ae6c9de1acdf5e19b116dd783bbafc515e046890095f851d543e39c1f7503"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-02-B-technical-review.md",
+      "sha256GitBlob": "68def09c09a4ad5aa0cb9ed7336588a3a6b0969e058a132939f6dddc45b6c448"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-02-C-compliance-review.md",
+      "sha256GitBlob": "3063ff55b3194b77c742d4e0d3ad54c1e94d313886090c344fc80ddc8c3a356b"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-02-C-final-rereview.md",
+      "sha256GitBlob": "49c9953854eae01edd57f7cf08ffc89a3fd3c73c28dc0c3bce4075ba3af2e5a1"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-03-A-render-qa.md",
+      "sha256GitBlob": "099702807408446a17190a2ed33d3331b333b5db0d4d80938722d5d598a151fc"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-03-A-self-check.md",
+      "sha256GitBlob": "4967e6334e31f84621cb9c3ee3392951e1f45e32120b397a176db6b307bfa9a8"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-03-C-blocker-only-rereview.md",
+      "sha256GitBlob": "7524abf452664dce3448abac9f53faea710751ac6b30414529a13c870176a26b"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-03-C-compliance-review.md",
+      "sha256GitBlob": "877110e42b9ca9d72faacbc0e19c50ecfe4fe6b7807c31776aa72ee4e2ff53ac"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-03-C-final-rereview.md",
+      "sha256GitBlob": "9cbf7606c4a0f72b4b7f494601da67657da21bbf72d393b5178a92fe14df4754"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-03-final-qa.md",
+      "sha256GitBlob": "487ebf5e766e9cebcf9ece6fa529c7c72e71ba19d33c4658f47ce9b078ae9e6a"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-03-format-only-qa.md",
+      "sha256GitBlob": "093593678ac9d35b9274729b01159de8ebee5ec403cff6e408c96177070277ca"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-03-gap-checklist.md",
+      "sha256GitBlob": "1757579b46fb431903ff78a028d39c08a4ca61318e109c6fc791df064b6c7de3"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-03-review-remediation.md",
+      "sha256GitBlob": "041d7cc6d7fc4ec093a9b87775351edb54a8b2d60c54b2c8fec446859275d52a"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-04-A-C-delivery-rereview.md",
+      "sha256GitBlob": "47e36b4a320dacf68a997724d5c486d666fbdc4ef75e8d3925aecdde36924d1f"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-04-A-technical-review.md",
+      "sha256GitBlob": "7abdf0e5c8cadaeab6a5a149a8e2fb4f86e582633294d3e3e9e7e2fb92b5fd42"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-04-B-remediation.md",
+      "sha256GitBlob": "ce3701fe7530d828156b9a89802675f0aa99df94371acd40299a58f54495ec9f"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-04-B-self-check.md",
+      "sha256GitBlob": "3ac3f436bbcbbbc2fe348975da0373257c49eb4a43f0dd19b169cea3fa059dd3"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-04-C-compliance-review.md",
+      "sha256GitBlob": "02072a2714edb9c515d653df56abaf454eb4f4def8905e0a5e701d8e6772d096"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-05-A-C-review.md",
+      "sha256GitBlob": "29cd0ab7dac0926589e1ba725b45eaec46b26deb34050b20537fc6bca931844d"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-05-B-format-remediation.md",
+      "sha256GitBlob": "088d5b3ef91f28e6c5d2e61182bde3c07bac189c39dfaad2dbdce38acf7f44fc"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-05-B-self-check.md",
+      "sha256GitBlob": "46fa597236f62ddb1da3905e1b849f26bd21eba1e09ef852fde558b625de91a3"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-05-unique-complete-review.md",
+      "sha256GitBlob": "5cde5f717c0aa8bb02984bcb1f9329fca4af55bec3b1ef554267b92702c15c59"
+    },
+    {
+      "path": "logs/reviews/2026-09-17_G3-05-unique-rereview.md",
+      "sha256GitBlob": "da0a09f5841c348583217c2aab08d35656641b946669b4287d58b0254ce73382"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-06-A-final-rereview.md",
+      "sha256GitBlob": "f85d02b1ca586cd6c601e2a9c88d7afcc3a09b5996b2293168d0854926c10a50"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-06-A-rereview.md",
+      "sha256GitBlob": "cd974a2489d843edeac4941f4d14546bfa14ee368e20bafa63fb933c4021b824"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-06-A-review.md",
+      "sha256GitBlob": "a667318dd18f83fb7f9e618c63bbd150285d5582bbc4e1a2dfb10a7711f8bc85"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-06-B-remediation.md",
+      "sha256GitBlob": "02ae69f4e5c9e4cdf2a8efb01df5a2ff403a0c3956fcf936a5e6879c428ee341"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-06-B-self-check.md",
+      "sha256GitBlob": "b38f18560917da61ebfb3d80092a30648013bd72b91c44e2ef80758ab5089bf3"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-06-C-review.md",
+      "sha256GitBlob": "0886b3d9baf25531ae0113747aebbb1b240b69d7f402c676e98f2625b5735768"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-07-A-rereview.md",
+      "sha256GitBlob": "69a9363c9b8d9ec546f4c7f41ad50a349c2afc3bf00c964a585b03dd6c48087e"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-07-A-review.md",
+      "sha256GitBlob": "3ac78720a69b86fe6a6b310485a1ea93e5573e4359259033df55df3de01fb059"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-07-B-final-close-check.md",
+      "sha256GitBlob": "12d55e7088de779f8e08c7075486aa85f9c0746aa1de4bce35a85bb84533cef2"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-07-B-remediation.md",
+      "sha256GitBlob": "28854701c1e6e487b89426fd7cadd12f653c98b29f33db435bb0e10d6b228d47"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-07-B-self-check.md",
+      "sha256GitBlob": "564fda4f01d1a34e29031c2ef8c579691262f7f6c8b439a8b1e454e0b5669ea0"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-07-C-review.md",
+      "sha256GitBlob": "1b99f2bbf89b01bf58b2e3457991845740c82e0b186c193f5285b87da3f4f011"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-08-AB-review.md",
+      "sha256GitBlob": "765df2f5113c3543678784381c6244564d4b717dbd063aa33cae01aaa3d66b93"
+    },
+    {
+      "path": "logs/reviews/2026-09-18_G3-08-C-review-qa.md",
+      "sha256GitBlob": "7f0dd12bab066b25ecb0962fbb94187c3967c9d2fcd715029824f4db4c1e8efa"
+    },
+    {
+      "path": "logs/reviews/2026-09-19_G3-08-B-technical-review.md",
+      "sha256GitBlob": "973cc028ba10fd3fc310ee4f91fd809fc63f068c2051c005ef3b39d0376eb171"
+    },
+    {
+      "path": "logs/reviews/2026-09-19_G3-08-C-owner-recheck.md",
+      "sha256GitBlob": "b352c08e71ca0268faf6a39cab9b7b415501390b3c2f452596e71375fab2ee13"
+    },
+    {
+      "path": "logs/reviews/2026-09-19_G3-09-A-final-review.md",
+      "sha256GitBlob": "13053cf14c6cff37fcc27c226cd8b610b7ebea3e69d13d52c1442596f514a1f3"
+    },
+    {
+      "path": "logs/reviews/2026-09-19_G3-09-A-reverify.md",
+      "sha256GitBlob": "34301a15c1f661b6e150e3eca1a02cc8d58f83a65720baa60284f6a9cdf91f96"
+    },
+    {
+      "path": "logs/reviews/2026-09-19_G3-09-A-review.md",
+      "sha256GitBlob": "0ad41e8a8488cb21aebb45baa3143bbe5e7ed3720decb3d4b002902236c9da48"
+    },
+    {
+      "path": "logs/reviews/2026-09-19_G3-09-C-remediation.md",
+      "sha256GitBlob": "ed53e904c433612f5747cc5005caef9f68afa3a581aa75483df83fdb12db2cb2"
+    },
+    {
+      "path": "logs/reviews/2026-09-19_G3-09-C-self-check.md",
+      "sha256GitBlob": "a1803b1decfdb78b2676db7362e2b8ed2ed844b0bbb7920fe3ca50b3bc7bfa5a"
+    },
+    {
+      "path": "logs/reviews/2026-09-19_G3-10-A-self-check.md",
+      "sha256GitBlob": "411454f591f36bbe844350043603793c9966b1916ffcbe058c4292ecc7b7ea8b"
+    },
+    {
+      "path": "logs/reviews/2026-09-19_G3-11-A-self-check.md",
+      "sha256GitBlob": "57caa13dc9726c3da66b3937ce3e46a8f1a79ca2d6c55ed80eb1118fd0e7d346"
+    },
+    {
+      "path": "logs/reviews/2026-09-20_G3-11-C-compliance-review.md",
+      "sha256GitBlob": "05f7f7e7fae84a8d6475c57b1e9c42cdee0a65581127dca98b3e2f1147c433ac"
+    },
+    {
+      "path": "logs/reviews/2026-09-20_G3-12-B-review-request.md",
+      "sha256GitBlob": "37dcfe523a7829115ff960f5e274abbc98e3552e091d7cb38644d9631a5ba151"
+    },
+    {
+      "path": "logs/reviews/2026-09-20_G3-12-B-review.md",
+      "sha256GitBlob": "22d811d0c98d89f5e4f44a9b462a25bbf840a21c651bdd6a754bd7c245f677f1"
+    },
+    {
+      "path": "logs/reviews/2026-09-20_G3-12-C-self-check.md",
+      "sha256GitBlob": "c233a1819e5d0611b92ca5ac5a8ecfe8a3596c16ec5d72a36c65bcc499b30211"
+    },
+    {
+      "path": "logs/reviews/2026-09-20_G3-13-A-self-check.md",
+      "sha256GitBlob": "04819465e6d868ed35f58b645284267e6afed70a08a13c16e1e07f3e6e434909"
+    },
+    {
+      "path": "logs/reviews/2026-09-20_G3-13-C-compliance-review.md",
+      "sha256GitBlob": "8ca1de68dd999d251c82711a2e38872a0e89d20f6d142cb85c59b48f20846bdb"
+    },
+    {
+      "path": "logs/reviews/2026-09-20_G3-13-C-rereview.md",
+      "sha256GitBlob": "7b37a83ef2f3b55a34ac8ce2b59fc3c6753eabad55d2e57b823a978db539676c"
+    },
+    {
+      "path": "logs/reviews/2026-09-20_G3-13-pair-manifest.md",
+      "sha256GitBlob": "71395b6c1398419b3ee11a6b1c3b1712d72593963914eba923c1e48052942f24"
+    },
+    {
+      "path": "logs/reviews/2026-09-20_G3-14-B-technical-review.md",
+      "sha256GitBlob": "f758362159672736dab9a9e8e3904635d2315d49d8ee9baa51dede21af2fb058"
+    },
+    {
+      "path": "logs/reviews/2026-09-20_tasks-status-normalization.md",
+      "sha256GitBlob": "e54c1efb8e9c4b1cbb79aa6d629c5d7dfdd28722623d21856f56d8d6d0433231"
+    },
+    {
+      "path": "logs/reviews/2026-09-21_G3-10-A-final-freeze-self-check.md",
+      "sha256GitBlob": "b1f71ee6fb8f8cdf884747cfd4d54bd428e45f20c1272ade42de04bd68b7517e"
+    },
+    {
+      "path": "logs/reviews/2026-09-21_G3-10-B-technical-review.md",
+      "sha256GitBlob": "1826a7a3c4196406e1638e9d7ece4fbfd2daf8688ed1847d29626eaf07e174bf"
+    },
+    {
+      "path": "logs/reviews/2026-09-21_G3-10-C-compliance-review.md",
+      "sha256GitBlob": "8711cd2a20c0a569646327ce993d8930e963c23345807665d981a80f1c59b1db"
+    },
+    {
+      "path": "logs/reviews/2026-09-21_G3-14-B-rereview.md",
+      "sha256GitBlob": "92a1477138d60da02e63ca32454abca37bd6d2648d3a8c894a16a42d3c38fa20"
+    },
+    {
+      "path": "logs/reviews/2026-09-21_daily-report-backfill-audit.md",
+      "sha256GitBlob": "ec01b31be7def664bb5b20e71c2984b51958308f42efc21f6fbc5c097614eac0"
+    },
+    {
+      "path": "logs/reviews/2026-09-22_G4-04-B-review.md",
+      "sha256GitBlob": "f3e0da8a4eda2a810f502f045ca97d72044ab06bcb3dc3cc6e4a0cdd8f3f77cd"
+    },
+    {
+      "path": "logs/reviews/2026-09-22_daily-report-backfill-through-0921-audit.md",
+      "sha256GitBlob": "aad0913879020274fdf22055659dd38616bff4cfce2296669b3594e600dcd7da"
+    },
+    {
+      "path": "logs/reviews/2026-09-23_G4-02-A-review.md",
+      "sha256GitBlob": "00ebb4087961c4e661d9e0ab0caaaf62be9974019f111dec463b7293b4207dae"
+    },
+    {
+      "path": "logs/reviews/2026-09-23_G4-02-B-remediation.md",
+      "sha256GitBlob": "e5da3cee7358fee5bcb9b4b6bcfc4c7e14216565692f426f1709759d74391b94"
+    },
+    {
+      "path": "logs/reviews/2026-09-23_G4-03-A-major-remediation.md",
+      "sha256GitBlob": "e412d2ea712bbf886629e0a9fd127cb5718f9a4d4ee01cc83dbf7242e305487e"
+    },
+    {
+      "path": "logs/reviews/2026-09-23_G4-03-A-remediation.md",
+      "sha256GitBlob": "390a1354d1a8a24b130c9d73910a48887ccbd9255769bf6f35bd76484ad445e1"
+    },
+    {
+      "path": "logs/reviews/2026-09-23_G4-03-C-rereview-2.md",
+      "sha256GitBlob": "bbc6ee5ff7b7d3cdbbe2ba50dbb1dfcab24b5381bbeb55d70c6f4e475e0da948"
+    },
+    {
+      "path": "logs/reviews/2026-09-23_G4-03-C-rereview-3.md",
+      "sha256GitBlob": "efffe997c37f6c2ab4dba552b71b6b22981e918d6efc80d67189d7d008c21453"
+    },
+    {
+      "path": "logs/reviews/2026-09-23_G4-03-C-rereview.md",
+      "sha256GitBlob": "3dbeeb9e42485e4ff3522ac51fad22fe2df14ffcb972c7e1d1ba7ba86387f957"
+    },
+    {
+      "path": "logs/reviews/2026-09-23_G4-03-C-review.md",
+      "sha256GitBlob": "e16dd0dcfc1b9cf0546f53c37376a4f967530ab1825f6ecfa7bceca5efbaa207"
+    },
+    {
+      "path": "logs/reviews/2026-09-24_G4-05-A-review.md",
+      "sha256GitBlob": "014023a645313b4471e46141e0233472b214c86716be060a42180bc56dff39e8"
+    },
+    {
+      "path": "logs/reviews/2026-09-24_G4-06-C-final-review.md",
+      "sha256GitBlob": "74c4dc35505f0370db2ad21adc85b63ac99a1bf7b5fe20980065fae84d64279d"
+    },
+    {
+      "path": "logs/reviews/2026-09-24_G4-06-C-rereview.md",
+      "sha256GitBlob": "9768e34480e3d83f2968db489c47d16a2f53cabf3765a9457cdbe1c46556876a"
+    },
+    {
+      "path": "logs/reviews/2026-09-24_G4-06-C-review.md",
+      "sha256GitBlob": "c48af6ed767ae9bd2eaca87bb7ca11f60a204192f1b65a28943da25bba8fdcd6"
+    },
+    {
+      "path": "logs/reviews/2026-09-25_G4-05-A-rereview.md",
+      "sha256GitBlob": "43810fc8174bfafe24fb62ec1b247bcfed195bcc09898b02bc299e627365b9fc"
+    },
+    {
+      "path": "logs/reviews/2026-09-25_G4-05-B-integration-remediation.md",
+      "sha256GitBlob": "065d386b96de61d7760a6b1cca1785ef810743b6732a7d002a668d519a2866a3"
+    },
+    {
+      "path": "logs/reviews/2026-09-25_G4-05-B-remediation.md",
+      "sha256GitBlob": "1834b5f9d01c0a22d3139aa7ec704a5506f2054421fdb07fa2397c4f8c33eb4f"
+    },
+    {
+      "path": "logs/reviews/2026-09-25_G4-07-integration-precheck.md",
+      "sha256GitBlob": "cc192ca8bcc4f334a811a8a225e22c6e7296c7792d678f8676ea94315d5c4422"
+    },
+    {
+      "path": "logs/reviews/2026-09-26_G4-05-A-pr14-review.md",
+      "sha256GitBlob": "99f5b88bc0655f2c7447c5a308b7ac21c147609e7a5eef5dfdb1f0a8a0411565"
+    },
+    {
+      "path": "logs/reviews/2026-09-26_G4-07-B-rereview.md",
+      "sha256GitBlob": "9b6e89cd988705dedcf60a6a3af7fe3d214260d5c63822cdfff1f1d39a1a4a03"
+    },
+    {
+      "path": "logs/reviews/2026-09-26_G4-07-B-review.md",
+      "sha256GitBlob": "50d849c25523ffce9425727f11564e3b473e9e86a3cf1420b8c475d6429dce85"
+    },
+    {
+      "path": "logs/reviews/2026-10-08_G4-09-11-C-rereview.md",
+      "sha256GitBlob": "a3954ad33281d652234941922c7983e6eb2cd52062a88c5c1cd765f07068e22a"
+    },
+    {
+      "path": "logs/reviews/2026-10-08_G4-09-11-C-review.md",
+      "sha256GitBlob": "cb07513beacc250c54849b960590b65504ae81975fd2ac548092fa9f389aa1c9"
+    },
+    {
+      "path": "logs/reviews/2026-10-08_G4-ACCEPTANCE-PPT-01-C-review.md",
+      "sha256GitBlob": "14e8fae89fa404455295a4cf1db1ca022587301c8eba0289f521522874d49405"
+    },
+    {
+      "path": "logs/reviews/2026-10-08_G5-00-A-startup-selfcheck.md",
+      "sha256GitBlob": "a9502b7c71e5587df31c030f51f1c5687c5c04d2320b94970ac8ad166c695276"
+    },
+    {
+      "path": "logs/reviews/2026-10-08_G5-01-A-review.md",
+      "sha256GitBlob": "ecd8c9dc9a2c990d1302b3851bc0179fb5cdf85ed290365182d42559ea2e8670"
+    },
+    {
+      "path": "logs/reviews/2026-10-09_G5-01-A-rereview-2.md",
+      "sha256GitBlob": "6d466a431fef9a5698a7e2c9caaadafa1687b7de1e8a42f3a02c13b8abb6cc48"
+    },
+    {
+      "path": "logs/reviews/2026-10-09_G5-01-A-rereview-3.md",
+      "sha256GitBlob": "b9b539552b7712ddc3350149b4d7df1ac066231903687c958f1873edbf99c40e"
+    },
+    {
+      "path": "logs/reviews/2026-10-09_G5-01-A-rereview.md",
+      "sha256GitBlob": "5e34df0c13d6e92163d9756a4afb7efce486975f52cc6dc2ae0ef704bd32ccfa"
+    },
+    {
+      "path": "logs/reviews/2026-10-09_G5-02-C-rereview-2.md",
+      "sha256GitBlob": "e6c2fff0b67992115e1d2e7ababb16b5c9ad8c0274b679669cda927c3abfd5d5"
+    },
+    {
+      "path": "logs/reviews/2026-10-09_G5-02-C-rereview-3.md",
+      "sha256GitBlob": "a80580580a4e78b74c92d6843ab35c0e83bd18917dccf0ab2a00f047c3b03a17"
+    },
+    {
+      "path": "logs/reviews/2026-10-09_G5-02-C-rereview.md",
+      "sha256GitBlob": "f402bcf04e56e1893f985857c5db697b6a7a4a7ec4c88d9ede67e3266e23f8b1"
+    },
+    {
+      "path": "logs/reviews/2026-10-09_G5-02-C-review-request.md",
+      "sha256GitBlob": "0d9366e569581d72ac53db709afe6bcd90e8aca216e09196975c434fb89acec0"
+    },
+    {
+      "path": "logs/reviews/2026-10-09_G5-02-C-review.md",
+      "sha256GitBlob": "6974d8ce8a002a19fd89bf3a10bc08c03ad4f7723ec120cb6cac4dc1439e41c3"
+    },
+    {
+      "path": "logs/reviews/2026-10-10_G5-02-C-final-course-acceptance-request.md",
+      "sha256GitBlob": "2f0f3ed2c54968f2a10d1b8a6cce156cc307c6585a0c2175b7c87d89b2a54bfc"
+    },
+    {
+      "path": "logs/reviews/2026-10-10_G5-02-C-final-course-acceptance.md",
+      "sha256GitBlob": "389bafb5398801109096d8e83811e8ea886e416d067809ebbd873c435fd1d48b"
+    },
+    {
+      "path": "logs/reviews/2026-10-10_G5-02-C-rereview-4.md",
+      "sha256GitBlob": "50568dcab3b4616688ae830b11c8eecc30f8853e16df0018f5062d331ccb76fc"
+    },
+    {
+      "path": "logs/reviews/2026-10-10_G5-02-C-rereview-5.md",
+      "sha256GitBlob": "9b7f5a6c50d49cc9bc9c3e877d6cea344ba83b929ca2a33e3a646c4f8869071a"
+    },
+    {
+      "path": "logs/reviews/2026-10-10_G5-02-C-standard-calibration.md",
+      "sha256GitBlob": "7a1d276c88e3fdb406549bfeb4a4ba02204bea4bc4259d2a0564723c85de8bf4"
+    },
+    {
+      "path": "logs/reviews/2026-10-11_G5-01-A-final-review.md",
+      "sha256GitBlob": "5022f3e31797dcac5eed9e90d610f44ca3c9702dcd616d1e1039e46a6d87831f"
+    },
+    {
+      "path": "logs/reviews/2026-10-11_G5-03-C-final-review.md",
+      "sha256GitBlob": "658705654fd214b7edba72da494ea7fabf6b256e35deeecacce2ad50c87189a6"
+    },
+    {
+      "path": "logs/reviews/2026-10-11_G6-00-C-review.md",
+      "sha256GitBlob": "0394058007a0899eca30bb4069c6354b1155c2c83764c0df7ac5f47fcf301ab5"
+    },
+    {
+      "path": "logs/reviews/2026-10-11_G6-01-A-review-request.md",
+      "sha256GitBlob": "957e76f7b4f1c3dcede6a3c7a55b4dd73e126a43c6c9a6dcf55891b7df24d6be"
+    },
+    {
+      "path": "logs/reviews/2026-10-11_G6-02-B-review.md",
+      "sha256GitBlob": "d8d1e67c74799257dd6b803aab3fb6b45f8071cfd00474bd7f29f95934d32f6b"
+    },
+    {
+      "path": "logs/reviews/2026-10-11_G6-03-C-review-request.md",
+      "sha256GitBlob": "21bec3342257004b0a1a4de9d8c15f0041bccc5fc80ed84bf19681494512f547"
+    },
+    {
+      "path": "logs/reviews/2026-10-12_G6-02-B-final-rereview.md",
+      "sha256GitBlob": "a8af96f5a3a357729c41afd0e6dd63bd0643f96413c6cbe587027fcb3881db6f"
+    },
+    {
+      "path": "logs/reviews/2026-10-12_G6-02-B-final-review.md",
+      "sha256GitBlob": "540a0d66f211e21541ee06e35e6a9b043f61c0501ca506a562085e25e2396a7a"
+    },
+    {
+      "path": "logs/reviews/2026-10-12_G6-03-C-rereview.md",
+      "sha256GitBlob": "24f32d2a1236867dbd303e01dbb6367ecf9fc7d2cc97685839cb7ff1c59e1f78"
+    },
+    {
+      "path": "logs/reviews/2026-10-12_G6-03-C-review.md",
+      "sha256GitBlob": "bf025ce84325d106b1453c9e65aea70e865a339fe263ae22d4491e0eb1289ff2"
+    },
+    {
+      "path": "logs/reviews/2026-10-12_daily-report-backfill-through-1011-audit.md",
+      "sha256GitBlob": "b4eac643dac839eefe4cbae0b34ea695e42137eaea2e6c9ce2637fd74983c080"
+    },
+    {
+      "path": "logs/reviews/G3-14-A-self-check.md",
+      "sha256GitBlob": "b3825931bfcdc6da3009bd21820b2afc819f8a7abf4ccc840b52d13a7cc09b62"
+    },
+    {
+      "path": "logs/reviews/G3-14_render/artifact.md",
+      "sha256GitBlob": "1507f80577da593eda0cd6914ba1f69f74514e9370b834bb58edb1cea1dc966c"
+    },
+    {
+      "path": "logs/reviews/README.md",
+      "sha256GitBlob": "323ab1f9c3622b81e12749ad8163427bf9a50a240dca55479cb527e9adcc62e3"
+    },
+    {
+      "path": "logs/reviews/final_docx_format_exact_alignment.md",
+      "sha256GitBlob": "8ec1beff3c9de085c37f1c6ad20d64e5cae7b295964fa298697093ce7a865121"
+    },
+    {
+      "path": "logs/reviews/final_format_alignment_audit.md",
+      "sha256GitBlob": "3a42d3757a7362b6d1a6cdffdb728fce2128975dd744fc5835559bb3d741e3d4"
+    },
+    {
+      "path": "logs/reviews/formal_deliverable_format_audit_04_05_06.md",
+      "sha256GitBlob": "5d4a1ddd35106da6063144925a8e68d4576b12ece3e1231913cee02007306930"
+    }
+  ]
+}

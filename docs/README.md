@@ -115,3 +115,15 @@
 G6-01当前状态（2026-10-12）：A整改复验PASS，tasks置DONE；[复验记录](work/G6/G6-01_A_rereview.md)。用户手册§4.3证据介质小错已同步正式件；G6-02索引增量与G6-03 C整体复核、真实履约延期继续挂账。
 
 G6-02当前状态（2026-10-12）：B最终整体再复验接受后，A目录/计划/一致性复验PASS，tasks置DONE；[复验记录](work/G6/G6-02_A_rereview.md)。唯一索引GI-001—050各时点hash核对通过，当前状态小错已修正；真实履约及G6-03/G6-04剩余任务继续挂账。
+
+## G6-04 当前资料与送审入口（2026-10-13）
+
+G6-01/02/03当前状态以tasks及最终Review为准，均DONE并保留REAL_WORLD_DEFERRED；本轮G6-04事实基线、总结候选、债务移交和最终归档视图已进入制作/审计流程，尚待C整体符合性复核与B最终技术确认，不宣称G6全关或真实验收通过。
+
+- work/G6/G6-04_fact_baseline.md：锁定最新master的事实/计划/执行与偏差。
+- work/G6/G6-04_project_development_summary.md及deliverables/G6/46-项目开发总结报告.docx/.pdf：同源总结送审候选。
+- work/G6/technical_debt_transfer.md：真实履约、backlog、缺测与补测移交。
+- work/G6/G6-04_A_self_review.md：A自检/风险与准出清单。
+- ../evidence/g6/G6-04/INDEX.md：A最终归档视图；不替代C唯一交付/验收索引；尚未冻结。
+- ../evidence/g6/G6-04/review-request.md：C整包复核/B最终技术确认的具体范围。
+- ../logs/history/2026-10-13-g6-04-bootstrap-preserved/：用户授权隔离的旧差异/Prompt/输入与工作树保留位置。

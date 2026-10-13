@@ -1,0 +1,77 @@
+{
+  "mode": "NEW DOCUMENT",
+  "reference": "docs/reference/46-项目开发总结报告（复盘·教学样例）.docx",
+  "referenceSha256": "e4a7c911133e287471d3e23ff97d1112ba6da3ea43726bc59446d8d416e0fca5",
+  "target": "docs/deliverables/G6/46-项目开发总结报告.docx",
+  "source": "docs/work/G6/G6-04_project_development_summary.md",
+  "physicalCopy": true,
+  "renderer": "Microsoft Word COM, native PDF export + Poppler",
+  "referencePages": 10,
+  "visualReview": "PASS",
+  "elements": {
+    "pageGeometry": "MATCH: cloned sectPr page size/margins/header/footer distances",
+    "frontMatter": "MATCH: cloned cover/revision/TOC/body-start; no independent date page in Pair",
+    "styleInheritance": "MATCH: original styles/basedOn/docDefaults/theme/numbering retained",
+    "paragraphDirectFormatting": "MATCH: normal p21, heading1 p26, heading2 p22, caption p25; actual pPr/rPr cloned",
+    "tableDirectFormatting": "MATCH: body table1 tblPr/header/body tcPr/pPr/rPr; column counts and widths adapted to 3 fields",
+    "headersFootersPageFields": "MATCH: original parts/references retained, project text replaced; Word updates fields",
+    "imageDimensions": "MATCH/NONE: no project figures; teaching charts with unverifiable times/AI numbers removed",
+    "pageVisualResult": "MATCH: all final/reference pages inspected; project-specific content length differs"
+  },
+  "structuralDeviation": "NEW DOCUMENT: project-specific chapters replace case chapters; unsupported time/AI charts omitted; debt paragraphs replace narrow case table; no case data reused.",
+  "businessTables": 2,
+  "businessCaptions": [
+    "表 1-1",
+    "表 4-1"
+  ],
+  "figures": 0,
+  "contentFreezeCheck": "N/A NEW DOCUMENT; work-to-deliverable equality checked separately",
+  "packagePartsInherited": {
+    "word/styles.xml": true,
+    "word/numbering.xml": true,
+    "word/theme/theme1.xml": true
+  },
+  "sourceSha256": "3cf1bf057d496019a0384026e272a48074b3ab548d3b60e8963d4222ec133821",
+  "finalPages": 15,
+  "inspectedReferencePages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "inspectedFinalPages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "finalDocxSha256": "cd66c4807a33128f35e6b937f6bfe094a54aaa25e7473be9390abb866c47f244",
+  "finalPdfSha256": "ed8438ad1632fffd4d1e89ff4ed1ae154f3cac5532f1458bc1b147c62f0d46eb",
+  "actualFixes": [
+    "Cover project field retained two lines",
+    "Approval field retained pending"
+  ],
+  "visualReviewMethod": "Same Word COM renderer; Reference10/final15 pages individually viewed; final rerender pixel hashes exactly match inspected pages",
+  "warnings": [
+    "fitz unavailable; used native Poppler",
+    "Poppler Symbol/ArialUnicode warnings, actual pages legible"
+  ],
+  "postWordCanonicalInheritance": "See final-ooxml-inheritance.json; XML declaration/newline bytes changed, canonical styles/numbering/theme identical"
+}

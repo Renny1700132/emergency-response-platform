@@ -1,0 +1,16 @@
+{
+  "word/styles.xml": false,
+  "word/numbering.xml": false,
+  "word/theme/theme1.xml": true,
+  "sectionCount": [
+    3,
+    3
+  ],
+  "pageGeometryMatch": true,
+  "canonicalXmlEquality": {
+    "word/styles.xml": true,
+    "word/numbering.xml": true,
+    "word/theme/theme1.xml": true
+  },
+  "byteDifferenceReason": "Word native save changed XML declaration quoting/newline; actual style elements are canonical XML equal"
+}

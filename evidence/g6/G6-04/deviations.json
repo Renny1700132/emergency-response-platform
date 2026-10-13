@@ -1,0 +1,65 @@
+[
+  {
+    "id": "DEV-01",
+    "plan": "项目计划v1 WBS3.7/3.8：W5/W6真实视频、消息连通并纳入M2；P1全部接口责任不删",
+    "actual": "六类甲方系统真实联调0/6；已接受课程模拟链路",
+    "evidence": "docs/work/A_PM/project_plan_v1.md §2.3；G6-02 metrics-ledger、gaps-deferrals GAP007；OVR-039",
+    "cause": "真实账号、合法数据、网络及窗口没有就绪记录；G6-03另有模拟授权，模拟不能提供真实回执",
+    "impact": "KN-006/007/008/009/010/060/064真实验收证据缺失，课程接受不能关闭",
+    "improvement": "A在下一次联调前取得甲方资源清单，B按八端口与六类资源逐项实跑，C检查同traceId证据后关闭"
+  },
+  {
+    "id": "DEV-02",
+    "plan": "P1全39FR功能覆盖/验收用例全部通过；G4执行范围优先001—029，030—039保留backlog",
+    "actual": "117AC为11 PASS/59 NOT_RUN/47 BLOCKED；30AC实现延期、76AC缺完整证据",
+    "evidence": "tasks G4范围；G6-02 metrics-ledger/gaps005—006；G5-01 functional-gate-raw.json",
+    "cause": "已登记backlog未获后续实现授权；其余AC未取得完整逐AC断言或所需环境，套件通过未覆盖全部AC",
+    "impact": "KN-031/032不满足真实全量验收；不得把RTM链路存在视作PASS",
+    "improvement": "B/A按原FR实施获授权backlog，C冻结逐AC证据清单，先解决59未测与17非backlog阻断后重评"
+  },
+  {
+    "id": "DEV-03",
+    "plan": "G6-01 DoD每命令有实际输出、部署回退完整、发布版本一致",
+    "actual": "首轮A NEED_FIX，B整改V0.2后A接受；26条本地隔离步骤可核验",
+    "evidence": "docs/work/G6/G6-01_A_review.md、G6-01_B_remediation.md、G6-01_A_rereview.md；commit6255f94/e223f6d",
+    "cause": "首版关闭入口、命令证据、完整交付部署回退、版本映射分别命中ISSUE-G6-01-001—004；HTTP测试介质另有005小错",
+    "impact": "增加整改与复验次数；返工工时未知；真实KN-065仍未满足",
+    "improvement": "正式手册前锁release commit，实跑命令台账与环境指纹先验收，区分内存HTTP和PostgreSQL证据"
+  },
+  {
+    "id": "DEV-04",
+    "plan": "G6-02最终审计挂接已接受手册、试演、版本hash和Review",
+    "actual": "首版/后续增量经过B/A复验接受，保留29与21/18/11各快照",
+    "evidence": "G6-02_A_review.md、G6-02_A_rereview.md；commit6fad770/cbc5dfb；G6-02 delivery-index.json",
+    "cause": "后续手册与接受记录未完整进入首版，旧状态表达滞后；ISSUE-G6-02-002—006记录修复",
+    "impact": "首版可用20/9不能充当最终齐套指标；重复相加会引入分母漂移",
+    "improvement": "C以同一索引日期化增量，A只引用账本；发布材料逐项挂当前接受记录而非候选快照"
+  },
+  {
+    "id": "DEV-05",
+    "plan": "G6-03引用当前手册/审计接受和实际发布版本；C整体复核",
+    "actual": "C要求状态/来源整改后定向接受课程试演，真实现场与意见仍延期",
+    "evidence": "logs/reviews/2026-10-12_G6-03-C-review.md、2026-10-12_G6-03-C-rereview.md；commitb03de12/5ac7836",
+    "cause": "G6-01/02已完成时，答辩页脚、讲稿和移交仍保留旧候选状态；ISSUE-G6-03-002",
+    "impact": "下游材料不能直接从旧摘要继承当前结论；未取得真实现场意见不得填验收通过",
+    "improvement": "A发布前核对tasks+最新Review+页脚来源三处，版本变更只复验受影响链，现场记录独立增量"
+  },
+  {
+    "id": "DEV-06",
+    "plan": "G6-04使用AI代码占比、打回率、复用次数、返工成本驱动复盘",
+    "actual": "G6-02四项均UNKNOWN；可统计留档Prompt块与Review文件，不能折算工时或代码比例",
+    "evidence": "G6-02 metrics-ledger AI四行；本轮ai-log-census.json",
+    "cause": "尚无可靠代码归因样本、冻结唯一首审事件集合、模式ID真实调用明细和实际返工工时账",
+    "impact": "无法证明AI节省时间或净收益；日志文件数不等于Review事件次数",
+    "improvement": "下一轮由C锁统计范围，A记录任务工时，B提供行级归因，Prompt调用明确模式ID后才核算"
+  },
+  {
+    "id": "DEV-07",
+    "plan": "投标W1—W20及M1—M5合同里程碑；课程D18与G1—G6执行节点分轨",
+    "actual": "Git/Review有2026-09至10月实际提交记录；合同起算日及D18公历未确认",
+    "evidence": "project_plan_v1.md §1.3/§2.3；G6计划§4；key_numbers KN046—050；gaps014；git-history.txt",
+    "cause": "合同生效和教师日程无可定位确认记录；不得用Git时间猜测合同周数或实际工时",
+    "impact": "不能量化延期天数、SPI或人时偏差，日期差未知",
+    "improvement": "A获得正式起算/窗口记录后建立日历映射，提交时间只作证据时间，不当作持续工作时长"
+  }
+]

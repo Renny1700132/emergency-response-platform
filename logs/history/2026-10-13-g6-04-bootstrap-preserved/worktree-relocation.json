@@ -1,0 +1,46 @@
+[
+  {
+    "status": [],
+    "unchanged": true,
+    "preserved": "E:\\ZongHeShiXi\\emergency-response-platform-preserved-worktrees-G6-04\\g4-05-audit",
+    "original": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-05-audit",
+    "head": "a35fc593c3ff66cc1222e041113d4d0a34eea8d7"
+  },
+  {
+    "status": [],
+    "unchanged": true,
+    "preserved": "E:\\ZongHeShiXi\\emergency-response-platform-preserved-worktrees-G6-04\\g4-06-work",
+    "original": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-06-work",
+    "head": "33610a3bc5518d90adedcc68c370fdc214c3fdbf"
+  },
+  {
+    "status": [],
+    "unchanged": true,
+    "preserved": "E:\\ZongHeShiXi\\emergency-response-platform-preserved-worktrees-G6-04\\g4-09-work",
+    "original": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-09-work",
+    "head": "a8daed5e3f1d6f475bc4433a8d9488b9bc46db87"
+  },
+  {
+    "status": [
+      " M \"docs/deliverables/g4_acceptance_ppt/\\346\\237\\220\\350\\207\\252\\347\\204\\266\\345\\215\\232\\347\\211\\251\\351\\246\\206\\346\\231\\272\\350\\203\\275\\350\\277\\220\\350\\220\\245\\344\\270\\255\\345\\277\\203-\\345\\272\\224\\346\\200\\245\\347\\256\\241\\347\\220\\206\\345\\255\\220\\347\\263\\273\\347\\273\\237-\\351\\252\\214\\346\\224\\266\\346\\261\\207\\346\\212\\245-v1.0.pptx\""
+    ],
+    "unchanged": true,
+    "preserved": "E:\\ZongHeShiXi\\emergency-response-platform-preserved-worktrees-G6-04\\g4-acceptance-ppt",
+    "original": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-acceptance-ppt",
+    "head": "c2af5dfb779ba87bddafec8c146348390c4aa770"
+  },
+  {
+    "status": [],
+    "unchanged": true,
+    "preserved": "E:\\ZongHeShiXi\\emergency-response-platform-preserved-worktrees-G6-04\\g4-final-closeout",
+    "original": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-final-closeout",
+    "head": "e2dd276ca230185d3bda8ffb192af73250b73322"
+  },
+  {
+    "status": [],
+    "unchanged": true,
+    "preserved": "E:\\ZongHeShiXi\\emergency-response-platform-preserved-worktrees-G6-04\\g4-ppt-direct-master",
+    "original": "E:\\ZongHeShiXi\\emergency-response-platform\\.worktrees\\g4-ppt-direct-master",
+    "head": "3b47e8f97caac1fa6dc989fd1ff5279bd1eb5450"
+  }
+]

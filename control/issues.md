@@ -2077,3 +2077,10 @@ ISSUE-G6-03-002：MAJOR / REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。依据
 - 技术证据沿用条件成立：A 的 `b03de12..120c4aa` 整改未修改 `backend/` 或 `frontend/`，因此 C 上轮基于相同已接受应用代码完成的 23/23 复演和完整 `npm run quality` 结果继续有效，不重复执行无风险增量测试。
 - 结论：0 BLOCKER、0 MAJOR、0 MINOR；`ACCEPTED / COURSE_SIMULATED_REHEARSAL_ACCEPTED / REAL_WORLD_DEFERRED`。G6-03 可置 DONE；`ISSUE-G6-00-001` 继续 OPEN，真实甲方环境、真实现场、KN-065、签署及现场意见仍须后续补测/补录。
 - 证据：`logs/reviews/2026-10-12_G6-03-C-rereview.md`、`evidence/g6/G6-03/C-rereview/review-result.json`及逐页渲染件。
+
+## ISSUE-G6-04-001｜本轮总结与归档待C唯一索引增量及真实C/B复核
+- 日期：2026-10-13；登记A；状态OPEN / REVIEW_HANDOFF，阻断G6-04最终冻结，不阻断送审提交；不重新打开G6-02历史接受。
+- 事实：G6-04总结源/DOCX/PDF、事实/债务/归档/自检已形成送审包；新增总结规划路径使当前初版路径存在数23，G6-02历史22/29仍是原时点。旧校验器当前断言失败、启动快照PASS均保留。
+- 责任：A主责修改总结/移交；C整体符合性与唯一索引日期化增量；B最终技术确认及债务接收。
+- 解除：真实C/B完成整包复核、A整改及指定复验，C在同一索引纳入本轮commit/hash/Review并保留历史分母，A再执行最终准出。用户明确等待真实成员，不使用子代理，不代签或预写接受。
+- 真实现场/接口/KN-065/签署等仍在technical_debt_transfer；本Issue不赋予真实验收PASS或新课程豁免。

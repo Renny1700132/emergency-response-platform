@@ -1,0 +1,828 @@
+3b47e8f97caac1fa6dc989fd1ff5279bd1eb5450	2026-10-12T23:27:08+08:00	2026-10-12T23:27:08+08:00	yylinb	chore(G6-03): backfill C rereview push evidence
+5ac78366ddb2ded9f839ffdae57077ee6d7c5a48	2026-10-12T23:26:33+08:00	2026-10-12T23:26:33+08:00	yylinb	review(G6-03): accept A remediation and close task
+120c4aa665c2e5077ee961849723fd026235064e	2026-10-12T22:55:53+08:00	2026-10-12T22:55:53+08:00	WhiteApricot	chore(G6-03): backfill remediation commit and push evidence
+b03de12d861afc9bbb731a900f96b6a2faeb4d5d	2026-10-12T22:55:03+08:00	2026-10-12T22:55:03+08:00	WhiteApricot	fix(G6-03): align defense status and sources with latest C review
+93934c5262e1e4405cc7ece1fe733e85076e4761	2026-10-12T21:37:04+08:00	2026-10-12T21:37:04+08:00	WhiteApricot	chore(daily): backfill report commit and push evidence
+5c5fa6a6e0ff2728afffc839a8d490d1302d9ed4	2026-10-12T21:35:05+08:00	2026-10-12T21:35:05+08:00	WhiteApricot	Merge remote-tracking branch 'origin/master'
+1f119c377ac175591d634988a433254aa3f1a1ad	2026-10-12T21:34:20+08:00	2026-10-12T21:34:20+08:00	WhiteApricot	docs(daily): backfill missing member reports through October 11
+74c9af423adce79d3b4c5f95636c186025818534	2026-10-12T21:27:13+08:00	2026-10-12T21:27:13+08:00	yylinb	chore(G6-03): backfill C review push evidence
+b0ee1915ebaddb767e35aeb712f279f43e8968ac	2026-10-12T21:26:29+08:00	2026-10-12T21:26:29+08:00	yylinb	review(G6-03): request status and source alignment
+5a4765af609469d3d71f76710ab93c9094be7daf	2026-10-12T21:10:30+08:00	2026-10-12T21:10:30+08:00	WhiteApricot	chore(G6-02): backfill A review push evidence
+cbc5dfb23fa5a33708f992d844ee0910d77b0be2	2026-10-12T21:09:55+08:00	2026-10-12T21:09:55+08:00	WhiteApricot	review(G6-02): accept audit remediation and close task
+b8f729dbb48aaafa9ed5cdf93f0f8afbf6a0e5ba	2026-10-12T18:25:38+08:00	2026-10-12T18:25:38+08:00	RenJQ	chore(C): backfill daily report push evidence
+cd41d15d5a33c74e27fa2ee90e5b8dd1c898cb20	2026-10-12T18:25:04+08:00	2026-10-12T18:25:04+08:00	RenJQ	docs(C): backfill daily reports through October 12
+41b8180f8c911a479b5451af465e7279f90ce55e	2026-10-12T18:07:38+08:00	2026-10-12T18:07:38+08:00	yylinb	chore(G6-02): backfill B rereview push evidence
+6fad7700a00ad23666613ac102705f246b978a03	2026-10-12T18:07:02+08:00	2026-10-12T18:07:02+08:00	yylinb	review(G6-02): accept C audit remediation
+56dbeffbf0ee74a45d5de5cef8a2df56382ef6f3	2026-10-12T17:52:07+08:00	2026-10-12T17:52:07+08:00	RenJQ	chore(G6-02): backfill V0.2 audit push evidence
+ca5b916a235baee9afcd90b9378ba2e06861fe0b	2026-10-12T17:51:41+08:00	2026-10-12T17:51:41+08:00	RenJQ	docs(G6-02): record A rereview log backfill
+81fc5a4a0e879cccc94e2b2862d735970e40284e	2026-10-12T17:51:21+08:00	2026-10-12T17:51:21+08:00	RenJQ	Merge remote-tracking branch 'origin/master'
+858f1f054dd6cd9778c66319c2c475d4aa14efea	2026-10-12T17:50:50+08:00	2026-10-12T17:50:50+08:00	RenJQ	merge(G6): integrate G6-01 rereview into G6-02 audit
+d322c64fbac95aebf55692e6be8a90ddc87272d2	2026-10-12T17:47:32+08:00	2026-10-12T17:47:32+08:00	WhiteApricot	chore(G6-01): backfill A rereview push evidence
+6f5d86ea58dd3438cd4959d829b6432f8162c7a1	2026-10-12T17:46:48+08:00	2026-10-12T17:46:48+08:00	RenJQ	docs(G6-02): index G6-01 V0.2 remediation
+e223f6d40b90c2f910297afc380e270819e31132	2026-10-12T17:45:49+08:00	2026-10-12T17:45:49+08:00	WhiteApricot	review(G6-01): accept remediation and correct test evidence scope
+d17847d10ab0009f2b7c1468cf5540d90a3c0694	2026-10-12T16:58:17+08:00	2026-10-12T16:58:17+08:00	yylinb	chore(G6-02): backfill B review push evidence
+f9dfc2042c7cb4181b2a5041405d64d6e9d35790	2026-10-12T16:57:52+08:00	2026-10-12T16:57:52+08:00	yylinb	review(G6-02): request final audit fixes
+e4116cedd9c2d820a88f7ba6c0dff839bc2c4e08	2026-10-12T16:48:03+08:00	2026-10-12T16:48:03+08:00	yylinb	chore(G6-01): clarify delivery point in audit log
+77f7a71ec1b2dfbe6ac61b344d83ef43080e01ff	2026-10-12T16:47:13+08:00	2026-10-12T16:47:13+08:00	yylinb	chore(G6-01): backfill remediation push evidence
+a8f81348c221b59b67af8a2999252d842b59c2a2	2026-10-12T16:46:11+08:00	2026-10-12T16:46:11+08:00	yylinb	Merge remote-tracking branch 'origin/master'
+6255f943212efa7e81fe7bac10c71005f2da895b	2026-10-12T16:45:10+08:00	2026-10-12T16:45:10+08:00	yylinb	fix(G6-01): address A manual and deployment review
+75f01c3bb33369d3785acf69a3a00eb983aa188b	2026-10-12T16:23:23+08:00	2026-10-12T16:23:23+08:00	yylinb	fix(G6-01): align formal workbench and deployment evidence
+17636b7f3ce8cfea0b219108d3124dc1c511bfce	2026-10-12T16:19:23+08:00	2026-10-12T16:19:23+08:00	yylinb	fix(G6-01): remove external static host image dependency
+89bedb98c7d596e877f498016ca31d513bcf4bd5	2026-10-12T16:15:31+08:00	2026-10-12T16:15:31+08:00	yylinb	fix(G6-01): run cleanliness check before evidence capture
+da37197de302fda104af99ffd93d108c2b28d2f3	2026-10-12T16:14:40+08:00	2026-10-12T16:14:40+08:00	yylinb	fix(G6-01): support managed worktree deployment evidence
+6f56ab648433bb5673d4e8fcd5a8c8755dad02be	2026-10-12T16:12:44+08:00	2026-10-12T16:12:44+08:00	RenJQ	chore(G6-02): backfill remediation push evidence
+0de68849c9307083e2989161cb178111fea2be99	2026-10-12T16:12:06+08:00	2026-10-12T16:12:06+08:00	RenJQ	docs(G6-02): close delivery and audit increments
+52acbf8b44611d9ca0dcd05d5cebb4f412f0c048	2026-10-12T16:10:30+08:00	2026-10-12T16:10:30+08:00	yylinb	fix(G6-01): close workflow and deployment review gaps
+cfdb6f5f4f75bdcce04754f513668796da62326c	2026-10-12T15:31:17+08:00	2026-10-12T15:31:17+08:00	WhiteApricot	chore(G6): record A review commit and push evidence
+72aadc1baa805befa5fb240281f6be785069810e	2026-10-12T15:30:02+08:00	2026-10-12T15:30:02+08:00	WhiteApricot	review(G6): A requests fixes for manuals and delivery audit
+40f2002d4556ac2073361759ca15b41066e3cef9	2026-10-11T23:19:47+08:00	2026-10-11T23:19:47+08:00	WhiteApricot	chore(G6-03): record candidate commit and authorized push
+8dbfbabf6ab494a9ca3ad4f7ff27bb1bb05e453a	2026-10-11T23:18:21+08:00	2026-10-11T23:18:21+08:00	WhiteApricot	docs(G6-03): deliver simulated acceptance defense and rehearsal evidence
+deaddc6e454dcd1064db2e2271838b5ef19ad87c	2026-10-11T21:45:48+08:00	2026-10-11T21:45:48+08:00	yylinb	review(G6-02): accept initial audit candidate
+ad4febe43e8d09698830a494a8e5fc4dde80ba6c	2026-10-11T21:34:37+08:00	2026-10-11T21:34:37+08:00	yylinb	chore(G6-01): backfill delivery log
+f9eec53c95b5874ee4282286417ac5dfec5f173c	2026-10-11T21:33:16+08:00	2026-10-11T21:33:16+08:00	yylinb	docs(G6-01): build user and operations manuals
+e194cdbcf77ac5026895c5ec0aab9ed7c0970ba4	2026-10-11T20:58:45+08:00	2026-10-11T20:58:45+08:00	RenJQ	chore(G6-02): backfill candidate push evidence
+56e9da92905a0d7d8f3cdf66131e2a6a5e046746	2026-10-11T20:58:08+08:00	2026-10-11T20:58:08+08:00	RenJQ	docs(G6-02): build delivery audit candidate
+beb605f83e738a39dfe388ed4bc25b5b724eddcf	2026-10-11T20:43:20+08:00	2026-10-11T20:43:20+08:00	RenJQ	chore(G6-00): backfill remediation push evidence
+0b56623e28d907cca0746387225e4c0b17818eff	2026-10-11T20:42:53+08:00	2026-10-11T20:42:53+08:00	RenJQ	fix(G6-00): correct task-book pagination and close review
+d893a53553f87d4865c6d7cb96e25fb98aabe12d	2026-10-11T20:32:22+08:00	2026-10-11T20:32:22+08:00	RenJQ	chore(G6-00): backfill review push evidence
+c7cd54fa127835c205c3190b21df2c4ecaf833b3	2026-10-11T20:31:48+08:00	2026-10-11T20:31:48+08:00	RenJQ	review(G6-00): request source pagination correction
+b164351a27c08f72deca29fa0a1983316d38c6d9	2026-10-11T20:23:31+08:00	2026-10-11T20:23:31+08:00	WhiteApricot	docs(G6-00): backfill authorized master push evidence
+0b1503e756619e5b5acc5c4962461234bf2bc950	2026-10-11T20:22:50+08:00	2026-10-11T20:22:50+08:00	WhiteApricot	docs(G6-00): authorize safe master workflow through G6
+68ba271fc5799df00c96942472d60278d8376b41	2026-10-11T20:16:18+08:00	2026-10-11T20:16:18+08:00	WhiteApricot	docs(G6-00): record local commit and blocked master push
+4c413b2835ae625018e2f7313e32f7f4544ada0b	2026-10-11T20:15:20+08:00	2026-10-11T20:15:20+08:00	WhiteApricot	docs(G6-00): plan delivery acceptance and preserve historical inputs
+d8d3b8ba1a999badbcaba74ae0cc24555b12cad2	2026-10-11T12:33:04+08:00	2026-10-11T12:33:04+08:00	RenJQ	chore(G5-03): backfill review push evidence
+474c91f396cc4c618cb747fa662074656483fae2	2026-10-11T12:32:31+08:00	2026-10-11T12:32:31+08:00	RenJQ	review(G5-03): accept course conditional closeout
+749ae2a214b65b8d0f3e76962a315a8b1ede8b61	2026-10-11T01:19:58+08:00	2026-10-11T01:19:58+08:00	WhiteApricot	docs(G5-03): backfill master push and C review handoff
+034d97d144a0b4313db620287b4902bea3debc5e	2026-10-11T01:17:08+08:00	2026-10-11T01:17:08+08:00	WhiteApricot	docs(G5-03): complete formal reports and course review candidate
+dad5e8b6f84439dec0a12613caa371d3e425845a	2026-10-11T00:15:16+08:00	2026-10-11T00:15:16+08:00	WhiteApricot	docs(G5-01): backfill A final review push
+c69ea8b6c2fb2fc23ecab12ecd5338b388f98456	2026-10-11T00:14:38+08:00	2026-10-11T00:14:38+08:00	WhiteApricot	docs(G5-01): accept A review and close course task
+5f996a63bf47df85f45bd3d987fc56448fc7d793	2026-10-10T19:56:56+08:00	2026-10-10T19:56:56+08:00	RenJQ	docs(G5-01): backfill conditional acceptance evidence
+c739b406e442e01b1deef7c4c8bb8885bdc27a4a	2026-10-10T19:56:20+08:00	2026-10-10T19:56:20+08:00	RenJQ	test(G5-01): prepare course conditional acceptance
+9a46795e56c6299cb2bd71c97d639560aef36a54	2026-10-10T19:51:08+08:00	2026-10-10T19:51:08+08:00	RenJQ	docs(G5-03): backfill execution order evidence
+a7337b0a7e20acdc9348b29de9ad8c3c0b7892ec	2026-10-10T19:50:51+08:00	2026-10-10T19:50:51+08:00	RenJQ	docs(G5-03): record execution order decision
+b8fa4a107390b64233db0dd5022132447a77e55f	2026-10-10T19:46:03+08:00	2026-10-10T19:46:03+08:00	RenJQ	docs(G5-01): backfill blocker check evidence
+d072ede25792d308fefaa3aaec70b5b1a153339e	2026-10-10T19:45:47+08:00	2026-10-10T19:45:47+08:00	RenJQ	docs(G5-01): explain remaining completion blockers
+29f6aadc602399630f52332ee13d6c897479d5c4	2026-10-10T19:43:48+08:00	2026-10-10T19:43:48+08:00	RenJQ	docs(G5-03): backfill readiness evidence
+9f78e0b135f902fb4759a3485ae00b2fcd9bda69	2026-10-10T19:43:28+08:00	2026-10-10T19:43:28+08:00	RenJQ	docs(G5-03): record readiness check
+aa5775d869bad39b2b724c9ea9ff355182dc8e05	2026-10-10T19:40:33+08:00	2026-10-10T19:40:33+08:00	RenJQ	docs(G5-02): backfill C acceptance evidence
+ef444ef9531be7723debbae9884af0a46cc840e2	2026-10-10T19:39:41+08:00	2026-10-10T19:39:41+08:00	RenJQ	docs(G5-02): accept course conditional completion
+6872b9737b7ad4f36d937b40a974dd6824b25286	2026-10-10T19:17:43+08:00	2026-10-10T19:17:43+08:00	yylinb	docs(log): backfill G5-02 conditional review evidence
+1ff546484b1140e80e431b78c4e82028fbb2c347	2026-10-10T19:16:52+08:00	2026-10-10T19:16:52+08:00	yylinb	test(G5-02): prepare course conditional acceptance
+f991adb22fe579e511769ea465342eb794d98b03	2026-10-10T19:03:38+08:00	2026-10-10T19:03:38+08:00	RenJQ	docs(G5-02): backfill sixth review evidence
+f38a61ff52183e77506636c1fa39baf07acad22e	2026-10-10T19:03:02+08:00	2026-10-10T19:03:02+08:00	RenJQ	docs(G5-02): accept conditional progression review
+a39d7905d838a0a43c770d3a80e76c1072edff97	2026-10-10T18:04:59+08:00	2026-10-10T18:04:59+08:00	yylinb	docs(log): backfill conditional progression push
+1a7ab8a4aa840aae04f8ba25664aa1b4b4bd77ae	2026-10-10T18:04:33+08:00	2026-10-10T18:04:33+08:00	yylinb	docs(G5): allow transparent conditional progression
+b897f32f5262cade306c8e7b3149e0573019b1b3	2026-10-10T17:32:53+08:00	2026-10-10T17:32:53+08:00	yylinb	docs(log): backfill G5-02 hard-gate push
+7b86b8c99c28ea5baa7bd355e177775163b056fe	2026-10-10T17:32:12+08:00	2026-10-10T17:32:12+08:00	yylinb	test(G5-02): record external hard-gate readiness
+2f2c113b4abe5c8ece94759d4a7dfe99ef7f4f3c	2026-10-10T11:21:08+08:00	2026-10-10T11:21:08+08:00	RenJQ	docs(G5-02): backfill review calibration evidence
+af6e825c72f972d865b7e53c92671bed6453f5db	2026-10-10T11:20:39+08:00	2026-10-10T11:20:39+08:00	RenJQ	docs(G5-02): calibrate Docker evidence review
+41c86ef01cc91943bbf2648a530ddc3c61d083a6	2026-10-10T11:13:59+08:00	2026-10-10T11:13:59+08:00	RenJQ	docs(G5-02): backfill fifth review evidence
+431bd621b304b558e94b428477319f944476a4fd	2026-10-10T11:13:32+08:00	2026-10-10T11:13:32+08:00	RenJQ	docs(G5-02): request Docker evidence correction
+834754a658e062b667efcd90480aa9f81a7adfe7	2026-10-09T23:00:01+08:00	2026-10-09T23:00:01+08:00	yylinb	docs(log): backfill G5-02 environment remediation
+5fc359aea5e08118d17f2e076e6f669b04adf9b4	2026-10-09T22:59:13+08:00	2026-10-09T22:59:13+08:00	yylinb	fix(G5-02): complete local recovery and clean deployment
+10a92492e23e70866c6a409d227cddf41f59d95d	2026-10-09T19:55:16+08:00	2026-10-09T19:55:16+08:00	RenJQ	docs(G5-02): backfill status review evidence
+aa8f2bc550eaf7ff42615b89e3e392235d359208	2026-10-09T19:54:39+08:00	2026-10-09T19:54:39+08:00	RenJQ	docs(G5-02): accept status alignment review
+ae2d8aaffa7dea644b3ae6b8c92568e04937009a	2026-10-09T18:49:43+08:00	2026-10-09T18:49:43+08:00	yylinb	docs(log): backfill G5-02 status alignment
+3df7fc20b54d33da930c43773b5ec526ec2346ff	2026-10-09T18:49:10+08:00	2026-10-09T18:49:10+08:00	yylinb	docs(G5-02): align accepted review status
+464f9bf48f80ff3ce7060f75039f4e88b07bff22	2026-10-09T18:42:43+08:00	2026-10-09T18:42:43+08:00	RenJQ	docs(G5-02): backfill accepted rereview evidence
+93059970bdf5d4a6d8a5102b378def8ca6033be2	2026-10-09T18:42:14+08:00	2026-10-09T18:42:14+08:00	RenJQ	docs(G5-02): accept C evidence remediation review
+b7b87ecb018ad56d1fded90d6bfba770314da14d	2026-10-09T18:24:44+08:00	2026-10-09T18:24:44+08:00	WhiteApricot	docs(G5-01): backfill accepted rereview push evidence
+413435ce7f0703c8e5c86d08e8cb7ff2b2dae457	2026-10-09T18:23:45+08:00	2026-10-09T18:23:45+08:00	WhiteApricot	docs(G5-01): accept review remediation and close remaining finding
+07ee990a12f7cd2afeaa0581f1c842b7058c3124	2026-10-09T18:21:03+08:00	2026-10-09T18:21:03+08:00	yylinb	docs(log): backfill G5-02 second remediation
+6946645428fca33b953316ce92a96a437e1df5c4	2026-10-09T18:20:28+08:00	2026-10-09T18:20:28+08:00	yylinb	fix(G5-02): verify evidence across Windows checkouts
+da157ca6672ac354f691354d6c937f9520852ae6	2026-10-09T18:01:16+08:00	2026-10-09T18:01:16+08:00	RenJQ	docs(G5-02): backfill C rereview git evidence
+2acbf4fba2d914830fade870743fe148f1799269	2026-10-09T18:00:43+08:00	2026-10-09T18:00:43+08:00	RenJQ	docs(G5-02): record C remediation rereview
+c36626aafefd2dfb1c7231c216e26ad1b53280b8	2026-10-09T17:54:01+08:00	2026-10-09T17:54:01+08:00	yylinb	docs(log): backfill G5-02 remediation push
+279976c54bd9b77fc2ee78fb5997d09100608628	2026-10-09T17:53:32+08:00	2026-10-09T17:53:32+08:00	yylinb	fix(G5-02): make technical evidence reproducible
+5348bccb0a92fff2a86bc493ca3af100ee9f0bac	2026-10-09T16:36:01+08:00	2026-10-09T16:36:01+08:00	RenJQ	docs(G5-01): backfill filter remediation evidence
+b3db2d59e23d0802ed90a4731b182bbc700352fc	2026-10-09T16:35:25+08:00	2026-10-09T16:35:25+08:00	RenJQ	test(G5-01): prove combined incident filtering
+92085e963a4fc130c2293cb8439f289d562782c4	2026-10-09T16:10:39+08:00	2026-10-09T16:10:39+08:00	RenJQ	docs(G5-02): backfill C review git evidence
+c97383fbcad63e8d2b550d24806e1a65b05ca72f	2026-10-09T16:09:26+08:00	2026-10-09T16:10:12+08:00	RenJQ	docs(G5-02): record C review findings
+c0282e8c9366ab53fc1bfb6409ae026607849dee	2026-10-09T16:02:21+08:00	2026-10-09T16:02:21+08:00	WhiteApricot	docs(G5-01): backfill second rereview push evidence
+29efab40691922303baa5aa22e58677bc68a8265	2026-10-09T16:01:06+08:00	2026-10-09T16:01:06+08:00	WhiteApricot	docs(G5-01): close system evidence finding and retain filter gap
+7fa74a41239a6b11fe43fa74bbc81bd744989c5a	2026-10-09T15:48:53+08:00	2026-10-09T15:48:53+08:00	RenJQ	docs(G5-01): backfill remediation git evidence
+930894cd5f9b7b39ec30e3121616673889af1e42	2026-10-09T15:48:10+08:00	2026-10-09T15:48:10+08:00	RenJQ	test(G5-01): complete system evidence remediation
+97153c1a5a8a22044fee642db80c6e106042b844	2026-10-09T15:21:14+08:00	2026-10-09T15:21:14+08:00	WhiteApricot	docs(G5-01): backfill rereview push and final output
+b9887999f245593a5f5c62b4ecadcc2d5922a00f	2026-10-09T15:20:26+08:00	2026-10-09T15:20:26+08:00	WhiteApricot	docs(G5-01): record A rereview and close H5 layout finding
+b2e251ab2e9fc8704a79eef0c61cf515787cf55b	2026-10-09T14:04:44+08:00	2026-10-09T14:04:44+08:00	RenJQ	chore(G5-01): backfill commit and push evidence
+124419f40356a05d0fe3e6dcdedf9fc7a4e54842	2026-10-09T14:03:49+08:00	2026-10-09T14:03:49+08:00	RenJQ	fix(G5-01): address A review findings
+b9c35ac80f9fa55ec9209d24d8e6fc9ddd76fc2f	2026-10-09T00:19:10+08:00	2026-10-09T00:19:10+08:00	yylinb	docs(log): backfill G5-02 push evidence
+e012137f82fbc59eee2ef9bb3086dfd73fd6ddf8	2026-10-09T00:18:31+08:00	2026-10-09T00:18:31+08:00	yylinb	test(G5-02): record technical quality gate evidence
+e6e12b59fc5749cdf0475ed9631bac7d21d4bb1a	2026-10-08T21:50:46+08:00	2026-10-08T21:50:46+08:00	WhiteApricot	docs(G5-01): backfill A review push evidence
+41f1319e79dc9390e27de0b0e544919706607a92	2026-10-08T21:49:50+08:00	2026-10-08T21:49:50+08:00	WhiteApricot	docs(G5-01): normalize review transcript and retain raw capture
+07bc6e25313400e498df7ce89079ca56c28d2e61	2026-10-08T21:49:05+08:00	2026-10-08T21:49:05+08:00	WhiteApricot	docs(G5-01): record A review and evidence blockers
+4b94b3327347f96e4a896c99bf5d78192a1939a1	2026-10-08T21:26:36+08:00	2026-10-08T21:26:36+08:00	RenJQ	docs(log): place G5-01 audit entry in sequence
+019b4c8ae21fc0417a575e9ccbdbe19479dfd849	2026-10-08T21:24:15+08:00	2026-10-08T21:24:15+08:00	RenJQ	docs(log): backfill G5-01 commit and push evidence
+954846681bbef89eef5c7160280744ee29c0acbd	2026-10-08T21:23:28+08:00	2026-10-08T21:23:28+08:00	RenJQ	test(G5-01): execute functional quality gate
+302502c8bbe19091b6860810e98bfc837838b8d8	2026-10-08T20:54:52+08:00	2026-10-08T20:54:52+08:00	RenJQ	docs(log): backfill G4 acceptance PPT closeout
+daf5de7cf8a6811e4325cc0d896a7a410a0f905c	2026-10-08T20:52:37+08:00	2026-10-08T20:52:37+08:00	RenJQ	docs(G4-ACCEPTANCE-PPT-01): close C review
+f20f263486317644c2902ad27181ded12a9f374d	2026-10-08T20:30:04+08:00	2026-10-08T20:30:04+08:00	WhiteApricot	docs(G5): backfill startup commit and push evidence
+7c8db0920451c0e8164e4db9eefef5a8f3947783	2026-10-08T20:28:41+08:00	2026-10-08T20:28:41+08:00	WhiteApricot	chore(G5): start quality gate and restore direct-push workflow
+9279768f940d24b2b2a3fec1bb5cb104e3152a8b	2026-10-08T11:58:47Z	2026-10-08T11:58:47Z	RJQ_WHU	!19 docs(G4): 最终合并后状态收口
+e2dd276ca230185d3bda8ffb192af73250b73322	2026-10-08T19:50:49+08:00	2026-10-08T19:50:49+08:00	WhiteApricot	docs(G4): record closeout review block
+8d72a5ca90a006a6bf8927d43c722da7a7265007	2026-10-08T18:46:11+08:00	2026-10-08T18:46:11+08:00	WhiteApricot	docs(G4): backfill closeout PR audit
+aa97fe2c6d4fa9b37a85312c6c6c2a3a7f4ddca0	2026-10-08T18:44:45+08:00	2026-10-08T18:44:45+08:00	WhiteApricot	docs(G4): close merged sprint state
+5b31e0f06748fe1b5253771583140e23398ce6bf	2026-10-08T07:05:38Z	2026-10-08T07:05:38Z	RJQ_WHU	!16 G4-09：汇报级 Web/H5 前端与指挥态势候选
+dd530989ce94632b0da8f9da9640d0bca37f3e16	2026-10-08T15:01:13+08:00	2026-10-08T15:01:13+08:00	RenJQ	docs(G4): backfill C rereview evidence
+ce0b4a046fe4dd5a7391fea526d2e8a5195ee136	2026-10-08T15:00:52+08:00	2026-10-08T15:00:52+08:00	RenJQ	review(G4): accept final sprint remediation
+4d8ba757deec5d7a0e2d3b11bba67042549dd3c8	2026-10-08T14:55:53+08:00	2026-10-08T14:55:53+08:00	RenJQ	docs(G4-09): log remediation handoff
+a083a58413c319b373672078bc94effd699a1ec9	2026-10-08T14:55:09+08:00	2026-10-08T14:55:09+08:00	RenJQ	fix(G4-09): isolate formal data and wire access control
+aa968a9aa1d92c209ff619dc5d459d907208768f	2026-10-08T14:45:50+08:00	2026-10-08T14:45:50+08:00	RenJQ	docs(G4): backfill C review push evidence
+02e16cb31cf4d8f24cd2062d7d7225eb80940fe6	2026-10-08T14:45:14+08:00	2026-10-08T14:45:14+08:00	RenJQ	review(G4): request final sprint corrections
+2e882e360a37d6db1db6cdda34219116c1322548	2026-10-08T14:36:01+08:00	2026-10-08T14:36:01+08:00	RenJQ	docs(G4): log final review handoff
+2a6bae2f8699d77cbf00c4a0ece5908b76351de8	2026-10-08T14:33:56+08:00	2026-10-08T14:33:56+08:00	RenJQ	docs(G4): normalize final sprint state formatting
+59ab4eb7706d4c8791990c2171a41d23b914b718	2026-10-08T14:33:26+08:00	2026-10-08T14:33:26+08:00	RenJQ	feat(G4): finalize sprint 2 verification and closeout candidate
+e006d47eb52862fcb44218400fd42d4063ef0601	2026-10-08T14:10:37+08:00	2026-10-08T14:10:37+08:00	RenJQ	merge(G4): sync latest master into final sprint branch
+d520ce53c55031140d348bde6b2d81bab21d3932	2026-09-30T12:51:51Z	2026-09-30T12:51:51Z	yylinb	!18 feat(G4-08): implement sprint 2 MVP backend adapters
+be188499a9555ff4fa01884d4d3e7e3a45b83515	2026-09-30T20:23:05+08:00	2026-09-30T20:23:05+08:00	yylinb	docs(G4-08): prepare review handoff
+08f8f4a9ffa113d8a560b56bdf98b73361cead02	2026-09-30T20:10:41+08:00	2026-09-30T20:10:41+08:00	yylinb	feat(G4-08): implement sprint 2 MVP backend adapters
+4d5ab991ea66154c8d782b0baa5b80c277b7d495	2026-09-26T15:39:34+08:00	2026-09-26T15:39:34+08:00	RenJQ	docs(G4-09): add presentation operation manual
+9985247a3868992982ab9676b1507b4b1cb95300	2026-09-26T15:29:53+08:00	2026-09-26T15:29:53+08:00	RenJQ	docs(G4-09): record latest demo walkthrough
+a8daed5e3f1d6f475bc4433a8d9488b9bc46db87	2026-09-26T15:25:51+08:00	2026-09-26T15:25:51+08:00	WhiteApricot	docs(G4-09): backfill presentation sync push
+0910ceb18f3597592f3c0de03e8fc3429f4270ab	2026-09-26T15:24:58+08:00	2026-09-26T15:24:58+08:00	WhiteApricot	test(G4-09): cover clone-safe presentation sync
+8c05f860b137cfc34ea1354cef21ce943ca7fdb9	2026-09-26T15:16:06+08:00	2026-09-26T15:16:06+08:00	WhiteApricot	docs(G4): backfill direct master push evidence
+788132e9a7cd5a14001d817bf30ca8f5121aefb6	2026-09-26T15:15:12+08:00	2026-09-26T15:15:12+08:00	WhiteApricot	chore(G4): record direct master push override
+32a7ed1c032994cf69dcab469f5e393a3212367e	2026-09-26T15:08:07+08:00	2026-09-26T15:12:59+08:00	WhiteApricot	docs(G4): backfill acceptance presentation PR evidence
+8f577a4bf49673292e18e1a2ddfa2a4e9a8c1e2c	2026-09-26T15:03:51+08:00	2026-09-26T15:12:59+08:00	WhiteApricot	docs(G4): add acceptance presentation deck
+6d7ac268e6d8a2f02284c844bcb30f36208b70de	2026-09-26T15:06:37+08:00	2026-09-26T15:06:37+08:00	RenJQ	前端优化
+776ec06178e22495b60debbf8b386439113eeb09	2026-09-26T14:50:24+08:00	2026-09-26T14:50:24+08:00	RenJQ	docs(log): record demo mode fix delivery
+6922fa8eecd09a4ac72e683718b417813ced2bf4	2026-09-26T14:49:53+08:00	2026-09-26T14:49:53+08:00	RenJQ	fix(frontend): activate presentation demo mode
+ee33bc21c9d3b5f0c38700d8372e5f6549d9b739	2026-09-26T14:41:05+08:00	2026-09-26T14:41:05+08:00	RenJQ	chore(G4-09): record reviewer assignment outcome
+0229c53d6dda9ddbe7f6058da1c17385504cc133	2026-09-26T14:38:22+08:00	2026-09-26T14:38:22+08:00	RenJQ	chore(G4-09): backfill PR and review status
+1c121c4b33fd244540b440e997fb6c976c030b01	2026-09-26T14:34:55+08:00	2026-09-26T14:34:55+08:00	RenJQ	feat(G4-09): build presentation-ready emergency console
+78f4129ae517c7296cf238b1e9509ec0e25b2ffb	2026-09-26T04:03:51Z	2026-09-26T04:03:51Z	yylinb	!15 test(G4-07): 完成 Sprint 1 集成与质量准出
+296daac6ae0fb9dd31d7da158b13fdc1060abd66	2026-09-26T11:41:27+08:00	2026-09-26T11:41:27+08:00	RenJQ	docs(G4-07): backfill B rereview push
+6c657e91679d882b1f1aefcb3ccfb483843917fe	2026-09-26T11:40:54+08:00	2026-09-26T11:40:54+08:00	RenJQ	review(G4-07): accept evidence remediation
+d974bb609748d185643cfc5fde1668767575b8ff	2026-09-26T11:35:48+08:00	2026-09-26T11:35:48+08:00	RenJQ	docs(G4-07): 回填证据修正提交
+d381ba4a7e1574c490eaaeb4f099012f4e964027	2026-09-26T11:35:20+08:00	2026-09-26T11:35:20+08:00	RenJQ	docs(G4-07): 修正 PR15 准出证据一致性
+c3480d05935ab8d38703df31170e35430dc470c7	2026-09-26T11:31:57+08:00	2026-09-26T11:31:57+08:00	RenJQ	chore(G4-07): backfill review push evidence
+6d58c5af87050ef51a57e321a430c6550cdc96e0	2026-09-26T11:31:21+08:00	2026-09-26T11:31:21+08:00	RenJQ	review(G4-07): require evidence consistency fix
+758db48efb3aa383e4ec78fe4d41403473f54aa4	2026-09-26T10:22:22+08:00	2026-09-26T10:22:22+08:00	RenJQ	docs(G4-07): 回填 PostgreSQL 复验提交
+b6a649410065f8dd0a3db72f0204fde1ba24cc42	2026-09-26T10:21:55+08:00	2026-09-26T10:21:55+08:00	RenJQ	test(G4-07): 补齐 PostgreSQL 独立复验
+164c33b6cf6fd2da30c38df19dca25f3a84bf141	2026-09-26T10:18:28+08:00	2026-09-26T10:18:28+08:00	RenJQ	docs(G4-07): 记录隔离账户凭据读取阻断
+ee5215cbbeee00251a0f820d2357a55aaf1ba7ca	2026-09-26T10:11:01+08:00	2026-09-26T10:11:01+08:00	RenJQ	docs(G4-07): 记录连接变量仍不可见
+b9e1e4e640ba4af9ad5e89380bef1dc957f856e7	2026-09-26T10:08:16+08:00	2026-09-26T10:08:16+08:00	RenJQ	docs(G4-07): 记录 PostgreSQL 连接阻断
+e8a36379b0760e5a10c49877797f0df964691971	2026-09-26T10:01:10+08:00	2026-09-26T10:01:10+08:00	RenJQ	docs(G4-07): 回填提交与 PR 创建说明
+31ec78b9829c5f783e9d58e6762346d43c7b5c93	2026-09-26T10:00:30+08:00	2026-09-26T10:00:30+08:00	RenJQ	test(G4-07): 完成 Sprint 1 集成与质量准出
+653be0b041518ca4fd4961c8f2a2b481580c9cf7	2026-09-26T09:54:16+08:00	2026-09-26T09:54:16+08:00	RenJQ	Merge remote-tracking branch 'origin/master' into codex/g4-07-sprint1-quality
+f3a83c8dfe9b7632e0cce049520b2489344f36df	2026-09-26T01:40:02Z	2026-09-26T01:40:02Z	WhiteApricot	!14 fix(G4-05): 关闭 G4-07 前后端真实接线阻断 Merge pull request !14 from yylinb/codex/g4-05-integration-remediation
+dd225d6496b146ac3bad035485fdc83509f4c7ab	2026-09-26T09:31:27+08:00	2026-09-26T09:31:27+08:00	WhiteApricot	docs(G4-05): record PR 14 platform gate blocker
+b8020e49ffa4c9109527062178546fb537a74374	2026-09-26T09:27:32+08:00	2026-09-26T09:27:32+08:00	WhiteApricot	docs(G4-05): record A review for PR 14
+f20279603d16344a39e6ddbd6fbb5e8b81b77cf5	2026-09-25T19:56:46+08:00	2026-09-25T19:56:46+08:00	yylinb	chore(G4-05): backfill PR 14 evidence
+0193d469f0c70125028765ae9412fd3da42f8562	2026-09-25T19:45:33+08:00	2026-09-25T19:45:33+08:00	yylinb	chore(G4-05): record integration remediation push
+2ff75197015914cfc4ee1354071344134bcacaab	2026-09-25T19:38:43+08:00	2026-09-25T19:38:43+08:00	yylinb	fix(G4-05): unblock real frontend integration
+9e864b07a31237a84002535f3c5e019922f4a3e9	2026-09-25T18:56:51+08:00	2026-09-25T18:56:51+08:00	RenJQ	docs(G4-07): 回填集成预检推送证据
+3ee52e0e534f2ace27fc4abfee5a70aa67f9a5d9	2026-09-25T18:56:32+08:00	2026-09-25T18:56:32+08:00	RenJQ	test(G4-07): 登记 Sprint 1 集成阻断
+7780dce2f2033a118fe844c56063721fac00c410	2026-09-25T18:52:46+08:00	2026-09-25T18:52:46+08:00	RenJQ	Merge remote-tracking branch 'origin/master' into codex/g4-07-sprint1-quality
+70b5a9fa1f9547b54f6d6a9a277c16c740d05562	2026-09-25T10:46:15Z	2026-09-25T10:46:15Z	RJQ_WHU	!13 feat(G4-05): 完成核心事件处置后端闭环
+5825f69a8dc17ad8317fcf704844c533efd2d6d5	2026-09-25T18:38:09+08:00	2026-09-25T18:38:09+08:00	RenJQ	review(G4-05): approve remediated backend
+2a6588e36eb565a0f1eac3cb62f1cd5aa071c59d	2026-09-25T18:00:46+08:00	2026-09-25T18:00:46+08:00	RenJQ	docs(G4-07): 回填阻断分支推送证据
+ba744acfa25dafc73d90e99b846124b1d1275892	2026-09-25T18:00:17+08:00	2026-09-25T18:00:17+08:00	RenJQ	docs(G4-07): 登记 G4-05 前置阻断
+413565dba86a78c21126f0d42a13bc2091cd90e5	2026-09-25T09:18:26+08:00	2026-09-25T09:18:26+08:00	yylinb	test(G4-05): add PostgreSQL recovery evidence
+a4d187ad2b0b94251d0752cc559d63a044ea74d3	2026-09-25T09:06:50+08:00	2026-09-25T09:06:50+08:00	yylinb	Merge remote-tracking branch 'origin/master' into codex/g4-05-core-event-backend
+4053be153a964fdd56f3613e332341ecda0ca009	2026-09-25T09:05:16+08:00	2026-09-25T09:05:16+08:00	yylinb	fix(G4-05): resolve contract persistence transaction review
+9c731125327506723a6f835469e544c5318ff75b	2026-09-24T11:23:05Z	2026-09-24T11:23:05Z	RJQ_WHU	!10 feat(G4-06): Sprint 1 Web/H5 前端闭环
+66b9304fa81f0c313db307d3521220134124dd66	2026-09-24T18:50:07+08:00	2026-09-24T18:50:07+08:00	RenJQ	docs(G4-06): 回填最终 Review 提交证据
+bf12ab2175e55758642d6e557a6f2f0d928271b2	2026-09-24T18:49:40+08:00	2026-09-24T18:49:40+08:00	RenJQ	review(G4-06): 关闭阻断并通过最终复验
+1a73bc0e98647fe09a383d22653f29a9778d8322	2026-09-24T18:22:49+08:00	2026-09-24T18:22:49+08:00	WhiteApricot	docs(G4-05): backfill A review evidence
+f6353bf4cdc7065d0648c264f35328dfa989a85f	2026-09-24T18:21:47+08:00	2026-09-24T18:21:47+08:00	WhiteApricot	review(G4-05): request fixes for backend closure
+33610a3bc5518d90adedcc68c370fdc214c3fdbf	2026-09-24T17:53:13+08:00	2026-09-24T17:53:13+08:00	WhiteApricot	docs(G4-06): 回填最终复验请求
+e951cba14c9df8bf246bc6641750d82ffb2cc678	2026-09-24T17:52:09+08:00	2026-09-24T17:52:09+08:00	WhiteApricot	docs(G4-06): 对齐 E2E 准出口径
+83808925e635e6badb073e29c33adfafccceb935	2026-09-24T17:46:33+08:00	2026-09-24T17:46:33+08:00	yylinb	docs(G4-05): record PR 13 review handoff
+ec7b5781f99ea04531a82b2a4d3c66fc384ef772	2026-09-24T17:41:26+08:00	2026-09-24T17:41:26+08:00	RenJQ	docs(G4-06): 回填再次 Review 推送证据
+c09cffa0e15fe4121959b1a3bd0473e99743e960	2026-09-24T17:40:55+08:00	2026-09-24T17:40:55+08:00	RenJQ	review(G4-06): 保留 E2E DoD 一致性阻断
+8679ee0c62e3afd2953b2ba8815109df6f91d948	2026-09-24T17:25:44+08:00	2026-09-24T17:25:44+08:00	WhiteApricot	docs(G4-06): 回填整改复验请求
+0d537b9496f723a5ad4fa26f8e35e7f0900c7549	2026-09-24T17:23:51+08:00	2026-09-24T17:23:51+08:00	WhiteApricot	fix(G4-06): 补齐组件交互测试与追踪边界
+dcfe781791a508888bc73d34615d3e6c5827d62b	2026-09-24T16:42:44+08:00	2026-09-24T16:42:44+08:00	RenJQ	docs(G4-06): 回填 Review 提交与推送证据
+10441798148917b0c2256651247c0c29a70089d9	2026-09-24T16:42:13+08:00	2026-09-24T16:42:13+08:00	RenJQ	review(G4-06): 要求补齐交互测试与追踪证据
+45d297b609f80852f63f5a17767e57eb5f517ac2	2026-09-24T16:38:10+08:00	2026-09-24T16:38:10+08:00	yylinb	docs(G4-05): correct evidence commit wording
+c41dcf545b6ab563051cd3be95b3975776212253	2026-09-24T16:37:45+08:00	2026-09-24T16:37:45+08:00	yylinb	chore(G4-05): log PR submission checkpoint
+e4065a12465f7509b54aa7d7d320d1dd642bef66	2026-09-24T16:37:19+08:00	2026-09-24T16:37:19+08:00	yylinb	chore(G4-05): record validated branch evidence
+c4e0aa8e96048019e3d87738bac274fa0ba60fb6	2026-09-24T16:27:33+08:00	2026-09-24T16:27:33+08:00	yylinb	Merge remote-tracking branch 'origin/master' into codex/g4-05-core-event-backend
+644ecef3a34600c8c2edc5bfcad48ea758c78229	2026-09-24T16:26:05+08:00	2026-09-24T16:26:05+08:00	yylinb	feat(G4-05): complete core event backend closure
+52c582ee7a5d1981185b3b6cdc04af4a0a5412c2	2026-09-24T07:49:43Z	2026-09-24T07:49:43Z	yylinb	!12 回退 'Pull Request !11 : docs(G4-03): 历史例外收口并置为 DONE'
+429580b91863339cd35d1ff1fcc88e8fadfedf16	2026-09-24T15:48:14+08:00	2026-09-24T15:48:14+08:00	WhiteApricot	docs(G4-06): 回填 C 审核指派
+dfd93ec14a0aef95cab208f8c839e8de2710b13f	2026-09-24T07:46:00Z	2026-09-24T07:46:00Z	RJQ_WHU	回退 'Pull Request !11 : docs(G4-03): 历史例外收口并置为 DONE'
+28e52879270b3cc2906813f00326148895a2ac6b	2026-09-24T07:42:59Z	2026-09-24T07:42:59Z	RJQ_WHU	!11 docs(G4-03): 历史例外收口并置为 DONE
+2eddaa351646b005347dcfb0e52736331dc17241	2026-09-24T15:41:20+08:00	2026-09-24T15:41:20+08:00	RenJQ	docs(G4-03): 回填收口提交与推送证据
+30a7c8fad4b05c91b7446e5608956a7e06f17c79	2026-09-24T15:40:29+08:00	2026-09-24T15:40:29+08:00	RenJQ	docs(G4-03): 历史例外收口并置为 DONE
+1bb72b0494874c77ff7eab200fd53c173383afc7	2026-09-24T15:34:56+08:00	2026-09-24T15:34:56+08:00	WhiteApricot	docs(G4-06): 回填 PR 与审核状态
+ad35fecc80f60456bf89dbdd95d2d9c740ee0145	2026-09-24T15:31:55+08:00	2026-09-24T15:31:55+08:00	WhiteApricot	feat(G4-06): 完成 Web H5 事件处置闭环
+2881a4c28902f178cdca080f023c2889ad51aa79	2026-09-24T15:22:08+08:00	2026-09-24T15:22:08+08:00	WhiteApricot	chore(G4-03): 回填审查完成状态
+242a9f129bfa7b8a712500d760a3950bc321c15f	2026-09-24T15:16:17+08:00	2026-09-24T15:16:17+08:00	yylinb	Merge remote-tracking branch 'origin/master' into codex/g4-05-core-event-backend
+c8f7ca645a7d7c50f9796e80bdb1d2528a237db7	2026-09-24T07:12:37Z	2026-09-24T07:12:37Z	yylinb	!9 docs(GOV-003): G4 改为单 PR 工作流
+3d783a64331ebf3a5d5b61b41a144c3f52cb51b5	2026-09-24T14:44:44+08:00	2026-09-24T14:44:44+08:00	WhiteApricot	docs(GOV-003): backfill PR evidence
+893d5c687614d6b7f5070be745b255d462facabb	2026-09-24T14:42:24+08:00	2026-09-24T14:42:24+08:00	WhiteApricot	docs(GOV-003): adopt single PR workflow for G4
+bfcd8825ba572fffa19089b4626ac0e639cb4301	2026-09-23T10:28:16Z	2026-09-23T10:28:16Z	RJQ_WHU	!8 fix(G4-03): Vue 前端骨架与 OpenAPI 类型化 Client
+218a59b8aadafc428e75950d61bcc3a83fe2b646	2026-09-23T18:25:45+08:00	2026-09-23T18:25:45+08:00	RenJQ	chore(G4-03): backfill final C review evidence
+8802ea7920a249042f72458667089684728922f3	2026-09-23T18:25:06+08:00	2026-09-23T18:25:06+08:00	RenJQ	review(G4-03): approve frontend foundation
+ce6024032c7fc4c2332460664215072bf98af667	2026-09-23T18:20:23+08:00	2026-09-23T18:20:23+08:00	RenJQ	chore(G4-03): backfill remediation push evidence
+8b24791f09d928038424d510ae14dcb8a2a43016	2026-09-23T18:19:47+08:00	2026-09-23T18:19:47+08:00	RenJQ	fix(G4-03): align idempotency header with contract
+a8734e4b90696c9e4603f08b964e918fcfca1e10	2026-09-23T18:03:58+08:00	2026-09-23T18:03:58+08:00	RenJQ	chore(G4-03): backfill second C review evidence
+76fd1c9fa4881e728797c3d6afad42ef90fd87ed	2026-09-23T18:03:22+08:00	2026-09-23T18:03:22+08:00	RenJQ	review(G4-03): retain runtime idempotency blocker
+727c2b97f78c4553041d589f82801b348c29a9ed	2026-09-23T17:56:47+08:00	2026-09-23T17:56:47+08:00	WhiteApricot	chore(G4-03): backfill second rereview request
+0ff6a03b79d60e19c2ef04d3097e8c228154bed8	2026-09-23T17:55:38+08:00	2026-09-23T17:55:38+08:00	WhiteApricot	fix(G4-03): require path params and idempotency keys
+27ed8a4aae653890b841f67d75581e0412f7f692	2026-09-23T17:54:20+08:00	2026-09-23T17:54:20+08:00	yylinb	feat(G4-05): add core event workflow
+59c965e545c7f14faa872b1fec45559aa03c0d80	2026-09-23T17:46:36+08:00	2026-09-23T17:46:36+08:00	RenJQ	chore(G4-03): backfill C rereview evidence
+d9e6159b5cc9e365e5191d71573c3b77a7bf95d4	2026-09-23T17:45:58+08:00	2026-09-23T17:45:58+08:00	RenJQ	review(G4-03): retain typed client blocker
+546b02aab57908e05275d9823731afaa5a576c37	2026-09-23T17:42:53+08:00	2026-09-23T17:42:53+08:00	yylinb	fix(log): preserve G4-02 prompt history
+6d38a0cab32b4b65acfd61005c9b999bf8aa853a	2026-09-23T17:41:18+08:00	2026-09-23T17:41:18+08:00	yylinb	chore(G4-05): start core event backend task
+c360d591a25d9448991d97baec419f612da99199	2026-09-23T17:36:19+08:00	2026-09-23T17:36:19+08:00	WhiteApricot	chore(G4-03): backfill PR and branch archive outcome
+8c11a6e6f27552ff817e9c881038a9348b98000b	2026-09-23T17:32:42+08:00	2026-09-23T17:32:42+08:00	WhiteApricot	merge(G4-03): sync G4-02 closeout before rereview
+c18d7d62e760f396c819c725e89895fa4e182359	2026-09-23T17:22:17+08:00	2026-09-23T17:22:17+08:00	WhiteApricot	merge(G4-03): sync latest master before rereview
+d2a4ff6e36424788b47517c2f67a10ff4ca69363	2026-09-23T09:21:15Z	2026-09-23T09:21:15Z	WhiteApricot	!7 chore(G4-02): 归档审核证据并完成任务收口 Merge pull request !7 from WhiteApricot/codex/g4-02-closeout
+34435c4543be8c3be2a05bbf907921dd6a42084c	2026-09-23T17:15:50+08:00	2026-09-23T17:15:50+08:00	WhiteApricot	fix(G4-03): resolve C review blockers
+b54ae2f038a5621768423d7d761d8cbe5ee71746	2026-09-23T17:14:46+08:00	2026-09-23T17:14:46+08:00	WhiteApricot	docs(G4-02): log closeout PR status
+1569ee1cd4cd4124e335349bf20e50be95f6c00a	2026-09-23T17:10:36+08:00	2026-09-23T17:10:36+08:00	WhiteApricot	chore(G4-02): close merged task evidence
+8cb6371aead663335648b2bdad109a15ee2b2658	2026-09-23T17:06:36+08:00	2026-09-23T17:06:36+08:00	WhiteApricot	merge(G4-02): archive A review evidence
+a018bbc67950f35c496b2614da71a9387fcbbb87	2026-09-23T17:02:04+08:00	2026-09-23T17:02:04+08:00	WhiteApricot	review(G4-02): record platform approval and merge
+8bb19ee4572a48442e559ccbe2cb6b9c186c53f8	2026-09-23T08:58:07Z	2026-09-23T08:58:07Z	WhiteApricot	!5 feat(G4-02): 正式后端、数据库及公共基础设施骨架 Merge pull request !5 from WhiteApricot/codex/g4-02-backend-foundation
+922ad81e8e7993ed4451bf3c4593a9caedb71f91	2026-09-23T16:17:11+08:00	2026-09-23T16:17:11+08:00	RenJQ	chore(G4-03): backfill C review push evidence
+8f0611e9f05a2a4785eb9780ff0acdcdaef6239c	2026-09-23T16:15:58+08:00	2026-09-23T16:15:58+08:00	RenJQ	review(G4-03): request frontend contract corrections
+cd3def2814b5feaaa4c719b825da1e94cafcf4c9	2026-09-23T16:07:52+08:00	2026-09-23T16:07:52+08:00	WhiteApricot	chore(G4-02): backfill A rereview outcome
+70502a13ae3a23cab21f88ea31067575de699181	2026-09-23T16:04:02+08:00	2026-09-23T16:04:02+08:00	WhiteApricot	review(G4-02): record A rereview and PR blocker
+777b1ee96280c38a30598699b3e733f3d87aac77	2026-09-23T15:44:02+08:00	2026-09-23T15:44:02+08:00	WhiteApricot	chore(G4-03): record remediation review handoff
+f6d8f1d60909213e245c7444994169c44dff578e	2026-09-23T15:42:00+08:00	2026-09-23T15:42:00+08:00	WhiteApricot	fix(G4-03): enforce frontend coverage and cancellation safety
+f856a587559407a928c000f68209f72636fc4e2a	2026-09-23T15:29:23+08:00	2026-09-23T15:29:23+08:00	WhiteApricot	merge(G4-03): sync latest master for remediation
+5f3c4fc2a000a074cbdc7ebd83526859c29486b7	2026-09-23T15:28:03+08:00	2026-09-23T15:28:03+08:00	WhiteApricot	chore(G4-03): log remediation prompt
+d116ba567e5ab37a594d7df1b820d312f8d64ba2	2026-09-23T15:26:19+08:00	2026-09-23T15:26:19+08:00	yylinb	chore(G4-02): record remediation validation
+8e26d94d8be14a6f219be59c563c4a3ebb1dd2d9	2026-09-23T15:22:20+08:00	2026-09-23T15:22:20+08:00	yylinb	fix(G4-02): align DBD and enforce backend coverage
+a75c0238c4044e7f42077e3579afc10a8ea9f784	2026-09-23T15:09:00+08:00	2026-09-23T15:09:00+08:00	yylinb	merge(G4-02): sync latest master for review
+d57df4785ef8e128b0d5890a46fee19a0bea5db4	2026-09-23T15:00:26+08:00	2026-09-23T15:00:26+08:00	WhiteApricot	chore(G4-02): finalize A review evidence
+252c5455e5ec2888e4fd957064fea4bca0e12e21	2026-09-23T14:58:56+08:00	2026-09-23T14:58:56+08:00	WhiteApricot	review(G4-02): block merge on DBD and coverage gaps
+48387edee1cb920250043eef7120f15373f06e1c	2026-09-23T14:49:12+08:00	2026-09-23T14:49:12+08:00	WhiteApricot	chore(G4-02): log A review prompt
+7e6c5b86a3782d5bf87f61db943b4c19778dcefa	2026-09-23T14:36:17+08:00	2026-09-23T14:36:17+08:00	WhiteApricot	chore(git): record branch cleanup handoff
+e229ed37f5ead0807c1f1542d0425288ee45e761	2026-09-23T14:31:49+08:00	2026-09-23T14:31:49+08:00	WhiteApricot	chore(git): log completed branch integration
+26ddc39647d918599a9d10e0e7f5921edf6eb197	2026-09-23T14:29:31+08:00	2026-09-23T14:29:31+08:00	WhiteApricot	merge: integrate completed daily report backfill
+d82d2b1ec774b89d24e7385e1a7a35d9b01a8acf	2026-09-23T06:14:11Z	2026-09-23T06:14:11Z	yylinb	!4 docs(G4-04): 收口 DONE、RTM 与合并证据
+c89a8335b475750183d28debac79d36dda8b4bc1	2026-09-23T12:31:47+08:00	2026-09-23T12:31:47+08:00	RenJQ	chore(G4-04): record closeout branch handoff
+e8c2b60f44b151ba7809fa6f474cceabcdaf71a0	2026-09-23T12:30:50+08:00	2026-09-23T12:30:50+08:00	RenJQ	docs(G4-04): close merged simulation task
+3233849c9c913c783969097e7918a14dd32b57c5	2026-09-22T13:37:34Z	2026-09-22T13:37:34Z	yylinb	!3 feat(G4-04): 八外部端口及 GIS/H5 课程模拟服务
+4d110a8a9ac3d415ac959a91bcdcce7ce7e799d9	2026-09-22T19:52:19+08:00	2026-09-22T19:52:19+08:00	yylinb	chore(log): record G4-02 handoff
+59bb244fa3a50d7af15d17e474ebff83122b8f53	2026-09-22T19:51:10+08:00	2026-09-22T19:51:10+08:00	yylinb	chore(log): backfill G4-02 push
+4a8ea1d34305637bd1805d50e3b9ee8f8ccc974b	2026-09-22T19:49:44+08:00	2026-09-22T19:49:44+08:00	yylinb	feat(G4-02): add backend foundation
+d6a8920414f32d993c4395a45987e4e682acbd3d	2026-09-22T18:43:57+08:00	2026-09-22T18:43:57+08:00	RenJQ	chore(G4-04): backfill review push evidence
+1fc48464f3a004973bcfcd42388f999f1867351e	2026-09-22T18:43:06+08:00	2026-09-22T18:43:06+08:00	RenJQ	review(G4-04): approve simulated integrations
+0d8943656cdc73d924e1b01e41ed2cc1ad8ef698	2026-09-22T16:04:14+08:00	2026-09-22T16:04:14+08:00	RenJQ	chore(G4-04): record PR inspection
+5c96602e121e5cab38870041d00f72872d165683	2026-09-22T15:54:09+08:00	2026-09-22T15:54:09+08:00	WhiteApricot	chore(daily): record PR handoff
+db15dce109586f1df2ae6835db0ef7aa86e47f82	2026-09-22T15:53:00+08:00	2026-09-22T15:53:00+08:00	WhiteApricot	chore(daily): backfill branch push evidence
+d40ef40af2e9ba52174e0dfe5e56319028e797df	2026-09-22T15:51:26+08:00	2026-09-22T15:51:26+08:00	WhiteApricot	docs(daily): backfill reports through September 21
+8d1c92649d2dfab9d640f50b9f50b942faf246a2	2026-09-22T15:46:43+08:00	2026-09-22T15:46:43+08:00	RenJQ	chore(G4-04): record manual PR handoff
+f25048cc1a7035dc0233c58be8ced80e823cc9eb	2026-09-22T15:40:41+08:00	2026-09-22T15:40:41+08:00	RenJQ	chore(G4-04): record branch push and PR readiness
+08205a7ca554ffbb54e736562573a0982222f325	2026-09-22T15:38:48+08:00	2026-09-22T15:38:48+08:00	RenJQ	feat(G4-04): add simulated integration fixtures
+400cec857088d13f144a2e370845f13ff945f23e	2026-09-22T07:13:33Z	2026-09-22T07:13:33Z	yylinb	!2 docs(G4-01): 收口 tasks、RTM 与日志
+fb9c22feaacde479ad129c86e704928ddb542e3a	2026-09-22T13:33:52+08:00	2026-09-22T13:33:52+08:00	RenJQ	chore(G4-01): record closeout PR creation
+b3193299af67c071a6cb52fcf4fe7876155497b3	2026-09-22T13:31:21+08:00	2026-09-22T13:31:21+08:00	RenJQ	chore(G4-01): record closeout PR readiness
+1091b3d52850aa157d7d0c50c312bc902d4ed541	2026-09-22T13:27:23+08:00	2026-09-22T13:27:23+08:00	RenJQ	chore(G4-01): record closeout branch push
+6fec022c19e1675bb86e85193ccdd65e917ca381	2026-09-22T13:25:55+08:00	2026-09-22T13:25:55+08:00	RenJQ	docs(G4-01): close merged guardrail task
+c745e3fb816ac43bed04231425e1c54df00b40cc	2026-09-21T18:37:48+08:00	2026-09-21T18:37:48+08:00	WhiteApricot	chore(G4-03): record pending PR handoff
+9984608e945421c6f87d2a0b71f293bee2a3fe57	2026-09-21T18:37:13+08:00	2026-09-21T18:37:13+08:00	WhiteApricot	chore(G4-03): backfill branch push evidence
+5dc4f9e315d389f5e059687df8038c0fc5006d62	2026-09-21T18:35:23+08:00	2026-09-21T18:35:23+08:00	WhiteApricot	feat(G4-03): scaffold Vue frontend and API client
+fc95b5201846e883b20d825f1fccfe88712be4c1	2026-09-21T09:51:38Z	2026-09-21T09:51:38Z	yylinb	!1 ci(G4-01): 建立覆盖率、契约、安全与自查门禁
+eb995a4d7338115e07df9b004b34cfd2dd942a72	2026-09-21T17:07:02+08:00	2026-09-21T17:07:02+08:00	RenJQ	chore(G4-01): record reopened PR state
+f52a7837fbd9466f9d829ea04de63b015d70acb8	2026-09-21T17:01:46+08:00	2026-09-21T17:01:46+08:00	RenJQ	chore(G4-01): record PR description update
+2b6084ade1e658782c17f746f4974851e99093d6	2026-09-21T16:58:49+08:00	2026-09-21T16:58:49+08:00	RenJQ	chore(G4-01): log closed PR state
+c1344c790a3172c14fa786a4cb2359049386943d	2026-09-21T16:54:45+08:00	2026-09-21T16:54:45+08:00	RenJQ	chore(G4-01): log PR edit login handoff
+cefed4dd952aa09e336e0cd37c5e091a105e7eb2	2026-09-21T16:51:24+08:00	2026-09-21T16:51:24+08:00	RenJQ	chore(G4-01): log PR description confirmation
+2ee9a5db6ae54e1eda9cff94786bc7ce227b34bd	2026-09-21T16:50:56+08:00	2026-09-21T16:50:56+08:00	RenJQ	chore(G4-01): record lightweight workflow push
+5003c294debf82ea6ee5dee565f16a6cc53bde88	2026-09-21T16:49:09+08:00	2026-09-21T16:49:09+08:00	RenJQ	docs(G4-01): adopt local quality PR merge flow
+7529d894c8131ac0c91eec7e6701de42740ecd4c	2026-09-21T16:32:28+08:00	2026-09-21T16:32:28+08:00	RenJQ	chore(G4-01): record CI provider alternatives
+0d0d55ebe490bc1658617394406e7a0a1aacf5e2	2026-09-21T16:27:34+08:00	2026-09-21T16:27:34+08:00	RenJQ	chore(G4-01): record PR and CI activation gate
+0fe6745ba4a3e3b964c81ec9509dd9f09d1d379b	2026-09-21T16:25:21+08:00	2026-09-21T16:25:21+08:00	RenJQ	chore(G4-01): log PR creation confirmation
+d39a0cb91fbfd0259641d1e60f99f19720c1492b	2026-09-21T16:23:47+08:00	2026-09-21T16:23:47+08:00	RenJQ	chore(G4-01): log PR submission confirmation
+518f122e7277d4c76a13baf2319c9fed21ce9dc7	2026-09-21T16:11:08+08:00	2026-09-21T16:11:08+08:00	RenJQ	chore(G4-01): record PR login blocker
+d8c365d51d45ec98389dd3e5b690c0656e2c3845	2026-09-21T16:08:11+08:00	2026-09-21T16:08:11+08:00	RenJQ	ci(G4-01): establish quality gates
+df63ddd90e939258f67d01b7f72662fe9f6fc472	2026-09-21T15:46:07+08:00	2026-09-21T15:46:07+08:00	WhiteApricot	chore(log): record g4 launch push
+12ff0d58274b20c1619491c1b9b9c67810861431	2026-09-21T15:44:56+08:00	2026-09-21T15:44:56+08:00	WhiteApricot	docs(g4): launch development sprints and governance
+7421a381e4ec804402fe7ce8dd1bbc26a86a01bd	2026-09-21T15:29:04+08:00	2026-09-21T15:29:04+08:00	WhiteApricot	chore(log): record g3 m3 freeze push
+013f3e5d933314dc78f35f2012deaa2eedb0aa2e	2026-09-21T15:28:10+08:00	2026-09-21T15:28:10+08:00	WhiteApricot	docs(g3): close m3 review and freeze engineering baseline
+9f5b0fc3e4be166863ca2b5a13551335d1a4b0c1	2026-09-21T15:16:30+08:00	2026-09-21T15:16:30+08:00	RenJQ	chore(log): backfill G3-10 review push evidence
+8fad48d8a2831c934055c3fa25bcde25e5be94ef	2026-09-21T15:14:41+08:00	2026-09-21T15:14:41+08:00	RenJQ	review(G3-10): record B and C freeze findings
+778ff16666ae303aba406401fed704e460d7a7f6	2026-09-21T14:55:23+08:00	2026-09-21T14:55:23+08:00	WhiteApricot	chore(log): record g3 simulated confirmation push
+3e42134773101fc2f32fc0262d13e5403a3f92af	2026-09-21T14:54:30+08:00	2026-09-21T14:54:30+08:00	WhiteApricot	docs(g3): apply simulated confirmations and reopen m3 review
+701c8afbb36a74536b57d96b5a9969e3b330bbed	2026-09-21T14:26:55+08:00	2026-09-21T14:26:55+08:00	WhiteApricot	chore(log): backfill g3-14 closeout push
+8a9697b27250da5b617aa4e878b2a1995ea8bf1e	2026-09-21T14:25:53+08:00	2026-09-21T14:25:53+08:00	WhiteApricot	docs(g3-14): close review and consolidate confirmations
+59c2e8b1f08bc6a7e85b8282313a26adebb713b0	2026-09-21T14:13:26+08:00	2026-09-21T14:13:26+08:00	yylinb	docs: 更新本次任务成果
+d22a669c307b2bb8ded59d319f075836365d1a5a	2026-09-21T11:57:39+08:00	2026-09-21T11:57:39+08:00	yylinb	chore(G3-14): backfill B rereview delivery
+fb8a507a07a1a3bb470f12643c47a95d7df6ebcf	2026-09-21T11:57:18+08:00	2026-09-21T11:57:18+08:00	yylinb	review(G3-14): verify remediation and flag TOC pages
+537dded7aea418b9c7a7c597c4b5ede6c87d65b8	2026-09-21T11:36:03+08:00	2026-09-21T11:36:03+08:00	WhiteApricot	chore(log): backfill g3-14 remediation push
+4a58f360b55b38d3f0a993b67f6472792ea222d6	2026-09-21T11:34:47+08:00	2026-09-21T11:34:47+08:00	WhiteApricot	docs(g3-14): address risk plan review findings
+5d83be8fd421d08c857db68bd6e8922c7a16589a	2026-09-21T11:20:15+08:00	2026-09-21T11:20:15+08:00	WhiteApricot	chore(daily): backfill delivery evidence
+939df9d43c878c711484bf9077cfc194a2ef475a	2026-09-21T11:19:10+08:00	2026-09-21T11:19:10+08:00	WhiteApricot	docs(daily): backfill reports through September 19
+bc3c74d227c12b6a3450b0e1efa08e2edcc1b729	2026-09-20T22:48:21+08:00	2026-09-20T22:48:21+08:00	yylinb	chore(G3-14): backfill B review delivery
+b4fef12a7575f2c8836022f3432d9e5bb4fb63a8	2026-09-20T22:47:59+08:00	2026-09-20T22:47:59+08:00	yylinb	review(G3-14): request risk plan remediation
+156ee65f81ec2d5efdddebf51a21a32e2de749f3	2026-09-20T21:24:29+08:00	2026-09-20T21:24:29+08:00	yylinb	chore(G3-13): backfill C rereview delivery
+366164634b9dea496b903744e2bdbeda3dd44d11	2026-09-20T21:24:04+08:00	2026-09-20T21:24:04+08:00	yylinb	review(G3-13): accept caption remediation
+4f0686511a788f8b8a156716bffa7b067c028af6	2026-09-20T19:49:03+08:00	2026-09-20T19:49:03+08:00	WhiteApricot	chore(G3-13): backfill remediation delivery
+24326ccbe6717d9917ab25bf563494e56c828692	2026-09-20T19:48:13+08:00	2026-09-20T19:48:13+08:00	WhiteApricot	docs(G3-13): remediate table captions
+cce440ebec694c73fe1e3a51e9316a0343c791ba	2026-09-20T13:02:35+08:00	2026-09-20T13:02:35+08:00	yylinb	chore(G3-13): backfill C review delivery
+6442fa8ed59c36d46ff903b12f2093645d528249	2026-09-20T13:02:09+08:00	2026-09-20T13:02:09+08:00	yylinb	review(G3-13): request table caption remediation
+b39fa6c64133c6bab96d9f9a4c55490c5d0a046a	2026-09-20T12:54:52+08:00	2026-09-20T12:54:52+08:00	WhiteApricot	chore(G3-14): backfill authorized push result
+a1ea2c88960aa7ce0eecb3e27041947977f9687e	2026-09-20T12:26:03+08:00	2026-09-20T12:26:03+08:00	WhiteApricot	chore(G3-14): record push approval gate
+9b52fbe98a3cd334fea8f9407bb976bb6893512f	2026-09-20T12:25:14+08:00	2026-09-20T12:25:14+08:00	WhiteApricot	docs(G3-14): add risk management plan
+65aa4d5e495b17b4dc71ec1809a01fc8a84feab6	2026-09-20T12:09:22+08:00	2026-09-20T12:09:22+08:00	WhiteApricot	chore(G3-13): backfill delivery evidence
+e2174838b3cd6598cadf25ef7af2c8d5866307be	2026-09-20T12:08:37+08:00	2026-09-20T12:08:37+08:00	WhiteApricot	docs(G3-13): add configuration management plan
+f8dc807392c87027dca54663eb87ad73386a735f	2026-09-20T10:59:58+08:00	2026-09-20T10:59:58+08:00	RenJQ	chore(G3-12): backfill review delivery evidence
+7657cde39fffef20e2b18d8d96fa387a6e93ee7a	2026-09-20T10:59:02+08:00	2026-09-20T10:59:02+08:00	RenJQ	review(G3-12): accept quality management plan
+3d6e49bd865fe2836f06ff8862f177d8c2195bd6	2026-09-20T10:52:33+08:00	2026-09-20T10:52:33+08:00	RenJQ	docs(G3-12)格式修改
+ab837d59fa3364c1646086dd033b0620248905f2	2026-09-20T10:45:42+08:00	2026-09-20T10:45:42+08:00	RenJQ	chore(G3-12): backfill candidate delivery evidence
+b6dd23d3356ac878bf4edcfa8a9213874f3417aa	2026-09-20T10:44:47+08:00	2026-09-20T10:44:47+08:00	RenJQ	docs(G3-12): complete quality management plan candidate
+7338b328b478ce5f3d244d3981612d2ca9c63449	2026-09-20T10:23:46+08:00	2026-09-20T10:23:46+08:00	RenJQ	chore(G3-11): backfill final review evidence
+ae95123df932967a441a274efe59ec6e74190678	2026-09-20T10:22:46+08:00	2026-09-20T10:22:46+08:00	RenJQ	review(G3-11): accept corrected project management plan
+112d555e5652d0c63a6ed4a986fe14c5f3aafb45	2026-09-20T10:14:21+08:00	2026-09-20T10:14:21+08:00	RenJQ	修改项目管理计划
+5e70cb883b27c9a119b5962f25147499a006975c	2026-09-20T09:48:23+08:00	2026-09-20T09:48:23+08:00	RenJQ	chore(G3-11): backfill review delivery evidence
+7ad6bdb64a92bf8ed838732863f926759996cd8e	2026-09-20T09:47:35+08:00	2026-09-20T09:47:35+08:00	RenJQ	review(G3-11): verify project management plan compliance
+4ee46f47fb34c26a09f15b12ad73956b2583aa60	2026-09-19T18:30:36+08:00	2026-09-19T18:30:36+08:00	RenJQ	项目管理计划格式调整
+23f11024c4175780cb9f4080e96b6ef9b6d6f462	2026-09-19T18:25:33+08:00	2026-09-19T18:25:33+08:00	RenJQ	chore(G3-11): backfill local commit status
+04b49394009c73205ebcd62d7689d84ae1f9ed7d	2026-09-19T18:25:03+08:00	2026-09-19T18:25:03+08:00	RenJQ	docs(G3-11): complete project management plan candidate
+ebdead0cece997c3a9e539ef55c5ca47f34acaf4	2026-09-19T18:01:27+08:00	2026-09-19T18:01:27+08:00	RenJQ	chore(log): record G3-10 push blocker
+421006e991dedb2f33c8ce6d2e2191ec1752af62	2026-09-19T18:00:19+08:00	2026-09-19T18:00:19+08:00	RenJQ	review(G3-10): audit M3 and record freeze blockers
+b04acb202904fb16f62e0db3c7ad3b958fefa3af	2026-09-19T17:04:46+08:00	2026-09-19T17:04:46+08:00	WhiteApricot	chore(G3-09): backfill final review evidence
+44b2ccd1a16e78d4c90663c16801cee5406c204c	2026-09-19T17:04:06+08:00	2026-09-19T17:04:06+08:00	WhiteApricot	review(G3-09): verify latest remediation
+baa6c090f85d62369cd554779eff41081826501c	2026-09-19T17:02:22+08:00	2026-09-19T17:02:22+08:00	WhiteApricot	merge: integrate concurrent G3-09 remediation evidence
+fe350f50dd55c3fab6dfefd55d4c313a19d9aabc	2026-09-19T17:01:40+08:00	2026-09-19T17:01:40+08:00	WhiteApricot	review(G3-09): approve final test plan
+e7b52ab9a8c9e650bdcbdf31cc0794657f4a4af5	2026-09-19T16:57:47+08:00	2026-09-19T16:57:47+08:00	RenJQ	chore(G3-09): backfill remediation delivery evidence
+d2520b2cca9025eccf85b53ca1cb00420fea0e57	2026-09-19T16:56:58+08:00	2026-09-19T16:56:58+08:00	RenJQ	merge: integrate remote G3-09 document update
+f77005d8455d07126b80931a017ab122c9cfb162	2026-09-19T16:54:37+08:00	2026-09-19T16:54:37+08:00	RenJQ	docs(G3-09): correct test plan TOC pagination
+267062ed643516e81030f33ff3b508b0d716d866	2026-09-19T16:49:35+08:00	2026-09-19T16:49:35+08:00	yylinb	docs: 更新本次任务成果
+2cea0ec48c9b2ec151b33004b14809edcee2beb7	2026-09-19T16:28:28+08:00	2026-09-19T16:28:28+08:00	WhiteApricot	chore(G3-09): backfill recheck evidence
+7819c3d8b4a46f47888732012d608ad799ed3450	2026-09-19T16:27:40+08:00	2026-09-19T16:27:40+08:00	WhiteApricot	review(G3-09): record failed remediation recheck
+9e42bafd8466ad71c52bd3cb01795b56ab48cba5	2026-09-19T16:16:54+08:00	2026-09-19T16:16:54+08:00	yylinb	chore(log): record G3-09 remediation delivery
+cfe4e00421e405befc33f18478561f7c7edb4624	2026-09-19T16:16:24+08:00	2026-09-19T16:16:24+08:00	yylinb	fix(G3-09): address A review findings
+05c8dae11730fc75465d422d1353dffa3487f319	2026-09-19T15:42:05+08:00	2026-09-19T15:42:05+08:00	WhiteApricot	chore(G3-09): backfill review commit and push evidence
+cf9e59e65ec83f30cc7f8554446fd788c0d048b3	2026-09-19T15:41:15+08:00	2026-09-19T15:41:15+08:00	WhiteApricot	review(G3-09): record A single-review findings
+99e4d336ad01ca98f4b54b18d20f04fcb51c295f	2026-09-19T14:59:20+08:00	2026-09-19T14:59:20+08:00	yylinb	chore(G3-09): backfill prompt log
+305adbd34f2cc40a71eaa70e71fe450ce82a4f4e	2026-09-19T14:58:25+08:00	2026-09-19T14:58:25+08:00	yylinb	docs(G3-09): create test plan candidate
+c821478a907d6dd3645eb0c85f8619dec6650c59	2026-09-19T14:41:18+08:00	2026-09-19T14:41:18+08:00	yylinb	chore(G3-08): backfill B and C review logs
+87c5db2009493deceac388f255f4162b514d67ad	2026-09-19T14:40:18+08:00	2026-09-19T14:40:18+08:00	yylinb	review(G3-08): complete B and C verification
+ce619fac5058ebb4f37d75bc6d7f5cd1162b160e	2026-09-18T18:06:41+08:00	2026-09-18T18:06:41+08:00	RenJQ	chore(G3-08): backfill commit evidence and status confirmation log
+aa0b8d282c84b570ef1d870ccc95d2e61aa0ca25	2026-09-18T18:05:38+08:00	2026-09-18T18:05:38+08:00	RenJQ	docs(G3-08): apply G3-07 DONE status confirmation to RTM
+d6da2ed72324261b0fa032eacc3bad17afa7dfd7	2026-09-18T18:04:02+08:00	2026-09-18T18:04:02+08:00	RenJQ	Merge origin/master into master (preserve both sides' intent)
+6b612b8e7729cd591b8b657cc1ed6935dd5b2263	2026-09-18T18:02:42+08:00	2026-09-18T18:02:42+08:00	RenJQ	review(G3-08): complete A/B merged review, C fixes, register ISSUE-G3-08-001—007
+adfed89e346c01a13f1bd420915a5ce4111a50c2	2026-09-18T18:00:03+08:00	2026-09-18T18:00:03+08:00	WhiteApricot	chore(G3-07): correct commit backfill hash
+ec9078c6a1c457f5a13f49646272a8ef73fcadac	2026-09-18T17:59:43+08:00	2026-09-18T17:59:43+08:00	WhiteApricot	chore(G3-07): backfill push evidence
+a37dd6de6edae5d45b23c09f85d4c5bb381ce782	2026-09-18T17:58:35+08:00	2026-09-18T17:58:35+08:00	WhiteApricot	docs(G3-07): close ADR and NFR design
+bbe8897f7a111761f5089eb7f2e3b192a8bd755b	2026-09-18T17:32:23+08:00	2026-09-18T17:32:23+08:00	RenJQ	chore(log): backfill GOV-LOG-STRUCTURE-REPAIR-001
+30d1f79c0ba6ccce971268b4398973db3ce24df6	2026-09-18T17:30:23+08:00	2026-09-18T17:30:23+08:00	RenJQ	fix(governance): restore C log and tasks.md structure and lost content
+f3a69d3883d1b22cdb39798e4c8ab0760864b15c	2026-09-18T17:05:06+08:00	2026-09-18T17:05:06+08:00	WhiteApricot	fix(governance): restore canonical markdown line structure
+71b9ad7cc3aec1e226e4f28f469f7b490c070cbe	2026-09-18T17:02:14+08:00	2026-09-18T17:02:14+08:00	WhiteApricot	fix(governance): restore task and C log line breaks
+e5417b1cab9bbfcaddf43281624c681b8a53c605	2026-09-18T16:56:16+08:00	2026-09-18T16:56:16+08:00	WhiteApricot	fix(G3-07): close stale issue status
+60ba27c15fea4412b9ba8fda74f5b47f4886f02c	2026-09-18T16:46:56+08:00	2026-09-18T16:46:56+08:00	RenJQ	chore(log): backfill G3-06 C review push
+77c95cd44592ae018acb6e53243b819af83329b6	2026-09-18T16:45:57+08:00	2026-09-18T16:45:57+08:00	RenJQ	review(G3-06): C 符合性复核 PASS 并关闭 ISSUE-G3-06-001
+5952eae7db5333f82f25b869f751567e1a97b748	2026-09-18T16:26:29+08:00	2026-09-18T16:26:29+08:00	WhiteApricot	chore(log): correct G3-08 push result
+dfe0ed8c0340a46e238b1382165f0a298527e5ae	2026-09-18T16:25:55+08:00	2026-09-18T16:25:55+08:00	WhiteApricot	merge: integrate G3-07 review with G3-08 RTM
+02dedb075c9033baa2a79b1b8eff43f4ef5b9a1d	2026-09-18T16:24:26+08:00	2026-09-18T16:24:26+08:00	WhiteApricot	chore(log): backfill G3-08 push
+17d4203a4623594f3f1a072110328fed47ff8743	2026-09-18T16:24:01+08:00	2026-09-18T16:24:01+08:00	WhiteApricot	docs(G3-08): link RTM to design evidence
+8be8edebb0dff37be86794dca6afc60e0fbc1101	2026-09-18T16:18:41+08:00	2026-09-18T16:18:41+08:00	RenJQ	chore(log): backfill G3-07 C review push
+a2404eb0cda39abccde7a81b9a59344e7f036185	2026-09-18T16:18:03+08:00	2026-09-18T16:18:03+08:00	RenJQ	review(G3-07): record C conformance review and status issue
+e0d3e8b6f3a3658ade2011e96a67d3d826b858f3	2026-09-18T16:08:59+08:00	2026-09-18T16:08:59+08:00	WhiteApricot	chore(log): backfill G3-06 A review push
+26c7327882dba2ad31b0c0bc82d20bb7403cb5fd	2026-09-18T16:07:40+08:00	2026-09-18T16:07:40+08:00	WhiteApricot	review(G3-06): verify interface design remediation
+71e064ac202f3659e05aeec8958aebcaa910ee34	2026-09-18T15:41:47+08:00	2026-09-18T15:41:47+08:00	yylinb	chore(log): backfill G3-06 remediation push
+881ed98754e78a27feb3ef1ce2b8869214daf6d2	2026-09-18T15:39:25+08:00	2026-09-18T15:40:26+08:00	yylinb	fix(G3-06): remediate interface figure and layout
+4d9df3bcea728bd51471cdf6a19240fce64c33e8	2026-09-18T15:31:09+08:00	2026-09-18T15:31:09+08:00	WhiteApricot	chore(log): backfill G3-07 remediation push
+3cf2d05e35b2d8a6a16f462c60f5d80772d8a0f5	2026-09-18T15:30:33+08:00	2026-09-18T15:30:33+08:00	WhiteApricot	fix(G3-07): clarify NFR formal delivery status
+eb0f93a7d96d555a0efa441ad077fe091806324d	2026-09-18T15:24:38+08:00	2026-09-18T15:24:38+08:00	WhiteApricot	chore(log): backfill G3-07 review push
+a8941b72d5d02dcf66f7ec0854d681d483f7b1c0	2026-09-18T15:24:05+08:00	2026-09-18T15:24:05+08:00	WhiteApricot	review(G3-07): record ADR and NFR findings
+f683c6933f6353de61a6decad49a473e6578cb1f	2026-09-18T15:12:42+08:00	2026-09-18T15:12:42+08:00	WhiteApricot	chore(log): backfill G3-06 rereview push
+4167deb0c18388c5b6bf58dc6aff0eeb0aae5a60	2026-09-18T15:12:08+08:00	2026-09-18T15:12:08+08:00	WhiteApricot	review(G3-06): record unresolved rereview
+da97255b6d320b2060bb3789e6ac388754de9f61	2026-09-18T15:04:22+08:00	2026-09-18T15:05:04+08:00	yylinb	chore(log): backfill G3-07 delivery
+102621d1ed24c849a9aeddc59f15e2342592eaa2	2026-09-18T15:03:25+08:00	2026-09-18T15:03:25+08:00	yylinb	docs(G3-07): add ADR and nonfunctional design
+91ad49857a127ae48dfff88cdf82f1b59be99451	2026-09-18T14:49:31+08:00	2026-09-18T14:49:31+08:00	WhiteApricot	chore(log): backfill G3-06 review push
+eaf78dcc5ca8f13095e1e5c06afb077451b3252f	2026-09-18T14:48:59+08:00	2026-09-18T14:48:59+08:00	WhiteApricot	review(G3-06): record interface delivery findings
+d51f55049864d3795877c1c9731143925442356c	2026-09-18T14:33:31+08:00	2026-09-18T14:33:31+08:00	yylinb	chore(log): backfill G3-06 delivery
+a56ac1f2e51adb10be3dbdce1427f30561a42552	2026-09-18T14:32:57+08:00	2026-09-18T14:32:57+08:00	yylinb	docs(G3-06): add interface design and OpenAPI contract
+1e4f7be25552b5902706b13b154e382cee687aef	2026-09-17T22:58:31+08:00	2026-09-17T22:58:31+08:00	WhiteApricot	review: accept G3-05 format remediation
+670f57c6a9a37181bc19932b2e368f804278ed13	2026-09-17T21:58:54+08:00	2026-09-17T21:58:54+08:00	yylinb	chore(G3-05): backfill format remediation evidence
+89f52c6783a81bc284b89705c85ab0ccc4186ed3	2026-09-17T21:58:21+08:00	2026-09-17T21:58:21+08:00	yylinb	fix(G3-05): align detailed design with reference
+3dad13941b90fa9eb94fe9aed0681779f4961b52	2026-09-17T20:38:19+08:00	2026-09-17T20:38:19+08:00	WhiteApricot	review: require G3-05 format evidence
+9f55d54e505f5793f548fc9c52a285a7062ce6b9	2026-09-17T20:22:51+08:00	2026-09-17T20:22:51+08:00	WhiteApricot	review: qualify G3-05 delivery conclusion
+08294aa2ab97a3fde01fa293d8b94dec7a809e6e	2026-09-17T20:20:08+08:00	2026-09-17T20:20:08+08:00	WhiteApricot	review: accept G3-05 delivery
+747aa19ca9fa40a0c2c749e747a7ff4cb4393c27	2026-09-17T19:03:25+08:00	2026-09-17T19:03:25+08:00	yylinb	chore(G3-05): backfill delivery evidence
+096237751d3e66c83ecf6bf069cfe164b34d1344	2026-09-17T19:02:52+08:00	2026-09-17T19:02:52+08:00	yylinb	docs(G3-05): add detailed design review candidate
+58ad18fb44619f08a9a6e1749e16c4a19dab3825	2026-09-17T18:38:09+08:00	2026-09-17T18:38:09+08:00	WhiteApricot	review: accept G3-04 delivery
+864e20e0712a0823ba07bd5a82feac20be78e57a	2026-09-17T18:27:39+08:00	2026-09-17T18:27:39+08:00	yylinb	chore(G3-04): backfill remediation delivery
+6a05c63f153cca5121e9196186aae2f60dce373e	2026-09-17T18:27:09+08:00	2026-09-17T18:27:09+08:00	yylinb	docs(G3-04): add complete FR AC data traceability
+08db0f74b8647964577d4fb3f467bcc52e412bed	2026-09-17T17:26:28+08:00	2026-09-17T17:26:28+08:00	WhiteApricot	review: record G3-04 compliance blocker
+c4a46e45b322881cd74141abdc0bb78b68742272	2026-09-17T17:23:44+08:00	2026-09-17T17:23:44+08:00	WhiteApricot	review: complete A review for G3-04
+998c7068864e76f5b3816fd8951b31bed395c051	2026-09-17T17:07:35+08:00	2026-09-17T17:07:35+08:00	yylinb	chore(G3-04): backfill delivery evidence
+c80f400121232c2fc9157c0a1a495330a4dda37a	2026-09-17T17:07:23+08:00	2026-09-17T17:07:23+08:00	yylinb	docs(G3-04): align dependency with G3-03 closure
+f330a57ce8e4dc04fff47c451d4cd9cf408a46d5	2026-09-17T17:06:14+08:00	2026-09-17T17:06:14+08:00	yylinb	Merge remote-tracking branch 'origin/master'
+c41f62e67162a8d333bc1ba4b77a193df36c8c12	2026-09-17T17:05:52+08:00	2026-09-17T17:05:52+08:00	yylinb	docs(G3-04): add database design review candidate
+fdc544526f447ea4a2836eacb99ce6f52c2c51e5	2026-09-17T17:00:47+08:00	2026-09-17T17:00:47+08:00	RenJQ	chore(daily): record C report push blocker
+fe93d055187f0952296dd0ed59eb5832c49af7ad	2026-09-17T16:59:26+08:00	2026-09-17T16:59:26+08:00	RenJQ	docs(daily): backfill C reports for Sep 15-17
+6edce2de15ec599dac9db096daddfddeb1e0ef6b	2026-09-17T16:53:10+08:00	2026-09-17T16:53:10+08:00	RenJQ	chore(G3-03): record final push authorization blocker
+fc36984ee72bf3f12679b2cd6809e174dc3f66f9	2026-09-17T16:52:12+08:00	2026-09-17T16:52:12+08:00	RenJQ	review(G3-03): accept visual deviation and close task
+d8cb8bfde29439cae2f4aefd6396aa7aff1fb91a	2026-09-17T16:48:54+08:00	2026-09-17T16:48:54+08:00	RenJQ	chore(G3-03): record blocker rereview push status
+a0e78bbfdf2a2c81aa80f6d54f4e2a7f341128fd	2026-09-17T16:47:26+08:00	2026-09-17T16:47:26+08:00	RenJQ	review(G3-03): confirm visual blocker persists
+012060ee1566bcb1ad934d2b7063be65bbb97eba	2026-09-17T16:46:02+08:00	2026-09-17T16:46:02+08:00	RenJQ	Merge remote-tracking branch 'origin/master'
+c42cd052daf82949282176384b6e71e8027080be	2026-09-17T16:43:55+08:00	2026-09-17T16:43:55+08:00	WhiteApricot	docs: align G3-03 format with reference
+e853468355259ee2f2bab8865c438b30005ec965	2026-09-17T16:39:42+08:00	2026-09-17T16:39:42+08:00	RenJQ	chore(G3-03): record rereview push blocker
+0f580470334eff2add0132d24ee5fd33f846630b	2026-09-17T16:38:48+08:00	2026-09-17T16:38:48+08:00	RenJQ	review(G3-03): retain visual QA blocker
+8231c1bfa094e16a16042e70e85da3499c772e1f	2026-09-17T16:30:26+08:00	2026-09-17T16:30:26+08:00	WhiteApricot	chore: backfill G3-03 remediation log
+f039ae08f29bb583de1a65a4e6980cf271806ae7	2026-09-17T16:29:57+08:00	2026-09-17T16:29:57+08:00	WhiteApricot	docs: remediate G3-03 review findings
+fd18047ff9e9597b6b0371345355df373616a1a1	2026-09-17T16:16:27+08:00	2026-09-17T16:16:27+08:00	RenJQ	chore(G3-03): record blocked push
+64d73635b1ffd041662f4550357b1c6bb6e28fde	2026-09-17T16:14:22+08:00	2026-09-17T16:14:22+08:00	RenJQ	review(G3-03): record compliance blockers
+7dca90a0db2c078492646115b9cfe8f514ba0ff7	2026-09-17T16:03:27+08:00	2026-09-17T16:03:27+08:00	WhiteApricot	chore: backfill G3-03 delivery log
+359dd81c84e031d2c8d409e5510a9e8beae3e02b	2026-09-17T16:02:35+08:00	2026-09-17T16:02:35+08:00	WhiteApricot	docs: reconstruct G3-03 overview design
+ef3c58c56e5b03319dd17f5a6ace356450d60c2f	2026-09-17T15:30:37+08:00	2026-09-17T15:30:37+08:00	WhiteApricot	docs(skill): require physical reference inheritance
+3142539455fc1a0ecede0658554d0601cac8a9cc	2026-09-17T15:17:46+08:00	2026-09-17T15:17:46+08:00	WhiteApricot	chore(G3-03): backfill format QA push
+43037c65b12da049ea51d3f08fee0fbc940e88bd	2026-09-17T15:17:19+08:00	2026-09-17T15:17:19+08:00	WhiteApricot	style(G3-03): align overview design with reference
+fd0d8567bc11b6a82c43d268e6535148581f9cdc	2026-09-17T15:10:52+08:00	2026-09-17T15:10:52+08:00	WhiteApricot	chore(G3-03): backfill render QA push
+5d417924f3ebea653127df0e0990716b81515e01	2026-09-17T15:10:21+08:00	2026-09-17T15:10:21+08:00	WhiteApricot	docs(G3-03): complete rendered overview design QA
+9cdc8209872f9a565cda7ae066ad72e0ce162a54	2026-09-17T15:01:52+08:00	2026-09-17T15:01:52+08:00	WhiteApricot	chore(G3-03): backfill blocked candidate evidence
+d830bb0768f2c116e8dee715d469cff1ac715618	2026-09-17T15:01:24+08:00	2026-09-17T15:01:24+08:00	WhiteApricot	docs(G3-03): add blocked overview design candidate
+7584925d9683fd393faf88745fa943be9e0fd5fe	2026-09-17T14:51:07+08:00	2026-09-17T14:51:07+08:00	RenJQ	review(G3-02)
+7594436bb158f6ffe0543590733295033a4d83ec	2026-09-17T14:42:00+08:00	2026-09-17T14:42:00+08:00	WhiteApricot	chore(G3-02): backfill remediation push
+0dab79d14e31392696c93de14d28f81a609628b6	2026-09-17T14:41:30+08:00	2026-09-17T14:41:30+08:00	WhiteApricot	docs(G3-02): address plan review blockers
+cbe2512a3fd5cdc66b5c48d5e607ff4e74b09652	2026-09-17T14:26:05+08:00	2026-09-17T14:26:05+08:00	RenJQ	1
+fef962ac760ff3c957d5909eea4618faebc00224	2026-09-17T12:11:45+08:00	2026-09-17T12:11:45+08:00	WhiteApricot	chore(G3-02): backfill push evidence
+1c82ffcfda2716e6685b5a972b1205be0aab76a5	2026-09-17T12:10:45+08:00	2026-09-17T12:10:45+08:00	WhiteApricot	docs(G3-02): strengthen engineering plan baseline
+e4e78bae0c1b453d1838e8dfb6cc720fc70c0e91	2026-09-17T11:11:31+08:00	2026-09-17T11:11:31+08:00	WhiteApricot	plan(G3-02): add WBS constitution and management plan tasks
+391c213f49d1bfe65adf2a34677555a7c7349178	2026-09-17T11:02:00+08:00	2026-09-17T11:02:00+08:00	WhiteApricot	chore(log): backfill G3-01R final review push
+3f102ea77c497eb461cee4455b96c548afe822a6	2026-09-17T11:01:18+08:00	2026-09-17T11:01:18+08:00	WhiteApricot	review(G3-01R): approve revised design input baseline
+b0bd7a87c9057f926358ca0cd303c750098dcd52	2026-09-17T10:53:20+08:00	2026-09-17T10:53:20+08:00	WhiteApricot	docs(G3-01R): refresh design input baseline and purge QA cache
+68e7787135e9f0afe1e448e74388e38cd050ae19	2026-09-16T22:44:19+08:00	2026-09-16T22:44:19+08:00	RenJQ	chore(G2-R06): backfill refreeze delivery
+52887e5cf2ac177de22f63b8906bfb7913506b13	2026-09-16T22:42:50+08:00	2026-09-16T22:42:50+08:00	RenJQ	review(G2-R06): approve M2 refreeze
+2911d767fcbd9594f9b0933916b1ddce051e3372	2026-09-16T22:26:39+08:00	2026-09-16T22:26:39+08:00	RenJQ	chore(G2-R06): backfill B review delivery
+0c726e525c48b6fdd7aa91a16a8ff4186a820676	2026-09-16T22:23:09+08:00	2026-09-16T22:23:09+08:00	RenJQ	review(G2-R06): record SRS refreeze blocker
+f55d8a84b08d88dba2a1063e5523216639f816a5	2026-09-16T21:51:05+08:00	2026-09-16T21:51:05+08:00	RenJQ	chore(log): backfill G2-R06 C waiver delivery
+f8a535ebbd77300bfb6ca44a7f4cadff1bfa84e9	2026-09-16T21:49:18+08:00	2026-09-16T21:49:18+08:00	RenJQ	review(G2-R06): accept C compliance after user waiver
+66a46d5f70ecffe23b2c8df97c201353544e70b9	2026-09-16T21:27:06+08:00	2026-09-16T21:27:06+08:00	RenJQ	chore(log): backfill G2-R06 C review delivery
+9f54ddc97fc4d58c5ecef5aecddc57b20a049262	2026-09-16T21:25:30+08:00	2026-09-16T21:25:30+08:00	RenJQ	review(G2-R06): record C compliance blocker
+8c3008fe92ac7e123dab613130e834d28c78780b	2026-09-16T17:59:53+08:00	2026-09-16T17:59:53+08:00	yylinb	chore(log): record G2-R06 review delivery
+9fc07e0a2c013ce5733f59c3ed527cb5e8568fe4	2026-09-16T17:58:59+08:00	2026-09-16T17:58:59+08:00	yylinb	docs(G2-R06): prepare M2 refreeze review
+198c4a6c7047a5b6ca12b3060641bc2f19b66e00	2026-09-16T17:49:35+08:00	2026-09-16T17:49:35+08:00	RenJQ	chore(log): backfill G2-R05 final rereview delivery
+25380ee1ba05cecd979eae5433c54956ceb6f39e	2026-09-16T17:45:09+08:00	2026-09-16T17:45:09+08:00	RenJQ	review(G2-R05): approve B C final rereview
+1e9801073c8d9adc503aa285db06db22cac8e787	2026-09-16T17:35:13+08:00	2026-09-16T17:35:13+08:00	yylinb	chore(log): record G2-R05 issue fix delivery
+d0087db6bbdd8d99488ca9265f5cc04478b319c9	2026-09-16T17:34:33+08:00	2026-09-16T17:34:33+08:00	yylinb	fix(G2-R05): align SRS synchronization status
+1e8d87ee950413cf0dd905fc4f089471e4f2400f	2026-09-16T17:19:49+08:00	2026-09-16T17:19:49+08:00	RenJQ	chore(log): backfill G2-R05 review delivery
+2c26be8000fcb42c891b2a13416bd9548decef07	2026-09-16T17:15:54+08:00	2026-09-16T17:15:54+08:00	RenJQ	Merge remote-tracking branch 'origin/master'
+308b76ac349096238b0799cb1469b6422635b823	2026-09-16T17:13:12+08:00	2026-09-16T17:13:12+08:00	RenJQ	review(G2-R05): record B C consistency blocker
+3dea773c211125e2d7baa47877f3dccc07466696	2026-09-16T17:04:36+08:00	2026-09-16T17:04:36+08:00	yylinb	chore(log): backfill G2-R06 preflight delivery
+1fabd1671eb6ac94f75b2fb67abf2c617230eebd	2026-09-16T17:04:23+08:00	2026-09-16T17:04:23+08:00	yylinb	chore(G2-R06): record M2 preflight block
+e69b62139350949690d42a5cb9305a57cc2da3c4	2026-09-16T16:52:12+08:00	2026-09-16T16:52:12+08:00	WhiteApricot	chore(log): backfill G2-R05 merge push
+1e8eaec73fae8b38219e86386cc56abbd5a4ff22	2026-09-16T16:51:10+08:00	2026-09-16T16:51:10+08:00	WhiteApricot	merge: integrate remote G2-R04 reviews
+a9f5b10c2022aa8e6a58803596c736283e4b5cc6	2026-09-16T16:48:27+08:00	2026-09-16T16:48:27+08:00	WhiteApricot	docs(G2-R05): sync RCLR updates to formal deliverables
+4750b0633c0ebd97699657519f176f314cddcb83	2026-09-16T16:34:37+08:00	2026-09-16T16:34:37+08:00	RenJQ	chore(log): backfill G2-R04 final review delivery
+d16698a9ee3d93609d6cb669ded150eb3a7c528b	2026-09-16T16:29:50+08:00	2026-09-16T16:29:50+08:00	RenJQ	Merge remote-tracking branch 'origin/master'
+7879ba2809ffd80f48a884f8fe11904df98355b0	2026-09-16T16:20:45+08:00	2026-09-16T16:20:45+08:00	RenJQ	review(G2-R04): approve final format remediation
+d7cfee5356a0d230752b305af15d3be95fe35a38	2026-09-16T16:17:13+08:00	2026-09-16T16:17:13+08:00	WhiteApricot	chore(log): record G2-R05 merge and rereview
+233bd11e8639898416c663652758068c2434590e	2026-09-16T16:16:26+08:00	2026-09-16T16:16:26+08:00	WhiteApricot	merge: integrate G2-R05 RTM and spec synchronization
+9b9cbf4be6c228f0317d596c4abeb11acc9459d1	2026-09-16T16:13:17+08:00	2026-09-16T16:13:17+08:00	WhiteApricot	fix(G2-R05): map RCLR decisions in RTM
+b8166e269aa25610a21d138676fa65f5dd118de4	2026-09-16T16:09:48+08:00	2026-09-16T16:09:48+08:00	yylinb	chore(log): backfill G2-R05 B review delivery
+7eb2d9b329a7ffe1a12cf2328493096dc59853b5	2026-09-16T16:09:28+08:00	2026-09-16T16:09:28+08:00	yylinb	fix(G2-R05): map clarifications to observable spec AC
+47dfebceca1f5391bc6d206a8e4f7d1ff64ada9c	2026-09-16T16:05:29+08:00	2026-09-16T16:05:29+08:00	RenJQ	Merge remote-tracking branch 'origin/master'
+533af9740bdc44ee04eb373a1a6c59bd88a64b1c	2026-09-16T16:00:25+08:00	2026-09-16T16:00:25+08:00	RenJQ	review(G2-R04): record B C rereview blockers
+6c1b0f17fec45bd7bbf41e5c83c0c804689e8905	2026-09-16T15:57:25+08:00	2026-09-16T15:57:25+08:00	WhiteApricot	chore(log): record G2-R05 push evidence
+d0c53585a4eba4c6527dcf4c69a296d1db045204	2026-09-16T15:56:36+08:00	2026-09-16T15:56:36+08:00	WhiteApricot	audit(G2-R05): record SRS spec RTM consistency findings
+fdbe6569410e8036284c332ec6bab4dbeefda887	2026-09-16T15:46:13+08:00	2026-09-16T15:46:13+08:00	WhiteApricot	chore(log): record G2-R04 push evidence
+d62bbcd551607b104f7ddf686874e7107d82c71a	2026-09-16T15:45:01+08:00	2026-09-16T15:45:01+08:00	WhiteApricot	fix(G2-R04): align formal document formatting and captions
+816eec2ab9fe7dd5eb3d01e543d893e5860cdfa6	2026-09-16T15:05:13+08:00	2026-09-16T15:05:13+08:00	WhiteApricot	docs(G2-R04): submit format QA for review
+0adef2b7b9a5b78cc309202b061bba9b82659bec	2026-09-16T14:59:40+08:00	2026-09-16T14:59:40+08:00	RenJQ	chore(log): backfill G2-R04 B C review delivery
+95bd0c63026a7b164328770a732993c845c450f8	2026-09-16T14:58:57+08:00	2026-09-16T14:58:57+08:00	RenJQ	review(G2-R04): record B and C readiness gate
+3fffca82bcd17dc41f5ef46e99f795eb1b842c69	2026-09-16T14:49:48+08:00	2026-09-16T14:49:48+08:00	WhiteApricot	chore(log): record G2-R03 caption fix outcome
+af1d66ea97062f8a90389e5103a9c6ed147d75d4	2026-09-16T14:48:46+08:00	2026-09-16T14:48:46+08:00	WhiteApricot	docs(G2-R03): remove duplicate field dictionary caption
+40af678861713927cc4cbba66a1a68f46e1f274f	2026-09-16T14:38:57+08:00	2026-09-16T14:38:57+08:00	RenJQ	chore(log): backfill G2-R03 C rereview delivery
+2200f6698a93b0d34bda2b2723f96c3bdfa58c20	2026-09-16T14:38:16+08:00	2026-09-16T14:38:16+08:00	RenJQ	review(G2-R03): record C rereview blocker
+64bd4e0006c2ef7aa20f5c175372966ebf1dae1f	2026-09-16T14:29:43+08:00	2026-09-16T14:29:43+08:00	WhiteApricot	chore(log): record G2-R03 blocker repair outcome
+63e99fedd8912d9ca4e6dd41266fe85d217e8efd	2026-09-16T14:28:23+08:00	2026-09-16T14:28:23+08:00	WhiteApricot	chore(log): backfill G2-R03 blocker repair push
+c629a158c06b06a66db79d8f61af9bb93b54dd43	2026-09-16T14:26:49+08:00	2026-09-16T14:26:49+08:00	WhiteApricot	docs(G2-R03): repair SRS review blockers
+6a48b75ad4d9a5919959ababf72629a77c557267	2026-09-16T09:43:07+08:00	2026-09-16T09:43:07+08:00	RenJQ	chore(log): backfill G2-R03 C review delivery
+b3c6cf89ac412c6d24da00b49a4c5b9f83e3d9c0	2026-09-16T09:40:21+08:00	2026-09-16T09:40:21+08:00	RenJQ	review(G2-R03): record C compliance blockers
+2286cf8b13c4c686281715ae62735c9f793bcd18	2026-09-16T09:24:39+08:00	2026-09-16T09:24:39+08:00	RenJQ	chore(log): record rollback to 098e488
+935e06649c924df1a5de20d7a46b3a09c51823ba	2026-09-16T09:23:40+08:00	2026-09-16T09:23:40+08:00	RenJQ	revert: restore repository to 098e488 content
+542bf13ab29161532a779e079947a0a8edd9e58c	2026-09-15T23:36:52+08:00	2026-09-15T23:36:52+08:00	RenJQ	chore(log): backfill G2-R03 WPS review delivery
+7ba2ff992696b3d846f2fa4567bdb97bef0b3796	2026-09-15T23:36:04+08:00	2026-09-15T23:36:04+08:00	RenJQ	review(G2-R03): add WPS render verification
+e933171646cacf556c976c9669b989e6a8abff70	2026-09-15T23:18:09+08:00	2026-09-15T23:18:09+08:00	RenJQ	chore(log): backfill G2-R03 second review delivery
+fb462f0e5f2c8bbe6b9120d12ddb7bb7296459fc	2026-09-15T23:15:49+08:00	2026-09-15T23:15:49+08:00	RenJQ	review(G2-R03): verify second SRS repair
+1e6f60baeb044a20e689ae05b3590f6bdaca9d54	2026-09-15T23:04:44+08:00	2026-09-15T23:04:44+08:00	RenJQ	chore(log): backfill G2-R03 revision push
+f801615fe2b674d41f3e57cc953505ed65984823	2026-09-15T23:03:36+08:00	2026-09-15T23:03:36+08:00	RenJQ	docs(G2-R03): fix reviewed SRS chapter order
+92d1661059ea6eb26dce121a1ff9c60ef807627c	2026-09-15T22:47:07+08:00	2026-09-15T22:47:07+08:00	RenJQ	chore(log): backfill G2-R03 re-review delivery
+86ba9f2ef7fef7241957e036a4fc169efcd8d3de	2026-09-15T22:45:34+08:00	2026-09-15T22:45:34+08:00	RenJQ	review(G2-R03): recheck repaired SRS compliance
+098e488afede87df91f1adf50bc999c11309bbbe	2026-09-15T20:43:08+08:00	2026-09-15T20:43:08+08:00	WhiteApricot	chore(log): record G2-R03 review repair outcome
+290303ff960226e9ae5bba5067b4611a0cba2a6d	2026-09-15T20:41:49+08:00	2026-09-15T20:41:49+08:00	WhiteApricot	chore(log): backfill G2-R03 review repair push
+c159709ea24ee3e9d7974e43ee73e77c1e6294b3	2026-09-15T20:40:27+08:00	2026-09-15T20:40:27+08:00	WhiteApricot	docs(G2-R03): repair reviewed SRS consistency
+bee4c7aae262d28a624ffb481df865db51bf85bf	2026-09-15T17:40:43+08:00	2026-09-15T17:40:43+08:00	RenJQ	chore(log): backfill G2-R03 C review delivery
+b03d4e6f22649fcce5318440c1921c19a615c903	2026-09-15T17:39:28+08:00	2026-09-15T17:39:28+08:00	RenJQ	review(G2-R03): verify implementation-level SRS compliance
+7b1d6ff09ce29ab2f12b37c99b2f65774cacde24	2026-09-15T17:30:11+08:00	2026-09-15T17:30:11+08:00	WhiteApricot	chore(G2-R03): backfill delivery log
+dfe667ee5c410c563856830919c46ba88941c25c	2026-09-15T17:28:45+08:00	2026-09-15T17:28:45+08:00	WhiteApricot	docs(G2-R03): deepen implementation-level SRS
+6ddba688d0ff1b9d0392c00d886bb6e313ab7f1b	2026-09-15T16:54:30+08:00	2026-09-15T16:54:30+08:00	yylinb	chore(log): backfill G2-R02 A review delivery
+273792ad3fcdc2696fcb66dd0980be41b47fbbf1	2026-09-15T16:54:09+08:00	2026-09-15T16:54:09+08:00	yylinb	fix(G2-R02): correct issue closure formatting
+356998907251d988d7a5aef848d30077bf645675	2026-09-15T16:53:47+08:00	2026-09-15T16:53:47+08:00	yylinb	review(G2-R02): accept clarification reconstruction
+54eb17ff63642edf21030169f8a9bbc082f4960c	2026-09-15T16:49:46+08:00	2026-09-15T16:49:46+08:00	yylinb	chore(log): backfill G2-R02 B review delivery
+bdd86ebff0c005e4b421a47aed74ce6ad6fd199c	2026-09-15T16:49:23+08:00	2026-09-15T16:49:23+08:00	yylinb	review(G2-R02): accept clarification reconstruction
+a01b209930e16db5d5dff3397a48a9ac9be3f51b	2026-09-15T16:26:55+08:00	2026-09-15T16:26:55+08:00	RenJQ	chore(log): backfill G2-R02 delivery evidence
+46d97656dee4935684275f6b960281bf6f3686d1	2026-09-15T16:22:23+08:00	2026-09-15T16:22:23+08:00	RenJQ	docs(G2-R02): reconstruct reverse clarifications
+5b5815f9acf201e5a49ccec82b78819d8cd3f99e	2026-09-15T15:58:57+08:00	2026-09-15T15:58:57+08:00	WhiteApricot	docs(G2-R02): record specification-stage decisions
+0736f2d8e8c0457c094be0172221adb8cee654b5	2026-09-15T15:49:39+08:00	2026-09-15T15:49:39+08:00	WhiteApricot	chore(log): backfill G2 teacher feedback rework
+82b8b2368de78ede70e2071d987208deabf6f10e	2026-09-15T15:49:07+08:00	2026-09-15T15:49:07+08:00	WhiteApricot	chore(G2-R01): register teacher feedback rework
+9ca4c306bf2b2130ff20b89e52e4179b1cbe624c	2026-09-15T15:46:55+08:00	2026-09-15T15:46:55+08:00	WhiteApricot	docs(skill): require figure and table caption QA
+872f92cd9f2629b59c86c844f973c4690340f133	2026-09-15T15:39:28+08:00	2026-09-15T15:39:28+08:00	yylinb	chore(log): record G3-01 remediation delivery
+32edcb3c9e8b35de96a5f53c58c54330736990c3	2026-09-15T15:38:50+08:00	2026-09-15T15:38:50+08:00	yylinb	fix(G3-01): complete external integration boundaries
+eb0ba9b2abf641b573fa93c5a0a655cf95d6bbe6	2026-09-15T15:19:03+08:00	2026-09-15T15:19:03+08:00	yylinb	chore(log): record B log backfill delivery
+f11c3bf2adbb184391ef598cf92dedc1b80ae61c	2026-09-15T15:17:39+08:00	2026-09-15T15:17:39+08:00	yylinb	chore(log): backfill B 2026-09-11 audit
+f4c52a740f1f765c507bc9a73022f525583ba2a0	2026-09-15T15:16:13+08:00	2026-09-15T15:16:13+08:00	RenJQ	chore(log): record G3-01 review delivery status
+9142d5b25b724bd184f5f0e7425bb7a08661600a	2026-09-15T15:15:16+08:00	2026-09-15T15:15:16+08:00	RenJQ	review(G3-01): verify design input compliance
+ffa28f44f8f29fc32de40c799266e9fa3a1c5a3c	2026-09-15T15:07:41+08:00	2026-09-15T15:07:41+08:00	yylinb	chore(log): record G3-01 delivery
+7ebb89b159d678d37b98c36aaef8548174eac8bf	2026-09-15T15:07:12+08:00	2026-09-15T15:07:12+08:00	yylinb	docs(G3-01): establish design input and architecture candidates
+31cdb92aa4aad641cbd8ab5082e5169a6b02eb69	2026-09-15T15:02:09+08:00	2026-09-15T15:02:09+08:00	WhiteApricot	chore(log): backfill A 2026-09-14 report
+03d4ba4b59562aba2b58a115cc779d64c364724e	2026-09-15T15:01:11+08:00	2026-09-15T15:01:11+08:00	WhiteApricot	docs(daily): add A report for 2026-09-14
+0f1153cd74c215405c8e49c86339f279b78e1852	2026-09-15T14:49:43+08:00	2026-09-15T14:49:43+08:00	WhiteApricot	chore(log): backfill G3-00 delivery
+cba1648511bd5917d5b39043115f96976e024ef4	2026-09-15T14:48:12+08:00	2026-09-15T14:48:12+08:00	WhiteApricot	chore(G3-00): organize inputs and initialize design planning
+d6b8be5f1b98e97fdfc9a8005cea153563c025b9	2026-09-15T14:23:32+08:00	2026-09-15T14:23:32+08:00	RenJQ	chore(log): record C daily report delivery status
+0ba4b39c45fe69af2e094c074e7a5ac2c79bf075	2026-09-15T14:22:32+08:00	2026-09-15T14:22:32+08:00	RenJQ	docs(daily): add C report for 2026-09-14
+7a3e31454867ccb617325aa93e3adeb287cbd1d9	2026-09-15T11:59:01+08:00	2026-09-15T11:59:01+08:00	WhiteApricot	chore(log): record G2-P05 delivery
+8616e018959f9497038d654b726a35ef95ed5997	2026-09-15T11:58:12+08:00	2026-09-15T11:58:12+08:00	WhiteApricot	feat(G2-P05): polish prototype usability and showcase
+12543f0d548d66f7811c7e00afead8b0950fec74	2026-09-15T11:05:39+08:00	2026-09-15T11:06:18+08:00	WhiteApricot	2026.09.15
+b704a4440b37c16a770b48826e52d81467c25996	2026-09-15T00:11:33+08:00	2026-09-15T00:11:33+08:00	RenJQ	chore(log): record G2-P04 review delivery status
+f3bb3e773055b3932473d001a176d144e5171837	2026-09-15T00:09:51+08:00	2026-09-15T00:09:51+08:00	RenJQ	review(G2-P04): accept prototype walkthrough
+c83224074f52a8bcd9edcd593cce137367b2ff6f	2026-09-14T23:36:39+08:00	2026-09-14T23:36:39+08:00	yylinb	chore(log): record G2-P04 B review delivery
+6409baeef3b47dd7573bf1b631daa75da386bbcb	2026-09-14T23:35:28+08:00	2026-09-14T23:35:28+08:00	yylinb	review(G2-P04): pass B technical review
+3be88bfad72ffff96c93a6a88259a0fbde189f80	2026-09-14T23:24:22+08:00	2026-09-14T23:24:22+08:00	WhiteApricot	chore(log): record G2-P04 delivery
+f194f8c9b61bb6580899ed72ce7f8a896962dff4	2026-09-14T23:23:45+08:00	2026-09-14T23:23:45+08:00	WhiteApricot	docs(G2-P04): complete prototype walkthrough
+cf470bc7d994b8b46c8be1dbaf58b9b4bc13eb40	2026-09-14T23:08:42+08:00	2026-09-14T23:08:42+08:00	WhiteApricot	chore(log): record technical bid caption delivery
+fd05af38776631e87890c575ed1bcc6aa2a8562b	2026-09-14T23:07:20+08:00	2026-09-14T23:07:20+08:00	WhiteApricot	fix(g1): add technical bid table captions
+0f135f13e65b994a150ca8f20f25757039bd72a7	2026-09-14T22:36:19+08:00	2026-09-14T22:36:19+08:00	yylinb	chore(G2-P03): backfill remediation delivery
+34cabf455fb53b153a54bc2334c3eab01069feec	2026-09-14T22:35:32+08:00	2026-09-14T22:35:32+08:00	yylinb	fix(G2-P03): close review gaps and complete prototype
+8b15ee8e77c1f268be3ffe560160d450d01610e0	2026-09-14T22:10:08+08:00	2026-09-14T22:10:08+08:00	RenJQ	chore(log): record G2-P03 review delivery status
+f8df68ba797fee21fe8dd26e148f51fb532ea79d	2026-09-14T22:08:18+08:00	2026-09-14T22:08:18+08:00	RenJQ	review(G2-P03): verify MVP prototype compliance
+876c5cc811e15349f608129bea56babc60276f60	2026-09-14T21:31:33+08:00	2026-09-14T21:31:33+08:00	WhiteApricot	chore(log): backfill G2-P03 review push
+a834f576e005b9e0627cf55f3b41a7ae16ae192b	2026-09-14T21:30:38+08:00	2026-09-14T21:30:38+08:00	WhiteApricot	review(G2-P03): request core flow corrections
+3c249a4c1b7d7fcc7f3d9c9b61137dc2330a84b8	2026-09-14T17:44:14+08:00	2026-09-14T17:44:14+08:00	yylinb	chore(G2-P03): backfill delivery evidence
+49eb37bd27857dfdc243dadc464d8aa7995ddfde	2026-09-14T17:43:30+08:00	2026-09-14T17:43:30+08:00	yylinb	feat(G2-P03): implement MVP prototype flows
+f3cbd9112406ebec60d36cfb4ddef0fe2e0d5d9b	2026-09-14T17:26:57+08:00	2026-09-14T17:26:57+08:00	WhiteApricot	chore(log): record G2-P02 push blocker
+0187675a3b3541ba34d68729ba838febe2743d42	2026-09-14T17:25:51+08:00	2026-09-14T17:25:51+08:00	WhiteApricot	chore(log): backfill G2-P02 review push
+df77b4a6ea966ba62c16af153d078fa5538c4b67	2026-09-14T17:23:14+08:00	2026-09-14T17:23:14+08:00	WhiteApricot	review(G2-P02): accept prototype framework
+54bee4b5810b49e4ca53116da9d51b2ef1952c25	2026-09-14T17:15:00+08:00	2026-09-14T17:15:00+08:00	yylinb	chore(G2-P02): backfill delivery evidence
+2467b9a348ad2c1681b2df9d1aa6470068d7173f	2026-09-14T17:14:10+08:00	2026-09-14T17:14:10+08:00	yylinb	feat(G2-P02): scaffold web and H5 prototype
+318ad6920d3e0376d86a2b884f622e88362d7dc4	2026-09-14T16:16:23+08:00	2026-09-14T16:16:23+08:00	RenJQ	删除07和08的多余文件
+19aa015fa0fd3bc8f0a79766649c2ed504d73de6	2026-09-14T16:11:19+08:00	2026-09-14T16:11:19+08:00	RenJQ	Merge branch 'master' of https://gitee.com/wuhan-university-rs_0/emergency-response-platform
+328036e08c7eb0050913e276c9968e4b49fb4c6c	2026-09-14T16:11:08+08:00	2026-09-14T16:11:08+08:00	RenJQ	revert: restore G2 consistency report and M2 review package
+77db764ccd77e083e8a1acfedb3058b4b07f25be	2026-09-14T16:05:38+08:00	2026-09-14T16:05:38+08:00	RenJQ	删除07和08的多余文件
+d48e941c7a5f6254b5cd3dc0e3cb9d285d9858fb	2026-09-14T16:03:15+08:00	2026-09-14T16:03:15+08:00	WhiteApricot	chore(log): record G2-P01 final output
+8044f1cd5b74ed2d4e3592a78df9d5e1835823f4	2026-09-14T16:02:29+08:00	2026-09-14T16:02:29+08:00	WhiteApricot	chore(log): backfill G2-P01 prototype plan push
+e1aba9f8211150694c06a12bcd80939b4ba75db9	2026-09-14T16:01:02+08:00	2026-09-14T16:01:02+08:00	WhiteApricot	docs(G2-P01): plan minimum validation prototype
+549f1eb375e9adb61f1aec6a0b4da69135bdec43	2026-09-14T15:47:18+08:00	2026-09-14T15:47:18+08:00	WhiteApricot	chore(log): backfill daily report push
+0ad5fd7a5cb11a4e92766975c0a75c67b7b3fbf2	2026-09-14T15:46:18+08:00	2026-09-14T15:46:18+08:00	WhiteApricot	docs(daily): expand A report for 2026-09-13
+7a737db4cdc81d9c2b7adac2bdb2d96b87f9a96e	2026-09-14T15:36:03+08:00	2026-09-14T15:36:03+08:00	WhiteApricot	chore(log): backfill deliverable confirmation resolution
+6ebdeb369dabb7e6e021f08c15123e36e7cf584c	2026-09-14T15:33:32+08:00	2026-09-14T15:33:32+08:00	WhiteApricot	docs: resolve deliverable confirmation fields
+826f8bc4d2c74caf1f1cc8a2ed38f3932f54005a	2026-09-14T15:08:45+08:00	2026-09-14T15:08:45+08:00	WhiteApricot	chore(log): backfill document number query
+cd0589a6a002492265eb44a5337e1a5b0ad50019	2026-09-14T15:07:37+08:00	2026-09-14T15:07:37+08:00	WhiteApricot	chore(log): record document number clarification
+1ceb80a33f6130392d06fef7c4eb51d612bd635a	2026-09-14T14:56:07+08:00	2026-09-14T14:56:07+08:00	WhiteApricot	chore(log): backfill confirmation audit push
+b5fabc670443bc7b14d98df05b6515aeca750273	2026-09-14T14:55:05+08:00	2026-09-14T14:55:05+08:00	WhiteApricot	chore(g2): log deliverable confirmation audit
+52dbe5caf2c7f9aabdb1e8565431c7586878d751	2026-09-14T14:39:03+08:00	2026-09-14T14:39:03+08:00	WhiteApricot	chore(log): backfill RTM push status
+9524acedaac6311a8a2ce46ce74d6d34bfa00c42	2026-09-14T14:38:28+08:00	2026-09-14T14:38:28+08:00	WhiteApricot	chore(log): normalize RTM completion record
+b8b5a0b86e6f736d94e4963253d95340d0f9095e	2026-09-14T14:37:43+08:00	2026-09-14T14:37:43+08:00	WhiteApricot	chore(log): record RTM format-only completion
+c67139e622cc9116d258504478d01b561c34cc80	2026-09-14T14:36:04+08:00	2026-09-14T14:36:04+08:00	WhiteApricot	fix(g2): align RTM format to reference
+5e848c4e79c65787dff28ea7aa7c3cd06b3671b0	2026-09-14T10:13:17+08:00	2026-09-14T10:13:17+08:00	WhiteApricot	chore(logs): backfill G2 RTM push status
+53f56210c33e53d17f4c3c222f6b102a004c7b14	2026-09-14T10:11:23+08:00	2026-09-14T10:11:23+08:00	WhiteApricot	chore(logs): record G2 RTM delivery outcome
+5c64cc7ec77017ccc96cbf847f08b832d8b928bb	2026-09-14T10:10:29+08:00	2026-09-14T10:10:29+08:00	WhiteApricot	docs(g2): reconstruct taskbook RTM formal deliverable
+aa0043c36973a3d39b698a37c397f3fec257fb04	2026-09-14T09:29:24+08:00	2026-09-14T09:29:24+08:00	WhiteApricot	chore(log): reconcile G2 reconstruction audit entries
+b5ce49a743b1e5e57e37ddfbecfc7cc20626e651	2026-09-14T09:27:38+08:00	2026-09-14T09:27:38+08:00	WhiteApricot	chore(log): record G2 formal reconstruction audit
+dc6784ec8e2090e01de392595319831b529d8280	2026-09-14T02:18:03+08:00	2026-09-14T02:18:03+08:00	yylinb	chore(log): record G2 09 verification command errors
+57500123cb54287e6aa277267e3c90025302e25e	2026-09-14T02:17:08+08:00	2026-09-14T02:17:08+08:00	yylinb	chore(log): backfill G2 09 reference alignment push
+022fc3b1c0210f546629f042dca2aeb764b3db1f	2026-09-14T02:16:30+08:00	2026-09-14T02:16:30+08:00	yylinb	fix(G2): align clarification body to reference pair
+7b3533347d7a68663665926d95540e51e77a00cd	2026-09-14T02:00:21+08:00	2026-09-14T02:00:21+08:00	yylinb	chore(log): backfill G2 08 09 delivery push
+3a7a391dc071e2887a61c544f7faa83fd4cbe256	2026-09-14T01:59:39+08:00	2026-09-14T01:59:39+08:00	yylinb	docs(G2): rebuild SRS and clarification deliverables
+dab94c38929150b68fbd5752b8f47acd5442bf74	2026-09-14T01:33:01+08:00	2026-09-14T01:33:01+08:00	WhiteApricot	chore(log): record cover clone push
+66a796908992e53270743b0429aa5cce665e9ea1	2026-09-14T01:32:21+08:00	2026-09-14T01:32:21+08:00	WhiteApricot	Merge branch 'master' of https://gitee.com/wuhan-university-rs_0/emergency-response-platform
+0dd72f2d45439ad5a0db5a33f07c3a0b4d346bc7	2026-09-14T01:32:19+08:00	2026-09-14T01:32:19+08:00	WhiteApricot	chore(log): record cover clone validation
+912c119cdf56f2356e43eb4b97d4fce95169cd4c	2026-09-14T01:31:27+08:00	2026-09-14T01:31:27+08:00	WhiteApricot	fix(docs): preserve 04 post-cover XML
+7a3aed62e8cf6e21086cb3a2730038df8d2927bd	2026-09-14T01:20:52+08:00	2026-09-14T01:20:52+08:00	yylinb	Merge remote-tracking branch 'origin/master'
+18de33f251c3718be697cb5cbe03203ead8bc238	2026-09-14T01:20:29+08:00	2026-09-14T01:20:29+08:00	yylinb	chore(log): backfill G2 pair reconstruction push
+f7c128ff4eaff2d5adfe606370e0e392dfab6103	2026-09-14T01:17:47+08:00	2026-09-14T01:17:47+08:00	WhiteApricot	Merge branch 'master' of https://gitee.com/wuhan-university-rs_0/emergency-response-platform
+19436f73f774aa8ef4d011590b0fbaea5d2e77d9	2026-09-14T01:17:45+08:00	2026-09-14T01:17:45+08:00	WhiteApricot	fix(docs): clone reference covers for 04-06
+b5f30643f267024c353c92420e5dc9bafc73628f	2026-09-14T01:16:42+08:00	2026-09-14T01:16:42+08:00	yylinb	Merge remote-tracking branch 'origin/master'
+734fd1e9d4508831d359ecf62e34a8a0643566a7	2026-09-14T01:16:29+08:00	2026-09-14T01:16:29+08:00	yylinb	fix(G2): align interview deliverable to reference pair
+b739a588c4b644f2a4a8f072bb1f225be77cfc35	2026-09-14T00:56:41+08:00	2026-09-14T00:56:41+08:00	WhiteApricot	chore(log): record format alignment push
+a91f6b2427b6984d0e81a5c22dbe30e62ec10ffa	2026-09-14T00:56:02+08:00	2026-09-14T00:56:02+08:00	WhiteApricot	Merge remote-tracking branch 'origin/master'
+006cb5b96c53abbb53d27fe782a69c4caa9f7494	2026-09-14T00:55:22+08:00	2026-09-14T00:55:22+08:00	WhiteApricot	fix(docs): tighten deliverable skill and align formats for 04-06
+ee974b8fc6a841d91a13bac182f01fb3037bcc20	2026-09-14T00:53:14+08:00	2026-09-14T00:53:14+08:00	RenJQ	chore(log): record C daily report delivery
+f7d26fc3a1f13270dabf7afe99896b13c06f0a1c	2026-09-14T00:52:27+08:00	2026-09-14T00:52:27+08:00	RenJQ	docs(daily): rebuild C report for 2026-09-13
+16ebb01eb8d3e819c5e23705c5f341f4abdf5a8b	2026-09-14T00:30:07+08:00	2026-09-14T00:30:07+08:00	WhiteApricot	chore(log): record G1 format-only review push
+a00b40d3c7b6ad1899e94475c4342685b69e4f0a	2026-09-14T00:28:53+08:00	2026-09-14T00:28:53+08:00	WhiteApricot	Merge remote-tracking branch 'origin/master'
+a0239d6f92b40c0f1ecb243a4fe15b9abb5ad783	2026-09-14T00:27:29+08:00	2026-09-14T00:27:29+08:00	WhiteApricot	docs(g1): recheck 04-06 format-only layouts
+55a004aec6d163134db16e8e77a92688ca1a1cb1	2026-09-14T00:25:49+08:00	2026-09-14T00:25:49+08:00	yylinb	chore(log): record G2 delivery reconstruction
+82bb1841160da32d7084bbf83201e97e0874e1a7	2026-09-14T00:25:25+08:00	2026-09-14T00:25:25+08:00	yylinb	docs(G2): rebuild interview deliverable
+42e09e40aaab67bf412b96b995038c057dce2d99	2026-09-14T00:06:12+08:00	2026-09-14T00:06:12+08:00	WhiteApricot	chore(log): record GOV-002 skill push
+f32b05d37a078c14cee5e2779ae913a24ba011e7	2026-09-14T00:04:33+08:00	2026-09-14T00:04:33+08:00	WhiteApricot	docs(governance): add formal deliverable document skill
+b335b0d8a9a6ae9f4e68b87bec63d0a6d5e5f7d0	2026-09-13T23:27:11+08:00	2026-09-13T23:27:11+08:00	yylinb	chore(log): record required G2 deliverables push
+85ce6cc567cc03dc23f0952ebece51b39db9c69c	2026-09-13T23:26:49+08:00	2026-09-13T23:26:49+08:00	yylinb	docs(G2): add required formal deliverables
+856afa184715cd42779ca9e58e347e344c10cb4b	2026-09-13T23:20:27+08:00	2026-09-13T23:20:27+08:00	yylinb	chore(log): record G2 formal deliverables push
+59821cb35937513b966ad742f1dbc4a9f179d19e	2026-09-13T23:20:07+08:00	2026-09-13T23:20:07+08:00	yylinb	docs(G2-07): add formal M2 deliverables
+c547626498e09551490231582783e015f32b8546	2026-09-13T22:51:57+08:00	2026-09-13T22:53:06+08:00	WhiteApricot	chore(log): record G1-16 format sign-off push
+5956410333dd3b409bed22713e8af9e05a18e264	2026-09-13T21:55:40+08:00	2026-09-13T21:55:40+08:00	yylinb	chore(log): record G2-07 review push
+78f6d8301cef2847342a3396fc0085866d3b1370	2026-09-13T21:55:17+08:00	2026-09-13T21:55:17+08:00	yylinb	review(G2-07): close M2 consistency review
+a689213d7d2a77f6dbc8a999ad3d9f75198ada61	2026-09-13T21:50:38+08:00	2026-09-13T21:50:38+08:00	yylinb	chore(log): record G2-07 candidate push
+3c56434150394b327da2935c2e6915345cf59214	2026-09-13T21:50:17+08:00	2026-09-13T21:50:17+08:00	yylinb	docs(G2-07): add consistency report and M2 candidate
+c1b068b69e8b6cbf0ed0db135cedf30b6e111093	2026-09-13T21:45:18+08:00	2026-09-13T21:45:18+08:00	yylinb	chore(log): record G2-06 status clarification push
+b659f3d26f94d5e6c7b0026efbb2686f4e6bb362	2026-09-13T21:44:56+08:00	2026-09-13T21:44:56+08:00	yylinb	chore(G2-06): simplify completed task status
+a134031a82047c656b168425a2afcae8eed0fef2	2026-09-13T21:29:05+08:00	2026-09-13T21:29:05+08:00	yylinb	chore(log): correct G2 closure delivery wording
+f0730b7b58ed028028c2c655d90687f963b7d29b	2026-09-13T21:28:37+08:00	2026-09-13T21:28:37+08:00	yylinb	chore(log): record G2 traceability closure push
+3642747d4c21783e9e0dbaae1f4be1bcbbdfb4a1	2026-09-13T21:27:57+08:00	2026-09-13T21:27:57+08:00	yylinb	fix(G2): close full-FR traceability gap
+9f092802f5732ef8ce751f45db2f8221cf21367e	2026-09-13T20:54:14+08:00	2026-09-13T20:54:14+08:00	yylinb	chore(G2-06): backfill B review delivery
+c6d3b23cc3181da97ba4b7f268c4014620f1d532	2026-09-13T20:53:56+08:00	2026-09-13T20:53:56+08:00	yylinb	review(G2-06): accept RTM traceability matrix
+2eaf13e19fd600267985e14fbec89e451ddc3e4e	2026-09-13T20:11:41+08:00	2026-09-13T20:11:41+08:00	yylinb	chore(G2-06): backfill C delivery
+aadb564cd0163e7b4d13c183ae365ffd65cdd5b8	2026-09-13T20:11:09+08:00	2026-09-13T20:11:09+08:00	yylinb	docs(G2-06): establish RTM and traceability gate
+899281cf6d7a741590ec8b34c3e4cc4c575cc4e4	2026-09-13T20:00:39+08:00	2026-09-13T20:00:39+08:00	yylinb	chore(G2-05): backfill B review delivery
+8af0536e958e939529a187ef9862bfbd001a9007	2026-09-13T20:00:20+08:00	2026-09-13T20:00:20+08:00	yylinb	review(G2-05): accept reverse clarifications
+c0268944dfdeac40fcb0dc8d3dc32e8967ca9dc0	2026-09-13T19:52:51+08:00	2026-09-13T19:52:51+08:00	yylinb	chore(G2-05): backfill C delivery
+33dfb81288c008c3b09d3f27a9dfd88eedd02fe9	2026-09-13T19:52:32+08:00	2026-09-13T19:52:32+08:00	yylinb	docs(G2-05): record reverse clarifications and decisions
+e328b89891c7212cfc9f19ef534437a91ef59e52	2026-09-13T19:44:03+08:00	2026-09-13T19:44:03+08:00	RenJQ	chore(log): record G2 integrated review delivery
+f2e7972b22d4487836cedd401cc7338b2b9a8f79	2026-09-13T19:43:01+08:00	2026-09-13T19:43:01+08:00	RenJQ	review(G2): synchronize G2-02 through G2-04 status
+18e2c92bf2584a5ad914b6b04c7f217bf7b68102	2026-09-13T19:35:01+08:00	2026-09-13T19:35:01+08:00	RenJQ	chore(G2-01): backfill correction review delivery
+427d9159a9d282fd302ac4767f779025ecfd6b09	2026-09-13T19:34:23+08:00	2026-09-13T19:34:23+08:00	RenJQ	review(G2-01): accept corrected user stories
+e11f1a0be41888b3e8cf3857834842c2b3428f94	2026-09-13T19:30:16+08:00	2026-09-13T19:30:16+08:00	RenJQ	chore(G2-01): record correction delivery status
+d3c8fb51882246c22d4806b4e95456feab844059	2026-09-13T19:28:36+08:00	2026-09-13T19:28:36+08:00	RenJQ	fix(G2-01): align user stories with frozen requirements
+5ebcd98ab9b5b25c574893f7e5ab9bc3e0bc6973	2026-09-13T19:18:07+08:00	2026-09-13T19:18:07+08:00	yylinb	chore(G2-04): backfill A review delivery
+d7373c26d25b6106e4c9a1da37a7487f5ba1dc69	2026-09-13T19:17:39+08:00	2026-09-13T19:17:39+08:00	yylinb	merge: preserve G2-03 and G2-04 task logs
+fe9c6d02291db811645774232c1f69c1afe3e4d9	2026-09-13T19:16:48+08:00	2026-09-13T19:16:48+08:00	yylinb	review(G2-04): accept executable requirement spec
+11b7bbebf812c7f3d53966b4a6a95a74dbf96dc5	2026-09-13T19:15:04+08:00	2026-09-13T19:15:04+08:00	RenJQ	chore(log): record G2-03 authorized push
+fb758b1d6dea7dbcd094fe5a040cc24deaee10b8	2026-09-13T19:14:19+08:00	2026-09-13T19:14:19+08:00	RenJQ	Merge branch 'master' of https://gitee.com/wuhan-university-rs_0/emergency-response-platform
+9116bb48c0917a52852238ec59bccf924f6f22ac	2026-09-13T19:12:06+08:00	2026-09-13T19:12:06+08:00	RenJQ	chore(log): record G2-03 push blocker
+b38b7d9976838f74dc7bc49087aa9428efdeef46	2026-09-13T19:11:01+08:00	2026-09-13T19:11:01+08:00	RenJQ	docs(G2-03): draft SRS v0.1
+06ad6d74053dedc546643dee10bf34c8f54a6a45	2026-09-13T19:10:59+08:00	2026-09-13T19:10:59+08:00	yylinb	chore(G2-04): backfill delivery
+eeed9f7c3235ad2b987d0016e1b59ac7bbc011f5	2026-09-13T19:10:43+08:00	2026-09-13T19:10:43+08:00	yylinb	docs(G2-04): draft executable requirement spec
+1195337de0da8a268721d3df954357db0e9081c0	2026-09-13T18:59:26+08:00	2026-09-13T18:59:26+08:00	RenJQ	chore(G2-02): backfill B review delivery
+9ddace894bd111bc94c68075ebb656bd8ae90c91	2026-09-13T18:58:52+08:00	2026-09-13T18:58:52+08:00	RenJQ	review(G2-02): accept requirement numbering baseline
+a7b9fc9bac3c59552db53bf9543c0d7bed4f3c03	2026-09-13T18:53:44+08:00	2026-09-13T18:53:44+08:00	RenJQ	chore(G2-02): record push approval blocker
+c18ef44f84b290f865a0e654ccced737395b2775	2026-09-13T18:52:51+08:00	2026-09-13T18:52:51+08:00	RenJQ	docs(G2-02): establish requirement numbering baseline
+05152a2b782d1a05fe30b3a7f10aab7b3a63883c	2026-09-13T18:37:44+08:00	2026-09-13T18:37:44+08:00	yylinb	chore(G2-01): backfill B review delivery
+faeb17751f1a68db999f8172c95390842949a1e9	2026-09-13T18:37:29+08:00	2026-09-13T18:37:29+08:00	yylinb	review(G2-01): accept interview stories and MoSCoW
+45b9fd2672e5afe43cc4a62d0d2ac3cbb7fcf7e1	2026-09-13T18:31:42+08:00	2026-09-13T18:31:42+08:00	yylinb	chore(G2-01): backfill candidate delivery
+42bbe9cb3ef2b09e9b0240cdabdd13f94fa131da	2026-09-13T18:31:06+08:00	2026-09-13T18:31:06+08:00	yylinb	docs(G2-01): draft interview stories and MoSCoW
+8b36817071c9092fd7678e533cd294a2084a010f	2026-09-13T18:24:03+08:00	2026-09-13T18:24:03+08:00	yylinb	chore(G2-00): backfill B review delivery
+86bcbbc4858deec7cf3607143372470158c3d8a1	2026-09-13T18:23:24+08:00	2026-09-13T18:23:24+08:00	yylinb	review(G2-00): accept MVP scope inheritance
+63df9202773da4e97b433a8c1c46f6bad749cbf6	2026-09-13T17:57:39+08:00	2026-09-13T17:57:39+08:00	RenJQ	chore(G2-00): record push authorization block
+4a8e01242130454609b6493c90545173f86b7c57	2026-09-13T17:56:26+08:00	2026-09-13T17:56:26+08:00	RenJQ	docs(G2-00): complete C input and scope self-check
+50f6ffa5d293eca667d1e89f17ffef120dbf3bfa	2026-09-13T16:19:25+08:00	2026-09-13T16:19:25+08:00	yylinb	chore(G2-00): backfill scope decision
+d7244ec89081b0f4124273d9d306662d6492b366	2026-09-13T16:18:56+08:00	2026-09-13T16:18:56+08:00	yylinb	docs(G2-00): confirm emergency management scope
+7665e94d2291722b6cdf96c43b0588f84e90cdc8	2026-09-13T16:03:54+08:00	2026-09-13T16:03:54+08:00	yylinb	chore(G2-00): backfill import delivery
+0ffe5acf1093498ff7093fc0fee46b9108c14ac0	2026-09-13T16:03:22+08:00	2026-09-13T16:03:22+08:00	yylinb	docs(G2-00): archive inputs and plan second task
+c8bccee0d4425d715b88758ee02f67d520f8152c	2026-09-13T15:57:31+08:00	2026-09-13T15:57:31+08:00	WhiteApricot	fix(docs): exactly align deliverable formatting with references
+3eb10547fe2f30cf9c5530c007dc4756a269b05e	2026-09-13T09:49:05+08:00	2026-09-13T09:49:05+08:00	WhiteApricot	chore(g1): backfill final rework delivery
+c54fecc593a3201389619f40ae5fbe9ccb706e2d	2026-09-13T09:47:27+08:00	2026-09-13T09:47:27+08:00	WhiteApricot	fix(g1): rebuild daily reports and fully align deliverable formats
+8c1dd7174de1b44e5b23411d32c56ef50e87880f	2026-09-13T01:04:13+08:00	2026-09-13T01:04:13+08:00	WhiteApricot	chore(G1-15): backfill delivery status
+66a9d457c704ab2e46b97228662c5c5e7134d07d	2026-09-13T01:02:57+08:00	2026-09-13T01:02:57+08:00	WhiteApricot	chore(g1): finalize deliverables and add daily reports
+f45026e6a65b3a44780b0c8b2c72abc8b227ba8c	2026-09-12T21:06:51+08:00	2026-09-12T21:06:51+08:00	yylinb	chore(G1-14): backfill C review delivery
+f8be033bb0a11124f825fb3dbcbb62933640fad5	2026-09-12T21:05:52+08:00	2026-09-12T21:05:52+08:00	yylinb	review(G1-14): freeze final baseline
+6de040823352139a9f4b22bc1a70002ec859fbaf	2026-09-12T20:24:16+08:00	2026-09-12T20:24:16+08:00	yylinb	chore(G1-14): backfill freeze delivery
+527aceea5162cd4bf4a47e34a985c8c4f581cdd4	2026-09-12T20:23:35+08:00	2026-09-12T20:23:35+08:00	yylinb	docs(G1-14): create final freeze archive
+08ee75c483c97229e3358852029294e7cf6d9c58	2026-09-12T19:41:45+08:00	2026-09-12T19:41:45+08:00	RenJQ	chore(G1-13): backfill recheck delivery
+74f287f99dbc1c6999bd4dfbfb3c629867005d97	2026-09-12T19:39:29+08:00	2026-09-12T19:39:29+08:00	RenJQ	review(G1-13): accept MVP boundary remediation
+d226f4db1c03c97f39c49a19b1b76278dd7f55a4	2026-09-12T19:32:03+08:00	2026-09-12T19:32:03+08:00	RenJQ	chore(log): record G1-13 remediation push
+1e08684c350fb3cdf7378c1269078b9bc6c672c2	2026-09-12T19:31:26+08:00	2026-09-12T19:31:26+08:00	RenJQ	docs(G1-13): align MVP scope and dependencies
+58c79e57f290dc245b2fe51c01663154c6626e29	2026-09-12T19:24:11+08:00	2026-09-12T19:24:11+08:00	RenJQ	chore(G1-13): backfill review delivery
+3c01180dab42333c0d5dd9b540d172613abbe638	2026-09-12T19:21:59+08:00	2026-09-12T19:21:59+08:00	RenJQ	review(G1-13): identify MVP boundary inconsistency
+255b5b5331e2080e951c5a7c88012b0b7cbcffb9	2026-09-12T18:44:08+08:00	2026-09-12T18:44:08+08:00	WhiteApricot	chore(G1-13): backfill delivery log
+e45d62da272680725f4d74a96feae3e23f2a08a2	2026-09-12T18:43:10+08:00	2026-09-12T18:43:10+08:00	WhiteApricot	docs(G1-13): rebuild requirements confirmation candidate
+ecbbe455c9b6254f7002372c26c8171daa100c4e	2026-09-12T17:53:54+08:00	2026-09-12T17:53:54+08:00	RenJQ	chore(G1-12): backfill joint review delivery
+e668757ebd432fed2b44d690acc8c1bb7222d93e	2026-09-12T17:53:02+08:00	2026-09-12T17:53:02+08:00	RenJQ	review(G1-12): accept technical and compliance checks
+33dc6175b9b9dfc940017686c077e93ecb4a45ad	2026-09-12T17:44:53+08:00	2026-09-12T17:44:53+08:00	WhiteApricot	chore(log): record G1-12 push result
+d558b567b95e5134d924584f54d9357a71490431	2026-09-12T17:44:15+08:00	2026-09-12T17:44:15+08:00	WhiteApricot	chore(log): backfill G1-12 evidence
+fe14a7eb584166287de81f08903a31e385565190	2026-09-12T17:43:36+08:00	2026-09-12T17:43:36+08:00	WhiteApricot	docs(G1-12): add defense script and simulation Q&A
+2514092186878a1a99dcf551a27b86a08ea62335	2026-09-12T17:32:46+08:00	2026-09-12T17:32:46+08:00	RenJQ	chore(G1-08,G1-11): backfill review delivery
+12fb7e6bdf6030781981dd715d66f343dc601eb6	2026-09-12T17:31:40+08:00	2026-09-12T17:31:40+08:00	RenJQ	review(G1-08,G1-11): accept final remediation
+ac168688c334ee86985a6fc3b55a357f427b1e23	2026-09-12T17:23:02+08:00	2026-09-12T17:23:02+08:00	WhiteApricot	chore(log): mark G1-11 rework pushed
+e111bd6505ae53351ce11079b9f969e2a5ba08d9	2026-09-12T17:22:15+08:00	2026-09-12T17:22:15+08:00	WhiteApricot	chore(log): record G1-11 rework push result
+a195eb9add599d12fd6d6a680e281a3dd799e914	2026-09-12T17:21:24+08:00	2026-09-12T17:21:24+08:00	WhiteApricot	chore(log): backfill G1-11 rework evidence
+29b7f97714d72237033234fa8c53c457d937c3ff	2026-09-12T17:20:38+08:00	2026-09-12T17:20:38+08:00	WhiteApricot	review(G1-11): rework consistency fixes and verification
+cd98003934272df6197d36c9ab70807572712130	2026-09-12T16:37:22+08:00	2026-09-12T16:37:22+08:00	RenJQ	chore(G1-11): backfill C review delivery
+a4c1175ec439a6c3ca209f3a52b9611684f59086	2026-09-12T16:36:39+08:00	2026-09-12T16:36:39+08:00	RenJQ	Merge remote-tracking branch 'origin/master'
+215618f0959261f9d4b9b808c4bd68b4e6b7ba48	2026-09-12T16:35:36+08:00	2026-09-12T16:35:36+08:00	RenJQ	review(G1-11): verify cross-document consistency check
+579f99789d0c2235d3bb6a71869d38eb396eea8b	2026-09-12T16:35:05+08:00	2026-09-12T16:35:05+08:00	WhiteApricot	Merge branch 'master' of https://gitee.com/wuhan-university-rs_0/emergency-response-platform
+e733c8ac556a77c3697d96936f735405339e8614	2026-09-12T16:34:56+08:00	2026-09-12T16:34:56+08:00	WhiteApricot	docs(G1-08): add integrated technical bid draft
+40c6e1f8a141b9fff89e0b74d1cf045cce6cd342	2026-09-12T16:29:16+08:00	2026-09-12T16:29:16+08:00	RenJQ	修改review文件名，添加日期前缀
+657cf3607e1358878d8ec6dc647b51baa692bf3e	2026-09-12T16:21:57+08:00	2026-09-12T16:21:57+08:00	WhiteApricot	merge: sync G1-10 confirmation before G1-11 review
+de9e8fece4b544c5c2884b8c14afc1848f9760b8	2026-09-12T16:20:09+08:00	2026-09-12T16:20:09+08:00	WhiteApricot	review(G1-11): add cross-document consistency check
+0d9b11125f650bcc5f56d7197af2555cc3b9be44	2026-09-12T16:13:08+08:00	2026-09-12T16:13:08+08:00	yylinb	chore(G1-10): backfill review delivery
+99b29cbda51cec800d96cccc712aa7427ca412b0	2026-09-12T16:11:34+08:00	2026-09-12T16:11:34+08:00	yylinb	Merge remote-tracking branch 'origin/master'
+dad0cc05d8e9bced944442a6188560cf87f653bc	2026-09-12T16:08:04+08:00	2026-09-12T16:08:04+08:00	yylinb	chore(G1-10): record number control result
+fe34f727f64b575d779bf30737bbef6877b807da	2026-09-12T16:07:25+08:00	2026-09-12T16:07:25+08:00	yylinb	review(G1-10): control proposed environment numbers
+ebfc6343bf4377ff977753feb11a60e8ade90f4a	2026-09-12T15:56:18+08:00	2026-09-12T15:56:18+08:00	RenJQ	chore(G1-08): backfill C review push evidence
+205b6d8bac96158ba1d6621f2a847ef87fa9fdc0	2026-09-12T15:54:54+08:00	2026-09-12T15:54:54+08:00	RenJQ	review(G1-08): record final compliance blockers
+d9a10c0a49800f1823fec431a8acabc70ce3ff0f	2026-09-12T15:49:57+08:00	2026-09-12T15:49:57+08:00	yylinb	review(G1-10): verify A remediation
+419d5f9ba7aa66e2ec592cf99a1b36987e48293f	2026-09-12T15:43:53+08:00	2026-09-12T15:43:53+08:00	yylinb	review(G1-10): accept technical inspection
+5afdb7de944f0c9c59e666b034d653eef026693a	2026-09-12T15:38:21+08:00	2026-09-12T15:38:21+08:00	RenJQ	chore(log): record G1-08 push result
+7c283f695aa675b6496b870e866c40adcbdf9633	2026-09-12T15:37:29+08:00	2026-09-12T15:37:29+08:00	RenJQ	merge: sync origin/master before G1-08 push
+ca82f03714d2cc762a498683176f768c53970943	2026-09-12T15:34:56+08:00	2026-09-12T15:34:56+08:00	RenJQ	docs(G1-08): revise technical bid after human review
+8e916bde322037d1a7f8d0a794fc712cf6e23f77	2026-09-12T15:21:35+08:00	2026-09-12T15:21:35+08:00	WhiteApricot	chore(log): record G1-05 backfill push
+6ae64c63cc7397b2c6f6b384077b74f5333e2bca	2026-09-12T15:20:30+08:00	2026-09-12T15:20:30+08:00	WhiteApricot	docs(G1-05): backfill clarification record
+19bbf94d28f7edb54c6c30bb75aaa72ed757b508	2026-09-12T15:05:17+08:00	2026-09-12T15:05:17+08:00	yylinb	chore(G1-09): backfill delivery evidence
+fee2fa08109c83d62740960b4b280ae6251a8f93	2026-09-12T15:02:23+08:00	2026-09-12T15:04:05+08:00	yylinb	review(G1-09): complete compliance check
+d7ed1dc8ebe50c9e7518b8e4a659959a8a6cb309	2026-09-12T14:50:27+08:00	2026-09-12T14:50:27+08:00	WhiteApricot	chore(log): backfill G1-10 delivery
+2b6b9df439f259a64d8df79c819368f03de09e34	2026-09-12T14:49:39+08:00	2026-09-12T14:49:39+08:00	WhiteApricot	docs(G1-10): add technical review
+74a12c647b62ce2d665ed8d1f626eba02bbd8d7a	2026-09-12T14:14:24+08:00	2026-09-12T14:14:24+08:00	RenJQ	chore(G1-08): backfill human review checklist evidence
+699a708590a435a947209a7e39624f4833b881bc	2026-09-12T14:13:46+08:00	2026-09-12T14:13:46+08:00	RenJQ	review(G1-08): identify required human checks
+b25a6e02cfbafc6bd2332e1b77fa9a1c31a18425	2026-09-12T12:07:32+08:00	2026-09-12T12:07:32+08:00	WhiteApricot	chore(log): backfill G1-08 delivery
+93ddce0531bb9fb0a34f00762cc2387ffd414ed2	2026-09-12T12:06:22+08:00	2026-09-12T12:06:22+08:00	WhiteApricot	docs(G1-08): finalize technical bid formatting
+c8f048ad1458454b81fcc6e05998c90218e488bc	2026-09-12T11:22:59+08:00	2026-09-12T11:22:59+08:00	WhiteApricot	chore(G1-08): record reconstruction push evidence
+2921fe79b6bb7072e522b54454da5b4d97466866	2026-09-12T11:22:01+08:00	2026-09-12T11:22:01+08:00	WhiteApricot	docs(G1-08): complete technical bid reconstruction
+91ef05451dbbb18b3b1e51138c464c0afb614fcd	2026-09-12T11:16:46+08:00	2026-09-12T11:16:46+08:00	WhiteApricot	Merge remote master before G1-08 reconstruction
+6998ac1fedde229acbcd63d342ccf5c298a7d862	2026-09-11T17:59:21+08:00	2026-09-11T17:59:21+08:00	yylinb	docs: 更新本次任务成果
+ecd88406d12a7458299b9dd96a28ecac5c2081ef	2026-09-11T16:53:18+08:00	2026-09-11T16:53:18+08:00	WhiteApricot	投标文件技术标
+8da7c363b9060148201819d9032c5c9d0dddcadb	2026-09-11T16:44:36+08:00	2026-09-11T16:44:36+08:00	WhiteApricot	本地修改：技术投标书
+0a757ad03b6d3330b65d5ede84aabe0706c1033d	2026-09-11T16:21:09+08:00	2026-09-11T16:21:09+08:00	WhiteApricot	chore: resolve merged prompt log markers
+a1d12f7b2bc1d73f6e7be7c812f1243e7fed05e7	2026-09-11T16:19:48+08:00	2026-09-11T16:19:48+08:00	WhiteApricot	Merge remote master before G1-08 rebuild
+229786edb5e13eb60b1f94ffa4ba5c8044e45d52	2026-09-11T16:16:40+08:00	2026-09-11T16:16:40+08:00	RenJQ	chore(G1-06): backfill acceptance push evidence
+1da707e66c082ca103e91d21a02b614989498bcf	2026-09-11T16:15:32+08:00	2026-09-11T16:15:32+08:00	RenJQ	fix(log): restore prior C audit entry
+2a8841239c7fcceef202122b7f32152513530898	2026-09-11T16:12:24+08:00	2026-09-11T16:12:24+08:00	RenJQ	review(G1-06): accept revised project plan
+e5d07d746bb798f441937ee60df44e4e71197af3	2026-09-11T16:03:47+08:00	2026-09-11T16:03:47+08:00	RenJQ	chore(G1-06): backfill rework push evidence
+2e30d33662530b2fef92a9d48ad893f68922d983	2026-09-11T16:03:04+08:00	2026-09-11T16:03:04+08:00	RenJQ	docs(G1-06): close remaining plan rework findings
+fefb3cab88c44c2d5e5b2571913065d7ebd0b8c0	2026-09-11T15:53:56+08:00	2026-09-11T15:53:56+08:00	WhiteApricot	chore(G1-08): record delivery status
+df57c330b10dc772b5ad9e9d63c019c35f1bf00a	2026-09-11T15:53:25+08:00	2026-09-11T15:53:25+08:00	WhiteApricot	docs(G1-08): add integrated technical bid draft
+f1c584ca866966868b6b0eb1d564432d2d5c61c6	2026-09-11T15:46:42+08:00	2026-09-11T15:46:42+08:00	RenJQ	chore(G1-06): record re-review push evidence
+ec6c52c5cf3ff0a41563413c33385406d0893bf7	2026-09-11T15:45:58+08:00	2026-09-11T15:45:58+08:00	RenJQ	review(G1-06): recheck plan revision and close resolved issues
+93a1b7a6c4a7920df3065653cf16dfc4c015430a	2026-09-11T15:33:35+08:00	2026-09-11T15:33:35+08:00	WhiteApricot	chore(G1-06): record review rework status
+fa8d0499b73b95d66884e8548956c361d16c8bbe	2026-09-11T15:33:02+08:00	2026-09-11T15:33:02+08:00	WhiteApricot	docs(G1-06): resolve plan review findings
+16e4d551b6ba610c7766e7bdb5ec0c56784a58c6	2026-09-11T15:16:23+08:00	2026-09-11T15:16:23+08:00	yylinb	chore(G1-07): backfill C review delivery
+d5e5da1cc87ecf21d85694aff7f801ab96bb2d30	2026-09-11T15:15:45+08:00	2026-09-11T15:15:45+08:00	yylinb	Merge remote-tracking branch 'origin/master'
+6b619a4e5e99e454bee472f63e3dca3be2295b62	2026-09-11T15:14:01+08:00	2026-09-11T15:14:01+08:00	yylinb	review(G1-07): accept risk register
+8019417e5480f5ff06411bbc566e26fb6b5376fe	2026-09-11T15:05:00+08:00	2026-09-11T15:05:00+08:00	RenJQ	Merge branch 'master' of https://gitee.com/wuhan-university-rs_0/emergency-response-platform
+17db6d71d22f2e0cfd623ce476d76c383c258139	2026-09-11T15:03:53+08:00	2026-09-11T15:03:53+08:00	RenJQ	chore(G1-06): record blocked push status
+46d69f42b8e17899b502d134dc2513525b5718b2	2026-09-11T14:59:23+08:00	2026-09-11T14:59:23+08:00	WhiteApricot	chore(G1-07): record layout fix delivery status
+7bae7f41378ccdc738e1e876826bf27728b7000c	2026-09-11T14:58:19+08:00	2026-09-11T14:58:19+08:00	WhiteApricot	docs(G1-07): align risk register layout with template
+ee5067b298a01a72c64628ce4abeb5ba5c3f24a8	2026-09-11T14:56:29+08:00	2026-09-11T14:56:29+08:00	RenJQ	Merge remote-tracking branch 'origin/master'
+545d77c626edc23496793decd0982fa04c3badb3	2026-09-11T14:54:42+08:00	2026-09-11T14:54:42+08:00	RenJQ	review(G1-06): identify project plan rework items
+2b03002ead571cf1ad96691eabd986f581cf21dd	2026-09-11T14:40:30+08:00	2026-09-11T14:40:30+08:00	WhiteApricot	chore(G1-07): backfill delivery metadata
+743b739f08eba5afac6ceb65f23ecf9e3c1c49ca	2026-09-11T14:39:34+08:00	2026-09-11T14:39:34+08:00	WhiteApricot	docs(G1-07): add risk register v1 draft
+218f98005f8752bf7f3ce16cbe0c8b1c6856f0ee	2026-09-11T12:46:41+08:00	2026-09-11T12:46:41+08:00	WhiteApricot	chore(G1-06): backfill delivery metadata
+f95d476a8e306b5a22c935f3a7697930c4ae854c	2026-09-11T12:45:30+08:00	2026-09-11T12:45:30+08:00	WhiteApricot	docs(G1-06): add project plan v1 with WBS and Gantt
+1b0debabb50443d7e52e9248e6e6efa2d8014f17	2026-09-10T17:40:27+08:00	2026-09-10T17:40:27+08:00	WhiteApricot	merge: adopt remote G1-03 proposal versions
+c50aff9612255ba68f1eb175e587235de7dc224a	2026-09-10T17:38:19+08:00	2026-09-10T17:38:19+08:00	WhiteApricot	Merge branch 'master' of https://gitee.com/wuhan-university-rs_0/emergency-response-platform # Please enter a commit message to explain why this merge is necessary, # especially if it merges an updated upstream into a topic branch. # # Lines starting with '#' will be ignored, and an empty message aborts # the commit.
+71d21d1c746c160aa3d4d76e86053ca7504b6947	2026-09-10T17:28:43+08:00	2026-09-10T17:28:43+08:00	RenJQ	chore(G1-03): backfill compliance review push evidence
+8a1c5053b840dbc72743dfb43b7ed68c04030465	2026-09-10T17:27:04+08:00	2026-09-10T17:27:04+08:00	RenJQ	review(G1-03): close proposal compliance issues
+c973e999e7527873be58600ec483cb62691208c2	2026-09-10T17:07:46+08:00	2026-09-10T17:07:46+08:00	yylinb	chore(G1-05): backfill review push evidence
+770e3dbb32e77082dc520ed738475ae822651eab	2026-09-10T17:04:58+08:00	2026-09-10T17:04:58+08:00	yylinb	Merge remote-tracking branch 'origin/master'
+d86ea67767b0af76b1495a198fa74bf0c7441d19	2026-09-10T17:03:54+08:00	2026-09-10T17:03:54+08:00	yylinb	docs(G1-05): close compliance review
+26336d661a6772a04789412c2d3f8e7ec48d5f3b	2026-09-10T17:00:18+08:00	2026-09-10T17:00:18+08:00	RenJQ	chore(G1-03): backfill revision push evidence
+9d143089bf8ca356b850128bec58f4a78246cce6	2026-09-10T16:58:18+08:00	2026-09-10T16:58:18+08:00	RenJQ	docs(G1-03): revise and finalize proposal candidate
+60edc00c79371db1b8dc72c6b0e3c947c6fd2efe	2026-09-10T16:17:36+08:00	2026-09-10T16:17:36+08:00	RenJQ	chore(G1-05): backfill commit and push evidence
+83f4b0f932f1becb00e36e7456cf474c8df336c8	2026-09-10T16:10:25+08:00	2026-09-10T16:10:25+08:00	RenJQ	docs(G1-05): build compliance matrix and clarification record
+4afc2054a109915b8132f275286f32dee515aa4e	2026-09-10T15:55:03+08:00	2026-09-10T15:55:03+08:00	WhiteApricot	docs(G1-03): revise and finalize proposal candidate
+e45e5056441c342be793ab98560d9ff86f0d9af2	2026-09-10T15:39:48+08:00	2026-09-10T15:39:48+08:00	RenJQ	chore(G1-03): backfill review push evidence
+72ea03bb87a33a590ea08c0ff1b0e2699028093e	2026-09-10T15:38:16+08:00	2026-09-10T15:38:16+08:00	RenJQ	chore(prompts): remove obsolete C prompt pack
+e35d27283f66e836dadb4299d2071bccaafdb752	2026-09-10T15:38:16+08:00	2026-09-10T15:38:16+08:00	RenJQ	review(G1-03): verify project proposal compliance
+e23c348f070ef40103ebfef5c36338e5f0c3de45	2026-09-10T15:06:47+08:00	2026-09-10T15:06:47+08:00	WhiteApricot	chore(G1-03): record Word push blocker
+e6264c71aefdf9c0ffcb8566c07afe4ce0d265dc	2026-09-10T15:05:20+08:00	2026-09-10T15:05:20+08:00	WhiteApricot	docs(G1-03): generate project proposal Word draft
+06f713282616e4139da9e68ef93405ea93f6e201	2026-09-10T14:57:02+08:00	2026-09-10T14:57:02+08:00	yylinb	chore(G1-04): backfill completion push evidence
+150047be2522d751f66be41857050c97c1ae3181	2026-09-10T14:55:33+08:00	2026-09-10T14:55:33+08:00	yylinb	docs(G1-04): complete technical solution and FR traceability
+18430ced855dbbb576d91ae1ffcf172cf7a6da3d	2026-09-10T14:40:56+08:00	2026-09-10T14:40:56+08:00	yylinb	chore(META-B-STATUS): backfill successful push
+9c31b6e4584abac7edd861e25cfe09626318d6fc	2026-09-10T14:39:23+08:00	2026-09-10T14:39:23+08:00	yylinb	chore(META-B-STATUS): record concurrent G1-03 merge
+f6c4e4f0014ebd645ba5fb8f62c479cd34b05012	2026-09-10T14:38:50+08:00	2026-09-10T14:38:50+08:00	yylinb	Merge remote-tracking branch 'origin/master'
+b1c22f75e340e5e50c2c9512b480d6e6e6d41a6b	2026-09-10T14:37:27+08:00	2026-09-10T14:37:27+08:00	yylinb	style(META-B-STATUS): normalize log formatting
+9e8b28445fabfc0070965eabc80c1d456346b7e3	2026-09-10T14:37:02+08:00	2026-09-10T14:37:02+08:00	yylinb	docs(META-B-STATUS): summarize first-gate responsibilities
+d1a50f49a17d7cd2190f6f5aa0263eb2f488d02d	2026-09-10T14:29:37+08:00	2026-09-10T14:36:12+08:00	WhiteApricot	chore(G1-03): record push approval blocker
+762b406e96e0d1b0201c9e58ded0eff40f789923	2026-09-10T14:28:05+08:00	2026-09-10T14:36:11+08:00	WhiteApricot	chore(G1-03): backfill commit and merge status
+6af7df614c2bf753c166d90f06905faad6f4f9d8	2026-09-10T14:25:48+08:00	2026-09-10T14:36:10+08:00	WhiteApricot	docs(G1-03): draft project proposal
+8a7b7766062f1a454c86cca4d8f74e91635bba20	2026-09-10T14:28:24+08:00	2026-09-10T14:28:24+08:00	yylinb	chore(G1-04): backfill V0.6 push evidence
+740163a12bc3a4180775221932d9064cacc1c959	2026-09-10T14:27:07+08:00	2026-09-10T14:27:07+08:00	yylinb	chore(G1-04): log V0.6 output and review status
+604bfb9c2fa7abdd927e8d1a0155c151c12f6160	2026-09-10T14:25:48+08:00	2026-09-10T14:25:48+08:00	yylinb	Merge remote-tracking branch 'origin/master'
+b73259d3723b1dc49687640e9ba934b469e7b27e	2026-09-10T14:24:52+08:00	2026-09-10T14:24:52+08:00	yylinb	docs(G1-04): draft baseline-aligned technical solution v0.6
+bfc4e43ad2883e6ca01bbda6fc5d8bf70be4cf11	2026-09-10T14:24:37+08:00	2026-09-10T14:24:37+08:00	RenJQ	chore(tasks): record push approval blocker
+a892159b2134f9d0859849c934949ae017ca38ce	2026-09-10T14:23:33+08:00	2026-09-10T14:23:33+08:00	RenJQ	chore(tasks): remove personal prompt-generation entries
+9f417fb2c3c718619c2990a0c9268e2f9906b942	2026-09-10T14:13:36+08:00	2026-09-10T14:13:36+08:00	yylinb	Merge remote-tracking branch 'origin/master'
+9d7f33f70bdc675e035d7ab7292eadb9ec315421	2026-09-10T14:11:56+08:00	2026-09-10T14:11:56+08:00	RenJQ	chore(META-C-STATUS): record transient sync failure
+02b06b0755f0e6076ec5773dacc682ee374243d7	2026-09-10T14:10:44+08:00	2026-09-10T14:10:44+08:00	yylinb	chore(G1-04): log V0.6 task prompt
+b538347c0fe968fa06398036805d9b00b5640fc0	2026-09-10T14:10:03+08:00	2026-09-10T14:10:03+08:00	RenJQ	chore(META-C-STATUS): backfill sync and push evidence
+40adf99e123e7d85c5840606dff8188dc948010c	2026-09-10T14:08:31+08:00	2026-09-10T14:08:31+08:00	RenJQ	chore(META-C-STATUS): log remote-first sync report
+5f6361ed7ce4fdd3cbadeadc0356b010cfb1b451	2026-09-10T14:05:46+08:00	2026-09-10T14:05:46+08:00	RenJQ	merge: sync remote baseline as authoritative
+b132bf0a479f5a3e228122bf899c79c8163e221d	2026-09-10T13:19:48+08:00	2026-09-10T13:19:48+08:00	WhiteApricot	chore(G1-02): backfill freeze commit and push status
+3ad0e3723def9f45899b68fe89f99628f4b3ffd3	2026-09-10T13:15:32+08:00	2026-09-10T13:15:32+08:00	WhiteApricot	docs(G1-02): freeze bid input baseline v0.1
+9ba85daf92bb596d80fca039cee0e96210074446	2026-09-10T13:13:49+08:00	2026-09-10T13:13:49+08:00	WhiteApricot	docs(governance): split prompt logs by project role
+dea96ed02c96208df9e34ba6833a8be80df660b7	2026-09-10T12:48:35+08:00	2026-09-10T12:48:35+08:00	RenJQ	chore(G1-01): record push approval blocker
+717e2e4722c89a6eee5bc8fc43afcb14d9e64423	2026-09-10T12:46:39+08:00	2026-09-10T12:46:39+08:00	RenJQ	docs(G1-01): archive clarifications and update control baseline inputs
+1a1b6d84886bdb0fa0b7953151aa13bb7adc9e78	2026-09-10T12:17:21+08:00	2026-09-10T12:17:21+08:00	RenJQ	chore(META-C-NEXT): record push approval blocker
+672ef20f17965bf710c56c577b51d9e9aa9f4273	2026-09-10T12:14:52+08:00	2026-09-10T12:14:52+08:00	RenJQ	docs(META-C-NEXT): draft G1-01 unblock prompt
+0a3e9d2993a59d3523318e0efb9070645797dec9	2026-09-10T12:00:32+08:00	2026-09-10T12:00:32+08:00	WhiteApricot	chore(G1-01-A): backfill reconciliation commit status
+33a32cda46e8937f09a5a732f5bb04eaa308f277	2026-09-10T11:58:28+08:00	2026-09-10T11:58:28+08:00	WhiteApricot	docs(G1-01-A): reconcile positioning against baseline
+e56bd208224bf0da11fe33447586df10a0c21a09	2026-09-10T10:50:07+08:00	2026-09-10T10:50:07+08:00	RenJQ	chore(G1-01): backfill commit and push evidence
+5ec616054dbe413df59fe2a780d23863ae3d3169	2026-09-10T10:48:23+08:00	2026-09-10T10:48:23+08:00	RenJQ	docs(G1-01): record missing blocking clarifications
+42ea83aa651fc6fad8d11addb332a313a8d4c310	2026-09-09T21:41:22+08:00	2026-09-09T21:41:22+08:00	RenJQ	chore(META-C-CLARIFY): record push approval blocker
+28f5c89f97dd43e97bb6af82c5ad287cfa671107	2026-09-09T21:38:35+08:00	2026-09-09T21:38:35+08:00	RenJQ	docs(META-C-CLARIFY): draft clarification and baseline prompts
+9bf83a15c79403754c3d0c1a5a303a7ec005e9f2	2026-09-09T20:59:21+08:00	2026-09-09T20:59:21+08:00	yylinb	chore(G1-04): finalize sync verification record
+dfc68392db8a96cb7bed821a3d73d5d5089c8448	2026-09-09T20:58:32+08:00	2026-09-09T20:58:32+08:00	yylinb	chore(G1-04): correct Gitee push status
+788db439ea21be2aef5f9695d4c9da41804f3b22	2026-09-09T20:51:57+08:00	2026-09-09T20:51:57+08:00	yylinb	chore(G1-04): record review and push status
+27a0dedfdf4c0c5ed3b8e5ff9b0e764aa906078c	2026-09-09T20:49:17+08:00	2026-09-09T20:49:17+08:00	yylinb	style(G1-04): normalize markdown endings
+d91c4575b8303358d75e726bf99ac7828ca11748	2026-09-09T20:48:54+08:00	2026-09-09T20:48:54+08:00	yylinb	docs(G1-04): align technical solution with C requirements
+6e4c6113068e44b1adae69957ce4cc32a6b0c901	2026-09-09T20:39:21+08:00	2026-09-09T20:39:21+08:00	yylinb	merge: integrate C G1-01 analysis
+7f2e3f4e7fa5c7fdbd475fe186e8e0b10ac7d5ed	2026-09-09T20:34:49+08:00	2026-09-09T20:34:49+08:00	yylinb	chore(G1-04): log continuation prompt
+b56748d08c4bdd99f67fd31bd8f1745c755bcf91	2026-09-09T20:15:49+08:00	2026-09-09T20:15:49+08:00	RenJQ	chore(G1-02): backfill commit and push evidence
+cf54276c5e35d73b368249ea9a6c02e2c63aa225	2026-09-09T20:14:39+08:00	2026-09-09T20:14:39+08:00	RenJQ	chore(G1-02): record blocked baseline gate
+85d6d8d4407cde5bec2efb1b4de43b3e712fcb85	2026-09-09T20:07:58+08:00	2026-09-09T20:07:58+08:00	RenJQ	chore(G1-01): backfill successful push evidence
+b75db93c4bf7c0e2c7955b46211a9a8c944521d3	2026-09-09T19:40:19+08:00	2026-09-09T19:40:19+08:00	RenJQ	docs(G1-01): extract requirements and tender facts
+540bf5f7cd13442fd15aef23a92e165c21a97279	2026-09-09T18:45:23+08:00	2026-09-09T18:45:23+08:00	RenJQ	chore(META-C-PROMPT): record push approval blocker
+bef138cd09949dccf9452e3759a15d2743f08019	2026-09-09T18:44:00+08:00	2026-09-09T18:44:00+08:00	RenJQ	docs(META-C-PROMPT): add member C prompt pack
+8e1682377270e28643b16273c9cb004ac489e305	2026-09-09T18:07:43+08:00	2026-09-09T18:07:43+08:00	WhiteApricot	chore(logs): backfill G1-01-A commit and push status
+4a0538de6f4bf5b106792ba1481bc11ca4785183	2026-09-09T18:04:52+08:00	2026-09-09T18:04:52+08:00	WhiteApricot	docs(G1-01-A): analyze project value and scope
+09757bd4dd5759f6345d7e5fb0b805f4ab45fc66	2026-09-09T18:02:11+08:00	2026-09-09T18:02:11+08:00	WhiteApricot	docs(governance): require pre-task remote sync
+db541328fcdd30104e7620c522fadd9941cac859	2026-09-09T17:52:30+08:00	2026-09-09T17:52:30+08:00	yylinb	chore(logs): finalize G1-04 blocked response
+144a88cf17c6c051d21ee41fd10364a9880ebac3	2026-09-09T17:51:48+08:00	2026-09-09T17:51:48+08:00	yylinb	chore(G1-04): record push authentication block
+e435664dfe9ed0f520ae0f3b9e44e2ed1dbac54f	2026-09-09T17:48:59+08:00	2026-09-09T17:48:59+08:00	yylinb	docs(G1-04): draft pre-baseline technical materials
+91dba8133e9ab40c5c1e6e8e5dcfd4f40e7b537b	2026-09-09T17:23:43+08:00	2026-09-09T17:23:43+08:00	WhiteApricot	chore(logs): complete GOV-001 push backfill
+3227a013243d01197d73b7232348679270468963	2026-09-09T17:21:41+08:00	2026-09-09T17:21:41+08:00	WhiteApricot	chore(logs): record GOV-001 push authorization
+865584823409a8fbd826e8ac285a24699a481c91	2026-09-09T17:18:35+08:00	2026-09-09T17:18:35+08:00	WhiteApricot	chore(logs): record GOV-001 push block
+53cceae31025315c197f7bc31efb64e2f730a53e	2026-09-09T17:15:28+08:00	2026-09-09T17:15:28+08:00	WhiteApricot	chore(governance): require raw logs and safe master sync
+a272defc93d6f03547fc55469e5b1a129924b4cc	2026-09-09T16:15:28+08:00	2026-09-09T16:15:28+08:00	WhiteApricot	chore(logs): backfill G1-00 commit hash
+01d45767a00dd375842ea7b357a3150424d73cbc	2026-09-09T16:13:48+08:00	2026-09-09T16:13:48+08:00	WhiteApricot	chore(workspace): initialize project structure and governance
+7860e1da6b760a222db0d82ad6f750ca68b540c3	2026-09-08T09:29:53Z	2026-09-08T09:29:53Z	Admin	Initial commit

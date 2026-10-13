@@ -15,3 +15,9 @@ C唯一索引需日期化纳入本轮总结源/PDF、事实基线、债务、IND
 ## 最终冻结与真实移交边界
 
 当前C符合性PENDING_REVIEW、B最终技术PENDING_CONFIRMATION；A机械/视觉自检不代指定复核。真实现场意见、甲方六类接口、KN-065、培训/试运行/基础数据/签署未到位，不宣布真实验收或真实项目齐套。取得两项真实Review并完成整改后，A再更新tasks/最终归档状态与日志。PR=N/A（OVR-038），正式提交与推送记录通过Git及A日志核验。
+
+## C定向复验本轮入口（2026-10-13）
+
+A已按C Review整改002计划漂移/003归档可复现性，详见docs/work/G6/G6-04_A_remediation.md。先对照计划/tasks五行及真实Review入口，再运行 `python scripts/g6/audit-g6-04.py --verify`；默认取最后改动归档JSON的内容commit，验证已提交索引与Git对象及当前检出文件，不写受检文件。核对A-remediation提交态输出的indexSha256Before/After相同、filesWritten=0。单独的 `build-g6-04-archive.py` 只能主动生成新候选，不能在验证之前用来修复差异；草稿working-tree PASS不充当提交態通过。
+
+C接受定向复验并完成唯一索引日期化增量后，再由B最终技术确认。原C CHANGES_REQUIRED、历史1380生成态结果/231物理差异记录均保留；本请求不声称002/003已被C关闭，不改真实履约。

@@ -1,0 +1,2407 @@
+{
+  "task": "G6-04",
+  "executor": "A Codex-assisted self-review, not C/B approval",
+  "factsBaselineMaster": "3b47e8f97caac1fa6dc989fd1ff5279bd1eb5450",
+  "status": "FAIL",
+  "assertionCount": 476,
+  "failures": [
+    {
+      "check": "Archive schema version 2",
+      "pass": false,
+      "details": null
+    }
+  ],
+  "checks": [
+    {
+      "check": "Frozen denominators",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Actual results",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-001-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-001-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-001-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-002-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-002-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-002-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-003-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-003-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-003-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-004-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-004-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-004-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-005-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-005-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-005-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-006-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-006-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-006-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-007-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-007-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-007-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-008-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-008-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-008-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-009-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-009-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-009-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-010-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-010-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-010-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-011-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-011-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-011-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-012-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-012-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-012-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-013-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-013-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-013-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-014-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-014-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-014-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-015-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-015-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-015-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-016-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-016-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-016-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-017-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-017-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-017-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-018-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-018-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-018-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-019-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-019-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-019-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-020-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-020-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-020-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-021-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-021-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-021-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-022-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-022-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-022-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-023-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-023-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-023-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-024-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-024-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-024-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-025-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-025-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-025-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-026-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-026-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-026-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-027-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-027-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-027-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-028-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-028-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-028-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-029-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-029-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-029-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-030-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-030-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-030-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-031-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-031-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-031-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-032-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-032-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-032-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-033-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-033-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-033-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-034-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-034-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-034-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-035-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-035-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-035-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-036-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-036-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-036-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-037-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-037-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-037-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-038-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-038-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-038-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-039-01 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-039-02 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AC-G2-FR-039-03 history preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Authoritative evidence unchanged evidence/g6/G6-02/metrics-ledger.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Authoritative evidence unchanged evidence/g6/G6-02/gaps-deferrals.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Authoritative evidence unchanged evidence/g6/G6-02/delivery-index.json",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Authoritative evidence unchanged evidence/g6/G6-02/rtm-acceptance-increment.json",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Authoritative evidence unchanged evidence/g5/G5-01/functional-gate-raw.json",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Authoritative evidence unchanged logs/reviews/2026-10-12_G6-03-C-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Authoritative evidence unchanged docs/work/G6/G6-01_A_rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Authoritative evidence unchanged docs/work/G6/G6-02_A_rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "G6-01 task conclusion unchanged",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "G6-02 task conclusion unchanged",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "G6-03 task conclusion unchanged",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "G6-04 no premature DONE",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Debt IDs unique",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "TD-01 transfer fields",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "TD-02 transfer fields",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "TD-03 transfer fields",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "TD-04 transfer fields",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "TD-05 transfer fields",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "TD-06 transfer fields",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "TD-07 transfer fields",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "TD-08 transfer fields",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "TD-09 transfer fields",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "TD-10 transfer fields",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "TD-11 transfer fields",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "TD-12 transfer fields",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "All C gaps covered",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Real deferred preserved",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Required six report chapters",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "DEV-01 evidence/cause/impact/action",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "DEV-02 evidence/cause/impact/action",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "DEV-03 evidence/cause/impact/action",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "DEV-04 evidence/cause/impact/action",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "DEV-05 evidence/cause/impact/action",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "DEV-06 evidence/cause/impact/action",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "DEV-07 evidence/cause/impact/action",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Review corpus complete including Chinese paths",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Prompt corpus complete including Chinese paths",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Prompt block count matches details",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-09.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-10-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-10-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-10-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-10-META.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-10.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-11-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-11-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-11-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-12-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-12-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-12-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-13-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-13-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-13-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-14-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-14-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-14-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-15-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-15-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-15-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-16-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-16-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-16-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-17-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-17-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-17-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-18-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-18-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-18-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-18-META.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-19-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-19-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-19-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-20-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-20-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-20-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-21-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-21-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-21-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-22-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-22-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-22-META.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-23-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-23-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-23-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-24-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-24-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-24-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-25-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-25-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-25-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-26-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-26-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-26-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-09-30-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-08-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-08-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-09-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-09-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-09-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-10-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-10-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-11-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-11-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-11-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-12-A.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-12-B.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/prompts/2026-10-12-C.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-09_G1-00_self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-09_G1-01-A-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-09_G1-01-C-clarification-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-09_G1-01-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-09_G1-01_B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-09_G1-02-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-09_GOV-001-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-09_META-C-PROMPT-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-10_G1-01-B-post-clarification-review-request.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-10_G1-01-B-post-clarification-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-10_G1-01-C-clarification-archive-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-10_G1-02-baseline-freeze-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-10_G1-03-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-10_G1-04-B-self-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-10_G1-05-B-final-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-10_G1-05-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-10_G1-05-star-clause-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-10_G1-06-C-plan-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-11_G1-07-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-08-C-final-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-08-C-human-review-checklist.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-08-G1-11-C-final-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-09-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-10_technical_review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-11-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-11_consistency_remediation_review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-11_consistency_rework_recheck.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-11_cross_document_consistency_review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-12-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-12-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-13-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-13-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-14-A-freeze-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-12_G1-14-C-final-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-00-B-review-request.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-00-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-00-C-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-01-B-correction-review-request.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-01-B-correction-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-01-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-01-C-correction-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-02-B-review-request.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-02-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-02-C-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-02-G2-03-G2-04-C-integrated-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-03-C-review-request.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-04-A-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-05-B-review-request.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-05-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-06-B-review-request.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-06-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-07-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_G2-07-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_ISSUE-G2-06-001-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-13_ISSUE-G2-06-001-C-compliance-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G1-16-FMT-040506-format-only-audit.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G1-TECHBID-table-caption-audit.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-DELIVERY-010-FMT-format-only-audit.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-DELIVERY-010-pair-audit.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-DELIVERY-FMT-01-pair-audit.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-DELIVERY-FMT-0809-pair-audit.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-DELIVERY-FMT-09-R2-pair-audit.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-P01-A-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-P02-A-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-P02-B-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-P03-A-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-P03-B-remediation-recheck.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-P03-B-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-P03-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-P04-A-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_G2-P04-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-14_deliverable_confirmation_resolution.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-15_G2-P04-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-15_G2-P05-A-final-walkthrough.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-15_G2-R02-A-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-15_G2-R02-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-15_G2-R02-C-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-15_G2-R03-A-review-repair.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-15_G2-R03-A-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-15_G2-R03-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-15_G3-00-A-startup-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-15_G3-01-B-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-15_G3-01-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R03-A-caption-fix.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R03-A-review-repair.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R03-C-compliance-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R03-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R04-A-format-qa.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R04-A-format-remediation.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R04-B-final-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R04-B-technical-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R04-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R04-C-compliance-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R04-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R04-C-final-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R05-002-A-minimal-fix.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R05-A-consistency-audit.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R05-A-formal-sync-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R05-B-final-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R05-B-final-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R05-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R05-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R05-C-final-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R06-A-refreeze-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R06-B-final-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R06-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R06-C-compliance-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R06-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-16_G2-R06-preflight.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-01R-A-final-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-01R-B-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-02-A-remediation-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-02-A-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-02-B-final-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-02-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-02-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-02-C-final-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-03-A-render-qa.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-03-A-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-03-C-blocker-only-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-03-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-03-C-final-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-03-final-qa.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-03-format-only-qa.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-03-gap-checklist.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-03-review-remediation.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-04-A-C-delivery-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-04-A-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-04-B-remediation.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-04-B-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-04-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-05-A-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-05-B-format-remediation.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-05-B-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-05-unique-complete-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-17_G3-05-unique-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-06-A-final-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-06-A-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-06-A-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-06-B-remediation.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-06-B-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-06-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-07-A-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-07-A-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-07-B-final-close-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-07-B-remediation.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-07-B-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-07-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-08-AB-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-18_G3-08-C-review-qa.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-19_G3-08-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-19_G3-08-C-owner-recheck.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-19_G3-09-A-final-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-19_G3-09-A-reverify.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-19_G3-09-A-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-19_G3-09-C-remediation.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-19_G3-09-C-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-19_G3-10-A-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-19_G3-11-A-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-20_G3-11-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-20_G3-12-B-review-request.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-20_G3-12-B-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-20_G3-12-C-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-20_G3-13-A-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-20_G3-13-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-20_G3-13-C-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-20_G3-13-pair-manifest.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-20_G3-14-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-20_tasks-status-normalization.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-21_G3-10-A-final-freeze-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-21_G3-10-B-technical-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-21_G3-10-C-compliance-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-21_G3-14-B-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-21_daily-report-backfill-audit.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-22_G4-04-B-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-22_daily-report-backfill-through-0921-audit.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-23_G4-02-A-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-23_G4-02-B-remediation.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-23_G4-03-A-major-remediation.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-23_G4-03-A-remediation.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-23_G4-03-C-rereview-2.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-23_G4-03-C-rereview-3.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-23_G4-03-C-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-23_G4-03-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-24_G4-05-A-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-24_G4-06-C-final-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-24_G4-06-C-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-24_G4-06-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-25_G4-05-A-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-25_G4-05-B-integration-remediation.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-25_G4-05-B-remediation.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-25_G4-07-integration-precheck.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-26_G4-05-A-pr14-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-26_G4-07-B-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-09-26_G4-07-B-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-08_G4-09-11-C-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-08_G4-09-11-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-08_G4-ACCEPTANCE-PPT-01-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-08_G5-00-A-startup-selfcheck.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-08_G5-01-A-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-09_G5-01-A-rereview-2.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-09_G5-01-A-rereview-3.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-09_G5-01-A-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-09_G5-02-C-rereview-2.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-09_G5-02-C-rereview-3.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-09_G5-02-C-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-09_G5-02-C-review-request.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-09_G5-02-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-10_G5-02-C-final-course-acceptance-request.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-10_G5-02-C-final-course-acceptance.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-10_G5-02-C-rereview-4.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-10_G5-02-C-rereview-5.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-10_G5-02-C-standard-calibration.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-11_G5-01-A-final-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-11_G5-03-C-final-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-11_G6-00-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-11_G6-01-A-review-request.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-11_G6-02-B-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-11_G6-03-C-review-request.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-12_G6-02-B-final-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-12_G6-02-B-final-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-12_G6-03-C-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-12_G6-03-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/2026-10-12_daily-report-backfill-through-1011-audit.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/G3-14-A-self-check.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/G3-14_render/artifact.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/README.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/final_docx_format_exact_alignment.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/final_format_alignment_audit.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI source fingerprint logs/reviews/formal_deliverable_format_audit_04_05_06.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "AI unknowns remain unknown",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Reference source unchanged",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Final rendered OOXML inheritance",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Final visual QA",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Work to DOCX content complete",
+      "pass": true,
+      "details": []
+    },
+    {
+      "check": "Business captions unique",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "No teaching case residue",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Current branch master",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "G6-00 plan/task row exact consistency",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "G6-01 plan/task row exact consistency",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "G6-02 plan/task row exact consistency",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "G6-03 plan/task row exact consistency",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "G6-04 plan/task row exact consistency",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Plan current unique C index entry",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Plan old unavailable claims removed",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Plan actual Review locator docs/work/G6/G6-01_A_rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Plan actual Review locator docs/work/G6/G6-02_A_rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Plan actual Review locator logs/reviews/2026-10-12_G6-03-C-rereview.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Plan actual Review locator logs/reviews/2026-10-13_G6-04-C-review.md",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Archive schema version 2",
+      "pass": false,
+      "details": null
+    }
+  ],
+  "releaseDecision": "NOT_FROZEN_PENDING_C_REREVIEW_AND_B_TECHNICAL_CONFIRMATION",
+  "realWorldStatus": "REAL_WORLD_DEFERRED",
+  "archiveRows": 915,
+  "archiveVerification": {
+    "status": "FAIL",
+    "assertionCount": 1,
+    "archiveRows": 915,
+    "verificationMode": "UNSUPPORTED_LEGACY_SCHEMA",
+    "filesWritten": 0
+  },
+  "filesWritten": 0
+}

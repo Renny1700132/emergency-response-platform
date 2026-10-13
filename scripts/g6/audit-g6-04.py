@@ -1,16 +1,19 @@
 """A closeout verification and final archive view; no C source is mutated."""
 from pathlib import Path
-import subprocess,json,hashlib,re,zipfile
+import subprocess,json,hashlib,re,zipfile,argparse
+import sys
+sys.dont_write_bytecode=True
+from g6_04_archive import verify_archive
 from collections import Counter
 from docx import Document
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'evidence/g6/G6-04'
 SNAP='3b47e8f97caac1fa6dc989fd1ff5279bd1eb5450'
-def git(*args): return subprocess.check_output(['git','-c','core.quotepath=false',*args],cwd=ROOT)
+def git(*args): return subprocess.check_output(['git','-c','core.quotepath=false',*args],cwd=ROOT,timeout=30)
 snapshot_files=git('ls-tree','-r','--name-only',SNAP).decode().splitlines()
-cached_paths=[p for p in snapshot_files if p.startswith(('docs/deliverables/','logs/reviews/','logs/prompts/','evidence/','quality/selfcheck/','control/','governance/','docs/work/G6/')) or 'rtm' in p.lower() or p in ['tasks.md','AGENTS.md','docs/README.md']]
+cached_paths=[p for p in snapshot_files if p.startswith(('logs/reviews/','logs/prompts/')) and p.endswith('.md') or p in ['tasks.md','evidence/g6/G6-02/metrics-ledger.md','evidence/g6/G6-02/gaps-deferrals.md','evidence/g6/G6-02/delivery-index.json','evidence/g6/G6-02/rtm-acceptance-increment.json','evidence/g5/G5-01/functional-gate-raw.json','docs/work/G6/G6-01_A_rereview.md','docs/work/G6/G6-02_A_rereview.md']]
 batch_input=''.join(f'{SNAP}:{p}\n' for p in cached_paths).encode('utf-8')
-batch_output=subprocess.check_output(['git','cat-file','--batch'],input=batch_input,cwd=ROOT)
+batch_output=subprocess.check_output(['git','cat-file','--batch'],input=batch_input,cwd=ROOT,timeout=30)
 blob_cache={}
 offset=0
 for path in cached_paths:
@@ -26,6 +29,12 @@ def git(*args):
     return original_git(*args)
 def read(p): return json.loads((ROOT/p).read_text(encoding='utf-8-sig'))
 def sha(b): return hashlib.sha256(b).hexdigest()
+parser=argparse.ArgumentParser(description='Read-only G6-04 audit; index generation is a separate command')
+parser.add_argument('--verify', action='store_true')
+parser.add_argument('--working-tree', action='store_true', help='Draft only, not proof of a submitted snapshot')
+parser.add_argument('--commit')
+parser.add_argument('--index', default='evidence/g6/G6-04/final-archive-index.json')
+args=parser.parse_args()
 checks=[]
 def check(name,condition,details=None):
     checks.append({'check':name,'pass':bool(condition),'details':details})
@@ -90,58 +99,20 @@ with zipfile.ZipFile(ROOT/'docs/deliverables/G6/46-项目开发总结报告.docx
 check('No teaching case residue',not any(x in xml for x in ['澜图','segment-geospatial','TensorRT','GeoPackage','通关实训第 3 组']))
 check('Current branch master',git('branch','--show-current').decode().strip()=='master')
 
-# Archive view references the C source item IDs/snapshots; existence is never
-# relabelled acceptance. Original index remains the sole delivery metrics source.
-idx=read('evidence/g6/G6-02/delivery-index.json')
-links={}
-groups=[(idx['items'],'initialSnapshot')]+[(idx['currentIncrement']['items'],'currentIncrement')]+[(g['items'],'subsequentIncrement') for g in idx['subsequentIncrements']]
-for items,group in groups:
-    for item in items: links.setdefault(item['file'],[]).append({'id':item['id'],'snapshotGroup':group,'version':item.get('version'),'historicalStatus':item['status'],'recordedSha256':item['sha256']})
-tracked=git('ls-tree','-r','--name-only',SNAP).decode().splitlines()
-def category(path):
-    if path.startswith('docs/deliverables/'): return '正式文档'
-    if 'rtm' in path.lower() and (path.startswith('docs/work/') or path.startswith('evidence/')): return 'RTM'
-    if path.startswith('logs/reviews/'): return 'Review记录'
-    if path.startswith('logs/prompts/'): return 'Prompt日志'
-    if path.startswith(('evidence/','quality/selfcheck/')): return '测试/质量/Git过程证据'
-    if path.startswith(('control/','governance/')) or path in ['tasks.md','AGENTS.md','docs/README.md']: return '控制/治理/计划'
-    if path.startswith('docs/work/G6/'): return 'G6移交源'
-    return None
-paths=set(p for p in tracked if category(p))
-newprefixes=['docs/work/G6/G6-04','docs/work/G6/technical_debt_transfer','docs/deliverables/G6/46-','evidence/g6/G6-04/','logs/prompts/2026-10-13-A.md','scripts/g6/build-g6-04','scripts/g6/audit-g6-04','logs/history/2026-10-13-g6-04-bootstrap-preserved/']
-for directory in ['docs/work/G6','docs/deliverables/G6','evidence/g6/G6-04','logs/prompts','scripts/g6','logs/history/2026-10-13-g6-04-bootstrap-preserved']:
-    for p in (ROOT/directory).rglob('*'):
-        if p.is_file():
-            rel=p.relative_to(ROOT).as_posix()
-            if any(rel.startswith(prefix) for prefix in newprefixes): paths.add(rel)
-# Hash index/audit have no self fingerprint. Events in mutable closeout files
-# must be validated by the enclosing Git commit, not recursive file re-hashing.
-excluded={'evidence/g6/G6-04/final-archive-index.json','evidence/g6/G6-04/INDEX.md','evidence/g6/G6-04/consistency-audit.json'}
-rows=[]
-for path in sorted(paths-excluded):
-    p=ROOT/path
-    if not p.exists():
-        rows.append({'path':path,'category':category(path),'status':'NOT_AVAILABLE','version':'见C索引','sha256':None,'cIndexLinks':links.get(path,[])})
-        continue
-    b=p.read_bytes()
-    old=git('show',f'{SNAP}:{path}') if path in tracked else None
-    mutable=path in ['tasks.md','control/overrides.md','control/issues.md','docs/README.md','logs/prompts/2026-10-13-A.md','docs/work/G6/G6-04_A_self_review.md']
-    changed=old is not None and not same_content(b,old)
-    rows.append({'file':p.name,'path':path,'category':category(path) or 'G6-04制作/启动留痕','version':f'V0.1 G6-04 REVIEW；上游Git {SNAP[:7]}' if old is None or changed else f'Git snapshot {SNAP[:7]}；文内版号以源件/C映射为准','sha256':sha(b),'bytes':len(b),'status':'AVAILABLE_PENDING_C_AND_B' if old is None or changed else 'AVAILABLE_RETAINED_HISTORY_NOT_UNCONDITIONAL_ACCEPTANCE','inputGitBlobSha256':sha(old) if old is not None else None,'physicalHashRule':'SHA256 physical bytes; canonical blob separately records EOL conversion','mutableAfterSnapshot':mutable,'cIndexLinks':links.get(path,[])})
-missing=[{'file':x['name'],'path':x['file'],'version':x.get('version','见C历史快照'),'hash':None,'status':'NOT_AVAILABLE / DEFERRED','cIndexId':x['id']} for x in idx['items'] if not (ROOT/x['file']).exists()]
-archive={'schemaVersion':1,'task':'G6-04','state':'REVIEW_PENDING_C_AND_B_NOT_FROZEN','sourceMaster':SNAP,'cIndexSource':'evidence/g6/G6-02/delivery-index.json','countsAreArchiveEntriesNotDeliveryAcceptance':True,'rows':rows,'missingPlannedPaths':missing,'selfReferencePolicy':'INDEX/audit hashes excluded; validate through enclosing Git commit. Mutable rows carry snapshot hashes; later log/task changes require Git object checks, not overwriting historical hashes.'}
-(OUT/'final-archive-index.json').write_text(json.dumps(archive,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-md='# G6-04 最终归档INDEX（送审快照，未冻结）\n\n源master：'+SNAP+'。本INDEX为A最终归档视图，上游唯一交付/验收索引仍是C的G6-02 delivery-index.json。路径存在、受控历史状态与验收接受分开；不重算C的29项与三段增量。\n\n机器完整索引：final-archive-index.json，逐项包含文件/路径/版本/hash/状态/字节/C配置项映射。第三方先校验physical SHA256，再按sourceMaster与inputGitBlobSha256核对canonical Git blob；行尾转换可能改变物理hash，不改变内容。Git事件全集见git-history.txt，commit可在仓库历史定位。\n\n| 类别 | 归档记录数 | 状态边界 |\n| --- | --- | --- |\n'
-for cat,count in Counter(x['category'] for x in rows).items(): md+=f'| {cat} | {count} | 存在性与历史归档；不推导验收PASS |\n'
-md+='\n## 未到位的计划路径\n\n'
-for x in missing: md+=f"- {x['cIndexId']}：{x['file']}，`{x['path']}`；{x['status']}；hash未知/无文件。\n"
-md+='\n## G6-04送审包\n\n事实基线、总结工作稿、46号DOCX/PDF、technical_debt_transfer、AI留档计数、偏差/债务JSON、A自检与一致性审计、C/B复核请求均在机器INDEX定位。真实现场、签署、培训、试运行及补测仍按移交债务处理。当前可变日志/任务/控制状态由后续Git对象验真；INDEX不包含自身hash，避免无限回填。\n'
-(OUT/'INDEX.md').write_text(md,encoding='utf-8')
-for row in rows:
-    if row.get('sha256'): check('Archive physical hash '+row['path'],sha((ROOT/row['path']).read_bytes())==row['sha256'])
-check('Archive categories covered',all(any(x['category']==cat for x in rows) for cat in ['正式文档','RTM','Review记录','Prompt日志','测试/质量/Git过程证据']))
+# Independent verification of the already-existing archive. No file writes.
+plan=(ROOT/'docs/work/A_PM/g6_delivery_acceptance_plan.md').read_text(encoding='utf-8-sig')
+for task in ['G6-00','G6-01','G6-02','G6-03','G6-04']:
+    taskrow=next(line for line in tasks.splitlines() if line.startswith('| '+task+' |'))
+    planrow=next(line for line in plan.splitlines() if line.startswith('| '+task+' |'))
+    check(task+' plan/task row exact consistency',taskrow==planrow)
+    check(task+' unique controlled plan task row',sum(line.startswith('| '+task+' |') for line in plan.splitlines())==1)
+check('Plan current unique C index entry','evidence/g6/G6-02/delivery-index.json' in plan and 'evidence/g6/G6-02/delivery-index.md' in plan)
+check('Plan old unavailable claims removed','尚未生成' not in plan and 'G6-01—04均TODO' not in plan and '规划候选，未执行交付制作' not in plan)
+for path in ['docs/work/G6/G6-01_A_rereview.md','docs/work/G6/G6-02_A_rereview.md','logs/reviews/2026-10-12_G6-03-C-rereview.md','logs/reviews/2026-10-13_G6-04-C-review.md']:
+    check('Plan actual Review locator '+path,path in plan and (ROOT/path).is_file())
+archive=verify_archive(index_file=args.index,commit=args.commit,working_tree=args.working_tree)
+checks.extend(archive['checks'])
 failures=[x for x in checks if not x['pass']]
-result={'task':'G6-04','executor':'A Codex-assisted self-review, not C/B approval','sourceMaster':SNAP,'status':'PASS' if not failures else 'FAIL','assertionCount':len(checks),'failures':failures,'checks':checks,'releaseDecision':'NOT_FROZEN_PENDING_C_COMPLIANCE_B_TECHNICAL_CONFIRMATION','realWorldStatus':'REAL_WORLD_DEFERRED','archiveRows':len(rows)}
-(OUT/'consistency-audit.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-print(json.dumps({k:result[k] for k in ['status','assertionCount','failures','archiveRows','releaseDecision']},ensure_ascii=False))
+result={'task':'G6-04','executor':'A Codex-assisted self-review, not C/B approval','factsBaselineMaster':SNAP,'status':'PASS' if not failures else 'FAIL','assertionCount':len(checks),'failures':failures,'checks':checks,'releaseDecision':'NOT_FROZEN_PENDING_C_REREVIEW_AND_B_TECHNICAL_CONFIRMATION','realWorldStatus':'REAL_WORLD_DEFERRED','archiveRows':archive['archiveRows'],'archiveVerification':{k:v for k,v in archive.items() if k not in ['checks','failures']},'filesWritten':0}
+print(json.dumps(result,ensure_ascii=False,indent=2))
 raise SystemExit(bool(failures))

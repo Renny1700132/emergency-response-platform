@@ -2098,3 +2098,9 @@ ISSUE-G6-03-002：MAJOR / REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。依据
 - 责任：A 分离生成与只读验证，明确 physical/canonical 跨检出态规则并修订归档证据；C 定向复验。
 - 解除：验证模式不修改受检文件，修订候选的提交态索引可由第三方只读复现通过；历史失败和本轮诊断原样保留。
 - 证据：`logs/reviews/2026-10-13_G6-04-C-review.md`。
+
+## G6-04 A定向整改提交（2026-10-13）
+- ISSUE-G6-04-002：REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。A将受控计划V0.2的G6-00—04任务表与tasks逐行对齐，补G6-01/02/03真实接受Review、当前G6-04整改状态与C唯一索引有效JSON/MD入口；历史G6-00仅规划的事件明确标历史，不推翻接受结论。
+- ISSUE-G6-04-003：REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。生成器独立显式运行；audit --verify只读已提交索引/Git/检出态，不生成或覆盖索引。稳定文本指纹仅CRLF→LF，二进制逐字节；原始物理SHA仅诊断。默认选择最近修改索引的内容commit，后续可变日志/tasks必须吻合HEAD已提交对象，脏篡改失败；索引/验证回执通过外部Git对象验真避免自引用。
+- 7项隔离Git夹具验证覆盖正常、LF/CRLF、文本/二进制/索引篡改、未提交/已提交日志回填，预期通过/拒绝均符合，索引始终未被验证器改写；不是新的业务AC或真实验收PASS。
+- A不自行关闭002/003，不代C唯一索引增量/B最终技术确认；001继续OPEN / PROCEDURAL BLOCKER，真实延期不改。整改证据见docs/work/G6/G6-04_A_remediation.md及evidence/g6/G6-04/A-remediation/；提交态只读验真在内容commit后执行，结果按实际记录。

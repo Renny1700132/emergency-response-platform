@@ -25,11 +25,8 @@
     "behaviorTestCases": 10,
     "behaviorTestExpectationMatches": 10,
     "postReviewStateTransitionAudit": "FAIL",
-    "postReviewStateTransitionFailures": [
-      "Mutable checkout matches committed HEAD control/issues.md",
-      "Checkout content fingerprint docs/work/A_PM/g6_delivery_acceptance_plan.md",
-      "Mutable checkout matches committed HEAD tasks.md"
-    ],
+    "postReviewStateCommit": "ec2c1b0218fee893f150832730039e31094882b4",
+    "postReviewStateTransitionFailures": ["Checkout content fingerprint docs/work/A_PM/g6_delivery_acceptance_plan.md"],
     "persistentFailureAfterCommit": "Checkout content fingerprint docs/work/A_PM/g6_delivery_acceptance_plan.md",
     "formalDocumentPairChangedSincePriorCReview": false,
     "priorFormalPdfVisualReviewPages": 15,

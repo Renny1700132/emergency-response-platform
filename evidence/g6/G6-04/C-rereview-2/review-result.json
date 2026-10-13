@@ -1,0 +1,31 @@
+{
+  "task": "G6-04",
+  "reviewer": "C",
+  "reviewDate": "2026-10-14",
+  "reviewBaseline": "05d85cf599f0c96caae328f5a7e41893f79c45fd",
+  "decision": "CHANGES_REQUIRED",
+  "taskState": "REVIEW",
+  "releaseDecision": "NOT_FROZEN",
+  "realWorldStatus": "REAL_WORLD_DEFERRED",
+  "closedIssues": ["ISSUE-G6-04-002"],
+  "openIssues": ["ISSUE-G6-04-003"],
+  "findings": {"blocker": 0, "major": 1, "minor": 0},
+  "independentChecks": {
+    "behaviorTestStatus": "PASS",
+    "behaviorTestCases": 15,
+    "behaviorTestExpectationMatches": 15,
+    "submittedAuditStatus": "FAIL",
+    "submittedAuditAssertions": 6164,
+    "archiveAssertions": 5684,
+    "archiveRows": 946,
+    "failureCount": 1,
+    "failure": "Checkout content fingerprint logs/prompts/2026-10-14-C.md",
+    "archiveSnapshotCommit": "915d34b5e6cf88915da967023cf52f9b41c1b2e9",
+    "verificationMode": "READ_ONLY_SUBMITTED_GIT_AND_CHECKOUT",
+    "filesWritten": 0,
+    "indexSha256Before": "e993b57b5a5ab52fc0c8e709177601b56f89d95671184e0bb5d8eceb8646f75a",
+    "indexSha256After": "e993b57b5a5ab52fc0c8e709177601b56f89d95671184e0bb5d8eceb8646f75a"
+  },
+  "requiredAction": "Permit only committed HEAD-matching C prompt-log continuation and add a full same-day C review lifecycle fixture; keep uncommitted log changes rejected.",
+  "reviewRecord": "logs/reviews/2026-10-14_G6-04-C-rereview-2.md"
+}

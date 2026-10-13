@@ -2115,3 +2115,10 @@ ISSUE-G6-03-002：MAJOR / REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。依据
 ## 2026-10-14 A：ISSUE-G6-04-003生命周期整改响应（REMEDIATED / PENDING_C）
 
 002保留C关闭；003不由A关闭。仅允许受控计划五个G6任务行的最后状态栏后续已提交迁移，其余正文/单元格精确保护，HEAD任务行一致且未提交更改拒绝。15项隔离Git行为预期满足，包括C更新tasks/issues/plan独立提交后只读PASS与正文/不一致状态拒绝。详见docs/work/G6/G6-04_A_lifecycle_remediation.md及2026-10-14-A日志；提交态回执待内容提交后产生。001、C唯一索引增量与B最终技术确认仍待办，REAL_WORLD_DEFERRED不变。
+
+## 2026-10-14 C：ISSUE-G6-04-003第二次定向复验
+
+- 状态：PARTIALLY_REMEDIATED / OPEN / MAJOR。计划状态迁移规则及15/15行为用例通过，但真实C复验按治理要求追加同日`logs/prompts/2026-10-14-C.md`后，正式审计6164项仅剩该日志的checkout指纹1项失败；索引不变、`filesWritten=0`。
+- 原因：归档已收录C同日日志，但`MUTABLE_PATHS`只新增A同日日志，夹具未覆盖C Prompt日志追加并提交；提交后仍会按旧归档快照拒绝。
+- 解除：为受控角色Prompt日志增加仅接受已提交HEAD内容的迁移规则，新增“C同日日志追加提交+tasks/issues/plan提交→只读PASS”用例，同时保留未提交日志改动FAIL。
+- 结论：0 BLOCKER、1 MAJOR、0 MINOR；G6-04保持REVIEW / CHANGES_REQUIRED，唯一索引增量及B最终技术确认后移。证据见`logs/reviews/2026-10-14_G6-04-C-rereview-2.md`。

@@ -24,6 +24,10 @@ with tempfile.TemporaryDirectory(prefix='fixture-', dir=scratch) as fixture:
     git('config','user.email','fixture@example.invalid')
     git('config','core.autocrlf','false')
     files = {'docs/deliverables/report.pdf':b'%PDF-fixture\x00binary\r\n', 'docs/work/C_REQ/rtm.md':'仅测试夹具\nrow\n'.encode(), 'logs/reviews/review.md':b'synthetic review fixture\n', 'logs/prompts/2026-10-13-A.md':b'initial fixture log\n', 'evidence/test/result.json':b'{"fixture": true}\n'}
+    task_rows = b''.join(f'| G6-0{i} | scope | A | C | input | output | dependency | criteria | risk | REVIEW |\n'.encode() for i in range(5))
+    files['tasks.md'] = task_rows
+    files[archive.PLAN_PATH] = b'# Controlled plan fixture\n' + task_rows
+    files['control/issues.md'] = b'fixture issue OPEN\n'
     for extension in ['jsonl','ndjson','sha256']:
         files['evidence/test/text.'+extension]=b'explicit text fixture\nsecond line\n'
     for path, data in files.items():
@@ -74,6 +78,31 @@ with tempfile.TemporaryDirectory(prefix='fixture-', dir=scratch) as fixture:
     git('add','logs/prompts/2026-10-13-A.md')
     git('commit','-m','fixture independent log backfill')
     verify('Committed log backfill uses original archive snapshot and HEAD',True)
+    # The index is kept byte-identical throughout the C Review lifecycle.
+    updated_rows = task_rows.replace(b'| G6-04 | scope | A | C | input | output | dependency | criteria | risk | REVIEW |', b'| G6-04 | scope | A | C | input | output | dependency | criteria | risk | REVIEW / CHANGES_REQUIRED |')
+    (archive.ROOT / 'tasks.md').write_bytes(updated_rows)
+    (archive.ROOT / archive.PLAN_PATH).write_bytes(b'# Controlled plan fixture\n' + updated_rows)
+    (archive.ROOT / 'control/issues.md').write_bytes(b'fixture C Review issue PARTIALLY_REMEDIATED / OPEN\n')
+    verify('Uncommitted C Review tasks issues plan migration rejected',False)
+    git('add','tasks.md','control/issues.md',archive.PLAN_PATH)
+    git('commit','-m','fixture independent C Review state migration')
+    verify('Archive then C Review tasks issues plan commit then read-only PASS',True)
+    plan_file = archive.ROOT / archive.PLAN_PATH
+    approved_plan = plan_file.read_bytes()
+    plan_file.write_bytes(approved_plan.replace(b'CHANGES_REQUIRED',b'PENDING_C'))
+    verify('Uncommitted plan status change rejected',False)
+    plan_file.write_bytes(approved_plan)
+    plan_file.write_bytes(approved_plan.replace(b'Controlled plan fixture',b'Arbitrary committed business prose'))
+    git('add',archive.PLAN_PATH)
+    git('commit','-m','fixture forbidden plan prose change')
+    verify('Committed non-status plan change rejected',False)
+    plan_file.write_bytes(approved_plan)
+    git('add',archive.PLAN_PATH)
+    git('commit','-m','fixture restore controlled prose')
+    (archive.ROOT / 'tasks.md').write_bytes(task_rows)
+    git('add','tasks.md')
+    git('commit','-m','fixture inconsistent task status')
+    verify('Committed plan task status mismatch rejected',False)
 archive.ROOT = root
 result = {'task':'G6-04','testScope':'Isolated synthetic Git repository, no project evidence/acceptance modified','status':'PASS','cases':cases,'caseCount':len(cases)}
 print(json.dumps(result,ensure_ascii=False,indent=2))

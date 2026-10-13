@@ -131,3 +131,5 @@ G6-01/02/03当前状态以tasks及最终Review为准，均DONE并保留REAL_WORL
 ## G6-04 C Review整改（2026-10-13；当前增量）
 
 C于master@6a00406整体复核，正式报告主体/视觉/受控数字/12项债务结构通过，计划状态与归档验证方法2项MAJOR要求整改。A本轮同步G6受控计划V0.2，分离索引生成与只读提交态验证，并验证仅文本CRLF/LF差异可容忍、二进制/内容/索引篡改必须失败。详细work/G6/G6-04_A_remediation.md与../evidence/g6/G6-04/A-remediation/。G6-04仍REVIEW待C定向复验、C唯一索引日期化增量、B最终技术确认；未冻结、真实履约继续延期。
+
+- 2026-10-14 G6-04归档生命周期整改送审：`docs/work/G6/G6-04_A_lifecycle_remediation.md`。002已由C关闭；003 A整改待C复验，随后C唯一索引增量/B最终技术确认；保持REVIEW及REAL_WORLD_DEFERRED。

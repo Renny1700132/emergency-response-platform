@@ -7,6 +7,7 @@ from g6_04_archive import ROOT, INDEX_PATH, MUTABLE_PATHS, git, paths_at, blobs_
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--source-master', required=True, help='Reviewed input commit, not an inferred future candidate commit')
+parser.add_argument('--prompt-log', help='Explicit current A prompt log to include before its first commit')
 args = parser.parse_args()
 source = git('rev-parse', args.source_master + '^{commit}').decode().strip()
 source_paths = paths_at(source)
@@ -18,6 +19,10 @@ for directory in ['docs/work/G6', 'evidence/g6/G6-04', 'scripts/g6']:
             if category(rel):
                 paths.add(rel)
 paths.add('docs/work/A_PM/g6_delivery_acceptance_plan.md')
+if args.prompt_log:
+    if args.prompt_log not in MUTABLE_PATHS or not args.prompt_log.startswith('logs/prompts/'):
+        raise ValueError('Prompt log must be an explicitly controlled mutable A log')
+    paths.add(args.prompt_log)
 exclusions = [INDEX_PATH, 'evidence/g6/G6-04/INDEX.md', 'evidence/g6/G6-04/A-remediation/']
 paths = sorted(p for p in paths if not any(p == x or (x.endswith('/') and p.startswith(x)) for x in exclusions))
 input_blobs = blobs_at(source, [p for p in paths if p in source_paths])
@@ -37,12 +42,12 @@ for path in paths:
     kind = hash_kind(path)
     original = input_blobs.get(path)
     changed = original is None or content_hash(original, kind) != content_hash(data, kind)
-    rows.append({'file': target.name, 'path': path, 'category': category(path), 'version': f'G6-04 V0.2整改送审；上游Git {source[:7]}' if changed else f'Git input {source[:7]}；文内版号/C历史映射见源件', 'status': 'AVAILABLE_PENDING_C_REREVIEW_AND_B' if changed else 'AVAILABLE_RETAINED_HISTORY_NOT_UNCONDITIONAL_ACCEPTANCE', 'hashKind': kind, 'contentSha256': content_hash(data, kind), 'physicalSha256AtGeneration': sha(data), 'physicalBytesAtGeneration': len(data), 'inputGitBlobSha256': sha(original) if original is not None else None, 'mutableAfterSnapshot': path in MUTABLE_PATHS, 'cIndexLinks': links.get(path, [])})
+    rows.append({'file': target.name, 'path': path, 'category': category(path), 'version': f'G6-04 V0.3状态迁移整改送审；上游Git {source[:7]}' if changed else f'Git input {source[:7]}；文内版号/C历史映射见源件', 'status': 'AVAILABLE_PENDING_C_REREVIEW_AND_B' if changed else 'AVAILABLE_RETAINED_HISTORY_NOT_UNCONDITIONAL_ACCEPTANCE', 'hashKind': kind, 'contentSha256': content_hash(data, kind), 'physicalSha256AtGeneration': sha(data), 'physicalBytesAtGeneration': len(data), 'inputGitBlobSha256': sha(original) if original is not None else None, 'mutableAfterSnapshot': path in MUTABLE_PATHS, 'cIndexLinks': links.get(path, [])})
 missing = [{'file': x['name'], 'path': x['file'], 'version': x.get('version', 'C历史快照'), 'hash': None, 'status': 'NOT_AVAILABLE / DEFERRED', 'cIndexId': x['id']} for x in c_index['items'] if not (ROOT / x['file']).is_file()]
-index = {'schemaVersion': 2, 'task': 'G6-04', 'state': 'REMEDIATED_CANDIDATE_PENDING_C_REREVIEW_AND_B_NOT_FROZEN', 'sourceMaster': source, 'factsAndAiCensusBaselineMaster': '3b47e8f97caac1fa6dc989fd1ff5279bd1eb5450', 'cIndexSource': 'evidence/g6/G6-02/delivery-index.json', 'countsAreArchiveEntriesNotDeliveryAcceptance': True, 'verificationPolicy': 'Submitted index and all row contents checked against the enclosing archive commit. Checkout text allows only CRLF-to-LF equivalence; binary exact. Mutable subsequent states must match HEAD Git blobs and are reported separately. Generator is never invoked by verifier.', 'exclusions': exclusions, 'exclusionReason': 'Index/front index and A verification receipts depend on the index; validate these process files through their enclosing Git commit, avoiding cyclic self hashes. No historical result is discarded.', 'rows': rows, 'missingPlannedPaths': missing}
+index = {'schemaVersion': 2, 'task': 'G6-04', 'state': 'REMEDIATED_CANDIDATE_PENDING_C_REREVIEW_AND_B_NOT_FROZEN', 'sourceMaster': source, 'factsAndAiCensusBaselineMaster': '3b47e8f97caac1fa6dc989fd1ff5279bd1eb5450', 'cIndexSource': 'evidence/g6/G6-02/delivery-index.json', 'countsAreArchiveEntriesNotDeliveryAcceptance': True, 'verificationPolicy': 'Submitted index and all row contents checked against the enclosing archive commit. Checkout text allows only CRLF-to-LF equivalence; binary exact. Mutable subsequent states must match HEAD Git blobs and are reported separately. The controlled G6 plan permits only last-column status changes in the five existing G6 rows; all other bytes remain protected, and HEAD plan rows must match HEAD tasks. Generator is never invoked by verifier.', 'exclusions': exclusions, 'exclusionReason': 'Index/front index and A verification receipts depend on the index; validate these process files through their enclosing Git commit, avoiding cyclic self hashes. No historical result is discarded.', 'rows': rows, 'missingPlannedPaths': missing}
 output = ROOT / INDEX_PATH
 output.write_text(json.dumps(index, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-md = f'''# G6-04 最终归档INDEX（V0.2整改送审，未冻结）
+md = f'''# G6-04 最终归档INDEX（V0.3状态迁移整改送审，未冻结）
 
 当前输入master：`{source}`。事实/AI统计仍锁原`3b47e8f`快照；本视图引用C唯一`evidence/g6/G6-02/delivery-index.json`，不替代它或重算29项/三段增量/验收结果。
 
@@ -60,7 +65,7 @@ md = f'''# G6-04 最终归档INDEX（V0.2整改送审，未冻结）
 
 `physicalSha256AtGeneration`与`physicalBytesAtGeneration`仅说明生成机器当时的物理字节，是诊断值，不能要求所有平台字节相同。只在文本稳定指纹已吻合时允许诊断物理SHA不同，并逐项报告`permittedTextEolConversions`；二进制不允许豁免。`inputGitBlobSha256`独立验证输入`sourceMaster`原Git blob，保留来源锚点。
 
-日志/tasks/control/A自检的后续回填不回写原快照hash：每行原内容仍由归档内容commit校验；当前可变文件必须与HEAD已提交Git blob一致，任何未提交篡改都失败，并报告实际后续迁移路径。C/B实际复核后另作日期化候选/索引增量，不自动接受。
+日志/tasks/control/A自检的后续回填不回写原快照hash：每行原内容仍由归档内容commit校验；当前可变文件必须与HEAD已提交Git blob一致，任何未提交篡改都失败，并报告实际后续迁移路径。受控计划仅豁免G6-00—04五行的最后一列状态单元格：行数、其余单元格和正文逐字保护，且HEAD计划任务行必须与HEAD tasks一致。计划正文、范围、输入输出、任意业务文字变化仍失败；未提交状态更新也失败。显式允许本次A日志2026-10-14-A独立回填，不扩大到任意日志。C/B实际复核后另作日期化候选/索引增量，不自动接受。
 
 索引及依赖它的验证回执排除自hash，通过包围它们的Git commit校验；完整排除范围见JSON的`exclusions`。旧1380项生成态PASS及C发现的231条物理差异是历史诊断，原记录/Git保留，不能改写成原先提交态通过。
 
@@ -76,6 +81,6 @@ for cat, count in Counter(r['category'] for r in rows).items():
 md += '\n## 缺项与复核\n\n'
 for item in missing:
     md += f"- {item['cIndexId']}：{item['file']}，`{item['path']}`；NOT_AVAILABLE / DEFERRED，hash未知。\n"
-md += '\n002/003当前由A整改，待C定向复验并纳入唯一索引，随后B最终技术确认。真实接口、KN-065、现场/培训/试运行/数据/签署等债务继续移交；G6-04保持REVIEW，未冻结。\n'
+md += '\n002已由C关闭；003本轮由A整改，待C定向复验并纳入唯一索引，随后B最终技术确认。真实接口、KN-065、现场/培训/试运行/数据/签署等债务继续移交；G6-04保持REVIEW，未冻结。\n'
 (ROOT / 'evidence/g6/G6-04/INDEX.md').write_text(md, encoding='utf-8')
 print(json.dumps({'operation': 'GENERATED_DRAFT_INDEX_NOT_VERIFIED', 'schemaVersion': 2, 'sourceMaster': source, 'archiveRows': len(rows)}, ensure_ascii=False))

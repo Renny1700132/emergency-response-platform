@@ -7,7 +7,30 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[2]
 INDEX_PATH = 'evidence/g6/G6-04/final-archive-index.json'
 TEXT_EXTENSIONS = {'.md', '.json', '.jsonl', '.ndjson', '.sha256', '.txt', '.log', '.yaml', '.yml', '.py', '.ps1', '.mjs', '.sh', '.csv', '.tsv', '.ts', '.patch', '.lock'}
-MUTABLE_PATHS = {'tasks.md', 'control/issues.md', 'control/overrides.md', 'docs/README.md', 'logs/prompts/2026-10-13-A.md', 'docs/work/G6/G6-04_A_self_review.md'}
+PLAN_PATH = 'docs/work/A_PM/g6_delivery_acceptance_plan.md'
+MUTABLE_PATHS = {'tasks.md', 'control/issues.md', 'control/overrides.md', 'docs/README.md', 'logs/prompts/2026-10-13-A.md', 'logs/prompts/2026-10-14-A.md', 'docs/work/G6/G6-04_A_self_review.md', PLAN_PATH}
+
+def plan_state_projection(data):
+    """Mask only the last status cell of the five existing G6 task rows.
+
+    Every other byte (including task inputs, outputs and surrounding prose)
+    remains protected. Missing/duplicate rows or changed table shapes fail.
+    """
+    projected = []
+    states = {}
+    for line in canonical(data, 'TEXT_CRLF_TO_LF_ONLY').splitlines(keepends=True):
+        cells = line.split(b'|')
+        task = cells[1].strip() if len(cells) > 1 else b''
+        if task in {f'G6-0{i}'.encode() for i in range(5)}:
+            if len(cells) != 12 or task in states or cells[0] != b'' or cells[-1] not in (b'', b'\n'):
+                raise ValueError('Invalid or duplicate controlled G6 plan row')
+            states[task] = line.rstrip(b'\n')
+            cells[-2] = b' <COMMITTED_STATUS_CELL> '
+            line = b'|'.join(cells)
+        projected.append(line)
+    if len(states) != 5:
+        raise ValueError('All five controlled G6 task rows are required')
+    return b''.join(projected), states
 
 def git(*args, root=None):
     return subprocess.check_output(['git', '-c', 'core.quotepath=false', *args], cwd=root or ROOT, timeout=30)
@@ -132,6 +155,15 @@ def verify_archive(index_file=INDEX_PATH, commit=None, working_tree=False):
             # The original snapshot still has an exact fingerprint above.
             # Post-snapshot changes are permitted only if separately committed.
             check('Mutable checkout matches committed HEAD ' + path, canonical(actual, kind) == canonical(head[path], kind))
+            if path == PLAN_PATH:
+                try:
+                    original_projection, _ = plan_state_projection(blob)
+                    current_projection, plan_rows = plan_state_projection(head[path])
+                    _, task_rows = plan_state_projection(head['tasks.md'])
+                    check('Committed plan transition changes status cells only', original_projection == current_projection)
+                    check('Committed plan task rows match committed tasks', plan_rows == task_rows)
+                except (ValueError, KeyError) as error:
+                    check('Valid constrained committed plan transition', False, str(error))
             if content_hash(actual, kind) != row['contentSha256']:
                 mutable_transitions.append(path)
         else:

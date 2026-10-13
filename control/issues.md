@@ -2111,3 +2111,7 @@ ISSUE-G6-03-002：MAJOR / REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。依据
 - 解除：将受控计划纳入受限的已提交状态迁移规则，并新增“候选归档→C Review同步tasks/issues/plan→独立提交→只读验证PASS”行为用例；不得放宽正式件或任意文本校验。
 - 结论：0 BLOCKER、1 MAJOR、0 MINOR；G6-04保持REVIEW / CHANGES_REQUIRED。ISSUE-G6-04-001继续OPEN，C唯一索引增量及B最终技术确认后移；真实延期不改。
 - 证据：`logs/reviews/2026-10-14_G6-04-C-rereview.md`、`evidence/g6/G6-04/C-rereview/review-result.json`。
+
+## 2026-10-14 A：ISSUE-G6-04-003生命周期整改响应（REMEDIATED / PENDING_C）
+
+002保留C关闭；003不由A关闭。仅允许受控计划五个G6任务行的最后状态栏后续已提交迁移，其余正文/单元格精确保护，HEAD任务行一致且未提交更改拒绝。15项隔离Git行为预期满足，包括C更新tasks/issues/plan独立提交后只读PASS与正文/不一致状态拒绝。详见docs/work/G6/G6-04_A_lifecycle_remediation.md及2026-10-14-A日志；提交态回执待内容提交后产生。001、C唯一索引增量与B最终技术确认仍待办，REAL_WORLD_DEFERRED不变。

@@ -24,6 +24,8 @@ with tempfile.TemporaryDirectory(prefix='fixture-', dir=scratch) as fixture:
     git('config','user.email','fixture@example.invalid')
     git('config','core.autocrlf','false')
     files = {'docs/deliverables/report.pdf':b'%PDF-fixture\x00binary\r\n', 'docs/work/C_REQ/rtm.md':'仅测试夹具\nrow\n'.encode(), 'logs/reviews/review.md':b'synthetic review fixture\n', 'logs/prompts/2026-10-13-A.md':b'initial fixture log\n', 'evidence/test/result.json':b'{"fixture": true}\n'}
+    for extension in ['jsonl','ndjson','sha256']:
+        files['evidence/test/text.'+extension]=b'explicit text fixture\nsecond line\n'
     for path, data in files.items():
         target = archive.ROOT / path
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -52,6 +54,11 @@ with tempfile.TemporaryDirectory(prefix='fixture-', dir=scratch) as fixture:
     text_file.write_bytes(files[text_path]+b'UNCOMMITTED_CHANGE\n')
     verify('Arbitrary text change is rejected',False)
     text_file.write_bytes(files[text_path])
+    for extension in ['jsonl','ndjson','sha256']:
+        path='evidence/test/text.'+extension
+        (archive.ROOT/path).write_bytes(files[path].replace(b'\n',b'\r\n'))
+        verify(extension+' text checkout EOL conversion',True)
+        (archive.ROOT/path).write_bytes(files[path])
     binary_file = archive.ROOT / 'docs/deliverables/report.pdf'
     binary_file.write_bytes(files['docs/deliverables/report.pdf'].replace(b'\r\n',b'\n'))
     verify('Binary newline alteration is rejected',False)

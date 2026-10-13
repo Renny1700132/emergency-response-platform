@@ -6,7 +6,7 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[2]
 INDEX_PATH = 'evidence/g6/G6-04/final-archive-index.json'
-TEXT_EXTENSIONS = {'.md', '.json', '.txt', '.log', '.yaml', '.yml', '.py', '.ps1', '.mjs', '.sh', '.csv', '.tsv', '.ts', '.patch', '.lock'}
+TEXT_EXTENSIONS = {'.md', '.json', '.jsonl', '.ndjson', '.sha256', '.txt', '.log', '.yaml', '.yml', '.py', '.ps1', '.mjs', '.sh', '.csv', '.tsv', '.ts', '.patch', '.lock'}
 MUTABLE_PATHS = {'tasks.md', 'control/issues.md', 'control/overrides.md', 'docs/README.md', 'logs/prompts/2026-10-13-A.md', 'docs/work/G6/G6-04_A_self_review.md'}
 
 def git(*args, root=None):

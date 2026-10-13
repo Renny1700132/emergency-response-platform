@@ -20,7 +20,7 @@
 
 ## 3 跨检出态指纹规则
 
-稳定`contentSha256`：文本只允许CRLF→LF，不去空格/BOM、不改变Unicode或内容；二进制（Office/PDF/图片等）必须完全一致。`physicalSha256AtGeneration`只记录本机生成时物理字节，纯文本行尾差异在稳定hash通过后才允许，并逐项报告；其他差异必须失败。`inputGitBlobSha256`仍核对sourceMaster真实原始Git对象。
+稳定`contentSha256`：明确文本扩展名包含JSONL/NDJSON/SHA256摘要，文本只允许CRLF→LF，不去空格/BOM、不改变Unicode或内容；二进制（Office/PDF/图片等）必须完全一致。`physicalSha256AtGeneration`只记录本机生成时物理字节，纯文本行尾差异在稳定hash通过后才允许，并逐项报告；其他差异必须失败。`inputGitBlobSha256`仍核对sourceMaster真实原始Git对象。
 
 旧原索引、1380项生成态PASS、C的231条物理差异与462行诊断改写均保留在Git/原Review/原JSON，不改写成原先提交态已通过。当前索引是明确的新候选V0.2，事实/AI数仍锚3b47e8f快照，生成输入为7bfccad；不重算C唯一指标/验收账本。
 
@@ -28,7 +28,7 @@
 
 ## 4 实际检查与可复现入口
 
-- 隔离Git夹具7项：提交态正常通过；只换LF/CRLF通过；文本内容、二进制字节、索引、未提交可变日志篡改均拒绝；已提交独立日志回填通过。每项验证均未改写索引；详细`A-remediation/verification-behavior-tests.json`，这是方法验证，不是业务AC实测。
+- 首轮隔离Git夹具7项：提交态正常通过；只换LF/CRLF通过；文本内容、二进制字节、索引、未提交可变日志篡改均拒绝；已提交独立日志回填通过。提交态实际检查另发现JSONL/NDJSON/SHA256文本分类缺口9行，原失败保留；修订后增加3个扩展名场景共10项，最新`A-remediation/verification-behavior-tests-final.json`。每项验证均未改写索引；这是方法验证，不是业务AC实测。
 - 旧schema1由新验证器明确拒绝，索引验证前后hash不变，原输出保留`legacy-schema-verification.log`与`legacy-schema-readonly-proof.json`。
 - 修订草稿执行`python scripts/g6/audit-g6-04.py --verify --working-tree`；首轮结果见`working-tree-verification.json`，当前最终候选结果见`working-tree-final.json`。草稿通过后才提交候选；受检内容变更须明确再生成候选而非由验证器自修复。
 - 提交后执行`python scripts/g6/audit-g6-04.py --verify`，实际提交态结果见后续`submitted-verification.json`，回填后再执行默认模式确认选择原归档内容commit且当前可变文件已提交。

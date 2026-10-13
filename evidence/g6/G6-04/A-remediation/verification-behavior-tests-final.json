@@ -1,0 +1,108 @@
+{
+  "task": "G6-04",
+  "testScope": "Isolated synthetic Git repository, no project evidence/acceptance modified",
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "Committed fixture snapshot",
+      "expected": "PASS",
+      "actual": "PASS",
+      "expectationMet": true,
+      "indexUnchanged": true,
+      "filesWritten": 0,
+      "failureChecks": []
+    },
+    {
+      "case": "Only LF to CRLF checkout conversion",
+      "expected": "PASS",
+      "actual": "PASS",
+      "expectationMet": true,
+      "indexUnchanged": true,
+      "filesWritten": 0,
+      "failureChecks": []
+    },
+    {
+      "case": "Arbitrary text change is rejected",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "expectationMet": true,
+      "indexUnchanged": true,
+      "filesWritten": 0,
+      "failureChecks": [
+        "Checkout content fingerprint docs/work/C_REQ/rtm.md"
+      ]
+    },
+    {
+      "case": "jsonl text checkout EOL conversion",
+      "expected": "PASS",
+      "actual": "PASS",
+      "expectationMet": true,
+      "indexUnchanged": true,
+      "filesWritten": 0,
+      "failureChecks": []
+    },
+    {
+      "case": "ndjson text checkout EOL conversion",
+      "expected": "PASS",
+      "actual": "PASS",
+      "expectationMet": true,
+      "indexUnchanged": true,
+      "filesWritten": 0,
+      "failureChecks": []
+    },
+    {
+      "case": "sha256 text checkout EOL conversion",
+      "expected": "PASS",
+      "actual": "PASS",
+      "expectationMet": true,
+      "indexUnchanged": true,
+      "filesWritten": 0,
+      "failureChecks": []
+    },
+    {
+      "case": "Binary newline alteration is rejected",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "expectationMet": true,
+      "indexUnchanged": true,
+      "filesWritten": 0,
+      "failureChecks": [
+        "Checkout content fingerprint docs/deliverables/report.pdf"
+      ]
+    },
+    {
+      "case": "Tampered existing index is rejected without rebuilding",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "expectationMet": true,
+      "indexUnchanged": true,
+      "filesWritten": 0,
+      "failureChecks": [
+        "Loaded index matches submitted Git index",
+        "Submitted content fingerprint docs/deliverables/report.pdf",
+        "Checkout content fingerprint docs/deliverables/report.pdf"
+      ]
+    },
+    {
+      "case": "Uncommitted mutable log alteration is rejected",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "expectationMet": true,
+      "indexUnchanged": true,
+      "filesWritten": 0,
+      "failureChecks": [
+        "Mutable checkout matches committed HEAD logs/prompts/2026-10-13-A.md"
+      ]
+    },
+    {
+      "case": "Committed log backfill uses original archive snapshot and HEAD",
+      "expected": "PASS",
+      "actual": "PASS",
+      "expectationMet": true,
+      "indexUnchanged": true,
+      "filesWritten": 0,
+      "failureChecks": []
+    }
+  ],
+  "caseCount": 10
+}

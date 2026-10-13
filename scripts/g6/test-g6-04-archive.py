@@ -23,7 +23,7 @@ with tempfile.TemporaryDirectory(prefix='fixture-', dir=scratch) as fixture:
     git('config','user.name','G6-04 synthetic test fixture')
     git('config','user.email','fixture@example.invalid')
     git('config','core.autocrlf','false')
-    files = {'docs/deliverables/report.pdf':b'%PDF-fixture\x00binary\r\n', 'docs/work/C_REQ/rtm.md':'仅测试夹具\nrow\n'.encode(), 'logs/reviews/review.md':b'synthetic review fixture\n', 'logs/prompts/2026-10-13-A.md':b'initial fixture log\n', 'evidence/test/result.json':b'{"fixture": true}\n'}
+    files = {'docs/deliverables/report.pdf':b'%PDF-fixture\x00binary\r\n', 'docs/work/C_REQ/rtm.md':'仅测试夹具\nrow\n'.encode(), 'logs/reviews/review.md':b'synthetic review fixture\n', 'logs/prompts/2026-10-13-A.md':b'initial fixture log\n', 'logs/prompts/2026-10-14-C.md':b'initial C review fixture log\n', 'evidence/test/result.json':b'{"fixture": true}\n'}
     task_rows = b''.join(f'| G6-0{i} | scope | A | C | input | output | dependency | criteria | risk | REVIEW |\n'.encode() for i in range(5))
     files['tasks.md'] = task_rows
     files[archive.PLAN_PATH] = b'# Controlled plan fixture\n' + task_rows
@@ -78,15 +78,21 @@ with tempfile.TemporaryDirectory(prefix='fixture-', dir=scratch) as fixture:
     git('add','logs/prompts/2026-10-13-A.md')
     git('commit','-m','fixture independent log backfill')
     verify('Committed log backfill uses original archive snapshot and HEAD',True)
+    c_log_path = archive.ROOT / 'logs/prompts/2026-10-14-C.md'
+    c_log_original = files['logs/prompts/2026-10-14-C.md']
+    c_log_path.write_bytes(c_log_original + b'uncommitted C review prompt fixture\n')
+    verify('Uncommitted same-day C prompt log append is rejected',False)
+    c_log_path.write_bytes(c_log_original)
     # The index is kept byte-identical throughout the C Review lifecycle.
     updated_rows = task_rows.replace(b'| G6-04 | scope | A | C | input | output | dependency | criteria | risk | REVIEW |', b'| G6-04 | scope | A | C | input | output | dependency | criteria | risk | REVIEW / CHANGES_REQUIRED |')
     (archive.ROOT / 'tasks.md').write_bytes(updated_rows)
     (archive.ROOT / archive.PLAN_PATH).write_bytes(b'# Controlled plan fixture\n' + updated_rows)
     (archive.ROOT / 'control/issues.md').write_bytes(b'fixture C Review issue PARTIALLY_REMEDIATED / OPEN\n')
-    verify('Uncommitted C Review tasks issues plan migration rejected',False)
-    git('add','tasks.md','control/issues.md',archive.PLAN_PATH)
-    git('commit','-m','fixture independent C Review state migration')
-    verify('Archive then C Review tasks issues plan commit then read-only PASS',True)
+    c_log_path.write_bytes(c_log_original + b'committed C review prompt and result fixture\n')
+    verify('Uncommitted C prompt tasks issues plan migration rejected',False)
+    git('add','logs/prompts/2026-10-14-C.md','tasks.md','control/issues.md',archive.PLAN_PATH)
+    git('commit','-m','fixture independent C prompt and Review state migration')
+    verify('Archive then C prompt tasks issues plan commit then read-only PASS',True)
     plan_file = archive.ROOT / archive.PLAN_PATH
     approved_plan = plan_file.read_bytes()
     plan_file.write_bytes(approved_plan.replace(b'CHANGES_REQUIRED',b'PENDING_C'))

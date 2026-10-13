@@ -1,10 +1,10 @@
 # G6-04 最终归档INDEX（V0.3状态迁移整改送审，未冻结）
 
-当前输入master：`48a34c7fd40b5eb866bda0996ad55fe9956f8ce2`。事实/AI统计仍锁原`3b47e8f`快照；本视图引用C唯一`evidence/g6/G6-02/delivery-index.json`，不替代它或重算29项/三段增量/验收结果。
+当前输入master：`d17c1a088a23759f9c844f0446085cdc2a6329c2`。事实/AI统计仍锁原`3b47e8f`快照；本视图引用C唯一`evidence/g6/G6-02/delivery-index.json`，不替代它或重算29项/三段增量/验收结果。
 
 ## 分离生成与验证
 
-生成只在A明确修订候选时执行：`python scripts/g6/build-g6-04-archive.py --source-master 48a34c7fd40b5eb866bda0996ad55fe9956f8ce2`。生成不是验证，不输出PASS。
+生成只在A明确修订候选时执行：`python scripts/g6/build-g6-04-archive.py --source-master d17c1a088a23759f9c844f0446085cdc2a6329c2`。生成不是验证，不输出PASS。
 
 第三方执行：`python scripts/g6/audit-g6-04.py --verify`。此命令只读现有索引、Git对象与检出文件，输出JSON到标准输出，写文件数为0，绝不调用生成器或重写受检索引。默认验证最近一次修改本INDEX JSON的Git commit（不是日志回填后的HEAD）；可显式`--commit <归档内容commit>`选择原时点。必须验证加载的索引与该提交的索引一致，随后验证每行的该提交内容。
 
@@ -30,10 +30,10 @@
 | 正式文档 | 116 | 存在性/历史归档，不派生验收PASS |
 | RTM | 9 | 存在性/历史归档，不派生验收PASS |
 | G6移交源 | 17 | 存在性/历史归档，不派生验收PASS |
-| 测试/质量/Git过程证据 | 340 | 存在性/历史归档，不派生验收PASS |
+| 测试/质量/Git过程证据 | 341 | 存在性/历史归档，不派生验收PASS |
 | G6-04制作/启动留痕 | 35 | 存在性/历史归档，不派生验收PASS |
 | Prompt日志 | 73 | 存在性/历史归档，不派生验收PASS |
-| Review记录 | 323 | 存在性/历史归档，不派生验收PASS |
+| Review记录 | 324 | 存在性/历史归档，不派生验收PASS |
 
 ## 缺项与复核
 

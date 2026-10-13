@@ -7,7 +7,7 @@ from g6_04_archive import ROOT, INDEX_PATH, MUTABLE_PATHS, git, paths_at, blobs_
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--source-master', required=True, help='Reviewed input commit, not an inferred future candidate commit')
-parser.add_argument('--prompt-log', help='Explicit current A prompt log to include before its first commit')
+parser.add_argument('--prompt-log', help='Explicit controlled role prompt log to include before its first commit')
 args = parser.parse_args()
 source = git('rev-parse', args.source_master + '^{commit}').decode().strip()
 source_paths = paths_at(source)
@@ -21,7 +21,7 @@ for directory in ['docs/work/G6', 'evidence/g6/G6-04', 'scripts/g6']:
 paths.add('docs/work/A_PM/g6_delivery_acceptance_plan.md')
 if args.prompt_log:
     if args.prompt_log not in MUTABLE_PATHS or not args.prompt_log.startswith('logs/prompts/'):
-        raise ValueError('Prompt log must be an explicitly controlled mutable A log')
+        raise ValueError('Prompt log must be an explicitly controlled mutable role log')
     paths.add(args.prompt_log)
 exclusions = [INDEX_PATH, 'evidence/g6/G6-04/INDEX.md', 'evidence/g6/G6-04/A-remediation/']
 paths = sorted(p for p in paths if not any(p == x or (x.endswith('/') and p.startswith(x)) for x in exclusions))

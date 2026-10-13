@@ -8,7 +8,17 @@ ROOT = Path(__file__).resolve().parents[2]
 INDEX_PATH = 'evidence/g6/G6-04/final-archive-index.json'
 TEXT_EXTENSIONS = {'.md', '.json', '.jsonl', '.ndjson', '.sha256', '.txt', '.log', '.yaml', '.yml', '.py', '.ps1', '.mjs', '.sh', '.csv', '.tsv', '.ts', '.patch', '.lock'}
 PLAN_PATH = 'docs/work/A_PM/g6_delivery_acceptance_plan.md'
-MUTABLE_PATHS = {'tasks.md', 'control/issues.md', 'control/overrides.md', 'docs/README.md', 'logs/prompts/2026-10-13-A.md', 'logs/prompts/2026-10-14-A.md', 'docs/work/G6/G6-04_A_self_review.md', PLAN_PATH}
+MUTABLE_PATHS = {
+    'tasks.md',
+    'control/issues.md',
+    'control/overrides.md',
+    'docs/README.md',
+    'logs/prompts/2026-10-13-A.md',
+    'logs/prompts/2026-10-14-A.md',
+    'logs/prompts/2026-10-14-C.md',
+    'docs/work/G6/G6-04_A_self_review.md',
+    PLAN_PATH,
+}
 
 def plan_state_projection(data):
     """Mask only the last status cell of the five existing G6 task rows.

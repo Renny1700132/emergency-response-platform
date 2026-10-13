@@ -2122,3 +2122,10 @@ ISSUE-G6-03-002：MAJOR / REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。依据
 - 原因：归档已收录C同日日志，但`MUTABLE_PATHS`只新增A同日日志，夹具未覆盖C Prompt日志追加并提交；提交后仍会按旧归档快照拒绝。
 - 解除：为受控角色Prompt日志增加仅接受已提交HEAD内容的迁移规则，新增“C同日日志追加提交+tasks/issues/plan提交→只读PASS”用例，同时保留未提交日志改动FAIL。
 - 结论：0 BLOCKER、1 MAJOR、0 MINOR；G6-04保持REVIEW / CHANGES_REQUIRED，唯一索引增量及B最终技术确认后移。证据见`logs/reviews/2026-10-14_G6-04-C-rereview-2.md`。
+
+## 2026-10-14 C：ISSUE-G6-04-003第三次定向复验与关闭
+
+- 状态：`CLOSED / VERIFIED_BY_C`。用户授权C直接整改最后缺口；`logs/prompts/2026-10-14-C.md`已纳入显式受控可变路径，仅允许与已提交HEAD一致的canonical内容，未提交追加仍失败，未放宽任意Prompt日志。
+- 隔离Git夹具16/16符合预期，覆盖同日C日志单独未提交拒绝，以及C日志与tasks/issues/plan联合迁移的未提交拒绝/提交后通过；计划正文篡改及任务状态不一致仍拒绝。
+- 提交`02ea112213e0fb9a8fd6b304327172578d6d3125`后正式只读审计6178/6178、归档5698/5698（948行）通过，索引哈希前后一致`97369662...`、`filesWritten=0`。
+- 结论：002、003均已关闭，C符合性接受；`ISSUE-G6-04-001`继续`OPEN / PROCEDURAL BLOCKER`，等待C唯一索引日期化增量与B最终技术确认，A最终冻结后移。真实履约保持`REAL_WORLD_DEFERRED`。证据见`logs/reviews/2026-10-14_G6-04-C-rereview-3.md`及`evidence/g6/G6-04/C-rereview-3/review-result.json`。

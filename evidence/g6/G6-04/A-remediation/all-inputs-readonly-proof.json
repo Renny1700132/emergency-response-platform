@@ -1,0 +1,13 @@
+{
+  "operation": "READ_ONLY_SUBMITTED_SNAPSHOT_VERIFICATION",
+  "archiveCommit": "c29032ff8febdbf16fca2aa63e76cca5467d1fb9",
+  "auditorExitCode": 0,
+  "auditorStatus": "PASS",
+  "auditorFilesWritten": 0,
+  "inputFilesCheckedBeforeAfter": 943,
+  "changedInputFiles": [],
+  "allInputsUnchanged": true,
+  "beforeDigest": "852529a55a67225cd57ea4cf2e6e25782769dafa21c25c368bb303677edb9601",
+  "afterDigest": "852529a55a67225cd57ea4cf2e6e25782769dafa21c25c368bb303677edb9601",
+  "resultRecord": "evidence/g6/G6-04/A-remediation/submitted-verification.json"
+}

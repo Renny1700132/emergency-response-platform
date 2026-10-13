@@ -2,55 +2,9 @@
   "task": "G6-04",
   "executor": "A Codex-assisted self-review, not C/B approval",
   "factsBaselineMaster": "3b47e8f97caac1fa6dc989fd1ff5279bd1eb5450",
-  "status": "FAIL",
+  "status": "PASS",
   "assertionCount": 6130,
-  "failures": [
-    {
-      "check": "Submitted content fingerprint docs/deliverables/figures/20-图4-1-G3至M3里程碑与门禁.pptx.inspect.ndjson",
-      "pass": false,
-      "details": null
-    },
-    {
-      "check": "Submitted content fingerprint evidence/g6/G6-01/raw/remediation-attempt-3-nginx-timeout/steps.jsonl",
-      "pass": false,
-      "details": null
-    },
-    {
-      "check": "Submitted content fingerprint evidence/g6/G6-01/raw/remediation/backup/g6-remediation.sha256",
-      "pass": false,
-      "details": null
-    },
-    {
-      "check": "Submitted content fingerprint evidence/g6/G6-01/raw/remediation/steps.jsonl",
-      "pass": false,
-      "details": null
-    },
-    {
-      "check": "Submitted content fingerprint evidence/g6/G6-03/C-review/current-run/raw/2026-10-12T13-17-40-295Z/audit.jsonl",
-      "pass": false,
-      "details": null
-    },
-    {
-      "check": "Submitted content fingerprint evidence/g6/G6-03/raw/2026-10-11T14-00-52-778Z/audit.jsonl",
-      "pass": false,
-      "details": null
-    },
-    {
-      "check": "Submitted content fingerprint evidence/g6/G6-03/raw/2026-10-11T14-01-20-248Z/audit.jsonl",
-      "pass": false,
-      "details": null
-    },
-    {
-      "check": "Submitted content fingerprint evidence/g6/G6-03/raw/2026-10-11T14-02-13-947Z/audit.jsonl",
-      "pass": false,
-      "details": null
-    },
-    {
-      "check": "Submitted content fingerprint evidence/g6/G6-03/raw/2026-10-11T14-10-55-529Z/audit.jsonl",
-      "pass": false,
-      "details": null
-    }
-  ],
+  "failures": [],
   "checks": [
     {
       "check": "Frozen denominators",
@@ -5859,7 +5813,7 @@
     },
     {
       "check": "Submitted content fingerprint docs/deliverables/figures/20-图4-1-G3至M3里程碑与门禁.pptx.inspect.ndjson",
-      "pass": false,
+      "pass": true,
       "details": null
     },
     {
@@ -10744,7 +10698,7 @@
     },
     {
       "check": "Submitted content fingerprint evidence/g6/G6-01/raw/remediation-attempt-3-nginx-timeout/steps.jsonl",
-      "pass": false,
+      "pass": true,
       "details": null
     },
     {
@@ -10984,7 +10938,7 @@
     },
     {
       "check": "Submitted content fingerprint evidence/g6/G6-01/raw/remediation/backup/g6-remediation.sha256",
-      "pass": false,
+      "pass": true,
       "details": null
     },
     {
@@ -11284,7 +11238,7 @@
     },
     {
       "check": "Submitted content fingerprint evidence/g6/G6-01/raw/remediation/steps.jsonl",
-      "pass": false,
+      "pass": true,
       "details": null
     },
     {
@@ -13414,7 +13368,7 @@
     },
     {
       "check": "Submitted content fingerprint evidence/g6/G6-03/C-review/current-run/raw/2026-10-12T13-17-40-295Z/audit.jsonl",
-      "pass": false,
+      "pass": true,
       "details": null
     },
     {
@@ -14674,7 +14628,7 @@
     },
     {
       "check": "Submitted content fingerprint evidence/g6/G6-03/raw/2026-10-11T14-00-52-778Z/audit.jsonl",
-      "pass": false,
+      "pass": true,
       "details": null
     },
     {
@@ -14794,7 +14748,7 @@
     },
     {
       "check": "Submitted content fingerprint evidence/g6/G6-03/raw/2026-10-11T14-01-20-248Z/audit.jsonl",
-      "pass": false,
+      "pass": true,
       "details": null
     },
     {
@@ -14914,7 +14868,7 @@
     },
     {
       "check": "Submitted content fingerprint evidence/g6/G6-03/raw/2026-10-11T14-02-13-947Z/audit.jsonl",
-      "pass": false,
+      "pass": true,
       "details": null
     },
     {
@@ -15034,7 +14988,7 @@
     },
     {
       "check": "Submitted content fingerprint evidence/g6/G6-03/raw/2026-10-11T14-10-55-529Z/audit.jsonl",
-      "pass": false,
+      "pass": true,
       "details": null
     },
     {
@@ -30707,16 +30661,16 @@
   "realWorldStatus": "REAL_WORLD_DEFERRED",
   "archiveRows": 941,
   "archiveVerification": {
-    "status": "FAIL",
+    "status": "PASS",
     "assertionCount": 5650,
     "archiveRows": 941,
     "verificationMode": "READ_ONLY_SUBMITTED_GIT_AND_CHECKOUT",
-    "archiveSnapshotCommit": "f0d5fd7b8b716d6dc0c1cece8d83af7e3b14cc94",
+    "archiveSnapshotCommit": "c29032ff8febdbf16fca2aa63e76cca5467d1fb9",
     "permittedTextEolConversions": [],
     "committedMutableTransitions": [],
     "physicalHashInterpretation": "Diagnostic generation bytes; only CRLF-to-LF text equivalence allowed. Binary hashes exact.",
-    "indexSha256Before": "e029040920ec9bc10acf818e19a098adbaab47fc8a77c5246b6e915a6e811351",
-    "indexSha256After": "e029040920ec9bc10acf818e19a098adbaab47fc8a77c5246b6e915a6e811351",
+    "indexSha256Before": "e234aea6f8ffa6be80b893581e7aa73934ac780539afea7c87c27024ac272f2f",
+    "indexSha256After": "e234aea6f8ffa6be80b893581e7aa73934ac780539afea7c87c27024ac272f2f",
     "filesWritten": 0
   },
   "filesWritten": 0

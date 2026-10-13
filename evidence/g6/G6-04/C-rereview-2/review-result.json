@@ -20,6 +20,8 @@
     "archiveRows": 946,
     "failureCount": 1,
     "failure": "Checkout content fingerprint logs/prompts/2026-10-14-C.md",
+    "postReviewStateCommit": "8f304ca869169d22c461e316debf275e626ec369",
+    "postCommitAuditStatus": "FAIL_SAME_SINGLE_C_PROMPT_LOG_FINGERPRINT",
     "archiveSnapshotCommit": "915d34b5e6cf88915da967023cf52f9b41c1b2e9",
     "verificationMode": "READ_ONLY_SUBMITTED_GIT_AND_CHECKOUT",
     "filesWritten": 0,

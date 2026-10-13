@@ -2129,3 +2129,9 @@ ISSUE-G6-03-002：MAJOR / REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。依据
 - 隔离Git夹具16/16符合预期，覆盖同日C日志单独未提交拒绝，以及C日志与tasks/issues/plan联合迁移的未提交拒绝/提交后通过；计划正文篡改及任务状态不一致仍拒绝。
 - 提交`02ea112213e0fb9a8fd6b304327172578d6d3125`后正式只读审计6178/6178、归档5698/5698（948行）通过，索引哈希前后一致`97369662...`、`filesWritten=0`。
 - 结论：002、003均已关闭，C符合性接受；`ISSUE-G6-04-001`继续`OPEN / PROCEDURAL BLOCKER`，等待C唯一索引日期化增量与B最终技术确认，A最终冻结后移。真实履约保持`REAL_WORLD_DEFERRED`。证据见`logs/reviews/2026-10-14_G6-04-C-rereview-3.md`及`evidence/g6/G6-04/C-rereview-3/review-result.json`。
+
+## 2026-10-14 C：G6-04唯一索引日期化增量完成
+
+- 在G6-02唯一索引保留GI-001—050历史，追加GI-051—065共15项；canonical Git blob统一取自`6da71f318586eaf8fcf90eb00de741ee6dc4496b`，覆盖46号DOCX/PDF、同源总结、债务移交、提交态归档、C复验记录、验证实现/用例及接受时点过程状态。
+- 专用校验逐项复算15/15 bytes与SHA-256；首版29项20/9、前三段21/18/11、117 AC、39 FR、34★、11 PASS/59 NOT_RUN/47 BLOCKED均不重算。
+- `ISSUE-G6-04-001`转为`OPEN / PENDING_B_TECHNICAL_CONFIRMATION`；C职责范围完成。真实系统0/6、独立真实部署操作者0、KN-065及现场/培训/试运行/数据/签署继续延期，G6-04未冻结。

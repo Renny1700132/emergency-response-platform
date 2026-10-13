@@ -166,6 +166,46 @@
         "g6_03CReview": "PENDING",
         "g6_02BRereview": "PENDING"
       }
+    },
+    {
+      "asOf": "2026-10-14",
+      "reason": "G6_04_C_COMPLIANCE_REREVIEW_ACCEPTED",
+      "inputCommit": "6da71f318586eaf8fcf90eb00de741ee6dc4496b",
+      "state": "G6_04_C_COMPLIANCE_ACCEPTED_PENDING_B_TECHNICAL_CONFIRMATION",
+      "g6_04ReviewState": "ISSUE_002_003_CLOSED_BY_C_REAL_WORLD_DEFERRED_NOT_FROZEN",
+      "items": [
+        {"id":"GI-051","name":"项目开发总结报告源文件","file":"docs/deliverables/G6/46-项目开发总结报告.docx","version":"G6-04 C-rereview@6da71f3","availability":"AVAILABLE","status":"C_COMPLIANCE_ACCEPTED_PENDING_B","evidenceType":"DOCUMENT_SOURCE","reality":"COURSE_CANDIDATE_REAL_WORLD_DEFERRED","bytes":41233,"sha256":"cd66c4807a33128f35e6b937f6bfe094a54aaa25e7473be9390abb866c47f244"},
+        {"id":"GI-052","name":"项目开发总结报告PDF","file":"docs/deliverables/G6/46-项目开发总结报告.pdf","version":"G6-04 C-rereview@6da71f3","availability":"AVAILABLE","status":"C_COMPLIANCE_ACCEPTED_PENDING_B","evidenceType":"DOCUMENT_PDF","reality":"COURSE_CANDIDATE_REAL_WORLD_DEFERRED","bytes":494974,"sha256":"ed8438ad1632fffd4d1e89ff4ed1ae154f3cac5532f1458bc1b147c62f0d46eb"},
+        {"id":"GI-053","name":"项目开发总结同源工作稿","file":"docs/work/G6/G6-04_project_development_summary.md","version":"G6-04 C-rereview@6da71f3","availability":"AVAILABLE","status":"C_COMPLIANCE_ACCEPTED_PENDING_B","evidenceType":"DOCUMENT_WORKING_SOURCE","reality":"COURSE_CANDIDATE_REAL_WORLD_DEFERRED","bytes":21373,"sha256":"61685cff367d72bd1fcaf5a3a93a3f40d75a405f7d6ffb95efac9fc91afbb921"},
+        {"id":"GI-054","name":"技术债务与补测移交","file":"docs/work/G6/technical_debt_transfer.md","version":"G6-04 C-rereview@6da71f3","availability":"AVAILABLE","status":"C_COMPLIANCE_ACCEPTED_PENDING_B","evidenceType":"TECHNICAL_DEBT_HANDOFF","reality":"REAL_WORLD_DEBT_RETAINED","bytes":9050,"sha256":"68c3363cbcb1d69763c95ee2a333a14d08929e1d4bdd1289a0ec0da05d954b6d"},
+        {"id":"GI-055","name":"G6-04提交态归档机器索引","file":"evidence/g6/G6-04/final-archive-index.json","version":"G6-04 archive@02ea112 reviewed@6da71f3","availability":"AVAILABLE","status":"READ_ONLY_SUBMITTED_AUDIT_PASS","evidenceType":"ARCHIVE_INDEX_MACHINE","reality":"COURSE_ARCHIVE_NOT_REAL_ACCEPTANCE","bytes":732826,"sha256":"1d23065c7bd074493737cf09c1dd546bf0ffc9ce3dca19f1ff86139298a01004"},
+        {"id":"GI-056","name":"G6-04归档阅读入口","file":"evidence/g6/G6-04/INDEX.md","version":"G6-04 archive@02ea112 reviewed@6da71f3","availability":"AVAILABLE","status":"READ_ONLY_SUBMITTED_AUDIT_PASS","evidenceType":"ARCHIVE_INDEX","reality":"COURSE_ARCHIVE_NOT_REAL_ACCEPTANCE","bytes":4805,"sha256":"81bc472bfe0ee1631728d5cd5d5ae220ace313275c0d6cad0770cc11efb0b210"},
+        {"id":"GI-057","name":"G6-04 C第三次定向复验记录","file":"logs/reviews/2026-10-14_G6-04-C-rereview-3.md","version":"C-rereview@6da71f3","availability":"AVAILABLE","status":"ACCEPTED_BY_C_PENDING_B","evidenceType":"REVIEW_RECORD","reality":"COURSE_REVIEW_REAL_WORLD_DEFERRED","bytes":1935,"sha256":"db63ec22039570c5f7b43e57e332836ad4dc72cbe75495198fa5d25f61d60eee"},
+        {"id":"GI-058","name":"G6-04 C第三次定向复验机器结果","file":"evidence/g6/G6-04/C-rereview-3/review-result.json","version":"C-rereview@6da71f3","availability":"AVAILABLE","status":"6178_ASSERTIONS_PASS_5698_ARCHIVE_PASS","evidenceType":"REVIEW_RECORD_MACHINE","reality":"COURSE_REVIEW_EVIDENCE","bytes":1369,"sha256":"c91e40719c2491e329c4e3a0c2522801156caff2d43d49d330059a2e11ea5285"},
+        {"id":"GI-059","name":"G6-04归档只读验证实现","file":"scripts/g6/g6_04_archive.py","version":"ISSUE-G6-04-003 fix@02ea112 reviewed@6da71f3","availability":"AVAILABLE","status":"C_PROMPT_COMMITTED_HEAD_RULE_ACCEPTED","evidenceType":"AUDIT_IMPLEMENTATION","reality":"PROCESS_CONTROL","bytes":10494,"sha256":"ece66f02e5f7f1698100b39359cffca1c4499d68d673d887082b91787736f1a4"},
+        {"id":"GI-060","name":"G6-04归档隔离生命周期用例","file":"scripts/g6/test-g6-04-archive.py","version":"ISSUE-G6-04-003 fix@02ea112 reviewed@6da71f3","availability":"AVAILABLE","status":"16_OF_16_EXPECTATIONS_MET","evidenceType":"AUDIT_TEST","reality":"SYNTHETIC_GIT_FIXTURE_NOT_BUSINESS_AC","bytes":7281,"sha256":"a9f34cb865183af075e71feeab0362893271267cccf152b66adc88a926dbf961"},
+        {"id":"GI-061","name":"G6-04归档显式生成器","file":"scripts/g6/build-g6-04-archive.py","version":"ISSUE-G6-04-003 fix@02ea112 reviewed@6da71f3","availability":"AVAILABLE","status":"GENERATOR_SEPARATED_FROM_VERIFIER","evidenceType":"ARCHIVE_GENERATOR","reality":"PROCESS_CONTROL","bytes":8536,"sha256":"a63f8b9262f45634b3623ca7d9bf6917cebf55487abe31095e370299f3717391"},
+        {"id":"GI-062","name":"G6-04 C接受时任务状态","file":"tasks.md","version":"C-rereview@6da71f3","availability":"AVAILABLE","status":"C_ACCEPTED_PENDING_INDEX_AND_B","evidenceType":"TASK_STATUS","reality":"PROCESS_RECORD_AT_INPUT","bytes":37989,"sha256":"70e860c2705e4e7362869556d831b248f2b05404f68ee56826fad37d3ed0ded7"},
+        {"id":"GI-063","name":"G6-04 C接受时问题状态","file":"control/issues.md","version":"C-rereview@6da71f3","availability":"AVAILABLE","status":"ISSUE_002_003_CLOSED_001_OPEN","evidenceType":"ISSUE_STATUS","reality":"PROCESS_RECORD_AT_INPUT","bytes":244963,"sha256":"27aa66110d01843fc005227078d36410229fb95d4ace5f31896b000e7e55ade8"},
+        {"id":"GI-064","name":"G6-04 C接受时受控计划","file":"docs/work/A_PM/g6_delivery_acceptance_plan.md","version":"C-rereview@6da71f3","availability":"AVAILABLE","status":"C_ACCEPTED_PENDING_INDEX_AND_B","evidenceType":"CONTROLLED_PLAN","reality":"PROCESS_RECORD_AT_INPUT","bytes":20201,"sha256":"308c16d63e595c6a872b875ace33e69ca15af0d96d7727184f1daa0d3d908f7b"},
+        {"id":"GI-065","name":"G6-04 C同日Prompt与整改日志","file":"logs/prompts/2026-10-14-C.md","version":"C-rereview@6da71f3","availability":"AVAILABLE","status":"COMMITTED_HEAD_VERIFIED","evidenceType":"AI_AUDIT_LOG","reality":"AI_PROCESS_RECORD","bytes":9574,"sha256":"84c646705e087b190be79873e11f28eedfe406fbe3b62cf855771d462a58f19e"}
+      ],
+      "counts": {
+        "items": 15,
+        "available": 15,
+        "behaviorCases": 16,
+        "auditAssertions": 6178,
+        "archiveAssertions": 5698,
+        "realWorldAccepted": 0
+      },
+      "boundaries": {
+        "ownerSystems": "0/6",
+        "independentRealDeployer": 0,
+        "kn065": "DEFERRED",
+        "realSiteTrainingTrialDataSignature": "DEFERRED",
+        "bTechnicalConfirmation": "PENDING",
+        "aFinalFreeze": "PENDING"
+      }
     }
   ],
   "items": [

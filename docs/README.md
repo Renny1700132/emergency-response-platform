@@ -114,7 +114,7 @@
 
 G6-01当前状态（2026-10-12）：A整改复验PASS，tasks置DONE；[复验记录](work/G6/G6-01_A_rereview.md)。用户手册§4.3证据介质小错已同步正式件；G6-02索引增量与G6-03 C整体复核、真实履约延期继续挂账。
 
-G6-02当前状态（2026-10-12）：B最终整体再复验接受后，A目录/计划/一致性复验PASS，tasks置DONE；[复验记录](work/G6/G6-02_A_rereview.md)。唯一索引GI-001—050各时点hash核对通过，当前状态小错已修正；真实履约及G6-03/G6-04剩余任务继续挂账。
+G6-02当前状态：B最终整体再复验接受后，A目录/计划/一致性复验PASS，tasks置DONE；[复验记录](work/G6/G6-02_A_rereview.md)。唯一索引保留GI-001—050历史，并于2026-10-14追加G6-04 C符合性复验GI-051—065；各段canonical Git blob独立核验，不重算历史分母。真实履约及G6-04 B技术确认继续挂账。
 
 ## G6-04 当前资料与送审入口（2026-10-13）
 
@@ -132,4 +132,4 @@ G6-01/02/03当前状态以tasks及最终Review为准，均DONE并保留REAL_WORL
 
 C于master@6a00406整体复核，正式报告主体/视觉/受控数字/12项债务结构通过，计划状态与归档验证方法2项MAJOR要求整改。A本轮同步G6受控计划V0.2，分离索引生成与只读提交态验证，并验证仅文本CRLF/LF差异可容忍、二进制/内容/索引篡改必须失败。详细work/G6/G6-04_A_remediation.md与../evidence/g6/G6-04/A-remediation/。G6-04仍REVIEW待C定向复验、C唯一索引日期化增量、B最终技术确认；未冻结、真实履约继续延期。
 
-- 2026-10-14 G6-04归档生命周期整改送审：`docs/work/G6/G6-04_A_lifecycle_remediation.md`。002已由C关闭；003 A整改待C复验，随后C唯一索引增量/B最终技术确认；保持REVIEW及REAL_WORLD_DEFERRED。
+- 2026-10-14 G6-04归档生命周期整改：`docs/work/G6/G6-04_A_lifecycle_remediation.md`。C第三次定向复验已关闭002/003，唯一索引已追加GI-051—065；当前仅待B最终技术确认及A最终一致性/冻结，保持REVIEW及REAL_WORLD_DEFERRED。

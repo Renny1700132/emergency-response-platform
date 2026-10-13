@@ -101,6 +101,21 @@ V0.2后续增量共18项，18项均可定位；26步部署/回退为成员B本�
 
 A复验增量共11项，11/11 canonical Git blob取自`e223f6d`并可核验。此增量将G6-01当前状态更新为`DONE（MANUALS_AND_LOCAL_DELIVERY_REVIEW_ACCEPTED / REAL_WORLD_DEFERRED）`，不改变G6-02待B再复验状态。
 
+## 2026-10-14 G6-04 C符合性复验增量
+
+> 保留GI-001—050历史不变。本段GI-051—065的canonical Git blob统一取自`6da71f318586eaf8fcf90eb00de741ee6dc4496b`，记录C关闭ISSUE-G6-04-002/003后的课程候选状态；B最终技术确认、A最终一致性/冻结和真实项目验收均未预写。
+
+| ID | G6-04交付/证据 | 路径 | 当前结论 | canonical SHA-256 |
+|---|---|---|---|---|
+| GI-051—052 | 项目开发总结报告DOCX/PDF | `docs/deliverables/G6/46-项目开发总结报告.*` | C符合性接受，待B技术确认 | 见JSON逐文件canonical指纹 |
+| GI-053—054 | 总结同源工作稿与技术债务移交 | `docs/work/G6/` | C符合性接受；真实债务保留 | 见JSON逐文件canonical指纹 |
+| GI-055—056 | 提交态最终归档机器索引与阅读入口 | `evidence/g6/G6-04/` | 6178/6178、归档5698/5698只读PASS | 见JSON逐文件canonical指纹 |
+| GI-057—058 | C第三次定向复验记录与机器结果 | `logs/reviews/`、`evidence/g6/G6-04/C-rereview-3/` | ACCEPTED_BY_C / PENDING_B | 见JSON逐文件canonical指纹 |
+| GI-059—061 | 验证器、16项生命周期用例与显式生成器 | `scripts/g6/` | 003关闭；验证/生成仍分离 | 见JSON逐文件canonical指纹 |
+| GI-062—065 | tasks/issues/受控计划/C同日Prompt日志 | 受控过程路径 | C接受时点状态；已提交HEAD验真 | 见JSON逐文件canonical指纹 |
+
+本增量共15项，15/15 canonical Git blob可核验；首版29项20/9、前三段21/18/11、117 AC、39 FR、34★及11/59/47均不重算。甲方系统仍0/6、真实独立部署操作者仍0，KN-065及真实现场/培训/试运行/数据/签署继续延期。
+
 ## 2026-10-12当前接受状态
 
-B最终整体再复验`6fad770`已接受；A目录/计划/一致性复验接受，任务DONE（真实履约延期）。机器索引顶层state及currentAcceptance为当前状态；首版29项20/9、cfdb6f5的21项、d17847d的18项、e223f6d的11项保持锁定，不倒改各时点Review状态。当前手册新指纹GI-040—043优先于V0.1/V0.2早期条目；G6-03候选与真实现场分列。
+B最终整体再复验`6fad770`已接受；A目录/计划/一致性复验接受，任务DONE（真实履约延期）。机器索引顶层state及currentAcceptance为G6-02当前状态；首版29项20/9、cfdb6f5的21项、d17847d的18项、e223f6d的11项及6da71f3的15项保持锁定，不倒改各时点Review状态。GI-051—065仅追加G6-04 C符合性复验输入，G6-04仍待B最终技术确认并未冻结。

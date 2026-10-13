@@ -46,8 +46,28 @@ rtm5={x['acId']:x for x in read('evidence/g5/G5-03/rtm-v5.json')['rows']}
 check('Frozen denominators',len(rtm)==117 and len({x['frId'] for x in rtm})==39 and len({x['frId'] for x in rtm if x['star']})==34)
 check('Actual results',Counter(x['actualResult'] for x in rtm)=={'PASS':11,'NOT_RUN':59,'BLOCKED':47})
 for row in rtm: check(row['acId']+' history preserved',row['actualResult']==rtm5[row['acId']]['result'])
-for path in ['evidence/g6/G6-02/metrics-ledger.md','evidence/g6/G6-02/gaps-deferrals.md','evidence/g6/G6-02/delivery-index.json','evidence/g6/G6-02/rtm-acceptance-increment.json','evidence/g5/G5-01/functional-gate-raw.json','logs/reviews/2026-10-12_G6-03-C-rereview.md','docs/work/G6/G6-01_A_rereview.md','docs/work/G6/G6-02_A_rereview.md']:
+for path in ['evidence/g6/G6-02/gaps-deferrals.md','evidence/g6/G6-02/rtm-acceptance-increment.json','evidence/g5/G5-01/functional-gate-raw.json','logs/reviews/2026-10-12_G6-03-C-rereview.md','docs/work/G6/G6-01_A_rereview.md','docs/work/G6/G6-02_A_rereview.md']:
     check('Authoritative evidence unchanged '+path,same_content((ROOT/path).read_bytes(),git('show',f'{SNAP}:{path}')))
+historic_delivery=json.loads(git('show',f'{SNAP}:evidence/g6/G6-02/delivery-index.json'))
+current_delivery=read('evidence/g6/G6-02/delivery-index.json')
+check('G6-02 unique index historical snapshots preserved',
+      current_delivery['items']==historic_delivery['items'] and
+      current_delivery['currentIncrement']==historic_delivery['currentIncrement'] and
+      current_delivery['subsequentIncrements'][:2]==historic_delivery['subsequentIncrements'] and
+      current_delivery['currentAcceptance']==historic_delivery['currentAcceptance'])
+g604_increment=current_delivery['subsequentIncrements'][2] if len(current_delivery['subsequentIncrements'])==3 else {}
+check('G6-04 C increment IDs and counts',
+      [x.get('id') for x in g604_increment.get('items',[])]==[f'GI-{n:03d}' for n in range(51,66)] and
+      g604_increment.get('counts',{}).get('items')==15 and
+      g604_increment.get('counts',{}).get('realWorldAccepted')==0)
+for item in g604_increment.get('items',[]):
+    blob=git('show',f"{g604_increment['inputCommit']}:{item['file']}")
+    check('G6-04 C increment canonical Git blob '+item['id'],len(blob)==item['bytes'] and hashlib.sha256(blob).hexdigest()==item['sha256'])
+historic_metrics=git('show',f'{SNAP}:evidence/g6/G6-02/metrics-ledger.md').replace(b'\r\n',b'\n')
+current_metrics=(ROOT/'evidence/g6/G6-02/metrics-ledger.md').read_bytes().replace(b'\r\n',b'\n')
+allowed_metric_prefixes=(b'| G6-04 C\xe7\xac\xa6\xe5\x90\x88\xe6\x80\xa7\xe5\xa4\x8d\xe9\xaa\x8c\xe5\xa2\x9e\xe9\x87\x8f |',b'| 6da71f3\xe6\x97\xb6\xe7\x82\xb9\xe9\xa6\x96\xe7\x89\x88\xe8\xb7\xaf\xe5\xbe\x84\xe5\xad\x98\xe5\x9c\xa8 |')
+projected_metrics=b'\n'.join(line for line in current_metrics.split(b'\n') if not line.startswith(allowed_metric_prefixes))
+check('G6-02 metrics history preserved with two dated additions',projected_metrics==historic_metrics)
 tasks=(ROOT/'tasks.md').read_text(encoding='utf-8-sig')
 snapshot=git('show',f'{SNAP}:tasks.md').decode('utf-8-sig')
 for task in ['G6-01','G6-02','G6-03']:
@@ -113,6 +133,6 @@ for path in ['docs/work/G6/G6-01_A_rereview.md','docs/work/G6/G6-02_A_rereview.m
 archive=verify_archive(index_file=args.index,commit=args.commit,working_tree=args.working_tree)
 checks.extend(archive['checks'])
 failures=[x for x in checks if not x['pass']]
-result={'task':'G6-04','executor':'A Codex-assisted self-review, not C/B approval','factsBaselineMaster':SNAP,'status':'PASS' if not failures else 'FAIL','assertionCount':len(checks),'failures':failures,'checks':checks,'releaseDecision':'NOT_FROZEN_PENDING_C_REREVIEW_AND_B_TECHNICAL_CONFIRMATION','realWorldStatus':'REAL_WORLD_DEFERRED','archiveRows':archive['archiveRows'],'archiveVerification':{k:v for k,v in archive.items() if k not in ['checks','failures']},'filesWritten':0}
+result={'task':'G6-04','executor':'G6-04 mechanical audit; C review recorded separately; not B/A approval','factsBaselineMaster':SNAP,'status':'PASS' if not failures else 'FAIL','assertionCount':len(checks),'failures':failures,'checks':checks,'releaseDecision':'NOT_FROZEN_C_ACCEPTED_AND_INDEXED_PENDING_B_TECHNICAL_CONFIRMATION','realWorldStatus':'REAL_WORLD_DEFERRED','archiveRows':archive['archiveRows'],'archiveVerification':{k:v for k,v in archive.items() if k not in ['checks','failures']},'filesWritten':0}
 print(json.dumps(result,ensure_ascii=False,indent=2))
 raise SystemExit(bool(failures))

@@ -74,7 +74,7 @@ for (const id of ['GI-001','GI-002','GI-003','GI-004','GI-011','GI-012','GI-013'
 if (!increment.historicalTransitions.some((x) => x.initialId === 'CI-028' && x.plannedPath !== x.actualCandidatePath)) fail('planned/candidate defense paths are not separated');
 
 const followups = delivery.subsequentIncrements;
-if (!Array.isArray(followups) || followups.length !== 2) fail('expected two subsequent increments');
+if (!Array.isArray(followups) || followups.length !== 3) fail('expected three subsequent increments');
 const v02 = followups[0];
 if (v02.inputCommit !== 'd17847d10ab0009f2b7c1468cf5540d90a3c0694') fail('unexpected V0.2 increment input commit');
 if (v02.formationChain?.applicationLock !== '75f01c3bb33369d3785acf69a3a00eb983aa188b' || v02.formationChain?.mergedDeliveryPoint !== 'a8f8134') fail('V0.2 formation chain drift');
@@ -105,6 +105,20 @@ for (let n = 40; n <= 50; n += 1) {
   if (!aRereview.items.some((x) => x.id === id)) fail(`missing A rereview increment ID: ${id}`);
 }
 if (aRereview.counts?.aMechanicalAssertions !== 35 || aRereview.counts?.g6_01AcceptedByA !== true || aRereview.counts?.realWorldAccepted !== 0) fail('A rereview evidence or real-world boundary drift');
+const g604CReview = followups[2];
+if (g604CReview.inputCommit !== '6da71f318586eaf8fcf90eb00de741ee6dc4496b') fail('unexpected G6-04 C rereview increment input commit');
+if (g604CReview.g6_04ReviewState !== 'ISSUE_002_003_CLOSED_BY_C_REAL_WORLD_DEFERRED_NOT_FROZEN') fail('G6-04 C rereview state drift');
+if (g604CReview.items?.length !== 15 || new Set(g604CReview.items.map((x) => x.id)).size !== 15) fail('G6-04 C rereview increment item count or IDs drift');
+for (const item of g604CReview.items) {
+  const bytes = gitBlob(g604CReview.inputCommit, item.file);
+  const sha256 = crypto.createHash('sha256').update(bytes).digest('hex');
+  if (bytes.length !== item.bytes || sha256 !== item.sha256) fail(`G6-04 C rereview canonical git blob mismatch: ${item.file}`);
+}
+for (let n = 51; n <= 65; n += 1) {
+  const id = `GI-${String(n).padStart(3, '0')}`;
+  if (!g604CReview.items.some((x) => x.id === id)) fail(`missing G6-04 C rereview increment ID: ${id}`);
+}
+if (g604CReview.counts?.behaviorCases !== 16 || g604CReview.counts?.auditAssertions !== 6178 || g604CReview.counts?.archiveAssertions !== 5698 || g604CReview.counts?.realWorldAccepted !== 0) fail('G6-04 C rereview evidence or real-world boundary drift');
 
 if (rtm.rows.length !== 117) fail(`RTM rows ${rtm.rows.length} != 117`);
 if (new Set(rtm.rows.map((x) => x.acId)).size !== 117) fail('RTM AC IDs are not unique');
@@ -136,6 +150,6 @@ if (!cLog.includes('status: PUSHED / PENDING_B_FINAL_REVIEW')) fail('C first rem
 if (combined.includes('G6-01 两本手册/命令台账、G6-03 试演/现场记录及 G6-04 总结/移交尚未形成')) fail('README current overview retains stale G6-01 not-formed statement');
 
 const initialPathsNowExisting = delivery.items.filter((x) => fs.existsSync(path.join(root, x.file))).length;
-if (initialPathsNowExisting !== 22 || selfcheck.currentIncrement?.initialPathsNowExisting !== 22) fail(`current initial-path existence ${initialPathsNowExisting} != 22`);
+if (initialPathsNowExisting !== 23 || selfcheck.currentIncrement?.initialPathsNowExisting !== 22) fail(`initial-path existence current/historical ${initialPathsNowExisting}/${selfcheck.currentIncrement?.initialPathsNowExisting} != 23/22`);
 
-console.log(JSON.stringify({status:'PASS',initialSnapshot:{deliveryItems:29,available:20,notAvailable:9},currentIncrement:{items:21,available:21,canonicalGitBlobVerified:21,initialPathsNowExisting,realWorldAccepted:0},v02SubsequentIncrement:{items:18,available:18,canonicalGitBlobVerified:18,deploymentSteps:26,deploymentStepFailures:0,realWorldAccepted:0,g6_01ReviewState:v02.g6_01ReviewState},aRereviewIncrement:{items:11,available:11,canonicalGitBlobVerified:11,aMechanicalAssertions:35,g6_01AcceptedByA:true,realWorldAccepted:0},rtmRows:117,fr:39,starFr:34,results:counts,candidateState:delivery.state,historicalBReviewStatus:bReview.finalTaskStatus,currentReviewStatus:selfcheck.reviewStatus,hashValidation:'INITIAL_WORKTREE_OR_RECORDED_GIT_BLOB_WITH_EOL_NORMALIZATION_PLUS_EXACT_INCREMENT_CANONICAL_GIT_BLOB'}));
+console.log(JSON.stringify({status:'PASS',initialSnapshot:{deliveryItems:29,available:20,notAvailable:9},currentIncrement:{items:21,available:21,canonicalGitBlobVerified:21,initialPathsNowExisting,realWorldAccepted:0},v02SubsequentIncrement:{items:18,available:18,canonicalGitBlobVerified:18,deploymentSteps:26,deploymentStepFailures:0,realWorldAccepted:0,g6_01ReviewState:v02.g6_01ReviewState},aRereviewIncrement:{items:11,available:11,canonicalGitBlobVerified:11,aMechanicalAssertions:35,g6_01AcceptedByA:true,realWorldAccepted:0},g604CReviewIncrement:{items:15,available:15,canonicalGitBlobVerified:15,behaviorCases:16,auditAssertions:6178,archiveAssertions:5698,realWorldAccepted:0,g6_04ReviewState:g604CReview.g6_04ReviewState},rtmRows:117,fr:39,starFr:34,results:counts,candidateState:delivery.state,historicalBReviewStatus:bReview.finalTaskStatus,currentReviewStatus:selfcheck.reviewStatus,hashValidation:'INITIAL_WORKTREE_OR_RECORDED_GIT_BLOB_WITH_EOL_NORMALIZATION_PLUS_EXACT_INCREMENT_CANONICAL_GIT_BLOB'}));

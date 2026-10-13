@@ -16,8 +16,10 @@
 | 当前增量配置项 | 21 | 2026-10-12在同一索引追加的GI-001—021 | 不并入或改写首版29项分母 | delivery-index.json currentIncrement | VERIFIED |
 | G6-01 V0.2后续增量 | 18 | GI-022—039，canonical基线`d17847d` | 保留GI-001—021历史；不与首版29项混算 | delivery-index.json subsequentIncrements | VERIFIED |
 | G6-01 A复验并发增量 | 11 | GI-040—050，canonical基线`e223f6d` | 更正后手册与A接受证据；不与其他分母混算 | delivery-index.json subsequentIncrements | VERIFIED |
+| G6-04 C符合性复验增量 | 15 | GI-051—065，canonical基线`6da71f3` | 002/003关闭及课程候选证据；B技术确认/真实验收仍待，不与其他分母混算 | delivery-index.json subsequentIncrements | VERIFIED |
 | V0.2部署/回退步骤 | 26/0 | 实际步骤/失败步骤，成员B本地隔离运行 | 非甲方现场、非KN-065独立操作者 | remediation-command-ledger / deployment-check | VERIFIED_WITH_BOUNDARY |
 | cfdb6f5时点首版路径存在 | 22/29 | 首版29条路径在`cfdb6f5`的存在性 | CI-015/016现已存在；存在不等于验收通过 | A Review + delivery-index transitions | VERIFIED_WITH_BOUNDARY |
+| 6da71f3时点首版路径存在 | 23/29 | 首版29条路径在G6-04 C复验后的当前工作区存在性 | 新增CI-019总结报告；不倒改cfdb6f5的22/29且存在不等于真实验收 | delivery-index GI-051—065 + validator | VERIFIED_WITH_BOUNDARY |
 | V0.1手册渲染复核页数 | 22 | 用户手册与部署运维手册PDF的A视觉复核总页数 | 仅视觉/版式核验；内容仍NEED_FIX | G6-01 A Review | VERIFIED_WITH_BOUNDARY |
 | G6-03模拟试演检查 | 23 PASS | 本地内存、模拟数据的实际试演检查 | 不映射为23个AC PASS，不改变11/59/47 | rehearsal-result.json | VERIFIED_WITH_BOUNDARY |
 | 甲方系统真实联调 | 0/6 | 视频、消息、定位、GIS、安防、发布 | 模拟6/6另列，不混计 | G5-02条件证据 | VERIFIED |

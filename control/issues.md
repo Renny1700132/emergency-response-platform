@@ -2084,3 +2084,17 @@ ISSUE-G6-03-002：MAJOR / REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。依据
 - 责任：A主责修改总结/移交；C整体符合性与唯一索引日期化增量；B最终技术确认及债务接收。
 - 解除：真实C/B完成整包复核、A整改及指定复验，C在同一索引纳入本轮commit/hash/Review并保留历史分母，A再执行最终准出。用户明确等待真实成员，不使用子代理，不代签或预写接受。
 - 真实现场/接口/KN-065/签署等仍在technical_debt_transfer；本Issue不赋予真实验收PASS或新课程豁免。
+
+## ISSUE-G6-04-002｜G6受控计划状态与当前任务/唯一索引漂移
+- 日期：2026-10-13；登记C；状态OPEN / MAJOR / CHANGES_REQUIRED，阻断G6-04准出与冻结。
+- 事实：`docs/work/A_PM/g6_delivery_acceptance_plan.md` 仍将 G6-01 写为待 A 复验、G6-02 写为首版候选、G6-03/G6-04 写为 TODO，并称唯一索引“尚未生成”；与 `tasks.md` 的 G6-01—03 DONE、G6-04 REVIEW 及已形成的 G6-02 唯一索引冲突。A 的 1380 项审计未覆盖该计划漂移。
+- 责任：A 同步受控计划中的当前状态、Review 入口及唯一索引说明；C 定向复验符合性。
+- 解除：计划与 `tasks.md`、已接受 Review 和唯一索引状态一致，且新增只读一致性断言通过；不得倒改历史接受或把真实延期写成 PASS。
+- 证据：`logs/reviews/2026-10-13_G6-04-C-review.md`。
+
+## ISSUE-G6-04-003｜归档审计先重建后校验，无法独立证明提交态索引
+- 日期：2026-10-13；登记C；状态OPEN / MAJOR / CHANGES_REQUIRED，阻断G6-04准出与冻结。
+- 事实：`scripts/g6/audit-g6-04.py` 第120—133行先按当前工作树覆盖 `final-archive-index.json`，第140—141行再核对刚生成的物理哈希。C 实跑虽报 1380 PASS，却同时改写索引462行；恢复提交态后只读核验显示 878/878 canonical Git blob 匹配、无缺失文件，但当前检出态有231条 physical SHA 不匹配，现有脚本会掩盖这类差异。
+- 责任：A 分离生成与只读验证，明确 physical/canonical 跨检出态规则并修订归档证据；C 定向复验。
+- 解除：验证模式不修改受检文件，修订候选的提交态索引可由第三方只读复现通过；历史失败和本轮诊断原样保留。
+- 证据：`logs/reviews/2026-10-13_G6-04-C-review.md`。

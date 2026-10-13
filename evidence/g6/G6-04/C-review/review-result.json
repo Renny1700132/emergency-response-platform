@@ -1,0 +1,46 @@
+{
+  "task": "G6-04",
+  "reviewer": "C",
+  "reviewDate": "2026-10-13",
+  "reviewBaseline": "6a004067cf1e9341bf605ffc53b1f99596a1227c",
+  "candidateCommit": "68f5f623b82940a38f430449e84fad6aeee42b75",
+  "decision": "CHANGES_REQUIRED",
+  "taskState": "REVIEW",
+  "releaseDecision": "NOT_FROZEN",
+  "realWorldStatus": "REAL_WORLD_DEFERRED",
+  "findings": {
+    "blocker": 0,
+    "major": 2,
+    "minor": 0,
+    "issueIds": [
+      "ISSUE-G6-04-002",
+      "ISSUE-G6-04-003"
+    ]
+  },
+  "independentChecks": {
+    "formalPdfPages": 15,
+    "libreOfficeRenderedDocxPages": 16,
+    "visualInspection": "PASS_NO_CLIPPING_OVERLAP_OR_UNREADABLE_TABLES",
+    "archiveRows": 915,
+    "missingPhysicalFiles": 0,
+    "canonicalGitBlobRowsChecked": 878,
+    "canonicalGitBlobMismatches": 0,
+    "currentCheckoutPhysicalShaMismatches": 231,
+    "officialAuditReportedAssertions": 1380,
+    "officialAuditReportedStatus": "PASS_AFTER_REBUILD",
+    "officialAuditMutatedArchiveIndex": true,
+    "mutatedArchiveIndexDiff": "462 insertions / 462 deletions; diagnostic mutation restored before review commit"
+  },
+  "passedScopes": [
+    "formal document pair and visual quality",
+    "controlled figures and real/course boundary",
+    "deviation and twelve-item technical-debt structure",
+    "canonical Git blob fingerprints"
+  ],
+  "requiredActions": [
+    "Synchronize the controlled G6 delivery plan with current G6-01 through G6-04 states and the existing unique index.",
+    "Separate archive-index generation from non-mutating verification and define reproducible physical/canonical hash rules.",
+    "After remediation, obtain C targeted rereview and dated unique-index increment, then B final technical confirmation."
+  ],
+  "reviewRecord": "logs/reviews/2026-10-13_G6-04-C-review.md"
+}

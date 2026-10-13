@@ -1,0 +1,46 @@
+{
+  "task": "G6-04",
+  "reviewer": "C",
+  "reviewDate": "2026-10-14",
+  "reviewBaseline": "2cf7162d92ebd66c1e3b2358542a7c1f4f75f31c",
+  "decision": "CHANGES_REQUIRED",
+  "complianceState": "ISSUE_G6_04_002_CLOSED_003_OPEN",
+  "taskState": "REVIEW",
+  "releaseDecision": "NOT_FROZEN",
+  "realWorldStatus": "REAL_WORLD_DEFERRED",
+  "closedIssues": ["ISSUE-G6-04-002"],
+  "openIssues": ["ISSUE-G6-04-003"],
+  "findings": {"blocker": 0, "major": 1, "minor": 0},
+  "independentChecks": {
+    "auditStatus": "PASS",
+    "auditAssertions": 6130,
+    "archiveVerificationStatus": "PASS",
+    "archiveAssertions": 5650,
+    "archiveRows": 941,
+    "archiveSnapshotCommit": "c29032ff8febdbf16fca2aa63e76cca5467d1fb9",
+    "verificationMode": "READ_ONLY_SUBMITTED_GIT_AND_CHECKOUT",
+    "filesWritten": 0,
+    "indexSha256Before": "e234aea6f8ffa6be80b893581e7aa73934ac780539afea7c87c27024ac272f2f",
+    "indexSha256After": "e234aea6f8ffa6be80b893581e7aa73934ac780539afea7c87c27024ac272f2f",
+    "behaviorTestCases": 10,
+    "behaviorTestExpectationMatches": 10,
+    "postReviewStateTransitionAudit": "FAIL",
+    "postReviewStateTransitionFailures": [
+      "Mutable checkout matches committed HEAD control/issues.md",
+      "Checkout content fingerprint docs/work/A_PM/g6_delivery_acceptance_plan.md",
+      "Mutable checkout matches committed HEAD tasks.md"
+    ],
+    "persistentFailureAfterCommit": "Checkout content fingerprint docs/work/A_PM/g6_delivery_acceptance_plan.md",
+    "formalDocumentPairChangedSincePriorCReview": false,
+    "priorFormalPdfVisualReviewPages": 15,
+    "priorFormalPdfVisualReview": "PASS_NO_CLIPPING_OVERLAP_OR_UNREADABLE_TABLES"
+  },
+  "diagnostics": ["The first outer result collector used UTF-8 for Windows console output and failed to decode; it wrote no inspected files. The audit was rerun with the actual console encoding and exited 0 with empty stderr."],
+  "nextActions": [
+    "A adds a constrained committed post-review transition rule for the controlled plan and a fixture covering tasks/issues/plan status migration.",
+    "C performs one targeted rereview; only after acceptance does C append the dated fingerprints to the single G6-02 delivery index.",
+    "B performs final technical confirmation and debt acceptance.",
+    "A performs final consistency release decision; real-world deferred items remain open."
+  ],
+  "reviewRecord": "logs/reviews/2026-10-14_G6-04-C-rereview.md"
+}

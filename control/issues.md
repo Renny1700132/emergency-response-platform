@@ -2104,3 +2104,10 @@ ISSUE-G6-03-002：MAJOR / REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。依据
 - ISSUE-G6-04-003：REMEDIATED_BY_A / PENDING_C_TARGETED_REREVIEW。生成器独立显式运行；audit --verify只读已提交索引/Git/检出态，不生成或覆盖索引。稳定文本指纹仅CRLF→LF，二进制逐字节；原始物理SHA仅诊断。默认选择最近修改索引的内容commit，后续可变日志/tasks必须吻合HEAD已提交对象，脏篡改失败；索引/验证回执通过外部Git对象验真避免自引用。
 - 7项隔离Git夹具验证覆盖正常、LF/CRLF、文本/二进制/索引篡改、未提交/已提交日志回填，预期通过/拒绝均符合，索引始终未被验证器改写；不是新的业务AC或真实验收PASS。
 - A不自行关闭002/003，不代C唯一索引增量/B最终技术确认；001继续OPEN / PROCEDURAL BLOCKER，真实延期不改。整改证据见docs/work/G6/G6-04_A_remediation.md及evidence/g6/G6-04/A-remediation/；提交态只读验真在内容commit后执行，结果按实际记录。
+
+## G6-04 C定向复验（2026-10-14）
+- ISSUE-G6-04-002：CLOSED / VERIFIED_BY_C。受控计划 G6-00—04 与 `tasks.md` 逐行一致，实际 Review 与唯一索引入口齐全，旧当前态错误声明已移除。
+- ISSUE-G6-04-003：PARTIALLY_REMEDIATED / OPEN / MAJOR。A静态候选独立审计6130/6130、归档5650/5650、10/10行为用例通过且索引未改；但C同步Review状态后，验证器允许已提交的tasks/issues迁移，却把受控计划固定为归档快照，导致“更新计划则指纹失败、不更新则计划/任务漂移”的不可同时满足状态。
+- 解除：将受控计划纳入受限的已提交状态迁移规则，并新增“候选归档→C Review同步tasks/issues/plan→独立提交→只读验证PASS”行为用例；不得放宽正式件或任意文本校验。
+- 结论：0 BLOCKER、1 MAJOR、0 MINOR；G6-04保持REVIEW / CHANGES_REQUIRED。ISSUE-G6-04-001继续OPEN，C唯一索引增量及B最终技术确认后移；真实延期不改。
+- 证据：`logs/reviews/2026-10-14_G6-04-C-rereview.md`、`evidence/g6/G6-04/C-rereview/review-result.json`。
